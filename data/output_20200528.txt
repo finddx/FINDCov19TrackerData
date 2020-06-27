@@ -1,0 +1,614 @@
+Running 'tests Africa'
+01:05:26
+1.
+open on /covid-19/ OK
+01:05:28
+2.
+selectFrame on index=0 OK
+01:05:29
+3.
+Trying to find id=esri.Map_0_gc... OK
+01:05:33
+echo: country;tests_cumulative
+01:05:43
+5.
+click on css=circle:nth-child(3) OK
+01:05:43
+6.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:05:45
+7.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:05:48
+echo: Egypt;90,000
+01:05:50
+9.
+click on css=circle:nth-child(4) OK
+01:05:50
+10.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:05:51
+11.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:05:51
+echo: Algeria;6,500
+01:05:52
+13.
+click on css=circle:nth-child(5) OK
+01:05:52
+14.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:05:53
+15.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:05:54
+echo: Nigeria;48,544
+01:05:55
+17.
+click on css=circle:nth-child(6) OK
+01:05:55
+18.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:05:56
+19.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:05:56
+echo: Morocco;170,713
+01:05:57
+21.
+click on css=circle:nth-child(7) OK
+01:05:58
+22.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:05:58
+23.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:05:59
+echo: Ghana;205,890
+01:06:00
+25.
+click on css=circle:nth-child(8) OK
+01:06:00
+26.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:01
+27.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:02
+echo: Cameroon;10,268
+01:06:02
+29.
+click on css=circle:nth-child(9) OK
+01:06:03
+30.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:03
+31.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:04
+echo: Sudan;2,014
+01:06:05
+33.
+click on css=circle:nth-child(10) OK
+01:06:05
+34.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:06
+35.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:07
+echo: Guinea;10,304
+01:06:08
+37.
+click on css=circle:nth-child(11) OK
+01:06:08
+38.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:09
+39.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:09
+echo: Senegal;39,875
+01:06:10
+41.
+click on css=circle:nth-child(12) OK
+01:06:10
+42.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:11
+43.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:12
+echo: Djibouti;24,129
+01:06:12
+45.
+click on css=circle:nth-child(13) OK
+01:06:13
+46.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:13
+47.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:14
+echo: Democratic Republic of the Congo;5,528
+01:06:15
+49.
+click on css=circle:nth-child(14) OK
+01:06:15
+50.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:16
+51.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:17
+echo: Cote d'Ivoire;18,303
+01:06:18
+53.
+click on css=circle:nth-child(15) OK
+01:06:18
+54.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:19
+55.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:19
+echo: Gabon;12,060
+01:06:20
+57.
+click on css=circle:nth-child(16) OK
+01:06:21
+58.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:21
+59.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:22
+echo: Somalia;1,357
+01:06:23
+61.
+click on css=circle:nth-child(17) OK
+01:06:23
+62.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:24
+63.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:25
+echo: Kenya;67,341
+01:06:26
+65.
+click on css=circle:nth-child(18) OK
+01:06:26
+66.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:27
+67.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:28
+echo: Guinea Bissau;2,607
+01:06:29
+69.
+click on css=circle:nth-child(19) OK
+01:06:29
+70.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:29
+71.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:30
+echo: Mali;4,246
+01:06:31
+73.
+click on css=circle:nth-child(20) OK
+01:06:31
+74.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:32
+75.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:33
+echo: Zambia;24,275
+01:06:34
+77.
+click on css=circle:nth-child(21) OK
+01:06:34
+78.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:35
+79.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:35
+echo: Tunisia;49,113
+01:06:37
+81.
+click on css=circle:nth-child(22) OK
+01:06:37
+82.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:38
+83.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:38
+echo: Equatorial Guinea;3,805
+01:06:39
+85.
+click on css=circle:nth-child(23) OK
+01:06:40
+86.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:40
+87.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:41
+echo: Niger;3,895
+01:06:42
+89.
+click on css=circle:nth-child(24) OK
+01:06:43
+90.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:43
+91.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:44
+echo: Burkina Faso;3,349
+01:06:45
+93.
+click on css=circle:nth-child(25) OK
+01:06:45
+94.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:46
+95.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:46
+echo: Sierra Leone;3,248
+01:06:47
+97.
+click on css=circle:nth-child(26) OK
+01:06:48
+98.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:48
+99.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:49
+echo: Ethiopia;83,854
+01:06:50
+101.
+click on css=circle:nth-child(27) OK
+01:06:50
+102.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:51
+103.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:52
+echo: Chad;2,411
+01:06:53
+105.
+click on css=circle:nth-child(28) OK
+01:06:53
+106.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:54
+107.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:55
+echo: Central African Republic;13,629
+01:06:56
+109.
+click on css=circle:nth-child(29) OK
+01:06:56
+110.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:06:57
+111.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:06:58
+echo: South Sudan;3,356
+01:06:59
+113.
+click on css=circle:nth-child(30) OK
+01:06:59
+114.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:00
+115.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:00
+echo: Madagascar;9,681
+01:07:01
+117.
+click on css=circle:nth-child(31) OK
+01:07:02
+118.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:02
+119.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:03
+echo: Republic of the Congo;3,419
+01:07:04
+121.
+click on css=circle:nth-child(32) OK
+01:07:04
+122.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:05
+123.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:06
+echo: Tanzania;652
+01:07:07
+125.
+click on css=circle:nth-child(33) OK
+01:07:07
+126.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:08
+127.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:09
+echo: Sao Tome and Principe;567
+01:07:10
+129.
+click on css=circle:nth-child(34) OK
+01:07:10
+130.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:11
+131.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:12
+echo: Togo;18,029
+01:07:13
+133.
+click on css=circle:nth-child(35) OK
+01:07:13
+134.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:14
+135.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:14
+echo: Cabo Verde;4,826
+01:07:15
+137.
+click on css=circle:nth-child(36) OK
+01:07:16
+138.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:17
+139.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:17
+echo: Rwanda;62,502
+01:07:18
+141.
+click on css=circle:nth-child(37) OK
+01:07:19
+142.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:19
+143.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:20
+echo: Mauritius;23,495
+01:07:21
+145.
+click on css=circle:nth-child(38) OK
+01:07:22
+146.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:23
+147.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:23
+echo: Mauritania;6,335
+01:07:24
+149.
+click on css=circle:nth-child(39) OK
+01:07:25
+150.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:25
+151.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:26
+echo: Uganda;84,576
+01:07:27
+153.
+click on css=circle:nth-child(40) OK
+01:07:27
+154.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:28
+155.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:29
+echo: Eswatini;4,673
+01:07:30
+157.
+click on css=circle:nth-child(41) OK
+01:07:30
+158.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:31
+159.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:32
+echo: Liberia;1,417
+01:07:33
+161.
+click on css=circle:nth-child(42) OK
+01:07:33
+162.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:34
+163.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:35
+echo: Mozambique;9,330
+01:07:36
+165.
+click on css=circle:nth-child(43) OK
+01:07:36
+166.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:37
+167.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:38
+echo: Benin;14,123
+01:07:39
+169.
+click on css=circle:nth-child(44) OK
+01:07:39
+170.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:40
+171.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:41
+echo: Zimbabwe;38,656
+01:07:42
+173.
+click on css=circle:nth-child(45) OK
+01:07:42
+174.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:43
+175.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:44
+echo: Malawi;3,372
+01:07:45
+177.
+click on css=circle:nth-child(46) OK
+01:07:45
+178.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:46
+179.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:47
+echo: Libya;6,011
+01:07:48
+181.
+click on css=circle:nth-child(47) OK
+01:07:49
+182.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:49
+183.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:50
+echo: Comoros;145
+01:07:51
+185.
+click on css=circle:nth-child(48) OK
+01:07:52
+186.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:52
+187.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:07:53
+echo: Angola;7,521
+01:07:54
+189.
+click on css=circle:nth-child(50) OK
+01:07:54
+190.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:07:55
+191.
+Trying to find css=tr:nth-child(6) .esriNumericValue... Failed:
+01:07:56
+Implicit Wait timed out after 30000ms
+'tests Africa' ended with 1 error(s)
+01:08:27
+Running 'tests Africa'
+01:09:00
+echo: ${country};${tests}
+01:09:02
+193.
+click on css=circle:nth-child(51) OK
+01:09:02
+194.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:09:03
+195.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:09:04
+echo: Botswana;13,294
+01:09:05
+197.
+click on css=circle:nth-child(52) OK
+01:09:05
+198.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:09:06
+199.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:09:07
+echo: Gambia;1,730
+01:09:08
+201.
+click on css=circle:nth-child(53) OK
+01:09:08
+202.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:09:09
+203.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:09:10
+echo: Namibia;3,186
+01:09:11
+205.
+click on css=circle:nth-child(54) OK
+01:09:11
+206.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:09:12
+207.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:09:13
+echo: Seychelles;388
+01:09:14
+209.
+click on css=circle:nth-child(55) OK
+01:09:14
+210.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:09:15
+211.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:09:16
+echo: Lesotho;788
+01:09:17
+213.
+click on css=circle:nth-child(56) OK
+01:09:18
+214.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:09:19
+215.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:09:20
+echo: Western Sahara;4
+01:09:21
+217.
+click on css=circle:nth-child(49) OK
+01:09:21
+218.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+01:09:22
+219.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+01:09:22
+echo: Burundi;633
+01:09:23
+'tests Africa' completed successfully
+
