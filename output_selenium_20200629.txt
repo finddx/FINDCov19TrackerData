@@ -1,0 +1,718 @@
+Running 'Africa'
+21:26:53
+1.
+open on https://africacdc.org/covid-19/ OK
+21:26:54
+2.
+selectFrame on index=0 OK
+21:26:54
+3.
+click on id=esri.Map_0_gc OK
+21:26:59
+echo: country;tests_cumulative
+21:27:23
+5.
+click on css=circle:nth-child(3) OK
+21:27:23
+6.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:24
+7.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:24
+echo: Egypt;378,456
+21:27:24
+9.
+click on css=circle:nth-child(4) OK
+21:27:24
+10.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:25
+11.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:25
+echo: Nigeria;130,164
+21:27:25
+13.
+click on css=circle:nth-child(5) OK
+21:27:25
+14.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:26
+15.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:26
+echo: Ghana;294,867
+21:27:26
+17.
+click on css=circle:nth-child(6) OK
+21:27:26
+18.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:27
+19.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:27
+echo: Algeria;46,396
+21:27:27
+21.
+click on css=circle:nth-child(7) OK
+21:27:27
+22.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:27
+23.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:28
+echo: Cameroon;80,000
+21:27:28
+25.
+click on css=circle:nth-child(8) OK
+21:27:28
+26.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:28
+27.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:28
+echo: Morocco;638,471
+21:27:29
+29.
+click on css=circle:nth-child(9) OK
+21:27:29
+30.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:29
+31.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:29
+echo: Sudan;25,580
+21:27:29
+33.
+click on css=circle:nth-child(10) OK
+21:27:29
+34.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:30
+35.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:30
+echo: Cote d'Ivoire;48,340
+21:27:30
+37.
+click on css=circle:nth-child(11) OK
+21:27:30
+38.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:30
+39.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:31
+echo: Democratic Republic of the Congo;24,657
+21:27:31
+41.
+click on css=circle:nth-child(12) OK
+21:27:31
+42.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:31
+43.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:32
+echo: Senegal;76,343
+21:27:32
+45.
+click on css=circle:nth-child(13) OK
+21:27:32
+46.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:32
+47.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:32
+echo: Kenya;167,417
+21:27:33
+49.
+click on css=circle:nth-child(14) OK
+21:27:33
+50.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:33
+51.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:33
+echo: Ethiopia;250,604
+21:27:33
+53.
+click on css=circle:nth-child(15) OK
+21:27:33
+54.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:34
+55.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:34
+echo: Guinea;33,737
+21:27:34
+57.
+click on css=circle:nth-child(16) OK
+21:27:34
+58.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:35
+59.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:35
+echo: Gabon;34,774
+21:27:35
+61.
+click on css=circle:nth-child(17) OK
+21:27:35
+62.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:35
+63.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:36
+echo: Djibouti;46,108
+21:27:36
+65.
+click on css=circle:nth-child(18) OK
+21:27:36
+66.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:36
+67.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:36
+echo: Mauritania;39,398
+21:27:37
+69.
+click on css=circle:nth-child(19) OK
+21:27:37
+70.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:37
+71.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:37
+echo: Central African Republic;23,208
+21:27:37
+73.
+click on css=circle:nth-child(20) OK
+21:27:38
+74.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:38
+75.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:38
+echo: Somalia;11,807
+21:27:38
+77.
+click on css=circle:nth-child(21) OK
+21:27:38
+78.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:39
+79.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:39
+echo: Mali;12,869
+21:27:39
+81.
+click on css=circle:nth-child(22) OK
+21:27:39
+82.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:39
+83.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:40
+echo: Madagascar;21,444
+21:27:40
+85.
+click on css=circle:nth-child(23) OK
+21:27:40
+86.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:40
+87.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:40
+echo: South Sudan;10,630
+21:27:41
+89.
+click on css=circle:nth-child(24) OK
+21:27:41
+90.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:41
+91.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:41
+echo: Equatorial Guinea;16,000
+21:27:42
+93.
+click on css=circle:nth-child(25) OK
+21:27:42
+94.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:42
+95.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:42
+echo: Guinea Bissau;8,056
+21:27:42
+97.
+click on css=circle:nth-child(26) OK
+21:27:42
+98.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:43
+99.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:43
+echo: Zambia;53,370
+21:27:43
+101.
+click on css=circle:nth-child(27) OK
+21:27:43
+102.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:44
+103.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:44
+echo: Sierra Leone;9,973
+21:27:44
+105.
+click on css=circle:nth-child(28) OK
+21:27:44
+106.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:44
+107.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:45
+echo: Republic of the Congo;11,790
+21:27:45
+109.
+click on css=circle:nth-child(29) OK
+21:27:45
+110.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:45
+111.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:46
+echo: Benin;20,014
+21:27:46
+113.
+click on css=circle:nth-child(30) OK
+21:27:46
+114.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:46
+115.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:46
+echo: Tunisia;69,137
+21:27:47
+117.
+click on css=circle:nth-child(31) OK
+21:27:47
+118.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:47
+119.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:47
+echo: Cabo Verde;22,665
+21:27:47
+121.
+click on css=circle:nth-child(32) OK
+21:27:48
+122.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:48
+123.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:48
+echo: Malawi;13,369
+21:27:48
+125.
+click on css=circle:nth-child(33) OK
+21:27:48
+126.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:49
+127.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:49
+echo: Niger;6,555
+21:27:49
+129.
+click on css=circle:nth-child(34) OK
+21:27:49
+130.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:49
+131.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:50
+echo: Burkina Faso;9,040
+21:27:50
+133.
+click on css=circle:nth-child(35) OK
+21:27:50
+134.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:50
+135.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:51
+echo: Rwanda;137,751
+21:27:51
+137.
+click on css=circle:nth-child(36) OK
+21:27:51
+138.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:51
+139.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:51
+echo: Uganda;186,200
+21:27:52
+141.
+click on css=circle:nth-child(37) OK
+21:27:52
+142.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:52
+143.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:52
+echo: Chad;4,633
+21:27:53
+145.
+click on css=circle:nth-child(38) OK
+21:27:53
+146.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:53
+147.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:53
+echo: Mozambique;28,586
+21:27:53
+149.
+click on css=circle:nth-child(39) OK
+21:27:53
+150.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:54
+151.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:54
+echo: Eswatini;11,094
+21:27:54
+153.
+click on css=circle:nth-child(40) OK
+21:27:54
+154.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:55
+155.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:55
+echo: Liberia;6,125
+21:27:55
+157.
+click on css=circle:nth-child(41) OK
+21:27:55
+158.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:56
+159.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:56
+echo: Libya;26,339
+21:27:56
+161.
+click on css=circle:nth-child(42) OK
+21:27:56
+162.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:56
+163.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:57
+echo: Sao Tome and Principe;1,773
+21:27:57
+165.
+click on css=circle:nth-child(43) OK
+21:27:57
+166.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:57
+167.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:57
+echo: Togo;30,316
+21:27:58
+169.
+click on css=circle:nth-child(44) OK
+21:27:58
+170.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:58
+171.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:58
+echo: Zimbabwe;66,712
+21:27:59
+173.
+click on css=circle:nth-child(45) OK
+21:27:59
+174.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:27:59
+175.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:27:59
+echo: Tanzania;3,880
+21:28:00
+177.
+click on css=circle:nth-child(46) OK
+21:28:00
+178.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:00
+179.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:00
+echo: Mauritius;171,792
+21:28:00
+181.
+click on css=circle:nth-child(47) OK
+21:28:00
+182.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:01
+183.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:01
+echo: Comoros;1,173
+21:28:01
+185.
+click on css=circle:nth-child(48) OK
+21:28:01
+186.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:02
+187.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:02
+echo: Angola;22,895
+21:28:02
+189.
+click on css=circle:nth-child(50) OK
+21:28:02
+190.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:02
+191.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:03
+echo: Namibia;8,706
+21:28:03
+193.
+click on css=circle:nth-child(51) OK
+21:28:03
+194.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:03
+195.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:04
+echo: Burundi;2,359
+21:28:04
+197.
+click on css=circle:nth-child(52) OK
+21:28:04
+198.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:04
+199.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:04
+echo: Botswana;36,868
+21:28:05
+201.
+click on css=circle:nth-child(53) OK
+21:28:05
+202.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:05
+203.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:05
+echo: Seychelles;704
+21:28:06
+205.
+click on css=circle:nth-child(54) OK
+21:28:06
+206.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:06
+207.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:06
+echo: Gambia;2,947
+21:28:06
+209.
+click on css=circle:nth-child(55) OK
+21:28:07
+210.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:07
+211.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:07
+echo: Lesotho;3,000
+21:28:07
+213.
+click on css=circle:nth-child(56) OK
+21:28:08
+214.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:08
+215.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:08
+echo: Western Sahara;124
+21:28:08
+217.
+click on css=circle:nth-child(49) OK
+21:28:08
+218.
+storeText on css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2) with value country OK
+21:28:09
+219.
+storeText on css=tr:nth-child(6) .esriNumericValue with value tests OK
+21:28:09
+echo: Eritrea;7,943
+21:28:09
+'Africa' completed successfully
+21:28:09
+Running 'Others'
+21:28:10
+echo: country;tests_cumulative
+21:28:10
+2.
+open on https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results OK
+21:28:11
+3.
+Trying to find css=.qv-grid-object-data-first-row > .qv-st-data-cell:nth-child(2) .ng-binding... OK
+21:28:11
+echo: Australia;2,379,175
+21:28:30
+5.
+open on http://minzdrav.gov.by/ru/sobytiya/index.php OK
+21:28:30
+6.
+click on css=.news-list-page:nth-child(1) .event-open OK
+21:28:30
+7.
+storeText on css=.paragraph:nth-child(3) with value tests OK
+21:28:32
+echo: Belarus;На этой неделе еще часть учреждений здравоохранения Минска, а также Брестской, Гомельской, Гродненской, Витебской, Минской и Могилевской областей начинают работу в обычном режиме. С учетом анализа заболеваемости по инфекции, вызванной COVID-19, в стране проводится поэтапное возвращение к обычной работе организаций здравоохранения, которые были перепрофилированы для оказания медпомощи пациентам с коронавирусной инфекцией. Некоторые медицинские учреждения области уже вернулись к оказанию медицинской помощи по профилю. Брестская область С учетом анализа заболеваемости по инфекции, вызванной COVID-19, в Брестской области с 29 июня полностью провели необходимые противоэпидемические мероприятия и вернулись к профильной работе в штатном режиме Барановичская детская городская больница, онкологический и наркологический диспансеры Барановичской центральной поликлиники, а также педиатрическое, терапевтическое, травматологическое отделения Столинской ЦРБ, хирургическое отделение Ганцевичской ЦРБ, терапевтическое, неврологическое и реабилитационное отделения филиала Белоозерская больница Березовской ЦРБ, Городищенская городская поселковая больница Барановичской центральной поликлиники. С 29 июня начали работу в штатном режиме Новоселковская участковая больница Кобринской ЦРБ, а так же 11 отделений в стационарах: педиатрические отделения Ивацевичской ЦРБ, Ивановской ЦРБ, Каменецкой ЦРБ, Малоритской ЦРБ, травматологическое отделение Ивановской ЦРБ, хирургическое, гинекологическое, терапевтическое, неврологическое отделения Каменецкой ЦРБ, отделения медицинской реабилитации филиала «Больница «Молотковичи» Пинской центральной поликлиники. В этих отделениях уже проведены все дезинфекционные и противоэпидемические мероприятия. Планируется, что с 1 июля начнут работу в привычном режиме Пинский межрайонный родильный дом, Барановичский родильный дом, стационарное отделение филиала «Межрайонный кожно-венерологический диспансер» Пинской центральной поликлиники, отделение медицинской реабилитации филиала «Больница «Молотковичи» Пинской центральной больницы, хирургическое отделение Столинской больницы, Кобринская больница, филиал «Детская больница» Кобринской центральной районной больницы, отделение патологии беременности и хирургическое отделение Лунинецкой центральной районной больницы, неврологическое, хирургическое, гинекологические и терапевтические отделения Жабинковской центральной районной больницы. На этой неделе в данных учреждениях проводится санитарная обработка по типу заключительной дезинфекции. Кроме того, планируется, что в период с 6 июля по 13 июля начнет работу детское отделение Ганцевичской центральной районной больницы, травматологическое отделение Березовской центральной районной больницы, родильное и хирургическое отделения Пружанской центральной районной больницы. В ближайшее время к обычному режиму работы вернется инфекционное отделение Барановичской городской больницы. Витебская область С 1 июля перепрофилируются и начинают работать в обычном режиме Бешенковичская, Россонская, Лиозненская и Миорская центральные районные больницы. Кроме того, Новополоцкая центральная городская больница начинает работать как межрайонный центр по урологии, офральмологии и оказывать интервенционную помощь для жителей Новополоцка и Полоцкого района. Напомним, что ранее, в связи с улучшением эпидемиологической ситуации центральные районные больницы Верхнедвинского, Городокского и Ушачского районов вернулись к оказанию профильной медицинской помощи. Также в Витебске возобновили свою работу - Витебский клинический онкодиспансер, Витебская областная клиническая больница, Витебский областной клинический специализированный центр, Витебский областной клинический центр дерматовенерологии и косметологии, Докшицкая центральная районная больница, областной центр медицинской реабилитации на базе Витебского областного госпиталя инвалидов ВОВ «Юрцево» и Витебский областной детский реабилитационный оздоровительный центр «Ветразь». Гомельская область В связи со стабилизацией эпидемической обстановки с 27 июня возобновили работу неврологическое и гинекологическое отделения Гомельской областной клинической больницы. Здесь же с 1 июля начнёт принимать пациентов и гастроэнтерологическое отделение. С 29 июня, для оказания плановой помощи, в Мозырском онкологическом диспансере уже прошла дезобработка и оказывает помощь стационарное отделение. Планируется, что с 1 июля возобновят плановую госпитализацию по оказанию медицинской помощи населению Гомельская городская клиническая больница №2 и отделение паллиативного ухода в Жлобинской центральной районной больнице. А 3 июля - Гомельская городская клиническая больница №4. Также в планах с 1 июля в Речицкой центральной районной больнице запланирована дезобработка и возобновление работы урологического отделения для оказания плановой помощи. Напомним, что на прошлой неделе начал работу в плановом порядке Гомельский областной клинический кожно-венерологический диспансер. Гродненская область В Гродненской области также наметилась стойкая тенденция к стабилизации эпидемической обстановки. С 29 июня возобновили работу неврологическое и первое терапевтическое отделения Слонимской центральной больницы, отделения терапевтического корпуса Новогрудской центральной больницы. С 1 июля прекращает работу реабилитационное отделение санатория Неман 72 на 100 коек, начнет подготовку к работе в обычном режиме 3-я клиничнская больница Гродно. Готовятся к началу плановой госпитализации с 1 июля по хирургическому и гинекологическому профилю в 4-ой клинической и БСМП г. Гродно, а также к обычному режиму работы - Берестовицкая, Вороновская, Зельвенская, Кореличская, Свислочская, Щучинская центральные районные больницы. При этом в этих больницах сохранится работа инфекционных отделений для лечения пациентов с COVID-19. В стадии подготовки возобновление работы межрайонных центров для пациентов с острым нарушением мозгового кровообращения в Слонимской, Островецкой и Волковысской центральных районных больницах. Минск Поэтапное возобновление работы коечного фонда проводится на этой неделе в 3-й городской клинической больнице им. Е.В. Клумова в Минске. С сегодняшнего дня началась госпитализация и лечение пациентов в отделениях микрохирургии глаза №1 и №2. С 1 июля будет возобновлена работа районного эндоскопического центра Ленинского района Минска, где будут выполняться эндоскопические исследования для пациентов поликлиник - №6, 7, 11, 18, 23 и 37. В больнице проводится поэтапная дезобработка силами специалистов Минского городского центра гигиены и эпидемиологии. С 26 июня прекращена госпитализация пациентов с коронавирусной инфекцией в 10-ю городскую клиническую больницу. Здесь в течение 7-10 дней продолжится лечение и выписка пациентов, санобработка отделений больницы. Планируется, что с 6 июля клиника полностью перейдёт в обычный режим работы. Откроются отделения кардиологии, микрохирургии глаза, торакальной хирургии, экстренной и гнойной хирургии, центр желудочно-кишечных кровотечений, эндокринологии, профпатологии и аллергологии, лазерной микрохирургии, медицинской реабилитации – клинический центр традиционной восточной медицины, изотопная лаборатория. Также в течение недели вернутся к обычному режиму работы медработники в корпусах 2-й и 4-й городских клинических больниц - отделение кардиологии (аритмологии), отделение проктологии и малоинвазивной хирургии, отделения оториноларингологии, сосудистой хирургии. Напомним, что ранее в Минске возобновили свою работу городской онкодиспансер, Больница скорой медицинской помощи, Городская гинекологическая больница и 1-я клиническая больница. Врачи и медсестеры, фельдшера и лаборанты, и другие медицинские работники переходят на плановый режим работы, появилась возможность отдохнуть в трудовых отпусках. Минская область В связи с улучшением эпидемиологической ситуации в ряде регионов Минской области уже с 8 июня начато перепрофилирование коечного фонда инфекционных стационаров. Так, в обычный режим работы с сегодняшнего дня переведено терапевтическое отделение Копыльской центральной районной больницы. В Клецкой больнице с 26 июня возобновило свою работу в обычном режиме педиатрическое отделение, а с 1 июля планируется ввести в обычный режим работы хирургическое, акушерско-гинекологическое и неврологические отделения. В Мядельской центральной районной больнице с сегодняшнего дня принимают пациентов хирургического профиля. Минская центральная районная больница (филиал №1 «Атолинская больница») с 1 июля планируют начать работу в обычном режиме отделения терапии, неврологии, часть отделения медицинской реабилитации (для пациентов травматолого-ортопедического профиля), отделение медицинской реабилитации (для пациентов неврологического профиля), часть онкологического отделения (для реабилитации пациентов онкологического профиля). С 1 июля перепрофилируются и начинают работать в обычном режиме отдельные стационарные отделения Дзержинской и Несвижской районных больниц, Солигорской районной и Жодинской городской больниц. С 1 июля в Минской областной клинической больнице начинают оказывать медицинскую помощь в стационарных условиях пациентам, нуждающимся в плановых оперативных вмешательствах. С 6 июля планируется открытие Областного детского центра медицинской реабилитации «Пуховичи». Могилевская область Поэтапное возобновление работы начинается и в Могилевских учреждениях здравоохранения. Так на этой неделе проводится поэтапная дезобработка и планируется открытие Бобруйского онкологического диспансера. Кроме этого, на этой же неделе перепрофилируется и начинает работать в обычном режиме Могилевский областной кожно-венерологический диспансер». Напомним, что ранее в связи с улучшением эпидемиологической ситуации в Кричевской центральной районной больнице возвращено отделение (из перепрофилированных) для полноценного функционирования межрайонного центра по тромболизису при остром нарушении мозгового кровообращения, урологии для Костюковичского, Мстиславского, Климовичского и Чериковского районов. Кроме того, с 22 июня возобновлена интервенционная помощь для жителей Бобруйского, Осиповичского, Кличевского, Глусского районов на базе Бобруйской городской больницы скорой медицинской помощи. Пресс-служба Министерства здравоохранения
+21:28:32
+9.
+open on https://coronavirus.bg/ OK
+21:28:32
+10.
+Trying to find css=.col-lg-3:nth-child(2) > .statistics-value... OK
+21:28:32
+Warning Element found with secondary locator xpath=//div[6]/div[2]/p. To use it by default, update the test step to use it as the primary locator.
+21:29:04
+echo: Bulgaria;4 691
+21:29:04
+12.
+open on https://covid19.moph.gov.qa/EN/Pages/default.aspx# OK
+21:29:04
+13.
+storeText on id=strgPeopleTested with value tests OK
+21:29:04
+echo: Qatar;352659
+21:29:08
+15.
+open on https://covid-19.ba/ OK
+21:29:08
+16.
+storeText on id=total_tested_positive with value tests OK
+21:29:08
+echo: Bosnia and Herzegovina;54583
+21:29:12
+18.
+open on https://koronavirus.gov.hu/#aktualis OK
+21:29:12
+19.
+storeText on id=content-mintavetel with value tests OK
+21:29:12
+echo: Hungary;273 897
+21:29:14
+21.
+open on https://www.icmr.gov.in/ OK
+21:29:14
+22.
+storeText on css=.col-12:nth-child(1) > .single-cool-fact h2 with value tests OK
+21:29:14
+echo: India;83,98,362
+21:29:17
+24.
+open on https://covid19.ndrrma.gov.np/ OK
+21:29:17
+25.
+Trying to find css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number... Failed:
+21:29:17
+Implicit Wait timed out after 30000ms
+'Others' ended with 1 error(s)
+21:29:51
+Running 'Others'
+21:30:28
+25.
+storeText on css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number with value tests OK
+21:30:28
+echo: Nepal;223,630
+21:30:28
+27.
+open on https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-situation/covid-19-current-cases OK
+21:30:28
+28.
+click on linkText=Lab testing OK
+21:30:28
+29.
+storeText on css=.table-responsive:nth-child(54) tr:nth-child(3) > td:nth-child(2) with value tests OK
+21:30:29
+echo: New Zealand;395,510
+21:30:30
+31.
+open on https://www.moh.gov.sg/covid-19 OK
+21:30:30
+32.
+storeText on css=#ContentPlaceHolder_contentPlaceholder_C095_Col00 b with value tests OK
+21:30:30
+echo: Singapore;684,359
+21:30:31
+34.
+open on https://infogram.com/covid-19-izplatiba-latvija-1hzj4ozwvnzo2pw OK
+21:30:31
+35.
+storeText on css=.InfographicEditor-Contents-Item:nth-child(11) .igc-textual-figure > div with value tests OK
+21:30:32
+echo: Latvia;148 777
+21:30:33
+'Others' completed successfully
