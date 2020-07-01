@@ -1,4 +1,8 @@
-# Data
+# data
+
+<!-- badges: start -->
+[![tic](https://github.com/dsbbfinddx/data/workflows/tic/badge.svg?branch=master)](https://github.com/dsbbfinddx/data/actions)
+<!-- badges: end -->
 
 Raw and processed data for [dsbbfinddx/FIND_COV_19_Tracker](https://github.com/dsbbfinddx/FIND_Cov_19_Tracker)
 
