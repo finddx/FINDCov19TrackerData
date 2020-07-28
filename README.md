@@ -1,16 +1,16 @@
-# data
+# FINDCov19TrackerData
 
 <!-- badges: start -->
 [![tic](https://github.com/dsbbfinddx/data/workflows/tic/badge.svg?branch=master)](https://github.com/dsbbfinddx/data/actions)
 <!-- badges: end -->
 
-Raw and processed data for [dsbbfinddx/FIND_COV_19_Tracker](https://github.com/dsbbfinddx/FIND_Cov_19_Tracker)
+Raw and processed data for [dsbbfinddx/FINDCov19TrackerShiny](https://github.com/dsbbfinddx/FINDCov19TrackerShiny)
 
-# Test data preparation
+# Manual test data preparation
 
-Test data are collated everyday by the FIND team, from information found online.
+Some parts of the test data are collated manually every day by the FIND team, from information found online.
 
-1. Some data is grabed with [Selenium IDE](https://www.selenium.dev/selenium-ide/), using the playback sequence saved in `scrap_tests_data.side`. 
+1. Some data is grabbed with [Selenium IDE](https://www.selenium.dev/selenium-ide/), using the playback sequence saved in `scrap_tests_data.side`. 
   Some website may be slow to answer, the sequence can be played back from where it last stopped.
   When everything is finished, save the output log as a text file named `output_selenium_YYYYMMDD.txt`.
 2. The rest is fetch directly from the R script `grab_tests_data_29-06-2020.R`, that download and parse locally data such as CSV, XLSX, ZIP, PDF, HTML, etc. 
