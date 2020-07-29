@@ -1,0 +1,418 @@
+{
+  "id": "7b3b2c15-1353-4e02-8b0f-466188c3ebc7",
+  "version": "2.0",
+  "name": "scrap tests data",
+  "url": "https://www.finddx.org/",
+  "tests": [{
+    "id": "c8f42345-c747-4e2f-9fc4-3b9d332e8b67",
+    "name": "Others",
+    "commands": [{
+      "id": "12f6bddd-fcbd-4acf-ae1e-55bbd2b936e7",
+      "comment": "",
+      "command": "echo",
+      "target": "country;tests_cumulative",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c45e35a4-a9f4-4000-a187-d57e2b82b432",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c5a2a12a-33d2-4de5-bfcd-229e6511acf6",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.ng-scope:nth-child(1) > .ng-binding:nth-child(2)",
+      "targets": [
+        ["css=.ng-scope:nth-child(1) > .ng-binding:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='widgetzfDpnUy']/div/table/tbody/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'2,505,923')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "a032770d-7967-4444-8273-212f0e5fa742",
+      "comment": "",
+      "command": "echo",
+      "target": "Australia;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e499bf08-c20a-4c36-b6e4-4f75fc66a24d",
+      "comment": "",
+      "command": "open",
+      "target": "http://minzdrav.gov.by/ru/sobytiya/index.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0adfc3b7-a2c7-4106-9370-94957854be5b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.news-list-page:nth-child(1) .event-open",
+      "targets": [
+        ["linkText=Читать далее", "linkText"],
+        ["css=.news-list-page:nth-child(1) .event-open", "css:finder"],
+        ["xpath=//a[contains(text(),'Читать далее')]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '/ru/sobytiya/v-belarusi-vyzdoroveli-i-vypisany-14-tys-155-patsientov/')])[3]", "xpath:href"],
+        ["xpath=//section/div/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Читать далее')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3945520e-b19f-48ea-94bf-9e6cb826d126",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.paragraph:nth-child(3)",
+      "targets": [
+        ["css=.paragraph:nth-child(3)", "css:finder"],
+        ["xpath=//section/section", "xpath:position"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "b46a5b7d-85fd-4e09-bcaa-5526975a4e5d",
+      "comment": "",
+      "command": "echo",
+      "target": "Belarus;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "497840cd-9339-430c-8aba-6b60057ded1d",
+      "comment": "",
+      "command": "open",
+      "target": "https://coronavirus.bg/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6db635e-3976-431e-bd28-7a67ee968de3",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.col-lg-3:nth-child(2) > .statistics-value",
+      "targets": [
+        ["css=.col-lg-3:nth-child(2) > .statistics-value", "css:finder"],
+        ["xpath=//div[6]/div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'68 243')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "6c3304aa-b33e-41a9-8789-ea7d90d0f362",
+      "comment": "",
+      "command": "echo",
+      "target": "Bulgaria;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b71f75d6-d210-4cf6-b979-121ddf43fd8e",
+      "comment": "",
+      "command": "open",
+      "target": "https://covid19.moph.gov.qa/EN/Pages/default.aspx#",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8583577-ab1b-4a54-9758-4e8a5744e978",
+      "comment": "",
+      "command": "storeText",
+      "target": "id=strgPeopleTested",
+      "targets": [
+        ["id=strgPeopleTested", "id"],
+        ["css=#strgPeopleTested", "css:finder"],
+        ["xpath=//strong[@id='strgPeopleTested']", "xpath:attributes"],
+        ["xpath=//div[@id='ddr-rich-text-101']/p/span/span/strong", "xpath:idRelative"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'188143')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "80c76e95-a02a-45c5-9adf-e92697f04874",
+      "comment": "",
+      "command": "echo",
+      "target": "Qatar;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c967d679-24af-4a57-92c8-b74835f7b4ed",
+      "comment": "",
+      "command": "open",
+      "target": "https://covid-19.ba/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e879810-6189-4599-886d-1b9d38d09fab",
+      "comment": "",
+      "command": "storeText",
+      "target": "id=total_tested_positive",
+      "targets": [
+        ["id=total_tested_positive", "id"],
+        ["css=#total_tested_positive", "css:finder"],
+        ["xpath=//h1[@id='total_tested_positive']", "xpath:attributes"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'34544')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "b11f4f1b-b7be-4d96-9cec-2377a95e880f",
+      "comment": "",
+      "command": "echo",
+      "target": "Bosnia and Herzegovina;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a03c131-fe0f-44b6-b36a-c4a42f513820",
+      "comment": "",
+      "command": "open",
+      "target": "https://koronavirus.gov.hu/#aktualis",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9035db9-b53c-4fff-abc4-7c105f556a8c",
+      "comment": "",
+      "command": "storeText",
+      "target": "id=content-mintavetel",
+      "targets": [
+        ["id=content-mintavetel", "id"],
+        ["css=#content-mintavetel", "css:finder"],
+        ["xpath=//span[@id='content-mintavetel']", "xpath:attributes"],
+        ["xpath=//section[@id='block-system-main']/div/div/div[2]/div[2]/div/div[2]/div/div[2]/div/span/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div[2]/div/span/span", "xpath:position"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "b1b7ef17-dfdf-4928-854c-4bfb10648e87",
+      "comment": "",
+      "command": "echo",
+      "target": "Hungary;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "18e6f53d-bcc2-4fa1-9549-2d7a4e3d59e1",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.icmr.gov.in/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9e965b6-27d4-45f4-ab0b-815812389483",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.col-12:nth-child(1) > .single-cool-fact h2",
+      "targets": [],
+      "value": "tests"
+    }, {
+      "id": "e5ceee9d-f108-4b9c-8c3b-17dd25449774",
+      "comment": "",
+      "command": "echo",
+      "target": "India;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4df5e0c6-f3f7-4e5f-81c7-fd4ea642886e",
+      "comment": "",
+      "command": "open",
+      "target": "https://covid19.ndrrma.gov.np/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e094b627-eb63-42d3-93fa-7128979660f8",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number",
+      "targets": [],
+      "value": "tests"
+    }, {
+      "id": "54dbcd4d-5ff5-4672-87be-7195664f3677",
+      "comment": "",
+      "command": "echo",
+      "target": "Nepal;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e1a01378-b2ce-47b7-942c-4dd2db921637",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-situation/covid-19-current-cases",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "834022d7-3e96-4961-91f9-85700962ac6b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lab testing",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ac36e94-4cdd-4bf9-ae34-6ba0e309e8a9",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.table-responsive:nth-child(54) tr:nth-child(3) > td:nth-child(2)",
+      "targets": [
+        ["css=.table-responsive:nth-child(54) tr:nth-child(3) > td:nth-child(2)", "css:finder"],
+        ["xpath=//article[@id='node-10813']/div[2]/div/div/div[7]/table/tbody/tr[3]/td", "xpath:idRelative"],
+        ["xpath=//div[7]/table/tbody/tr[3]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'395,510')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "ad6bc8ea-4e25-407d-a3e5-ba7b933c97b7",
+      "comment": "",
+      "command": "echo",
+      "target": "New Zealand;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c67f9a1-1bb5-4e84-a555-11d64fe2b100",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.moh.gov.sg/covid-19",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb23c2d0-27c0-4dad-ac35-eb99f98e05d1",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=#ContentPlaceHolder_contentPlaceholder_C095_Col00 b",
+      "targets": [],
+      "value": "tests"
+    }, {
+      "id": "d451bb00-677d-4035-9335-8d8f456de2ea",
+      "comment": "",
+      "command": "echo",
+      "target": "Singapore;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e63c0838-d274-4c78-bbb0-c66517092c65",
+      "comment": "",
+      "command": "open",
+      "target": "https://infogram.com/covid-19-izplatiba-latvija-1hzj4ozwvnzo2pw",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed55514c-4d6a-4bec-9140-8581982c10eb",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.InfographicEditor-Contents-Item:nth-child(11) .igc-textual-figure > div",
+      "targets": [],
+      "value": "tests"
+    }, {
+      "id": "fda23c9a-ed5c-456a-88ce-703d61e0e962",
+      "comment": "",
+      "command": "echo",
+      "target": "Latvia;${tests}",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a1378af6-d540-40bf-a91b-72716978f67a",
+    "name": "Africa",
+    "commands": [{
+      "id": "a06c0e37-765d-4a01-91a5-6dd253f600fe",
+      "comment": "",
+      "command": "open",
+      "target": "https://africacdc.org/covid-19/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "428d9ac5-3a69-4995-88ee-6a6aed2ee8ab",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd70f3d2-4bfb-4c70-ba6a-1387ccc443de",
+      "comment": "",
+      "command": "click",
+      "target": "id=esri.Map_0_gc",
+      "targets": [
+        ["id=esri.Map_0_gc", "id"],
+        ["css=#esri\\.Map_0_gc", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "636ad14d-a54d-4952-bee3-fc5f1c7db544",
+      "comment": "",
+      "command": "echo",
+      "target": "country;tests_cumulative",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d74e5fd0-5c0d-4dfa-89c1-9196c5f662a8",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 2",
+      "targets": [],
+      "value": "iterator"
+    }, {
+      "id": "5c675765-ea08-44c7-890d-ca6cd4dedc1f",
+      "comment": "",
+      "command": "do",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "257f5db5-780a-42f4-bf74-436afff806b3",
+      "comment": "",
+      "command": "echo",
+      "target": "${iterator}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75439519-4b87-4ce9-bbcf-8f04f126cfe2",
+      "comment": "",
+      "command": "click",
+      "target": "css=circle:nth-child(${iterator})",
+      "targets": [
+        ["css=circle:nth-child(3)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c3f7cfd-2b23-4037-9a0e-365d10590cdd",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2)",
+      "targets": [],
+      "value": "country"
+    }, {
+      "id": "4e7ecead-a3e0-4d4d-9b27-422002d6338e",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=tr:nth-child(8) .esriNumericValue",
+      "targets": [],
+      "value": "tests"
+    }, {
+      "id": "f36500c8-5761-4959-96e9-3f7288c9bd58",
+      "comment": "",
+      "command": "echo",
+      "target": "${country};${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "458f8f2f-8bca-4fd0-b9ac-c49527db7a23",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${iterator}+1",
+      "targets": [],
+      "value": "iterator"
+    }, {
+      "id": "a849c87c-6d1c-425f-92c7-3567885128b4",
+      "comment": "",
+      "command": "repeatIf",
+      "target": "${iterator} <= 56",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9da4cc4d-049d-4642-8b27-1457afb93c7b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://africacdc.org/", "https://www.finddx.org/"],
+  "plugins": []
+}
