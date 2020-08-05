@@ -1,5 +1,7 @@
+get_stage("install") %>%
+  add_step(step_install_github("dsbbfinddx/FINDCov19Tracker"))
+
 get_stage("before_deploy") %>%
-  add_step(step_install_github("dsbbfinddx/FINDCov19Tracker")) %>%
   add_step(step_setup_ssh()) %>%
   add_step(step_setup_push_deploy())
 
