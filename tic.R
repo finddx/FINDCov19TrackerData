@@ -11,5 +11,5 @@ get_stage("deploy") %>%
     "processed/coronavirus_cases.csv",
     "processed/coronavirus_tests.csv",
     "processed/jhu_data.csv",
-    "processed/data_shiny.csv"
+    "processed/shiny_data.csv"
   )))
