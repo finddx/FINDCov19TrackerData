@@ -1,0 +1,18 @@
+variable,description
+pop_100k,Population in 100'000
+new_cases_orig,Daily number of cases
+new_deaths_orig,Daily number of deaths
+new_tests_orig,Daily number of tests
+cap_cum_cases,Cumulative number of cases per capita
+cap_new_cases,Daily number of cases per capita (7 day average)
+cap_cum_deaths,Cumulative number of deaths per capita
+cap_new_deaths,Daily number of cases per capita (7 day average)
+cap_cum_tests,Cumulative number of tests per capita
+cap_new_tests,Daily number of tests per capita (7 day average)
+all_cum_cases,Cumulative number of cases
+all_new_cases,Daily number of cases (7 day average)
+all_cum_deaths,Cumulative number of deaths
+all_new_deaths,Daily number of cases (7 day average)
+all_cum_tests,Cumulative number of tests
+all_new_tests,Daily number of tests (7 day average)
+pos,Positivity rate (7 day average)
