@@ -1,4 +1,4 @@
-name_not_used,country_iso,income,continent,Tests_description,tests_type,comment_on_testing_data
+name_not_used,country_iso,income,continent,tests_description,tests_type,comment
 Aland Islands,AX,,Europe,,,
 Afghanistan,AF,Low,Asia,People,Not specified,
 Albania,AL,Upper middle,Europe,Tests,Not specified,
@@ -79,7 +79,7 @@ French Guiana,GF,,South America,,,
 French Polynesia,PF,High ,Oceania,,,
 French Southern Territories,TF,,Antarctica,,,
 Gabon,GA,Upper middle,Africa,Tests,Not specified,
-Georgia,GE,Lower middle,Europe/Asia,Tests,PCR,Data is directly received from NCDC (Georgia)
+Georgia,GE,Lower middle,Europe/Asia,Tests,PCR,Testing data is directly received from NCDC (Georgia)
 Germany,DE,High ,Europe,Tests,Not specified,
 Ghana,GH,Lower middle,Africa,Tests,Not specified,
 Gibraltar,GI,,Europe,,,
@@ -124,7 +124,7 @@ Lebanon,LB,Upper middle,Asia,Not specified,Not specified,
 Lesotho,LS,Lower middle,Africa,Not specified,Not specified,
 Liberia,LR,Low,Africa,Not specified,Not specified,
 Libya,LY,Upper middle,Africa,Not specified,Not specified,
-Liechtenstein,LI,High ,Europe,,,Switzerland daily updates include Liechtenstein 
+Liechtenstein,LI,High ,Europe,,,Switzerland testing daily updates also include Liechtenstein 
 Lithuania,LT,High ,Europe,Tests,Not specified,
 Luxembourg,LU,High ,Europe,People,PCR,
 Macao,MO,High ,Asia,,,
@@ -215,7 +215,7 @@ Sudan,SD,Lower middle,Africa,Not specified,Not specified,
 Suriname,SR,Upper middle,South America,,,
 Svalbard and Jan Mayen,SJ,,Europe,,,
 Sweden,SE,High ,Europe,Tests,PCR+serology,
-Switzerland,CH,High ,Europe,Tests,PCR,Data published by FOPH also includes Liechtenstein
+Switzerland,CH,High ,Europe,Tests,PCR,Testing data published by FOPH also includes Liechtenstein
 Syrian Arab Republic,SY,Lower middle,Asia,,,
 Taiwan,TW,High ,Asia,Not specified,Not specified,
 Tajikistan,TJ,Lower middle,Asia,Not specified,Not specified,
@@ -249,4 +249,4 @@ Wallis and Futuna,WF,,Oceania,,,
 Western Sahara,EH,,Africa,Not specified,Not specified,
 Yemen,YE,Lower middle,Asia,,,
 Zambia,ZM,Lower middle,Africa,People,Not specified,
-Zimbabwe,ZW,Low,Africa,Tests,PCR,Africa CDC is reporting a lower value than the previous days
+Zimbabwe,ZW,Low,Africa,Tests,PCR,Africa CDC is roporting a lower cumulative tests value than the previous days
