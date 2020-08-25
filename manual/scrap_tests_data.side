@@ -40,6 +40,85 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "3ad88039-62c7-4db5-be09-7e3c9a4372b7",
+      "comment": "",
+      "command": "open",
+      "target": "https://korona.gov.sk/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "090bc212-8d33-424e-9b85-7415c27ccf7d",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=#block_5e9990e25ffff .govuk-heading-l",
+      "targets": [
+        ["css=#block_5e9990e25ffff .govuk-heading-l", "css:finder"],
+        ["xpath=//div[@id='block_5e9990e25ffff']/div/h2", "xpath:idRelative"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'312 822')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "9aee0dc2-e4f5-470c-9244-350a5ace93d4",
+      "comment": "",
+      "command": "echo",
+      "target": "Slovakia;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09c0373b-ff80-419a-bac4-6f71fd391ea6",
+      "comment": "",
+      "command": "open",
+      "target": "https://coronavirus.data.gov.uk/testing",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ddd0cd6-edb6-4533-8d56-684f9f7776b3",
+      "comment": "",
+      "command": "storeText",
+      "target": "id=value-item-tests_processed-total-cumtestsbypublishdate-1_modal",
+      "targets": [
+        ["id=value-item-tests_processed-total-cumtestsbypublishdate-1_modal", "id"],
+        ["css=#value-item-tests_processed-total-cumtestsbypublishdate-1_modal", "css:finder"],
+        ["xpath=//a[@id='value-item-tests_processed-total-cumtestsbypublishdate-1_modal']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/section/div/div/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "9a5a81e8-0f08-4c64-9d15-6563f4a144b8",
+      "comment": "",
+      "command": "echo",
+      "target": "UK;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "faccfed7-700c-46a4-8861-eede41598b89",
+      "comment": "",
+      "command": "open",
+      "target": "https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aea0567c-3cae-49d2-97c2-379d343d1329",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=span > strong",
+      "targets": [
+        ["css=span > strong", "css:finder"],
+        ["xpath=//section[@id='portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm']/div/div[2]/div/div[2]/ul/li[2]/span/span/span/span/span/span/span/span/span/span/span/span/strong", "xpath:idRelative"],
+        ["xpath=//span/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'533 700')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "fee3dff9-1b07-4f01-81ea-8659fa95b636",
+      "comment": "",
+      "command": "echo",
+      "target": "Finland;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "0978e8a8-89bb-4650-9bf8-d78e56187101",
       "comment": "",
       "command": "open",
@@ -103,11 +182,11 @@
       "id": "830c4ae1-326e-40eb-a386-98b5326dca2b",
       "comment": "",
       "command": "waitForElementVisible",
-      "target": "css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7)",
+      "target": "css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number",
       "targets": [
-        ["css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7)", "css:finder"],
-        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[2]/div/div/div/div[6]", "xpath:idRelative"],
-        ["xpath=//div[6]", "xpath:position"]
+        ["css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number", "css:finder"],
+        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[2]/div/div/div/div[6]/div[3]/span/span", "xpath:idRelative"],
+        ["xpath=//div[6]/div[3]/span/span", "xpath:position"]
       ],
       "value": "30000"
     }, {
@@ -139,18 +218,18 @@
       "id": "9a90b5ea-b61b-4a12-82e7-f26c52dcc56e",
       "comment": "",
       "command": "waitForElementVisible",
-      "target": "css=#ember229 text",
+      "target": "css=#ember207 text",
       "targets": [
-        ["css=#ember229 text", "css:finder"]
+        ["css=#ember207 text", "css:finder"]
       ],
       "value": "30000"
     }, {
       "id": "02a1996f-e282-48bf-9d11-30b19e19e555",
       "comment": "",
       "command": "storeText",
-      "target": "css=#ember229 text",
+      "target": "css=#ember207 text",
       "targets": [
-        ["css=#ember229 text", "css:finder"]
+        ["css=#ember207 text", "css:finder"]
       ],
       "value": "tests"
     }, {
@@ -234,12 +313,12 @@
       "id": "c0134d83-c320-4e06-ba12-c0a53e7cdd2a",
       "comment": "",
       "command": "storeText",
-      "target": "css=.ms-rteTable-default:nth-child(15) .ms-rteTable-default:nth-child(2) > strong",
+      "target": "css=.ms-rteTable-default:nth-child(12) .ms-rteTable-default:nth-child(2) > strong",
       "targets": [
-        ["css=.ms-rteTable-default:nth-child(15) .ms-rteTable-default:nth-child(2) > strong", "css:finder"],
+        ["css=.ms-rteTable-default:nth-child(12) .ms-rteTable-default:nth-child(2) > strong", "css:finder"],
         ["xpath=//div[@id='WebPartWPQ13']/table/tbody/tr[3]/td/table/tbody/tr[2]/td/div/table[3]/tbody/tr[2]/td[2]/strong", "xpath:idRelative"],
         ["xpath=//table[3]/tbody/tr[2]/td[2]/strong", "xpath:position"],
-        ["xpath=//strong[contains(.,'34,864 tests')]", "xpath:innerText"]
+        ["xpath=//strong[contains(.,'48,854 tests')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
@@ -446,8 +525,12 @@
       "id": "ed55514c-4d6a-4bec-9140-8581982c10eb",
       "comment": "",
       "command": "storeText",
-      "target": "css=.InfographicEditor-Contents-Item:nth-child(11) .igc-textual-figure > div",
-      "targets": [],
+      "target": "css=.InfographicEditor-Contents-Item:nth-child(12) .igc-textual-figure > div",
+      "targets": [
+        ["css=.InfographicEditor-Contents-Item:nth-child(12) .igc-textual-figure > div", "css:finder"],
+        ["xpath=//div[@id='4b83d12c-02dc-4680-b7b4-06202b467f3f']/div/div/div[12]/div/div/div/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[12]/div/div/div/div/div[2]/div/div", "xpath:position"]
+      ],
       "value": "tests"
     }, {
       "id": "fda23c9a-ed5c-456a-88ce-703d61e0e962",
