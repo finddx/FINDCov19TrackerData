@@ -40,6 +40,135 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "fcb9fc74-7348-4c68-8c78-bf31f4133a35",
+      "comment": "",
+      "command": "open",
+      "target": "https://sam.lrv.lt/lt/naujienos/koronavirusas",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cec8da49-6ae1-4a28-9657-3a5d376c5ce7",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=strong:nth-child(1) > span",
+      "targets": [
+        ["css=strong:nth-child(1) > span", "css:finder"],
+        ["xpath=//body[@id='module_Structure']/div[3]/div[2]/div[3]/div[3]/ul[2]/li[2]/span/span/strong/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span/span/strong/span", "xpath:position"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "080dc34a-555b-436b-b8ac-c2f5267a30bd",
+      "comment": "",
+      "command": "echo",
+      "target": "Lithuania;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0d35240a-6d95-4f24-a21d-455fe28a4597",
+      "comment": "",
+      "command": "open",
+      "target": "https://koronavirus.gov.mk/vesti",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94741093-d868-4253-a549-4e87b2b17757",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=#table_2_row_0 > .numdata:nth-child(8)",
+      "targets": [
+        ["css=#table_2_row_0 > .numdata:nth-child(8)", "css:finder"],
+        ["xpath=//tr[@id='table_2_row_0']/td[8]", "xpath:idRelative"],
+        ["xpath=//td[8]", "xpath:position"],
+        ["xpath=//td[contains(.,'141,842')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "0df1841e-4f90-46ee-9dc2-7224e7e19d29",
+      "comment": "",
+      "command": "echo",
+      "target": "North Macedonia;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "da4e950a-c80d-4efe-b178-121fcaf279f2",
+      "comment": "",
+      "command": "open",
+      "target": "http://ncov.mohw.go.kr/en/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "634dd628-a90f-487b-956c-9a654670284a",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=li:nth-child(1) > .misil_r > span",
+      "targets": [
+        ["css=li:nth-child(1) > .misil_r > span", "css:finder"],
+        ["xpath=//div[@id='header']/div[4]/div/div[2]/div/div[2]/div/div/div/ul/li/div[2]/span", "xpath:idRelative"],
+        ["xpath=//li/div[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'2,119,211')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "eb7dea25-6fea-43d9-81d6-97265d210313",
+      "comment": "",
+      "command": "echo",
+      "target": "Republic of Korea;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "730fe43d-1295-42cd-a563-e34c062755ba",
+      "comment": "",
+      "command": "open",
+      "target": "https://covid19.saglik.gov.tr/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b062240e-b78f-42d8-b7ef-efe8c461db8d",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.toplam-test-sayisi",
+      "targets": [
+        ["css=.toplam-test-sayisi", "css:finder"],
+        ["xpath=//section[@id='vaka_sayilari_home']/div/div/div/div[2]/div/div/ul/li/strong", "xpath:idRelative"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'7.883.464')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "3e8f7934-da96-4795-b108-9819a9f58ca2",
+      "comment": "",
+      "command": "echo",
+      "target": "Turkey;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "71c07081-1dfd-4b25-8adf-2c14e19148bc",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.hpb.health.gov.lk/en",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37b54df9-017e-4195-8126-cc75e640b0fd",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.total-count",
+      "targets": [
+        ["css=.total-count", "css:finder"],
+        ["xpath=//div[@id='main_content']/section[2]/div/div[3]/h4/span", "xpath:idRelative"],
+        ["xpath=//h4/span", "xpath:position"],
+        ["xpath=//span[contains(.,'242984')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "00d30c77-01f5-4940-b193-bc4ea99cf2bf",
+      "comment": "",
+      "command": "echo",
+      "target": "Sri Lanka;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "3ad88039-62c7-4db5-be09-7e3c9a4372b7",
       "comment": "",
       "command": "open",
@@ -66,33 +195,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "09c0373b-ff80-419a-bac4-6f71fd391ea6",
-      "comment": "",
-      "command": "open",
-      "target": "https://coronavirus.data.gov.uk/testing",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "2ddd0cd6-edb6-4533-8d56-684f9f7776b3",
-      "comment": "",
-      "command": "storeText",
-      "target": "id=value-item-tests_processed-total-cumtestsbypublishdate-1_modal",
-      "targets": [
-        ["id=value-item-tests_processed-total-cumtestsbypublishdate-1_modal", "id"],
-        ["css=#value-item-tests_processed-total-cumtestsbypublishdate-1_modal", "css:finder"],
-        ["xpath=//a[@id='value-item-tests_processed-total-cumtestsbypublishdate-1_modal']", "xpath:attributes"],
-        ["xpath=//main[@id='main-content']/section/div/div/div[2]/div/a", "xpath:idRelative"],
-        ["xpath=//div[2]/div/a", "xpath:position"]
-      ],
-      "value": "tests"
-    }, {
-      "id": "9a5a81e8-0f08-4c64-9d15-6563f4a144b8",
-      "comment": "",
-      "command": "echo",
-      "target": "UK;${tests}",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "faccfed7-700c-46a4-8861-eede41598b89",
       "comment": "",
       "command": "open",
@@ -103,12 +205,12 @@
       "id": "aea0567c-3cae-49d2-97c2-379d343d1329",
       "comment": "",
       "command": "storeText",
-      "target": "css=span > strong",
+      "target": "css=li:nth-child(2) > b",
       "targets": [
-        ["css=span > strong", "css:finder"],
-        ["xpath=//section[@id='portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm']/div/div[2]/div/div[2]/ul/li[2]/span/span/span/span/span/span/span/span/span/span/span/span/strong", "xpath:idRelative"],
-        ["xpath=//span/strong", "xpath:position"],
-        ["xpath=//strong[contains(.,'533 700')]", "xpath:innerText"]
+        ["css=li:nth-child(2) > b", "css:finder"],
+        ["xpath=//section[@id='portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm']/div/div[2]/div/div[2]/ul/li[2]/b", "xpath:idRelative"],
+        ["xpath=//li[2]/b", "xpath:position"],
+        ["xpath=//b[contains(.,'760 700')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
@@ -318,7 +420,7 @@
         ["css=.ms-rteTable-default:nth-child(12) .ms-rteTable-default:nth-child(2) > strong", "css:finder"],
         ["xpath=//div[@id='WebPartWPQ13']/table/tbody/tr[3]/td/table/tbody/tr[2]/td/div/table[3]/tbody/tr[2]/td[2]/strong", "xpath:idRelative"],
         ["xpath=//table[3]/tbody/tr[2]/td[2]/strong", "xpath:position"],
-        ["xpath=//strong[contains(.,'48,854 tests')]", "xpath:innerText"]
+        ["xpath=//strong[contains(.,'50,693 tests')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
