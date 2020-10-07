@@ -40,6 +40,59 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "5fc633d8-073b-4473-a460-c94e31eb0594",
+      "comment": "",
+      "command": "open",
+      "target": "https://coronavirus.data.gov.uk/testing",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc738eb6-cf1d-4c93-8469-3885a6a46527",
+      "comment": "",
+      "command": "storeText",
+      "target": "id=value-item-pcr_tests_processed-total-cumpcrtestsbypublishdate-1_modal",
+      "targets": [
+        ["id=value-item-pcr_tests_processed-total-cumpcrtestsbypublishdate-1_modal", "id"],
+        ["css=#value-item-pcr_tests_processed-total-cumpcrtestsbypublishdate-1_modal", "css:finder"],
+        ["xpath=//a[@id='value-item-pcr_tests_processed-total-cumpcrtestsbypublishdate-1_modal']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content']/section/div/div/div[2]/div/a", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "7c2cea8c-9ba6-43e0-9277-0846d65db0a6",
+      "comment": "",
+      "command": "echo",
+      "target": "UK;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16a855bf-cb19-4332-8c24-70ddf1d78ff4",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cece814e-73a1-4ae3-a45d-d9b269a3908e",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.fhi-key-figure:nth-child(1) span",
+      "targets": [
+        ["css=.fhi-key-figure:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='kfr57083495']/div/div/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1,095,488')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "d64329fa-951c-453b-a4e4-02a50550d0a0",
+      "comment": "",
+      "command": "echo",
+      "target": "Norway;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "fcb9fc74-7348-4c68-8c78-bf31f4133a35",
       "comment": "",
       "command": "open",
@@ -50,11 +103,12 @@
       "id": "cec8da49-6ae1-4a28-9657-3a5d376c5ce7",
       "comment": "",
       "command": "storeText",
-      "target": "css=strong:nth-child(1) > span",
+      "target": "css=ul:nth-child(9) > li:nth-child(2) > strong",
       "targets": [
-        ["css=strong:nth-child(1) > span", "css:finder"],
-        ["xpath=//body[@id='module_Structure']/div[3]/div[2]/div[3]/div[3]/ul[2]/li[2]/span/span/strong/span", "xpath:idRelative"],
-        ["xpath=//li[2]/span/span/strong/span", "xpath:position"]
+        ["css=ul:nth-child(9) > li:nth-child(2) > strong", "css:finder"],
+        ["xpath=//body[@id='module_Structure']/div[3]/div[2]/div[3]/div[3]/ul[2]/li[2]/strong", "xpath:idRelative"],
+        ["xpath=//ul[2]/li[2]/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'695521 (iš jų – 189764 iš mobilių punktų).')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
@@ -205,12 +259,12 @@
       "id": "aea0567c-3cae-49d2-97c2-379d343d1329",
       "comment": "",
       "command": "storeText",
-      "target": "css=li:nth-child(2) > b",
+      "target": "css=span:nth-child(1) > span > span > b:nth-child(1)",
       "targets": [
-        ["css=li:nth-child(2) > b", "css:finder"],
-        ["xpath=//section[@id='portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm']/div/div[2]/div/div[2]/ul/li[2]/b", "xpath:idRelative"],
-        ["xpath=//li[2]/b", "xpath:position"],
-        ["xpath=//b[contains(.,'760 700')]", "xpath:innerText"]
+        ["css=span:nth-child(1) > span > span > b:nth-child(1)", "css:finder"],
+        ["xpath=//section[@id='portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm']/div/div[2]/div/div[2]/ul/li[2]/span[2]/span/span/span/b", "xpath:idRelative"],
+        ["xpath=//span[2]/span/span/span/b", "xpath:position"],
+        ["xpath=//b[contains(.,'950 500')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
@@ -218,34 +272,6 @@
       "comment": "",
       "command": "echo",
       "target": "Finland;${tests}",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "0978e8a8-89bb-4650-9bf8-d78e56187101",
-      "comment": "",
-      "command": "open",
-      "target": "https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "99e69792-4b79-461e-ba1f-8a37a76117cc",
-      "comment": "",
-      "command": "waitForElementVisible",
-      "target": "css=#KPI-01 > div > article > div.qv-inner-object.no-titles > div > div > div > article > div.qv-inner-object.no-titles > div > div > div > div.kpi-data > div.value-wrapper.center > div > div > div.kpi-value > div > span",
-      "targets": [],
-      "value": "30000"
-    }, {
-      "id": "2be78842-d9a8-442c-9c4a-6c142563d88c",
-      "comment": "",
-      "command": "storeText",
-      "target": "css=#KPI-01 > div > article > div.qv-inner-object.no-titles > div > div > div > article > div.qv-inner-object.no-titles > div > div > div > div.kpi-data > div.value-wrapper.center > div > div > div.kpi-value > div > span",
-      "targets": [],
-      "value": "tests"
-    }, {
-      "id": "25442a05-b63b-472d-ab16-6428d596ed80",
-      "comment": "",
-      "command": "echo",
-      "target": "Brazil;${tests}",
       "targets": [],
       "value": ""
     }, {
@@ -284,22 +310,22 @@
       "id": "830c4ae1-326e-40eb-a386-98b5326dca2b",
       "comment": "",
       "command": "waitForElementVisible",
-      "target": "css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number",
+      "target": "css=.styles_close-button_3o_3V0LFapvrEIlnh_hT8P > .icon",
       "targets": [
-        ["css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number", "css:finder"],
-        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[2]/div/div/div/div[6]/div[3]/span/span", "xpath:idRelative"],
-        ["xpath=//div[6]/div[3]/span/span", "xpath:position"]
+        ["css=.styles_close-button_3o_3V0LFapvrEIlnh_hT8P > .icon", "css:finder"],
+        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[3]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div[3]/div/div/button/span", "xpath:position"]
       ],
       "value": "30000"
     }, {
       "id": "74f37579-c698-410d-811d-cfe0153daf11",
       "comment": "",
       "command": "storeText",
-      "target": "css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7)",
+      "target": "css=.styles_close-button_3o_3V0LFapvrEIlnh_hT8P > .icon",
       "targets": [
-        ["css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7)", "css:finder"],
-        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[2]/div/div/div/div[6]", "xpath:idRelative"],
-        ["xpath=//div[6]", "xpath:position"]
+        ["css=.styles_close-button_3o_3V0LFapvrEIlnh_hT8P > .icon", "css:finder"],
+        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[3]/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div[3]/div/div/button/span", "xpath:position"]
       ],
       "value": "tests"
     }, {
@@ -352,12 +378,12 @@
       "id": "79991e35-b3ab-47af-8ea1-364d27d5c2fd",
       "comment": "",
       "command": "storeText",
-      "target": "css=#ember137 .ss-value",
+      "target": "css=#ember132 .ss-value",
       "targets": [
-        ["css=#ember137 .ss-value", "css:finder"],
-        ["xpath=//div[@id='ember137']/div[2]/span", "xpath:idRelative"],
+        ["css=#ember132 .ss-value", "css:finder"],
+        ["xpath=//div[@id='ember132']/div[2]/span", "xpath:idRelative"],
         ["xpath=//section[10]/div/div/div/div/div[2]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'652,917')]", "xpath:innerText"]
+        ["xpath=//span[contains(.,'1,001,647')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
@@ -403,24 +429,18 @@
       "comment": "",
       "command": "click",
       "target": "css=.ms-listlink:nth-of-type(1)",
-      "targets": [
-        ["id=506", "id"],
-        ["css=#\\35 06", "css:finder"],
-        ["xpath=//div[@id='506']", "xpath:attributes"],
-        ["xpath=//tr[@id='109,506,0']/td[3]/div", "xpath:idRelative"],
-        ["xpath=//td[3]/div", "xpath:position"]
-      ],
+      "targets": [],
       "value": ""
     }, {
       "id": "c0134d83-c320-4e06-ba12-c0a53e7cdd2a",
       "comment": "",
       "command": "storeText",
-      "target": "css=.ms-rteTable-default:nth-child(12) .ms-rteTable-default:nth-child(2) > strong",
+      "target": "css=.ms-rteTable-default:nth-child(17) .ms-rteTable-default:nth-child(2) > strong",
       "targets": [
-        ["css=.ms-rteTable-default:nth-child(12) .ms-rteTable-default:nth-child(2) > strong", "css:finder"],
+        ["css=.ms-rteTable-default:nth-child(17) .ms-rteTable-default:nth-child(2) > strong", "css:finder"],
         ["xpath=//div[@id='WebPartWPQ13']/table/tbody/tr[3]/td/table/tbody/tr[2]/td/div/table[3]/tbody/tr[2]/td[2]/strong", "xpath:idRelative"],
         ["xpath=//table[3]/tbody/tr[2]/td[2]/strong", "xpath:position"],
-        ["xpath=//strong[contains(.,'50,693 tests')]", "xpath:innerText"]
+        ["xpath=//strong[contains(.,'60,615 tests')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
@@ -627,11 +647,11 @@
       "id": "ed55514c-4d6a-4bec-9140-8581982c10eb",
       "comment": "",
       "command": "storeText",
-      "target": "css=.InfographicEditor-Contents-Item:nth-child(12) .igc-textual-figure > div",
+      "target": "css=.InfographicEditor-Contents-Item:nth-child(15) .igc-textual-figure > div",
       "targets": [
-        ["css=.InfographicEditor-Contents-Item:nth-child(12) .igc-textual-figure > div", "css:finder"],
-        ["xpath=//div[@id='4b83d12c-02dc-4680-b7b4-06202b467f3f']/div/div/div[12]/div/div/div/div/div[2]/div/div", "xpath:idRelative"],
-        ["xpath=//div[12]/div/div/div/div/div[2]/div/div", "xpath:position"]
+        ["css=.InfographicEditor-Contents-Item:nth-child(15) .igc-textual-figure > div", "css:finder"],
+        ["xpath=//div[@id='4b83d12c-02dc-4680-b7b4-06202b467f3f']/div/div/div[15]/div/div/div/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[15]/div/div/div/div/div[2]/div/div", "xpath:position"]
       ],
       "value": "tests"
     }, {
