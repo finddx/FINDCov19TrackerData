@@ -8,6 +8,13 @@ on:
 jobs:
   build:
     runs-on: ${{ matrix.operating-system }}
+    services:
+      firefox:
+        image: selenium/standalone-firefox:4.0
+        ports: ["4444:4444"]
+    env:
+      HUB_URL: "http://localhost:4444/wd/hub"
+      APP_HOST: "http://localhost:4000"
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
@@ -20,5 +27,4 @@ jobs:
 
       - name: run Selenium
         run: |
-          export PATH=/home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/:$PATH
-          /home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/.bin/selenium-side-runner -c "browserName=firefox" manual/scrap_tests_data.side
+          /home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/.bin/selenium-side-runner -c "browserName=firefox" -w 2 manual/scrap_tests_data.side
