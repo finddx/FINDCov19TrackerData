@@ -1,0 +1,22 @@
+name: selenium
+
+on:
+  push:
+    branches:
+      - selenium
+
+jobs:
+  build:
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install
+
+      - name: run Selenium
+        run: selenium-side-runner -c "browserName=firefox" manual/scrap_tests_data.side
