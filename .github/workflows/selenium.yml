@@ -24,5 +24,4 @@ jobs:
 
       - name: run Selenium
         run: |
-          export PATH=/home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/.bin/selenium-side-runner:$PATH
-          selenium-side-runner -c "browserName=firefox" --server http://localhost:4444/wd/hub -w 2 manual/scrap_tests_data.side.yml
+          /home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/.bin/selenium-side-runner -c "browserName=firefox" --server http://localhost:4444/wd/hub -w 2 manual/scrap_tests_data.side.yml
