@@ -13,10 +13,12 @@ jobs:
         operating-system: [ubuntu-latest]
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1.4.4
         with:
           node-version: '12'
       - run: npm install -g
 
       - name: run Selenium
-        run: selenium-side-runner -c "browserName=firefox" manual/scrap_tests_data.side
+        run: |
+          export PATH=/home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/:$PATH
+          selenium-side-runner -c "browserName=firefox" manual/scrap_tests_data.side
