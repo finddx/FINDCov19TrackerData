@@ -21,4 +21,4 @@ jobs:
       - name: run Selenium
         run: |
           export PATH=/home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/:$PATH
-          selenium-side-runner -c "browserName=firefox" manual/scrap_tests_data.side
+          /home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/selenium-side-runner -c "browserName=firefox" manual/scrap_tests_data.side
