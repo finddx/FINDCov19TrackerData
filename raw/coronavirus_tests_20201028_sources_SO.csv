@@ -1268,7 +1268,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Argentina;25/10/2020;62698;2804114;Argentina;https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/octubre2020;
 ;Argentina;26/10/2020;45988;2850102;Argentina;https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/octubre2020;
 ;Argentina;27/10/2020;26032847;28882949;Argentina;https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/octubre2020;
-;Argentina;28/10/2020;0;28882949;Argentina;https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/octubre2020;
+;Argentina;28/10/2020;-25967173;2915776;Argentina;https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/octubre2020;
 ;Armenia;12/03/2020;262;262;Armenia;http://www.moh.am/#1/2671;
 ;Armenia;13/03/2020;0;262;Armenia;http://www.moh.am/#1/2671;
 ;Armenia;14/03/2020;0;262;Armenia;http://www.moh.am/#1/2671;
@@ -1499,7 +1499,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Armenia;25/10/2020;9287;377340;Armenia;https://ncdc.am/coronavirus/confirmed-cases-by-days/;
 ;Armenia;26/10/2020;5598;382938;Armenia;https://ncdc.am/coronavirus/confirmed-cases-by-days/;
 ;Armenia;27/10/2020;0;382938;Armenia;https://ncdc.am/coronavirus/confirmed-cases-by-days/;
-;Armenia;28/10/2020;0;382938;Armenia;https://ncdc.am/coronavirus/confirmed-cases-by-days/;
+;Armenia;28/10/2020;9722;392660;Armenia;https://ncdc.am/coronavirus/confirmed-cases-by-days/;
 ;Australia;09/03/2020;8371;8371;Australia;https://www.health.nsw.gov.au/news/Pages/20200310_00.aspx;
 ;Australia;10/03/2020;1794;10165;Australia;https://www.health.nsw.gov.au/news/Pages/20200311_00.aspx;
 ;Australia;11/03/2020;56;10221;Australia;https://www.health.nsw.gov.au/news/Pages/20200312_00.aspx;
@@ -1974,7 +1974,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Austria;25/10/2020;41933;2088359;Austria;https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html;
 ;Austria;26/10/2020;23216;2111575;Austria;https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html;
 ;Austria;27/10/2020;14112;2125687;Austria;https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html;
-;Austria;28/10/2020;0;2125687;Austria;https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html;
+;Austria;28/10/2020;27379;2153066;Austria;https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html;
 ;Azerbaijan;01/04/2020;40000;40000;Azerbaijan;https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet;
 ;Azerbaijan;02/04/2020;0;40000;Azerbaijan;;
 ;Azerbaijan;03/04/2020;0;40000;Azerbaijan;;
@@ -2185,7 +2185,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Azerbaijan;25/10/2020;21390;1291534;Azerbaijan;https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet;
 ;Azerbaijan;26/10/2020;6814;1298348;Azerbaijan;https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet;
 ;Azerbaijan;27/10/2020;9700;1308048;Azerbaijan;https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet;
-;Azerbaijan;28/10/2020;0;1308048;Azerbaijan;https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet;
+;Azerbaijan;28/10/2020;11426;1319474;Azerbaijan;https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet;
 ;Bahrain;04/03/2020;5334;5334;Bahrain;https://www.moh.gov.bh/COVID19;
 ;Bahrain;05/03/2020;0;5334;Bahrain;https://www.moh.gov.bh/COVID19;
 ;Bahrain;06/03/2020;0;5334;Bahrain;https://www.moh.gov.bh/COVID19;
@@ -2424,7 +2424,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Bahrain;25/10/2020;28673;1688454;Bahrain;https://www.moh.gov.bh/COVID19;
 ;Bahrain;26/10/2020;10035;1698489;Bahrain;https://www.moh.gov.bh/COVID19;
 ;Bahrain;27/10/2020;11413;1709902;Bahrain;https://www.moh.gov.bh/COVID19;
-;Bahrain;28/10/2020;0;1709902;Bahrain;https://www.moh.gov.bh/COVID19;
+;Bahrain;28/10/2020;11774;1721676;Bahrain;https://www.moh.gov.bh/COVID19;
 ;Bangladesh;18/03/2020;341;341;Bangladesh;https://www.newagebd.net/article/102574/first-covid-19-death-reported-in-bangladesh;
 ;Bangladesh;19/03/2020;56;397;Bangladesh;https://corona.gov.bd/storage/press-releases/March2020/press-release_2020_03_19.pdf;
 ;Bangladesh;20/03/2020;36;433;Bangladesh;https://corona.gov.bd/storage/press-releases/March2020/press-release_2020_03_20.pdf;
@@ -3896,7 +3896,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Bermuda;25/10/2020;0;79686;Bermuda;https://www.gov.bm/coronavirus-covid19-update;
 ;Bermuda;26/10/2020;3403;83089;Bermuda;https://www.gov.bm/coronavirus-covid19-update;
 ;Bermuda;27/10/2020;0;83089;Bermuda;https://www.gov.bm/coronavirus-covid19-update;
-;Bermuda;28/10/2020;0;83089;Bermuda;https://www.gov.bm/coronavirus-covid19-update;
+;Bermuda;28/10/2020;764;83853;Bermuda;https://www.gov.bm/coronavirus-covid19-update;
 ;Bhutan;26/03/2020;523;523;Bhutan;https://bhutanfound.org/covid-19-coronavirus/;
 ;Bhutan;27/03/2020;10;533;Bhutan;https://bhutanfound.org/covid-19-coronavirus/;
 ;Bhutan;28/03/2020;25;558;Bhutan;https://bhutanfound.org/covid-19-coronavirus/;
@@ -5485,7 +5485,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Bulgaria;25/10/2020;19182;661859;Bulgaria;https://coronavirus.bg/;
 ;Bulgaria;26/10/2020;7659;669518;Bulgaria;https://coronavirus.bg/;
 ;Bulgaria;27/10/2020;11226;680744;Bulgaria;https://coronavirus.bg/;
-;Bulgaria;28/10/2020;0;680744;Bulgaria;https://coronavirus.bg/;
+;Bulgaria;28/10/2020;9946;690690;Bulgaria;https://coronavirus.bg/;
 ;Burkina Faso;28/03/2020;80;80;BurkinaFaso;https://www.sante.gov.bf/fileadmin/user_upload/storages/point-presse28032020.png;
 ;Burkina Faso;29/03/2020;19;99;BurkinaFaso;https://www.sante.gov.bf/fileadmin/user_upload/storages/point-presse29032020.png;
 ;Burkina Faso;30/03/2020;0;99;BurkinaFaso;;
@@ -6514,7 +6514,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Canada;25/10/2020;0;9397664;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;
 ;Canada;26/10/2020;0;9397664;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;
 ;Canada;27/10/2020;301810;9699474;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;
-;Canada;28/10/2020;0;9699474;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;
+;Canada;28/10/2020;106141;9805615;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;
 ;Cape Verde;03/05/2020;593;593;CapeVerde;https://africacdc.org/covid-19/;
 ;Cape Verde;04/05/2020;1414;2007;CapeVerde;https://africacdc.org/covid-19/;
 ;Cape Verde;05/05/2020;0;2007;CapeVerde;https://africacdc.org/covid-19/;
@@ -7263,7 +7263,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Chile;25/10/2020;76269;4119551;Chile;https://www.gob.cl/coronavirus/cifrasoficiales/;
 ;Chile;26/10/2020;37832;4157383;Chile;https://www.gob.cl/coronavirus/cifrasoficiales/;
 ;Chile;27/10/2020;20012;4177395;Chile;https://www.gob.cl/coronavirus/cifrasoficiales/;
-;Chile;28/10/2020;0;4177395;Chile;https://www.gob.cl/coronavirus/cifrasoficiales/;
+;Chile;28/10/2020;21822;4199217;Chile;https://www.gob.cl/coronavirus/cifrasoficiales/;
 ;Colombia;16/03/2020;2571;2571;Colombia;https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx;
 ;Colombia;17/03/2020;300;2871;Colombia;https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx;
 ;Colombia;18/03/2020;752;3623;Colombia;https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx;
@@ -8307,7 +8307,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Croatia;25/10/2020;16607;445568;Croatia;https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35;
 ;Croatia;26/10/2020;3973;449541;Croatia;https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35;
 ;Croatia;27/10/2020;8185;457726;Croatia;https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35;
-;Croatia;28/10/2020;0;457726;Croatia;https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35;
+;Croatia;28/10/2020;18268;475994;Croatia;https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35;
 ;Cuba;26/03/2020;893;893;Cuba;http://www.cubadebate.cu/noticias/2020/03/26/cuba-confirma-10-pacientes-positivos-a-la-covid-19-la-cifra-de-casos-asciende-a-67/#.XocwN62B1E4;
 ;Cuba;27/03/2020;146;1039;Cuba;http://www.cubadebate.cu/noticias/2020/03/27/cuba-confirma-13-pacientes-positivos-a-la-covid-19-la-cifra-de-casos-asciende-a-80/;
 ;Cuba;28/03/2020;329;1368;Cuba;http://www.cubadebate.cu/noticias/2020/03/28/covid-19-en-cuba-39-nuevos-pacientes-positivos-totalizan-119-los-casos-confirmados/#.XocvQq2B1E4;
@@ -8969,7 +8969,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Czech Republic;25/10/2020;81387;2058256;Czechia;https://onemocneni-aktualne.mzcr.cz/covid-19;
 ;Czech Republic;26/10/2020;24582;2082838;Czechia;https://onemocneni-aktualne.mzcr.cz/covid-19;
 ;Czech Republic;27/10/2020;35478;2118316;Czechia;https://onemocneni-aktualne.mzcr.cz/covid-19;
-;Czech Republic;28/10/2020;0;2118316;Czechia;https://onemocneni-aktualne.mzcr.cz/covid-19;
+;Czech Republic;28/10/2020;46054;2164370;Czechia;https://onemocneni-aktualne.mzcr.cz/covid-19;
 ;Democratic Republic of the Congo;03/05/2020;2135;2135;DemocraticRepublicoftheCongo;https://africacdc.org/covid-19/;
 ;Democratic Republic of the Congo;04/05/2020;0;2135;DemocraticRepublicoftheCongo;https://africacdc.org/covid-19/;
 ;Democratic Republic of the Congo;05/05/2020;121;2256;DemocraticRepublicoftheCongo;https://africacdc.org/covid-19/;
@@ -10153,7 +10153,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Ecuador;25/10/2020;26039;521891;Ecuador;https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/;
 ;Ecuador;26/10/2020;1066;522957;Ecuador;https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/;
 ;Ecuador;27/10/2020;11487;534444;Ecuador;https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/;
-;Ecuador;28/10/2020;0;534444;Ecuador;https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/;
+;Ecuador;28/10/2020;2405;536849;Ecuador;https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/;
 ;Egypt;25/03/2020;25000;25000;Egypt;https://www.shorouknews.com/news/view.aspx?cdate=25032020&id=913aaaec-a6a9-4e9f-98d0-6a88b6d76fe2;
 ;Egypt;26/03/2020;0;25000;Egypt;;
 ;Egypt;27/03/2020;0;25000;Egypt;;
@@ -11829,7 +11829,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Faroe Islands;25/10/2020;1756;150610;FaroeIslands;https://corona.fo/?_l=en;
 ;Faroe Islands;26/10/2020;342;150952;FaroeIslands;https://corona.fo/?_l=en;
 ;Faroe Islands;27/10/2020;716;151668;FaroeIslands;https://corona.fo/?_l=en;
-;Faroe Islands;28/10/2020;0;151668;FaroeIslands;https://corona.fo/?_l=en;
+;Faroe Islands;28/10/2020;434;152102;FaroeIslands;https://corona.fo/?_l=en;
 ;Fiji;31/03/2020;346;346;Fiji;https://www.theguardian.com/world/2020/apr/01/coronavirus-in-the-pacific-weekly-briefing;
 ;Fiji;01/04/2020;0;346;Fiji;;
 ;Fiji;02/04/2020;0;346;Fiji;;
@@ -16398,7 +16398,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Indonesia;25/10/2020;50457;2730231;Indonesia;https://covid19.disiplin.id/;
 ;Indonesia;26/10/2020;19038;2749269;Indonesia;https://covid19.disiplin.id/;
 ;Indonesia;27/10/2020;28700;2777969;Indonesia;https://covid19.disiplin.id/;
-;Indonesia;28/10/2020;0;2777969;Indonesia;https://covid19.disiplin.id/;
+;Indonesia;28/10/2020;52737;2830706;Indonesia;https://covid19.disiplin.id/;
 ;Iran (Islamic Republic of);14/03/2020;80000;80000;Iran;https://www.aa.com.tr/en/latest-on-coronavirus-outbreak/6-000-iranians-get-tested-daily-for-coronavirus/1766072;
 ;Iran (Islamic Republic of);15/03/2020;0;80000;Iran;;
 ;Iran (Islamic Republic of);16/03/2020;0;80000;Iran;;
@@ -17453,7 +17453,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Italy;25/10/2020;339549;14654002;Italy;http://arcg.is/C1unv;
 ;Italy;26/10/2020;124686;14778688;Italy;http://arcg.is/C1unv;
 ;Italy;27/10/2020;174398;14953086;Italy;http://arcg.is/C1unv;
-;Italy;28/10/2020;0;14953086;Italy;http://arcg.is/C1unv;
+;Italy;28/10/2020;198952;15152038;Italy;http://arcg.is/C1unv;
 ;Jamaica;27/03/2020;250;250;Jamaica;https://buzz-caribbean.com/news/coronavirus-cases-climb-to-30-in-jamaica/;
 ;Jamaica;28/03/2020;0;250;Jamaica;;
 ;Jamaica;29/03/2020;0;250;Jamaica;;
@@ -18071,7 +18071,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Jordan;25/10/2020;26840;1710076;Jordan;https://corona.moh.gov.jo/en;
 ;Jordan;26/10/2020;19159;1729235;Jordan;https://corona.moh.gov.jo/en;
 ;Jordan;27/10/2020;29606;1758841;Jordan;https://corona.moh.gov.jo/en;
-;Jordan;28/10/2020;0;1758841;Jordan;https://corona.moh.gov.jo/en;
+;Jordan;28/10/2020;24497;1783338;Jordan;https://corona.moh.gov.jo/en;
 ;Kazakhstan;12/03/2020;5093;5093;Kazakhstan;https://akipress.com/news:637166:Kazakhstan_orders_100;
 ;Kazakhstan;13/03/2020;0;5093;Kazakhstan;;
 ;Kazakhstan;14/03/2020;0;5093;Kazakhstan;;
@@ -19624,7 +19624,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Lebanon;25/10/2020;39975;1152198;Lebanon;https://corona.ministryinfo.gov.lb/;
 ;Lebanon;26/10/2020;4839;1157037;Lebanon;https://corona.ministryinfo.gov.lb/;
 ;Lebanon;27/10/2020;14330;1171367;Lebanon;https://corona.ministryinfo.gov.lb/;
-;Lebanon;28/10/2020;0;1171367;Lebanon;https://corona.ministryinfo.gov.lb/;
+;Lebanon;28/10/2020;14410;1185777;Lebanon;https://corona.ministryinfo.gov.lb/;
 ;Lesotho;03/05/2020;7;7;Lesotho;https://africacdc.org/covid-19/;
 ;Lesotho;04/05/2020;0;7;Lesotho;https://africacdc.org/covid-19/;
 ;Lesotho;05/05/2020;0;7;Lesotho;https://africacdc.org/covid-19/;
@@ -24142,7 +24142,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;New Caledonia;25/10/2020;16;15480;NewCaledonia;https://covid19.nc/point-de-situation-en-nouvelle-caledonie/;
 ;New Caledonia;26/10/2020;32;15512;NewCaledonia;https://covid19.nc/point-de-situation-en-nouvelle-caledonie/;
 ;New Caledonia;27/10/2020;0;15512;NewCaledonia;https://covid19.nc/point-de-situation-en-nouvelle-caledonie/;
-;New Caledonia;28/10/2020;0;15512;NewCaledonia;https://covid19.nc/point-de-situation-en-nouvelle-caledonie/;
+;New Caledonia;28/10/2020;112;15624;NewCaledonia;https://covid19.nc/point-de-situation-en-nouvelle-caledonie/;
 ;New Zealand;08/03/2020;224;224;NewZealand;https://www.health.govt.nz/news-media/media-releases/covid-19-novel-coronavirus-update-8-march;
 ;New Zealand;09/03/2020;41;265;NewZealand;https://www.health.govt.nz/news-media/media-releases/covid-19-novel-coronavirus-update-9-march;
 ;New Zealand;10/03/2020;0;265;NewZealand;;
@@ -25861,7 +25861,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Pakistan;25/10/2020;59733;4264053;Pakistan;http://covid.gov.pk/;
 ;Pakistan;26/10/2020;53625;4317678;Pakistan;http://covid.gov.pk/;
 ;Pakistan;27/10/2020;0;4317678;Pakistan;http://covid.gov.pk/;
-;Pakistan;28/10/2020;0;4317678;Pakistan;http://covid.gov.pk/;
+;Pakistan;28/10/2020;58926;4376604;Pakistan;http://covid.gov.pk/;
 ;Panama;10/03/2020;121;121;Panama;;
 ;Panama;11/03/2020;0;121;Panama;;
 ;Panama;12/03/2020;0;121;Panama;;
@@ -29178,7 +29178,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Saint Lucia;25/10/2020;556;10177;SaintLucia;https://www.covid19response.lc/;
 ;Saint Lucia;26/10/2020;114;10291;SaintLucia;https://www.covid19response.lc/;
 ;Saint Lucia;27/10/2020;150;10441;SaintLucia;https://www.covid19response.lc/;
-;Saint Lucia;28/10/2020;0;10441;SaintLucia;https://www.covid19response.lc/;
+;Saint Lucia;28/10/2020;176;10617;SaintLucia;https://www.covid19response.lc/;
 ;Saint Vincent and the Grenadines;03/05/2020;137;137;SaintVincentandtheGrenadines;https://www.facebook.com/SVGHEALTH/photos/a.872174376176320/3389994564394276/?type=3&theater;
 ;Saint Vincent and the Grenadines;04/05/2020;0;137;SaintVincentandtheGrenadines;;
 ;Saint Vincent and the Grenadines;05/05/2020;0;137;SaintVincentandtheGrenadines;;
@@ -30625,7 +30625,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Serbia;25/10/2020;11561;1283016;Serbia;https://covid19.rs/;
 ;Serbia;26/10/2020;6503;1289519;Serbia;https://covid19.rs/;
 ;Serbia;27/10/2020;9430;1298949;Serbia;https://covid19.rs/;
-;Serbia;28/10/2020;0;1298949;Serbia;https://covid19.rs/;
+;Serbia;28/10/2020;9690;1308639;Serbia;https://covid19.rs/;
 ;Seychelles;23/03/2020;11;11;Seychelles;https://www.africa-newsroom.com/press/coronavirus-seychelles-press-update?lang=en;
 ;Seychelles;24/03/2020;5;16;Seychelles;http://www.health.gov.sc/index.php/2020/03/25/press-update-25th-march-2020/;
 ;Seychelles;25/03/2020;0;16;Seychelles;;
@@ -31717,7 +31717,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Slovenia;25/10/2020;12801;326789;Slovenia;https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19/;
 ;Slovenia;26/10/2020;3682;330471;Slovenia;https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19/;
 ;Slovenia;27/10/2020;5756;336227;Slovenia;https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19/;
-;Slovenia;28/10/2020;0;336227;Slovenia;https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19/;
+;Slovenia;28/10/2020;7471;343698;Slovenia;https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19/;
 ;Somalia;03/05/2020;390;390;Somalia;https://africacdc.org/covid-19/;
 ;Somalia;04/05/2020;0;390;Somalia;https://africacdc.org/covid-19/;
 ;Somalia;05/05/2020;0;390;Somalia;https://africacdc.org/covid-19/;
@@ -33410,7 +33410,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Switzerland;25/10/2020;0;1726438;Switzerland;https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/situation-schweiz-und-international.html;
 ;Switzerland;26/10/2020;0;1726438;Switzerland;https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/situation-schweiz-und-international.html;
 ;Switzerland;27/10/2020;102735;1829173;Switzerland;https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/situation-schweiz-und-international.html;
-;Switzerland;28/10/2020;0;1829173;Switzerland;https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/situation-schweiz-und-international.html;
+;Switzerland;28/10/2020;30772;1859945;Switzerland;https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/situation-schweiz-und-international.html;
 ;Taiwan;21/01/2020;12;12;Taiwan;https://www.cdc.gov.tw/En;
 ;Taiwan;22/01/2020;44;56;Taiwan;https://www.cdc.gov.tw/En;
 ;Taiwan;23/01/2020;70;126;Taiwan;https://www.cdc.gov.tw/En;
@@ -34138,7 +34138,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Thailand;25/10/2020;3257;480861;Thailand;https://ddc.moph.go.th/viralpneumonia/eng/index.php;
 ;Thailand;26/10/2020;1599;482460;Thailand;https://ddc.moph.go.th/viralpneumonia/eng/index.php;
 ;Thailand;27/10/2020;1554;484014;Thailand;https://ddc.moph.go.th/viralpneumonia/eng/index.php;
-;Thailand;28/10/2020;0;484014;Thailand;https://ddc.moph.go.th/viralpneumonia/eng/index.php;
+;Thailand;28/10/2020;2179;486193;Thailand;https://ddc.moph.go.th/viralpneumonia/eng/index.php;
 ;The Bahamas;14/05/2020;1700;1700;TheBahamas;https://www.facebook.com/MOHBahamas/photos/pb.168430540206771.-2207520000../1114355982280884/?type=3&theater;
 ;The Bahamas;15/05/2020;47;1747;TheBahamas;https://www.facebook.com/photo/?fbid=1115182628864886&set=pb.168430540206771.-2207520000..;
 ;The Bahamas;16/05/2020;47;1794;TheBahamas;https://www.facebook.com/photo/?fbid=1115885742127908&set=pb.168430540206771.-2207520000..;
@@ -36063,7 +36063,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;Ukraine;25/10/2020;74685;3025148;Ukraine;https://covid19.gov.ua/en/;
 ;Ukraine;26/10/2020;28779;3053927;Ukraine;https://covid19.gov.ua/en/;
 ;Ukraine;27/10/2020;33361;3087288;Ukraine;https://covid19.gov.ua/en/;
-;Ukraine;28/10/2020;0;3087288;Ukraine;https://covid19.gov.ua/en/;
+;Ukraine;28/10/2020;89109;3176397;Ukraine;https://covid19.gov.ua/en/;
 ;United Arab Emirates;16/03/2020;0;125000;UnitedArabEmirates;https://twitter.com/mohapuae/status/1239510770133712896?s=20;
 ;United Arab Emirates;17/03/2020;0;125000;UnitedArabEmirates;;
 ;United Arab Emirates;18/03/2020;0;125000;UnitedArabEmirates;;
@@ -36975,7 +36975,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X
 ;USA;25/10/2020;3603779;132568375;US;https://covidtracking.com/data/#ME;
 ;USA;26/10/2020;1181685;133750060;US;https://covidtracking.com/data/#ME;
 ;USA;27/10/2020;-10024;133740036;US;https://covidtracking.com/data/#ME;
-;USA;28/10/2020;0;133740036;US;https://covidtracking.com/data/#ME;
+;USA;28/10/2020;5772965;139513001;US;https://covidtracking.com/data/#ME;
 ;Uzbekistan;30/03/2020;3713;3713;Uzbekistan;https://podrobno.uz/cat/obchestvo/v-uzbekistane-uzhe-proveli-svyshe-22-1-tysyachi-testov-na-koronavirus-/;
 ;Uzbekistan;31/03/2020;18437;22150;Uzbekistan;https://podrobno.uz/cat/obchestvo/v-uzbekistane-uzhe-proveli-svyshe-22-1-tysyachi-testov-na-koronavirus-/;
 ;Uzbekistan;01/04/2020;0;22150;Uzbekistan;;
