@@ -1138,7 +1138,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Argentina;08.05.20;2703;77901;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario;;2703;77901
 ;Argentina;09.05.20;2828;80729;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario;;2828;80729
 ;Argentina;10.05.20;2289;83018;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario;;2289;83018
-;Argentina;11.05.20;7257;85158;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario;;7257;85158
+;Argentina;11.05.20;2140;85158;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario;;2140;85158
 ;Argentina;12.05.20;2389;87547;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario;;2389;87547
 ;Argentina;13.05.20;2927;90474;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario;;2927;90474
 ;Argentina;14.05.20;3199;93673;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario;;3199;93673
@@ -1176,7 +1176,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Argentina;15.06.20;5571;239941;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario/junio2020;;5571;239941
 ;Argentina;16.06.20;5118;245059;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario/junio2020;;5118;245059
 ;Argentina;17.06.20;5556;250615;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario/junio2020;;5556;250615
-;Argentina;18.06.20;5556;250615;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario/junio2020;;5556;250615
+;Argentina;18.06.20;0;250615;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario/junio2020;;0;250615
 ;Argentina;19.06.20;13989;264604;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario/junio2020;;13989;264604
 ;Argentina;20.06.20;0;264604;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario/junio2020;;0;264604
 ;Argentina;21.06.20;15068;279672;Argentina;https://www.argentina.gob.ar/coronavirus/informe-diario/junio2020;;15068;279672
@@ -5203,7 +5203,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Brazil;26.10.20;0;15562972;Brazil;https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html;;0;15562972
 ;Brazil;27.10.20;0;15562972;Brazil;https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html;;0;15562972
 ;Brazil;28.10.20;0;15562972;Brazil;https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html;;0;15562972
-;Brazil;29.10.20;15925492;15971888;Brazil;https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html;;15925492;15971888
+;Brazil;29.10.20;408916;15971888;Brazil;https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html;;408916;15971888
 ;Brazil;30.10.20;0;15971888;Brazil;https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html;;0;15971888
 ;Brazil;31.10.20;0;15971888;Brazil;https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html;;0;15971888
 ;Brazil;01.11.20;0;15971888;Brazil;https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html;;0;15971888
@@ -6750,8 +6750,8 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Canada;29.10.20;67728;9873343;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;0;9662979
 ;Canada;30.10.20;0;9873343;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;0;9662979
 ;Canada;31.10.20;0;9873343;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;0;9662979
-;Canada;01.11.20;194092;10067435;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;194092;9662979
-;Canada;02.11.20;48597;10116032;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;48597;9662979
+;Canada;01.11.20;194092;10067435;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;0;9662979
+;Canada;02.11.20;48597;10116032;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;0;9662979
 ;Canada;03.11.20;0;10116032;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;0;9662979
 ;Canada;04.11.20;-453053;9662979;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;0;9662979
 ;Canada;05.11.20;37215;9700194;Canada;https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html?topic=tilelink;;37215;9700194
@@ -9586,7 +9586,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Denmark;09.06.20;15824;730924;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;15824;730924
 ;Denmark;10.06.20;8651;739575;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;8651;739575
 ;Denmark;11.06.20;9892;749467;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;9892;749467
-;Denmark;12.06.20;758229;771881;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;758229;771881
+;Denmark;12.06.20;22414;771881;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;22414;771881
 ;Denmark;13.06.20;14317;786198;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;14317;786198
 ;Denmark;14.06.20;13678;799876;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;13678;799876
 ;Denmark;15.06.20;0;799876;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;0;799876
@@ -9600,7 +9600,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Denmark;23.06.20;15493;939386;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;15493;939386
 ;Denmark;24.06.20;20690;960076;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;20690;960076
 ;Denmark;25.06.20;0;960076;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;0;960076
-;Denmark;26.06.20;998700;998736;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;998700;998736
+;Denmark;26.06.20;38660;998736;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;38660;998736
 ;Denmark;27.06.20;0;998736;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;0;998736
 ;Denmark;28.06.20;0;998736;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;0;998736
 ;Denmark;29.06.20;41311;1040047;Denmark;https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsovervaagning/c/covid19-overvaagning;;41311;1040047
@@ -9975,7 +9975,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Dominica;24.06.20;15;753;Dominica;https://www.facebook.com/SupportRooseveltSkerrit/photos/a.309955082479686/1823507131124466;;15;753
 ;Dominica;25.06.20;28;781;Dominica;https://www.facebook.com/SupportRooseveltSkerrit/photos/a.309955082479686/1824002781074901;;28;781
 ;Dominica;26.06.20;20;801;Dominica;https://www.facebook.com/SupportRooseveltSkerrit/photos/a.309955082479686/1824470834361429;;20;801
-;Dominica;27.06.20;0;820;Dominica;https://www.facebook.com/SupportRooseveltSkerrit/photos/a.309955082479686/1825723624236150;;0;820
+;Dominica;27.06.20;19;820;Dominica;https://www.facebook.com/SupportRooseveltSkerrit/photos/a.309955082479686/1825723624236150;;19;820
 ;Dominica;28.06.20;0;820;Dominica;https://www.facebook.com/SupportRooseveltSkerrit/photos/a.309955082479686/1826657370809442;;0;820
 ;Dominica;29.06.20;0;820;Dominica;https://www.facebook.com/SupportRooseveltSkerrit/photos/a.309955082479686/1827458274062685;;0;820
 ;Dominica;30.06.20;0;820;Dominica;https://www.facebook.com/SupportRooseveltSkerrit/photos/a.309955082479686/1815499798591866;;0;820
@@ -11345,7 +11345,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Estonia;11.03.20;0;350;Estonia;;;0;350
 ;Estonia;12.03.20;0;350;Estonia;;;0;350
 ;Estonia;13.03.20;0;350;Estonia;;;0;350
-;Estonia;14.03.20;0;843;Estonia;;;0;843
+;Estonia;14.03.20;493;843;Estonia;;;493;843
 ;Estonia;15.03.20;290;1133;Estonia;https://www.err.ee/1064218/eestis-on-koroonaviirus-tuvastatud-171-inimesel;;290;1133
 ;Estonia;16.03.20;254;1387;Estonia;https://news.err.ee/1064522/health-board-205-people-test-positive-for-coronavirus-more-cases-expected;;254;1387
 ;Estonia;17.03.20;213;1600;Estonia;https://news.err.ee/1065198/coronavirus-testing-extended-to-patients-with-mild-symptoms;;213;1600
@@ -11433,7 +11433,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Estonia;07.06.20;653;90070;Estonia;https://koroonakaart.ee/en;;653;90070
 ;Estonia;08.06.20;551;90621;Estonia;https://koroonakaart.ee/en;;551;90621
 ;Estonia;09.06.20;1113;91734;Estonia;https://koroonakaart.ee/en;;1113;91734
-;Estonia;10.06.20;5429;92886;Estonia;https://koroonakaart.ee/en;;5429;92886
+;Estonia;10.06.20;1152;92886;Estonia;https://koroonakaart.ee/en;;1152;92886
 ;Estonia;11.06.20;952;93838;Estonia;https://koroonakaart.ee/en;;952;93838
 ;Estonia;12.06.20;878;94716;Estonia;https://koroonakaart.ee/en;;878;94716
 ;Estonia;13.06.20;664;95380;Estonia;https://koroonakaart.ee/en;;664;95380
@@ -12044,7 +12044,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Faroe Islands;14.03.20;116;216;FaroeIslands;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;116;216
 ;Faroe Islands;15.03.20;111;327;FaroeIslands;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;111;327
 ;Faroe Islands;16.03.20;190;517;FaroeIslands;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;190;517
-;Faroe Islands;17.03.20;190;703;FaroeIslands;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;190;703
+;Faroe Islands;17.03.20;186;703;FaroeIslands;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;186;703
 ;Faroe Islands;18.03.20;230;933;FaroeIslands;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;230;933
 ;Faroe Islands;19.03.20;288;1221;FaroeIslands;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;288;1221
 ;Faroe Islands;20.03.20;420;1641;FaroeIslands;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;420;1641
@@ -12499,7 +12499,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Fiji;04.11.20;0;12758;Fiji;http://www.health.gov.fj/wp-content/uploads/2020/10/October-23rd-Updates.pdf;;0;12758
 ;Fiji;05.11.20;0;12758;Fiji;http://www.health.gov.fj/wp-content/uploads/2020/10/October-23rd-Updates.pdf;;0;12758
 ;Finland;02.03.20;130;130;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;130;130
-;Finland;03.03.20;130;130;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;130;130
+;Finland;03.03.20;0;130;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;0;130
 ;Finland;04.03.20;0;130;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;0;130
 ;Finland;05.03.20;0;130;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;0;130
 ;Finland;06.03.20;0;130;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;0;130
@@ -12509,12 +12509,12 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Finland;10.03.20;0;130;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;0;130
 ;Finland;11.03.20;590;720;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;590;720
 ;Finland;12.03.20;180;900;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;180;900
-;Finland;13.03.20;180;900;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;180;900
+;Finland;13.03.20;0;900;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;0;900
 ;Finland;14.03.20;0;900;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;0;900
 ;Finland;15.03.20;0;900;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;0;900
 ;Finland;16.03.20;0;900;Finland;https://thl.fi/en/web/infectious-diseases/what-s-new/coronavirus-covid-19-latest-updates;;0;900
 ;Finland;17.03.20;0;900;Finland;;;0;900
-;Finland;18.03.20;0;1900;Finland;https://www.iltalehti.fi/koronavirus/a/15ef38ec-be73-4f72-9565-5a581961b072;;0;1900
+;Finland;18.03.20;1000;1900;Finland;https://www.iltalehti.fi/koronavirus/a/15ef38ec-be73-4f72-9565-5a581961b072;;1000;1900
 ;Finland;19.03.20;1100;3000;Finland;https://www.iltalehti.fi/koronavirus/a/15ef38ec-be73-4f72-9565-5a581961b072;;1100;3000
 ;Finland;20.03.20;0;3000;Finland;;;0;3000
 ;Finland;21.03.20;0;3000;Finland;;;0;3000
@@ -12809,7 +12809,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;France;23.04.20;0;595154;France;;;0;595154
 ;France;24.04.20;0;595154;France;;;0;595154
 ;France;25.04.20;0;595154;France;;;0;595154
-;France;26.04.20;129420;595154;France;;;129420;595154
+;France;26.04.20;0;595154;France;;;0;595154
 ;France;27.04.20;0;595154;France;;;0;595154
 ;France;28.04.20;0;595154;France;;;0;595154
 ;France;29.04.20;0;595154;France;;;0;595154
@@ -14180,10 +14180,10 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Greece;24.03.20;0;3400;Greece;;;0;3400
 ;Greece;25.03.20;6600;10000;Greece;https://eody.gov.gr/enimerosi-diapisteymenon-syntakton-ygeias-apo-ton-yfypoyrgo-politikis-prostasias-kai-diacheirisis-kriseon-niko-chardalia-kai-ton-ekprosopo-toy-ypoyrgeioy-ygeias-gia-to-neo-koronoio-kathigiti-sotiri/;;6600;10000
 ;Greece;26.03.20;0;10000;Greece;;;0;10000
-;Greece;27.03.20;886;13477;Greece;https://eody.gov.gr/enimerosi-diapisteymenon-syntakton-ygeias-apo-ton-yfypoyrgo-politikis-prostasias-kai-diacheirisis-kriseon-niko-chardalia-kai-ton-ekprosopo-toy-ypoyrgeioy-ygeias-gia-to-neo-koronoio-kathigiti-sotir-2/;;886;13477
-;Greece;28.03.20;10963;14363;Greece;https://eody.gov.gr/enimerosi-diapisteymenon-syntakton-ygeia-gia-to-neo-koronoio3/;;10963;14363
+;Greece;27.03.20;3477;13477;Greece;https://eody.gov.gr/enimerosi-diapisteymenon-syntakton-ygeias-apo-ton-yfypoyrgo-politikis-prostasias-kai-diacheirisis-kriseon-niko-chardalia-kai-ton-ekprosopo-toy-ypoyrgeioy-ygeias-gia-to-neo-koronoio-kathigiti-sotir-2/;;3477;13477
+;Greece;28.03.20;886;14363;Greece;https://eody.gov.gr/enimerosi-diapisteymenon-syntakton-ygeia-gia-to-neo-koronoio3/;;886;14363
 ;Greece;29.03.20;788;15151;Greece;https://eody.gov.gr/enimerosi-diapisteymenon-syntakton-ygeias-gia-to-neo-koronoio3/;;788;15151
-;Greece;30.03.20;1598;15961;Greece;https://eody.gov.gr/19572/;;1598;15961
+;Greece;30.03.20;810;15961;Greece;https://eody.gov.gr/19572/;;810;15961
 ;Greece;31.03.20;771;16732;Greece;https://eody.gov.gr/enimerosi-diapisteymenon-syntakton-ygeias-apo-ton-yfypoyrgo-politikis-prostasias-kai-diacheirisis-kriseon-niko-chardalia-kai-ton-ekprosopo-toy-ypoyrgeioy-ygeias-gia-to-neo-koronoio-kathigiti-sotir-3/;;771;16732
 ;Greece;01.04.20;618;17350;Greece;https://eody.gov.gr/enimerosi-diapisteymenon-syntakton-ygeias-apo-ton-yfypoyrgo-politikis-prostasias-kai-diacheirisis-kriseon-niko-chardalia-kai-ton-ekprosopo-toy-ypoyrgeioy-ygeias-gia-to-neo-koronoio-kathigiti-sotir-4/;;618;17350
 ;Greece;02.04.20;1494;18844;Greece;https://eody.gov.gr/enimerosi-diapisteymenon-syntakton-ygeias-apo-ton-yfypoyrgo-politikis-prostasias-kai-diacheirisis-kriseon-niko-chardalia-kai-ton-ekprosopo-toy-ypoyrgeioy-ygeias-gia-to-neo-koronoio-kathigiti-sotir-5/;;1494;18844
@@ -14221,7 +14221,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Greece;04.05.20;2744;80951;Greece;https://eody.gov.gr/0504_briefing_covid19/;;2744;80951
 ;Greece;05.05.20;2799;83750;Greece;https://eody.gov.gr/0504_briefing_covid19/;;2799;83750
 ;Greece;06.05.20;3302;87052;Greece;https://eody.gov.gr/0504_briefing_covid19/;;3302;87052
-;Greece;07.05.20;9092;90043;Greece;https://eody.gov.gr/0507_briefing_covid19/;;9092;90043
+;Greece;07.05.20;2991;90043;Greece;https://eody.gov.gr/0507_briefing_covid19/;;2991;90043
 ;Greece;08.05.20;4248;94291;Greece;https://eody.gov.gr/0508_briefing_covid19/;;4248;94291
 ;Greece;09.05.20;3093;97384;Greece;https://eody.gov.gr/anakoinosi-gia-tin-exelixi-tis-nosoy-covid-19-sti-chora-mas-9-5-2020/;;3093;97384
 ;Greece;10.05.20;1493;98877;Greece;https://eody.gov.gr/0507_briefing_covid19/;;1493;98877
@@ -14237,7 +14237,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Greece;20.05.20;3444;139445;Greece;https://eody.gov.gr/0520_briefing_covid19/;;3444;139445
 ;Greece;21.05.20;4633;144078;Greece;https://eody.gov.gr/0521_briefing_covid19/;;4633;144078
 ;Greece;22.05.20;3880;147958;Greece;https://eody.gov.gr/0522_briefing_covid19/;;3880;147958
-;Greece;23.05.20;8920;152998;Greece;https://eody.gov.gr/0523_briefing_covid19/;;8920;152998
+;Greece;23.05.20;5040;152998;Greece;https://eody.gov.gr/0523_briefing_covid19/;;5040;152998
 ;Greece;24.05.20;965;153963;Greece;https://eody.gov.gr/0524_briefing_covid19/;;965;153963
 ;Greece;25.05.20;1074;155037;Greece;https://eody.gov.gr/anakoinosi-gia-tin-exelixi-tis-nosoy-covid-19-sti-chora-mas-25-5-2020/;;1074;155037
 ;Greece;26.05.20;5954;160991;Greece;https://eody.gov.gr/0526_briefing_covid19/;;5954;160991
@@ -14281,7 +14281,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Greece;03.07.20;5024;325451;Greece;https://eody.gov.gr/wp-content/uploads/2020/07/covid-gr-daily-report-20200703.pdf;;5024;325451
 ;Greece;04.07.20;6252;331703;Greece;https://eody.gov.gr/wp-content/uploads/2020/07/covid-gr-daily-report-20200704.pdf;;6252;331703
 ;Greece;05.07.20;5451;337154;Greece;https://eody.gov.gr/wp-content/uploads/2020/07/covid-gr-daily-report-20200705.pdf;;5451;337154
-;Greece;06.07.20;27553;340328;Greece;https://eody.gov.gr/wp-content/uploads/2020/07/covid-gr-daily-report-20200706.pdf;;27553;340328
+;Greece;06.07.20;3174;340328;Greece;https://eody.gov.gr/wp-content/uploads/2020/07/covid-gr-daily-report-20200706.pdf;;3174;340328
 ;Greece;07.07.20;8756;349084;Greece;https://eody.gov.gr/wp-content/uploads/2020/07/covid-gr-daily-report-20200707.pdf;;8756;349084
 ;Greece;08.07.20;6106;355190;Greece;https://eody.gov.gr/wp-content/uploads/2020/07/covid-gr-daily-report-20200708.pdf;;6106;355190
 ;Greece;09.07.20;3535;358725;Greece;https://eody.gov.gr/wp-content/uploads/2020/07/covid-gr-daily-report-20200709.pdf;;3535;358725
@@ -14367,7 +14367,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Greece;27.09.20;228328;1278587;Greece;https://eody.gov.gr/wp-content/uploads/2020/09/covid-gr-daily-report-27-09-2020.pdf;;228328;1278587
 ;Greece;28.09.20;6107;1284694;Greece;https://eody.gov.gr/wp-content/uploads/2020/09/covid-gr-daily-report-28-09-2020.pdf;;6107;1284694
 ;Greece;29.09.20;12101;1296795;Greece;https://eody.gov.gr/wp-content/uploads/2020/09/covid-gr-daily-report-29-09-20.pdf;;12101;1296795
-;Greece;30.09.20;28962;1307549;Greece;https://eody.gov.gr/wp-content/uploads/2020/09/covid-gr-daily-report-30-09-2020.pdf;;28962;1307549
+;Greece;30.09.20;10754;1307549;Greece;https://eody.gov.gr/wp-content/uploads/2020/09/covid-gr-daily-report-30-09-2020.pdf;;10754;1307549
 ;Greece;01.10.20;10787;1318336;Greece;https://eody.gov.gr/wp-content/uploads/2020/10/covid-gr-daily-report-20201001.pdf;;10787;1318336
 ;Greece;02.10.20;9706;1328042;Greece;https://eody.gov.gr/wp-content/uploads/2020/10/covid-gr-daily-report-20201001.pdf;;9706;1328042
 ;Greece;03.10.20;11622;1339664;Greece;https://eody.gov.gr/wp-content/uploads/2020/10/covid-gr-daily-report-20201003.pdf;;11622;1339664
@@ -14405,7 +14405,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Greece;04.11.20;0;1804016;Greece;https://eody.gov.gr/wp-content/uploads/2020/11/covid-gr-daily-report-20201101.pdf;;0;1804016
 ;Greece;05.11.20;0;1804016;Greece;https://eody.gov.gr/wp-content/uploads/2020/11/covid-gr-daily-report-20201101.pdf;;0;1804016
 ;Greenland;22.03.20;169;169;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;169;169
-;Greenland;23.03.20;35;194;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;35;194
+;Greenland;23.03.20;25;194;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;25;194
 ;Greenland;24.03.20;9;203;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;9;203
 ;Greenland;25.03.20;62;265;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;62;265
 ;Greenland;26.03.20;10;275;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;10;275
@@ -14442,7 +14442,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Greenland;26.04.20;0;1200;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;0;1200
 ;Greenland;27.04.20;16;1216;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;16;1216
 ;Greenland;28.04.20;0;1216;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;0;1216
-;Greenland;29.04.20;1216;1230;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;1216;1230
+;Greenland;29.04.20;14;1230;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;14;1230
 ;Greenland;30.04.20;13;1243;Greenland;https://www.ssi.dk/aktuelt/sygdomsudbrud/coronavirus;;13;1243
 ;Greenland;01.05.20;0;1243;Greenland;;;0;1243
 ;Greenland;02.05.20;0;1243;Greenland;;;0;1243
@@ -15283,7 +15283,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Guinea;29.10.20;0;209158;Guinea;https://africacdc.org/covid-19/;;0;209158
 ;Guinea;30.10.20;0;209158;Guinea;https://africacdc.org/covid-19/;;0;209158
 ;Guinea;31.10.20;0;209158;Guinea;https://africacdc.org/covid-19/;;0;209158
-;Guinea;01.11.20;22406;210909;Guinea;https://africacdc.org/covid-19/;;22406;210909
+;Guinea;01.11.20;1751;210909;Guinea;https://africacdc.org/covid-19/;;1751;210909
 ;Guinea;02.11.20;0;210909;Guinea;https://africacdc.org/covid-19/;;0;210909
 ;Guinea;03.11.20;0;210909;Guinea;https://africacdc.org/covid-19/;;0;210909
 ;Guinea;04.11.20;4827;215736;Guinea;https://africacdc.org/covid-19/;;4827;215736
@@ -15498,7 +15498,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Guyana;08.06.20;450;1816;Guyana;https://newsroom.gy/2020/06/08/no-new-covid-19-case-recorded-four-more-persons-recover/;;450;1816
 ;Guyana;09.06.20;38;1854;Guyana;https://newsroom.gy/2020/06/09/two-new-covid-19-cases-reported-from-38-more-tests/;;38;1854
 ;Guyana;10.06.20;22;1876;Guyana;https://newsroom.gy/2020/05/20/no-new-covid-19-cases-recorded-ministry-urges-men-to-stay-at-home/;;22;1876
-;Guyana;11.06.20;554;1920;Guyana;https://newsroom.gy/2020/06/11/two-new-covid-19-cases-recorded-from-44-more-tests/;;554;1920
+;Guyana;11.06.20;44;1920;Guyana;https://newsroom.gy/2020/06/11/two-new-covid-19-cases-recorded-from-44-more-tests/;;44;1920
 ;Guyana;12.06.20;7;1927;Guyana;https://newsroom.gy/2020/06/12/one-new-covid-19-case-recorded-from-7-tests/;;7;1927
 ;Guyana;13.06.20;0;1927;Guyana;https://newsroom.gy/2020/06/12/one-new-covid-19-case-recorded-from-7-tests/;;0;1927
 ;Guyana;14.06.20;32;1959;Guyana;https://newsroom.gy/2020/06/14/no-new-covid-19-case-four-new-recoveries/;;32;1959
@@ -15529,7 +15529,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Guyana;09.07.20;0;3019;Guyana;https://newsroom.gy/2020/07/04/16-new-covid-19-cases-in-24-hours/;;0;3019
 ;Guyana;10.07.20;93;3112;Guyana;https://newsroom.gy/2020/07/10/four-new-covid-19-cases/;;93;3112
 ;Guyana;11.07.20;54;3166;Guyana;https://newsroom.gy/2020/07/11/one-new-covid-19-case-14-more-recoveries/;;54;3166
-;Guyana;12.07.20;473;3252;Guyana;https://newsroom.gy/2020/07/12/six-new-covid-19-cases-five-persons-in-icu/;;473;3252
+;Guyana;12.07.20;86;3252;Guyana;https://newsroom.gy/2020/07/12/six-new-covid-19-cases-five-persons-in-icu/;;86;3252
 ;Guyana;13.07.20;0;3252;Guyana;https://newsroom.gy/2020/07/12/six-new-covid-19-cases-five-persons-in-icu/;;0;3252
 ;Guyana;14.07.20;127;3379;Guyana;https://newsroom.gy/2020/07/14/8-new-covid-19-cases-from-49-tests/;;127;3379
 ;Guyana;15.07.20;39;3418;Guyana;https://newsroom.gy/2020/07/15/covid-19-cases-now-at-313-31-children-below-age-12-are-positive/;;39;3418
@@ -26182,7 +26182,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Norway;02.11.20;0;1711988;Norway;https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/;;0;1711988
 ;Norway;03.11.20;17713;1729701;Norway;https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/;;17713;1729701
 ;Norway;04.11.20;24466;1754167;Norway;https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/;;24466;1754167
-;Norway;05.11.20;-1754067;100;Norway;https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/;;-1754067;100
+;Norway;05.11.20;-1754067;100;Norway;https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/;;0;1754167
 ;Occupied Palestinian Territory;16.03.20;2519;2519;occupiedPalestinianterritory;https://www.facebook.com/mohps/photos/pb.269187066540512.-2207520000../2685682508224277/?type=3&theater;;2519;2519
 ;Occupied Palestinian Territory;17.03.20;0;2519;occupiedPalestinianterritory;;;0;2519
 ;Occupied Palestinian Territory;18.03.20;771;3290;occupiedPalestinianterritory;https://www.facebook.com/mohps/photos/a.269235766535642/2689979221127939/?type=3&theater;;771;3290
@@ -33692,15 +33692,15 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Spain;04.09.20;0;9219337;Spain;https://www.mscbs.gob.es/gabinete/notasPrensa.do?id=5026;;0;9219337
 ;Spain;05.09.20;0;9219337;Spain;https://www.mscbs.gob.es/gabinete/notasPrensa.do?id=5026;;0;9219337
 ;Spain;06.09.20;0;9219337;Spain;https://www.mscbs.gob.es/gabinete/notasPrensa.do?id=5026;;0;9219337
-;Spain;07.09.20;780663;1;;;;;
-;Spain;08.09.20;0;1;;;;;
-;Spain;09.09.20;0;1;;;;;
-;Spain;10.09.20;0;1;;;;;
-;Spain;11.09.20;0;1;;;;;
-;Spain;12.09.20;0;1;;;;;
-;Spain;13.09.20;0;1;;;;;
-;Spain;14.09.20;7;;;;;;
-;Spain;15.09.20;0;10700000;Spain;https://www.mscbs.gob.es/gabinete/notasPrensa.do?id=5045;;0;10700000
+;Spain;07.09.20;780663;10000000;Spain;;;780663;10000000
+;Spain;08.09.20;0;10000000;Spain;;;0;10000000
+;Spain;09.09.20;0;10000000;Spain;;;0;10000000
+;Spain;10.09.20;0;10000000;Spain;;;0;10000000
+;Spain;11.09.20;0;10000000;Spain;;;0;10000000
+;Spain;12.09.20;0;10000000;Spain;;;0;10000000
+;Spain;13.09.20;0;10000000;Spain;;;0;10000000
+;Spain;14.09.20;0;10000000;Spain;;;0;10000000
+;Spain;15.09.20;700000;10700000;Spain;https://www.mscbs.gob.es/gabinete/notasPrensa.do?id=5045;;700000;10700000
 ;Spain;16.09.20;0;10700000;Spain;https://www.mscbs.gob.es/gabinete/notasPrensa.do?id=5045;;0;10700000
 ;Spain;17.09.20;0;10700000;Spain;https://www.mscbs.gob.es/gabinete/notasPrensa.do?id=5045;;0;10700000
 ;Spain;18.09.20;0;10700000;Spain;https://www.mscbs.gob.es/gabinete/notasPrensa.do?id=5045;;0;10700000
@@ -37020,28 +37020,28 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;UK;25.05.20;73729;3532634;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;73729;3532634
 ;UK;26.05.20;148661;3681295;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;148661;3681295
 ;UK;27.05.20;117195;3798490;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;117195;3798490
-;UK;28.05.20;117013;3798490;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;117013;3798490
-;UK;29.05.20;119587;3918079;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;119587;3918079
-;UK;30.05.20;131458;4043686;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;131458;4043686
-;UK;31.05.20;115725;4285738;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;115725;4285738
-;UK;01.06.20;128437;4484340;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;128437;4484340
-;UK;02.06.20;135643;4615146;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;135643;4615146
-;UK;03.06.20;171829;4786219;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;171829;4786219
-;UK;04.06.20;220057;5005565;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;220057;5005565
-;UK;05.06.20;207231;5214277;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;207231;5214277
-;UK;06.06.20;218187;5438712;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;218187;5438712
-;UK;07.06.20;142123;5581073;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;142123;5581073
-;UK;08.06.20;138183;5731576;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;138183;5731576
-;UK;09.06.20;102930;5870506;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;102930;5870506
-;UK;10.06.20;170379;6042622;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;170379;6042622
-;UK;11.06.20;197007;6240801;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;197007;6240801
-;UK;12.06.20;193253;6434713;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;193253;6434713
-;UK;13.06.20;188794;6624676;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;188794;6624676
-;UK;14.06.20;144865;6772602;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;144865;6772602
-;UK;15.06.20;93163;6866481;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;93163;6866481
-;UK;16.06.20;113107;6981493;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;113107;6981493
-;UK;17.06.20;140359;7121976;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;140359;7121976
-;UK;18.06.20;136516;7259555;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;136516;7259555
+;UK;28.05.20;0;3798490;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;3798490
+;UK;29.05.20;119589;3918079;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;119589;3918079
+;UK;30.05.20;125607;4043686;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;125607;4043686
+;UK;31.05.20;242052;4285738;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;242052;4285738
+;UK;01.06.20;198602;4484340;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;198602;4484340
+;UK;02.06.20;130806;4615146;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;130806;4615146
+;UK;03.06.20;171073;4786219;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;171073;4786219
+;UK;04.06.20;219346;5005565;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;219346;5005565
+;UK;05.06.20;208712;5214277;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;208712;5214277
+;UK;06.06.20;224435;5438712;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;224435;5438712
+;UK;07.06.20;142361;5581073;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;142361;5581073
+;UK;08.06.20;150503;5731576;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;150503;5731576
+;UK;09.06.20;138930;5870506;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;138930;5870506
+;UK;10.06.20;172116;6042622;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;172116;6042622
+;UK;11.06.20;198179;6240801;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;198179;6240801
+;UK;12.06.20;193912;6434713;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;193912;6434713
+;UK;13.06.20;189963;6624676;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;189963;6624676
+;UK;14.06.20;147926;6772602;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;147926;6772602
+;UK;15.06.20;93879;6866481;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;93879;6866481
+;UK;16.06.20;115012;6981493;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;115012;6981493
+;UK;17.06.20;140483;7121976;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;140483;7121976
+;UK;18.06.20;137579;7259555;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;137579;7259555
 ;UK;19.06.20;0;7259555;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;7259555
 ;UK;20.06.20;0;7259555;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;7259555
 ;UK;21.06.20;0;7259555;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;7259555
@@ -37050,14 +37050,14 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;UK;24.06.20;232257;8542186;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;232257;8542186
 ;UK;25.06.20;168106;8710292;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;168106;8710292
 ;UK;26.06.20;200934;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;200934;8911226
-;UK;27.06.20;156351;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;156351;8911226
-;UK;28.06.20;127555;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;127555;8911226
-;UK;29.06.20;95083;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;95083;8911226
-;UK;30.06.20;133467;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;133467;8911226
-;UK;01.07.20;226398;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;226398;8911226
-;UK;02.07.20;226398;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;226398;8911226
-;UK;03.07.20;205673;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;205673;8911226
-;UK;04.07.20;205673;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;205673;8911226
+;UK;27.06.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
+;UK;28.06.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
+;UK;29.06.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
+;UK;30.06.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
+;UK;01.07.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
+;UK;02.07.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
+;UK;03.07.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
+;UK;04.07.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
 ;UK;05.07.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
 ;UK;06.07.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
 ;UK;07.07.20;0;8911226;UnitedKingdom;https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases;;0;8911226
@@ -37416,7 +37416,7 @@ ind;country;date;new_tests;tests_cumulative;jhu_ID;source;X;new_tests_corrected;
 ;Ukraine;03.11.20;34818;3379029;Ukraine;https://covid19.gov.ua/en/;;34818;3379029
 ;Ukraine;04.11.20;7460;3386489;Ukraine;https://covid19.gov.ua/en/;;7460;3386489
 ;Ukraine;05.11.20;0;3386489;Ukraine;https://covid19.gov.ua/en/;;0;3386489
-;United Arab Emirates;16.03.20;0;125000;UnitedArabEmirates;https://twitter.com/mohapuae/status/1239510770133712896?s=20;;0;125000
+;United Arab Emirates;16.03.20;0;125000;UnitedArabEmirates;https://twitter.com/mohapuae/status/1239510770133712896?s=20;;125000;125000
 ;United Arab Emirates;17.03.20;0;125000;UnitedArabEmirates;;;0;125000
 ;United Arab Emirates;18.03.20;0;125000;UnitedArabEmirates;;;0;125000
 ;United Arab Emirates;19.03.20;0;125000;UnitedArabEmirates;;;0;125000
