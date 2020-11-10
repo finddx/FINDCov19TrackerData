@@ -21,22 +21,106 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "c5a2a12a-33d2-4de5-bfcd-229e6511acf6",
+      "id": "8fd46e33-fe32-4c9e-abab-b7e042969726",
       "comment": "",
-      "command": "storeText",
+      "command": "waitForElementNotPresent",
       "target": "css=.ng-scope:nth-child(1) > .ng-binding:nth-child(2)",
       "targets": [
         ["css=.ng-scope:nth-child(1) > .ng-binding:nth-child(2)", "css:finder"],
         ["xpath=//div[@id='widgetzfDpnUy']/div/table/tbody/tr/td[2]", "xpath:idRelative"],
         ["xpath=//td[2]", "xpath:position"],
-        ["xpath=//td[contains(.,'2,759,165')]", "xpath:innerText"]
+        ["xpath=//td[contains(.,'8,303,374')]", "xpath:innerText"]
       ],
+      "value": "30000"
+    }, {
+      "id": "c5a2a12a-33d2-4de5-bfcd-229e6511acf6",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.ng-scope:nth-child(1) > .ng-binding:nth-child(2)",
+      "targets": [],
       "value": "tests"
     }, {
       "id": "a032770d-7967-4444-8273-212f0e5fa742",
       "comment": "",
       "command": "echo",
       "target": "Australia;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "36cf3d3d-f3e5-42db-a8d8-db3ee7d66cd0",
+      "comment": "",
+      "command": "open",
+      "target": "https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d5fea36c-91a2-4872-ace8-c14d16c582ed",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.total_tests > .numbers",
+      "targets": [
+        ["css=.total_tests > .numbers", "css:finder"],
+        ["xpath=//covid19-summary[@id='covid19-summary-id']/div/div[3]/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[3]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "0847f803-0c45-41d2-98d2-910e4eb1762c",
+      "comment": "",
+      "command": "echo",
+      "target": "United Arab Emirates;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd29780b-6bf9-40ab-9ce4-c615dd5abbdd",
+      "comment": "",
+      "command": "open",
+      "target": "https://koroonakaart.ee/data.json",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c42555d-61fd-4474-945d-91797265b30a",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.row:nth-child(2) > .statsbar-item:nth-child(4) > h1",
+      "targets": [
+        ["css=.row:nth-child(2) > .statsbar-item:nth-child(4) > h1", "css:finder"],
+        ["xpath=//div[@id='statsbar-container']/div[2]/div[4]/h1", "xpath:idRelative"],
+        ["xpath=//div[4]/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'280693')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "c00fb0f8-475c-437d-bcb1-c16a813c2bc5",
+      "comment": "",
+      "command": "echo",
+      "target": "Estonia;${tests}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e31321e-0556-439b-a60a-93a9da808197",
+      "comment": "",
+      "command": "open",
+      "target": "https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed53daa7-1c97-444d-ab70-ae5610680e04",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.numTested",
+      "targets": [
+        ["css=.numTested", "css:finder"],
+        ["xpath=//main[@id='main']/p[4]/strong/span", "xpath:idRelative"],
+        ["xpath=//p[4]/strong/span", "xpath:position"],
+        ["xpath=//span[contains(.,'9,986,069')]", "xpath:innerText"]
+      ],
+      "value": "tests"
+    }, {
+      "id": "df621e32-5e7b-433c-9016-4982c9b3daa2",
+      "comment": "",
+      "command": "echo",
+      "target": "Canada;${tests}",
       "targets": [],
       "value": ""
     }, {
@@ -70,7 +154,7 @@
       "id": "16a855bf-cb19-4332-8c24-70ddf1d78ff4",
       "comment": "",
       "command": "open",
-      "target": "https://www.fhi.no/sv/smittsomme-sykdommer/corona/dags--og-ukerapporter/dags--og-ukerapporter-om-koronavirus/",
+      "target": "https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/",
       "targets": [],
       "value": ""
     }, {
@@ -80,9 +164,9 @@
       "target": "css=.fhi-key-figure:nth-child(1) span",
       "targets": [
         ["css=.fhi-key-figure:nth-child(1) span", "css:finder"],
-        ["xpath=//div[@id='kfr57083495']/div/div/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[@id='kfr55197485']/div/div/div/div/div/div/span", "xpath:idRelative"],
         ["xpath=//div/div/div/div/div/span", "xpath:position"],
-        ["xpath=//span[contains(.,'1,095,488')]", "xpath:innerText"]
+        ["xpath=//span[contains(.,'1,605,142')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
@@ -103,12 +187,9 @@
       "id": "cec8da49-6ae1-4a28-9657-3a5d376c5ce7",
       "comment": "",
       "command": "storeText",
-      "target": "css=ul:nth-child(9) > li:nth-child(2) > strong",
+      "target": "css=path",
       "targets": [
-        ["css=ul:nth-child(9) > li:nth-child(2) > strong", "css:finder"],
-        ["xpath=//body[@id='module_Structure']/div[3]/div[2]/div[3]/div[3]/ul[2]/li[2]/strong", "xpath:idRelative"],
-        ["xpath=//ul[2]/li[2]/strong", "xpath:position"],
-        ["xpath=//strong[contains(.,'695521 (iš jų – 189764 iš mobilių punktų).')]", "xpath:innerText"]
+        ["css=path", "css:finder"]
       ],
       "value": "tests"
     }, {
@@ -122,19 +203,18 @@
       "id": "0d35240a-6d95-4f24-a21d-455fe28a4597",
       "comment": "",
       "command": "open",
-      "target": "https://koronavirus.gov.mk/vesti",
+      "target": "https://datastudio.google.com/embed/u/0/reporting/9f5104d0-12fd-4e16-9a11-993685cfd40f/page/1M",
       "targets": [],
       "value": ""
     }, {
       "id": "94741093-d868-4253-a549-4e87b2b17757",
       "comment": "",
       "command": "storeText",
-      "target": "css=#table_2_row_0 > .numdata:nth-child(8)",
+      "target": "css=.cd-vmd90p9a8b .valueLabel",
       "targets": [
-        ["css=#table_2_row_0 > .numdata:nth-child(8)", "css:finder"],
-        ["xpath=//tr[@id='table_2_row_0']/td[8]", "xpath:idRelative"],
-        ["xpath=//td[8]", "xpath:position"],
-        ["xpath=//td[contains(.,'141,842')]", "xpath:innerText"]
+        ["css=.cd-vmd90p9a8b .valueLabel", "css:finder"],
+        ["xpath=//div[@id='body']/div/div/div/div[2]/div/div/div/div/div/lego-report/lego-canvas-container/div/file-drop-zone/span/content-section/div[39]/canvas-component/div/div/div/div/div/kpimetric/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[39]/canvas-component/div/div/div/div/div/kpimetric/div/div[2]", "xpath:position"]
       ],
       "value": "tests"
     }, {
@@ -249,32 +329,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "faccfed7-700c-46a4-8861-eede41598b89",
-      "comment": "",
-      "command": "open",
-      "target": "https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "aea0567c-3cae-49d2-97c2-379d343d1329",
-      "comment": "",
-      "command": "storeText",
-      "target": "css=span:nth-child(1) > span > span > b:nth-child(1)",
-      "targets": [
-        ["css=span:nth-child(1) > span > span > b:nth-child(1)", "css:finder"],
-        ["xpath=//section[@id='portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm']/div/div[2]/div/div[2]/ul/li[2]/span[2]/span/span/span/b", "xpath:idRelative"],
-        ["xpath=//span[2]/span/span/span/b", "xpath:position"],
-        ["xpath=//b[contains(.,'950 500')]", "xpath:innerText"]
-      ],
-      "value": "tests"
-    }, {
-      "id": "fee3dff9-1b07-4f01-81ea-8659fa95b636",
-      "comment": "",
-      "command": "echo",
-      "target": "Finland;${tests}",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "9d98b3c4-9ad4-4eb2-8db6-2fa3030a8501",
       "comment": "",
       "command": "open",
@@ -285,11 +339,11 @@
       "id": "5b20acbd-73c8-44d0-9ae9-9068c032251b",
       "comment": "",
       "command": "storeText",
-      "target": "css=.jsx-188063653 > .value",
+      "target": "css=.counter-container > .jsx-792689997",
       "targets": [
-        ["css=.jsx-188063653 > .value", "css:finder"],
-        ["xpath=//div[@id='__next']/div/main/div/div/div[3]/div[4]/div[2]/div/div/div", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/div", "xpath:position"]
+        ["css=.counter-container > .jsx-792689997", "css:finder"],
+        ["xpath=//div[@id='__next']/div/main/div/div/div[3]/div/div/div[4]/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div/div", "xpath:position"]
       ],
       "value": "tests"
     }, {
@@ -310,22 +364,22 @@
       "id": "830c4ae1-326e-40eb-a386-98b5326dca2b",
       "comment": "",
       "command": "waitForElementVisible",
-      "target": "css=.styles_close-button_3o_3V0LFapvrEIlnh_hT8P > .icon",
+      "target": "css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number",
       "targets": [
-        ["css=.styles_close-button_3o_3V0LFapvrEIlnh_hT8P > .icon", "css:finder"],
-        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[3]/div/div/button/span", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div/div/div[3]/div/div/button/span", "xpath:position"]
+        ["css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number", "css:finder"],
+        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[2]/div/div/div/div[6]/div[3]/span/span", "xpath:idRelative"],
+        ["xpath=//div[6]/div[3]/span/span", "xpath:position"]
       ],
       "value": "30000"
     }, {
       "id": "74f37579-c698-410d-811d-cfe0153daf11",
       "comment": "",
       "command": "storeText",
-      "target": "css=.styles_close-button_3o_3V0LFapvrEIlnh_hT8P > .icon",
+      "target": "css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number",
       "targets": [
-        ["css=.styles_close-button_3o_3V0LFapvrEIlnh_hT8P > .icon", "css:finder"],
-        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[3]/div/div/button/span", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div/div/div[3]/div/div/button/span", "xpath:position"]
+        ["css=.styles_info-item_15P0j1vOg4bSCQmNgla5Te:nth-child(7) .number", "css:finder"],
+        ["xpath=//div[@id='covid-returnee-root']/div/div/div/div[2]/div/div/div/div[6]/div[3]/span/span", "xpath:idRelative"],
+        ["xpath=//div[6]/div[3]/span/span", "xpath:position"]
       ],
       "value": "tests"
     }, {
@@ -343,21 +397,12 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "9a90b5ea-b61b-4a12-82e7-f26c52dcc56e",
-      "comment": "",
-      "command": "waitForElementVisible",
-      "target": "css=#ember207 text",
-      "targets": [
-        ["css=#ember207 text", "css:finder"]
-      ],
-      "value": "30000"
-    }, {
       "id": "02a1996f-e282-48bf-9d11-30b19e19e555",
       "comment": "",
       "command": "storeText",
-      "target": "css=#ember207 text",
+      "target": "css=#ember229 text",
       "targets": [
-        ["css=#ember207 text", "css:finder"]
+        ["css=#ember229 text", "css:finder"]
       ],
       "value": "tests"
     }, {
@@ -438,9 +483,9 @@
       "target": "css=.ms-rteTable-default:nth-child(17) .ms-rteTable-default:nth-child(2) > strong",
       "targets": [
         ["css=.ms-rteTable-default:nth-child(17) .ms-rteTable-default:nth-child(2) > strong", "css:finder"],
-        ["xpath=//div[@id='WebPartWPQ13']/table/tbody/tr[3]/td/table/tbody/tr[2]/td/div/table[3]/tbody/tr[2]/td[2]/strong", "xpath:idRelative"],
-        ["xpath=//table[3]/tbody/tr[2]/td[2]/strong", "xpath:position"],
-        ["xpath=//strong[contains(.,'60,615 tests')]", "xpath:innerText"]
+        ["xpath=//div[@id='WebPartWPQ13']/table/tbody/tr[3]/td/table/tbody/tr[2]/td/div/table[4]/tbody/tr[2]/td[2]/strong", "xpath:idRelative"],
+        ["xpath=//table[4]/tbody/tr[2]/td[2]/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'65,663 tests')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
@@ -586,26 +631,19 @@
       "id": "e1a01378-b2ce-47b7-942c-4dd2db921637",
       "comment": "",
       "command": "open",
-      "target": "https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-current-situation/covid-19-current-cases",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "834022d7-3e96-4961-91f9-85700962ac6b",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=Lab testing",
+      "target": "https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data",
       "targets": [],
       "value": ""
     }, {
       "id": "9ac36e94-4cdd-4bf9-ae34-6ba0e309e8a9",
       "comment": "",
       "command": "storeText",
-      "target": "css=.table-responsive:nth-child(54) tr:nth-child(3) > td:nth-child(2)",
+      "target": "css=.table-responsive:nth-child(9) tr:nth-child(1) > td",
       "targets": [
-        ["css=.table-responsive:nth-child(54) tr:nth-child(3) > td:nth-child(2)", "css:finder"],
-        ["xpath=//article[@id='node-10813']/div[2]/div/div/div[7]/table/tbody/tr[3]/td", "xpath:idRelative"],
-        ["xpath=//div[7]/table/tbody/tr[3]/td", "xpath:position"],
-        ["xpath=//td[contains(.,'395,510')]", "xpath:innerText"]
+        ["css=.table-responsive:nth-child(9) tr:nth-child(1) > td", "css:finder"],
+        ["xpath=//article[@id='node-10928']/div[2]/div/div/div[3]/table/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//div[3]/table/tbody/tr/td", "xpath:position"],
+        ["xpath=//td[contains(.,'1,139,978')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
@@ -647,11 +685,11 @@
       "id": "ed55514c-4d6a-4bec-9140-8581982c10eb",
       "comment": "",
       "command": "storeText",
-      "target": "css=.InfographicEditor-Contents-Item:nth-child(15) .igc-textual-figure > div",
+      "target": "css=.InfographicEditor-Contents-Item:nth-child(11) .igc-textual-figure > div",
       "targets": [
-        ["css=.InfographicEditor-Contents-Item:nth-child(15) .igc-textual-figure > div", "css:finder"],
-        ["xpath=//div[@id='4b83d12c-02dc-4680-b7b4-06202b467f3f']/div/div/div[15]/div/div/div/div/div[2]/div/div", "xpath:idRelative"],
-        ["xpath=//div[15]/div/div/div/div/div[2]/div/div", "xpath:position"]
+        ["css=.InfographicEditor-Contents-Item:nth-child(11) .igc-textual-figure > div", "css:finder"],
+        ["xpath=//div[@id='4b83d12c-02dc-4680-b7b4-06202b467f3f']/div/div/div[11]/div/div/div/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div/div/div/div[2]/div/div", "xpath:position"]
       ],
       "value": "tests"
     }, {
@@ -729,19 +767,33 @@
       ],
       "value": ""
     }, {
-      "id": "2c3f7cfd-2b23-4037-9a0e-365d10590cdd",
-      "comment": "",
-      "command": "storeText",
-      "target": "css=table:nth-child(1) tr:nth-child(1) > td:nth-child(2)",
-      "targets": [],
-      "value": "country"
-    }, {
       "id": "4e7ecead-a3e0-4d4d-9b27-422002d6338e",
       "comment": "",
       "command": "storeText",
       "target": "css=tr:nth-child(8) .esriNumericValue",
       "targets": [],
       "value": "tests"
+    }, {
+      "id": "ee55eb27-d4e3-43f3-b178-a5979dac5ca9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.map-toolbar-left > div:nth-of-type(2) > div div:nth-of-type(2) > a:nth-of-type(2)",
+      "targets": [
+        ["id=ember372", "id"],
+        ["css=#ember372", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "35bd8502-9ef8-4879-862c-ddb8267a7a34",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.avenir-bold",
+      "targets": [
+        ["css=.avenir-bold", "css:finder"],
+        ["xpath=//div[@id='ember463']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "country"
     }, {
       "id": "f36500c8-5761-4959-96e9-3f7288c9bd58",
       "comment": "",
@@ -760,7 +812,7 @@
       "id": "a849c87c-6d1c-425f-92c7-3567885128b4",
       "comment": "",
       "command": "repeatIf",
-      "target": "${iterator} <= 60",
+      "target": "${iterator} <= 55",
       "targets": [],
       "value": ""
     }]
