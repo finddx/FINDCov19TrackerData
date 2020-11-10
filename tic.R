@@ -8,6 +8,7 @@ get_stage("deploy") %>%
   add_step(step_do_push_deploy(commit_paths = c(
     "processed/coronavirus_cases.csv",
     "processed/coronavirus_tests.csv",
+    "issues/coronavirus_tests_new_negative.csv",
     "processed/jhu_data.csv",
     "processed/data_all.csv",
     "processed/unit_info.csv"
