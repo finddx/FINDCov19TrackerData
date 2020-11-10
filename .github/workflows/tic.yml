@@ -87,7 +87,7 @@ jobs:
 
       - name: "[Custom block] [Linux] Install required libraries"
         if: runner.os == 'Linux'
-        run: sudo apt install libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler
+        run: sudo apt install libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler libgit2-dev
 
       - name: "[Custom block] [Linux] Install Java"
         if: runner.os == 'Linux'
