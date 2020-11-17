@@ -26,4 +26,4 @@ jobs:
 
       - name: run Selenium
         run: |
-          /home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/.bin/selenium-side-runner -c "browserName=chrome" --server http://localhost:4444/wd/hub -w 2 manual/scrap_tests_data.side
+          /home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/.bin/selenium-side-runner -c "browserName=chrome" --server http://localhost:4444/wd/hub -w 2 manual/scrap_tests_data_subset.side
