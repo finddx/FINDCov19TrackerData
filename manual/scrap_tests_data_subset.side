@@ -25,10 +25,10 @@
     }, {
       "id": "86ae0ec0-44e4-412d-8f5e-0c012761e817",
       "comment": "",
-      "command": "waitForElementPresent",
+      "command": "waitForElementVisible",
       "target": "id=esri.Map_0_gc",
       "targets": [],
-      "value": "9900000"
+      "value": "300000"
     }, {
       "id": "e46eb9fe-621f-4d31-8e48-97b711b978e4",
       "comment": "",
@@ -39,7 +39,7 @@
     }, {
       "id": "6cb267b1-77a0-4520-a6ca-e8a4421f6439",
       "comment": "",
-      "command": "waitForElementPresent",
+      "command": "waitForElementVisible",
       "target": "css=circle:nth-child(9)",
       "targets": [],
       "value": "120000"
@@ -55,7 +55,7 @@
     }, {
       "id": "e4c39b9b-20dd-480c-87d4-8b78056e9379",
       "comment": "",
-      "command": "waitForElementPresent",
+      "command": "waitForElementVisible",
       "target": "css=tr:nth-child(8) .esriNumericValue",
       "targets": [],
       "value": "120000"
