@@ -28,7 +28,7 @@
       "command": "waitForElementPresent",
       "target": "id=esri.Map_0_gc",
       "targets": [],
-      "value": "60000"
+      "value": "120000"
     }, {
       "id": "e46eb9fe-621f-4d31-8e48-97b711b978e4",
       "comment": "",
@@ -42,7 +42,7 @@
       "command": "waitForElementPresent",
       "target": "css=circle:nth-child(9)",
       "targets": [],
-      "value": "60000"
+      "value": "120000"
     }, {
       "id": "37a75bdc-b9ee-4292-8ff2-9b4d1d6b79c0",
       "comment": "",
@@ -58,7 +58,7 @@
       "command": "waitForElementPresent",
       "target": "css=tr:nth-child(8) .esriNumericValue",
       "targets": [],
-      "value": "60000"
+      "value": "120000"
     }, {
       "id": "b5b15539-be12-4ea4-9da3-6f27a4cd4004",
       "comment": "",
