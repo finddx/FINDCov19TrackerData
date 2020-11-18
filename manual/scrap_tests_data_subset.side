@@ -2,19 +2,19 @@
   "id": "c8a481e9-92dd-4785-9d3d-0813731a8fce",
   "version": "2.0",
   "name": "find_data",
-  "url": "https://africacdc.org",
+  "url": "https://africacdc.org/covid-19/",
   "tests": [{
     "id": "f63d1673-a014-427d-a0c5-ca316c0b1855",
     "name": "Algeria",
     "commands": [{
-      "id": "653c8e9a-e4be-4afd-a6d2-c0fa41a43eef",
+      "id": "e5c1c1b5-6455-446b-af67-8d49158cb566",
       "comment": "",
       "command": "open",
       "target": "https://africacdc.org/covid-19/",
       "targets": [],
       "value": ""
     }, {
-      "id": "dd8f405a-2090-4485-8188-c7a20a093c67",
+      "id": "3edf041f-413c-46dc-a9c1-822eddc06f39",
       "comment": "",
       "command": "selectFrame",
       "target": "index=0",
@@ -23,109 +23,35 @@
       ],
       "value": ""
     }, {
-      "id": "86ae0ec0-44e4-412d-8f5e-0c012761e817",
-      "comment": "",
-      "command": "waitForElementVisible",
-      "target": "id=esri.Map_0_gc",
-      "targets": [],
-      "value": "300000"
-    }, {
-      "id": "e46eb9fe-621f-4d31-8e48-97b711b978e4",
+      "id": "885e121f-595c-4aeb-946f-978949d59558",
       "comment": "",
       "command": "click",
-      "target": "id=esri.Map_0_gc",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "6cb267b1-77a0-4520-a6ca-e8a4421f6439",
-      "comment": "",
-      "command": "waitForElementVisible",
-      "target": "css=circle:nth-child(9)",
-      "targets": [],
-      "value": "120000"
-    }, {
-      "id": "37a75bdc-b9ee-4292-8ff2-9b4d1d6b79c0",
-      "comment": "",
-      "command": "click",
-      "target": "css=circle:nth-child(9)",
+      "target": "css=circle:nth-child(8)",
       "targets": [
         ["css=circle:nth-child(8)", "css:finder"]
       ],
       "value": ""
     }, {
-      "id": "e4c39b9b-20dd-480c-87d4-8b78056e9379",
-      "comment": "",
-      "command": "waitForElementVisible",
-      "target": "css=tr:nth-child(8) .esriNumericValue",
-      "targets": [],
-      "value": "120000"
-    }, {
-      "id": "b5b15539-be12-4ea4-9da3-6f27a4cd4004",
+      "id": "fd87505b-fadc-4fd0-966f-5912e444addc",
       "comment": "",
       "command": "storeText",
-      "target": "css=tr:nth-child(8) .esriNumericValue",
+      "target": "css=tr:nth-child(3) .esriNumericValue",
       "targets": [
         ["css=tr:nth-child(3) .esriNumericValue", "css:finder"],
-        ["xpath=//div[@id='ember299']/table/tbody/tr[3]/td[2]/span", "xpath:idRelative"],
+        ["xpath=//div[@id='ember291']/table/tbody/tr[3]/td[2]/span", "xpath:idRelative"],
         ["xpath=//td[2]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'70,293')]", "xpath:innerText"]
+        ["xpath=//span[contains(.,'69,591')]", "xpath:innerText"]
       ],
       "value": "tests"
     }, {
-      "id": "7fbfe01c-71f1-415f-8329-fb5ef1b80d7d",
-      "comment": "",
-      "command": "click",
-      "target": "css=.map-toolbar-left > div:nth-of-type(2) > div div:nth-of-type(2) > a:nth-of-type(2)",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "c171dbb9-2735-463d-8f3d-d5c38b436a37",
-      "comment": "",
-      "command": "storeText",
-      "target": "css=.avenir-bold",
-      "targets": [
-        ["css=.avenir-bold", "css:finder"],
-        ["xpath=//div[@id='ember290']/div", "xpath:idRelative"],
-        ["xpath=//div[2]/div[2]/div[2]/div/div", "xpath:position"]
-      ],
-      "value": "country"
-    }, {
-      "id": "539e1e8d-3216-43e8-9087-74fc0d2c8630",
-      "comment": "",
-      "command": "if",
-      "target": "!(${country}===\"Algeria\")",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "291219c9-6401-4615-abc7-956a4882ec09",
-      "comment": "",
-      "command": "store",
-      "target": "\"NA\"",
-      "targets": [],
-      "value": "tests"
-    }, {
-      "id": "4e46721a-7ea1-4ed0-a7b5-60e5fe6d91ed",
+      "id": "ac638a24-1ac6-41d7-b0bb-c5b97908918b",
       "comment": "",
       "command": "echo",
-      "target": "check test country Algeria (stored different country)",
+      "target": "Recorded Algeria",
       "targets": [],
       "value": ""
     }, {
-      "id": "5e485e5c-8d85-4333-b50b-ddc9a0651366",
-      "comment": "",
-      "command": "end",
-      "target": "",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "dff36c22-aacc-4412-898c-fbf98460d498",
-      "comment": "",
-      "command": "echo",
-      "target": "country ${country};tests${tests}",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "853e6fc8-8dab-4ae7-bf56-6c85522ad84d",
+      "id": "ce9901b9-4be7-43c4-9fa3-ca6fb66acd6c",
       "comment": "",
       "command": "close",
       "target": "",
@@ -3186,6 +3112,6 @@
     "timeout": 300,
     "tests": ["f63d1673-a014-427d-a0c5-ca316c0b1855"]
   }],
-  "urls": ["https://africacdc.org/"],
+  "urls": ["https://africacdc.org/", "https://africacdc.org/covid-19/"],
   "plugins": []
 }
