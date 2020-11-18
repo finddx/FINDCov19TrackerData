@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ${{ matrix.operating-system }}
     services:
-      firefox:
+      chrome:
         # see https://github.com/SeleniumHQ/docker-selenium
         # image: selenium/standalone-firefox:4.0
         image: selenium/standalone-chrome:4.0
@@ -26,4 +26,4 @@ jobs:
 
       - name: run Selenium
         run: |
-          /home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/.bin/selenium-side-runner -c "browserName=chrome" --server http://localhost:4444/wd/hub -w 2 manual/scrap_tests_data_subset.side
+          /home/runner/work/FINDCov19TrackerData/FINDCov19TrackerData/node_modules/.bin/selenium-side-runner -c "goog:chromeOptions.args=[disable-infobars, headless]" "browserName=chrome" --server http://localhost:4444/wd/hub -w 2 manual/scrap_tests_data_subset.side
