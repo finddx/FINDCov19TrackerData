@@ -23,6 +23,13 @@
       ],
       "value": ""
     }, {
+      "id": "e6f664c0-ef33-44cd-8324-2512b138576d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=circle:nth-child(8)",
+      "targets": [],
+      "value": "30000"
+    }, {
       "id": "885e121f-595c-4aeb-946f-978949d59558",
       "comment": "",
       "command": "click",
