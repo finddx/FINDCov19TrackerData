@@ -9,10 +9,15 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.chrome.options import Options
 
 class TestDefaultSuite():
   def setup_method(self):
-    self.driver = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--window-size=1920,1080")
+    self.driver = webdriver.Chrome(chrome_options=chrome_options)
+    #self.driver = webdriver.Chrome()
     self.vars = {}
   
   def teardown_method(self):
