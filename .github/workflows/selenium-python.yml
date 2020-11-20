@@ -23,7 +23,7 @@ jobs:
         config:
           ### Custom configs (specify your own runners here)
           # [Custom matrix env var]
-          - { os: ubuntu-latest, r: "release", latex: false }
+          - { os: ubuntu-latest }
 
     steps:
       - uses: actions/checkout@v2
@@ -31,11 +31,6 @@ jobs:
         with:
           python-version: "3.9.0" # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
-      - uses: BSFishy/pip-action@v1
-        with:
-          packages: |
-            time
-            json
-            selenium
-            pytest
-      - run: python manual/test.py
+      - run: |
+        pip3 install --user time josn selenium pytest
+        python manual/test.py
