@@ -1,0 +1,34 @@
+on:
+  workflow_dispatch:
+  push:
+    # branches-ignore:
+    #   - selenium
+  # for now, CRON jobs only run on the default branch of the repo (i.e. usually on master)
+  # schedule:
+  #   # * is a special character in YAML so you have to quote this string
+  #   - cron: "0 2 * * *"
+
+name: tic
+
+jobs:
+  all:
+    if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
+    runs-on: ${{ matrix.config.os }}
+
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          ### Custom configs (specify your own runners here)
+          # [Custom matrix env var]
+          - { os: ubuntu-latest, r: "release", latex: false }
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.9" # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
+      - run: python test.py
