@@ -33,7 +33,7 @@ jobs:
           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
       - name: Install deps
         run: pip3 install --user selenium pytest
-          pip3 install --user selenium pytest
+
       - name: Run Selenium
         run: python manual/test.py
 
