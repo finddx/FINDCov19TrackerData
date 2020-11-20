@@ -3,21 +3,21 @@ import test_2_countries
 
 country_list = []
 
-algeria = test_2_countries.TestDefaultSuite()
-algeria.setup_method()
-algeria.test_algeria()
-algeria.teardown_method()
-algeria.vars
+australia = test_2_countries.TestDefaultSuite()
+australia.setup_method()
+australia.test_australia()
+australia.teardown_method()
+australia.vars
 
-country_list.append(algeria.vars)
+country_list.append(australia.vars)
 
-other = test_2_countries.TestDefaultSuite()
-other.setup_method()
-other.test_other()
-other.teardown_method()
-other.vars
+emirates = test_2_countries.TestDefaultSuite()
+emirates.setup_method()
+emirates.test_unitedArabEmirates()
+emirates.teardown_method()
+emirates.vars
 
-country_list.append(other.vars)
+country_list.append(emirates.vars)
 
 with open("list_data.txt", 'w', encoding="utf-8") as f:
                             for item in country_list:
