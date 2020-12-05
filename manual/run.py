@@ -8,7 +8,7 @@ def run_one_country(country):
     suite = TestDefaultSuite()
     suite.setup_method()
     getattr(suite, 'test_' + country)()
-    return suite.vars
+    return dict(country=country.capitalize(), **suite.vars)
 
 
 if __name__ == '__main__':
