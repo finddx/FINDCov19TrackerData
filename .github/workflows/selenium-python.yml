@@ -35,7 +35,7 @@ jobs:
         run: pip3 install --user selenium pytest
 
       - name: Run Selenium
-        run: python manual/test.py
+        run: python manual/run.py
 
       - name: "Upload list_data.txt"
         uses: actions/upload-artifact@v2.2.1
