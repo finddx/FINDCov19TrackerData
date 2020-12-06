@@ -15,7 +15,10 @@ class TestDefaultSuite():
   def setup_method(self):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
-    #chrome_options.add_argument("--window-size=1920,1080")
+    # Required for test_france() to work
+    # https://stackoverflow.com/questions/51220794/selenium-not-working-in-headless-mode
+    # https://sqa.stackexchange.com/questions/33778/chromedriver-in-headless-mode-doesnt-work-correctly-because-of-windows-user-pol
+    chrome_options.add_argument("--window-size=1920,1080")
     self.driver = webdriver.Chrome(chrome_options=chrome_options)
     #self.driver = webdriver.Chrome()
     self.vars = {}
