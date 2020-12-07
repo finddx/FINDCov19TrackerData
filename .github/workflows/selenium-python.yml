@@ -35,7 +35,7 @@ jobs:
         run: pip3 install --user selenium pytest
 
       - name: Run Selenium
-        run: python manual/run.py
+        run: env GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} python manual/run.py
 
       - name: "Upload list_data.txt"
         uses: actions/upload-artifact@v2.2.1
