@@ -8,7 +8,7 @@ on:
   #   # * is a special character in YAML so you have to quote this string
   #   - cron: "0 2 * * *"
 
-name: tic
+name: selenium-python
 
 jobs:
   all:
@@ -35,7 +35,7 @@ jobs:
         run: pip3 install --user selenium pytest
 
       - name: Run Selenium
-        run: python manual/test.py
+        run: python manual/run.py
 
       - name: "Upload list_data.txt"
         uses: actions/upload-artifact@v2.2.1
