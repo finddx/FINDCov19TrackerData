@@ -1,14 +1,41 @@
 #!/usr/bin/env python3
 import argparse
+from json import dumps
 import concurrent.futures
+import unittest
+from os import environ
 from test import TestDefaultSuite
+from urllib.request import Request, urlopen
+
+
+def set_commit_status(status):
+    token = environ.get('GITHUB_TOKEN')
+    sha = environ.get('GITHUB_SHA')
+    repo = environ.get('GITHUB_REPOSITORY')
+    if token and sha and repo:
+        return urlopen(
+            Request(
+                f'https://api.github.com/repos/{repo}/statuses/{sha}',
+                dumps(status).encode('ascii'), {
+                    "Authorization": f"Bearer {token}",
+                    "Accept": "application/vnd.github.v3+json",
+                })).read()
 
 
 def run_one_country(country):
-    suite = TestDefaultSuite()
-    suite.setup_method()
-    getattr(suite, 'test_' + country)()
-    return dict(country=country.capitalize(), **suite.vars)
+    status = {
+        "state": "pending",
+        "context": "Country: " + country.capitalize()
+    }
+    set_commit_status(status)
+    test = TestDefaultSuite('test_' + country)
+    suite = unittest.TestSuite()
+    suite.addTest(test)
+    runner = unittest.TextTestRunner()
+    result = runner.run(suite)
+    status["state"] = "success" if result.wasSuccessful() else "failure"
+    set_commit_status(status)
+    return dict(country=country.capitalize(), **test.vars)
 
 
 if __name__ == '__main__':

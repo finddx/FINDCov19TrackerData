@@ -10,9 +10,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
+import unittest
 
-class TestDefaultSuite():
-  def setup_method(self):
+class TestDefaultSuite(unittest.TestCase):
+  def setUp(self):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     # Required for test_france() to work
@@ -23,7 +24,7 @@ class TestDefaultSuite():
     #self.driver = webdriver.Chrome()
     self.vars = {}
   
-  def teardown_method(self):
+  def tearDown(self):
     self.driver.quit()
   
   def test_australia(self):
