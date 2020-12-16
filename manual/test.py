@@ -341,10 +341,163 @@ class TestDefaultSuite(unittest.TestCase):
     # 4 | close |  | 
     self.driver.close()
     
-  def test_egypt(self):
+  def test_ethiopia(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     self.driver.implicitly_wait(20)
     self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(3)").click()
     self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
     self.driver.close()
     
+  def test_kenya(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(5)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_libya(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(6)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+
+  def test_nigeria(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(7)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_ghana(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(8)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+
+  def test_uganda(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(9)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+
+  def test_cameroon(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(10)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_sudan(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(11)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+
+  def test_cotedivoire(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(12)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+
+  def test_zambia(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(13)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+
+  def test_senegal(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(14)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_angola(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(16)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_mauritania(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(19)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_gabon(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(20)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_rwanda(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(21)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_congo(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(22)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_malawi(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(23)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_mali(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(24)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_djibouti(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(25)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_equatorialguinea(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(26)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_centralafricanrepublic(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(27)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_somalia(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(28)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
+    
+  def test_burkinafaso(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.implicitly_wait(20)
+    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(29)").click()
+    self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+    self.driver.close()
