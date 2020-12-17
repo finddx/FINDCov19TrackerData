@@ -73,4 +73,5 @@ if __name__ == '__main__':
         f.close()
 
     with open("sample.json", "w") as outfile:
-        json.dump(country_list, outfile)
+        json = json.dumps(country_list)
+        json.dump(json, outfile)
