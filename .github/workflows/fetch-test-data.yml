@@ -16,17 +16,7 @@ name: fetch-test-data
 jobs:
   selenium:
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
-    runs-on: ${{ matrix.config.os }}
-
-    name: ${{ matrix.config.os }}-selenium
-
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          ### Custom configs (specify your own runners here)
-          # [Custom matrix env var]
-          - { os: ubuntu-latest }
+    runs-on: ubuntu-latest }
 
     steps:
       - uses: actions/checkout@v2
@@ -62,17 +52,7 @@ jobs:
   fetch-test-data:
     needs: selenium
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
-    runs-on: ${{ matrix.config.os }}
-
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
-
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          ### Custom configs (specify your own runners here)
-          # [Custom matrix env var]
-          - { os: ubuntu-latest, r: "release", latex: false }
+    runs-on: ubuntu-latest
 
     env:
       # otherwise remotes::fun() errors cause the build to fail. Example: Unavailability of binaries
@@ -95,7 +75,7 @@ jobs:
 
       - uses: r-lib/actions/setup-r@master
         with:
-          r-version: ${{ matrix.config.r }}
+          r-version: "release"
           Ncpus: 4
 
       # set date/week for use in cache creation
