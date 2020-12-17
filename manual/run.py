@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse
-from json import dumps, dump
+import json
 import concurrent.futures
 import unittest
 from os import environ
