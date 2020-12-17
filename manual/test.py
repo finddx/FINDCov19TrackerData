@@ -24,7 +24,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver = webdriver.Chrome(chrome_options=chrome_options)
     #self.driver = webdriver.Chrome()
     self.vars = {}
-    vars["date"] = date.today().strftime("%Y-%m-%d")
+    self.vars["date"] = date.today().strftime("%Y-%m-%d")
 
   def tearDown(self):
     self.driver.quit()
