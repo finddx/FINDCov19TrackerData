@@ -35,10 +35,10 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
-          mv tests-selenium.json $date-tests-selenium.json
+          mv tests-selenium.json automated/selenium/$date-tests-selenium.json
           git pull
           # git add sample.json
-          git add $date-tests-selenium.json
+          git add automated/selenium/$date-tests-selenium.json
           git commit -m "update $date-selenium-tests.json"
 
       - name: Push changes to FINDCov19TrackerData/data branch
@@ -130,10 +130,9 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
-          mv tests-R.json $date-tests-R.json
+          mv tests-R.json automated/fetch/$date-tests-R.json
           git pull
-          git add automated-tests.json
-          git add $date-tests-R.json
+          git add automated/fetch/$date-tests-R.json
           git commit -m "update $date-tests-R.json"
 
       - name: Push changes to FINDCov19TrackerData/data branch
