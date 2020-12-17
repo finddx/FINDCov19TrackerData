@@ -66,6 +66,10 @@ if __name__ == '__main__':
         # run all countries in parallel
         with concurrent.futures.ThreadPoolExecutor() as executor:
             country_list = executor.map(run_one_country, countries)
+    with open("tests-selenium.json", 'w', encoding="utf-8") as f:
+        for item in country_list:
+            f.write("%s\n" % item)
+        f.close()
     # save results
     # with open("tests-selenium.json", "w") as outfile:
     #     json.dump(country_list, outfile)
