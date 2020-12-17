@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+from datetime import date
 from json import dumps
 import concurrent.futures
 import unittest
@@ -36,7 +37,7 @@ def run_one_country(country):
     result = runner.run(suite)
     status["state"] = "success" if result.wasSuccessful() else "failure"
     set_commit_status(status)
-    return dict(country=country.capitalize(), **test.vars)
+    return dict(country=country.capitalize(), **test.vars, date = date.today().strftime("%Y-%m-%d"))
 
 
 if __name__ == '__main__':
