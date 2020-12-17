@@ -10,6 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
+from datetime import date
 import unittest
 
 class TestDefaultSuite(unittest.TestCase):
@@ -23,6 +24,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver = webdriver.Chrome(chrome_options=chrome_options)
     #self.driver = webdriver.Chrome()
     self.vars = {}
+    vars["date"] = date.today().strftime("%Y-%m-%d")
 
   def tearDown(self):
     self.driver.quit()
@@ -503,7 +505,6 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_egypt(self):
-    self.vars = {}
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     time.sleep(20)
     continent = self.driver.find_element_by_id('Dashboard_1day_Sht1_5411_layer')
