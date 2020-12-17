@@ -49,7 +49,7 @@ jobs:
           directory: automated/selenium
           force: true
 
-  fetch-test-data:
+  fetch-with-r-and-deploy:
     needs: selenium
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     runs-on: ubuntu-latest
