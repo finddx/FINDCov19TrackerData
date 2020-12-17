@@ -514,7 +514,7 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Libya':
+            if temp_name == 'Egypt':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
         except:
