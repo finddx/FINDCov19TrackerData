@@ -53,5 +53,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: data
+          directory: automated/selenium
           force: true
           # directory: selenium
