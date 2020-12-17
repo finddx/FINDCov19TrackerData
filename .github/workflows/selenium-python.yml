@@ -42,11 +42,11 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
-          mv tests-selenium.jon $date-tests-selenium.json
+          mv tests-selenium.json $date-tests-selenium.json
           git add $date-tests-selenium.json
           git commit -m "update $date-selenium-tests.json"
 
-      - name: Push changes
+      - name: Push changes to FINDCov19TrackerData/data branch
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
