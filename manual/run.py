@@ -58,18 +58,17 @@ if __name__ == '__main__':
     country_list = []
     args = parser.parse_args()
     # run test(s)
-    if args.countries:
-        # run only countries specified in command line
-        for country in args.countries:
-            country_list.append(run_one_country(country))
-    else:
-        # run all countries in parallel
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            country_list = executor.map(run_one_country, countries)
-    with open("tests-selenium.json", 'w', encoding="utf-8") as f:
-        for item in country_list:
-            f.write("%s\n" % item)
-        f.close()
-    # save results
-    # with open("tests-selenium.json", "w") as outfile:
-    #     json.dump(country_list, outfile)
+    # if args.countries:
+    # run only countries specified in command line
+    # for country in args.countries:
+    for country in countries:
+        country_list.append(run_one_country(country))
+    # FIXME: how to serialize the result and write to JSON?
+    # else:
+    #     # run all countries in parallel
+    #     with concurrent.futures.ThreadPoolExecutor() as executor:
+    #         country_list = executor.map(run_one_country, countries)
+
+    # write to file
+    with open("tests-selenium.json", "w") as outfile:
+        json.dump(country_list, outfile)
