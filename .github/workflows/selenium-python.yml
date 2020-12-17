@@ -43,6 +43,7 @@ jobs:
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
           mv tests-selenium.json $date-tests-selenium.json
+          git pull
           git add $date-tests-selenium.json
           git commit -m "update $date-selenium-tests.json"
 
