@@ -66,7 +66,7 @@ if __name__ == '__main__':
         with concurrent.futures.ThreadPoolExecutor() as executor:
             country_list = executor.map(run_one_country, countries)
     # save results
-    with open("list_data.txt", 'w', encoding="utf-8") as f:
+    with open("tests-selenium.json", 'w', encoding="utf-8") as f:
         for item in country_list:
             f.write("%s\n" % item)
         f.close()

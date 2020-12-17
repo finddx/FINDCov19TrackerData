@@ -15,7 +15,7 @@ jobs:
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     runs-on: ${{ matrix.config.os }}
 
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+    name: ${{ matrix.config.os }}-selenium
 
     strategy:
       fail-fast: false
@@ -37,8 +37,22 @@ jobs:
       - name: Run Selenium
         run: env GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} python manual/run.py
 
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add tests-selenium.json
+          date=$(date +'%Y-%m-%d')
+          git commit -m "selenium-tests-$date"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: data
+
       - name: "Upload list_data.txt"
         uses: actions/upload-artifact@v2.2.1
         with:
-          name: list_data.txt
-          path: list_data.txt
+          name: selenium-tests.json
+          path: selenium-tests.json
