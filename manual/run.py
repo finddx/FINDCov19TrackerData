@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse
-from json import dumps
+from json import dumps, dump
 import concurrent.futures
 import unittest
 from os import environ
@@ -70,3 +70,6 @@ if __name__ == '__main__':
         for item in country_list:
             f.write("%s\n" % item)
         f.close()
+
+    with open("sample.json", "w") as outfile:
+        json.dump(country_list, outfile)
