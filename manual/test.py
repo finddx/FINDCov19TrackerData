@@ -501,3 +501,25 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(29)").click()
     self.vars["tests"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
     self.driver.close()
+
+  def test_egypt(self):
+    self.vars = {}
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    time.sleep(20)
+    continent = self.driver.find_element_by_id('Dashboard_1day_Sht1_5411_layer')
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Libya':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    driver.close()
+    
