@@ -41,18 +41,14 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add tests-selenium.json
           date=$(date +'%Y-%m-%d')
-          git commit -m "selenium-tests-$date"
+          mv tests-selenium.jon $date-tests-selenium.json
+          git add $date-tests-selenium.json
+          git commit -m "update $date-selenium-tests.json"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: data
-
-      - name: "Upload list_data.txt"
-        uses: actions/upload-artifact@v2.2.1
-        with:
-          name: selenium-tests.json
-          path: selenium-tests.json
+          directory: selenium
