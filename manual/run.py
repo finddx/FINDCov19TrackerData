@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
+from json import dumps
 import concurrent.futures
 import unittest
 from os import environ
