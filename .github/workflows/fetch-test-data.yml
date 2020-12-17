@@ -14,7 +14,53 @@ on:
 name: fetch-test-data
 
 jobs:
-  all:
+  selenium:
+    if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
+    runs-on: ${{ matrix.config.os }}
+
+    name: ${{ matrix.config.os }}-selenium
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          ### Custom configs (specify your own runners here)
+          # [Custom matrix env var]
+          - { os: ubuntu-latest }
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.8.6" # Version range or exact version of a Python version to use, using SemVer's version range syntax
+          architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
+      - name: Install deps
+        run: pip3 install --user selenium pytest
+
+      - name: Run Selenium
+        run: env GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} python manual/run.py
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          date=$(date +'%Y-%m-%d')
+          mv tests-selenium.json $date-tests-selenium.json
+          git pull
+          git add sample.json
+          git add $date-tests-selenium.json
+          git commit -m "update $date-selenium-tests.json"
+
+      - name: Push changes to FINDCov19TrackerData/data branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: data
+          directory: automated/selenium
+          force: true
+
+  fetch-test-data:
+    needs: selenium
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     runs-on: ${{ matrix.config.os }}
 
