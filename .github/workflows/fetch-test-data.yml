@@ -16,7 +16,7 @@ name: fetch-test-data
 jobs:
   selenium:
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
-    runs-on: ubuntu-latest }
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
