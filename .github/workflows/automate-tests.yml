@@ -121,9 +121,10 @@ jobs:
       - name: "[Stage] Fetch Data"
         if: matrix.config.os != 'macOS-latest' || matrix.config.r != 'devel'
         run: |
+          # scrapes tests from R-based countries which are not supported by Selenium
           Rscript -e "data = FINDCov19Tracker::fetch_test_data(); data = jsonlite::toJSON(data); jsonlite::write_json(data, 'tests-R.json', pretty = TRUE)"
-          # just for demonstration purposes
-          Rscript -e "FINDCov19Tracker::get_daily_data()"
+          # collects R-based and Selenium-based countries and writes `automated-tests.json`
+          Rscript -e "FINDCov19Tracker::get_daily_test_data()"
 
       - name: Commit files
         run: |
