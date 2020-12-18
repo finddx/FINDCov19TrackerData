@@ -36,11 +36,12 @@ jobs:
           git add automated/selenium/$date-tests-selenium.json
           git commit -m "update $date-selenium-tests.json"
 
-      - name: Push changes to FINDCov19TrackerData/data branch
+      - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: automated/selenium
+          branch: ${{ github.ref }}
 
   fetch-with-r:
     needs: selenium
@@ -107,11 +108,12 @@ jobs:
           git add automated/fetch/$date-tests-R.json
           git commit -m "update $date-tests-R.json"
 
-      - name: Push changes to FINDCov19TrackerData/selenium branch
+      - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: automated/fetch
+          branch: ${{ github.ref }}
 
   combine-and-deploy:
     needs: fetch-with-r
@@ -179,8 +181,9 @@ jobs:
           git add automated/merged/$date-automated-tests-R.json
           git commit -m "update $date--automated-tests-R.json"
 
-      - name: Push changes to FINDCov19TrackerData/selenium branch
+      - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: automated/merged
+          branch: ${{ github.ref }}
