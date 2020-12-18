@@ -33,8 +33,8 @@ jobs:
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
           mv tests-selenium.json automated/selenium/$date-tests-selenium.json
+          git checkout -b data
           git pull
-          # git add sample.json
           git add automated/selenium/$date-tests-selenium.json
           git commit -m "update $date-selenium-tests.json"
 
@@ -107,6 +107,7 @@ jobs:
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
           mv tests-R.json automated/fetch/$date-tests-R.json
+          git checkout -b data
           git pull
           git add automated/fetch/$date-tests-R.json
           git commit -m "update $date-tests-R.json"
@@ -181,6 +182,7 @@ jobs:
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
           mv automated-tests.json automated/merged/$date-automated-tests.json
+          git checkout -b data
           git pull
           git add automated/merged/$date-automated-tests-R.json
           git commit -m "update $date--automated-tests-R.json"
