@@ -33,8 +33,6 @@ jobs:
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
           mv tests-selenium.json automated/selenium/$date-tests-selenium.json
-          git checkout -b data
-          git pull origin data
           git add automated/selenium/$date-tests-selenium.json
           git commit -m "update $date-selenium-tests.json"
 
@@ -42,7 +40,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: data
           directory: automated/selenium
 
   fetch-with-r:
@@ -107,16 +104,13 @@ jobs:
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
           mv tests-R.json automated/fetch/$date-tests-R.json
-          git checkout -b data
-          git pull origin data
           git add automated/fetch/$date-tests-R.json
           git commit -m "update $date-tests-R.json"
 
-      - name: Push changes to FINDCov19TrackerData/data branch
+      - name: Push changes to FINDCov19TrackerData/selenium branch
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: data
           directory: automated/fetch
 
   combine-and-deploy:
@@ -182,14 +176,11 @@ jobs:
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
           mv automated-tests.json automated/merged/$date-automated-tests.json
-          git checkout -b data
-          git pull origin data
           git add automated/merged/$date-automated-tests-R.json
           git commit -m "update $date--automated-tests-R.json"
 
-      - name: Push changes to FINDCov19TrackerData/data branch
+      - name: Push changes to FINDCov19TrackerData/selenium branch
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: data
           directory: automated/merged
