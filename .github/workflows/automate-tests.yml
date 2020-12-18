@@ -183,8 +183,8 @@ jobs:
           git pull origin selenium
           date=$(date +'%Y-%m-%d')
           mv automated-tests.json automated/merged/$date-automated-tests.json
-          git add automated/merged/$date-automated-tests-R.json
-          git commit -m "update $date--automated-tests-R.json" || echo "Nothing to update"
+          git add automated/merged/$date-automated-tests.json
+          git commit -m "update $date--automated-tests.json" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
