@@ -31,10 +31,11 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git config pull.rebase false
           date=$(date +'%Y-%m-%d')
           mv tests-selenium.json automated/selenium/$date-tests-selenium.json
           git add automated/selenium/$date-tests-selenium.json
-          git commit -m "update $date-selenium-tests.json"
+          git commit -m "update $date-selenium-tests.json" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
@@ -103,11 +104,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git config pull.rebase false
           git pull origin selenium
           date=$(date +'%Y-%m-%d')
           mv tests-R.json automated/fetch/$date-tests-R.json
           git add automated/fetch/$date-tests-R.json
-          git commit -m "update $date-tests-R.json"
+          git commit -m "update $date-tests-R.json" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
@@ -177,11 +179,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git config pull.rebase false
           git pull origin selenium
           date=$(date +'%Y-%m-%d')
           mv automated-tests.json automated/merged/$date-automated-tests.json
           git add automated/merged/$date-automated-tests-R.json
-          git commit -m "update $date--automated-tests-R.json"
+          git commit -m "update $date--automated-tests-R.json" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
