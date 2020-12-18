@@ -97,7 +97,7 @@ jobs:
       - name: "[Stage] Fetch test data with R"
         run: |
           # scrapes tests from R-based countries which are not supported by Selenium
-          Rscript -e "data = FINDCov19Tracker::fetch_test_data(); data = jsonlite::toJSON(data); data = jsonlite::prettify(data); jsonlite::write_json(data, 'tests-R.json', pretty = TRUE)"
+          Rscript -e "data = FINDCov19Tracker::fetch_test_data(); jsonlite::write_json(data, 'tests-R.json', pretty = TRUE)"
 
       - name: Commit files
         run: |
