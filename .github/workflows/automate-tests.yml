@@ -121,7 +121,7 @@ jobs:
       - name: "[Stage] Fetch Data"
         if: matrix.config.os != 'macOS-latest' || matrix.config.r != 'devel'
         run: |
-          Rscript -e "data = FINDCov19Tracker::fetch_test_data(); data = jsonlite::toJSON(data); jsonlite::write_json(data, 'tests-R.json')"
+          Rscript -e "data = FINDCov19Tracker::fetch_test_data(); data = jsonlite::toJSON(data); jsonlite::write_json(data, 'tests-R.json', pretty = TRUE)"
           # just for demonstration purposes
           Rscript -e "FINDCov19Tracker::get_daily_data()"
 
@@ -131,8 +131,10 @@ jobs:
           git config --local user.name "GitHub Action"
           date=$(date +'%Y-%m-%d')
           mv tests-R.json automated/fetch/$date-tests-R.json
+          mv automated-tests.json automated/merged/$date-automated-tests.json
           git pull
           git add automated/fetch/$date-tests-R.json
+          git add automated/merged/$date-automated-tests-R.json
           git commit -m "update $date-tests-R.json"
 
       - name: Push changes to FINDCov19TrackerData/data branch
