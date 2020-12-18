@@ -103,6 +103,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull origin selenium
           date=$(date +'%Y-%m-%d')
           mv tests-R.json automated/fetch/$date-tests-R.json
           git add automated/fetch/$date-tests-R.json
@@ -176,6 +177,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull origin selenium
           date=$(date +'%Y-%m-%d')
           mv automated-tests.json automated/merged/$date-automated-tests.json
           git add automated/merged/$date-automated-tests-R.json
