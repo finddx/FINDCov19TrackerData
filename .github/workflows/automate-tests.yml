@@ -33,6 +33,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git config pull.rebase false
           date=$(date +'%Y-%m-%d')
+          git pull origin selenium
           mv tests-selenium.json automated/selenium/$date-tests-selenium.json
           git add automated/selenium/$date-tests-selenium.json
           git commit -m "update $date-selenium-tests.json" || echo "Nothing to update"
