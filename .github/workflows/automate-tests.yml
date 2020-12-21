@@ -176,6 +176,8 @@ jobs:
           Rscript -e "FINDCov19Tracker::get_daily_test_data()"
           # calculates countries which still need manual test data scraping
           Rscript -e "FINDCov19Tracker::calc_manual_countries()"
+          # write csv containing all tests of all dates
+          Rscript -e "FINDCov19Tracker::combine_all_tests()"
 
       - name: Commit files
         run: |
@@ -186,9 +188,11 @@ jobs:
           date=$(date +'%Y-%m-%d')
           mv automated-tests.json automated/merged/$date-automated-tests.json
           mv countries-manual.csv manual/$date-countries-manual.csv
+          mv countries-tests-all-dates.csv automated/countries-tests-all-dates.csv
           git add automated/merged/$date-automated-tests.json
           git add manual/$date-countries-manual.csv
-          git commit -m "update $date--automated-tests.json" || echo "Nothing to update"
+          git add autoamted/countries-tests-all-dates.csv
+          git commit -m "update $date-automated-tests.json" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
