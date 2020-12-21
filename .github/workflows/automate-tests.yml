@@ -174,6 +174,8 @@ jobs:
         run: |
           # collects R-based and Selenium-based countries and writes `automated-tests.json`
           Rscript -e "FINDCov19Tracker::get_daily_test_data()"
+          # calculates countries which still need manual test data scraping
+          Rscript -e "FINDCov19Tracker::calc_manual_countries()"
 
       - name: Commit files
         run: |
@@ -183,7 +185,9 @@ jobs:
           git pull origin selenium
           date=$(date +'%Y-%m-%d')
           mv automated-tests.json automated/merged/$date-automated-tests.json
+          mv countries-manual.csv manual/$date-countries-manual.csv
           git add automated/merged/$date-automated-tests.json
+          git add manual/$date-countries-manual.csv
           git commit -m "update $date--automated-tests.json" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
