@@ -174,8 +174,6 @@ jobs:
         run: |
           # collects R-based and Selenium-based countries and writes `automated-tests.json` and countries which errored (= which returned NA)
           Rscript -e "FINDCov19Tracker::get_daily_test_data()"
-          # calculates countries which still need manual test data scraping
-          Rscript -e "FINDCov19Tracker::calc_manual_countries()"
 
       - name: Commit files
         run: |
