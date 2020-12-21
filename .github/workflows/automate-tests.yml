@@ -198,7 +198,7 @@ jobs:
           branch: ${{ github.ref }}
 
   run-analysis:
-    needs: fetch-with-r
+    needs: combine-and-deploy
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     runs-on: ubuntu-latest
 
