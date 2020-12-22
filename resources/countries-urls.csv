@@ -1,10 +1,10 @@
-country,jhu_ID,source,alternative link,type,data_url,date_format,xpath_cumul,xpath_new,backlog,comment,status_with_automatization
+country,jhu_ID,source,alternative link,type,data_url,date_format,xpath_cumul,xpath_new,backlog,comment,status_automate
 Afghanistan,Afghanistan,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table,,pdf_list,operational_sitrep_covid|daily_brief_covid|strategic_situation_report|strategic_sitrep,,(?<=map)(.*)(?= people out of),,,,
 Albania,Albania,https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A,,html_list,covid19-ministria-e-shendetesise,%d/%m/%Y,Testime totale ([.0-9]+),,,,automated Selenium but need some checks
 Algeria,Algeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Angola,Angola,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-Antigua and Barbuda,AntiguaandBarbuda,https://covid19.gov.ag/,,html,,,/html/body/div/div/div[1]/div[1]/div[4]/p[2],,,,pdf
-Argentina,Argentina,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,,pdf_list,https://www.argentina.gob.ar/sites/default/files,,(?<=se realizaron )(.*)(?= pruebas diagnósticas),,,,
+Antigua and Barbuda,AntiguaandBarbuda,https://covid19.gov.ag/,,html,,,/html/body/div/div/div[1]/div[1]/div[4]/p[2],,,,no cumul tests; values aggregated with other countries
+Argentina,Argentina,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,,pdf_list,https://www.argentina.gob.ar/sites/default/files,,(?<=se realizaron )(.*)(?= pruebas diagnósticas),,,,pdf
 Armenia,Armenia,https://ncdc.am/coronavirus/confirmed-cases-by-days/,,html2,https://infogram.com/--1h7j4drmogk92nr,,"Ընդհանուր թեստեր - ([0-9 .,]+)",,,,automated Selenium but need some checks
 Australia,Australia,https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results,,Selenium,,,"([,0-9]+)",,,,automated
 Austria,Austria,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html,,csv,https://info.gesundheitsministerium.at/data/AllgemeinDaten.csv,,1,GesTestungen,,,automated Selenium but need some checks
@@ -33,7 +33,7 @@ Cape Verde,CapeVerde,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,
 Central African Republic,CentralAfricanRepublic,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Chad,Chad,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Chile,Chile,https://www.gob.cl/coronavirus/cifrasoficiales/,,csv,https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto7/PCR_std.csv,,"sum,numero",,60556,,automated
-Colombia,Colombia,https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx,,csv,https://www.datos.gov.co/api/views/8835-5baf/rows.csv?accessType=DOWNLOAD,,"last,Acumuladas",,,,"withuot info, We need to check with new links"
+Colombia,Colombia,https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx,,csv,https://www.datos.gov.co/api/views/8835-5baf/rows.csv?accessType=DOWNLOAD,,"last,Acumuladas",,,,"without info, We need to check with new links"
 Comoros,Comoros,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Costa Rica,CostaRica,http://geovision.uned.ac.cr/oges/index.html,,xlsx,,,([0-9]+),,,"Excel-General --> RESUMEN --> ""Mustras Realizadas""",excel
 Cote d'Ivoire,CotedIvoire,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
@@ -45,7 +45,7 @@ Democratic Republic of the Congo,DemocraticRepublicoftheCongo,https://africacdc.
 Denmark,Denmark,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts,special dashboard,,,"//*[@id=""top""]/div[2]/section[6]/div[1]/table/tbody/tr[2]/td[2]",,,"""Prover"" bottom line",automated Selenium but need some checks
 Djibouti,Djibouti,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Dominica,Dominica,https://www.facebook.com/SupportRooseveltSkerrit/photos,,image,,,,,,,facebook information
-Dominican Republic ,DominicanRepublic ,https://www.msp.gob.do/web/?page_id=6948#1586785071804-577a2da4-6f72,,Stable PDF,,,,,,Always the same link. PDF changes day.,pdf
+Dominican Republic ,DominicanRepublic ,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4,,-,,,,,,"Embedded PDF in iframe (?), eventually scrapabable via Selenium?",embedded PDF in website – PDF download is always corrupt
 Ecuador,Ecuador,https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/,,html,,,"//*[@id=""postcontent""]/table/tbody/tr[1]/td[2]/p[1]/strong[1]",,,,automated
 Egypt,Egypt,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 El Salvador,ElSalavador,https://covid19.gob.sv/,,special dashboard,,,"//*[@id=""ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b""]/div[1]/div/div[24]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span",,,"""PRUEBAS COVID19""",automated
@@ -61,7 +61,7 @@ France,France,https://dashboard.covid19.data.gouv.fr/suivi-des-tests?location=FR
 French Polynesia,FrenchPolynesia,https://www.presidence.pf/?s=Coronavirus+COVID-19+le+point+sur+la+situation,,irrelevant,,,,,,,"withuot info, We need to check with new links"
 Gabon,Gabon,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Georgia,Georgia,Data received from Georgia CDC,,irrelevant,,,,,,,"withuot info, We need to check with new links"
-Germany,Germany,https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Situationsberichte/Okt_2020/Archiv_Oktober.html,,pdf_list,,,,,,"Report published every day but testing info only in wednesday's reports (""Mittwoch""). Last blue table ""Table 4: Number of SARS-CoV-2-laboratory tests in Germany"". ",pdf
+Germany,Germany,https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Situationsberichte/Okt_2020/Archiv_Oktober.html,,pdf_list,,,,,,"Report published every day but testing info only in wednesday's reports (""Mittwoch""). Last blue table ""Table 4: Number of SARS-CoV-2-laboratory tests in Germany"". ","only reported once per week and due to a pdf_list type and a problematic table form, not really automatable"
 Ghana,Ghana,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Greece,Greece,https://eody.gov.gr/,,pdf_list,,,,,,"Value in bold between ""ελεγχθε"" and  ""κλινικά"". Published daily.",pdf
 Greenland,Greenland,https://www.nun.gl/,,html,,,"//*[@id=""x3ef423376f3f4047a7073005772c2053""]/table/tbody/tr[1]/td[1]/h3/strong",,,,automated
