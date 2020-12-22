@@ -70,18 +70,6 @@ class TestDefaultSuite(unittest.TestCase):
     # 5 | close |  |
     self.driver.close()
 
-  def test_bulgaria(self):
-    # Test name: Bulgaria
-    # Step # | name | target | value
-    # 1 | open | https://coronavirus.bg/ |
-    self.driver.get("https://coronavirus.bg/")
-    # 2 | waitForElementVisible | css=.col-lg-3:nth-child(1) > .statistics-value | 600
-    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-lg-3:nth-child(1) > .statistics-value")))
-    # 3 | storeText | css=.col-lg-3:nth-child(1) > .statistics-value | tests
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-lg-3:nth-child(1) > .statistics-value").text
-    # 4 | close |  |
-    self.driver.close()
-
   def test_canada(self):
     # Test name: Canada
     # Step # | name | target | value
@@ -338,6 +326,7 @@ class TestDefaultSuite(unittest.TestCase):
     # 1 | open | https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx |
     self.driver.get("https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx")
     # 2 | waitForElementVisible | css=.total_tests > .numbers | 600
+    time.sleep(60)
     WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".total_tests > .numbers")))
     # 3 | storeText | css=.total_tests > .numbers | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".total_tests > .numbers").text
@@ -1487,3 +1476,20 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(1) p:nth-child(1)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) strong:nth-child(1)").text
     self.driver.close()
+    
+  def test_saintLucia(self):
+    self.driver.get("https://www.covid19response.lc/")
+    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div")))
+    self.driver.find_element(By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".wrapper:nth-child(9) > .yellow").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".test-stlucia").text
+    self.driver.close()
+    
+  def test_iceland(self):
+    self.driver.get("https://www.covid.is/tolulegar-upplysingar")
+    self.driver.switch_to.frame(0)
+    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span")))
+    self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").text
+    self.driver.close()
+  
