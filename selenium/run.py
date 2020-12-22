@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import csv
+import pandas
 from datetime import date
 from json import dumps
 import concurrent.futures
@@ -73,3 +75,6 @@ if __name__ == '__main__':
     # write to file
     with open("tests-selenium.json", "w") as outfile:
         json.dump(country_list, outfile, indent=4)
+
+    data_json = pandas.read_json('tests-selenium.json')
+    data_json.to_csv('tests-selenium.csv', index=False)
