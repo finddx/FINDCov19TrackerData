@@ -346,83 +346,6 @@ class TestDefaultSuite(unittest.TestCase):
     # 4 | close |  |
     self.driver.close()
 
-  def test_ethiopia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(3)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_kenya(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(5)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_libya(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(6)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_nigeria(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(7)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_ghana(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(8)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_uganda(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(9)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_cameroon(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(10)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_sudan(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(11)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_cotedivoire(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(12)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_zambia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(13)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_senegal(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(14)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-    
   def test_algeria(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
@@ -446,238 +369,1093 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_angola(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(16)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_mauritania(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(19)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_gabon(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(20)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_rwanda(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(21)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_congo(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(22)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_malawi(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(23)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_mali(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(24)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_djibouti(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(25)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_equatorialguinea(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(26)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_centralafricanrepublic(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(27)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_somalia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(28)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_burkinafaso(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(29)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_benin(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(33)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_burundi(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(40)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_chad(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(37)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_comoros(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(42)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_democraticrepublicofthecongo(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(17)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_eritrea(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(41)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_ghana(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(8)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_guineabissau(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(35)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_liberia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(38)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_mali(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(24)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_niger(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(36)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_congo(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(22)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_saotomeandprincipe(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(39)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_seychelles(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(44)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_sierraleone(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(34)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_gambia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(30)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_southsudan(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(32)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_tanzania(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(43)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_westernsahara(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.implicitly_wait(20)
-    self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(45)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-    self.driver.close()
-
-  def test_egypt(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    time.sleep(20)
-    continent = self.driver.find_element_by_id('Dashboard_1day_Sht1_5411_layer')
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
-
     final_tests = ""
     for country in all_countries:
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Egypt':
+            if temp_name == 'Angola':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
         except:
             pass
-
-    self.vars["tests_cumulative"] = final_tests
+    
+    self.vars["tests"] = final_tests
     self.driver.close()
+    self.driver.quit()
 
+  def test_benin(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Benin':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()
+
+  def test_botswana(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Botswana':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()
+
+  def test_burkinafaso(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Burkina Faso':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()
+    
+  def test_burundi(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Burundi':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()
+
+  def test_cameroon(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Cameroon':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()
+    
+  def test_capeverde(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Cabo Verde':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()
+    
+  def test_centralafricanrepublic(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Central African Republic':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit() 
+
+  def test_chad(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Chad':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()    
+
+  def test_comoros(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Comoros':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+
+  def test_cotedivoire(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Cote d'Ivoire":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_democraticrepublicofthecongo(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Democratic Republic of the Congo":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+
+  def test_djibouti(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Djibouti":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_egypt(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Egypt":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_equatorialguinea(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Equatorial Guinea":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_eritrea(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Eritrea":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_Eswatini(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Eswatini":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_ethiopia(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Ethiopia":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_gabon(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Gabon":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_ghana(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Ghana":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_guinea(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Guinea":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_guineabissau(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Guinea Bissau":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_kenya(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Kenya":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_lesotho(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Lesotho":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_liberia(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Liberia":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_libya(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Libya":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_madagascar(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Madagascar":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_malawi(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Malawi":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_mali(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Mali":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_mauritania(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Mauritania":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_mauritius(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Mauritius":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_morocco(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Morocco":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_mozambique(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Mozambique":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_namibia(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Namibia":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_niger(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Niger":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_nigeria(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Nigeria":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_republicofthecongo(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Republic of the Congo":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_rwanda(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Rwanda":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_saotomeandprincipe(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Sao Tome and Principe":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_senegal(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Senegal":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_seychelles(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Seychelles":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_sierraleone(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Sierra Leone":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_somalia(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Somalia":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_southsudan(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "South Sudan":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_sudan(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Sudan":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_thegambia(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Gambia":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_togo(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Togo":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_tunisia(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Tunisia":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_uganda(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Uganda":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_unitedrepublicoftanzania(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Tanzania":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_zambia(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Zambia":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
+  def test_zimbabwe(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Zimbabwe":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
