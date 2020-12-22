@@ -363,7 +363,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
 
@@ -384,7 +384,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
 
@@ -405,7 +405,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
 
@@ -426,7 +426,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
 
@@ -447,7 +447,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
     
@@ -468,7 +468,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
 
@@ -489,7 +489,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
     
@@ -510,7 +510,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
     
@@ -531,7 +531,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit() 
 
@@ -552,7 +552,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()    
 
@@ -573,7 +573,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
 
@@ -594,7 +594,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -615,7 +615,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
 
@@ -636,7 +636,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -657,7 +657,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -678,7 +678,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -699,7 +699,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -720,7 +720,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -741,7 +741,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -762,7 +762,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -783,7 +783,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -804,7 +804,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -825,7 +825,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -846,7 +846,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -867,7 +867,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -888,7 +888,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -909,7 +909,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -930,7 +930,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -951,7 +951,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -972,7 +972,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -993,7 +993,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1014,7 +1014,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1035,7 +1035,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1056,7 +1056,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1077,7 +1077,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1098,7 +1098,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1119,7 +1119,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1140,7 +1140,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1161,7 +1161,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1182,7 +1182,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1203,7 +1203,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1224,7 +1224,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1245,7 +1245,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1266,7 +1266,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1287,7 +1287,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1308,7 +1308,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1329,7 +1329,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1350,7 +1350,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1371,7 +1371,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1392,7 +1392,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1413,7 +1413,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1434,7 +1434,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
@@ -1455,7 +1455,7 @@ class TestDefaultSuite(unittest.TestCase):
         except:
             pass
     
-    self.vars["tests"] = final_tests
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()  
     
