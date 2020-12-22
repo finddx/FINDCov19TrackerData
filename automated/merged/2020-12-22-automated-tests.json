@@ -1,8 +1,14 @@
 [
   {
+    "country": "Algeria",
+    "date": "2020-12-22",
+    "tests": "230,553",
+    "source": "selenium"
+  },
+  {
     "country": "Angola",
-    "tests_cumulative": 171247,
-    "new_tests": 0,
+    "tests_cumulative": 190462,
+    "new_tests": 19215,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -15,15 +21,15 @@
   },
   {
     "country": "Benin",
-    "tests_cumulative": 379760,
-    "new_tests": 0,
+    "tests_cumulative": 126647,
+    "new_tests": -253113,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Bosniaandherzegovina",
-    "tests_cumulative": 324366,
-    "new_tests": 356,
+    "tests_cumulative": 324454,
+    "new_tests": 444,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -34,29 +40,29 @@
   },
   {
     "country": "Bulgaria",
-    "tests_cumulative": 688798,
-    "new_tests": 22055,
+    "tests_cumulative": 257405,
+    "new_tests": -409338,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Burkinafaso",
-    "tests_cumulative": 26509,
-    "new_tests": 0,
+    "tests_cumulative": 77889,
+    "new_tests": 51380,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Burundi",
-    "tests_cumulative": 76962,
-    "new_tests": 0,
+    "tests_cumulative": 167566,
+    "new_tests": 90604,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Cameroon",
-    "tests_cumulative": 659314,
-    "new_tests": 0,
+    "tests_cumulative": 874617,
+    "new_tests": 215303,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -69,43 +75,43 @@
   },
   {
     "country": "Centralafricanrepublic",
-    "tests_cumulative": 86775,
+    "tests_cumulative": 107404,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Chad",
-    "tests_cumulative": 63812,
+    "tests_cumulative": 34679,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Comoros",
-    "tests_cumulative": 6227,
+    "tests_cumulative": 379760,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Congo",
-    "tests_cumulative": 82460,
-    "date": "2020-12-22",
-    "source": "selenium"
-  },
-  {
-    "country": "Cotedivoire",
-    "tests_cumulative": 237469,
-    "date": "2020-12-22",
-    "source": "selenium"
-  },
-  {
-    "country": "Democraticrepublicofthecongo",
     "tests_cumulative": 90368,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
+    "country": "Cotedivoire",
+    "tests_cumulative": 713509,
+    "date": "2020-12-22",
+    "source": "selenium"
+  },
+  {
+    "country": "Democraticrepublicofthecongo",
+    "tests_cumulative": 531000,
+    "date": "2020-12-22",
+    "source": "selenium"
+  },
+  {
     "country": "Djibouti",
-    "tests_cumulative": 97646,
+    "tests_cumulative": 132429,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -117,13 +123,13 @@
   },
   {
     "country": "Equatorialguinea",
-    "tests_cumulative": 74952,
+    "tests_cumulative": 223447,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Eritrea",
-    "tests_cumulative": 23693,
+    "tests_cumulative": 65241,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -135,7 +141,7 @@
   },
   {
     "country": "Ethiopia",
-    "tests_cumulative": 1743663,
+    "tests_cumulative": 4300996,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -147,25 +153,25 @@
   },
   {
     "country": "Gabon",
-    "tests_cumulative": 343800,
+    "tests_cumulative": 98369,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Gambia",
-    "tests_cumulative": 27727,
+    "tests_cumulative": 690221,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Ghana",
-    "tests_cumulative": 636366,
+    "tests_cumulative": 508907,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Guineabissau",
-    "tests_cumulative": 65275,
+    "tests_cumulative": 74952,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -189,7 +195,7 @@
   },
   {
     "country": "Kenya",
-    "tests_cumulative": 508907,
+    "tests_cumulative": 546544,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -201,13 +207,13 @@
   },
   {
     "country": "Liberia",
-    "tests_cumulative": 51745,
+    "tests_cumulative": 26509,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Libya",
-    "tests_cumulative": 1011025,
+    "tests_cumulative": 1743663,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -219,19 +225,19 @@
   },
   {
     "country": "Malawi",
-    "tests_cumulative": 48174,
+    "tests_cumulative": 290387,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Mali",
-    "tests_cumulative": 126647,
+    "tests_cumulative": 513852,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Mauritania",
-    "tests_cumulative": 132429,
+    "tests_cumulative": 258914,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -248,13 +254,13 @@
   },
   {
     "country": "Niger",
-    "tests_cumulative": 34336,
+    "tests_cumulative": 86775,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Nigeria",
-    "tests_cumulative": 874617,
+    "tests_cumulative": 230553,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -289,31 +295,31 @@
   },
   {
     "country": "Rwanda",
-    "tests_cumulative": 690221,
+    "tests_cumulative": 171247,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Saotomeandprincipe",
-    "tests_cumulative": 7498,
+    "tests_cumulative": 27727,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Senegal",
-    "tests_cumulative": 267733,
+    "tests_cumulative": 95990,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Seychelles",
-    "tests_cumulative": 21504,
+    "tests_cumulative": 65275,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Sierraleone",
-    "tests_cumulative": 56723,
+    "tests_cumulative": 97646,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -331,7 +337,7 @@
   },
   {
     "country": "Somalia",
-    "tests_cumulative": 34679,
+    "tests_cumulative": 343800,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -342,7 +348,7 @@
   },
   {
     "country": "Southsudan",
-    "tests_cumulative": 65241,
+    "tests_cumulative": 48174,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -354,13 +360,13 @@
   },
   {
     "country": "Sudan",
-    "tests_cumulative": 95990,
+    "tests_cumulative": 636366,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Tanzania",
-    "tests_cumulative": 3880,
+    "tests_cumulative": 56723,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -372,7 +378,7 @@
   },
   {
     "country": "Uganda",
-    "tests_cumulative": 713509,
+    "tests_cumulative": 1011025,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -389,13 +395,13 @@
   },
   {
     "country": "Westernsahara",
-    "tests_cumulative": 903,
+    "tests_cumulative": 34336,
     "date": "2020-12-22",
     "source": "selenium"
   },
   {
     "country": "Zambia",
-    "tests_cumulative": 531000,
+    "tests_cumulative": 659314,
     "date": "2020-12-22",
     "source": "selenium"
   },
