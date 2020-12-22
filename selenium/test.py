@@ -263,12 +263,26 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_southAfrica(self):
-    self.driver.get("https://www.nicd.ac.za/diseases-a-z-index/covid-19/surveillance-reports/national-covid-19-daily-report/")
-    self.driver.switch_to.frame(0)
-    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.ID, "chtTests")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "chtTests").text
-    print(str(self.vars["tests_cumulative"]))
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'South Africa':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests_cumulative"] = final_tests
     self.driver.close()
+    self.driver.quit()
+
 
   def test_singapore(self):
     # Test name: Singapore
@@ -1464,7 +1478,12 @@ class TestDefaultSuite(unittest.TestCase):
   
   def test_czechrepublic(self):
     self.driver.get("https://onemocneni-aktualne.mzcr.cz/covid-19")
-    WebDriverWait(self.driver, 30000).until(expected_conditions.visibility_of_element_located((By.ID, "count-test")))
+    WebDriverWait(self.driver, 40).until(expected_conditions.visibility_of_element_located((By.ID, "count-test")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "count-test").text
     self.driver.close()
     
+  def test_ecuador(self):
+    self.driver.get("https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/")
+    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(1) p:nth-child(1)")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) strong:nth-child(1)").text
+    self.driver.close()
