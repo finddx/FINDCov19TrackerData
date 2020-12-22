@@ -38,7 +38,7 @@ def run_one_country(country):
     result = runner.run(suite)
     status["state"] = "success" if result.wasSuccessful() else "failure"
     set_commit_status(status)
-    return dict(country=country.capitalize(), **test.vars, date = date.today().strftime("%Y-%m-%d"))
+    return dict(country=country[:1].upper() + country[1:], **test.vars, date = date.today().strftime("%Y-%m-%d"))
 
 
 if __name__ == '__main__':
