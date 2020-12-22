@@ -1,5 +1,5 @@
-country,jhu_ID,source,alternative link,type,data_url,date_format,xpath_cumul,xpath_new,backlog,comment,stauts_with_automatization
-Afghanistan,Afghanistan,MOPH-COVID-19 Dashboard (moph-dw.org),,html_list OR pdf_list,afghanistan-flash-update-covid-19-strategic-situation-report-no-,%d_%B_%Y,"workers. ([,0-9]+) people out of a population of ",,,"""Afghanistan COVID-19 Multi-Sectoral Response"" Or publication ""Afghanistan Flash Update | COVID-19"" value before ""people out of a population of"". No fixed frequency, other publications without testind data.",pdf
+country,jhu_ID,source,alternative link,type,data_url,date_format,xpath_cumul,xpath_new,backlog,comment,status_with_automatization
+Afghanistan,Afghanistan,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table,,pdf_list,operational_sitrep_covid|daily_brief_covid|strategic_situation_report|strategic_sitrep,,(?<=map)(.*)(?= people out of),,,,
 Albania,Albania,https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A,,html_list,covid19-ministria-e-shendetesise,%d/%m/%Y,Testime totale ([.0-9]+),,,,automated Selenium but need some checks
 Algeria,Algeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Angola,Angola,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
@@ -7,7 +7,7 @@ Antigua and Barbuda,AntiguaandBarbuda,https://covid19.gov.ag/,,html,,,/html/body
 Argentina,Argentina,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,,pdf_list,https://www.argentina.gob.ar/sites/default/files,,(?<=se realizaron )(.*)(?= pruebas diagnósticas),,,,
 Armenia,Armenia,https://ncdc.am/coronavirus/confirmed-cases-by-days/,,html2,https://infogram.com/--1h7j4drmogk92nr,,"Ընդհանուր թեստեր - ([0-9 .,]+)",,,,automated Selenium but need some checks
 Australia,Australia,https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results,,Selenium,,,"([,0-9]+)",,,,automated
-Austria,Austria,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html,,csv,https://info.gesundheitsministerium.at/data/AllgemeinDaten.csv,,1;GesTestungen,,,,automated Selenium but need some checks
+Austria,Austria,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html,,csv,https://info.gesundheitsministerium.at/data/AllgemeinDaten.csv,,1,GesTestungen,,,automated Selenium but need some checks
 Azerbaijan,Azerbaijan,https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet,,html,,,/html/body/main/section/div/div/div[3]/div[6]/strong,,,,automated Selenium but need some checks
 Bahrain,Bahrain,https://www.moh.gov.bh/COVID19,,html,https://www.moh.gov.bh/COVID19,,/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div/div/table/thead/tr[1]/th/span,,,,automated Selenium but need some checks
 Bangladesh,Bangladesh,https://corona.gov.bd/,,special dashboard,,,,,,Need to first change language ,automated Selenium but need some checks
