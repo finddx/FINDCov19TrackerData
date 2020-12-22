@@ -1,11 +1,5 @@
 [
   {
-    "country": "Eswatini",
-    "tests_cumulative": 77889,
-    "date": "2020-12-22",
-    "source": "selenium"
-  },
-  {
     "country": "Algeria",
     "tests_cumulative": 230553,
     "date": "2020-12-22",
@@ -34,8 +28,8 @@
   },
   {
     "country": "Bosniaandherzegovina",
-    "tests_cumulative": 325026,
-    "new_tests": 1016,
+    "tests_cumulative": 325302,
+    "new_tests": 1292,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -52,8 +46,8 @@
   },
   {
     "country": "Bulgaria",
-    "tests_cumulative": 439130,
-    "new_tests": -227613,
+    "tests_cumulative": 735363,
+    "new_tests": 68620,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -104,6 +98,12 @@
     "source": "selenium"
   },
   {
+    "country": "Chile",
+    "tests_cumulative": 6107861,
+    "date": "2020-12-22",
+    "source": "selenium"
+  },
+  {
     "country": "Comoros",
     "tests_cumulative": 6227,
     "date": "2020-12-22",
@@ -112,6 +112,12 @@
   {
     "country": "Cotedivoire",
     "tests_cumulative": 237469,
+    "date": "2020-12-22",
+    "source": "selenium"
+  },
+  {
+    "country": "Czechrepublic",
+    "tests_cumulative": 3566393,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -147,7 +153,13 @@
   },
   {
     "country": "Estonia",
-    "tests_cumulative": 585915,
+    "tests_cumulative": 591572,
+    "date": "2020-12-22",
+    "source": "selenium"
+  },
+  {
+    "country": "Eswatini",
+    "tests_cumulative": 77889,
     "date": "2020-12-22",
     "source": "selenium"
   },
@@ -213,7 +225,6 @@
   },
   {
     "country": "Latvia",
-    "tests_cumulative": 790258,
     "date": "2020-12-22",
     "source": "selenium"
   },
