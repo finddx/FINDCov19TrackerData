@@ -1,5 +1,12 @@
 # FINDCov19TrackerData
 
+<!-- badges: start -->
+
+[![tic](https://github.com/dsbbfinddx/data/workflows/tic/badge.svg?branch=master)](https://github.com/dsbbfinddx/data/actions)
+![Scrape test data](https://github.com/dsbbfinddx/FINDCov19TrackerData/workflows/Scrape%20test%20data%20and%20push/badge.svg)
+
+<!-- badges: end -->
+
 - [FINDCov19TrackerData](#findcov19trackerdata)
 - [Test data scraping](#test-data-scraping)
   - [High-Level Workflow Description](#high-level-workflow-description)
@@ -8,13 +15,6 @@
     - [2. Test data scraping via "R fetch functions"](#2-test-data-scraping-via-r-fetch-functions)
     - [3. Combination of Selenium and "R fetch functions"](#3-combination-of-selenium-and-r-fetch-functions)
     - [4. Analysis of Workflow Run](#4-analysis-of-workflow-run)
-
-<!-- badges: start -->
-
-[![tic](https://github.com/dsbbfinddx/data/workflows/tic/badge.svg?branch=master)](https://github.com/dsbbfinddx/data/actions)
-![Scrape test data](https://github.com/dsbbfinddx/FINDCov19TrackerData/workflows/Scrape%20test%20data%20and%20push/badge.svg)
-
-<!-- badges: end -->
 
 Raw and processed data for [dsbbfinddx/FINDCov19TrackerShiny](https://github.com/dsbbfinddx/FINDCov19TrackerShiny)
 
