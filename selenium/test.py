@@ -263,15 +263,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_southAfrica(self):
-    # Test name: SouthAfrica
-    # Step # | name | target | value
-    # 1 | open | https://gis.nicd.ac.za/portal/apps/opsdashboard/index.html#/0ec12f471aaa4055999366669b38482d |
-    self.driver.get("https://gis.nicd.ac.za/portal/apps/opsdashboard/index.html#/0ec12f471aaa4055999366669b38482d")
-    # 2 | waitForElementVisible | css=#ember232 text | 600
-    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ember232 text")))
-    # 3 | storeText | css=#ember232 text | tests
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember232 text").text
-    # 4 | close |  |
+    self.driver.get("https://www.nicd.ac.za/diseases-a-z-index/covid-19/surveillance-reports/national-covid-19-daily-report/")
+    self.driver.switch_to.frame(0)
+    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.ID, "chtTests")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "chtTests").text
+    print(str(self.vars["tests_cumulative"]))
     self.driver.close()
 
   def test_singapore(self):
@@ -703,7 +699,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()  
     
-  def test_Eswatini(self):
+  def test_eswatini(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -1457,5 +1453,18 @@ class TestDefaultSuite(unittest.TestCase):
     
     self.vars["tests_cumulative"] = final_tests
     self.driver.close()
-    self.driver.quit()  
+    self.driver.quit()
+    
+  def test_chile(self):
+    self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
+    time.sleep(60)
+    self.driver.switch_to.frame(0)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"106fdff4-b841-4389-a4bf-7541e6143abd\"]/div[1]/div/div[67]/div/div/div/div/div/div/div/div/div/h2/div/span/span").text
+    self.driver.close()
+  
+  def test_czechrepublic(self):
+    self.driver.get("https://onemocneni-aktualne.mzcr.cz/covid-19")
+    WebDriverWait(self.driver, 30000).until(expected_conditions.visibility_of_element_located((By.ID, "count-test")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "count-test").text
+    self.driver.close()
     
