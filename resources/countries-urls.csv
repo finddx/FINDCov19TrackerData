@@ -4,7 +4,7 @@ Albania,Albania,https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%A
 Algeria,Algeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Angola,Angola,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Antigua and Barbuda,AntiguaandBarbuda,https://covid19.gov.ag/,,html,,,/html/body/div/div/div[1]/div[1]/div[4]/p[2],,,,pdf
-Argentina,Argentina,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,,pdf_list,https://www.argentina.gob.ar/sites/default/files,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,pdf
+Argentina,Argentina,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,,pdf_list,https://www.argentina.gob.ar/sites/default/files,,(?<=se realizaron )(.*)(?= pruebas diagnósticas),,,
 Armenia,Armenia,https://ncdc.am/coronavirus/confirmed-cases-by-days/,,html2,https://infogram.com/--1h7j4drmogk92nr,,"Ընդհանուր թեստեր - ([0-9 .,]+)",,,,automated Selenium but need some checks
 Australia,Australia,https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results,,Selenium,,,"([,0-9]+)",,,,automated
 Austria,Austria,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html,,csv,https://info.gesundheitsministerium.at/data/AllgemeinDaten.csv,,1;GesTestungen,,,,automated Selenium but need some checks
