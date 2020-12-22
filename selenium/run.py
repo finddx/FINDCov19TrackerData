@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import argparse
 import json
-import csv
 import pandas
 from datetime import date
 from json import dumps
