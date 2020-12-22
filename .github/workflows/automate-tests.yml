@@ -184,9 +184,9 @@ jobs:
           git pull origin selenium
           date=$(date +'%Y-%m-%d')
           mv automated-tests.json automated/merged/$date-automated-tests.json
-          mv countries-error.csv automated/merged/$date-countries-error.csv
+          mv countries-error.csv issues/$date-countries-error.csv
           git add automated/merged/$date-automated-tests.json
-          git add automated/merged/$date-countries-error.csv
+          git add issues/$date-countries-error.csv
           git commit -m "update files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
