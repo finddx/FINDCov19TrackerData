@@ -1,20 +1,22 @@
 # FINDCov19TrackerData
 
 <!-- badges: start -->
+
 [![tic](https://github.com/dsbbfinddx/data/workflows/tic/badge.svg?branch=master)](https://github.com/dsbbfinddx/data/actions)
+![Scrape test data](https://github.com/dsbbfinddx/FINDCov19TrackerData/workflows/Scrape%20test%20data%20and%20push/badge.svg)
+
 <!-- badges: end -->
 
 Raw and processed data for [dsbbfinddx/FINDCov19TrackerShiny](https://github.com/dsbbfinddx/FINDCov19TrackerShiny)
 
-# Manual test data preparation
+# Test data scraping
 
-Some parts of the test data are collated manually every day by the FIND team, from information found online.
+The main part of the test data is scraped in an automated fashion by combining Python and R based solutions.
+COVID-19 tests are queried twice per day (early in the morning and late in the evening).
+Due to the fact that countries change their way of reporting from time to time, manual action is needed on a daily base for some countries.
 
-1. Some data is grabbed with [Selenium IDE](https://www.selenium.dev/selenium-ide/), using the playback sequence saved in `scrap_tests_data.side`. 
-  Some website may be slow to answer, the sequence can be played back from where it last stopped.
-  When everything is finished, save the output log as a text file named `output_selenium_YYYYMMDD.txt`.
-2. The rest is fetch directly from the R script `grab_tests_data_29-06-2020.R`, that download and parse locally data such as CSV, XLSX, ZIP, PDF, HTML, etc. 
-  Currently 110+ countries are updated automatically this way. 
-  This may vary from one day to another if the page/report file still exists at the expected location and the layout wasn't changed too dramatically. 
-  A csv file is produced as a result under the name `coronavirus_tests_YYYYMMDD_sources_SO.csv`, in which manual updates are made afterwards (for other type of reports like ArcGIS dashboard, image, etc).
-3. The R package {FindCovTracker} takes this data and writes processed versions to `processed/`, which are then taken as input for the final Shiny App.
+1. Most countries are scraped via [Selenium](https://www.selenium.dev) by invoking a playback sequence via the Python interface.
+2. Countries which report in PDF or other non-HTML reports are queried via R functions developed by the FIND team.
+3. Last, country information gathered via manual website visits is added to the list and combined into a single information source listing the number of tests for a total of 179 countries.
+
+The R package {FindCovTracker}, which powers most of the automated actions run via GitHub Actions, takes this data and writes [`processed/coronavirus_test.csv`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/selenium/processed) which is then taken as input for the final Shiny App.
