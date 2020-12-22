@@ -20,7 +20,7 @@ class TestDefaultSuite(unittest.TestCase):
     # Required for test_france() to work
     # https://stackoverflow.com/questions/51220794/selenium-not-working-in-headless-mode
     # https://sqa.stackexchange.com/questions/33778/chromedriver-in-headless-mode-doesnt-work-correctly-because-of-windows-user-pol
-    chrome_options.add_argument("--window-size=1920,1080")
+    chrome_options.add_argument("--window-size=3020,1580") # With this size African countries work
     self.driver = webdriver.Chrome(chrome_options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
     self.driver.set_page_load_timeout(10)
@@ -422,6 +422,27 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.find_element(By.CSS_SELECTOR, "circle:nth-child(14)").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
     self.driver.close()
+    
+  def test_algeria(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == 'Algeria':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests"] = final_tests
+    self.driver.close()
+    self.driver.quit()
 
   def test_angola(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
