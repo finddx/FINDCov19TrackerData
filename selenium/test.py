@@ -214,7 +214,7 @@ class TestDefaultSuite(unittest.TestCase):
     # 4 | close |  |
     self.driver.close()
 
-  def test_occupiedPalestinianterritory(self):
+  def test_occupiedPalestinianTerritory(self):
     # Test name: occupiedPalestinianterritory
     # Step # | name | target | value
     # 1 | open | https://corona.ps/ |
@@ -429,7 +429,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_burkinafaso(self):
+  def test_burkinaFaso(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -492,7 +492,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
     
-  def test_capeverde(self):
+  def test_capeVerde(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -513,7 +513,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
     
-  def test_centralafricanrepublic(self):
+  def test_centralAfricanRepublic(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -576,7 +576,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()  
 
-  def test_cotedivoire(self):
+  def test_cotedIvoire(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -597,7 +597,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()  
     
-  def test_democraticrepublicofthecongo(self):
+  def test_democraticRepublicoftheCongo(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -660,7 +660,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()  
     
-  def test_equatorialguinea(self):
+  def test_equatorialGuinea(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -807,7 +807,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()  
     
-  def test_guineabissau(self):
+  def test_guineaBissau(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -1122,7 +1122,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()  
     
-  def test_republicofthecongo(self):
+  def test_congo(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -1164,7 +1164,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()  
     
-  def test_saotomeandprincipe(self):
+  def test_saoTomeandPrincipe(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -1227,7 +1227,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()  
     
-  def test_sierraleone(self):
+  def test_sierraLeone(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -1416,6 +1416,27 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()  
     
+  def test_westernSahara(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            if temp_name == "Western Sahara":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+    
+    self.vars["tests_cumulative"] = final_tests
+    self.driver.close()
+    self.driver.quit()  
+    
   def test_zambia(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
@@ -1465,7 +1486,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"106fdff4-b841-4389-a4bf-7541e6143abd\"]/div[1]/div/div[67]/div/div/div/div/div/div/div/div/div/h2/div/span/span").text
     self.driver.close()
   
-  def test_czechrepublic(self):
+  def test_czechia(self):
     self.driver.get("https://onemocneni-aktualne.mzcr.cz/covid-19")
     WebDriverWait(self.driver, 40).until(expected_conditions.visibility_of_element_located((By.ID, "count-test")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "count-test").text
@@ -1491,5 +1512,122 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span")))
     self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").text
+    self.driver.close()
+  
+  def test_bermuda(self):
+    self.driver.get("https://www.gov.bm/coronavirus-covid19-update")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)").text
+    self.driver.close()
+    
+  def test_bulgaria(self):
+    self.driver.get("https://coronavirus.bg/")
+    time.sleep(30)
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-lg-3:nth-child(1) > .statistics-value")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-lg-3:nth-child(1) > .statistics-value").text
+    self.driver.close()
+    
+  def test_croatia(self):
+    self.driver.get("https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "h3").text
+    self.driver.close()
+    
+  def test_faroeIslands(self):
+    self.driver.get("https://corona.fo/?_l=en")
+    self.vars["tests"] = self.driver.find_element(By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]").text
+    self.driver.close()
+    
+  def test_finland(self):
+    self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) > strong").text
+    self.driver.close()
+    
+  def test_greenland(self):
+    self.driver.get("https://nun.gl/emner/borgere/coronavirus_emne/foelg_smittespredningen?sc_lang=da")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//table[@id=\'covid_19\']/tbody/tr/td[2]").text
+    self.driver.close()
+  
+  def test_guatemala(self):
+    self.driver.get("https://gtmvigilanciacovid.shinyapps.io/3869aac0fb95d6baf2c80f19f2da5f98")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".sidebar-menu")))
+    self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) span").click()
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#casosSospechososValueBox h3")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#casosSospechososValueBox h3").text
+    self.driver.close()
+    
+  def test_indonesia(self):
+    self.driver.get("https://covid19.disiplin.id")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)").text
+    self.driver.close()
+    
+  def test_jamaica(self):
+    self.driver.get("https://www.moh.gov.jm/?s=COVID-19+Clinical+Management+Summary")
+    self.driver.find_element(By.CSS_SELECTOR, "article:nth-child(1) > header > h2 > a").click()
+    self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(25) > .gen10f2c:nth-child(3) .Table_0020Grid__Char").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(25) > .gen10f2c:nth-child(3) .Table_0020Grid__Char").text
+    self.driver.close()
+  
+  def test_japan(self):
+    self.driver.get("https://www.mhlw.go.jp/stf/covid-19/kokunainohasseijoukyou.html")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]")))
+    self.vars["tests"] = self.driver.find_element(By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]").text
+    if '\n' in self.vars["tests_cumulative"]:
+      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[0]
+    self.driver.close()
+    
+  def test_cyprus(self):
+    self.driver.get("https://covid19.ucy.ac.cy/")
+    time.sleep(30)
+    self.driver.switch_to.frame(0)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#pvExplorationHost > div > div > exploration > div > explore-canvas-modern > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToWidthOrigin > div.visualContainerHost > visual-container-repeat > visual-container-modern:nth-child(31) > transform > div > div:nth-child(3) > div > visual-modern > div > svg > g:nth-child(1) > text > tspan").text
+    self.driver.close()
+    
+  def test_ukraine(self):
+    self.driver.get("https://covid19.gov.ua/en/")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value").text
+    self.driver.close()
+    
+  def test_switzerland(self):
+    self.driver.get("https://www.covid19.admin.ch/en/overview?ovTime=total")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".bag-key-value-list__combine-below:nth-child(2) .bag-key-value-list__entry-value").text
+    self.driver.close()
+    
+    def test_taiwan(self):
+    self.driver.get("https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan")
+    self.driver.switch_to.frame(1)
+    self.driver.switch_to.frame(0)
+    self.driver.switch_to.frame(0)
+    time.sleep(15)
+    self.vars["tests_cumulative"] = self.driver.execute_script("x = document.getElementById(\'num9\').textContent; return x;")
+    self.driver.close()
+    
+  def test_uS(self):
+    self.driver.get("https://covidtracking.com/data#ME")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
+    self.driver.close()
+    
+  def test_armenia(self):
+    self.driver.get("https://infogram.com/--1h7j4drmogk92nr")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span:nth-child(2) > span").text
+    self.driver.close()
+    
+  def test_austria(self):
+    self.driver.get("https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
+    self.driver.close()
+    
+  def test_azerbaijan(self):
+    self.driver.get("https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".gray_little_statistic:nth-child(6) > strong").text
+    self.driver.close()
+    
+  def test_bangladesh(self):
+    self.driver.get("https://corona.gov.bd/")
+    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".lang-btn").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".live-update-box-body-three .text-right b").text
     self.driver.close()
   
