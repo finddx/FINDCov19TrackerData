@@ -1,5 +1,6 @@
 # FINDCov19TrackerData
 
+### During the Christmas break and up to the 4th of January 2021, our tracker will be updated less frequently.
 <!-- badges: start -->
 
 [![tic](https://github.com/dsbbfinddx/data/workflows/tic/badge.svg?branch=master)](https://github.com/dsbbfinddx/data/actions)
