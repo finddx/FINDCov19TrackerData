@@ -1594,7 +1594,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".bag-key-value-list__combine-below:nth-child(2) .bag-key-value-list__entry-value").text
     self.driver.close()
     
-    def test_taiwan(self):
+  def test_taiwan(self):
     self.driver.get("https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan")
     self.driver.switch_to.frame(1)
     self.driver.switch_to.frame(0)
