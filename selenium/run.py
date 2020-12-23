@@ -38,7 +38,9 @@ def run_one_country(country):
     result = runner.run(suite)
     status["state"] = "success" if result.wasSuccessful() else "failure"
     set_commit_status(status)
-    return dict(country=country[:1].upper() + country[1:], **test.vars, date = date.today().strftime("%Y-%m-%d"))
+    return dict(country=country[:1].upper() + country[1:],
+                date=date.today().strftime("%Y-%m-%d"),
+                **(test.vars if result.wasSuccessful() else {}))
 
 
 if __name__ == '__main__':
@@ -60,16 +62,14 @@ if __name__ == '__main__':
     country_list = []
     args = parser.parse_args()
     # run test(s)
-    # if args.countries:
-    # run only countries specified in command line
-    # for country in args.countries:
-    for country in countries:
-        country_list.append(run_one_country(country))
-    # FIXME: how to serialize the result and write to JSON?
-    # else:
-    #     # run all countries in parallel
-    #     with concurrent.futures.ThreadPoolExecutor() as executor:
-    #         country_list = executor.map(run_one_country, countries)
+    if args.countries:
+        # run only countries specified in command line
+        for country in args.countries:
+            country_list.append(run_one_country(country))
+    else:
+        # run all countries in parallel
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            country_list = list(executor.map(run_one_country, countries))
 
     # write to file
     with open("tests-selenium.json", "w") as outfile:
