@@ -1,190 +1,205 @@
 set,unit,cases,deaths,pos,tests,income,continent,tests_description,tests_type,comment,latest_test_date
-country,AE,12.335692618806874,0.030333670374115267,0.0059457088552073685,2074.7219413549037,High,Asia,Tests,Not specified,NA,2020-12-24
-country,AF,0.45725441841348136,0.03596383066173449,NA,NA,Low,Asia,People,Not specified,NA,2020-12-14
-country,AG,0,0,NA,NA,High,North America,People,Not specified,NA,2020-12-21
-country,AL,15.948575399583044,0.3127171646977067,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-14
-country,AM,19.811002362470468,0.6749915626054674,0.13896780303030304,142.55821802227473,Lower middle,Asia,Tests,Not specified,NA,2020-12-24
-country,AO,0.25558327755126875,0.006085316132173066,0.022116903633491312,11.556015334996653,Upper middle,Africa,Not specified,Not specified,NA,2020-12-24
-country,AR,13.638375077440482,0.2544472962209045,0.19739960289502337,69.09018497212143,High,South America,Tests,Not specified,NA,2020-12-27
-country,AT,21.518987341772153,0.9105041083721963,0.04727982434740181,455.1410170997113,High,Europe,Tests,Not specified,NA,2020-12-24
-country,AU,0.07058823529411765,0,1.3960089654798004e-4,505.64313725490194,High,Oceania,Tests,Not specified,NA,2020-12-24
-country,AZ,18.256238287799587,0.40437913009172505,0.14427123928293062,126.54107900187395,Upper middle,Asia,Not specified,Not specified,NA,2020-12-27
-country,BA,19.323377019201462,1.5239256324291373,0.34892680242157403,55.37945748247485,Upper middle,Europe,Tests,Not specified,NA,2020-12-27
-country,BB,2.787456445993031,0,NA,NA,High,North America,Tests,Not specified,NA,2020-12-14
-country,BD,0.7474694727638154,0.01518012739162907,NA,NA,Lower middle,Asia,Tests,Not specified,NA,2020-12-15
-country,BE,17.402933563416738,0.7679033649698015,NA,NA,High,Europe,Tests,Not specified,Belgium reported lower cumulative tests values on 12-JUN,2020-12-15
-country,BF,0.8706884179304406,0,0.08860759493670886,9.826340716643545,Low,Africa,Tests,Not specified,NA,2020-12-24
-country,BG,14.853195164075991,1.2377662636729994,0.2424812030075188,61.25503742084052,High,Europe,Tests,PCR,NA,2020-12-27
-country,BH,12.103407755581669,0,0.01930827631455619,626.8507638072856,High,Asia,Not specified,Not specified,NA,2020-12-27
-country,BI,0.0336388865528551,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-20
-country,BJ,0.04949269982677555,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-21
-country,BM,NA,NA,NA,3593.548387096774,High,North America,Not specified,Not specified,NA,2020-12-24
-country,BN,0,0,NA,NA,High,Asia,Tests,Not specified,On 20-AUG Brunei reported less cumulative tests than 19-AUG.,2020-12-23
-country,BO,6.176646963077187,0.08566778034781118,NA,NA,Lower middle,South America,People,Not specified,The testing numbers reported on 27-AUG are lower than 26-AUG.,2020-12-13
-country,BR,17.815288931543712,0.3161475166894838,NA,NA,Upper middle,South America,Tests,PCR+rapid test,NA,2020-12-06
-country,BS,1.7811704834605597,0.2544529262086514,NA,NA,High,North America,Tests,Not specified,NA,2020-12-20
-country,BT,3.238341968911917,0,NA,NA,Lower middle,Asia,Tests,PCR+rapid test,NA,2020-12-13
-country,BW,7.142857142857143,0,NA,NA,Upper middle,Africa,Not specified,Not specified,NA,2020-12-21
-country,BY,20.10794793099799,0.09524817440999048,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-14
-country,BZ,29.14572864321608,0.5025125628140703,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-13
-country,CA,12.892798473848762,0.23051242647448464,0.11004070556309362,117.16390228392771,High,North America,People,Not specified,NA,2020-12-27
-country,CD,0.23559361775772936,0.03796295262446824,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-21
+country,AD,66.23376623376623,0,NA,NA,High,Europe,NA,NA,NA,NA
+country,AE,15.530839231547017,0.030333670374115267,NA,NA,High,Asia,Tests,Not specified,NA,2020-12-24
+country,AF,0.23376489930127417,0.015413070283600495,NA,NA,Low,Asia,People,Not specified,NA,2020-12-14
+country,AG,1.0204081632653061,0,NA,NA,High,North America,People,Not specified,NA,2020-12-21
+country,AL,16.052814454482277,0.2432244614315497,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-14
+country,AM,11.81235234559568,0.4049949375632805,NA,NA,Lower middle,Asia,Tests,Not specified,NA,2020-12-24
+country,AO,0.20081543236171118,0.003042658066086533,NA,NA,Upper middle,Africa,Not specified,Not specified,NA,2020-12-24
+country,AR,17.879900876183733,0.27657314806620054,NA,NA,High,South America,Tests,Not specified,NA,2020-12-27
+country,AT,21.918720852764825,0.6884299355984899,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-24
+country,AU,0.09803921568627451,0,NA,NA,High,Oceania,Tests,Not specified,NA,2020-12-24
+country,AZ,8.83716342834599,0.35506460203175855,NA,NA,Upper middle,Asia,Not specified,Not specified,NA,2020-12-27
+country,BA,12.252362084730263,0.8838768668088997,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-27
+country,BB,2.0905923344947737,0,NA,NA,High,North America,Tests,Not specified,NA,2020-12-14
+country,BD,0.6144915568131447,0.014572922295963906,NA,NA,Lower middle,Asia,Tests,Not specified,NA,2020-12-15
+country,BE,13.727351164797238,0.5953408110440034,NA,NA,High,Europe,Tests,Not specified,Belgium reported lower cumulative tests values on 12-JUN,2020-12-15
+country,BF,0.46883222503946803,0.004784002296321102,NA,NA,Low,Africa,Tests,Not specified,NA,2020-12-24
+country,BG,11.298215313759355,1.065054691997697,NA,NA,High,Europe,Tests,PCR,NA,2020-12-27
+country,BH,13.983548766157462,0,NA,NA,High,Asia,Not specified,Not specified,NA,2020-12-27
+country,BI,0.04204860819106888,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-20
+country,BJ,0.05774148313123814,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-21
+country,BM,NA,NA,NA,NA,High,North America,Not specified,Not specified,NA,2020-12-24
+country,BN,0.22883295194508008,0,NA,NA,High,Asia,Tests,Not specified,On 20-AUG Brunei reported less cumulative tests than 19-AUG.,2020-12-23
+country,BO,9.432022616294011,0.11136811445215454,NA,NA,Lower middle,South America,People,Not specified,The testing numbers reported on 27-AUG are lower than 26-AUG.,2020-12-13
+country,BR,16.842382585540953,0.331202160341364,NA,NA,Upper middle,South America,Tests,PCR+rapid test,NA,2020-12-06
+country,BS,3.5623409669211195,0,NA,NA,High,North America,Tests,Not specified,NA,2020-12-20
+country,BT,2.072538860103627,0,NA,NA,Lower middle,Asia,Tests,PCR+rapid test,NA,2020-12-13
+country,BW,4.719387755102041,0,NA,NA,Upper middle,Africa,Not specified,Not specified,NA,2020-12-21
+country,BY,19.959784104138006,0.09524817440999048,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-14
+country,BZ,11.306532663316583,0.7537688442211056,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-13
+country,CA,17.36791902919824,0.33119601504954693,NA,NA,High,North America,People,Not specified,NA,2020-12-27
+country,CD,0.19651410770312971,0.0033496722903942565,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-21
 country,CF,0.041407867494824016,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-11
-country,CG,2.138455962305183,0.01812250815512867,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-12-02
-country,CH,46.62045060658579,1.0976314269208551,0.10211312159939263,456.5569035239746,High,Europe,Tests,PCR,Testing data published by FOPH also includes Liechtenstein.,2020-12-24
-country,CI,0.10235802562741679,0,0.012575687005123428,8.139358556372736,Lower middle,Africa,Not specified,Not specified,NA,2020-12-24
-country,CL,11.200041849759364,0.21971123666038922,0.054554720346540964,205.29922577945177,High,South America,Not specified,Not specified,NA,2020-12-27
-country,CM,0.2674602576659384,0,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-11-24
-country,CN,0.005697118925273253,6.947706006430796e-5,NA,NA,Upper middle,Asia,Not specified,Not specified,NA,2020-06-24
-country,CO,25.44464752471356,0.48149676709313527,NA,NA,Upper middle,South America,Not specified,Not specified,NA,2020-12-22
-country,CR,18.060463290145268,0.29446407538280334,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-14
-country,CU,1.3419263706188753,0.008828462964597864,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-14
-country,CV,3.5971223021582737,0,0.43478260869565216,8.273381294964029,Lower middle,Africa,Not specified,Not specified,NA,2020-12-24
-country,CY,23.52941176470588,0.24855012427506212,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-13
-country,CZ,67.58801008497525,0.9618078251937622,0.19795427196149218,341.43244000373517,High,Europe,Tests,Not specified,NA,2020-12-24
-country,DE,26.11477131671918,0.7053852764250931,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-18
-country,DJ,0.4048582995951417,0,0.008565310492505354,47.26720647773279,Lower middle,Africa,Not specified,Not specified,Africa CDC reported less cumulative tests on 12-OCT than 11-OCT for Djibouti.,2020-12-24
-country,DK,48.238950276243095,0.3453038674033149,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-15
+country,CG,0.5074302283436027,0,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-12-02
+country,CH,39.78047371461583,0.8896591565569035,NA,NA,High,Europe,Tests,PCR,Testing data published by FOPH also includes Liechtenstein.,2020-12-24
+country,CI,0.26158162104784294,0.003791037986200622,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-12-24
+country,CL,13.083281021134129,0.24063611634233104,NA,NA,High,South America,Not specified,Not specified,NA,2020-12-27
+country,CM,0.30889776237474575,0,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-11-24
+country,CN,0.005419210685016021,1.3895412012861593e-4,NA,NA,Upper middle,Asia,Not specified,Not specified,NA,2020-06-24
+country,CO,22.883870840948845,0.5109761609967965,NA,NA,Upper middle,South America,Not specified,Not specified,NA,2020-12-22
+country,CR,17.74636827640361,0.27483313702394974,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-14
+country,CU,1.5008387039816369,0.008828462964597864,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-14
+country,CV,4.676258992805756,0,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-12-24
+country,CY,47.970173985086994,0.24855012427506212,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-13
+country,CZ,90.57801848912129,1.1672425063031096,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-24
+country,DE,21.705814952735604,0.7734173589229447,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-18
+country,DJ,0.5060728744939271,0,NA,NA,Lower middle,Africa,Not specified,Not specified,Africa CDC reported less cumulative tests on 12-OCT than 11-OCT for Djibouti.,2020-12-24
+country,DK,40.48687845303867,0.4661602209944751,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-15
 country,DM,0,0,NA,NA,Upper middle,North America,People,Not specified,NA,2020-12-13
-country,DO,8.53613569321534,0.027654867256637166,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-14
-country,DZ,1.0079587694693393,0.02052404734213587,NA,NA,Upper middle,Africa,Not specified,Not specified,NA,2020-11-01
-country,EC,2.850989060817321,0.0396757920988494,0.1515516721904188,18.81199342515445,Upper middle,South America,Tests,Not specified,Ecuador reported les cumulative tests on 08-SEP and 7-OCT.,2020-12-27
-country,EE,40.617935192162776,0.37678975131876413,0.06915576084167308,587.3398643556895,High,Europe,Tests,Not specified,NA,2020-12-24
-country,EG,0.9381046377548029,0.041042077901772625,NA,NA,Lower middle,Africa,Tests,PCR,NA,2020-11-20
+country,DO,9.255162241887906,0.018436578171091445,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-14
+country,DZ,0.7502679528403001,0.015963147932772342,NA,NA,Upper middle,Africa,Not specified,Not specified,NA,2020-11-01
+country,EC,4.23964178427705,0.056679702998356285,NA,NA,Upper middle,South America,Tests,Not specified,Ecuador reported les cumulative tests on 08-SEP and 7-OCT.,2020-12-27
+country,EE,40.46721929163527,0.37678975131876413,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-24
+country,EG,1.334844724138605,0.05472277053569683,NA,NA,Lower middle,Africa,Tests,PCR,NA,2020-11-20
 country,EH,NA,NA,NA,NA,NA,Africa,Not specified,Not specified,Africa CDC reported less cumulative tests on 22-AUG than 21-AUG for Western Sahara.,2020-11-24
-country,ER,1.1280315848843767,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-21
-country,ES,20.57320072719495,0.32082130253448826,NA,NA,High,Europe,Tests,PCR+rapid test,NA,2020-12-10
-country,ET,0.35663338088445073,0.006958700114818551,0.04312158182583088,8.270415086461849,Low,Africa,Tests,Not specified,NA,2020-12-24
-country,FI,4.981050351922036,0.10828370330265295,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-23
+country,ER,1.0434292160180485,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-21
+country,ES,22.399743342957972,0.310127259116672,NA,NA,High,Europe,Tests,PCR+rapid test,NA,2020-12-10
+country,ET,0.32792874291082424,0.005219025086113913,NA,NA,Low,Africa,Tests,Not specified,NA,2020-12-24
+country,FI,4.60205739036275,0.09023641941887746,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-23
 country,FJ,0,0,NA,NA,Upper middle,Oceania,Tests,Not specified,NA,2020-12-11
-country,FO,NA,NA,NA,3075.5102040816328,High,Europe,Not specified,Not specified,NA,2020-12-27
-country,FR,19.899194166130464,0.5178172013359071,0.025749601038785968,772.7962128872139,High,Europe,Tests,PCR,NA,2020-12-27
-country,GA,0.7187780772686433,0,0.00390625,184.00718778077268,Upper middle,Africa,Tests,Not specified,NA,2020-12-24
-country,GB,53.1714933859706,0.7394750022095866,0.07936151968867489,669.9908670418054,High,Europe,People,Not specified,NA,2020-12-24
+country,FO,NA,NA,NA,NA,High,Europe,Not specified,Not specified,NA,2020-12-27
+country,FR,20.30823911511475,0.5147531942274106,NA,NA,High,Europe,Tests,PCR,NA,2020-12-27
+country,GA,0.4941599281221922,0,NA,NA,Upper middle,Africa,Tests,Not specified,NA,2020-12-24
+country,GB,72.5598797984857,0.8779424329022184,NA,NA,High,Europe,People,Not specified,NA,2020-12-24
 country,GD,1.7699115044247788,0,NA,NA,Upper middle,North America,Tests,PCR+rapid test,NA,2020-06-18
-country,GE,49.58636249686638,1.0779644021057908,NA,NA,Lower middle,Europe,Tests,PCR,Testing data is directly received from NCDC (Georgia).,2020-12-02
-country,GH,0.34113217262575224,0,0.048825426070935055,6.986773082740642,Lower middle,Africa,Tests,Not specified,NA,2020-12-24
+country,GE,29.531210829781898,0.7771371270995237,NA,NA,Lower middle,Europe,Tests,PCR,Testing data is directly received from NCDC (Georgia).,2020-12-02
+country,GH,0.3572233128439481,0,NA,NA,Lower middle,Africa,Tests,Not specified,NA,2020-12-24
 country,GL,NA,NA,NA,NA,High,North America,Not specified,Not specified,NA,2020-12-09
-country,GM,0.04137360364087712,0,0.004545454545454545,9.102192800992967,Low,Africa,Tests,Not specified,Africa CDC reported less cumulative tests on 02-OCT than 01-OCT for Gambia.,2020-12-24
-country,GN,0.12944490976928347,0,0.003953488372093023,32.7419477651717,Low,Africa,Not specified,Not specified,NA,2020-12-24
-country,GQ,0.2851033499643621,0,0.026143790849673203,10.90520313613685,High,Africa,Not specified,Not specified,NA,2020-12-24
-country,GR,6.466468387220569,0.6140266717835555,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-22
-country,GT,2.2382228175932126,0.10046885465505694,NA,NA,Lower middle,North America,Not specified,Not specified,NA,2020-12-15
-country,GW,0,0,0,9.502032520325203,Low,Africa,Not specified,Not specified,NA,2020-12-24
-country,GY,3.4307496823379924,0,NA,NA,Lower middle,South America,People,Not specified,NA,2020-12-22
+country,GM,0.04137360364087712,0,NA,NA,Low,Africa,Tests,Not specified,Africa CDC reported less cumulative tests on 02-OCT than 01-OCT for Gambia.,2020-12-24
+country,GN,0.1522881291403335,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-24
+country,GQ,0.4276550249465431,0,NA,NA,High,Africa,Not specified,Not specified,NA,2020-12-24
+country,GR,6.293773385781445,0.508490837570757,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-22
+country,GT,2.5061397633400313,0.05023442732752847,NA,NA,Lower middle,North America,Not specified,Not specified,NA,2020-12-15
+country,GW,0.0508130081300813,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-24
+country,GY,1.1435832274459974,0,NA,NA,Lower middle,South America,People,Not specified,NA,2020-12-22
 country,HK,NA,NA,NA,NA,High,Asia,Tests,Not specified,NA,2020-12-22
-country,HN,3.4931852599697124,0.06057546693589096,NA,NA,Lower middle,North America,Tests,Not specified,NA,2020-12-21
-country,HR,37.953714981729604,1.7783191230207065,0.14267399267399267,266.0170523751523,High,Europe,People,Not specified,NA,2020-12-24
-country,HU,21.345755693581783,1.4699792960662528,0.07799379680762539,273.68530020703935,High,Europe,Tests,Not specified,NA,2020-12-24
-country,ID,2.5533408402918942,0.06800134540296282,NA,NA,Lower middle,Asia,People,Not specified,NA,2020-12-02
-country,IE,19.744835965978126,0.14175779667881733,0.06404782237403928,308.28270554880515,High,Europe,Tests,Not specified,NA,2020-12-27
-country,IL,46.02587800369685,0.20794824399260628,NA,NA,High,Asia,Tests,Not specified,NA,2020-12-21
-country,IN,1.5976765284738303,0.021883994539146263,0.012773185579648181,125.08050701302314,Lower middle,Asia,Tests,Not specified,NA,2020-12-24
-country,IQ,2.749670586480372,0.029833677249334955,NA,NA,Upper middle,Asia,Not specified,Not specified,NA,2020-12-22
-country,IR,7.257747669448645,0.1881109140047385,NA,NA,Upper middle,Asia,Tests,Not specified,NA,2020-12-21
-country,IS,2.0527859237536656,0,NA,NA,High,Europe,Not specified,PCR+serology,NA,2020-12-22
-country,IT,23.588369554430884,0.7773477556150971,0.10886856689210851,216.6683205980616,High,Europe,Not specified,Not specified,NA,2020-12-27
-country,JM,2.600472813238771,0.033772374197906116,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-21
-country,JO,18.631774968146622,0.26462805057336075,NA,NA,Upper middle,Asia,Tests,Not specified,NA,2020-11-29
-country,JP,2.530124292355862,0.036370536702615516,NA,NA,High,Asia,Tests,PCR,NA,2020-12-22
-country,KE,0.4165814286511316,0.0055792155622919415,0.03412553321145643,12.207323650294768,Lower middle,Africa,Tests,Not specified,Africa CDC reported less cumulative tests on 06-OCT than 5-OCT for Kenya.,2020-12-24
-country,KG,2.3758430410790927,0.030656039239730228,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-12-22
-country,KH,0,0,NA,NA,Low,Asia,Not specified,Not specified,NA,2020-03-28
-country,KM,0.9195402298850576,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-11-27
+country,HN,5.835436648157496,0.1514386673397274,NA,NA,Lower middle,North America,Tests,Not specified,NA,2020-12-21
+country,HR,27.67356881851401,1.412911084043849,NA,NA,High,Europe,People,Not specified,NA,2020-12-24
+country,HT,0.34201525914233094,0,NA,NA,Low,North America,NA,NA,NA,NA
+country,HU,16.749482401656316,1.2318840579710146,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-24
+country,ID,2.697021102352993,0.08152849475731563,NA,NA,Lower middle,Asia,People,Not specified,NA,2020-12-02
+country,IE,33.35358444714459,0.14175779667881733,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-27
+country,IL,59.634935304990755,0.30036968576709794,NA,NA,High,Asia,Tests,Not specified,NA,2020-12-21
+country,IN,1.409053886800328,0.0187680615418506,NA,NA,Lower middle,Asia,Tests,Not specified,NA,2020-12-24
+country,IQ,2.220122815304676,0.02237525793700122,NA,NA,Upper middle,Asia,Not specified,Not specified,NA,2020-12-22
+country,IR,7.2303644351314995,0.14644077482647364,NA,NA,Upper middle,Asia,Tests,Not specified,NA,2020-12-21
+country,IS,2.932551319648094,0,NA,NA,High,Europe,Not specified,PCR+serology,NA,2020-12-22
+country,IT,24.20528596473818,0.7955410009592802,NA,NA,High,Europe,Not specified,Not specified,NA,2020-12-27
+country,JM,1.1820330969267139,0.033772374197906116,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-21
+country,JO,14.436930314613349,0.20582181711261394,NA,NA,Upper middle,Asia,Tests,Not specified,NA,2020-11-29
+country,JP,2.6692811284354345,0.0347892090198931,NA,NA,High,Asia,Tests,PCR,NA,2020-12-22
+country,KE,0.22130888397091367,0.007438954083055922,NA,NA,Lower middle,Africa,Tests,Not specified,Africa CDC reported less cumulative tests on 06-OCT than 5-OCT for Kenya.,2020-12-24
+country,KG,2.2532188841201717,0.030656039239730228,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-12-22
+country,KH,0.011962437944853162,0,NA,NA,Low,Asia,Not specified,Not specified,NA,2020-03-28
+country,KM,2.4137931034482762,0.1149425287356322,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-11-27
 country,KN,0,0,NA,NA,High,North America,Not specified,Not specified,NA,2020-05-18
-country,KR,2.042169732196844,0.03510893522401451,0.012953111468514165,157.6586241198385,High,Asia,Tests,Not specified,NA,2020-12-24
-country,KZ,4.872982904617351,0.058582308142940825,NA,NA,Upper middle,Asia,Tests,Not specified,NA,2020-12-13
-country,LA,0,0,0,8.5761407366685,Lower middle,Asia,Not specified,Not specified,NA,2020-12-24
-country,LB,27.765567765567766,0.23443223443223443,NA,NA,Upper middle,Asia,Not specified,Not specified,NA,2020-12-18
-country,LC,1.6304347826086956,0,0.02040816326530612,79.89130434782608,Upper middle,North America,Tests,Not specified,NA,2020-12-24
-country,LK,2.428431326764115,0.009340120487554289,0.023249575248144506,104.45056741231961,Lower middle,Asia,Not specified,Not specified,NA,2020-12-24
+country,KR,1.7749517252140667,0.042910920829351065,NA,NA,High,Asia,Tests,Not specified,NA,2020-12-24
+country,KW,5.4319831421212825,0.023413720440177945,NA,NA,High,Asia,NA,NA,NA,NA
+country,KZ,4.367044788837407,0.06390797251957181,NA,NA,Upper middle,Asia,Tests,Not specified,NA,2020-12-13
+country,LA,0,0,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-12-24
+country,LB,35.443223443223445,0.23443223443223443,NA,NA,Upper middle,Asia,Not specified,Not specified,NA,2020-12-18
+country,LC,3.8043478260869565,0,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-24
+country,LI,76.3157894736842,2.6315789473684212,NA,NA,High,Europe,NA,NA,Switzerland testing daily updates also include Liechtenstein.,NA
+country,LK,2.6619343389529724,0.014010180731331435,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-12-24
 country,LR,0,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-01
-country,LS,1.4005602240896358,0,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-12-23
-country,LT,101.46950771491551,1.2858192505510655,0.14170642860807553,716.0543717854518,High,Europe,Tests,Not specified,NA,2020-12-24
-country,LU,39.456869009584665,0.6389776357827476,NA,NA,High,Europe,People,PCR,NA,2020-12-21
-country,LV,43.10710498409332,0.6892895015906682,0.11274441824989599,382.3435843054083,High,Europe,People,Not specified,NA,2020-12-27
-country,LY,7.509823897540388,0.14553922282055015,0.13240954580446498,56.716635133168396,Upper middle,Africa,Not specified,Not specified,NA,2020-12-24
-country,MA,6.068651621467855,0.11107799842865271,0.09258111179995866,65.54956517027445,Lower middle,Africa,People,Not specified,NA,2020-12-24
-country,MD,23.921665840356965,0.5453644025780863,NA,NA,Lower middle,Europe,NA,NA,NA,2020-12-22
-country,ME,62.89808917197452,0.7961783439490445,NA,NA,Upper middle,Europe,NA,NA,NA,2020-07-12
-country,MG,0,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-21
-country,MK,24.963994239078254,1.056168987037926,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-22
-country,ML,0.31603377610982175,0.01975211100686386,0.023213638012332245,13.614142511480916,Low,Africa,Not specified,Not specified,NA,2020-12-24
-country,MM,1.5769160080867486,0.042271641242418674,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-12-22
-country,MR,3.935483870967742,0.15053763440860216,0.09994538503549973,39.376344086021504,Lower middle,Africa,Tests,Not specified,NA,2020-12-24
-country,MT,19.90950226244344,0.6787330316742082,NA,NA,High,Europe,Tests,PCR,NA,2020-12-15
+country,LS,3.221288515406162,0.09337068160597571,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-12-23
+country,LT,86.44379132990449,2.020573108008817,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-24
+country,LU,27.47603833865815,0.7987220447284346,NA,NA,High,Europe,People,PCR,NA,2020-12-21
+country,LV,46.28844114528102,1.166489925768823,NA,NA,High,Europe,People,Not specified,NA,2020-12-27
+country,LY,6.432833648668317,0.14553922282055015,NA,NA,Upper middle,Africa,Not specified,Not specified,NA,2020-12-24
+country,MA,4.481049009780282,0.09482268158543523,NA,NA,Lower middle,Africa,People,Not specified,NA,2020-12-24
+country,MC,38.46153846153846,0,NA,NA,High,Europe,NA,NA,NA,NA
+country,MD,16.63361427863163,0.49578582052553294,NA,NA,Lower middle,Europe,NA,NA,NA,2020-12-22
+country,ME,57.48407643312102,0.6369426751592356,NA,NA,Upper middle,Europe,NA,NA,NA,2020-07-12
+country,MG,0.06861435123325267,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-21
+country,MK,16.226596255400864,0.672107537205953,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-22
+country,ML,0.45923658090958475,0.01975211100686386,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-24
+country,MM,1.137658518654659,0.03492005146112847,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-12-22
+country,MN,0.6101281269066504,0,NA,NA,Upper middle,Asia,NA,NA,NA,NA
+country,MR,3.5698924731182795,0.10752688172043011,NA,NA,Lower middle,Africa,Tests,Not specified,NA,2020-12-24
+country,MT,24.434389140271495,0.45248868778280543,NA,NA,High,Europe,Tests,PCR,NA,2020-12-15
 country,MU,0,0,NA,NA,Upper middle,Africa,Not specified,Not specified,NA,2020-11-26
-country,MW,0.15682174594877155,0,0.04926108374384237,3.1834814427600624,Low,Africa,Not specified,Not specified,NA,2020-12-24
-country,MX,7.325510148681874,0.4940550518486346,NA,NA,Upper middle,North America,People,Not specified,NA,2020-12-21
-country,MY,5.453253414076499,0.0061793239819563734,NA,NA,Upper middle,Asia,People,Not specified,NA,2020-11-15
-country,MZ,0.3167493201087826,0.00639897616381379,0.04296875,7.371620540713486,Low,Africa,People,Not specified,NA,2020-12-24
-country,"NA",17.591499409681226,0.07870916961826052,0.14579256360078277,120.66115702479338,NA,NA,NA,NA,NA,2020-12-24
-country,NC,NA,NA,NA,8.771929824561402,High,Oceania,Tests,Not specified,NA,2020-12-24
-country,NE,0.2726484074854381,0.0041310364770520925,0.06613226452905811,4.122774404097989,Low,Africa,Not specified,Not specified,NA,2020-12-24
-country,NG,0.41573687785000485,0.0019404288347724845,NA,NA,Lower middle,Africa,Tests,Not specified,NA,2020-12-23
-country,NL,62.81879194630873,0.47271666180332655,NA,NA,High,Europe,People,Not specified,NA,2020-12-22
-country,NO,8.522412838959601,0.05534034311012728,NA,NA,High,Europe,Not specified,Not specified,NA,2020-12-23
-country,NP,2.2480008236949582,0.017160311631259223,1.5290344975861097e-4,14702.093558019013,Low,Asia,Not specified,PCR,Nepal reported less cumulative tests on 14-SEP than 13-SEP. Nepal website is under construction since 29-SEP.,2020-12-24
-country,NZ,0.0829531314807134,0,6.979584714709475e-4,118.85109912899212,High,Oceania,Tests,Not specified,New Zealand reported less cumulative tests on 08-OCT than 07-OCT.,2020-12-24
-country,OM,2.036420599177599,0,NA,NA,High,Asia,People,Not specified,NA,2020-08-05
-country,PA,63.290845886442646,0.9038238702201623,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-21
-country,PE,4.876865218973674,0.16984107727769016,NA,NA,Upper middle,South America,Tests,Not specified,NA,2020-12-23
+country,MV,5.730129390018484,0,NA,NA,Upper middle,Asia,NA,NA,NA,NA
+country,MW,0.2770517511761631,0.005227391531625719,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-24
+country,MX,7.34877804751305,0.5343860764893394,NA,NA,Upper middle,North America,People,Not specified,NA,2020-12-21
+country,MY,5.947599332633009,0.015448309954890934,NA,NA,Upper middle,Asia,People,Not specified,NA,2020-11-15
+country,MZ,0.3679411294192929,0.003199488081906895,NA,NA,Low,Africa,People,Not specified,NA,2020-12-24
+country,"NA",18.299881936245573,0.15741833923652104,NA,NA,NA,NA,NA,NA,NA,2020-12-24
+country,NC,NA,NA,NA,NA,High,Oceania,Tests,Not specified,NA,2020-12-24
+country,NE,0.22307596976081298,0.008262072954104185,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-24
+country,NG,0.38711555253711066,0.003880857669544969,NA,NA,Lower middle,Africa,Tests,Not specified,NA,2020-12-23
+country,NI,0.12075471698113208,0,NA,NA,Lower middle,North America,NA,NA,NA,NA
+country,NL,50.3063904289466,0.4960606944849723,NA,NA,High,Europe,People,Not specified,NA,2020-12-22
+country,NO,9.463198671831766,0.036893562073418186,NA,NA,High,Europe,Not specified,Not specified,NA,2020-12-23
+country,NP,1.832721282218485,0.024024436283762912,NA,NA,Low,Asia,Not specified,PCR,Nepal reported less cumulative tests on 14-SEP than 13-SEP. Nepal website is under construction since 29-SEP.,2020-12-24
+country,NZ,0.10369141435089174,0,NA,NA,High,Oceania,Tests,Not specified,New Zealand reported less cumulative tests on 08-OCT than 07-OCT.,2020-12-24
+country,OM,1.6056393185823379,0.019580967299784608,NA,NA,High,Asia,People,Not specified,NA,2020-08-05
+country,PA,76.26882966396292,0.9965237543453072,NA,NA,Upper middle,North America,Tests,Not specified,NA,2020-12-21
+country,PE,4.155040640543491,0.13647943709814386,NA,NA,Upper middle,South America,Tests,Not specified,NA,2020-12-23
 country,PF,NA,NA,NA,NA,High,Oceania,NA,NA,NA,2020-09-07
-country,PG,0.03353079244439477,0,NA,NA,Lower middle,Oceania,Not specified,Not specified,NA,2020-12-14
-country,PH,1.4017028499466149,0.018251339192013216,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-12-21
-country,PK,0.9330351483983123,0.036216793727251326,0.03223183147490734,28.947630516270394,Lower middle,Asia,Tests,Not specified,NA,2020-12-24
-country,PL,22.572462810790814,0.7318942056173541,NA,NA,High,Europe,Tests,Not specified,On 08-AUG Poland reported less cumulative tests than 07-AUG.,2020-12-15
-country,PS,30.26857478925701,0.45089198196432073,NA,NA,NA,Asia,Tests,Not specified,On 24-SEP Palestine reported less cumulative tests than 23-SEP.,2020-12-18
-country,PT,30.852211434735707,0.6864764146317545,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-22
-country,PY,10.220103743165568,0.19627085377821393,NA,NA,Upper middle,South America,Tests,Not specified,NA,2020-12-21
-country,QA,5.206525511975009,0,0.038461538461538464,135.36966331135022,High,Asia,People,Not specified,NA,2020-12-27
-country,RO,19.461482482586547,0.6185674186505874,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-22
-country,RS,44.4546182900309,0.5722788142382969,0.26916146916146916,165.15966578917246,Upper middle,Europe,People,Not specified,NA,2020-12-27
-country,RU,19.529376293392904,0.37688270039881044,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-22
-country,RW,0.6717109326744903,0.015441630636195181,0.012537829658452227,53.57473749227918,Low,Africa,Not specified,Not specified,NA,2020-12-24
-country,SA,0.5055437467685414,0.025851668868845868,NA,NA,Lower middle,Asia,Tests,Not specified,NA,2020-12-22
-country,SC,0,0,NA,NA,High,Africa,People,Not specified,NA,2020-12-21
-country,SD,0.1870054049123127,0.013683322310657027,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-11-01
-country,SE,47.73739974254877,0.47529458362214083,NA,NA,High,Europe,Tests,PCR+serology,NA,2020-12-18
-country,SG,0.27350427350427353,0,NA,NA,High,Asia,Tests,PCR,NA,2020-12-22
-country,SI,66.42616642616643,1.443001443001443,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-13
-country,SK,46.73992673992674,0.5494505494505494,0.1305304076517825,358.0769230769231,High,Europe,Tests,Not specified,NA,2020-12-24
-country,SL,0.08775228782750408,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-02
-country,SM,61.764705882352935,0,NA,NA,Lower middle,Europe,Tests,PCR+serology,NA,2020-10-19
-country,SN,0.7644529383659818,0.023889154323936932,0.050078247261345854,15.2651696129957,Lower middle,Africa,People,PCR,On 28-AUG Africa CDC reported less cumulative tests than 27-AUG for Senegal.,2020-12-24
-country,SO,0.03146039136726861,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-02
-country,SS,0.3394675719135251,0,0.018026565464895637,18.831516884045026,Low,Africa,Not specified,Not specified,NA,2020-12-24
-country,ST,0,0,NA,NA,High,Africa,Not specified,Not specified,NA,2020-11-24
-country,SV,2.929386370644465,0.12334258402713537,NA,NA,Lower middle,North America,Tests,Not specified,NA,2020-12-15
-country,SZ,13.53448275862069,0.3448275862068966,0.2561174551386623,52.8448275862069,Lower middle,Africa,Not specified,Not specified,NA,2020-12-27
-country,TD,0.09740655059052722,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-22
-country,TG,0.2778113298707573,0,0.013633669235328987,20.376857108346417,Low,Africa,Not specified,Not specified,NA,2020-12-24
-country,TH,0.29083094555873923,0,0.018168799785196456,16.007163323782233,Upper middle,Asia,People,Not specified,NA,2020-12-24
-country,TJ,0.3669532396728874,0,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-03-30
-country,TN,13.452914798206278,0.3807428716473475,0.16055740684641018,83.78881462052627,Upper middle,Africa,Tests,Not specified,NA,2020-12-24
-country,TR,21.49539359015402,0.30116553433168525,0.09481694560669456,226.70413450479612,Upper middle,Europe,Tests,Not specified,NA,2020-12-27
-country,TT,1.2151536812008576,0,NA,NA,High,North America,Tests,Not specified,Trinidad and Tobago reported less cumulative tests on 08-OCT tha 07-OCT.,2020-12-21
-country,TW,0.012596044841919637,0,NA,NA,High,Asia,Not specified,Not specified,NA,2020-12-21
+country,PG,0,0,NA,NA,Lower middle,Oceania,Not specified,Not specified,NA,2020-12-14
+country,PH,1.0312006643487466,0.02463930790921784,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-12-21
+country,PK,0.9896238885971425,0.028068015138619777,NA,NA,Lower middle,Asia,Tests,Not specified,NA,2020-12-24
+country,PL,22.202552381958938,0.7530319444077469,NA,NA,High,Europe,Tests,Not specified,On 08-AUG Poland reported less cumulative tests than 07-AUG.,2020-12-15
+country,PS,23.485591060576358,0.4704959811801608,NA,NA,NA,Asia,Tests,Not specified,On 24-SEP Palestine reported less cumulative tests than 23-SEP.,2020-12-18
+country,PT,43.25782092772384,0.6864764146317545,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-22
+country,PY,9.126594700686947,0.21029020047665778,NA,NA,Upper middle,South America,Tests,Not specified,NA,2020-12-21
+country,QA,6.629642485248178,0,NA,NA,High,Asia,People,Not specified,NA,2020-12-27
+country,RO,17.54860172575112,0.6029732820459507,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-22
+country,RS,30.3078860020602,0.5036053565297013,NA,NA,Upper middle,Europe,People,Not specified,NA,2020-12-27
+country,RU,18.381597160360165,0.36180739238285803,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-22
+country,RW,0.8261272390364421,0.030883261272390362,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-24
+country,SA,0.37341299477221807,0.025851668868845868,NA,NA,Lower middle,Asia,Tests,Not specified,NA,2020-12-22
+country,SC,11.224489795918368,0,NA,NA,High,Africa,People,Not specified,NA,2020-12-21
+country,SD,0,0,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-11-01
+country,SE,58.46123378552332,0.6337261114961877,NA,NA,High,Europe,Tests,PCR+serology,NA,2020-12-18
+country,SG,0.3418803418803419,0,NA,NA,High,Asia,Tests,PCR,NA,2020-12-22
+country,SI,69.7931697931698,1.6835016835016836,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-13
+country,SK,51.26373626373626,1.3553113553113554,NA,NA,High,Europe,Tests,Not specified,NA,2020-12-24
+country,SL,0.17550457565500815,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-02
+country,SM,82.35294117647058,0,NA,NA,Lower middle,Europe,Tests,PCR+serology,NA,2020-10-19
+country,SN,0.8420926899187768,0.023889154323936932,NA,NA,Lower middle,Africa,People,PCR,On 28-AUG Africa CDC reported less cumulative tests than 27-AUG for Senegal.,2020-12-24
+country,SO,0.018876234820361163,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-02
+country,SR,9.880749574105621,0.17035775127768313,NA,NA,Upper middle,South America,NA,NA,NA,NA
+country,SS,0.13400035733428622,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-24
+country,ST,0.4566210045662101,0,NA,NA,High,Africa,Not specified,Not specified,NA,2020-11-24
+country,SV,2.9602220166512487,0.061671292013567684,NA,NA,Lower middle,North America,Tests,Not specified,NA,2020-12-15
+country,SY,0.559968001828467,0.04571167361865037,NA,NA,Lower middle,Asia,NA,NA,NA,NA
+country,SZ,16.551724137931036,0.7758620689655172,NA,NA,Lower middle,Africa,Not specified,Not specified,NA,2020-12-27
+country,TD,0.15828564470960674,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-22
+country,TG,0.2174175625075492,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-12-24
+country,TH,0.3209169054441261,0.0014326647564469914,NA,NA,Upper middle,Asia,People,Not specified,NA,2020-12-24
+country,TJ,0.1887188089746278,0,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-03-30
+country,TL,0,0,NA,NA,Lower middle,Asia,NA,NA,NA,NA
+country,TN,14.197478636094424,0.40612572975717065,NA,NA,Upper middle,Africa,Tests,Not specified,NA,2020-12-24
+country,TR,16.712315773248438,0.28338016813099515,NA,NA,Upper middle,Europe,Tests,Not specified,NA,2020-12-27
+country,TT,0.5718370264474625,0,NA,NA,High,North America,Tests,Not specified,Trinidad and Tobago reported less cumulative tests on 08-OCT tha 07-OCT.,2020-12-21
+country,TW,0.01679472645589285,0,NA,NA,High,Asia,Not specified,Not specified,NA,2020-12-21
 country,TZ,0,0,NA,NA,Low,Africa,Not specified,Not specified,NA,2020-06-27
-country,UA,22.110943430740388,0.45273700096035124,0.19234211834908005,114.9563268852609,Lower middle,Europe,Tests,Not specified,NA,2020-12-24
-country,UG,0.8657440808027809,0.0043724448525392975,0.06358381502890173,13.615793270807371,Low,Africa,Tests,Not specified,NA,2020-12-24
-country,US,57.297667996966794,0.7172140433772504,0.09471091639729276,604.974275157627,High,North America,Tests,Not specified,NA,2020-12-27
-country,UY,15.198618307426596,0.14392630972941853,NA,NA,High,South America,Tests,Not specified,NA,2020-12-21
-country,UZ,0.3645164181780155,0,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-07-14
-country,VC,0.9009009009009008,0,NA,NA,Upper middle,North America,People,Not specified,NA,2020-10-13
-country,VE,1.100717400478267,0.014066676044450695,NA,NA,High,South America,Not specified,Not specified,NA,2020-12-21
-country,VN,0.004109349798128191,0,NA,NA,Lower middle,Asia,Not specified,PCR,NA,2020-10-15
-country,XK,13.88888888888889,0.4444444444444444,NA,NA,Lower middle,Europe,People,PCR,NA,2020-12-22
-country,ZA,20.51122089396213,0.514255846498845,0.2706099568447747,75.79625351970189,Upper middle,Africa,Tests,Not specified,NA,2020-12-27
-country,ZM,0.8648825065274152,0.010879025239338555,0.016524631053834962,52.33899042645779,Lower middle,Africa,People,Not specified,NA,2020-12-24
-country,ZW,0.7131803808114109,0.0269124672004306,0.05995475113122172,11.895310502590325,Low,Africa,Tests,PCR,Africa CDC is reporting lower cumulative tests value since 18-AUG.,2020-12-24
-income,High,28.642642534587914,0.4809384164222874,0.10272402121940884,490.4774684223718,NA,NA,NA,NA,NA,NA
-income,Low,0.3889143992218778,0.01114956406671547,6.128890261653446e-4,1167.7878151373943,NA,NA,NA,NA,NA,NA
-income,Lower middle,1.8133447091608383,0.03531318054797937,0.029346737860837645,102.72446739161292,NA,NA,NA,NA,NA,NA
-income,Upper middle,5.161630359809279,0.11445025913000931,0.4260720775689406,98.16089110522307,NA,NA,NA,NA,NA,NA
-region,Africa,1.6589999004704827,0.04056014912964056,0.13970884799596672,24.549558609209026,NA,NA,NA,NA,NA,NA
-region,Asia,1.4470367879523072,0.023884199345070113,0.010032193032447949,355.523673677606,NA,NA,NA,NA,NA,NA
-region,Europe,27.06139121619607,0.5675780434717791,0.1438417343445018,395.1743332548387,NA,NA,NA,NA,NA,NA
-region,North America,36.84181883933305,0.5603558751347347,0.10241923440688934,555.3192354285063,NA,NA,NA,NA,NA,NA
-region,Oceania,0.062243246607743066,0,1.8560451390177809e-4,440.0790668801255,NA,NA,NA,NA,NA,NA
-region,South America,14.783237801019837,0.2721740425056761,0.8612142566743461,90.03721554511623,NA,NA,NA,NA,NA,NA
+country,UA,17.162848127315133,0.36127498056432067,NA,NA,Lower middle,Europe,Tests,Not specified,NA,2020-12-24
+country,UG,0.6711702848647821,0.008744889705078595,NA,NA,Low,Africa,Tests,Not specified,NA,2020-12-24
+country,US,61.892188288323666,0.7888146028887956,NA,NA,High,North America,Tests,Not specified,NA,2020-12-27
+country,UY,16.69545192861255,0.23028209556706963,NA,NA,High,South America,Tests,Not specified,NA,2020-12-21
+country,UZ,0.22110012250141922,0,NA,NA,Lower middle,Asia,Not specified,Not specified,NA,2020-07-14
+country,VA,0,0,NA,NA,NA,Europe,NA,NA,NA,NA
+country,VC,1.8018018018018016,0,NA,NA,Upper middle,North America,People,Not specified,NA,2020-10-13
+country,VE,1.0725840483893656,0.010550007033338022,NA,NA,High,South America,Not specified,Not specified,NA,2020-12-21
+country,VN,0.006164024697192287,0,NA,NA,Lower middle,Asia,Not specified,PCR,NA,2020-10-15
+country,VU,0,0,NA,NA,NA,Oceania,NA,NA,NA,NA
+country,WS,0,0,NA,NA,Lower middle,Oceania,NA,NA,NA,NA
+country,XK,8.722222222222221,0.2222222222222222,NA,NA,Lower middle,Europe,People,PCR,NA,2020-12-22
+country,YE,0.003352779454167505,0.003352779454167505,NA,NA,Lower middle,Asia,NA,NA,NA,NA
+country,ZA,22.635687669662275,0.6390261174526631,NA,NA,Upper middle,Africa,Tests,Not specified,NA,2020-12-27
+country,ZM,1.2130113141862489,0.005439512619669277,NA,NA,Lower middle,Africa,People,Not specified,NA,2020-12-24
+country,ZW,1.4667294624234677,0.03364058400053825,NA,NA,Low,Africa,Tests,PCR,Africa CDC is reporting lower cumulative tests value since 18-AUG.,2020-12-24
+income,High,30.798206599713055,0.5116929698708752,NA,NA,NA,NA,NA,NA,NA,NA
+income,Low,0.35394578122023995,0.006493094233555157,NA,NA,NA,NA,NA,NA,NA,NA
+income,Lower middle,1.586040438412535,0.03254065603608594,NA,NA,NA,NA,NA,NA,NA,NA
+income,Upper middle,4.799620803970972,0.11709522046984858,NA,NA,NA,NA,NA,NA,NA,NA
+region,Africa,1.7149010654148398,0.04505020253882586,NA,NA,NA,NA,NA,NA,NA,NA
+region,Asia,1.3655577900607838,0.02234258947508879,NA,NA,NA,NA,NA,NA,NA,NA
+region,Europe,27.153691139119758,0.5715273720234192,NA,NA,NA,NA,NA,NA,NA,NA
+region,North America,38.73799062732913,0.5984691984902989,NA,NA,NA,NA,NA,NA,NA,NA
+region,Oceania,0.07376444553725105,0,NA,NA,NA,NA,NA,NA,NA,NA
+region,South America,14.600229057819675,0.2857414991903991,NA,NA,NA,NA,NA,NA,NA,NA
