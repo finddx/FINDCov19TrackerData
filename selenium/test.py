@@ -1578,11 +1578,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[0]
     self.driver.close()
 
-  def test_cyprus(self):
+  # only new tests daily
+  #def test_cyprus(self):
     #self.driver.get("https://covid19.ucy.ac.cy/")
     #time.sleep(90)
     #self.driver.switch_to.frame(0)
-    # only new tests daily
     #self.vars["tests_daily"] = self.driver.find_element(By.CSS_SELECTOR, "#pvExplorationHost > div > div > exploration > div > explore-canvas-modern > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToWidthOrigin > div.visualContainerHost > visual-container-repeat > visual-container-modern:nth-child(31) > transform > div > div:nth-child(22) > div > visual-modern > div > svg > g:nth-child(1) > text > tspan").text
     #self.driver.close()
 
