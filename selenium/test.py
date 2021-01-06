@@ -1610,7 +1610,7 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_armenia(self):
     self.driver.get("https://infogram.com/--1h7j4drmogk92nr")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span:nth-child(2) > span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span").text
     self.driver.close()
 
   def test_austria(self):
@@ -1630,4 +1630,53 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".live-update-box-body-three .text-right b").text
     self.driver.close()
+
+  def test_spain(self):
+    self.driver.get("https://www.mscbs.gob.es/gabinete/notasPrensa.do")
+    WebDriverWait(self.driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a")))
+    url = self.driver.find_element(By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a").get_attribute('href')
+    self.driver.get(url)
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h2")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//section//div[3]//p[1]").text
+    self.vars["tests_cumulative"] = self.vars["tests"].split('cabo un total de')[-1].strip().split(' ')[0].strip()
+    self.driver.close()
+
+  def test_antiguaandBarbuda(self):
+    self.driver.get("https://covid19.gov.ag")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".icon-test-done > .case-Number").text
+    self.driver.close()
+  
+  def test_albania(self):
+    self.driver.get("https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A")
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID19/ Ministria e Shëndetësisë\')]").get_attribute('href')
+    self.driver.get(url)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div//div[3]//div[4]//p[contains(text(), \"Testime totale \")][1]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Testime totale ')[-1].strip().split(' ')[0].strip().split('\n')[0]
+    self.driver.close()
+    
+  def test_bahrain(self):
+    self.driver.get("https://healthalert.gov.bh/en/")
+    time.sleep(60)
+    self.vars["tests"] = self.driver.find_element(By.XPATH, "//div[1]/div/div[1]/div/ul/li/div[2]/div/span").text
+    self.driver.close()
+  
+  def test_belarus(self):
+    self.driver.get("http://stopcovid.belta.by/")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#rec266847794 .t-animate__chain_first-in-row > .t192__title")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#rec266847794 .t-animate__chain_first-in-row > .t192__title").text
+    self.driver.close()
+    
+  def test_belgium(self):
+    self.driver.get("https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-4812-848c-0369173148ab/page/cUWaB")
+    WebDriverWait(self.driver, 30000).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".cd-345jc65scc .valueLabel")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".cd-345jc65scc .valueLabel").text
+    self.driver.close()
+    
+  def test_belize(self):
+    self.driver.get("https://sib.org.bz/covid-19/by-the-numbers/")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('outbreak situation\n')[1].split('\nTests Completed')[0]
+    self.driver.close()    
+    
 
