@@ -87,6 +87,7 @@ class TestDefaultSuite(unittest.TestCase):
     # Step # | name | target | value
     # 1 | open | https://koroonakaart.ee/et |
     self.driver.get("https://koroonakaart.ee/et")
+    time.sleep(90)
     # 2 | waitForElementVisible | css=.row:nth-child(2) > .statsbar-item:nth-child(4) > h1 | 60
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(2) > .statsbar-item:nth-child(4) > h1")))
     # 3 | storeText | css=.row:nth-child(2) > .statsbar-item:nth-child(4) > h1 | tests
@@ -1522,14 +1523,16 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_bulgaria(self):
     self.driver.get("https://coronavirus.bg/")
-    time.sleep(30)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-lg-3:nth-child(1) > .statistics-value")))
+    time.sleep(60)
+    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-lg-3:nth-child(1) > .statistics-value")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-lg-3:nth-child(1) > .statistics-value").text
     self.driver.close()
 
   def test_croatia(self):
     self.driver.get("https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "h3").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirano ')[1].split('osoba')[0]
     self.driver.close()
 
   def test_faroeIslands(self):
@@ -1571,17 +1574,17 @@ class TestDefaultSuite(unittest.TestCase):
   def test_japan(self):
     self.driver.get("https://www.mhlw.go.jp/stf/covid-19/kokunainohasseijoukyou.html")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]")))
-    self.vars["tests"] = self.driver.find_element(By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]").text
-    if '\n' in self.vars["tests_cumulative"]:
-      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[0]
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[0]
     self.driver.close()
 
   def test_cyprus(self):
-    self.driver.get("https://covid19.ucy.ac.cy/")
-    time.sleep(30)
-    self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#pvExplorationHost > div > div > exploration > div > explore-canvas-modern > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToWidthOrigin > div.visualContainerHost > visual-container-repeat > visual-container-modern:nth-child(31) > transform > div > div:nth-child(3) > div > visual-modern > div > svg > g:nth-child(1) > text > tspan").text
-    self.driver.close()
+    #self.driver.get("https://covid19.ucy.ac.cy/")
+    #time.sleep(90)
+    #self.driver.switch_to.frame(0)
+    # only new tests daily
+    #self.vars["tests_daily"] = self.driver.find_element(By.CSS_SELECTOR, "#pvExplorationHost > div > div > exploration > div > explore-canvas-modern > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToWidthOrigin > div.visualContainerHost > visual-container-repeat > visual-container-modern:nth-child(31) > transform > div > div:nth-child(22) > div > visual-modern > div > svg > g:nth-child(1) > text > tspan").text
+    #self.driver.close()
 
   def test_ukraine(self):
     self.driver.get("https://covid19.gov.ua/en/")
@@ -1648,8 +1651,10 @@ class TestDefaultSuite(unittest.TestCase):
   
   def test_albania(self):
     self.driver.get("https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A")
+    time.sleep(90)
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID19/ Ministria e Shëndetësisë\')]").get_attribute('href')
     self.driver.get(url)
+    time.sleep(90)
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div//div[3]//div[4]//p[contains(text(), \"Testime totale \")][1]").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Testime totale ')[-1].strip().split(' ')[0].strip().split('\n')[0]
     self.driver.close()
@@ -1657,7 +1662,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_bahrain(self):
     self.driver.get("https://healthalert.gov.bh/en/")
     time.sleep(60)
-    self.vars["tests"] = self.driver.find_element(By.XPATH, "//div[1]/div/div[1]/div/ul/li/div[2]/div/span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]/div/div[1]/div/ul/li/div[2]/div/span").text
     self.driver.close()
   
   def test_belarus(self):
@@ -1668,15 +1673,27 @@ class TestDefaultSuite(unittest.TestCase):
     
   def test_belgium(self):
     self.driver.get("https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-4812-848c-0369173148ab/page/cUWaB")
-    WebDriverWait(self.driver, 30000).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".cd-345jc65scc .valueLabel")))
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".cd-345jc65scc .valueLabel")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".cd-345jc65scc .valueLabel").text
     self.driver.close()
     
   def test_belize(self):
     self.driver.get("https://sib.org.bz/covid-19/by-the-numbers/")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
+    time.sleep(90)
+    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('outbreak situation\n')[1].split('\nTests Completed')[0]
     self.driver.close()    
+  
+  def test_brazil(self):
+    self.driver.get("https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html")
+    self.driver.find_element_by_id('KPI-01')
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div//article").text.split('\n')[1]
+    self.driver.close()
     
+  def test_denmark(self):
+    self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".table-responsive:nth-child(7) tr:nth-child(2) > td:nth-child(2)")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(7) tr:nth-child(2) > td:nth-child(2) > span").text
+    self.driver.close()
 
