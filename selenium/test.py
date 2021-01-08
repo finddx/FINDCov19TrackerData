@@ -217,7 +217,7 @@ class TestDefaultSuite(unittest.TestCase):
     #self.vars["tests_daily"] = self.driver.find_element(By.CSS_SELECTOR, ".col-6:nth-child(6) .amount").text
     #self.driver.close()
 
-  def test_italia(self):
+  def test_italy(self):
     self.driver.get("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body").text.strip().split('"tamponi":')[1].split('\n')[0]
     self.driver.close()
@@ -266,7 +266,17 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(13) > td:nth-child(1) span > span")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(13) > td:nth-child(1) span > span").text
     self.driver.close()
-  
+
+  def test_mexico(self):
+    self.driver.set_page_load_timeout(30)
+    self.driver.get("https://datos.covid-19.conacyt.mx/")
+    time.sleep(30)
+    positivos = self.driver.find_element(By.XPATH, "//*[@id=\"gsPosDIV\"]").text.replace(',','')
+    negativos = self.driver.find_element(By.XPATH, "//*[@id=\"gsNegDIV\"]").text.replace(',','')
+    sospechosos = self.driver.find_element(By.XPATH, "//*[@id=\"gsSosDIV\"]").text.replace(',','')
+    self.vars["tests_cumulative"] = int(positivos)+int(negativos)+int(sospechosos)
+    self.driver.close()
+    
   # only new tests daily
   #def test_luxembourg(self):
     #self.driver.get("https://covid19.public.lu/en.html")
@@ -1077,6 +1087,12 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
+  def test_malta(self):
+    self.driver.get("https://geosys-mt.maps.arcgis.com/apps/opsdashboard/index.html#/8f64954974744d6fb137a26e097d97d2")
+    time.sleep(30)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember256 text").text
+    self.driver.close()
+
   def test_mauritania(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
@@ -1372,7 +1388,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_southsudan(self):
+  def test_southSudan(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -1414,7 +1430,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_thegambia(self):
+  def test_theGambia(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -1498,7 +1514,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_unitedrepublicoftanzania(self):
+  def test_unitedRepublicofTanzania(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
