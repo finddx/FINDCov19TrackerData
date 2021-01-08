@@ -21,7 +21,7 @@ class TestDefaultSuite(unittest.TestCase):
     # https://stackoverflow.com/questions/51220794/selenium-not-working-in-headless-mode
     # https://sqa.stackexchange.com/questions/33778/chromedriver-in-headless-mode-doesnt-work-correctly-because-of-windows-user-pol
     chrome_options.add_argument("--window-size=3020,1580") # With this size African countries work
-    self.driver = webdriver.Chrome(chrome_options=chrome_options)
+    driver = webdriver.Chrome(options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
     self.driver.set_page_load_timeout(10)
     #self.driver = webdriver.Chrome()
@@ -59,6 +59,12 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Testime totale ')[-1].strip().split(' ')[0].strip().split('\n')[0]
     self.driver.close()
     
+  def test_armenia(self):
+    self.driver.get("https://infogram.com/--1h7j4drmogk92nr")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span").text
+    self.driver.close()
+
   def test_bahrain(self):
     self.driver.get("https://healthalert.gov.bh/en/")
     time.sleep(60)
@@ -1693,11 +1699,6 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
     self.driver.close()
 
-  def test_armenia(self):
-    self.driver.get("https://infogram.com/--1h7j4drmogk92nr")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span").text
-    self.driver.close()
-
   def test_austria(self):
     self.driver.get("https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
@@ -1723,7 +1724,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get(url)
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h2")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//section//div[3]//p[1]").text
-    self.vars["tests_cumulative"] = self.vars["tests"].split('cabo un total de')[-1].strip().split(' ')[0].strip()
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('cabo un total de')[-1].strip().split(' ')[0].strip()
     self.driver.close()
 
 
