@@ -140,6 +140,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_elSalavador(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://covid19.gob.sv/")
     WebDriverWait(self.driver, 30).until(expected_conditions.frame_to_be_available_and_switch_to_it(0))
     self.driver.execute_script("window.scrollTo(0,300)")
@@ -156,9 +158,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_france(self):
-    # Test name: France
-    # Step # | name | target | value
-    # 1 | open | https://dashboard.covid19.data.gouv.fr/suivi-des-tests?location=FRA |
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://dashboard.covid19.data.gouv.fr/suivi-des-tests?location=FRA")
     # 2 | waitForElementVisible | css=.counter-container > .jsx-792689997 | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".counter-container > .jsx-792689997")))
@@ -246,8 +247,6 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_latvia(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
     self.driver.get("https://infogram.com/covid-19-izplatiba-latvija-1hzj4ozwvnzo2pw")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(11) .igc-textual-figure > div")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(11) .igc-textual-figure > div").text
@@ -1632,7 +1631,10 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirano ')[1].split('osoba')[0]
+    try :
+      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirano ')[1].split('osoba')[0]
+    except IndexError:
+      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas su ukupno testirane ')[1].split('osobe')[0]
     self.driver.close()
 
   def test_faroeIslands(self):
