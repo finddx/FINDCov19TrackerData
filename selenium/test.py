@@ -50,6 +50,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
   
   def test_albania(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID19/ Ministria e Shëndetësisë\')]").get_attribute('href')
@@ -84,8 +86,9 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_belize(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://sib.org.bz/covid-19/by-the-numbers/")
-    time.sleep(90)
     WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('outbreak situation\n')[1].split('\nTests Completed')[0]
@@ -104,6 +107,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_brazil(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html")
     self.driver.find_element_by_id('KPI-01')
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div//article").text.split('\n')[1]
@@ -137,16 +142,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_estonia(self):
-    # Test name: Estonia
-    # Step # | name | target | value
-    # 1 | open | https://koroonakaart.ee/et |
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://koroonakaart.ee/et")
-    time.sleep(90)
-    # 2 | waitForElementVisible | css=.row:nth-child(2) > .statsbar-item:nth-child(4) > h1 | 60
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(2) > .statsbar-item:nth-child(4) > h1")))
-    # 3 | storeText | css=.row:nth-child(2) > .statsbar-item:nth-child(4) > h1 | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".row:nth-child(2) > .statsbar-item:nth-child(4) > h1").text
-    # 4 | close |  |
     self.driver.close()
 
   def test_france(self):
