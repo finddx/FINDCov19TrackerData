@@ -815,6 +815,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_eswatini(self):
+    self.driver.set_window_size(1080,800)
+    self.driver.set_window_size(3020,1580)
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -836,6 +838,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_ethiopia(self):
+    self.driver.set_window_size(1080,800)
+    self.driver.set_window_size(3020,1580)
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -963,6 +967,8 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_lesotho(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    self.driver.set_window_size(1080,800)
+    self.driver.set_window_size(3020,1580)
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
     final_tests = ""
