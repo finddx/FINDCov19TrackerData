@@ -23,7 +23,7 @@ class TestDefaultSuite(unittest.TestCase):
     chrome_options.add_argument("--window-size=3020,1580") # With this size African countries work
     self.driver = webdriver.Chrome(options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
-    self.driver.set_page_load_timeout(10)
+    self.driver.set_page_load_timeout(30)
     #self.driver = webdriver.Chrome()
     self.vars = {}
     # FIXME: The data needs to be included
@@ -68,6 +68,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_bahrain(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://healthalert.gov.bh/en/")
     time.sleep(60)
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]/div/div[1]/div/ul/li/div[2]/div/span").text
@@ -143,6 +145,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://covid19.gob.sv/")
+    time.sleep(30)
     WebDriverWait(self.driver, 30).until(expected_conditions.frame_to_be_available_and_switch_to_it(0))
     self.driver.execute_script("window.scrollTo(0,300)")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[1]//div//div[28]")))
@@ -333,11 +336,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://corona.ps/")
-    # 2 | waitForElementVisible | css=.roundbox:nth-child(1) > div:nth-child(2) | 600
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".roundbox:nth-child(1) > div:nth-child(2)")))
-    # 3 | storeText | css=.roundbox:nth-child(1) > div:nth-child(2) | tests
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".roundbox:nth-child(1) > div:nth-child(2)").text
-    # 4 | close |  |
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".roundbox:nth-child(3) > div:nth-child(2)")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".roundbox:nth-child(3) > div:nth-child(2)").text
     self.driver.close()
 
   def test_qatar(self):
@@ -815,8 +815,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_eswatini(self):
-    self.driver.set_window_size(1080,800)
-    self.driver.set_window_size(3020,1580)
+    self.driver.set_page_load_timeout(60)
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -838,8 +837,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_ethiopia(self):
-    self.driver.set_window_size(1080,800)
-    self.driver.set_window_size(3020,1580)
+    self.driver.set_page_load_timeout(60)
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
@@ -1618,6 +1616,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_ecuador(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(1) p:nth-child(1)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) strong:nth-child(1)").text
@@ -1627,10 +1627,10 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.covid19response.lc/")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div")))
     self.driver.find_element(By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".wrapper:nth-child(9) > .yellow").click()
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".test-stlucia")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".test-stlucia").text
     self.driver.close()
-
+    
   def test_iceland(self):
     self.driver.get("https://www.covid.is/tolulegar-upplysingar")
     self.driver.switch_to.frame(0)
@@ -1686,6 +1686,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_indonesia(self):
+    self.driver.set_page_load_timeout(60)
     self.driver.get("https://covid19.disiplin.id")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)").text
