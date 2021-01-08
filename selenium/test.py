@@ -205,8 +205,8 @@ class TestDefaultSuite(unittest.TestCase):
     url = self.driver.find_element(By.XPATH, "//div[3]//div[2]//div[1]//a").get_attribute('href')
     self.driver.get(url)
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
-    self.vars["tests"] = self.driver.find_element(By.XPATH, "//p[contains(text(), \"The spokeswoman noted that \")][1]").text
-    self.vars["tests"] = self.vars["tests"].split('The spokeswoman noted that ')[1].split('COVID')[0]
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(text(), \"The spokeswoman noted that \")][1]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('The spokeswoman noted that ')[1].split('COVID')[0]
     self.driver.close()
     
   # only daily tests 
@@ -234,6 +234,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://corona.moh.gov.jo/en")
     time.sleep(30)
     self.driver.switch_to.frame(0)
+    time.sleep(10)
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div").text
     self.driver.close()
 
@@ -1640,7 +1642,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_faroeIslands(self):
     self.driver.get("https://corona.fo/?_l=en")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]")))
-    self.vars["tests"] = self.driver.find_element(By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]").text
     self.driver.close()
 
   def test_finland(self):
