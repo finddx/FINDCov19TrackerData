@@ -51,7 +51,7 @@ class TestDefaultSuite(unittest.TestCase):
   
   def test_albania(self):
     self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
+    self.driver.set_page_load_timeout(60)
     self.driver.get("https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID19/ Ministria e Shëndetësisë\')]").get_attribute('href')
@@ -110,14 +110,20 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html")
-    self.driver.find_element_by_id('KPI-01')
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div//article").text.split('\n')[1]
-    self.driver.close()
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"KPI-01\"]")))
+    time.sleep(30)
+    self.driver.find_element(By.XPATH, "//*[@id=\"KPI-01\"]")
+    time.sleep(30)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"KPI-01\"]").text.split('\n')[1]
     
   def test_brunei(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(60)
     self.driver.get("http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx")
-    self.driver.find_element(By.CSS_SELECTOR, ".ms-listlink:nth-of-type(1)").click()
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".ms-rteTable-default:nth-child(17) .ms-rteTable-default:nth-child(2) > strong")))
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//tbody")))
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'new case COVID-19\')]").get_attribute('href')
+    self.driver.get(url)
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".ms-rteTable-default:nth-child(17) .ms-rteTable-default:nth-child(2) > strong")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".ms-rteTable-default:nth-child(17) .ms-rteTable-default:nth-child(2) > strong").text
     self.driver.close()
 
@@ -222,6 +228,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_jordan(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://corona.moh.gov.jo/en")
     time.sleep(30)
     self.driver.switch_to.frame(0)
@@ -229,6 +237,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_laoPeoplesDemoraticRepublic(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.covid19.gov.la/index.php")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-md-6:nth-child(6) p:nth-child(2)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-md-6:nth-child(6) p:nth-child(2)").text
@@ -255,9 +265,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_nepal(self):
-    # Test name: Nepal
-    # Step # | name | target | value
-    # 1 | open | https://covid19.mohp.gov.np/ |
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://covid19.mohp.gov.np/")
     # 2 | waitForElementVisible | css=.ant-col-md-24 .ant-typography:nth-child(2) | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".ant-col-md-24 .ant-typography:nth-child(2)")))
@@ -291,9 +300,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_norway(self):
-    # Test name: Norway
-    # Step # | name | target | value
-    # 1 | open | https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/ |
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/")
     # 2 | waitForElementVisible | css=.c-key-figure:nth-child(1) .c-key-figure__number > span | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span")))
@@ -303,9 +311,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_occupiedPalestinianTerritory(self):
-    # Test name: occupiedPalestinianterritory
-    # Step # | name | target | value
-    # 1 | open | https://corona.ps/ |
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://corona.ps/")
     # 2 | waitForElementVisible | css=.roundbox:nth-child(1) > div:nth-child(2) | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".roundbox:nth-child(1) > div:nth-child(2)")))
@@ -327,9 +334,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_republicofKorea(self):
-    # Test name: RepublicofKorea
-    # Step # | name | target | value
-    # 1 | open | http://ncov.mohw.go.kr/en/ |
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("http://ncov.mohw.go.kr/en/")
     # 2 | waitForElementVisible | css=li:nth-child(1) > .misil_r > span | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "li:nth-child(1) > .misil_r > span")))
@@ -409,9 +415,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_unitedArabEmirates(self):
-    # Test name: UnitedArabEmirates
-    # Step # | name | target | value
-    # 1 | open | https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx |
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx")
     # 2 | waitForElementVisible | css=.total_tests > .numbers | 600
     time.sleep(60)
@@ -1695,6 +1700,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_uS(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://covidtracking.com/data#ME")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
     self.driver.close()
