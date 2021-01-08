@@ -21,7 +21,7 @@ class TestDefaultSuite(unittest.TestCase):
     # https://stackoverflow.com/questions/51220794/selenium-not-working-in-headless-mode
     # https://sqa.stackexchange.com/questions/33778/chromedriver-in-headless-mode-doesnt-work-correctly-because-of-windows-user-pol
     chrome_options.add_argument("--window-size=3020,1580") # With this size African countries work
-    driver = webdriver.Chrome(options=chrome_options)
+    self.driver = webdriver.Chrome(options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
     self.driver.set_page_load_timeout(10)
     #self.driver = webdriver.Chrome()
@@ -51,12 +51,12 @@ class TestDefaultSuite(unittest.TestCase):
   
   def test_albania(self):
     self.driver.get("https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A")
-    time.sleep(90)
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID19/ Ministria e Shëndetësisë\')]").get_attribute('href')
     self.driver.get(url)
-    time.sleep(90)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div//div[3]//div[4]//p[contains(text(), \"Testime totale \")][1]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Testime totale ')[-1].strip().split(' ')[0].strip().split('\n')[0]
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div//div[3]//div[4]//p[contains(text(), \"Testime totale\")][1]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Testime totale')[-1].strip().split(' ')[0].strip().split('\n')[0]
     self.driver.close()
     
   def test_armenia(self):
