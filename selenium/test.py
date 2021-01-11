@@ -22,6 +22,9 @@ class TestDefaultSuite(unittest.TestCase):
     # https://sqa.stackexchange.com/questions/33778/chromedriver-in-headless-mode-doesnt-work-correctly-because-of-windows-user-pol
     chrome_options.add_argument("--window-size=3020,1580") # With this size African countries work
     self.driver = webdriver.Chrome(options=chrome_options)
+    # Required for test_pakistan() to work
+    # https://stackoverflow.com/questions/29916054/change-user-agent-for-selenium-web-driver
+    chrome_options.add_argument("user-agent=foo")
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
     self.driver.set_page_load_timeout(30)
     #self.driver = webdriver.Chrome()
@@ -271,7 +274,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_mexico(self):
-    self.driver.set_page_load_timeout(30)
+    self.driver.set_page_load_timeout(60)
     self.driver.get("https://datos.covid-19.conacyt.mx/")
     time.sleep(30)
     positivos = self.driver.find_element(By.XPATH, "//*[@id=\"gsPosDIV\"]").text.replace(',','')
@@ -287,15 +290,35 @@ class TestDefaultSuite(unittest.TestCase):
     #self.vars["tests_daily"] = self.driver.find_element(By.CSS_SELECTOR, ".cmp-gridStat__item:nth-child(1) .number").text
     #self.driver.close()
 
+  # only new tests daily
+  #def test_moldova(self):
+    #self.driver.get("https://msmps.gov.md/?s=cazuri+de+COVID-19")
+    #WebDriverWait(self.driver, 30000).until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[contains(text(), \"Mai multe\")]/parent::p/a")))
+    #url = self.driver.find_element(By.XPATH, "//*[contains(text(), \"Mai multe\")]/parent::p/a").get_attribute('href')
+    #self.driver.get(url)
+    #WebDriverWait(self.driver, 30000).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h2")))
+    #self.vars["tests_daily"] = self.driver.find_element(By.XPATH, "//main").text
+    #self.vars["tests_daily"] = self.vars["tests"].split('Numărul total teste efectuate')[1].split(', dintre')[0]
+    #self.driver.close()
+    
+  def test_myanmar(self):
+    self.driver.get("https://doph.maps.arcgis.com/apps/opsdashboard/index.html#/f8fb4ccc3d2d42c7ab0590dbb3fc26b8")
+    time.sleep(30)
+    self.vars["tests_cumulative"] = driver.find_element_by_id("ember20").text.split('\n')[1]
+    self.driver.close()
+  
   def test_nepal(self):
     self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
+    self.driver.set_page_load_timeout(60)
     self.driver.get("https://covid19.mohp.gov.np/")
-    # 2 | waitForElementVisible | css=.ant-col-md-24 .ant-typography:nth-child(2) | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".ant-col-md-24 .ant-typography:nth-child(2)")))
-    # 3 | storeText | css=.ant-col-md-24 .ant-typography:nth-child(2) | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".ant-col-md-24 .ant-typography:nth-child(2)").text
-    # 4 | close |  |
+    self.driver.close()
+
+  def test_newCaledonia(self):
+    self.driver.get("https://gouv.nc/coronavirus")
+    self.driver.find_element(By.CSS_SELECTOR, ".quatre > .big-chiffre").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".quatre > .big-chiffre").text
     self.driver.close()
 
   def test_newZealand(self):
@@ -1769,5 +1792,15 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('cabo un total de')[-1].strip().split(' ')[0].strip()
     self.driver.close()
 
+  def test_pakistan(self):
+    self.driver.get("https://covid.gov.pk/")
+    time.sleep(30)
+    self.driver.set_window_size(1536, 825)
+    time.sleep(10)
+    self.driver.execute_script("window.scrollTo(0,300)")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".active .counter").text
+    self.driver.close()
+
+  
 
 
