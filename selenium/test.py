@@ -304,7 +304,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_myanmar(self):
     self.driver.get("https://doph.maps.arcgis.com/apps/opsdashboard/index.html#/f8fb4ccc3d2d42c7ab0590dbb3fc26b8")
     time.sleep(30)
-    self.vars["tests_cumulative"] = driver.find_element_by_id("ember20").text.split('\n')[1]
+    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember20").text.split('\n')[1]
     self.driver.close()
   
   def test_nepal(self):
@@ -1799,6 +1799,14 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(10)
     self.driver.execute_script("window.scrollTo(0,300)")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".active .counter").text
+    self.driver.close()
+    
+  def test_portugal(self):
+    self.driver.get("https://esriportugal.maps.arcgis.com/apps/opsdashboard/index.html#/acf023da9a0b4f9dbb2332c13f635829")
+    time.sleep(30)
+    self.driver.find_element_by_id("ember8").click
+    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember114").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
     self.driver.close()
 
   
