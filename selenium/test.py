@@ -469,15 +469,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_unitedKingdom(self):
-    # Test name: UnitedKingdom
-    # Step # | name | target | value
-    # 1 | open | https://coronavirus.data.gov.uk/testing |
     self.driver.get("https://coronavirus.data.gov.uk/testing")
-    # 2 | waitForElementVisible | id=value-item-virus_tests_conducted-total-cumvirustests-1_modal | 600
+    time.sleep(30)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "value-item-virus_tests_conducted-total-cumvirustests-1_modal")))
-    # 3 | storeText | id=value-item-virus_tests_conducted-total-cumvirustests-1_modal | tests
+    time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "value-item-virus_tests_conducted-total-cumvirustests-1_modal").text
-    # 4 | close |  |
     self.driver.close()
 
   def test_algeria(self):
@@ -1808,8 +1804,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_portugal(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
+    self.driver.set_page_load_timeout(60)
     self.driver.get("https://esriportugal.maps.arcgis.com/apps/opsdashboard/index.html#/acf023da9a0b4f9dbb2332c13f635829")
     time.sleep(30)
     self.driver.find_element_by_id("ember8").click
@@ -1831,6 +1826,23 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get(url)
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'Учреждениями Роспотребнадзора и медицинскими организациями по состоянию на\')]").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('проведено')[1].split('лаборатор')[0]
+    self.driver.close()
+
+  def test_sanMarino(self):
+    self.driver.get("http://www.iss.sm/on-line/home/artCataggiornamenti-coronavirus.49004093.1.20.1.html")
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Epidemia COVID-19\')]").get_attribute('href')
+    self.driver.get(url)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'Tamponi eseguiti\')]").text
+    self.driver.close()
+    
+  def test_saudiArabia(self):
+    self.driver.set_page_load_timeout(60)
+    self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/5f9cf2cc7c1a43ce8e9b90cda29634be")
+    time.sleep(30)
+    self.driver.switch_to.frame(0)
+    time.sleep(30)
+    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember110").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
     self.driver.close()
 
 
