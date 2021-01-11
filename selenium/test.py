@@ -21,10 +21,10 @@ class TestDefaultSuite(unittest.TestCase):
     # https://stackoverflow.com/questions/51220794/selenium-not-working-in-headless-mode
     # https://sqa.stackexchange.com/questions/33778/chromedriver-in-headless-mode-doesnt-work-correctly-because-of-windows-user-pol
     chrome_options.add_argument("--window-size=3020,1580") # With this size African countries work
-    self.driver = webdriver.Chrome(options=chrome_options)
     # Required for test_pakistan() to work
     # https://stackoverflow.com/questions/29916054/change-user-agent-for-selenium-web-driver
     chrome_options.add_argument("user-agent=foo")
+    self.driver = webdriver.Chrome(options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
     self.driver.set_page_load_timeout(30)
     #self.driver = webdriver.Chrome()
@@ -1800,8 +1800,16 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.execute_script("window.scrollTo(0,300)")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".active .counter").text
     self.driver.close()
+
+  # web page doesn't open
+  def test_papuaNewGuinea(self):
+    self.driver.get("https://covid19.info.gov.pg/")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//article[@id=\'post-166\']/div/div/div/section[4]/div[2]/div/div[2]/div/div/section/div/div/div[2]/div/div/div/div/div/table/tbody/tr[11]/td[2]/p/span/span").text
+    self.driver.close()
     
   def test_portugal(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://esriportugal.maps.arcgis.com/apps/opsdashboard/index.html#/acf023da9a0b4f9dbb2332c13f635829")
     time.sleep(30)
     self.driver.find_element_by_id("ember8").click
@@ -1809,6 +1817,20 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
     self.driver.close()
 
-  
+  def test_romania(self):
+    self.driver.get("https://stirioficiale.ro/informatii")
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'BULETIN DE PRESĂ\')]").get_attribute('href')
+    self.driver.get(url)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(text(), \"Până la această dată, la nivel național, au fost prelucrate\")]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de teste')[0]
+    self.driver.close()
+
+  def test_russia(self):
+    self.driver.get("https://www.rospotrebnadzor.ru/about/info/news/")
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Информационный бюллетень о ситуации и принимаемых мерах по недопущению распространения заболеваний, вызванных новым коронавирусом\')]").get_attribute('href')
+    self.driver.get(url)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'Учреждениями Роспотребнадзора и медицинскими организациями по состоянию на\')]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('проведено')[1].split('лаборатор')[0]
+    self.driver.close()
 
 
