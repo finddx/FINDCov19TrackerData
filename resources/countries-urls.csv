@@ -1,5 +1,5 @@
 country,jhu_ID,source,alternative link,type,data_url,date_format,xpath_cumul,xpath_new,backlog,comment,status_automate,New_link
-Afghanistan,Afghanistan,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table,,pdf_list,operational_sitrep_covid|daily_brief_covid|strategic_situation_report|strategic_sitrep,,(?<=map)(.*)(?= people out of),,,,pdf,
+Afghanistan,Afghanistan,(pdf)https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table,,pdf_list,operational_sitrep_covid|daily_brief_covid|strategic_situation_report|strategic_sitrep,,(?<=map)(.*)(?= people out of),,,,pdf,
 Albania,Albania,https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A,,html_list,covid19-ministria-e-shendetesise,%d/%m/%Y,Testime totale ([.0-9]+),,,,needs_checks,
 Algeria,Algeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
 Angola,Angola,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
@@ -17,7 +17,7 @@ Belgium,Belgium,https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-
 Belize,Belize,https://sib.org.bz/covid-19/by-the-numbers/,,image,,,,,,"""Tests done and not people tested""",needs_checks,yes
 Benin,Benin,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
 Bermuda,Bermuda,https://www.gov.bm/coronavirus-covid19-update,,html,https://www.gov.bm/coronavirus-covid19-update,,"//*[@id=""node-901196""]/div/div/table[1]/tbody/tr[2]",,,,automated,
-Bhutan,Bhutan,https://www.gov.bt/covid19/05-01-21-national-situational-update-on-covid-19-moh/,,image,,,,,,"Every day there is a new infographic and the value is ""Total tested till date""",image,yes
+Bhutan,Bhutan,(image)https://www.facebook.com/MoHBhutan/,,image,,,,,,"Every day there is a new infographic and the value is ""Total tested till date""",image,yes
 Bolivia,Bolivia,https://www.minsalud.gob.bo/,,image,"Publications always start with ""Bolivia acumula"". Value is CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",,,,,"Publi starts with ""COVID-19: se reportan"". Every day. CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",image,
 Bosnia and Herzegovina,BosniaandHerzegovina,https://covid-19.ba/,,Selenium,,,([0-9]+),,,,automated,
 Botswana,Botswana,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
