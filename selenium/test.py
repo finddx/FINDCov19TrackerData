@@ -36,15 +36,9 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_australia(self):
-    # Test name: Australia
-    # Step # | name | target | value
-    # 1 | open | https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results |
-    self.driver.get("https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results")
-    # 2 | waitForElementNotPresent | css=.ng-scope:nth-child(1) > .ng-binding:nth-child(2) | 60
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".ng-scope:nth-child(1) > .ng-binding:nth-child(2)")))
-    # 3 | storeText | css=.ng-scope:nth-child(1) > .ng-binding:nth-child(2) | tests
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".ng-scope:nth-child(1) > .ng-binding:nth-child(2)").text
-    # 4 | close |  |
+    self.driver.get("https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-current-situation-and-case-numbers#tests-conducted-and-results")
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]").text
     self.driver.close()
 
   def test_antiguaandBarbuda(self):
@@ -77,7 +71,16 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(60)
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]/div/div[1]/div/ul/li/div[2]/div/span").text
     self.driver.close()
-  
+    
+  def test_barbados(self):
+    self.driver.get("https://gisbarbados.gov.bb/covid-19/")
+    time.sleep(10)
+    self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Update\')]").click()
+    time.sleep(10)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has completed\')]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has completed")[1].split("tests")[0]
+    self.driver.close()
+    
   def test_belarus(self):
     self.driver.get("http://stopcovid.belta.by/")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#rec266847794 .t-animate__chain_first-in-row > .t192__title")))
@@ -211,7 +214,7 @@ class TestDefaultSuite(unittest.TestCase):
     url = self.driver.find_element(By.XPATH, "//div[3]//div[2]//div[1]//a").get_attribute('href')
     self.driver.get(url)
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(text(), \"The spokeswoman noted that \")][1]").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('The spokeswoman noted that ')[1].split('COVID')[0]
     self.driver.close()
     
@@ -436,9 +439,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_sriLanka(self):
-    # Test name: SriLanka
-    # Step # | name | target | value
-    # 1 | open | https://www.hpb.health.gov.lk/en |
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.hpb.health.gov.lk/en")
     # 2 | waitForElementVisible | css=.total-count | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".total-count")))
@@ -1762,7 +1764,7 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_uS(self):
     self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
+    self.driver.set_page_load_timeout(60)
     self.driver.get("https://covidtracking.com/data#ME")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
     self.driver.close()
