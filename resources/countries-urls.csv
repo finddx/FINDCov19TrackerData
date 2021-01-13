@@ -130,7 +130,7 @@ Papua New Guinea,PapuaNewGuinea,https://covid19.info.gov.pg/,,html,,,"//*[@id=""
 Paraguay,Paraguay,https://www.mspbs.gov.py/reporte-covid19.html,,special dashboard,,,,,,,needs_checks,
 Peru,Peru,https://covid19.minsa.gob.pe/sala_situacional.asp,,xlsx,https://covid19.minsa.gob.pe/files/POSITIVIDAD_DATE.xlsx,%d%m%Y,"sum,Muestras",,,,needs_checks,
 Philippines,Philippines,https://www.doh.gov.ph/covid19tracker,,special dashboard,,,,,,,needs_checks,
-Poland,Poland,https://twitter.com/MZ_GOV_PL,,image,https://twitter.com/MZ_GOV_PL/status/1346754631116926976/photo/1,,,,,first number on the left,,,,,		
+Poland,Poland,https://twitter.com/MZ_GOV_PL,image,https://twitter.com/MZ_GOV_PL/status/1346754631116926976/photo/1,,,,,first number on the left,,		
 Portugal,Portugal,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/,https://github.com/dssg-pt/covid19pt-data/blob/master/amostras.csv,special dashboard,,,,,,"Below ""Amostras"" in the dashboard",needs_checks,
 Qatar,Qatar,https://www.moph.gov.qa/english/Pages/Coronavirus2019.aspx#,,Selenium,,,([0-9]+),,,,automated,
 Republic of Korea,RepublicofKorea,http://ncov.mohw.go.kr/en/,,Selenium,,,"([,0-9]+)",,,,automated,
