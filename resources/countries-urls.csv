@@ -162,7 +162,7 @@ Sweden,Sweden,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/a
 Switzerland,Switzerland,https://www.covid19.admin.ch/en/overview?ovTime=total,,html,,,/html/body/app-root/bag-dashboard/main/bag-overview/div/div[1]/div[3]/bag-overview-card-test/bag-overview-card/div/bag-key-value-list/table/tbody/tr[2]/td/span,,,,automated
 Taiwan,Taiwan,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan,,special dashboard,,,"//*[@id=""num1""]","//*[@id=""num6""]",,,automated
 Tajikistan,Tajikistan,https://eurasianet.org/dashboard-coronavirus-in-eurasia,,irrelevant,,,,,,,without information
-Thailand,Thailand,https://ddc.moph.go.th/viralpneumonia/eng/index.php,,html,,,//div[7]/div/div/div/h5,,,,
+Thailand,Thailand,http://nextcloud.dmsc.moph.go.th/index.php/s/AFEy26XRKQxKXcf,,xls,,,//div[7]/div/div/div/h5,,,,
 The Bahamas,TheBahamas,https://www.facebook.com/MOHBahamas/,,image,,,,,,,facebook
 The Gambia,TheGambia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Togo,Togo,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
