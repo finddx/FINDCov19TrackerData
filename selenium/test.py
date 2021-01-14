@@ -37,6 +37,7 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_australia(self):
     self.driver.get("https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-current-situation-and-case-numbers#tests-conducted-and-results")
+    time.sleep(60)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]").text
     self.driver.close()
@@ -162,8 +163,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://koroonakaart.ee/et")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(2) > .statsbar-item:nth-child(4) > h1")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".row:nth-child(2) > .statsbar-item:nth-child(4) > h1").text
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1").text
     self.driver.close()
 
   def test_france(self):
@@ -240,10 +241,8 @@ class TestDefaultSuite(unittest.TestCase):
   def test_jordan(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
-    self.driver.get("https://corona.moh.gov.jo/en")
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOTUxMTEwMzItYzM5ZS00MTZjLTkxNmYtYjBjYjUyZGIwNThlIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9&pageName=ReportSection8911066d0a4953dfcbe5")
     time.sleep(30)
-    self.driver.switch_to.frame(0)
-    time.sleep(10)
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div").text
     self.driver.close()
@@ -989,8 +988,14 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_lesotho(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    self.driver.set_window_size(1080,800)
-    self.driver.set_window_size(3020,1580)
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    action = ActionChains(self.driver)
+    action.click_and_hold(on_element = all_countries[12])
+    action.move_by_offset(0, 300)
+    action.perform()
+    action.release(on_element = all_countries[12]) 
+    action.perform()
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
     final_tests = ""
