@@ -27,7 +27,7 @@ Brunei,Brunei,www.moh.gov.bn/Lists/Latest%20news/NewDispForm.aspx?ID=504&Source=
 Bulgaria,Bulgaria,https://coronavirus.bg/,,html,,,/html/body/main/div[1]/div/div[6]/div[1]/p[1],,,,needs_checks,
 Burkina Faso,BurkinaFaso,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
 Burundi,Burundi,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Cambodia,Cambodia,https://www.voacambodia.com/a/more-than-5000-tested-for-virus-in-cambodia-national-tally-reaches-109-cases/5353258.html,,irrelevant,,,,,,,without information,
+Cambodia,Cambodia,http://cdcmoh.gov.kh/,,html_list,,,,,,"Every day publication with title red ""NEW COVID-19 Updated"". Click then cumulative value in the bottom between ""យេីងបានធ្វេីតេស្តចំនួន"" and ""ស្មេីនឹង"",,
 Cameroon,Cameroon,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
 Canada,Canada,https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html,,Selenium,,,"([,0-9]+)",,,,automated,
 Cape Verde,CapeVerde,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
