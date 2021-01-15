@@ -177,7 +177,7 @@ United Republic of Tanzania,UnitedRepublicofTanzania,https://africacdc.org/covid
 Uruguay,Uruguay,https://www.gub.uy/sistema-nacional-emergencias/pagina-embebida/visualizador-casos-coronavirus-covid-19-uruguay,https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informacion-situacion-sobre-coronavirus-covid-19-uruguay-78,special dashboard,informe-situacion-sobre-coronavirus-covid-19-uruguay-,, se han procesado ([.0-9]+) tests,,,Desde el 13 de marzo se han procesado,automated
 USA,US,https://covidtracking.com/data/#ME,,csv,https://covidtracking.com/api/v1/us/current.csv,,"1,totalTestResults",,,,automated
 Uzbekistan,Uzbekistan,https://t.me/koronavirusinfouz/3470,,irrelevant,,,,,,,without information
-Venezuela,Venezuela,www.minci.gob.ve/venezuela-suma-198-nuevos-casos-de-covid-19-y-contabiliza-3-mil-790-infecciones/,,irrelevant,,,,,,,without information
+Venezuela,Venezuela,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A,,html_list,,,,,,,without information
 Vietnam,Vietnam,https://ncov.moh.gov.vn/?fbclid=IwAR1JDjulr5Ni19WcUWqQqugrEN7Ta6HcGEMqEhdgzifWiSGlIxwknKr9VuU,,html_list OR Selenium,,,,,,"Publications in the bottom ""Bản tin cập nhật dịch bệnh Covid-19"". Not every dail but almost. Value after ""thực hiện""",
 Western Sahara,WesternSahara,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Zambia,Zambia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
