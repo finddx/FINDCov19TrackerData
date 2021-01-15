@@ -64,7 +64,7 @@ Gabon,Gabon,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Georgia,Georgia,https://stopcov.ge/en/,,irrelevant,,,,,,,new_test_daily
 Germany,Germany,https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Situationsberichte/Okt_2020/Archiv_Oktober.html,,pdf_list,,,,,,"Report published every day but testing info only in wednesday's reports (""Mittwoch""). Last blue table ""Table 4: Number of SARS-CoV-2-laboratory tests in Germany"". ",excel
 Ghana,Ghana,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-Greece,Greece,https://eody.gov.gr/,,pdf_list,,,,,,"Value in bold between ""ελεγχθε"" and  ""κλινικά"". Published daily.",pdf
+Greece,Greece,https://covid19.gov.gr/covid19-live-analytics/,,,,,,,,second value,
 Greenland,Greenland,https://www.nun.gl/,,html,,,"//*[@id=""x3ef423376f3f4047a7073005772c2053""]/table/tbody/tr[1]/td[1]/h3/strong",,,,automated
 Grenada,Grenada,https://www.facebook.com/HealthGrenada/photos,,irrelevant,,,,,,,facebook
 Guatemala,Guatemala,https://tablerocovid.mspas.gob.gt/,https://tablerocovid.mspas.gob.gt/,special dashboard,,,,,,"Click on ""Casos tamizados"" on the left menu. Then it's 1st value on the left.",automated
