@@ -261,9 +261,9 @@ jobs:
           git config pull.rebase false
           git pull origin master
           date=$(date +'%Y-%m-%d')
-          mv countries-manual.csv manual/$date-countries-manual.csv
+          mv need-manual-processing.csv manual/need-processing/$date-need-manual-processing.csv
           mv countries-tests-all-dates.csv automated/countries-tests-all-dates.csv
-          git add manual/$date-countries-manual.csv
+          git add manual/need-processing/$date-need-manual-processing.csv
           git add automated/countries-tests-all-dates.csv
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
 
