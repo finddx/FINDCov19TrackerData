@@ -61,5 +61,15 @@ All of this is done by [`get_daily_test_data()`](https://dsbbfinddx.github.io/FI
 The last step performs some analysis on the previous workflow steps.
 In particular, [`combine_all_tests()`](https://dsbbfinddx.github.io/FINDCov19Tracker/reference/combine_all_tests.html)
 
-- writes the file which lists all countries that still need manual processing ([`$DATE-countries-manual.csv`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/manual))
+- writes the file which lists all countries that still need manual processing ([`$DATE-need-processing.csv`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/manual/need-processing))
 - writes [`countries-tests-all-dates.csv`](https://github.com/dsbbfinddx/FINDCov19TrackerData/blob/master/automated/countries-tests-all-dates.csv) which lists information from all dates and all countries which have been processed so far
+
+This step exists twice in the [GHA workflow file](https://github.com/dsbbfinddx/FINDCov19TrackerData/blob/master/.github/workflows/automate-tests.yml):
+
+- Job: `run-analysis` is run when automated scraping has happened before and therefore includes a `needs` condition
+- Job: `run-analysis-manual` is only run if the commit message contains `manually processed countries`.
+  Also in this scenario the automation jobs are not triggered.
+
+The reasoning here is that if the `.csv` file containing the manually information for countries is uploaded, it should only be merged into the final file.
+The automated data scraping should not be triggered again since a new run could potentially lead to new failures for some countries.
+These new failing countries would then be missing for the day since they were not processed manually beforehand.
