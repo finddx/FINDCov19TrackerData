@@ -1,180 +1,184 @@
-country,jhu_ID,source,alternative link,type,data_url,date_format,xpath_cumul,xpath_new,backlog,comment,status_automate,New_link
-Afghanistan,Afghanistan,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table,,pdf_list,operational_sitrep_covid|daily_brief_covid|strategic_situation_report|strategic_sitrep,,(?<=map)(.*)(?= people out of),,,,pdf,
-Albania,Albania,https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A,,html_list,covid19-ministria-e-shendetesise,%d/%m/%Y,Testime totale ([.0-9]+),,,,needs_checks,
-Algeria,Algeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Angola,Angola,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Antigua and Barbuda,AntiguaandBarbuda,https://covid19.gov.ag/,,html,,,/html/body/div/div/div[1]/div[1]/div[4]/p[2],,,,automated,
-Argentina,Argentina,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,,pdf_list,https://www.argentina.gob.ar/sites/default/files,,(?<=se realizaron )(.*)(?= pruebas diagnósticas),,,,automated,
-Armenia,Armenia,https://ncdc.am/coronavirus/confirmed-cases-by-days/,,html2,https://infogram.com/--1h7j4drmogk92nr,,"Ընդհանուր թեստեր - ([0-9 .,]+)",,,,automated,
-Australia,Australia,https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results,,Selenium,,,"([,0-9]+)",,,,automated,
-Austria,Austria,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html,,csv,https://info.gesundheitsministerium.at/data/AllgemeinDaten.csv,,1,GesTestungen,,,automated,
-Azerbaijan,Azerbaijan,https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet,,html,,,/html/body/main/section/div/div/div[3]/div[6]/strong,,,,automated,
-Bahrain,Bahrain,https://healthalert.gov.bh/en/,,html,https://www.moh.gov.bh/COVID19,,/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div/div/table/thead/tr[1]/th/span,,,,automated,yes
-Bangladesh,Bangladesh,https://corona.gov.bd/,,special dashboard,,,,,,Need to first change language ,automated,
-Barbados,Barbados,https://gisbarbados.gov.bb/blog/covid-19-situation-dashboard-january-05-2021/,,html_list,,,,,,"Info not only in image, also in text at the bottom",image,"old link broken, new source image"
-Belarus,Belarus,http://stopcovid.belta.by/,,html_list,"Info is in articles that start with ""В Беларуси на"". In sentence ""Всего проведено (…) теста"". Problem is that they use ""млн."" for million and  ""тыс."" for thousand.",,Всего проведено ([ 0-9]+) тестов,,,"There is not every day a publication. Publi title starting with ""В Беларуси на"". Info is between ""Всего проведено"" and ""теста."". Use of ""млн."" and ""млн."" for million and thousand.",automated,yes
-Belgium,Belgium,https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-4812-848c-0369173148ab/page/cUWaB,https://epistat.sciensano.be/covid/covid19_historicaldata.html,special dashboard,,,,,,"Need to choose ""7.Tests"" at the bottom of the dashboard near ""Summary"".",automated,yes
-Belize,Belize,https://sib.org.bz/covid-19/by-the-numbers/,,image,,,,,,"""Tests done and not people tested""",needs_checks,yes
-Benin,Benin,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Bermuda,Bermuda,https://www.gov.bm/coronavirus-covid19-update,,html,https://www.gov.bm/coronavirus-covid19-update,,"//*[@id=""node-901196""]/div/div/table[1]/tbody/tr[2]",,,,automated,
-Bhutan,Bhutan,https://www.gov.bt/covid19/05-01-21-national-situational-update-on-covid-19-moh/,,image,,,,,,"Every day there is a new infographic and the value is ""Total tested till date""",image,yes
-Bolivia,Bolivia,https://www.minsalud.gob.bo/,,image,"Publications always start with ""Bolivia acumula"". Value is CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",,,,,"Publi starts with ""COVID-19: se reportan"". Every day. CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",image,
-Bosnia and Herzegovina,BosniaandHerzegovina,https://covid-19.ba/,,Selenium,,,([0-9]+),,,,automated,
-Botswana,Botswana,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Brazil,Brazil,https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html,,special dashboard,,,,,,,needs_checks,
-Brunei,Brunei,www.moh.gov.bn/Lists/Latest%20news/NewDispForm.aspx?ID=504&Source=http%3A%2F%2Fwww%2Emoh%2Egov%2Ebn%2FLists%2FLatest%2520news%2FAllItems%2Easpx&ContentTypeId=0x0104009A3003A09F8D6E42981D262E322516A2,,Selenium,,,"([,0-9]+)",,,,automated,
-Bulgaria,Bulgaria,https://coronavirus.bg/,,html,,,/html/body/main/div[1]/div/div[6]/div[1]/p[1],,,,needs_checks,
-Burkina Faso,BurkinaFaso,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Burundi,Burundi,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Cambodia,Cambodia,https://www.voacambodia.com/a/more-than-5000-tested-for-virus-in-cambodia-national-tally-reaches-109-cases/5353258.html,,irrelevant,,,,,,,without information,
-Cameroon,Cameroon,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Canada,Canada,https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html,,Selenium,,,"([,0-9]+)",,,,automated,
-Cape Verde,CapeVerde,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Central African Republic,CentralAfricanRepublic,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Chad,Chad,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Chile,Chile,https://www.gob.cl/coronavirus/cifrasoficiales/,,csv,https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto7/PCR_std.csv,,"sum,numero",,60556,,automated,
-Colombia,Colombia,https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx,,csv,https://www.datos.gov.co/api/views/8835-5baf/rows.csv?accessType=DOWNLOAD,,"last,Acumuladas",,,,json,
-Comoros,Comoros,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Costa Rica,CostaRica,http://geovision.uned.ac.cr/oges/index.html,,xlsx,,,([0-9]+),,,"Excel-General --> RESUMEN --> ""Mustras Realizadas""",csv,
-Cote d'Ivoire,CotedIvoire,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Croatia,Croatia,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35,,html2,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35,,testiran[oe] ([.0-9]+) osob[ae],,,,automated,
-Cuba,Cuba,http://www.cubadebate.cu/?s=Cuba+reporta,,html_list,cuba-reporta-,, ([ 0-9]+) pruebas,,,"every day publication. Value between ""Cuba acumula"" and ""muestras"". Sometimes is ""el pais acumula"" and ""pruebas"". ",json,
-Cyprus,Cyprus,https://covid19.ucy.ac.cy/,https://www.data.gov.cy/node/4617?language=en,special dashboard,,,,,,Power BI dashboard,new_test_daily,
-Czech Republic,Czechia,https://onemocneni-aktualne.mzcr.cz/covid-19,,html,,,"//*[@id=""count-test""]",,,,automated,
-Democratic Republic of the Congo,DemocraticRepublicoftheCongo,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Denmark,Denmark,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts,special dashboard,,,"//*[@id=""top""]/div[2]/section[6]/div[1]/table/tbody/tr[2]/td[2]",,,"""Prover"" bottom line",automated,
-Djibouti,Djibouti,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Dominica,Dominica,https://www.facebook.com/SupportRooseveltSkerrit/photos,,image,,,,,,,image,
-Dominican Republic ,DominicanRepublic ,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4,,-,,,,,,"Embedded PDF in iframe (?), eventually scrapabable via Selenium?",pdf,
-Ecuador,Ecuador,https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/,,html,,,"//*[@id=""postcontent""]/table/tbody/tr[1]/td[2]/p[1]/strong[1]",,,,automated,
-Egypt,Egypt,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-El Salvador,ElSalavador,https://covid19.gob.sv/,,special dashboard,,,"//*[@id=""ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b""]/div[1]/div/div[24]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span",,,"""PRUEBAS COVID19""",automated,
-Equatorial Guinea,EquatorialGuinea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Eritrea,Eritrea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Estonia,Estonia,https://koroonakaart.ee/en,,Selenium,https://www.koroonakaart.ee/data.json,,([0-9]+),,,,automated,
-Eswatini,Eswatini,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Ethiopia,Ethiopia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Faroe Islands,FaroeIslands,https://corona.fo/?_l=en,,html,,,"//*[@id=""ease_flexibleitem_9""]/grid[2]/column/grid[1]/column[5]/div[1]",,,,automated,
-Fiji,Fiji,http://www.health.gov.fj/covid-19-updates/,,pdf_list,,,,,,"Not published every day. Every few days, not always same frequency.",pdf,
-Finland,Finland,https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta,https://thl.fi/fi/tilastot-ja-data/aineistot-ja-palvelut/avoin-data/varmistetut-koronatapaukset-suomessa-covid-19-,csv,https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta,,Testattuja näytteitä yhteensä: yli ([ 0-9]+),,,,automated,
-France,France,https://dashboard.covid19.data.gouv.fr/suivi-des-tests?location=FRA,,Selenium,,,([ 0-9]+),,,,automated,
-French Polynesia,FrenchPolynesia,https://www.presidence.pf/?s=Coronavirus+COVID-19+le+point+sur+la+situation,,irrelevant,,,,,,,without information,
-Gabon,Gabon,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Georgia,Georgia,https://stopcov.ge/en/,,irrelevant,,,,,,,new_test_daily,yes
-Germany,Germany,https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Situationsberichte/Okt_2020/Archiv_Oktober.html,,pdf_list,,,,,,"Report published every day but testing info only in wednesday's reports (""Mittwoch""). Last blue table ""Table 4: Number of SARS-CoV-2-laboratory tests in Germany"". ",excel,
-Ghana,Ghana,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Greece,Greece,https://eody.gov.gr/,,pdf_list,,,,,,"Value in bold between ""ελεγχθε"" and  ""κλινικά"". Published daily.",pdf,
-Greenland,Greenland,https://www.nun.gl/,,html,,,"//*[@id=""x3ef423376f3f4047a7073005772c2053""]/table/tbody/tr[1]/td[1]/h3/strong",,,,automated,
-Grenada,Grenada,https://www.facebook.com/HealthGrenada/photos,,irrelevant,,,,,,,facebook,
-Guatemala,Guatemala,https://tablerocovid.mspas.gob.gt/,https://tablerocovid.mspas.gob.gt/,special dashboard,,,,,,"Click on ""Casos tamizados"" on the left menu. Then it's 1st value on the left.",automated,
-Guinea,Guinea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Guinea Bissau,GuineaBissau,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Guyana,Guyana,https://www.health.gov.gy/index.php/component/k2/item/354-guyana-covid-19-dashboard,,irrelevant,,,,,,,image,yes
-Honduras,Honduras,http://www.desastres.hn/COVID-19/COVID-19.png,,Stable image,,,,,,,image,
-Hong Kong,HongKong,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf,https://data.gov.hk/en-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent,Stable PDF,,,,,,Always the same link. PDF changes every 2/3 weeks.,pdf,
-Hungary,Hungary,https://koronavirus.gov.hu/#aktualis,,Selenium,,,([ 0-9]+),,,,automated,
-Iceland,Iceland,https://www.covid.is/tolulegar-upplysingar,,html OR Selenium,,,,,,"Problem there are 3 values to additionate. samples,domestic + samples, border screening 1 + samples, border screening 2",automated,
-India,India,https://www.icmr.gov.in/,,Selenium,https://www.icmr.gov.in/pdf/covid/update/ICMR_testing_update_DATE_9AM_IST.pdf,%d%B%Y,"([,0-9]+)",,,,automated,
-Indonesia,Indonesia,https://covid19.disiplin.id/,,html,,,/html/body/div/div[2]/div[3]/div[1]/h4[1],,,,automated,
-Iran,Iran,http://irangov.ir/search?key=Health%20Ministry&title=1,,html_list,,,,,,"""Health Ministry's Updates on COVID-19"" published every day. ",automated,
-Iraq,Iraq,https://www.facebook.com/MOH.GOV.IQ,,image,,,,,,This table published every day: https://www.facebook.com/MOH.GOV.IQ/photos/3413791365341904 (second value on top),image,
-Ireland,Ireland,https://covid19ireland-geohive.hub.arcgis.com/pages/hospitals-icu--testing,,Selenium,,,"([,0-9]+)",,,,automated,
-Israel,Israel,https://datadashboard.health.gov.il/COVID-19/general,,irrelevant,,,,,,Info in file to download,new_test_daily,
-Italy,Italy,https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json,,json,https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json,,getData_json[['tamponi']],,,json,automated,yes
-Jamaica,Jamaica,https://www.moh.gov.jm/?s=COVID-19+Clinical+Management+Summary,,html_list,covid-19-clinical-management-summary-for-,"Month D, Yr","//*[@id=""post-9795""]/div[3]/table/tbody/tr[24]/td[3]",,,Value if for the day before the day when the press release is published.,automated,
-Japan,Japan,https://www.mhlw.go.jp/stf/houdou/houdou_list_202007.html,,html_list,,,,,,"Publications every day. ""新型コロナウイルス感染症の現在の状況と厚生労働省の対応について"" value below ""【PCR検査の実施件数】"". Difficulty: cumulative value corresponds to the date mentioned in the paragraph and not the date of the publication. Date format in Japonese.",automated,
-Jordan,Jordan,https://corona.moh.gov.jo/en,,html,,,/html/body/section[2]/div/div/div[1]/ul/li[5]/h4,,,,automated,
-Kazakhstan,Kazakhstan,https://hls.kz/,,special dashboard,,,,,,ast value in grey in the dashboard.,needs_checks,
-Kenya,Kenya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Kosovo,Kosovo,https://www.facebook.com/IKSHPK,,text post in facebook,,,,,,"Post ""Instituti Kombëtar i Shëndetësisë Publike të Kosovës"" evry day. Value between ""cases"" and ""suspicious persons"".",facebook,
-Kyrgyzstan,Kyrgyzstan,http://www.med.kg/ru/informatsii.html,,irrelevant,,,,,,,image,yes
-Lao People's Demoratic Republic,LaoPeople'sDemoraticRepublic,https://www.covid19.gov.la/index.php,,html,,,"//*[@id=""aa-blog-archive""]/div/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[5]/div/div/p[2]",,,,automated,
-Latvia,Latvia,https://infogram.com/covid-19-izplatiba-latvija-1hzj4ozwvnzo2pw,,Selenium,,,([ 0-9]+),,,,automated,
-Lebanon,Lebanon,https://corona.ministryinfo.gov.lb/,,html,,,"//*[@id=""content""]/div/div[2]/div[1]/div/div[1]/div/div[2]/div/div[10]/div/h1",,,,automated,
-Lesotho,Lesotho,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,needs_checks,
-Liberia,Liberia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Libya,Libya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Lithuania,Lithuania,https://koronastop.lrv.lt/en/,,html,,,"//*[@id=""w-statistics-in-lithuania""]/div[3]/p[1]/strong[2]",,,,automated,
-Luxembourg,Luxembourg,https://msan.gouvernement.lu/fr/graphiques-evolution.html,,special dashboard,,,"//*[@id=""main""]/div/div/div[2]/section[2]/div/div/details[2]/summary/span[1]",,,"""Tests COVID-19"" courbe verte à survoler.",needs_checks,
-Madagascar,Madagascar,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-China,China,,,irrelevant,,,,,,,without information,
-Malawi,Malawi,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Malaysia,Malaysia,https://www.facebook.com/kementeriankesihatanmalaysia/photos/10157490776386237,,image,,,,,,"Every day there is a similar image and the value is ""Jumlah Individu Disampel""",facebook,
-Mali,Mali,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Malta,Malta,https://timesofmalta.com/articles/view/watch-live-daily-coronavirus-briefing.790073,,special dashboard,,,,,,Dashboard further down,needs_checks,
-Mauritania,Mauritania,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Mauritius,Mauritius,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Mexico,Mexico,https://coronavirus.gob.mx/datos/,,special dashboard,,,,,,CONFIRMADOS+NEGATIVOS+SOSPECHOSOS,needs_checks,
-Moldova,Moldova,https://msmps.gov.md/?s=cazuri+de+COVID-19,,html_list,,,,,,,needs_checks,
-Montenegro,Montenegro,https://www.ijzcg.me/me/coronainfocg,,irrelevant,,,,,,,without information,
-Morocco,Morocco,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Mozambique,Mozambique,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Myanmar,Myanmar,https://mohs.gov.mm/Main/content/publication/2019-ncov,,special dashboard,,,,,,Value in first square left ,needs_checks,
-Namibia,Namibia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Nepal,Nepal,https://covid19.ndrrma.gov.np/,,Selenium,,,"([,0-9]+)",,,,needs_checks,
-Netherlands,Netherlands,https://www.rivm.nl/documenten/epidemiologische-situatie-covid-19-in-nederland-8-juni-2063,,html,,,,,,"Every Wednesday New tests (Not cumulative tests) for the past 7 days. Value is ""Total number of tests of which results are know"" in ""Last week"". Value goes to the ""new tests"" for the date mentioned above.",needs_checks,
-New Caledonia,NewCaledonia,https://covid19.nc/point-de-situation-en-nouvelle-caledonie/,,html,,,"//*[@id=""block-system-main""]/div/div/div/div[1]/div[2]/div[2]/div[1]/div",,,,needs_checks,
-New Zealand,NewZealand,https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data,,Selenium,,,"([,0-9]+)",,,,automated,
-Niger,Niger,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Nigeria,Nigeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-North Macedonia,NorthMacedonia,https://datastudio.google.com/embed/u/0/reporting/9f5104d0-12fd-4e16-9a11-993685cfd40f/page/1M,,special dashboard,,,([ 0-9]+),,,,automated,
-Norway,Norway,https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/,,Selenium,,,"([,0-9]+)",,,,needs_checks,
-Occupied Palestinian Territory,occupiedPalestinianterritory,https://corona.ps/,,Selenium,,,"([,0-9]+)",,,,needs_checks,
-Oman,Oman,https://twitter.com/OmanVSCovid19,,irrelevant,,,,,,,twitter,
-Pakistan,Pakistan,http://covid.gov.pk/,,Selenium,,,"([,0-9]+)",,,,needs_checks,
-Panama,Panama,https://twitter.com/MINSAPma/status/1325931093804113925/photo/1,,image,,,,,,"Every day a new infographic, info is ""Pruebas realizadas""",twitter,
-Papua New Guinea,PapuaNewGuinea,https://covid19.info.gov.pg/,,html,,,"//*[@id=""post-166""]/div/div/div/section[4]/div[2]/div/div[2]/div/div/section[1]/div/div/div[2]/div/div/div/div/div/table/tbody/tr[11]/td[2]/p/span/span",,,,needs_checks,
-Paraguay,Paraguay,https://www.mspbs.gov.py/reporte-covid19.html,,special dashboard,,,,,,,needs_checks,
-Peru,Peru,https://covid19.minsa.gob.pe/sala_situacional.asp,,xlsx,https://covid19.minsa.gob.pe/files/POSITIVIDAD_DATE.xlsx,%d%m%Y,"sum,Muestras",,,,needs_checks,
-Philippines,Philippines,https://www.doh.gov.ph/covid19tracker,,special dashboard,,,,,,,needs_checks,
-Portugal,Portugal,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/,https://github.com/dssg-pt/covid19pt-data/blob/master/amostras.csv,special dashboard,,,,,,"Below ""Amostras"" in the dashboard",needs_checks,
-Qatar,Qatar,https://www.moph.gov.qa/english/Pages/Coronavirus2019.aspx#,,Selenium,,,([0-9]+),,,,automated,
-Republic of Korea,RepublicofKorea,http://ncov.mohw.go.kr/en/,,Selenium,,,"([,0-9]+)",,,,automated,
-Republic of the Congo,Congo,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Romania,Romania,https://stirioficiale.ro/informatii,,html_list,buletin-de-presa-,,prelucrate ([.0-9]+) de teste,,,"Click on ""Buletin de Presa"". Value is between ""prelucrate"" and ""de teste""",needs_checks,
-Russia,Russia,https://www.rospotrebnadzor.ru/search/index.php?tags=&q=%C8%ED%F4%EE%F0%EC%E0%F6%E8%EE%ED%ED%FB%E9+%E1%FE%EB%EB%E5%F2%E5%ED%FC+%EE+%F1%E8%F2%F3%E0%F6%E8%E8+%E8+%EF%F0%E8%ED%E8%EC%E0%E5%EC%FB%F5+%EC%E5%F0%E0%F5+%EF%EE+%ED%E5%E4%EE%EF%F3%F9%E5%ED%E8%FE+%F0%E0%F1%EF%F0%EE%F1%F2%F0%E0%ED%E5%ED%E8%FF+%E7%E0%E1%EE%EB%E5%E2%E0%ED%E8%E9%2C+%E2%FB%E7%E2%E0%ED%ED%FB%F5+%ED%EE%E2%FB%EC+%EA%EE%F0%EE%ED%E0%E2%E8%F0%F3%F1%EE%EC&where=&how=d&from=&to=,,html_list,,,проведено ([ 0-9]+) лабораторных,,,"Publication starts with ""Информационный бюллетень о"". Every day but value does not always correspond to the date of the publication so need to take into account the date mentioned in paragraph. Value between ""проведено"" and ""лабораторных""",needs_checks,
-Rwanda,Rwanda,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Saint Kitts and Nevis,SaintKittsandNevis,https://zizonline.com/category/covid-19/,,irrelevant,,,,,,,without information,
-Saint Lucia,Saint Lucia,https://www.covid19response.lc/,,Selenium,,,"([,0-9]+)",,,,needs_checks,
-Saint Vincent and the Grenadines,SaintVincentandtheGrenadines,https://www.facebook.com/SVGHEALTH/photos,,image,,,,,,Every day a new infographic,without information,
-San Marino,SanMarino,http://www.iss.sm/on-line/home/articolo49014558.html,,html_list,,,,,,"Publication is ""Aggiornamento dati Epidemia da Covid-19 al"". From time to time, not daily. Calculation test sierologici+tamponi molecolari. ",needs_checks,
-Sao Tome and Principe,SaoTomeandPrincipe,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Saudi Arabia,SaudiArabia,https://covid19.moh.gov.sa/,,special dashboard,,,,,,Two clicks to be made in order to display test data,needs_checks,
-Scotland,Scotland,https://public.tableau.com/profile/phs.covid.19#!/vizhome/COVID-19DailyDashboard_15960160643010/Dailyupdate,,special dashboard,,,"//*[@id=""preamble""]/div/ul[4]/li[1]/span/span/span/span",,,,needs_checks,
-Senegal,Senegal,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Serbia,Serbia,https://covid19.rs/,,html,,,"//*[@id=""main""]/div/div/div/section[1]/div[2]/div/div/div/div/section[4]/div/div/div[1]/div/div/div[1]/div/p",,,,needs_checks,
-Seychelles,Seychelles,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Sierra Leone,SierraLeone,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Singapore,Singapore,https://www.moh.gov.sg/covid-19,,Selenium,,,"([,0-9]+)",,,,automated,
-Slovakia,Slovakia,https://korona.gov.sk/,,Selenium,,,([ 0-9]+),,,,automated,
-Slovenia,Slovenia,https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19,,html,,,"//*[@id=""node-5056""]/div[4]/div/div/div/table[1]/tbody/tr[1]/td[1]/strong",,,,needs_checks,
-Somalia,Somalia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-South Africa,SouthAfrica,https://gis.nicd.ac.za/portal/apps/opsdashboard/index.html#/0ec12f471aaa4055999366669b38482d,https://www.nicd.ac.za/diseases-a-z-index/covid-19/surveillance-reports/national-covid-19-daily-report/,Selenium,,,"([,0-9]+)",,,,automated,
-South Sudan,SouthSudan,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Spain,Spain,https://www.mscbs.gob.es/gabinete/notasPrensa.do,,html_list,,,,,,"Testing info only in Monday's press releases. Value between ""se han efectuado hasta el momento"" and ""pruebas diagnósticas""",needs_checks,
-Sri Lanka,SriLanka,https://www.hpb.health.gov.lk/en,,Selenium,,,([0-9]+),,,,automated,
-Sudan,Sudan,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Sweden,Sweden,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/statistik-och-analyser/veckorapporten-om-covid-19/,,pdf_list,,,,,,"Publication ""Veckorapport om covid-19 vecka"" every Friday. Value in table at the beginning ""Testade individer (PCR-test): """,pdf,
-Switzerland,Switzerland,https://www.covid19.admin.ch/en/overview?ovTime=total,,html,,,/html/body/app-root/bag-dashboard/main/bag-overview/div/div[1]/div[3]/bag-overview-card-test/bag-overview-card/div/bag-key-value-list/table/tbody/tr[2]/td/span,,,,automated,
-Taiwan,Taiwan,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan,,special dashboard,,,"//*[@id=""num1""]","//*[@id=""num6""]",,,automated,
-Tajikistan,Tajikistan,https://eurasianet.org/dashboard-coronavirus-in-eurasia,,irrelevant,,,,,,,without information,
-Thailand,Thailand,https://ddc.moph.go.th/viralpneumonia/eng/index.php,,html,,,//div[7]/div/div/div/h5,,,,needs_checks,
-The Bahamas,TheBahamas,https://www.facebook.com/MOHBahamas/,,image,,,,,,,without information,
-The Gambia,TheGambia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Togo,Togo,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Trinidad and Tobago,TrinidadandTobago,http://www.health.gov.tt/sitepages/default.aspx?id=293,,Stable PDF,,,,,,,pdf,
-Tunisia,Tunisia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Turkey,Turkey,https://covid19.saglik.gov.tr/,,Selenium,,,([.0-9]+),,,,automated,
-Uganda,Uganda,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-UK,UnitedKingdom,https://coronavirus.data.gov.uk/testing,,Selenium,,,"([,0-9]+)",,,,automated,
-Ukraine,Ukraine,https://covid19.gov.ua/en/,,html,,,"//*[@id=""content""]/div[1]/div[1]/div[1]/div/div[6]/div",,,,automated,
-United Arab Emirates,UnitedArabEmirates,https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx,,Selenium,,,"([,0-9]+)",,,,needs_checks,
-United Republic of Tanzania,UnitedRepublicofTanzania,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Uruguay,Uruguay,https://www.gub.uy/sistema-nacional-emergencias/pagina-embebida/visualizador-casos-coronavirus-covid-19-uruguay,https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informacion-situacion-sobre-coronavirus-covid-19-uruguay-78,special dashboard,informe-situacion-sobre-coronavirus-covid-19-uruguay-,, se han procesado ([.0-9]+) tests,,,Desde el 13 de marzo se han procesado,needs_checks,
-USA,US,https://covidtracking.com/data/#ME,,csv,https://covidtracking.com/api/v1/us/current.csv,,"1,totalTestResults",,,,needs_checks,
-Uzbekistan,Uzbekistan,https://t.me/koronavirusinfouz/3470,,irrelevant,,,,,,,without information,
-Venezuela,Venezuela,www.minci.gob.ve/venezuela-suma-198-nuevos-casos-de-covid-19-y-contabiliza-3-mil-790-infecciones/,,irrelevant,,,,,,,without information,
-Vietnam,Vietnam,https://ncov.moh.gov.vn/?fbclid=IwAR1JDjulr5Ni19WcUWqQqugrEN7Ta6HcGEMqEhdgzifWiSGlIxwknKr9VuU,,html_list OR Selenium,,,,,,"Publications in the bottom ""Bản tin cập nhật dịch bệnh Covid-19"". Not every dail but almost. Value after ""thực hiện""",needs_checks,
-Western Sahara,WesternSahara,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Zambia,Zambia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
-Zimbabwe,Zimbabwe,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated,
+country,jhu_ID,source,alternative link,type,data_url,date_format,xpath_cumul,xpath_new,backlog,comment,status
+Afghanistan,Afghanistan,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table,,pdf_list,operational_sitrep_covid|daily_brief_covid|strategic_situation_report|strategic_sitrep,,(?<=map)(.*)(?= people out of),,,,pdf
+Albania,Albania,https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A,,html_list,covid19-ministria-e-shendetesise,%d/%m/%Y,Testime totale ([.0-9]+),,,,automated
+Algeria,Algeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Andorra,Andorra,https://www.govern.ad/covid19/en/,,,,,,,,,
+Angola,Angola,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Antigua and Barbuda,AntiguaandBarbuda,https://covid19.gov.ag/,,html,,,/html/body/div/div/div[1]/div[1]/div[4]/p[2],,,,automated
+Argentina,Argentina,https://www.argentina.gob.ar/coronavirus/informes-diarios/reportes/diciembre2020,,pdf_list,https://www.argentina.gob.ar/sites/default/files,,(?<=se realizaron )(.*)(?= pruebas diagnósticas),,,,automated
+Armenia,Armenia,https://ncdc.am/coronavirus/confirmed-cases-by-days/,,html2,https://infogram.com/--1h7j4drmogk92nr,,"Ընդհանուր թեստեր - ([0-9 .,]+)",,,,automated
+Australia,Australia,https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results,,Selenium,,,"([,0-9]+)",,,,automated
+Austria,Austria,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html,,csv,https://info.gesundheitsministerium.at/data/AllgemeinDaten.csv,,1,GesTestungen,,,automated
+Azerbaijan,Azerbaijan,https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet,,html,,,/html/body/main/section/div/div/div[3]/div[6]/strong,,,,automated
+Bahrain,Bahrain,https://healthalert.gov.bh/en/,,html,https://www.moh.gov.bh/COVID19,,/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div/div/table/thead/tr[1]/th/span,,,,automated
+Bangladesh,Bangladesh,https://corona.gov.bd/,,special dashboard,,,,,,Need to first change language ,automated
+Barbados,Barbados,https://gisbarbados.gov.bb/blog/covid-19-situation-dashboard-january-05-2021/,,html_list,,,,,,"Info not only in image, also in text at the bottom",automated
+Belarus,Belarus,https://t.me/s/minzdravbelarus,,Telegram post,"Every day a post. Value between ""Всего в стране проведено"" and ""тестов"". Problem is that they use ""млн."" for million and  ""тыс."" for thousand.",,Всего проведено ([ 0-9]+) тестов,,,"There is not every day a publication. Publi title starting with ""В Беларуси на"". Info is between ""Всего проведено"" and ""теста."". Use of ""млн."" and ""млн."" for million and thousand.",automated
+Belgium,Belgium,https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-4812-848c-0369173148ab/page/cUWaB,https://epistat.sciensano.be/covid/covid19_historicaldata.html,special dashboard,,,,,,"Need to choose ""7.Tests"" at the bottom of the dashboard near ""Summary"".",automated
+Belize,Belize,https://sib.org.bz/covid-19/by-the-numbers/,,image,,,,,,"""Tests done and not people tested""",automated
+Benin,Benin,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Bermuda,Bermuda,https://www.gov.bm/coronavirus-covid19-update,,html,https://www.gov.bm/coronavirus-covid19-update,,"//*[@id=""node-901196""]/div/div/table[1]/tbody/tr[2]",,,,automated
+Bhutan,Bhutan,https://www.facebook.com/MoHBhutan/,,image,,,,,,"Every day there is a new infographic and the value is ""Total tested till date""",image
+Bolivia,Bolivia,https://www.minsalud.gob.bo/,,image,"Publications always start with ""Bolivia acumula"". Value is CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",,,,,"Publi starts with ""COVID-19: se reportan"". Every day. CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",image
+Bosnia and Herzegovina,BosniaandHerzegovina,https://covid-19.ba/,,Selenium,,,([0-9]+),,,,automated
+Botswana,Botswana,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Brazil,Brazil,https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html,,special dashboard,,,,,,,automated
+Brunei,Brunei,www.moh.gov.bn/Lists/Latest%20news/NewDispForm.aspx?ID=504&Source=http%3A%2F%2Fwww%2Emoh%2Egov%2Ebn%2FLists%2FLatest%2520news%2FAllItems%2Easpx&ContentTypeId=0x0104009A3003A09F8D6E42981D262E322516A2,,Selenium,,,"([,0-9]+)",,,,automated
+Bulgaria,Bulgaria,https://coronavirus.bg/,,html,,,/html/body/main/div[1]/div/div[6]/div[1]/p[1],,,,automated
+Burkina Faso,BurkinaFaso,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Burundi,Burundi,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Cambodia,Cambodia,http://cdcmoh.gov.kh/,,html_list,,,,,,"Every day publication with title red ""NEW COVID-19 Updated"". Click then cumulative value in the bottom between ""យេីងបានធ្វេីតេស្តចំនួន"" and ""ស្មេីនឹង""",
+Cameroon,Cameroon,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Canada,Canada,https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html,,Selenium,,,"([,0-9]+)",,,,automated
+Cape Verde,CapeVerde,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Central African Republic,CentralAfricanRepublic,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Chad,Chad,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Chile,Chile,https://www.gob.cl/coronavirus/cifrasoficiales/,,csv,https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto7/PCR_std.csv,,"sum,numero",,60556,,automated
+Colombia,Colombia,https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx,,csv,https://www.datos.gov.co/api/views/8835-5baf/rows.csv?accessType=DOWNLOAD,,"last,Acumuladas",,,,json
+Comoros,Comoros,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Costa Rica,CostaRica,http://geovision.uned.ac.cr/oges/index.html,,xlsx,,,([0-9]+),,,"Excel-General --> RESUMEN --> ""Mustras Realizadas""",csv
+Cote d'Ivoire,CotedIvoire,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Croatia,Croatia,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35,,html2,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35,,testiran[oe] ([.0-9]+) osob[ae],,,,automated
+Cuba,Cuba,http://www.cubadebate.cu/?s=Cuba+reporta,,html_list,cuba-reporta-,, ([ 0-9]+) pruebas,,,"every day publication. Value between ""Cuba acumula"" and ""muestras"". Sometimes is ""el pais acumula"" and ""pruebas"". ",json
+Cyprus,Cyprus,https://covid19.ucy.ac.cy/,https://www.data.gov.cy/node/4617?language=en,special dashboard,,,,,,Daily tests and not cumulative anymore,new_test_daily
+Czech Republic,Czechia,https://onemocneni-aktualne.mzcr.cz/covid-19,,html,,,"//*[@id=""count-test""]",,,,automated
+Democratic Republic of the Congo,DemocraticRepublicoftheCongo,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Denmark,Denmark,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts,special dashboard,,,"//*[@id=""top""]/div[2]/section[6]/div[1]/table/tbody/tr[2]/td[2]",,,"""Prover"" bottom line",automated
+Djibouti,Djibouti,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Dominica,Dominica,https://www.facebook.com/SupportRooseveltSkerrit/photos,,image,,,,,,,image
+Dominican Republic ,DominicanRepublic ,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4,,-,,,,,,"Embedded PDF in iframe (?), eventually scrapabable via Selenium?",pdf
+Ecuador,Ecuador,https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/,,html,,,"//*[@id=""postcontent""]/table/tbody/tr[1]/td[2]/p[1]/strong[1]",,,,automated
+Egypt,Egypt,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+El Salvador,ElSalavador,https://covid19.gob.sv/,,special dashboard,,,"//*[@id=""ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b""]/div[1]/div/div[24]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span",,,"""PRUEBAS COVID19""",automated
+Equatorial Guinea,EquatorialGuinea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Eritrea,Eritrea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Estonia,Estonia,https://koroonakaart.ee/en,,Selenium,https://www.koroonakaart.ee/data.json,,([0-9]+),,,,automated
+Eswatini,Eswatini,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Ethiopia,Ethiopia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Faroe Islands,FaroeIslands,https://corona.fo/?_l=en,,html,,,"//*[@id=""ease_flexibleitem_9""]/grid[2]/column/grid[1]/column[5]/div[1]",,,,automated
+Fiji,Fiji,http://www.health.gov.fj/covid-19-updates/,,pdf_list,,,,,,"Not published every day. Every few days, not always same frequency.",pdf
+Finland,Finland,https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta,https://thl.fi/fi/tilastot-ja-data/aineistot-ja-palvelut/avoin-data/varmistetut-koronatapaukset-suomessa-covid-19-,csv,https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta,,Testattuja näytteitä yhteensä: yli ([ 0-9]+),,,,automated
+France,France,https://dashboard.covid19.data.gouv.fr/suivi-des-tests?location=FRA,,Selenium,,,([ 0-9]+),,,,automated
+French Polynesia,FrenchPolynesia,https://www.presidence.pf/?s=Coronavirus+COVID-19+le+point+sur+la+situation,,irrelevant,,,,,,,without information
+Gabon,Gabon,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Georgia,Georgia,https://stopcov.ge/en/,,irrelevant,,,,,,,new_test_daily
+Germany,Germany,https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Situationsberichte/Okt_2020/Archiv_Oktober.html,,pdf_list,,,,,,"Report published every day but testing info only in wednesday's reports (""Mittwoch""). Last blue table ""Table 4: Number of SARS-CoV-2-laboratory tests in Germany"". ",excel
+Ghana,Ghana,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Greece,Greece,https://covid19.gov.gr/covid19-live-analytics/,,,,,,,,second value,
+Greenland,Greenland,https://www.nun.gl/,,html,,,"//*[@id=""x3ef423376f3f4047a7073005772c2053""]/table/tbody/tr[1]/td[1]/h3/strong",,,,automated
+Grenada,Grenada,https://www.facebook.com/HealthGrenada/photos,,irrelevant,,,,,,,facebook
+Guatemala,Guatemala,https://tablerocovid.mspas.gob.gt/,https://tablerocovid.mspas.gob.gt/,special dashboard,,,,,,"Click on ""Casos tamizados"" on the left menu. Then it's 1st value on the left.",automated
+Guinea,Guinea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Guinea Bissau,GuineaBissau,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Guyana,Guyana,https://www.health.gov.gy/index.php/component/k2/item/354-guyana-covid-19-dashboard,,irrelevant,,,,,,,image
+Honduras,Honduras,http://www.desastres.hn/COVID-19/COVID-19.png,,Stable image,,,,,,,image
+Hong Kong,HongKong,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf,https://data.gov.hk/en-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent,Stable PDF,,,,,,Always the same link. PDF changes every 2/3 weeks.,pdf
+Hungary,Hungary,https://koronavirus.gov.hu/#aktualis,,Selenium,,,([ 0-9]+),,,,automated
+Iceland,Iceland,https://www.covid.is/tolulegar-upplysingar,,html OR Selenium,,,,,,"Problem there are 3 values to additionate. samples,domestic + samples, border screening 1 + samples, border screening 2",automated
+India,India,https://www.icmr.gov.in/,,Selenium,https://www.icmr.gov.in/pdf/covid/update/ICMR_testing_update_DATE_9AM_IST.pdf,%d%B%Y,"([,0-9]+)",,,,automated
+Indonesia,Indonesia,https://covid19.disiplin.id/,,html,,,/html/body/div/div[2]/div[3]/div[1]/h4[1],,,,automated
+Iran,Iran,http://irangov.ir/search?key=Health%20Ministry&title=1,,html_list,,,,,,"""Health Ministry's Updates on COVID-19"" published every day. ",automated
+Iraq,Iraq,https://www.facebook.com/MOH.GOV.IQ,,image,,,,,,This table published every day: https://www.facebook.com/MOH.GOV.IQ/photos/3413791365341904 (second value on top),image
+Ireland,Ireland,https://covid19ireland-geohive.hub.arcgis.com/pages/hospitals-icu--testing,,Selenium,,,"([,0-9]+)",,,,automated
+Israel,Israel,https://datadashboard.health.gov.il/COVID-19/general,,irrelevant,,,,,,Info in file to download,new_test_daily
+Italy,Italy,https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json,,json,https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json,,getData_json[['tamponi']],,,json,automated
+Jamaica,Jamaica,https://www.moh.gov.jm/?s=COVID-19+Clinical+Management+Summary,,html_list,covid-19-clinical-management-summary-for-,"Month D, Yr","//*[@id=""post-9795""]/div[3]/table/tbody/tr[24]/td[3]",,,Value if for the day before the day when the press release is published.,automated
+Japan,Japan,https://www.mhlw.go.jp/stf/houdou/houdou_list_202007.html,,html_list,,,,,,"Publications every day. ""新型コロナウイルス感染症の現在の状況と厚生労働省の対応について"" value below ""【PCR検査の実施件数】"". Difficulty: cumulative value corresponds to the date mentioned in the paragraph and not the date of the publication. Date format in Japonese.",automated
+Jordan,Jordan,https://corona.moh.gov.jo/en,,html,,,/html/body/section[2]/div/div/div[1]/ul/li[5]/h4,,,,needs_checks
+Kazakhstan,Kazakhstan,https://hls.kz/,,special dashboard,,,,,,ast value in grey in the dashboard.,special_dashboard
+Kenya,Kenya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Kosovo,Kosovo,https://www.facebook.com/IKSHPK,,text post in facebook,,,,,,"Post ""Instituti Kombëtar i Shëndetësisë Publike të Kosovës"" evry day. Value between ""cases"" and ""suspicious persons"".",facebook
+Kuwait,Kuwait,https://twitter.com/KUWAIT_MOH,,image,,,,,,,
+Kyrgyzstan,Kyrgyzstan,http://www.med.kg/ru/informatsii.html,,irrelevant,,,,,,,image
+Lao People's Demoratic Republic,LaoPeoplesDemoraticRepublic,https://www.covid19.gov.la/index.php,,html,,,"//*[@id=""aa-blog-archive""]/div/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[5]/div/div/p[2]",,,,automated
+Latvia,Latvia,https://infogram.com/covid-19-izplatiba-latvija-1hzj4ozwvnzo2pw,,Selenium,,,([ 0-9]+),,,,automated
+Lebanon,Lebanon,https://corona.ministryinfo.gov.lb/,,html,,,"//*[@id=""content""]/div/div[2]/div[1]/div/div[1]/div/div[2]/div/div[10]/div/h1",,,,automated
+Lesotho,Lesotho,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Liberia,Liberia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Libya,Libya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Lithuania,Lithuania,https://koronastop.lrv.lt/en/,,html,,,"//*[@id=""w-statistics-in-lithuania""]/div[3]/p[1]/strong[2]",,,,automated
+Luxembourg,Luxembourg,https://msan.gouvernement.lu/fr/graphiques-evolution.html,,special dashboard,,,"//*[@id=""main""]/div/div/div[2]/section[2]/div/div/details[2]/summary/span[1]",,,"""Tests COVID-19"" courbe verte à survoler.",new_test_daily
+Madagascar,Madagascar,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+China,China,,,irrelevant,,,,,,,without information
+Malawi,Malawi,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Malaysia,Malaysia,https://www.facebook.com/kementeriankesihatanmalaysia/photos/10157490776386237,,image,,,,,,"Every day there is a similar image and the value is ""Jumlah Individu Disampel""",facebook
+Maldives,Maldives,https://twitter.com/HPA_MV/status/1348675860627419136,,image,,,,,,,
+Mali,Mali,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Malta,Malta,https://timesofmalta.com/articles/view/watch-live-daily-coronavirus-briefing.790073,,special dashboard,,,,,,Dashboard further down,automated
+Mauritania,Mauritania,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Mauritius,Mauritius,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Mexico,Mexico,https://coronavirus.gob.mx/datos/,,special dashboard,,,,,,CONFIRMADOS+NEGATIVOS+SOSPECHOSOS,automated
+Moldova,Moldova,https://msmps.gov.md/?s=cazuri+de+COVID-19,,html_list,,,,,,,new_test_daily
+Montenegro,Montenegro,https://www.ijzcg.me/me/coronainfocg,,irrelevant,,,,,,,without information
+Morocco,Morocco,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Mozambique,Mozambique,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Myanmar,Myanmar,https://mohs.gov.mm/Main/content/publication/2019-ncov,,special dashboard,,,,,,Value in first square left ,automated
+Namibia,Namibia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Nepal,Nepal,https://covid19.ndrrma.gov.np/,,Selenium,,,"([,0-9]+)",,,,needs_checks
+Netherlands,Netherlands,https://www.rivm.nl/en/novel-coronavirus-covid-19/current-information,,html,,,,,,"Every Wednesday New tests (Not cumulative tests) for the past 7 days. Value is ""Total number of tests of which results are know"" in ""Last week"". Value goes to the ""new tests"" for the date mentioned above.",weekly_numbers
+New Caledonia,NewCaledonia,https://covid19.nc/point-de-situation-en-nouvelle-caledonie/,,html,,,"//*[@id=""block-system-main""]/div/div/div/div[1]/div[2]/div[2]/div[1]/div",,,,automated
+New Zealand,NewZealand,https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data,,Selenium,,,"([,0-9]+)",,,,automated
+Niger,Niger,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Nigeria,Nigeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+North Macedonia,NorthMacedonia,https://datastudio.google.com/embed/u/0/reporting/9f5104d0-12fd-4e16-9a11-993685cfd40f/page/1M,,special dashboard,,,([ 0-9]+),,,,automated
+Norway,Norway,https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/,,Selenium,,,"([,0-9]+)",,,,automated
+Occupied Palestinian Territory,occupiedPalestinianterritory,https://corona.ps/,,Selenium,,,"([,0-9]+)",,,,automated
+Oman,Oman,https://twitter.com/OmanVSCovid19,,irrelevant,,,,,,,twitter
+Pakistan,Pakistan,http://covid.gov.pk/,,Selenium,,,"([,0-9]+)",,,,needs_checks
+Panama,Panama,https://twitter.com/MINSAPma/status/1325931093804113925/photo/1,,image,,,,,,"Every day a new infographic, info is ""Pruebas realizadas""",twitter
+Papua New Guinea,PapuaNewGuinea,https://covid19.info.gov.pg/,,html,,,"//*[@id=""post-166""]/div/div/div/section[4]/div[2]/div/div[2]/div/div/section[1]/div/div/div[2]/div/div/div/div/div/table/tbody/tr[11]/td[2]/p/span/span",,,,problems_webpage
+Paraguay,Paraguay,https://www.mspbs.gov.py/reporte-covid19.html,,special dashboard,,,,,,,special_dashboard
+Peru,Peru,https://covid19.minsa.gob.pe/sala_situacional.asp,,xlsx,https://covid19.minsa.gob.pe/files/POSITIVIDAD_DATE.xlsx,%d%m%Y,"sum,Muestras",,,,xlsx
+Philippines,Philippines,https://www.doh.gov.ph/covid19tracker,,special dashboard,,,,,,,special_dashboard
+Poland,Poland,https://twitter.com/MZ_GOV_PL,image,https://twitter.com/MZ_GOV_PL/status/1346754631116926976/photo/1,,,,,first number on the left,,image
+Portugal,Portugal,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/,https://github.com/dssg-pt/covid19pt-data/blob/master/amostras.csv,special dashboard,,,,,,"Below ""Amostras"" in the dashboard",automated
+Qatar,Qatar,https://www.moph.gov.qa/english/Pages/Coronavirus2019.aspx#,,Selenium,,,([0-9]+),,,,automated
+Republic of Korea,RepublicofKorea,http://ncov.mohw.go.kr/en/,,Selenium,,,"([,0-9]+)",,,,automated
+Republic of the Congo,Congo,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Romania,Romania,https://stirioficiale.ro/informatii,,html_list,buletin-de-presa-,,prelucrate ([.0-9]+) de teste,,,"Click on ""Buletin de Presa"". Value is between ""prelucrate"" and ""de teste""",automated
+Russia,Russia,https://www.rospotrebnadzor.ru/search/index.php?tags=&q=%C8%ED%F4%EE%F0%EC%E0%F6%E8%EE%ED%ED%FB%E9+%E1%FE%EB%EB%E5%F2%E5%ED%FC+%EE+%F1%E8%F2%F3%E0%F6%E8%E8+%E8+%EF%F0%E8%ED%E8%EC%E0%E5%EC%FB%F5+%EC%E5%F0%E0%F5+%EF%EE+%ED%E5%E4%EE%EF%F3%F9%E5%ED%E8%FE+%F0%E0%F1%EF%F0%EE%F1%F2%F0%E0%ED%E5%ED%E8%FF+%E7%E0%E1%EE%EB%E5%E2%E0%ED%E8%E9%2C+%E2%FB%E7%E2%E0%ED%ED%FB%F5+%ED%EE%E2%FB%EC+%EA%EE%F0%EE%ED%E0%E2%E8%F0%F3%F1%EE%EC&where=&how=d&from=&to=,,html_list,,,проведено ([ 0-9]+) лабораторных,,,"Publication starts with ""Информационный бюллетень о"". Every day but value does not always correspond to the date of the publication so need to take into account the date mentioned in paragraph. Value between ""проведено"" and ""лабораторных""",automated
+Rwanda,Rwanda,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Saint Kitts and Nevis,SaintKittsandNevis,https://covid19.gov.kn/,,special dashboard,,,,,,,without information
+Saint Lucia,SaintLucia,https://www.covid19response.lc/,,Selenium,,,"([,0-9]+)",,,,automated
+Saint Vincent and the Grenadines,SaintVincentandtheGrenadines,https://www.facebook.com/SVGHEALTH/photos,,image,,,,,,Every day a new infographic,image
+San Marino,SanMarino,http://www.iss.sm/on-line/home/articolo49014558.html,,html_list,,,,,,"Publication is ""Aggiornamento dati Epidemia da Covid-19 al"". From time to time, not daily. Calculation test sierologici+tamponi molecolari. ",automated
+Sao Tome and Principe,SaoTomeandPrincipe,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Saudi Arabia,SaudiArabia,https://covid19.moh.gov.sa/,,special dashboard,,,,,,Two clicks to be made in order to display test data,automated
+Scotland,Scotland,https://public.tableau.com/profile/phs.covid.19#!/vizhome/COVID-19DailyDashboard_15960160643010/Dailyupdate,,special dashboard,,,"//*[@id=""preamble""]/div/ul[4]/li[1]/span/span/span/span",,,,special_dashboard
+Senegal,Senegal,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Serbia,Serbia,https://covid19.rs/,,html,,,"//*[@id=""main""]/div/div/div/section[1]/div[2]/div/div/div/div/section[4]/div/div/div[1]/div/div/div[1]/div/p",,,,automated
+Seychelles,Seychelles,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Sierra Leone,SierraLeone,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Singapore,Singapore,https://www.moh.gov.sg/covid-19,,Selenium,,,"([,0-9]+)",,,,automated
+Slovakia,Slovakia,https://korona.gov.sk/,,Selenium,,,([ 0-9]+),,,,automated
+Slovenia,Slovenia,https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19,,html,,,"//*[@id=""node-5056""]/div[4]/div/div/div/table[1]/tbody/tr[1]/td[1]/strong",,,,automated
+Somalia,Somalia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+South Africa,SouthAfrica,https://gis.nicd.ac.za/portal/apps/opsdashboard/index.html#/0ec12f471aaa4055999366669b38482d,https://www.nicd.ac.za/diseases-a-z-index/covid-19/surveillance-reports/national-covid-19-daily-report/,Selenium,,,"([,0-9]+)",,,,automated
+South Sudan,SouthSudan,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Spain,Spain,https://www.mscbs.gob.es/gabinete/notasPrensa.do,,html_list,,,,,,"Testing info only in Monday's press releases. Value between ""se han efectuado hasta el momento"" and ""pruebas diagnósticas""",automated
+Sri Lanka,SriLanka,https://www.hpb.health.gov.lk/en,,Selenium,,,([0-9]+),,,,automated
+Sudan,Sudan,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Sweden,Sweden,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/statistik-och-analyser/veckorapporten-om-covid-19/,,pdf_list,,,,,,"Publication ""Veckorapport om covid-19 vecka"" every Friday. Value in table at the beginning ""Testade individer (PCR-test): """,pdf
+Switzerland,Switzerland,https://www.covid19.admin.ch/en/overview?ovTime=total,,html,,,/html/body/app-root/bag-dashboard/main/bag-overview/div/div[1]/div[3]/bag-overview-card-test/bag-overview-card/div/bag-key-value-list/table/tbody/tr[2]/td/span,,,,automated
+Taiwan,Taiwan,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan,,special dashboard,,,"//*[@id=""num1""]","//*[@id=""num6""]",,,automated
+Tajikistan,Tajikistan,https://eurasianet.org/dashboard-coronavirus-in-eurasia,,irrelevant,,,,,,,without information
+Thailand,Thailand,https://ddc.moph.go.th/viralpneumonia/eng/index.php,http://nextcloud.dmsc.moph.go.th/index.php/s/AFEy26XRKQxKXcf,html,,,//div[7]/div/div/div/h5,,,,
+The Bahamas,TheBahamas,https://www.facebook.com/MOHBahamas/,,image,,,,,,,facebook
+The Gambia,TheGambia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Togo,Togo,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Trinidad and Tobago,TrinidadandTobago,http://www.health.gov.tt/sitepages/default.aspx?id=293,,Stable PDF,,,,,,,pdf
+Tunisia,Tunisia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Turkey,Turkey,https://covid19.saglik.gov.tr/,,Selenium,,,([.0-9]+),,,,automated
+Uganda,Uganda,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+UK,UnitedKingdom,https://coronavirus.data.gov.uk/testing,,Selenium,,,"([,0-9]+)",,,,automated
+Ukraine,Ukraine,https://covid19.gov.ua/en/,,html,,,"//*[@id=""content""]/div[1]/div[1]/div[1]/div/div[6]/div",,,,automated
+United Arab Emirates,UnitedArabEmirates,https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx,,Selenium,,,"([,0-9]+)",,,,automated
+United Republic of Tanzania,UnitedRepublicofTanzania,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Uruguay,Uruguay,https://www.gub.uy/sistema-nacional-emergencias/pagina-embebida/visualizador-casos-coronavirus-covid-19-uruguay,https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informacion-situacion-sobre-coronavirus-covid-19-uruguay-78,special dashboard,informe-situacion-sobre-coronavirus-covid-19-uruguay-,, se han procesado ([.0-9]+) tests,,,Desde el 13 de marzo se han procesado,automated
+USA,US,https://covidtracking.com/data/#ME,,csv,https://covidtracking.com/api/v1/us/current.csv,,"1,totalTestResults",,,,automated
+Uzbekistan,Uzbekistan,https://t.me/koronavirusinfouz/3470,,irrelevant,,,,,,,without information
+Venezuela,Venezuela,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A,,html_list,,,,,,,without information
+Vietnam,Vietnam,https://ncov.moh.gov.vn/?fbclid=IwAR1JDjulr5Ni19WcUWqQqugrEN7Ta6HcGEMqEhdgzifWiSGlIxwknKr9VuU,,html_list OR Selenium,,,,,,"Publications in the bottom ""Bản tin cập nhật dịch bệnh Covid-19"". Not every dail but almost. Value after ""thực hiện""",
+Western Sahara,WesternSahara,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Zambia,Zambia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Zimbabwe,Zimbabwe,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
