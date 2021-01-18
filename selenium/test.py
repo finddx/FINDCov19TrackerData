@@ -35,13 +35,6 @@ class TestDefaultSuite(unittest.TestCase):
   def tearDown(self):
     self.driver.quit()
 
-  def test_australia(self):
-    self.driver.get("https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-current-situation-and-case-numbers#tests-conducted-and-results")
-    time.sleep(60)
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]").text
-    self.driver.close()
-
   def test_antiguaandBarbuda(self):
     self.driver.get("https://covid19.gov.ag")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".icon-test-done > .case-Number").text
@@ -65,12 +58,37 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span").text
     self.driver.close()
 
+  def test_australia(self):
+    self.driver.get("https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-current-situation-and-case-numbers#tests-conducted-and-results")
+    time.sleep(60)
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]").text
+    self.driver.close()
+    
+  def test_austria(self):
+    self.driver.get("https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
+    self.driver.close()
+
+  def test_azerbaijan(self):
+    self.driver.get("https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".gray_little_statistic:nth-child(6) > strong").text
+    self.driver.close()
+
   def test_bahrain(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://healthalert.gov.bh/en/")
     time.sleep(60)
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]/div/div[1]/div/ul/li/div[2]/div/span").text
+    self.driver.close()
+    
+  def test_bangladesh(self):
+    self.driver.get("https://corona.gov.bd/")
+    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".lang-btn").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".live-update-box-body-three .text-right b").text
     self.driver.close()
     
   def test_barbados(self):
@@ -102,17 +120,28 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('outbreak situation\n')[1].split('\nTests Completed')[0]
     self.driver.close()    
-  
+
+  def test_bermuda(self):
+    self.driver.get("https://www.gov.bm/coronavirus-covid19-update")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)").text
+    self.driver.close()
+
+  def test_bulgaria(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(60)
+    self.driver.get("https://coronavirus.bg/")
+    time.sleep(30)
+    self.driver.execute_script("window.scrollTo(0,450)")
+    time.sleep(30)
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-lg-4:nth-child(1) > .statistics-value")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-lg-4:nth-child(1) > .statistics-value").text
+    self.driver.close()
+
   def test_bosniaandHerzegovina(self):
-    # Test name: BosniaandHerzegovina
-    # Step # | name | target | value
-    # 1 | open | https://covid-19.ba/ |
     self.driver.get("https://covid-19.ba/")
-    # 2 | waitForElementVisible | id=total_tested_positive | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "total_tested_positive")))
-    # 3 | storeText | id=total_tested_positive | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "total_tested_positive").text
-    # 4 | close |  |
     self.driver.close()
 
   def test_brazil(self):
@@ -141,13 +170,52 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".numTested")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".numTested").text
     self.driver.close()
-  
+
+  def test_czechia(self):
+    self.driver.get("https://onemocneni-aktualne.mzcr.cz/covid-19")
+    WebDriverWait(self.driver, 40).until(expected_conditions.visibility_of_element_located((By.ID, "count-test")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "count-test").text
+    self.driver.close()
+
+  def test_chile(self):
+    self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
+    time.sleep(60)
+    self.driver.switch_to.frame(0)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"106fdff4-b841-4389-a4bf-7541e6143abd\"]/div[1]/div/div[67]/div/div/div/div/div/div/div/div/div/h2/div/span/span").text
+    self.driver.close()
+
+  def test_croatia(self):
+    self.driver.get("https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
+    try :
+      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirano ')[1].split('osoba')[0]
+    except IndexError:
+      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas su ukupno testirane ')[1].split('osobe')[0]
+    self.driver.close()
+    
+  # only new tests daily
+  #def test_cyprus(self):
+    #self.driver.get("https://covid19.ucy.ac.cy/")
+    #time.sleep(90)
+    #self.driver.switch_to.frame(0)
+    #self.vars["tests_daily"] = self.driver.find_element(By.CSS_SELECTOR, "#pvExplorationHost > div > div > exploration > div > explore-canvas-modern > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToWidthOrigin > div.visualContainerHost > visual-container-repeat > visual-container-modern:nth-child(31) > transform > div > div:nth-child(22) > div > visual-modern > div > svg > g:nth-child(1) > text > tspan").text
+    #self.driver.close()
+
   def test_denmark(self):
     self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".table-responsive:nth-child(8) tr:nth-child(2) > td:nth-child(2)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(8) tr:nth-child(2) > td:nth-child(2) > span").text
     self.driver.close()
-    
+
+  def test_ecuador(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
+    self.driver.get("https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/")
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(1) p:nth-child(1)")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) strong:nth-child(1)").text
+    self.driver.close()
+
   def test_elSalavador(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
@@ -167,15 +235,23 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1").text
     self.driver.close()
 
+  def test_faroeIslands(self):
+    self.driver.get("https://corona.fo/?_l=en")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]").text
+    self.driver.close()
+
+  def test_finland(self):
+    self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) > strong").text
+    self.driver.close()
+
   def test_france(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://dashboard.covid19.data.gouv.fr/suivi-des-tests?location=FRA")
-    # 2 | waitForElementVisible | css=.counter-container > .jsx-792689997 | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".counter-container > .jsx-792689997")))
-    # 3 | storeText | css=.counter-container > .jsx-792689997 | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".counter-container > .jsx-792689997").text
-    # 4 | close |  |
     self.driver.close()
 
   # only daily tests  
@@ -184,29 +260,45 @@ class TestDefaultSuite(unittest.TestCase):
     #WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".statistic-square:nth-child(4)")))
     #self.vars["tests_daily"] = self.driver.find_element(By.CSS_SELECTOR, ".statistic-square:nth-child(4) > .quantity-numver:nth-child(1)").text
     #self.driver.close()
-    
+
+  def test_greenland(self):
+    self.driver.get("https://nun.gl/emner/borgere/coronavirus_emne/foelg_smittespredningen?sc_lang=da")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//table[@id=\'covid_19\']/tbody/tr/td[2]").text
+    self.driver.close()
+
+  def test_guatemala(self):
+    self.driver.get("https://gtmvigilanciacovid.shinyapps.io/3869aac0fb95d6baf2c80f19f2da5f98")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".sidebar-menu")))
+    self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) span").click()
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#casosSospechososValueBox h3")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#casosSospechososValueBox h3").text
+    self.driver.close()
+
   def test_hungary(self):
-    # Test name: Hungary
-    # Step # | name | target | value
-    # 1 | open | https://koronavirus.gov.hu/#aktualis |
     self.driver.get("https://koronavirus.gov.hu/#aktualis")
-    # 2 | waitForElementVisible | id=content-mintavetel | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "content-mintavetel")))
-    # 3 | storeText | id=content-mintavetel | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content-mintavetel").text
-    # 4 | close |  |
+    self.driver.close()
+
+  def test_iceland(self):
+    self.driver.get("https://www.covid.is/tolulegar-upplysingar")
+    self.driver.switch_to.frame(0)
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span")))
+    self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").text
     self.driver.close()
 
   def test_india(self):
-    # Test name: India
-    # Step # | name | target | value
-    # 1 | open | https://www.icmr.gov.in/ |
     self.driver.get("https://www.icmr.gov.in/")
-    # 2 | waitForElementVisible | css=.col-12:nth-child(1) > .single-cool-fact h2 | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-12:nth-child(1) > .single-cool-fact h2")))
-    # 3 | storeText | css=.col-12:nth-child(1) > .single-cool-fact h2 | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-12:nth-child(1) > .single-cool-fact h2").text
-    # 4 | close |  |
+    self.driver.close()
+
+  def test_indonesia(self):
+    self.driver.set_page_load_timeout(60)
+    self.driver.get("https://covid19.disiplin.id")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)").text
     self.driver.close()
 
   def test_iran(self):
@@ -236,6 +328,19 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://covid19ireland-geohive.hub.arcgis.com/pages/hospitals-icu--testing")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ember142 .ss-value")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember142 .ss-value").text
+    self.driver.close()
+
+  def test_jamaica(self):
+    self.driver.get("https://www.moh.gov.jm/updates/coronavirus/covid-19-clinical-management-summary/")
+    self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Clinical Management Summary\')]").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(25) > td:nth-child(3)").text
+    self.driver.close()
+
+  def test_japan(self):
+    self.driver.get("https://www.mhlw.go.jp/stf/covid-19/kokunainohasseijoukyou.html")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[0]
     self.driver.close()
 
   def test_jordan(self):
@@ -327,37 +432,25 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_newZealand(self):
-    # Test name: NewZealand
-    # Step # | name | target | value
-    # 1 | open | https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data |
     self.driver.get("https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data")
-    # 2 | waitForElementVisible | css=.table-responsive:nth-child(9) tr:nth-child(1) > td | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td")))
-    # 3 | storeText | css=.table-responsive:nth-child(9) tr:nth-child(1) > td | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td").text
-    # 4 | close |  |
     self.driver.close()
 
   def test_northMacedonia(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://datastudio.google.com/embed/u/0/reporting/9f5104d0-12fd-4e16-9a11-993685cfd40f/page/1M")
-    # 2 | waitForElementVisible | css=.cd-vmd90p9a8b .valueLabel | 60
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".cd-vmd90p9a8b .valueLabel")))
-    # 3 | storeText | css=.cd-vmd90p9a8b .valueLabel | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".cd-vmd90p9a8b .valueLabel").text
-    # 4 | close |  |
     self.driver.close()
 
   def test_norway(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/")
-    # 2 | waitForElementVisible | css=.c-key-figure:nth-child(1) .c-key-figure__number > span | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span")))
-    # 3 | storeText | css=.c-key-figure:nth-child(1) .c-key-figure__number > span | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span").text
-    # 4 | close |  |
     self.driver.close()
 
   def test_occupiedPalestinianTerritory(self):
@@ -368,108 +461,160 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".roundbox:nth-child(3) > div:nth-child(2)").text
     self.driver.close()
 
+  def test_pakistan(self):
+    self.driver.get("https://covid.gov.pk/")
+    time.sleep(30)
+    self.driver.set_window_size(1536, 825)
+    time.sleep(10)
+    self.driver.execute_script("window.scrollTo(0,300)")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".active .counter").text
+    self.driver.close()
+    
+  # web page doesn't open
+  def test_papuaNewGuinea(self):
+    self.driver.get("https://covid19.info.gov.pg/")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//article[@id=\'post-166\']/div/div/div/section[4]/div[2]/div/div[2]/div/div/section/div/div/div[2]/div/div/div/div/div/table/tbody/tr[11]/td[2]/p/span/span").text
+    self.driver.close()
+    
+  def test_portugal(self):
+    self.driver.set_page_load_timeout(60)
+    self.driver.get("https://esriportugal.maps.arcgis.com/apps/opsdashboard/index.html#/acf023da9a0b4f9dbb2332c13f635829")
+    time.sleep(30)
+    self.driver.find_element_by_id("ember8").click
+    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember114").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
+    self.driver.close()
+
   def test_qatar(self):
-    # Test name: Qatar
-    # Step # | name | target | value
-    # 1 | open | https://covid19.moph.gov.qa/EN/Pages/default.aspx# |
     self.driver.get("https://covid19.moph.gov.qa/EN/Pages/default.aspx#")
-    # 2 | waitForElementVisible | id=strgPeopleTested | 60
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "strgPeopleTested")))
-    # 3 | storeText | id=strgPeopleTested | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "strgPeopleTested").text
-    # 4 | close |  |
     self.driver.close()
 
   def test_republicofKorea(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("http://ncov.mohw.go.kr/en/")
-    # 2 | waitForElementVisible | css=li:nth-child(1) > .misil_r > span | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "li:nth-child(1) > .misil_r > span")))
-    # 3 | storeText | css=li:nth-child(1) > .misil_r > span | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(1) > .misil_r > span").text
-    # 4 | close |  |
+    self.driver.close()
+    
+  def test_romania(self):
+    self.driver.get("https://stirioficiale.ro/informatii")
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'BULETIN DE PRESĂ\')]").get_attribute('href')
+    self.driver.get(url)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(text(), \"Până la această dată, la nivel național, au fost prelucrate\")]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de teste')[0]
     self.driver.close()
 
-  def test_southAfrica(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'South Africa':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
+  def test_russia(self):
+    self.driver.get("https://www.rospotrebnadzor.ru/about/info/news/")
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Информационный бюллетень о ситуации и принимаемых мерах по недопущению распространения заболеваний, вызванных новым коронавирусом\')]").get_attribute('href')
+    self.driver.get(url)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'Учреждениями Роспотребнадзора и медицинскими организациями по состоянию на\')]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('проведено')[1].split('лаборатор')[0]
     self.driver.close()
-    self.driver.quit()
 
+  def test_saintLucia(self):
+    self.driver.get("https://www.covid19response.lc/")
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div")))
+    self.driver.find_element(By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div").click()
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".test-stlucia")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".test-stlucia").text
+    self.driver.close()
+
+  def test_sanMarino(self):
+    self.driver.get("http://www.iss.sm/on-line/home/artCataggiornamenti-coronavirus.49004093.1.20.1.html")
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Epidemia COVID-19\')]").get_attribute('href')
+    self.driver.get(url)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'Tamponi eseguiti\')]").text
+    self.driver.close()
+
+  def test_saudiArabia(self):
+    self.driver.set_page_load_timeout(60)
+    self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/5f9cf2cc7c1a43ce8e9b90cda29634be")
+    time.sleep(30)
+    self.driver.switch_to.frame(0)
+    time.sleep(30)
+    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember110").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
+    self.driver.close()
+
+  def test_serbia(self):
+    self.driver.get("https://covid19.rs/")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title").text
+    self.driver.close()
 
   def test_singapore(self):
-    # Test name: Singapore
-    # Step # | name | target | value
-    # 1 | open | https://www.moh.gov.sg/covid-19 |
     self.driver.get("https://www.moh.gov.sg/covid-19")
-    # 2 | waitForElementVisible | css=#ContentPlaceHolder_contentPlaceholder_C095_Col00 b | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C095_Col00 b")))
-    # 3 | storeText | css=#ContentPlaceHolder_contentPlaceholder_C095_Col00 b | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C095_Col00 b").text
-    # 4 | close |  |
     self.driver.close()
 
   def test_slovakia(self):
-    # Test name: Slovakia
-    # Step # | name | target | value
-    # 1 | open | https://korona.gov.sk/ |
     self.driver.get("https://korona.gov.sk/")
-    # 2 | waitForElementVisible | css=#block_5e9990e25ffff .govuk-heading-l | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#block_5e9990e25ffff .govuk-heading-l")))
-    # 3 | storeText | css=#block_5e9990e25ffff .govuk-heading-l | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#block_5e9990e25ffff .govuk-heading-l").text
-    # 4 | close |  |
+    self.driver.close()
+
+  def test_slovenia(self):
+    self.driver.get("https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(2) strong")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) strong").text
+    self.driver.close()
+
+  def test_spain(self):
+    self.driver.get("https://www.mscbs.gob.es/gabinete/notasPrensa.do")
+    WebDriverWait(self.driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a")))
+    url = self.driver.find_element(By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a").get_attribute('href')
+    self.driver.get(url)
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h2")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//section//div[3]//p[1]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('cabo un total de')[-1].strip().split(' ')[0].strip()
     self.driver.close()
 
   def test_sriLanka(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.hpb.health.gov.lk/en")
-    # 2 | waitForElementVisible | css=.total-count | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".total-count")))
-    # 3 | storeText | css=.total-count | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".total-count").text
-    # 4 | close |  |
+    self.driver.close()
+    
+  def test_switzerland(self):
+    self.driver.get("https://www.covid19.admin.ch/en/overview?ovTime=total")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".bag-key-value-list__combine-below:nth-child(2) .bag-key-value-list__entry-value").text
+    self.driver.close()
+
+  def test_taiwan(self):
+    self.driver.get("https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan")
+    self.driver.switch_to.frame(1)
+    self.driver.switch_to.frame(0)
+    self.driver.switch_to.frame(0)
+    time.sleep(15)
+    self.vars["tests_cumulative"] = self.driver.execute_script("x = document.getElementById(\'num9\').textContent; return x;")
     self.driver.close()
 
   def test_turkey(self):
-    # Test name: Turkey
-    # Step # | name | target | value
-    # 1 | open | https://covid19.saglik.gov.tr/ |
     self.driver.get("https://covid19.saglik.gov.tr/")
-    # 2 | waitForElementVisible | css=.toplam-test-sayisi | 600
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".toplam-test-sayisi")))
-    # 3 | storeText | css=.toplam-test-sayisi | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".toplam-test-sayisi").text
-    # 4 | close |  |
+    self.driver.close()
+
+  def test_ukraine(self):
+    self.driver.get("https://covid19.gov.ua/en/")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value").text
     self.driver.close()
 
   def test_unitedArabEmirates(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(60)
     self.driver.get("https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx")
-    # 2 | waitForElementVisible | css=.total_tests > .numbers | 600
     time.sleep(60)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".total_tests > .numbers")))
-    # 3 | storeText | css=.total_tests > .numbers | tests
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".total_tests > .numbers").text
-    # 4 | close |  |
     self.driver.close()
 
   def test_unitedKingdom(self):
@@ -479,7 +624,23 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "value-item-virus_tests_conducted-total-cumvirustests-1_modal").text
     self.driver.close()
+    
+  def test_uruguay(self):
+    self.driver.set_page_load_timeout(60)
+    self.driver.get("https://coronavirusuy.maps.arcgis.com/apps/opsdashboard/index.html#/98155a4390b644308c453e5b20b2516e")
+    time.sleep(30)
+    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember10").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
+    self.driver.close()
+    
+  def test_uS(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(60)
+    self.driver.get("https://covidtracking.com/data#ME")
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
+    self.driver.close()
 
+  # Africa web site 
   def test_algeria(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
@@ -489,8 +650,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Algeria':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="17.162640507616125":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -510,8 +675,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Angola':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="5.165408295833255":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -531,8 +700,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Benin':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.9819623053604714":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -552,8 +725,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Botswana':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="4.952175632166595":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -573,8 +750,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Burkina Faso':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.797471333622037":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -594,8 +775,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Burundi':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.6745401141006573":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -615,8 +800,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Cameroon':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="6.455395304174276":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -636,8 +825,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Cabo Verde':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="4.334789403325112":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -657,8 +850,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Central African Republic':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.202255653254505":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -678,8 +875,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Chad':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.908813616764889":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -699,8 +900,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == 'Comoros':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.7248121857995518":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -720,8 +925,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Cote d'Ivoire":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="6.064374611662368":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -741,8 +950,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Democratic Republic of the Congo":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="5.452495716518236":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -762,8 +975,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Djibouti":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.333866807252735":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -783,8 +1000,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Egypt":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r =="24.585396622168666":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -804,8 +1025,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Equatorial Guinea":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.2563404944361807":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -825,8 +1050,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Eritrea":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.765058085895577":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -847,8 +1076,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Eswatini":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="4.327869932782286":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -869,8 +1102,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Ethiopia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="21.02652934420365":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -890,8 +1127,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Gabon":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.8978742633352788":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -911,8 +1152,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Ghana":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="10.650006589971946":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -932,8 +1177,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Guinea":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="4.493089943702811":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -953,8 +1202,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Guinea Bissau":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.8543051345295702":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -974,8 +1227,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Kenya":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="16.503031387094953":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1003,8 +1260,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Lesotho":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.3996723842518497":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1024,8 +1285,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Liberia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.766470222741052":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1045,8 +1310,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Libya":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="17.90471841991301":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1066,8 +1335,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Madagascar":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="5.084351640903014":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1087,8 +1360,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Malawi":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="4.260934646306792":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1108,8 +1385,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Mali":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.606974073167517":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1135,8 +1416,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Mauritania":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="4.764926286456666":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1156,8 +1441,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Mauritius":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.577243885447459":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1172,12 +1461,26 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
+    action = ActionChains(self.driver)
+    action.click_and_hold(on_element = all_countries[12])
+    action.move_by_offset(0, -300)
+    action.perform()
+    action.release(on_element = all_countries[1]) 
+    action.perform()
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
     final_tests = ""
     for country in all_countries:
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
+            cx = country.get_attribute('cx')
+            cy = country.get_attribute('cy')
             if temp_name == "Morocco":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="25" and cx=="471" and cy=="97":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
@@ -1199,8 +1502,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Mozambique":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="6.249364538419536":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1220,8 +1527,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Namibia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="6.787671103914444":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1241,8 +1552,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Niger":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.086884072979232":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1262,8 +1577,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Nigeria":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="18.08815499614016":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1283,8 +1602,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Republic of the Congo":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.5886162941763478":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1304,8 +1627,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Rwanda":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="4.057869367927548":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1325,8 +1652,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Sao Tome and Principe":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.661266027753196":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1346,8 +1677,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Senegal":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="5.751868727758845":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1367,8 +1702,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Seychelles":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.5995556476059574":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1388,8 +1727,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Sierra Leone":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.9244883357496563":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1409,8 +1752,47 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Somalia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.169917719493137":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            else:
+                self.driver.find_element_by_id('esri.Map_0_gc').click()
+        except:
+            pass
+
+    self.vars["tests_cumulative"] = final_tests
+    self.driver.close()
+    self.driver.quit()
+
+  def test_southAfrica(self):
+    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    action = ActionChains(self.driver)
+    action.click_and_hold(on_element = all_countries[12])
+    action.move_by_offset(0, 300)
+    action.perform()
+    action.release(on_element = all_countries[12]) 
+    action.perform()
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
+    final_tests = ""
+    for country in all_countries:
+        try:
+            country.click()
+            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
+            cx = country.get_attribute('cx')
+            cy = country.get_attribute('cy')
+            if temp_name == 'South Africa':
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="25" and cx=="827" and cy=="827":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1430,8 +1812,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "South Sudan":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.018254222289168":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1451,8 +1837,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Sudan":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="6.210954416222628":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1472,8 +1862,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Gambia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.052145506580558":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1493,8 +1887,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Togo":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="3.107501270923161":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1509,12 +1907,26 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
     all_countries = self.driver.find_elements_by_tag_name('circle')
+    action = ActionChains(self.driver)
+    action.click_and_hold(on_element = all_countries[12])
+    action.move_by_offset(0, -300)
+    action.perform()
+    action.release(on_element = all_countries[1]) 
+    action.perform()
+    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
+    all_countries = self.driver.find_elements_by_tag_name('circle')
     final_tests = ""
     for country in all_countries:
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
+            cx = country.get_attribute('cx')
+            cy = country.get_attribute('cy')
             if temp_name == "Tunisia":
+                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="25" and cx=="651" and cy=="67":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
@@ -1535,8 +1947,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Uganda":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="7.8781231759899075":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1556,8 +1972,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Tanzania":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.571877765434656":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1577,8 +1997,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Western Sahara":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="2.5048012652746134":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1598,8 +2022,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Zambia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="7.810340607407128":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1619,8 +2047,12 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
+            r = country.get_attribute('r')
             if temp_name == "Zimbabwe":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
+                break
+            if final_tests == "" and r=="6.341435860744479":
+                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1631,251 +2063,5 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_chile(self):
-    self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
-    time.sleep(60)
-    self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"106fdff4-b841-4389-a4bf-7541e6143abd\"]/div[1]/div/div[67]/div/div/div/div/div/div/div/div/div/h2/div/span/span").text
-    self.driver.close()
 
-  def test_czechia(self):
-    self.driver.get("https://onemocneni-aktualne.mzcr.cz/covid-19")
-    WebDriverWait(self.driver, 40).until(expected_conditions.visibility_of_element_located((By.ID, "count-test")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "count-test").text
-    self.driver.close()
-
-  def test_ecuador(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(1) p:nth-child(1)")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) strong:nth-child(1)").text
-    self.driver.close()
-
-  def test_saintLucia(self):
-    self.driver.get("https://www.covid19response.lc/")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div")))
-    self.driver.find_element(By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div").click()
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".test-stlucia")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".test-stlucia").text
-    self.driver.close()
-    
-  def test_iceland(self):
-    self.driver.get("https://www.covid.is/tolulegar-upplysingar")
-    self.driver.switch_to.frame(0)
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span")))
-    self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").text
-    self.driver.close()
-
-  def test_bermuda(self):
-    self.driver.get("https://www.gov.bm/coronavirus-covid19-update")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)").text
-    self.driver.close()
-
-  def test_bulgaria(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://coronavirus.bg/")
-    time.sleep(30)
-    self.driver.execute_script("window.scrollTo(0,450)")
-    time.sleep(30)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-lg-4:nth-child(1) > .statistics-value")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-lg-4:nth-child(1) > .statistics-value").text
-    self.driver.close()
-
-  def test_croatia(self):
-    self.driver.get("https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
-    try :
-      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirano ')[1].split('osoba')[0]
-    except IndexError:
-      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas su ukupno testirane ')[1].split('osobe')[0]
-    self.driver.close()
-
-  def test_faroeIslands(self):
-    self.driver.get("https://corona.fo/?_l=en")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]").text
-    self.driver.close()
-
-  def test_finland(self):
-    self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) > strong").text
-    self.driver.close()
-
-  def test_greenland(self):
-    self.driver.get("https://nun.gl/emner/borgere/coronavirus_emne/foelg_smittespredningen?sc_lang=da")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//table[@id=\'covid_19\']/tbody/tr/td[2]").text
-    self.driver.close()
-
-  def test_guatemala(self):
-    self.driver.get("https://gtmvigilanciacovid.shinyapps.io/3869aac0fb95d6baf2c80f19f2da5f98")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".sidebar-menu")))
-    self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) span").click()
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#casosSospechososValueBox h3")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#casosSospechososValueBox h3").text
-    self.driver.close()
-
-  def test_indonesia(self):
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://covid19.disiplin.id")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)").text
-    self.driver.close()
-
-  def test_jamaica(self):
-    self.driver.get("https://www.moh.gov.jm/updates/coronavirus/covid-19-clinical-management-summary/")
-    self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Clinical Management Summary\')]").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(25) > td:nth-child(3)").text
-    self.driver.close()
-
-  def test_japan(self):
-    self.driver.get("https://www.mhlw.go.jp/stf/covid-19/kokunainohasseijoukyou.html")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[0]
-    self.driver.close()
-
-  # only new tests daily
-  #def test_cyprus(self):
-    #self.driver.get("https://covid19.ucy.ac.cy/")
-    #time.sleep(90)
-    #self.driver.switch_to.frame(0)
-    #self.vars["tests_daily"] = self.driver.find_element(By.CSS_SELECTOR, "#pvExplorationHost > div > div > exploration > div > explore-canvas-modern > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToWidthOrigin > div.visualContainerHost > visual-container-repeat > visual-container-modern:nth-child(31) > transform > div > div:nth-child(22) > div > visual-modern > div > svg > g:nth-child(1) > text > tspan").text
-    #self.driver.close()
-
-  def test_ukraine(self):
-    self.driver.get("https://covid19.gov.ua/en/")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value").text
-    self.driver.close()
-
-  def test_switzerland(self):
-    self.driver.get("https://www.covid19.admin.ch/en/overview?ovTime=total")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".bag-key-value-list__combine-below:nth-child(2) .bag-key-value-list__entry-value").text
-    self.driver.close()
-
-  def test_taiwan(self):
-    self.driver.get("https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan")
-    self.driver.switch_to.frame(1)
-    self.driver.switch_to.frame(0)
-    self.driver.switch_to.frame(0)
-    time.sleep(15)
-    self.vars["tests_cumulative"] = self.driver.execute_script("x = document.getElementById(\'num9\').textContent; return x;")
-    self.driver.close()
-
-  def test_uS(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://covidtracking.com/data#ME")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
-    self.driver.close()
-
-  def test_austria(self):
-    self.driver.get("https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
-    self.driver.close()
-
-  def test_azerbaijan(self):
-    self.driver.get("https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".gray_little_statistic:nth-child(6) > strong").text
-    self.driver.close()
-
-  def test_bangladesh(self):
-    self.driver.get("https://corona.gov.bd/")
-    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".lang-btn").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".live-update-box-body-three .text-right b").text
-    self.driver.close()
-
-  def test_spain(self):
-    self.driver.get("https://www.mscbs.gob.es/gabinete/notasPrensa.do")
-    WebDriverWait(self.driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a")))
-    url = self.driver.find_element(By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a").get_attribute('href')
-    self.driver.get(url)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h2")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//section//div[3]//p[1]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('cabo un total de')[-1].strip().split(' ')[0].strip()
-    self.driver.close()
-
-  def test_pakistan(self):
-    self.driver.get("https://covid.gov.pk/")
-    time.sleep(30)
-    self.driver.set_window_size(1536, 825)
-    time.sleep(10)
-    self.driver.execute_script("window.scrollTo(0,300)")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".active .counter").text
-    self.driver.close()
-
-  # web page doesn't open
-  def test_papuaNewGuinea(self):
-    self.driver.get("https://covid19.info.gov.pg/")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//article[@id=\'post-166\']/div/div/div/section[4]/div[2]/div/div[2]/div/div/section/div/div/div[2]/div/div/div/div/div/table/tbody/tr[11]/td[2]/p/span/span").text
-    self.driver.close()
-    
-  def test_portugal(self):
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://esriportugal.maps.arcgis.com/apps/opsdashboard/index.html#/acf023da9a0b4f9dbb2332c13f635829")
-    time.sleep(30)
-    self.driver.find_element_by_id("ember8").click
-    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember114").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
-    self.driver.close()
-
-  def test_romania(self):
-    self.driver.get("https://stirioficiale.ro/informatii")
-    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'BULETIN DE PRESĂ\')]").get_attribute('href')
-    self.driver.get(url)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(text(), \"Până la această dată, la nivel național, au fost prelucrate\")]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de teste')[0]
-    self.driver.close()
-
-  def test_russia(self):
-    self.driver.get("https://www.rospotrebnadzor.ru/about/info/news/")
-    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Информационный бюллетень о ситуации и принимаемых мерах по недопущению распространения заболеваний, вызванных новым коронавирусом\')]").get_attribute('href')
-    self.driver.get(url)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'Учреждениями Роспотребнадзора и медицинскими организациями по состоянию на\')]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('проведено')[1].split('лаборатор')[0]
-    self.driver.close()
-
-  def test_sanMarino(self):
-    self.driver.get("http://www.iss.sm/on-line/home/artCataggiornamenti-coronavirus.49004093.1.20.1.html")
-    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Epidemia COVID-19\')]").get_attribute('href')
-    self.driver.get(url)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'Tamponi eseguiti\')]").text
-    self.driver.close()
-    
-  def test_saudiArabia(self):
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/5f9cf2cc7c1a43ce8e9b90cda29634be")
-    time.sleep(30)
-    self.driver.switch_to.frame(0)
-    time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember110").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
-    self.driver.close()
-    
-  def test_serbia(self):
-    self.driver.get("https://covid19.rs/")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title").text
-    self.driver.close()
-    
-  def test_slovenia(self):
-    self.driver.get("https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(2) strong")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) strong").text
-    self.driver.close()
-
-  def test_uruguay(self):
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://coronavirusuy.maps.arcgis.com/apps/opsdashboard/index.html#/98155a4390b644308c453e5b20b2516e")
-    time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember10").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
-    self.driver.close()
 
