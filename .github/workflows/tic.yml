@@ -4,9 +4,6 @@
 on:
   workflow_dispatch:
   push:
-    branches-ignore:
-      - selenium
-      - data
   # for now, CRON jobs only run on the default branch of the repo (i.e. usually on master)
   # schedule:
     # * is a special character in YAML so you have to quote this string
@@ -16,7 +13,7 @@ name: tic
 
 jobs:
   all:
-    if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
+    if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') && contains(toJSON(github.event.commits.*.message), 'Add files via upload'))"
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
