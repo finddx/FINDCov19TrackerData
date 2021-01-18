@@ -11,7 +11,7 @@ name: "Scrape test data and push"
 
 jobs:
   selenium:
-    if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), '[manually processed countries]')"
+    if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), '[manually processed countries]') )"
     runs-on: ubuntu-latest
 
     steps:
@@ -46,7 +46,7 @@ jobs:
 
   fetch-with-r:
     needs: selenium
-    if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), '[manually processed countries]')"
+    if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), '[manually processed countries]') )"
     runs-on: ubuntu-latest
 
     env:
@@ -120,7 +120,7 @@ jobs:
 
   combine-and-deploy:
     needs: fetch-with-r
-    if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), '[manually processed countries]')"
+    if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), '[manually processed countries]') )"
     runs-on: ubuntu-latest
 
     env:
