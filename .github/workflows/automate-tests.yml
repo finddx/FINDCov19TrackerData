@@ -275,7 +275,6 @@ jobs:
           branch: ${{ github.ref }}
 
   run-analysis-manual:
-    needs: combine-and-deploy
     if: "contains(toJSON(github.event.commits.*.message), 'manually processed countries')"
     runs-on: ubuntu-latest
 
