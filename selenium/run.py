@@ -9,6 +9,7 @@ import unittest
 from os import environ
 from test import TestDefaultSuite
 from urllib.request import Request, urlopen
+import requests
 
 
 def set_commit_status(status):
