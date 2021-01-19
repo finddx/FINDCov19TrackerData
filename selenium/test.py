@@ -648,20 +648,11 @@ class TestDefaultSuite(unittest.TestCase):
     all_countries = self.driver.find_elements_by_tag_name('circle')
     final_tests = ""
     for country in all_countries:
-        country.click()
-        print(self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text)
-        print(country.get_attribute('r'))
-        print(self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text)
-    for country in all_countries:
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Algeria':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="17.199214851913915":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -700,12 +691,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Angola':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="5.172610193745175":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -745,12 +732,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Benin':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.9819623053604714":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -790,12 +773,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Botswana':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="5.130810943119128":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -835,12 +814,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Burkina Faso':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.797471333622037":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -880,12 +855,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Burundi':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.6745401141006573":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -925,12 +896,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Cameroon':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="6.455395304174276":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -952,12 +919,12 @@ class TestDefaultSuite(unittest.TestCase):
              y_coord = idx['geometry']['y']
              break
       
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests%2C+ObjectId%2C+longitude%2C+latitude&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=html&token="
       r_tests = requests.get(url_tests)
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == 636719.8409593389:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
 
@@ -970,12 +937,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Cabo Verde':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="4.334789403325112":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1015,12 +978,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Central African Republic':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.202255653254505":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1060,12 +1019,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Chad':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.908813616764889":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1105,12 +1060,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == 'Comoros':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.7248121857995518":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1150,12 +1101,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Cote d'Ivoire":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="6.064374611662368":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1195,12 +1142,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Democratic Republic of the Congo":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="5.452495716518236":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1240,12 +1183,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Djibouti":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.333866807252735":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1285,12 +1224,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Egypt":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r =="24.585396622168666":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1330,12 +1265,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Equatorial Guinea":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.2563404944361807":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1352,7 +1283,7 @@ class TestDefaultSuite(unittest.TestCase):
       cont_coord = json.loads(r_coord.content)
       
       for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Equatorial Guinea':
+         if idx['attributes']['Country'] == 'Equitorial Guinea':
              x_coord = idx['geometry']['x']
              y_coord = idx['geometry']['y']
              break
@@ -1362,7 +1293,7 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == 1150559.2950174978 and idx['geometry']['y'] == y_coord:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
 
@@ -1375,12 +1306,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Eritrea":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.765058085895577":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1421,12 +1348,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Eswatini":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="4.327869932782286":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1441,9 +1364,8 @@ class TestDefaultSuite(unittest.TestCase):
       url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
       r_coord = requests.get(url_coord)
       cont_coord = json.loads(r_coord.content)
-      
       for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Eswatini':
+         if idx['attributes']['Country'] == 'Eswatini ':
              x_coord = idx['geometry']['x']
              y_coord = idx['geometry']['y']
              break
@@ -1467,12 +1389,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Ethiopia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="21.02652934420365":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1512,12 +1430,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Gabon":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.8978742633352788":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1557,12 +1471,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Ghana":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="10.650006589971946":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1602,12 +1512,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Guinea":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="4.493089943702811":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1647,12 +1553,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Guinea Bissau":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.8543051345295702":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1692,12 +1594,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Kenya":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="16.503031387094953":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1745,12 +1643,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Lesotho":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.3996723842518497":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1777,7 +1671,7 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == 3142962.0200298727 and idx['geometry']['y'] == y_coord:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
 
@@ -1790,12 +1684,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Liberia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.766470222741052":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1835,12 +1725,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Libya":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="17.90471841991301":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1880,12 +1766,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Madagascar":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="5.084351640903014":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1925,12 +1807,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Malawi":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="4.260934646306792":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -1957,7 +1835,7 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == 3818539.9276181106 and idx['geometry']['y'] == y_coord:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
 
@@ -1970,12 +1848,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Mali":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.606974073167517":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2021,12 +1895,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Mauritania":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="4.764926286456666":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2115,13 +1985,7 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
-            cx = country.get_attribute('cx')
-            cy = country.get_attribute('cy')
             if temp_name == "Morocco":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="25" and cx=="471" and cy=="97":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
@@ -2163,12 +2027,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Mozambique":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="6.249364538419536":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2208,12 +2068,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Namibia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="6.787671103914444":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2233,6 +2089,8 @@ class TestDefaultSuite(unittest.TestCase):
          if idx['attributes']['Country'] == 'Namibia':
              x_coord = idx['geometry']['x']
              y_coord = idx['geometry']['y']
+             print(x_coord)
+             print(y_coord)
              break
       
       url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
@@ -2240,7 +2098,8 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == -2542072.466186072:
+              print(idx['attributes']['Tests'])
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
 
@@ -2253,12 +2112,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Niger":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.086884072979232":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2298,12 +2153,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Nigeria":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="18.08815499614016":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2343,12 +2194,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Republic of the Congo":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.5886162941763478":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2388,12 +2235,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Rwanda":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="4.057869367927548":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2433,12 +2276,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Sao Tome and Principe":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.661266027753196":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2478,12 +2317,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Senegal":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="5.751868727758845":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2523,12 +2358,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Seychelles":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.5995556476059574":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2568,12 +2399,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Sierra Leone":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.9244883357496563":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2613,12 +2440,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Somalia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.169917719493137":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2666,14 +2489,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
-            cx = country.get_attribute('cx')
-            cy = country.get_attribute('cy')
             if temp_name == 'South Africa':
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="25" and cx=="827" and cy=="827":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2713,12 +2530,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "South Sudan":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.018254222289168":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2758,12 +2571,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Sudan":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="6.210954416222628":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2803,12 +2612,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Gambia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.052145506580558":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2848,12 +2653,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Togo":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="3.107501270923161":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2901,13 +2702,7 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
-            cx = country.get_attribute('cx')
-            cy = country.get_attribute('cy')
             if temp_name == "Tunisia":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="25" and cx=="651" and cy=="67":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
@@ -2948,12 +2743,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Uganda":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="7.8781231759899075":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -2993,12 +2784,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Tanzania":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.571877765434656":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -3038,12 +2825,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Western Sahara":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="2.5048012652746134":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -3083,12 +2866,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Zambia":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="7.810340607407128":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
@@ -3128,12 +2907,8 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            r = country.get_attribute('r')
             if temp_name == "Zimbabwe":
                 final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            if final_tests == "" and r=="6.341435860744479":
-                final_tests = driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
                 break
             else:
                 self.driver.find_element_by_id('esri.Map_0_gc').click()
