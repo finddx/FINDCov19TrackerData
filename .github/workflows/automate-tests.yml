@@ -21,7 +21,7 @@ jobs:
           python-version: "3.8.6" # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
       - name: Install deps
-        run: pip3 install --user selenium pytest pandas
+        run: pip3 install --user selenium pytest pandas requests
 
       - name: Scrape test data with Selenium
         run: env GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} python selenium/run.py

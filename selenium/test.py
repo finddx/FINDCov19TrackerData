@@ -2,6 +2,7 @@
 import pytest
 import time
 import json
+import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -670,6 +671,25 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
+    if self.vars["tests_cumulative"]=="":
+      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+      r_coord = requests.get(url_coord)
+      cont_coord = json.loads(r_coord.content)
+      
+      for idx in cont_coord['features']:
+         if idx['attributes']['Country'] == 'Algeria':
+             x_coord = idx['geometry']['x']
+             y_coord = idx['geometry']['y']
+             break
+      
+      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+      r_tests = requests.get(url_tests)
+      cont_tests = json.loads(r_tests.content)
+      
+      for idx in cont_tests['features']:
+          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+              self.vars["tests_cumulative"] = idx['attributes']['Tests']
+              break
 
   def test_angola(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
