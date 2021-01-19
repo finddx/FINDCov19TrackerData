@@ -647,6 +647,11 @@ class TestDefaultSuite(unittest.TestCase):
     all_countries = self.driver.find_elements_by_tag_name('circle')
     final_tests = ""
     for country in all_countries:
+        country.click()
+        print(self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text)
+        print(country.get_attribute('r'))
+        print(self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text)
+    for country in all_countries:
         try:
             country.click()
             temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
