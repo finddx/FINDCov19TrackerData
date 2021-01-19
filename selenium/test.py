@@ -1457,7 +1457,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = final_tests
     self.driver.close()
     self.driver.quit()
-    if self.vars["tests_cumulative"]="":
+    if self.vars["tests_cumulative"]=="":
       url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
       r_coord = requests.get(url_coord)
       cont_coord = json.loads(r_coord.content)
