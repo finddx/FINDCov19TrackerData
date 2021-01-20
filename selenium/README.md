@@ -30,4 +30,5 @@ For example:
 python3 selenium/run.py australia canada
 ```
 
-After invocation results will be stored in file `tests-selenium.json`.
+After invocation results will be stored in file [a csv file](../blob/master/automated/selenium)
+

@@ -11,6 +11,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import NoSuchElementException
 from datetime import date
 import unittest
 
@@ -35,6 +36,18 @@ class TestDefaultSuite(unittest.TestCase):
 
   def tearDown(self):
     self.driver.quit()
+
+  def test_andorra(self):
+    self.driver.get("https://www.govern.ad/covid19/en/")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary")))
+    pcr_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary")))
+    tma_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary")))
+    antibody_tests = self.driver.find_element(By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary").text
+    self.vars["tests_cumulative"] = int(pcr_tests.replace(',','')) + int(tma_tests.replace(',','')) + int(antibody_tests.replace(',',''))
+    print(self.vars)
+    self.driver.close()
 
   def test_antiguaandBarbuda(self):
     self.driver.get("https://covid19.gov.ag")
@@ -97,8 +110,12 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(10)
     self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Update\')]").click()
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has completed\')]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has completed")[1].split("tests")[0]
+    try:
+        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has completed\')]").text
+        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has completed")[1].split("tests")[0]
+    except NoSuchElementException:
+        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The lab has performed\')]").text
+        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has performed")[1].split("tests")[0]
     self.driver.close()
     
   def test_belarus(self):
@@ -205,8 +222,11 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_denmark(self):
     self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".table-responsive:nth-child(8) tr:nth-child(2) > td:nth-child(2)")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(8) tr:nth-child(2) > td:nth-child(2) > span").text
+    time.sleep(30)
+    try:
+        self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(8) tr:nth-child(2) > td:nth-child(2) > span").text
+    except NoSuchElementException:
+        self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(7) tr:nth-child(2) > td:nth-child(2) > span").text
     self.driver.close()
 
   def test_ecuador(self):
@@ -308,7 +328,7 @@ class TestDefaultSuite(unittest.TestCase):
     url = self.driver.find_element(By.XPATH, "//div[3]//div[2]//div[1]//a").get_attribute('href')
     self.driver.get(url)
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The spokeswoman noted that\')]").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('The spokeswoman noted that ')[1].split('COVID')[0]
     self.driver.close()
     
@@ -381,6 +401,12 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(13) > td:nth-child(1) span > span")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(13) > td:nth-child(1) span > span").text
+    self.driver.close()
+
+  def test_malta(self):
+    self.driver.get("https://geosys-mt.maps.arcgis.com/apps/opsdashboard/index.html#/8f64954974744d6fb137a26e097d97d2")
+    time.sleep(30)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember256 text").text
     self.driver.close()
 
   def test_mexico(self):
@@ -549,8 +575,9 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_singapore(self):
     self.driver.get("https://www.moh.gov.sg/covid-19")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C095_Col00 b")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C095_Col00 b").text
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 td")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 td").text
+    print(self.vars)
     self.driver.close()
 
   def test_slovakia(self):
@@ -919,7 +946,7 @@ class TestDefaultSuite(unittest.TestCase):
              y_coord = idx['geometry']['y']
              break
       
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests%2C+ObjectId%2C+longitude%2C+latitude&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=html&token="
+      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
       r_tests = requests.get(url_tests)
       cont_tests = json.loads(r_tests.content)
       
@@ -1880,12 +1907,6 @@ class TestDefaultSuite(unittest.TestCase):
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
 
-  def test_malta(self):
-    self.driver.get("https://geosys-mt.maps.arcgis.com/apps/opsdashboard/index.html#/8f64954974744d6fb137a26e097d97d2")
-    time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember256 text").text
-    self.driver.close()
-
   def test_mauritania(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
@@ -2089,8 +2110,6 @@ class TestDefaultSuite(unittest.TestCase):
          if idx['attributes']['Country'] == 'Namibia':
              x_coord = idx['geometry']['x']
              y_coord = idx['geometry']['y']
-             print(x_coord)
-             print(y_coord)
              break
       
       url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
@@ -2099,7 +2118,6 @@ class TestDefaultSuite(unittest.TestCase):
       
       for idx in cont_tests['features']:
           if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == -2542072.466186072:
-              print(idx['attributes']['Tests'])
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
 
