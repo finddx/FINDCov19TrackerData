@@ -1,11 +1,11 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source
 Afghanistan,NA,NA,NA,NA,2021-01-25,fetch
-Albania,336716,1918,NA,NA,2021-01-25,selenium
+Albania,NA,NA,NA,NA,2021-01-25,selenium
 Algeria,230553,0,NA,NA,2021-01-25,selenium
 Andorra,292501,0,NA,NA,2021-01-25,selenium
 Angola,339634,0,NA,NA,2021-01-25,selenium
 Antigua and Barbuda,NA,NA,NA,NA,2021-01-25,fetch
-AntiguaandBarbuda,7903,0,NA,NA,2021-01-25,selenium
+AntiguaandBarbuda,8588,685,NA,NA,2021-01-25,selenium
 Armenia,637544,779,NA,NA,2021-01-25,selenium
 Australia,12748337,35020,NA,NA,2021-01-25,selenium
 Austria,8802827,67705,NA,NA,2021-01-25,selenium
@@ -18,7 +18,7 @@ Belgium,7907280,37850,NA,NA,2021-01-25,selenium
 Belize,67633,6613,NA,NA,2021-01-25,selenium
 Benin,412697,0,NA,NA,2021-01-25,selenium
 Bermuda,159226,0,NA,NA,2021-01-25,selenium
-BosniaandHerzegovina,390136,1317,NA,NA,2021-01-25,selenium
+BosniaandHerzegovina,390320,1501,NA,NA,2021-01-25,selenium
 Botswana,613944,0,NA,NA,2021-01-25,selenium
 Brazil,20103645,0,NA,NA,2021-01-25,selenium
 Brunei,89900,1596,NA,NA,2021-01-25,selenium
@@ -39,7 +39,7 @@ Czechia,4433800,7825,NA,NA,2021-01-25,selenium
 DemocraticRepublicoftheCongo,109336,0,NA,NA,2021-01-25,selenium
 Denmark,12803233,371494,NA,NA,2021-01-25,selenium
 Djibouti,106004,195,NA,NA,2021-01-25,selenium
-Ecuador,835475,0,NA,NA,2021-01-25,selenium
+Ecuador,847606,12131,NA,NA,2021-01-25,selenium
 Egypt,1000000,0,NA,NA,2021-01-25,selenium
 ElSalavador,682382,2418,NA,NA,2021-01-25,selenium
 EquatorialGuinea,84190,0,NA,NA,2021-01-25,selenium
@@ -49,11 +49,11 @@ Eswatini,126776,1092,NA,NA,2021-01-25,selenium
 Ethiopia,1919663,6045,NA,NA,2021-01-25,selenium
 FaroeIslands,218636,229,NA,NA,2021-01-25,selenium
 Finland,2726400,26600,NA,NA,2021-01-25,selenium
-France,41889101,0,NA,NA,2021-01-25,selenium
+France,42268957,379856,NA,NA,2021-01-25,selenium
 Gabon,422091,0,NA,NA,2021-01-25,selenium
 Ghana,735234,4677,NA,NA,2021-01-25,selenium
 Greenland,17678,296,NA,NA,2021-01-25,selenium
-Guatemala,737536,0,NA,NA,2021-01-25,selenium
+Guatemala,738861,1325,NA,NA,2021-01-25,selenium
 Guinea,319445,0,NA,NA,2021-01-25,selenium
 GuineaBissau,43152,1590,NA,NA,2021-01-25,selenium
 Hungary,3062132,10064,NA,NA,2021-01-25,selenium
@@ -62,14 +62,14 @@ India,192337117,570246,NA,NA,2021-01-25,selenium
 Indonesia,3907273,0,NA,NA,2021-01-25,selenium
 Iran,8960186,55093,NA,NA,2021-01-25,selenium
 Ireland,2957011,34740,NA,NA,2021-01-25,selenium
-Italy,30934035,0,NA,NA,2021-01-25,selenium
+Italy,31077151,143116,NA,NA,2021-01-25,selenium
 Jamaica,159808,144929,NA,NA,2021-01-25,selenium
 Japan,5926375,18784,NA,NA,2021-01-25,selenium
 Jordan,NA,NA,NA,NA,2021-01-25,selenium
 Kenya,1114198,0,NA,NA,2021-01-25,selenium
 LaoPeoplesDemoraticRepublic,101489,3960,NA,NA,2021-01-25,selenium
 Latvia,NA,NA,NA,NA,2021-01-25,selenium
-Lebanon,2498337,0,NA,NA,2021-01-25,selenium
+Lebanon,2507512,9175,NA,NA,2021-01-25,selenium
 Lesotho,45863,0,NA,NA,2021-01-25,selenium
 Liberia,62223,0,NA,NA,2021-01-25,selenium
 Libya,619373,0,NA,NA,2021-01-25,selenium
@@ -101,7 +101,7 @@ RepublicofKorea,5376086,21737,NA,NA,2021-01-25,selenium
 Romania,5306711,5921,NA,NA,2021-01-25,selenium
 Russia,99722017,335236,NA,NA,2021-01-25,selenium
 Rwanda,785049,0,NA,NA,2021-01-25,selenium
-SaintLucia,22832,0,NA,NA,2021-01-25,selenium
+SaintLucia,23141,309,NA,NA,2021-01-25,selenium
 SanMarino,32438,124,NA,NA,2021-01-25,selenium
 SaoTomeandPrincipe,7498,0,NA,NA,2021-01-25,selenium
 SaudiArabia,43695,8168,NA,NA,2021-01-25,selenium
