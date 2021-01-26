@@ -146,7 +146,7 @@ Sao Tome and Principe,SaoTomeandPrincipe,https://africacdc.org/covid-19/,,Seleni
 Saudi Arabia,SaudiArabia,https://covid19.moh.gov.sa/,,special dashboard,,,,,,Two clicks to be made in order to display test data,automated
 Scotland,Scotland,https://public.tableau.com/profile/phs.covid.19#!/vizhome/COVID-19DailyDashboard_15960160643010/Dailyupdate,,special dashboard,,,"//*[@id=""preamble""]/div/ul[4]/li[1]/span/span/span/span",,,,special_dashboard
 Senegal,Senegal,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-Serbia,Serbia,https://covid19.rs/,,html,,,"//*[@id=""main""]/div/div/div/section[1]/div[2]/div/div/div/div/section[4]/div/div/div[1]/div/div/div[1]/div/p",,,,automated
+Serbia,Serbia,https://covid19.rs/homepage-english/,,Selenium,,,"([,0-9]+)",,,,automated
 Seychelles,Seychelles,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Sierra Leone,SierraLeone,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Singapore,Singapore,https://www.moh.gov.sg/covid-19,,Selenium,,,"([,0-9]+)",,,,automated
