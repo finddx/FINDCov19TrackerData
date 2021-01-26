@@ -1,13 +1,13 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source
 Afghanistan,NA,NA,NA,NA,2021-01-26,fetch
-Albania,NA,NA,NA,NA,2021-01-26,selenium
+Albania,336716,0,NA,NA,2021-01-26,selenium
 Algeria,230553,0,NA,NA,2021-01-26,selenium
 Andorra,292501,0,NA,NA,2021-01-26,selenium
 Angola,339634,0,NA,NA,2021-01-26,selenium
 Antigua and Barbuda,NA,NA,NA,NA,2021-01-26,fetch
 AntiguaandBarbuda,8588,0,NA,NA,2021-01-26,selenium
 Armenia,639482,1938,NA,NA,2021-01-26,selenium
-Australia,12748337,0,NA,NA,2021-01-26,selenium
+Australia,12778139,29802,NA,NA,2021-01-26,selenium
 Austria,8802827,0,NA,NA,2021-01-26,selenium
 Azerbaijan,2364809,0,NA,NA,2021-01-26,selenium
 Bahrain,2637879,0,NA,NA,2021-01-26,selenium
@@ -18,7 +18,7 @@ Belgium,7929669,22389,NA,NA,2021-01-26,selenium
 Belize,67633,0,NA,NA,2021-01-26,selenium
 Benin,412697,0,NA,NA,2021-01-26,selenium
 Bermuda,160915,1689,NA,NA,2021-01-26,selenium
-BosniaandHerzegovina,390627,307,NA,NA,2021-01-26,selenium
+BosniaandHerzegovina,390855,535,NA,NA,2021-01-26,selenium
 Botswana,613944,0,NA,NA,2021-01-26,selenium
 Brazil,20103645,0,NA,NA,2021-01-26,selenium
 Brunei,90111,211,NA,NA,2021-01-26,selenium
@@ -44,7 +44,7 @@ Egypt,1000000,0,NA,NA,2021-01-26,selenium
 ElSalavador,682382,0,NA,NA,2021-01-26,selenium
 EquatorialGuinea,84190,0,NA,NA,2021-01-26,selenium
 Eritrea,23693,0,NA,NA,2021-01-26,selenium
-Estonia,744148,0,NA,NA,2021-01-26,selenium
+Estonia,748952,4804,NA,NA,2021-01-26,selenium
 Eswatini,126776,0,NA,NA,2021-01-26,selenium
 Ethiopia,1919663,0,NA,NA,2021-01-26,selenium
 FaroeIslands,218636,0,NA,NA,2021-01-26,selenium
@@ -64,7 +64,7 @@ Iran,8960186,0,NA,NA,2021-01-26,selenium
 Ireland,2957011,0,NA,NA,2021-01-26,selenium
 Italy,31077151,0,NA,NA,2021-01-26,selenium
 Jamaica,159808,0,NA,NA,2021-01-26,selenium
-Japan,5926375,0,NA,NA,2021-01-26,selenium
+Japan,6008316,81941,NA,NA,2021-01-26,selenium
 Jordan,3711158,NA,NA,NA,2021-01-26,selenium
 Kenya,1114198,0,NA,NA,2021-01-26,selenium
 LaoPeoplesDemoraticRepublic,102017,528,NA,NA,2021-01-26,selenium
@@ -111,7 +111,7 @@ Seychelles,21504,0,NA,NA,2021-01-26,selenium
 SierraLeone,92126,0,NA,NA,2021-01-26,selenium
 Singapore,6315357,254210,NA,NA,2021-01-26,selenium
 Slovakia,1698976,0,NA,NA,2021-01-26,selenium
-Slovenia,7121,0,NA,NA,2021-01-26,selenium
+Slovenia,7847,726,NA,NA,2021-01-26,selenium
 Somalia,83486,0,NA,NA,2021-01-26,selenium
 SouthAfrica,7993126,0,NA,NA,2021-01-26,selenium
 SouthSudan,105002,0,NA,NA,2021-01-26,selenium
