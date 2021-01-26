@@ -116,7 +116,7 @@ Myanmar,Myanmar,https://mohs.gov.mm/Main/content/publication/2019-ncov,,special 
 Namibia,Namibia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Nepal,Nepal,https://covid19.ndrrma.gov.np/,,Selenium,,,"([,0-9]+)",,,,needs_checks
 Netherlands,Netherlands,https://www.rivm.nl/en/novel-coronavirus-covid-19/current-information,,html,,,,,,"Every Wednesday New tests (Not cumulative tests) for the past 7 days. Value is ""Total number of tests of which results are know"" in ""Last week"". Value goes to the ""new tests"" for the date mentioned above.",weekly_numbers
-New Caledonia,NewCaledonia,https://covid19.nc/point-de-situation-en-nouvelle-caledonie/,,html,,,"//*[@id=""block-system-main""]/div/div/div/div[1]/div[2]/div[2]/div[1]/div",,,,automated
+New Caledonia,NewCaledonia,https://covid19.nc/point-de-situation-en-nouvelle-caledonie/,,Selenium,,,"([,0-9]+)",,,,automated
 New Zealand,NewZealand,https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data,,Selenium,,,"([,0-9]+)",,,,automated
 Niger,Niger,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Nigeria,Nigeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
