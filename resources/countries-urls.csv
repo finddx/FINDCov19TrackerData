@@ -151,7 +151,7 @@ Seychelles,Seychelles,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,
 Sierra Leone,SierraLeone,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Singapore,Singapore,https://www.moh.gov.sg/covid-19,,Selenium,,,"([,0-9]+)",,,,automated
 Slovakia,Slovakia,https://korona.gov.sk/,,Selenium,,,([ 0-9]+),,,,automated
-Slovenia,Slovenia,https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19,,html,,,"//*[@id=""node-5056""]/div[4]/div/div/div/table[1]/tbody/tr[1]/td[1]/strong",,,,automated
+Slovenia,Slovenia,https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19,,Selenium,,,"([.0-9]+)",,,,automated
 Somalia,Somalia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 South Africa,SouthAfrica,https://gis.nicd.ac.za/portal/apps/opsdashboard/index.html#/0ec12f471aaa4055999366669b38482d,https://www.nicd.ac.za/diseases-a-z-index/covid-19/surveillance-reports/national-covid-19-daily-report/,Selenium,,,"([,0-9]+)",,,,automated
 South Sudan,SouthSudan,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
