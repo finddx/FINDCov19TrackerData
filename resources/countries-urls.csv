@@ -96,7 +96,7 @@ Lebanon,Lebanon,https://corona.ministryinfo.gov.lb/,,html,,,"//*[@id=""content""
 Lesotho,Lesotho,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Liberia,Liberia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Libya,Libya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-Lithuania,Lithuania,https://koronastop.lrv.lt/en/,,html,,,"//*[@id=""w-statistics-in-lithuania""]/div[3]/p[1]/strong[2]",,,,automated
+Lithuania,Lithuania,https://koronastop.lrv.lt/en/,,html,,,"//*[@id="w-statistics-in-lithuania"]/div[3]/p[1]/strong[2]",,,,automated
 Luxembourg,Luxembourg,https://msan.gouvernement.lu/fr/graphiques-evolution.html,,special dashboard,,,"//*[@id=""main""]/div/div/div[2]/section[2]/div/div/details[2]/summary/span[1]",,,"""Tests COVID-19"" courbe verte à survoler.",new_test_daily
 Madagascar,Madagascar,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 China,China,,,irrelevant,,,,,,,without information
