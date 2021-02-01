@@ -56,7 +56,7 @@ Estonia,Estonia,https://koroonakaart.ee/en,,Selenium,https://www.koroonakaart.ee
 Eswatini,Eswatini,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Ethiopia,Ethiopia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Faroe Islands,FaroeIslands,https://corona.fo/?_l=en,,html,,,"//*[@id=""ease_flexibleitem_9""]/grid[2]/column/grid[1]/column[5]/div[1]",,,,automated
-Fiji,Fiji,http://www.health.gov.fj/covid-19-updates/,,pdf_list,,,,,,"Not published every day. Every few days, not always same frequency.",pdf
+Fiji,Fiji,http://www.health.gov.fj/,,html_list,,,,,,"Not published every day. Every few days, not always same frequency.",html
 Finland,Finland,https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta,https://thl.fi/fi/tilastot-ja-data/aineistot-ja-palvelut/avoin-data/varmistetut-koronatapaukset-suomessa-covid-19-,csv,https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta,,Testattuja näytteitä yhteensä: yli ([ 0-9]+),,,,automated
 France,France,https://dashboard.covid19.data.gouv.fr/suivi-des-tests?location=FRA,,Selenium,,,([ 0-9]+),,,,automated
 French Polynesia,FrenchPolynesia,https://www.presidence.pf/?s=Coronavirus+COVID-19+le+point+sur+la+situation,,irrelevant,,,,,,,without information
