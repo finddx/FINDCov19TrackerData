@@ -114,8 +114,12 @@ class TestDefaultSuite(unittest.TestCase):
         self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has completed\')]").text
         self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has completed")[1].split("tests")[0]
     except NoSuchElementException:
-        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The lab has performed\')]").text
-        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has performed")[1].split("tests")[0]
+            try:
+                self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
+                self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("completed")[1]
+            except NoSuchElementException:
+                self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The lab has performed\')]").text
+                self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has performed")[1].split("tests")[0]
     self.driver.close()
     
   def test_belarus(self):
@@ -181,6 +185,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get(url)
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".ms-rteTable-default:nth-child(17) .ms-rteTable-default:nth-child(2) > strong")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".ms-rteTable-default:nth-child(17) .ms-rteTable-default:nth-child(2) > strong").text
+    self.driver.close()
+
+  def test_cambodia(self):
+    self.driver.get("http://cdcmoh.gov.kh")
+    self.driver.set_window_size(1542, 830)
+    self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(7) > strong").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(7) > strong").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split(' ')[1]
     self.driver.close()
 
   def test_canada(self):
@@ -262,8 +274,17 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]").text
     self.driver.close()
 
+  def test_fiji(self):  
+    self.driver.get("http://www.health.gov.fj/")
+    url=self.driver.find_element(By.XPATH, "(//a[contains(text(),\'COVID-19 Update\')])[3]").get_attribute('href')
+    self.driver.get(url)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'laboratory tests have been conducted\')]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('total of')[1].split('lab')[0]
+    self.driver.close()
+
   def test_finland(self):
     self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
+    time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) > strong").text
     self.driver.close()
 
@@ -282,6 +303,11 @@ class TestDefaultSuite(unittest.TestCase):
     #self.vars["tests_daily"] = self.driver.find_element(By.CSS_SELECTOR, ".statistic-square:nth-child(4) > .quantity-numver:nth-child(1)").text
     #self.driver.close()
 
+  def test_greece(self):
+    self.driver.get("https://covid19.innews.gr/iframe")
+    time.sleep(10)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".tests-badge .total").text
+
   def test_greenland(self):
     self.driver.get("https://nun.gl/emner/borgere/coronavirus_emne/foelg_smittespredningen?sc_lang=da")
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//table[@id=\'covid_19\']/tbody/tr/td[2]").text
@@ -297,7 +323,9 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_hungary(self):
     self.driver.get("https://koronavirus.gov.hu/#aktualis")
+    time.sleep(10)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "content-mintavetel")))
+    time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content-mintavetel").text
     self.driver.close()
 
@@ -371,6 +399,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(30)
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div").text
+    print(self.vars)
     self.driver.close()
 
   def test_laoPeoplesDemoraticRepublic(self):
@@ -554,7 +583,10 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("http://www.iss.sm/on-line/home/artCataggiornamenti-coronavirus.49004093.1.20.1.html")
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Epidemia COVID-19\')]").get_attribute('href')
     self.driver.get(url)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'Tamponi eseguiti\')]").text
+    try:
+      self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'Tamponi eseguiti\')]").text
+    except NoSuchElementException:
+      self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'tamponi totali eseguiti\')]").text
     self.driver.close()
 
   def test_saudiArabia(self):
@@ -577,7 +609,6 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.moh.gov.sg/covid-19")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 td")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 td").text
-    print(self.vars)
     self.driver.close()
 
   def test_slovakia(self):
