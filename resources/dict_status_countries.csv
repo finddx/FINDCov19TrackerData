@@ -1,0 +1,15 @@
+status,description
+pdf,pdf format and It is not yet automated or has an error in the automation process
+automated,the country was automated with selenium but it has some error
+image,image format and It is not yet automated
+json,json format and It is not yet automated
+csv,csv format and It is not yet automated
+not_yet_automated,The country is not yet automated with selenium
+not_yet_automated_daily,"The country is not yet automated with selenium, they only report daily numbers"
+without_information,does not have information. The country is not automated
+xslx,xlsx format and It is not yet automated
+facebook,information from facebook. It's not automated
+special_dashboard,"It's not automated, usually tableau dashboards that store numbers as images"
+twitter,information from Twitter. It's not automated
+not_yet_automated_weekly,"The country is not yet automated with selenium, they only report weekly numbers"
+problems_webpage,Automated but the webpage has problems loading
