@@ -158,7 +158,7 @@ South Sudan,SouthSudan,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,
 Spain,Spain,https://www.mscbs.gob.es/gabinete/notasPrensa.do,,html_list,,,,,,"Testing info only in Monday's press releases. Value between ""se han efectuado hasta el momento"" and ""pruebas diagnósticas""",automated
 Sri Lanka,SriLanka,https://www.hpb.health.gov.lk/en,,Selenium,,,([0-9]+),,,,automated
 Sudan,Sudan,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-Sweden,Sweden,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/statistik-och-analyser/veckorapporten-om-covid-19/,,pdf_list,,,,,,"Publication ""Veckorapport om covid-19 vecka"" every Friday. Value in table at the beginning ""Testade individer (PCR-test): """,pdf
+Sweden,Sweden,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/statistik-och-analyser/antalet-testade-for-covid-19/,,html,,,,,,"Publication ""Veckorapport om covid-19 vecka"" every Friday. Value in table at the beginning ""Testade individer (PCR-test): """,pdf
 Switzerland,Switzerland,https://www.covid19.admin.ch/en/overview?ovTime=total,,html,,,/html/body/app-root/bag-dashboard/main/bag-overview/div/div[1]/div[3]/bag-overview-card-test/bag-overview-card/div/bag-key-value-list/table/tbody/tr[2]/td/span,,,,automated
 Taiwan,Taiwan,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan,,special dashboard,,,"//*[@id=""num1""]","//*[@id=""num6""]",,,automated
 Tajikistan,Tajikistan,https://eurasianet.org/dashboard-coronavirus-in-eurasia,,irrelevant,,,,,,,without_information
