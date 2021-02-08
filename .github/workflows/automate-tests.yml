@@ -262,9 +262,9 @@ jobs:
           git pull origin master
           date=$(date +'%Y-%m-%d')
           mv need-manual-processing.csv manual/need-processing/$date-need-manual-processing.csv
-          mv countries-tests-all-dates.csv automated/countries-tests-all-dates.csv
+          mv coronavirus_tests_new.csv automated/coronavirus_tests_new.csv
           git add manual/need-processing/$date-need-manual-processing.csv
-          git add automated/countries-tests-all-dates.csv
+          git add automated/coronavirus_tests_new.csv
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
@@ -340,9 +340,9 @@ jobs:
           git pull origin master
           date=$(date +'%Y-%m-%d')
           mv need-manual-processing.csv manual/need-processing/$date-need-manual-processing.csv
-          mv countries-tests-all-dates.csv automated/countries-tests-all-dates.csv
+          mv coronavirus_tests_new.csv automated/coronavirus_tests_new.csv
           git add manual/need-processing/$date-need-manual-processing.csv
-          git add automated/countries-tests-all-dates.csv
+          git add automated/coronavirus_tests_new.csv
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData

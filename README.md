@@ -62,7 +62,7 @@ The last step performs some analysis on the previous workflow steps.
 In particular, [`combine_all_tests()`](https://dsbbfinddx.github.io/FINDCov19Tracker/reference/combine_all_tests.html)
 
 - writes the file which lists all countries that still need manual processing ([`$DATE-need-processing.csv`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/manual/need-processing))
-- writes [`countries-tests-all-dates.csv`](https://github.com/dsbbfinddx/FINDCov19TrackerData/blob/master/automated/countries-tests-all-dates.csv) which lists information from all dates and all countries which have been processed so far
+- writes [`coronavirus_tests_new.csv`](https://github.com/dsbbfinddx/FINDCov19TrackerData/blob/master/automated/coronavirus_tests_new.csv) which lists information from all dates and all countries which have been processed so far
 
 This step exists twice in the [GHA workflow file](https://github.com/dsbbfinddx/FINDCov19TrackerData/blob/master/.github/workflows/automate-tests.yml):
 
