@@ -154,5 +154,12 @@ jobs:
       #     webhook_secret: ${{ secrets.WEBHOOK_TOKEN }}
       #     data: '{ "event_type": "repository_dispatch", "drink" : "beer" }'
 
+      # - name: Trigger workflow run in FindCov19TrackerShiny
+      #   run: curl -X POST https://api.github.com/repos/dsbbfinddx/FINDCov19TrackerShiny/dispatches -H 'Accept:\ application/vnd.github.everest-preview+json' -H 'Authorization:\ token ${{ secrets.WEBHOOK_TOKEN }}' --data '{"event_type":\ "repository_dispatch"}'
+
       - name: Trigger workflow run in FindCov19TrackerShiny
-        run: curl -X POST https://api.github.com/repos/dsbbfinddx/FINDCov19TrackerShiny/dispatches -H 'Accept:\ application/vnd.github.everest-preview+json' -H 'Authorization:\ token ${{ secrets.WEBHOOK_TOKEN }}' --data '{"event_type":\ "repository_dispatch"}'
+        uses: peter-evans/repository-dispatch@master
+        with:
+          token: ${{ secrets.WEBHOOK_TOKEN }}
+          repository: dsbbfinddx/FINDCov19TrackerShiny
+          event-type: repository_dispatch
