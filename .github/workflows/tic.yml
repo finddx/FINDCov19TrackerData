@@ -6,8 +6,8 @@ on:
   push:
   # for now, CRON jobs only run on the default branch of the repo (i.e. usually on master)
   # schedule:
-    # * is a special character in YAML so you have to quote this string
-    # - cron: "0 2 * * *"
+  # * is a special character in YAML so you have to quote this string
+  # - cron: "0 2 * * *"
 
 name: tic
 
@@ -145,3 +145,10 @@ jobs:
 
       - name: "[Stage] After Deploy"
         run: Rscript -e "tic::after_deploy()"
+
+      - name: Trigger workflow run in FindCov19TrackerShiny
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}
+          headers: '{"repository": "joelwmale/webhook-action"}'
+          body: '{"event": "deployment_status", "repository": "dsbbfinddx/FINDCov19TrackerShiny"}'
