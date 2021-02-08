@@ -13,7 +13,7 @@ name: tic
 
 jobs:
   all:
-    # if: "contains(toJSON(github.event.commits.*.message), 'Add files via upload')"
+    if: "contains(toJSON(github.event.commits.*.message), 'Add files via upload')"
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
@@ -45,121 +45,110 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
 
-      # - uses: r-lib/actions/setup-r@master
-      #   with:
-      #     r-version: ${{ matrix.config.r }}
-      #     Ncpus: 4
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: ${{ matrix.config.r }}
+          Ncpus: 4
 
-      # LaTeX. Installation time:
-      # Linux: ~ 1 min
-      # macOS: ~ 1 min 30s
-      # Windows: never finishes
-      # - uses: r-lib/actions/setup-tinytex@master
-      #   if: matrix.config.latex == 'true'
+      LaTeX. Installation time:
+      Linux: ~ 1 min
+      macOS: ~ 1 min 30s
+      Windows: never finishes
+      - uses: r-lib/actions/setup-tinytex@master
+        if: matrix.config.latex == 'true'
 
-      # - uses: r-lib/actions/setup-pandoc@master
+      - uses: r-lib/actions/setup-pandoc@master
 
-      # # set date/week for use in cache creation
-      # # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
-      # # - cache R packages daily
-      # - name: "[Cache] Prepare daily timestamp for cache"
-      #   if: runner.os != 'Windows'
-      #   id: date
-      #   run: echo "::set-output name=date::$(date '+%d-%m')"
+      # set date/week for use in cache creation
+      # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
+      # - cache R packages daily
+      - name: "[Cache] Prepare daily timestamp for cache"
+        if: runner.os != 'Windows'
+        id: date
+        run: echo "::set-output name=date::$(date '+%d-%m')"
 
-      # - name: "[Cache] Cache R packages"
-      #   if: runner.os != 'Windows'
-      #   uses: pat-s/always-upload-cache@v2.1.3
-      #   with:
-      #     path: ${{ env.R_LIBS_USER }}
-      #     key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
-      #     restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+      - name: "[Cache] Cache R packages"
+        if: runner.os != 'Windows'
+        uses: pat-s/always-upload-cache@v2.1.3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
 
-      # # for some strange Windows reason this step and the next one need to be decoupled
-      # - name: "[Stage] Prepare"
-      #   run: |
-      #     Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
-      #     Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
+      # for some strange Windows reason this step and the next one need to be decoupled
+      - name: "[Stage] Prepare"
+        run: |
+          Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
+          Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
 
-      # - name: "[Custom block] [Linux] Install poppler for pdftools package"
-      #   run: |
-      #     sudo R CMD javareconf
-      #     sudo add-apt-repository -y ppa:cran/poppler
-      #     sudo apt-get update
-      #     sudo apt-get install -y libpoppler-cpp-dev
+      - name: "[Custom block] [Linux] Install poppler for pdftools package"
+        run: |
+          sudo R CMD javareconf
+          sudo add-apt-repository -y ppa:cran/poppler
+          sudo apt-get update
+          sudo apt-get install -y libpoppler-cpp-dev
 
-      # - name: "[Custom block] [Linux] Install required libraries"
-      #   if: runner.os == 'Linux'
-      #   run: sudo apt install libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler libgit2-dev
+      - name: "[Custom block] [Linux] Install required libraries"
+        if: runner.os == 'Linux'
+        run: sudo apt install libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler libgit2-dev
 
-      # - name: "[Custom block] [Linux] Install Java"
-      #   if: runner.os == 'Linux'
-      #   run: sudo R CMD javareconf
+      - name: "[Custom block] [Linux] Install Java"
+        if: runner.os == 'Linux'
+        run: sudo R CMD javareconf
 
-      # - name: "[Stage] [Linux] Install curl and libgit2"
-      #   if: runner.os == 'Linux'
-      #   run: sudo apt install libcurl4-openssl-dev libgit2-dev
+      - name: "[Stage] [Linux] Install curl and libgit2"
+        if: runner.os == 'Linux'
+        run: sudo apt install libcurl4-openssl-dev libgit2-dev
 
-      # - name: "[Stage] [macOS] Install libgit2"
-      #   if: runner.os == 'macOS'
-      #   run: brew install libgit2
+      - name: "[Stage] [macOS] Install libgit2"
+        if: runner.os == 'macOS'
+        run: brew install libgit2
 
-      # - name: "[Stage] [macOS] Install system libs for pkgdown"
-      #   if: runner.os == 'macOS' && matrix.config.pkgdown != ''
-      #   run: brew install harfbuzz fribidi
+      - name: "[Stage] [macOS] Install system libs for pkgdown"
+        if: runner.os == 'macOS' && matrix.config.pkgdown != ''
+        run: brew install harfbuzz fribidi
 
-      # - name: "[Stage] [Linux] Install system libs for pkgdown"
-      #   if: runner.os == 'Linux' && matrix.config.pkgdown != ''
-      #   run: sudo apt install libharfbuzz-dev libfribidi-dev
+      - name: "[Stage] [Linux] Install system libs for pkgdown"
+        if: runner.os == 'Linux' && matrix.config.pkgdown != ''
+        run: sudo apt install libharfbuzz-dev libfribidi-dev
 
-      # - name: "[Stage] Install"
-      #   if: matrix.config.os != 'macOS-latest' || matrix.config.r != 'devel'
-      #   run: Rscript -e "remotes::install_github('ropensci/tic')" -e "print(tic::dsl_load())" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+      - name: "[Stage] Install"
+        if: matrix.config.os != 'macOS-latest' || matrix.config.r != 'devel'
+        run: Rscript -e "remotes::install_github('ropensci/tic')" -e "print(tic::dsl_load())" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
 
-      # # macOS devel needs its own stage because we need to work with an option to suppress the usage of binaries
-      # - name: "[Stage] Prepare & Install (macOS-devel)"
-      #   if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'devel'
-      #   run: |
-      #     echo -e 'options(Ncpus = 4, pkgType = "source", repos = structure(c(CRAN = "https://cloud.r-project.org/")))' > $HOME/.Rprofile
-      #     Rscript -e "remotes::install_github('ropensci/tic')" -e "print(tic::dsl_load())" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+      # macOS devel needs its own stage because we need to work with an option to suppress the usage of binaries
+      - name: "[Stage] Prepare & Install (macOS-devel)"
+        if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'devel'
+        run: |
+          echo -e 'options(Ncpus = 4, pkgType = "source", repos = structure(c(CRAN = "https://cloud.r-project.org/")))' > $HOME/.Rprofile
+          Rscript -e "remotes::install_github('ropensci/tic')" -e "print(tic::dsl_load())" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
 
-      # - name: "[Stage] Script"
-      #   run: Rscript -e 'tic::script()'
+      - name: "[Stage] Script"
+        run: Rscript -e 'tic::script()'
 
-      # - name: "[Stage] After Success"
-      #   if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'release'
-      #   run: Rscript -e "tic::after_success()"
+      - name: "[Stage] After Success"
+        if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'release'
+        run: Rscript -e "tic::after_success()"
 
-      # - name: "[Stage] Upload R CMD check artifacts"
-      #   if: failure()
-      #   uses: actions/upload-artifact@v2.2.1
-      #   with:
-      #     name: ${{ runner.os }}-r${{ matrix.config.r }}-results
-      #     path: check
-      # - name: "[Stage] Before Deploy"
-      #   run: |
-      #     Rscript -e "tic::before_deploy()"
+      - name: "[Stage] Upload R CMD check artifacts"
+        if: failure()
+        uses: actions/upload-artifact@v2.2.1
+        with:
+          name: ${{ runner.os }}-r${{ matrix.config.r }}-results
+          path: check
+      - name: "[Stage] Before Deploy"
+        run: |
+          Rscript -e "tic::before_deploy()"
 
-      # - name: "[Stage] Deploy"
-      #   run: Rscript -e "tic::deploy()"
+      - name: "[Stage] Deploy"
+        run: Rscript -e "tic::deploy()"
 
-      # - name: "[Stage] After Deploy"
-      #   run: Rscript -e "tic::after_deploy()"
+      - name: "[Stage] After Deploy"
+        run: Rscript -e "tic::after_deploy()"
 
-      # - name: Trigger workflow run in FindCov19TrackerShiny
-      #   uses: distributhor/workflow-webhook@v1.0.5
-      #   env:
-      #     webhook_type: 'json-extended'
-      #     webhook_url: ${{ secrets.WEBHOOK_URL }}
-      #     webhook_secret: ${{ secrets.WEBHOOK_TOKEN }}
-      #     data: '{ "event_type": "repository_dispatch", "drink" : "beer" }'
-
-      # - name: Trigger workflow run in FindCov19TrackerShiny
-      #   run: curl -X POST https://api.github.com/repos/dsbbfinddx/FINDCov19TrackerShiny/dispatches -H 'Accept:\ application/vnd.github.everest-preview+json' -H 'Authorization:\ token ${{ secrets.WEBHOOK_TOKEN }}' --data '{"event_type":\ "repository_dispatch"}'
-
-      - name: Trigger workflow run in FindCov19TrackerShiny
+      - name: "[Custom block] Trigger workflow run in FindCov19TrackerShiny"
         uses: peter-evans/repository-dispatch@master
         with:
           token: ${{ secrets.WEBHOOK_TOKEN }}
           repository: dsbbfinddx/FINDCov19TrackerShiny
-          event-type: test
+          event-type: "Deploy Shiny App after updating data in FindCov19TrackerData"
