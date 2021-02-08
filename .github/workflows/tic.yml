@@ -147,13 +147,6 @@ jobs:
       #   run: Rscript -e "tic::after_deploy()"
 
       # - name: Trigger workflow run in FindCov19TrackerShiny
-      #   uses: joelwmale/webhook-action@master
-      #   with:
-      #     url: ${{ secrets.WEBHOOK_URL }}
-      #     headers: '{"repository": "joelwmale/webhook-action", "Authorization": "token ${{ secrets.WEBHOOK_TOKEN }}"}, "Accept": "application/vnd.github.everest-preview+json"'
-      #     body: '{"event_type": "repository_dispatch"'
-
-      # - name: Trigger workflow run in FindCov19TrackerShiny
       #   uses: distributhor/workflow-webhook@v1.0.5
       #   env:
       #     webhook_type: 'json-extended'
