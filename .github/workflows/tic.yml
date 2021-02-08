@@ -162,4 +162,4 @@ jobs:
         with:
           token: ${{ secrets.WEBHOOK_TOKEN }}
           repository: dsbbfinddx/FINDCov19TrackerShiny
-          event-type: repository_dispatch
+          event-type: test
