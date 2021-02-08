@@ -151,4 +151,4 @@ jobs:
         with:
           url: ${{ secrets.WEBHOOK_URL }}
           headers: '{"repository": "joelwmale/webhook-action", "Authorization": "token ${{ secrets.WEBHOOK_TOKEN }}"}, "Accept": "application/vnd.github.everest-preview+json"'
-          # body: '{"event_type": "repository_dispatch", "repository": "dsbbfinddx/FINDCov19TrackerShiny"}'
+          body: '{"event_type": "repository_dispatch"'
