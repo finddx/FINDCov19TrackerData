@@ -157,4 +157,4 @@ jobs:
       - name: Trigger workflow run in FindCov19TrackerShiny
         uses: wei/curl@master
         with:
-          args: -X POST ${{ secrets.WEBHOOK_URL }} -H 'Accept: application/vnd.github.everest-preview+json' -H 'Authorization: token ${{ secrets.WEBHOOK_TOKEN }}' --data '{"event_type": "repository_dispatch"}'
+          args: -X POST ${{ secrets.WEBHOOK_URL }} -H 'Accept:\ application/vnd.github.everest-preview+json' -H 'Authorization:\ token ${{ secrets.WEBHOOK_TOKEN }}' --data '{"event_type":\ "repository_dispatch"}'
