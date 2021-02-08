@@ -150,5 +150,5 @@ jobs:
         uses: joelwmale/webhook-action@master
         with:
           url: ${{ secrets.WEBHOOK_URL }}
-          headers: '{"repository": "joelwmale/webhook-action", "Authentication": 'token ${{ secrets.WEBHOOK_TOKEN }}'}'
+          headers: '{"repository": "joelwmale/webhook-action", "Authentication": "token ${{ secrets.WEBHOOK_TOKEN }}"}'
           body: '{"event": "repository_dispatch", "repository": "dsbbfinddx/FINDCov19TrackerShiny"}'
