@@ -154,7 +154,7 @@ jobs:
       #     body: '{"event_type": "repository_dispatch"'
 
       - name: Trigger workflow run in FindCov19TrackerShiny
-        uses: distributhor/workflow-webhook@v1
+        uses: distributhor/workflow-webhook@v1.0.5
         env:
           webhook_type: 'json-extended'
           webhook_url: ${{ secrets.WEBHOOK_URL }}
