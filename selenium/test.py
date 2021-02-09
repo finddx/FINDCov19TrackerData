@@ -378,18 +378,18 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember142 .ss-value").text
     self.driver.close()
 
-  def test_jamaica(self):
-    self.driver.get("https://www.moh.gov.jm/updates/coronavirus/covid-19-clinical-management-summary/")
-    self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Clinical Management Summary\')]").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(25) > td:nth-child(3)").text
-    self.driver.close()
+  # def test_jamaica(self):
+  #   self.driver.get("https://www.moh.gov.jm/updates/coronavirus/covid-19-clinical-management-summary/")
+  #   self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Clinical Management Summary\')]").click()
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(25) > td:nth-child(3)").text
+  #   self.driver.close()
 
-  def test_japan(self):
-    self.driver.get("https://www.mhlw.go.jp/stf/covid-19/kokunainohasseijoukyou.html")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[0]
-    self.driver.close()
+  # def test_japan(self):
+  #   self.driver.get("https://www.mhlw.go.jp/stf/covid-19/kokunainohasseijoukyou.html")
+  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]")))
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]").text
+  #   self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[0]
+  #   self.driver.close()
 
   def test_jordan(self):
     self.driver.maximize_window()
@@ -561,13 +561,13 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de teste')[0]
     self.driver.close()
 
-  def test_russia(self):
-    self.driver.get("https://www.rospotrebnadzor.ru/about/info/news/")
-    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Информационный бюллетень о ситуации и принимаемых мерах по недопущению распространения заболеваний, вызванных новым коронавирусом\')]").get_attribute('href')
-    self.driver.get(url)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'Учреждениями Роспотребнадзора и медицинскими организациями по состоянию на\')]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('проведено')[1].split('лаборатор')[0]
-    self.driver.close()
+  # def test_russia(self):
+  #   self.driver.get("https://www.rospotrebnadzor.ru/about/info/news/")
+  #   url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Информационный бюллетень о ситуации и принимаемых мерах по недопущению распространения заболеваний, вызванных новым коронавирусом\')]").get_attribute('href')
+  #   self.driver.get(url)
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'Учреждениями Роспотребнадзора и медицинскими организациями по состоянию на\')]").text
+  #   self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('проведено')[1].split('лаборатор')[0]
+  #   self.driver.close()
 
   def test_saintLucia(self):
     self.driver.get("https://www.covid19response.lc/")
