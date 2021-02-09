@@ -327,6 +327,8 @@ jobs:
 
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
+          # collects R-based, Selenium-based, and manual countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
+          Rscript -e "FINDCov19Tracker::get_daily_test_data()"
           # calculates countries which still need manual test data scraping
           Rscript -e "FINDCov19Tracker::calc_manual_countries()"
           # write csv containing all tests of all dates
