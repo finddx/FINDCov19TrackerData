@@ -91,7 +91,7 @@ Kosovo,Kosovo,https://www.facebook.com/IKSHPK,,text post in facebook,,,,,,"Post 
 Kuwait,Kuwait,https://twitter.com/KUWAIT_MOH,,image,,,,,,,twitter
 Kyrgyzstan,Kyrgyzstan,http://www.med.kg/ru/informatsii.html,,irrelevant,,,,,,,image
 Lao People's Demoratic Republic,LaoPeoplesDemoraticRepublic,https://www.covid19.gov.la/index.php,,html,,,"//*[@id=""aa-blog-archive""]/div/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[5]/div/div/p[2]",,,,automated
-Latvia,Latvia,https://infogram.com/covid-19-izplatiba-latvija-1hzj4ozwvnzo2pw,,Selenium,,,([ 0-9]+),,,,automated
+Latvia,Latvia,https://spkc.maps.arcgis.com/apps/opsdashboard/index.html#/4469c1fb01ed43cea6f20743ee7d5939,,Selenium,,,([ 0-9]+),,,,automated
 Lebanon,Lebanon,https://corona.ministryinfo.gov.lb/,,html,,,"//*[@id=""content""]/div/div[2]/div[1]/div/div[1]/div/div[2]/div/div[10]/div/h1",,,,automated
 Lesotho,Lesotho,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Liberia,Liberia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
