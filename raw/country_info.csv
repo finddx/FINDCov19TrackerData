@@ -1,19 +1,19 @@
 "name_not_used","country_iso","income","continent","tests_description","tests_type","comment"
 "Aland Islands","AX",NA,"Europe",NA,NA,NA
 "Afghanistan","AF","Low","Asia","People","Not specified",NA
-"Albania","AL","Upper middle","Europe","Tests","Not specified",NA
+"Albania","AL","Upper middle","Europe","Samples","Not specified",NA
 "Algeria","DZ","Lower middle","Africa","Not specified","Not specified",NA
 "American Samoa","AS","Upper middle","Oceania",NA,NA,NA
-"Andorra","AD","High","Europe",NA,NA,NA
+"Andorra","AD","High","Europe","Not specified","PCR+TMA+Antibody",NA
 "Angola","AO","Lower middle","Africa","Not specified","Not specified",NA
 "Anguilla","AI",NA,"North America",NA,NA,NA
 "Antarctica","AQ",NA,"Antarctica",NA,NA,NA
-"Antigua and Barbuda","AG","High","North America","People","Not specified",NA
-"Argentina","AR","Upper middle","South America","Tests","Not specified",NA
-"Armenia","AM","Upper middle","Asia","Tests","Not specified",NA
+"Antigua and Barbuda","AG","High","North America","Not specified","Not specified",NA
+"Argentina","AR","Upper middle","South America","Samples","Not specified",NA
+"Armenia","AM","Upper middle","Asia","Samples","Not specified",NA
 "Aruba","AW","High","South America",NA,NA,NA
-"Australia","AU","High","Oceania","Tests","Not specified",NA
-"Austria","AT","High","Europe","Tests","Not specified",NA
+"Australia","AU","High","Oceania","Samples","Not specified",NA
+"Austria","AT","High","Europe","Samples","PCR",NA
 "Azerbaijan","AZ","Upper middle","Asia","Not specified","Not specified",NA
 "Bahrain","BH","High","Asia","Not specified","Not specified",NA
 "Bangladesh","BD","Lower middle","Asia","Tests","Not specified",NA
@@ -54,7 +54,7 @@
 "Cote d'Ivoire","CI",NA,"Africa","Not specified","Not specified",NA
 "Croatia","HR","High","Europe","People","Not specified",NA
 "Cuba","CU","Upper middle","North America","Tests","Not specified",NA
-"Curaçao","CW",NA,"South America",NA,NA,NA
+"CuraÃ§ao","CW",NA,"South America",NA,NA,NA
 "Cyprus","CY","High","Europe","Tests","Not specified",NA
 "Czech Republic","CZ","High","Europe","Tests","Not specified",NA
 "Democratic Republic of the Congo","CD",NA,"Africa","Not specified","Not specified",NA
@@ -177,7 +177,7 @@
 "Portugal","PT","High","Europe","Tests","Not specified",NA
 "Puerto Rico","PR","High","North America",NA,NA,NA
 "Qatar","QA","High","Asia","People","Not specified",NA
-"Réunion","RE",NA,"Africa",NA,NA,NA
+"RÃ©union","RE",NA,"Africa",NA,NA,NA
 "Republic of Korea","KR",NA,"Asia","Tests","Not specified",NA
 "Republic of Moldova","MD",NA,"Europe",NA,NA,NA
 "Republic of the Congo","CG",NA,"Africa","Not specified","Not specified",NA
@@ -208,7 +208,7 @@
 "South Sudan","SS","Low","Africa","Not specified","Not specified",NA
 "Spain","ES","High","Europe","Tests","PCR+rapid test",NA
 "Sri Lanka","LK","Lower middle","Asia","Not specified","Not specified",NA
-"Saint Barthélemy","BL",NA,"North America",NA,NA,NA
+"Saint BarthÃ©lemy","BL",NA,"North America",NA,NA,NA
 "Saint Helena","SH",NA,"Africa",NA,NA,NA
 "Saint Pierre and Miquelon","PM",NA,"North America",NA,NA,NA
 "Sudan","SD","Low","Africa","Not specified","Not specified",NA
