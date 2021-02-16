@@ -199,22 +199,22 @@
 "Sierra Leone","SL","Low","Africa","Not specified","Not specified",NA
 "Singapore","SG","High","Asia","Samples","PCR",NA
 "Sint Maarten","SX",NA,"North America",NA,NA,NA
-"Slovakia","SK",NA,"Europe","Samples","Not specified",NA
-"Slovenia","SI","High","Europe","Samples","Not specified",NA
+"Slovakia","SK",NA,"Europe","Samples","PCR",NA
+"Slovenia","SI","High","Europe","Samples","PCR",NA
 "Solomon Islands","SB","Lower middle","Oceania",NA,NA,NA
 "Somalia","SO","Low","Africa","Not specified","Not specified",NA
-"South Africa","ZA","Upper middle","Africa","Tests","Not specified",NA
+"South Africa","ZA","Upper middle","Africa","Samples","Not specified",NA
 "South Georgia and South Sandwich Islands","GS",NA,"Antarctica",NA,NA,NA
 "South Sudan","SS","Low","Africa","Not specified","Not specified",NA
-"Spain","ES","High","Europe","Tests","PCR+rapid test",NA
-"Sri Lanka","LK","Lower middle","Asia","Not specified","Not specified",NA
+"Spain","ES","High","Europe","Samples","PCR+rapid test",NA
+"Sri Lanka","LK","Lower middle","Asia","Samples","PCR",NA
 "Saint Barthélemy","BL",NA,"North America",NA,NA,NA
 "Saint Helena","SH",NA,"Africa",NA,NA,NA
 "Saint Pierre and Miquelon","PM",NA,"North America",NA,NA,NA
 "Sudan","SD","Low","Africa","Not specified","Not specified",NA
 "Suriname","SR","Upper middle","South America",NA,NA,NA
 "Svalbard and Jan Mayen","SJ",NA,"Europe",NA,NA,NA
-"Sweden","SE","High","Europe","Tests","PCR+serology",NA
+"Sweden","SE","High","Europe","Samples","PCR",NA
 "Switzerland","CH","High","Europe","Tests","PCR","Testing data published by FOPH also includes Liechtenstein."
 "Syrian Arab Republic","SY","Low","Asia",NA,NA,NA
 "Taiwan","TW",NA,"Asia","People","Not specified",NA
@@ -235,18 +235,18 @@
 "US Virgin Islands","VI",NA,"North America",NA,NA,NA
 "Uganda","UG","Low","Africa","Not specified","Not specified",NA
 "UK","GB",NA,"Europe","Samples","PCR+rapid tests",NA
-"Ukraine","UA","Lower middle","Europe","Tests","Not specified",NA
-"United Arab Emirates","AE","High","Asia","Tests","Not specified",NA
+"Ukraine","UA","Lower middle","Europe","Samples","Not specified",NA
+"United Arab Emirates","AE","High","Asia","Samples","Not specified",NA
 "United Republic of Tanzania","TZ",NA,"Africa","Not specified","Not specified",NA
 "US Minor Outlying Islands","UM",NA,"North America",NA,NA,NA
-"Uruguay","UY","High","South America","Tests","Not specified",NA
-"USA","US",NA,"North America","Tests","Not specified",NA
+"Uruguay","UY","High","South America","Samples","Not specified",NA
+"USA","US",NA,"North America","Samples","Not specified",NA
 "Uzbekistan","UZ","Lower middle","Asia","Not specified","Not specified",NA
 "Vanuatu","VU","Lower middle","Oceania",NA,NA,NA
-"Venezuela","VE",NA,"South America","Not specified","Not specified",NA
+"Venezuela","VE",NA,"South America","Samples","Not specified",NA
 "Vietnam","VN","Lower middle","Asia","Not specified","PCR",NA
 "Wallis and Futuna","WF",NA,"Oceania",NA,NA,NA
-"Western Sahara","EH",NA,"Africa","Not specified","Not specified","Africa CDC reported less cumulative tests on 22-AUG than 21-AUG for Western Sahara."
+"Western Sahara","EH",NA,"Africa","Not specified","Not specified",NA
 "Yemen","YE",NA,"Asia",NA,NA,NA
-"Zambia","ZM","Lower middle","Africa","People","Not specified",NA
-"Zimbabwe","ZW","Lower middle","Africa","Tests","PCR","Africa CDC is reporting lower cumulative tests value since 18-AUG."
+"Zambia","ZM","Lower middle","Africa","Not specified","Not specified",NA
+"Zimbabwe","ZW","Lower middle","Africa","Not specified","Not specified",NA
