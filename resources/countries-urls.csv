@@ -49,7 +49,7 @@ Dominica,Dominica,https://www.facebook.com/SupportRooseveltSkerrit/photos,,image
 Dominican Republic ,DominicanRepublic ,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4,,-,,,,,,"Embedded PDF in iframe (?), eventually scrapabable via Selenium?",pdf
 Ecuador,Ecuador,https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/,,html,,,"//*[@id=""postcontent""]/table/tbody/tr[1]/td[2]/p[1]/strong[1]",,,,automated
 Egypt,Egypt,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-El Salvador,ElSalavador,https://covid19.gob.sv/,,special dashboard,,,"//*[@id=""ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b""]/div[1]/div/div[24]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span",,,"""PRUEBAS COVID19""",automated
+El Salvador,ElSalvador,https://covid19.gob.sv/,,special dashboard,,,"//*[@id=""ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b""]/div[1]/div/div[24]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span",,,"""PRUEBAS COVID19""",automated
 Equatorial Guinea,EquatorialGuinea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Eritrea,Eritrea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Estonia,Estonia,https://koroonakaart.ee/en,,Selenium,https://www.koroonakaart.ee/data.json,,([0-9]+),,,,automated
@@ -122,7 +122,7 @@ Niger,Niger,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Nigeria,Nigeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 North Macedonia,NorthMacedonia,https://datastudio.google.com/embed/u/0/reporting/9f5104d0-12fd-4e16-9a11-993685cfd40f/page/1M,,special dashboard,,,([ 0-9]+),,,,automated
 Norway,Norway,https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/,,Selenium,,,"([,0-9]+)",,,,automated
-Occupied Palestinian Territory,occupiedPalestinianterritory,https://corona.ps/,,Selenium,,,"([,0-9]+)",,,,automated
+Occupied Palestinian Territory,OccupiedPalestinianterritory,https://corona.ps/,,Selenium,,,"([,0-9]+)",,,,automated
 Oman,Oman,https://twitter.com/OmanVSCovid19,,irrelevant,,,,,,,twitter
 Pakistan,Pakistan,http://covid.gov.pk/,,Selenium,,,"([,0-9]+)",,,,automated
 Panama,Panama,https://twitter.com/MINSAPma/status/1325931093804113925/photo/1,,image,,,,,,"Every day a new infographic, info is ""Pruebas realizadas""",twitter

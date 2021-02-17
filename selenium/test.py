@@ -248,7 +248,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) strong:nth-child(1)").text
     self.driver.close()
 
-  def test_elSalavador(self):
+  def test_elSalvador(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://covid19.gob.sv/")
@@ -507,7 +507,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span").text
     self.driver.close()
 
-  def test_occupiedPalestinianTerritory(self):
+  def test_occupiedPalestinianterritory(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://corona.ps/")
