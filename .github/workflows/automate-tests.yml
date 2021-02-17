@@ -173,7 +173,7 @@ jobs:
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
           # collects R-based and Selenium-based countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
-          Rscript -e "FINDCov19Tracker::get_daily_test_data()"
+          Rscript -e "FINDCov19Tracker::get_test_data()"
 
       - name: Commit files
         run: |
@@ -182,10 +182,10 @@ jobs:
           git config pull.rebase false
           git pull origin master
           date=$(date +'%Y-%m-%d')
-          mv automated-tests.csv automated/merged/$date-automated-tests.csv
-          mv countries-error.csv issues/$date-countries-error.csv
-          git add automated/merged/$date-automated-tests.csv
-          git add issues/$date-countries-error.csv
+          mv *automated-tests.csv automated/merged/
+          mv *countries-error.csv issues/
+          git add automated/merged/*
+          git add issues/*
           git commit -m "update files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
@@ -328,7 +328,7 @@ jobs:
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
           # collects R-based, Selenium-based, and manual countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
-          Rscript -e "FINDCov19Tracker::get_daily_test_data()"
+          Rscript -e "FINDCov19Tracker::get_test_data()"
           # calculates countries which still need manual test data scraping
           Rscript -e "FINDCov19Tracker::calc_manual_countries()"
           # write csv containing all tests of all dates
@@ -341,10 +341,12 @@ jobs:
           git config pull.rebase false
           git pull origin master
           date=$(date +'%Y-%m-%d')
-          mv automated-tests.csv automated/merged/$date-automated-tests.csv
+          mv *automated-tests.csv automated/merged/
+          mv *countries-error.csv issues/
           mv need-manual-processing.csv manual/need-processing/$date-need-manual-processing.csv
           mv coronavirus_tests_new.csv automated/coronavirus_tests_new.csv
-          git add automated/merged/$date-automated-tests.csv
+          git add automated/merged/*
+          git add issues/*
           git add manual/need-processing/$date-need-manual-processing.csv
           git add automated/coronavirus_tests_new.csv
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
