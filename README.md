@@ -50,11 +50,12 @@ The following section explains the workflow in greater detail, including links t
 - **What happens on error?**: the functions operate with a "try/catch" approach and return NA in case something does not work.
   The country will also be listed in the [countries-error.csv](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/issues) file of the respective day.
 
-### 3. Combination of Selenium and "R fetch functions"
+### 3. Combination of Selenium, "R fetch functions", and manual updates
 
-The third step in the CI workflow combines the results from the first two and writes out a combined data source to [`automated/merged/`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/automated/merged).
+The third step in the CI workflow combines the results from Selenium, fetch functions, and manual updates when they are available in [`manual/processed/`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/manual/processed).
+The function [`get_test_data()`](https://dsbbfinddx.github.io/FINDCov19Tracker/reference/).
+writes out a combined data source to [`automated/merged/`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/automated/merged).
 In addition, the list with countries which errored (`countries-error.csv`) is written.
-All of this is done by [`get_daily_test_data()`](https://dsbbfinddx.github.io/FINDCov19Tracker/reference/get_daily_test_data.html).
 
 ### 4. Analysis of Workflow Run
 
