@@ -52,7 +52,8 @@ The following section explains the workflow in greater detail, including links t
 
 ### 3. Combination of Selenium, "R fetch functions", and manual updates
 
-The third step in the CI workflow combines the results from Selenium, fetch functions, and manual updates when they are available in [`manual/processed/`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/manual/processed). The function [`get_test_data()`](https://dsbbfinddx.github.io/FINDCov19Tracker/reference/).
+The third step in the CI workflow combines the results from Selenium, fetch functions, and manual updates when they are available in [`manual/processed/`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/manual/processed).
+The function [`get_test_data()`](https://dsbbfinddx.github.io/FINDCov19Tracker/reference/).
 writes out a combined data source to [`automated/merged/`](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/automated/merged). In addition, the list with countries which errored (`countries-error.csv`) is written.
 
 ### 4. Analysis of Workflow Run
