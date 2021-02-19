@@ -46,7 +46,7 @@ Democratic Republic of the Congo,DemocraticRepublicoftheCongo,https://africacdc.
 Denmark,Denmark,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts,special dashboard,,,"//*[@id=""top""]/div[2]/section[6]/div[1]/table/tbody/tr[2]/td[2]",,,"""Prover"" bottom line",automated
 Djibouti,Djibouti,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Dominica,Dominica,https://www.facebook.com/SupportRooseveltSkerrit/photos,,image,,,,,,,image
-Dominican Republic ,DominicanRepublic ,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4,,-,,,,,,"Embedded PDF in iframe (?), eventually scrapabable via Selenium?",pdf
+Dominican Republic ,DominicanRepublic,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4,,-,,,,,,"Embedded PDF in iframe (?), eventually scrapabable via Selenium?",pdf
 Ecuador,Ecuador,https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/,,html,,,"//*[@id=""postcontent""]/table/tbody/tr[1]/td[2]/p[1]/strong[1]",,,,automated
 Egypt,Egypt,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 El Salvador,ElSalvador,https://covid19.gob.sv/,,special dashboard,,,"//*[@id=""ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b""]/div[1]/div/div[24]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span",,,"""PRUEBAS COVID19""",automated
