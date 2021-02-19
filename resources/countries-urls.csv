@@ -46,7 +46,7 @@ Democratic Republic of the Congo,DemocraticRepublicoftheCongo,https://africacdc.
 Denmark,Denmark,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts,special dashboard,,,"//*[@id=""top""]/div[2]/section[6]/div[1]/table/tbody/tr[2]/td[2]",,,"""Prover"" bottom line",automated
 Djibouti,Djibouti,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Dominica,Dominica,https://www.facebook.com/SupportRooseveltSkerrit/photos,,image,,,,,,,image
-Dominican Republic ,DominicanRepublic ,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4,,-,,,,,,"Embedded PDF in iframe (?), eventually scrapabable via Selenium?",pdf
+Dominican Republic ,DominicanRepublic,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4,,-,,,,,,"Embedded PDF in iframe (?), eventually scrapabable via Selenium?",pdf
 Ecuador,Ecuador,https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/,,html,,,"//*[@id=""postcontent""]/table/tbody/tr[1]/td[2]/p[1]/strong[1]",,,,automated
 Egypt,Egypt,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 El Salvador,ElSalvador,https://covid19.gob.sv/,,special dashboard,,,"//*[@id=""ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b""]/div[1]/div/div[24]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span",,,"""PRUEBAS COVID19""",automated
@@ -90,7 +90,7 @@ Kenya,Kenya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Kosovo,Kosovo,https://www.facebook.com/IKSHPK,,text post in facebook,,,,,,"Post ""Instituti Kombëtar i Shëndetësisë Publike të Kosovës"" evry day. Value between ""cases"" and ""suspicious persons"".",facebook
 Kuwait,Kuwait,https://twitter.com/KUWAIT_MOH,,image,,,,,,,twitter
 Kyrgyzstan,Kyrgyzstan,http://www.med.kg/ru/informatsii.html,,irrelevant,,,,,,,image
-Lao People's Demoratic Republic,LaoPeoplesDemoraticRepublic,https://www.covid19.gov.la/index.php,,html,,,"//*[@id=""aa-blog-archive""]/div/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[5]/div/div/p[2]",,,,automated
+Lao People's Demoratic Republic,LaoPeoplesDemocraticRepublic,https://www.covid19.gov.la/index.php,,html,,,"//*[@id=""aa-blog-archive""]/div/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[5]/div/div/p[2]",,,,automated
 Latvia,Latvia,https://spkc.maps.arcgis.com/apps/opsdashboard/index.html#/4469c1fb01ed43cea6f20743ee7d5939,,Selenium,,,([ 0-9]+),,,,automated
 Lebanon,Lebanon,https://corona.ministryinfo.gov.lb/,,html,,,"//*[@id=""content""]/div/div[2]/div[1]/div/div[1]/div/div[2]/div/div[10]/div/h1",,,,automated
 Lesotho,Lesotho,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
