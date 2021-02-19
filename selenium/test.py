@@ -400,7 +400,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div").text
     self.driver.close()
 
-  def test_laoPeoplesDemoraticRepublic(self):
+  def test_laoPeoplesDemocraticRepublic(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.covid19.gov.la/index.php")
