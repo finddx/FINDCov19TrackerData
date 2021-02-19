@@ -13,7 +13,7 @@ name: tic
 
 jobs:
   all:
-    if: "contains(toJSON(github.event.commits.*.message), 'Add files via upload')"
+    #if: "contains(toJSON(github.event.commits.*.message), 'Add files via upload')"
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
