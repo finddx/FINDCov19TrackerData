@@ -284,7 +284,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_finland(self):
     self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) > strong").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(3) > strong").text
     self.driver.close()
 
   def test_france(self):
