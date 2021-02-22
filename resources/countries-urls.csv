@@ -77,7 +77,7 @@ Hungary,Hungary,https://koronavirus.gov.hu/#aktualis,,Selenium,,,([ 0-9]+),,,,au
 Iceland,Iceland,https://www.covid.is/tolulegar-upplysingar,,html OR Selenium,,,,,,"Problem there are 3 values to additionate. samples,domestic + samples, border screening 1 + samples, border screening 2",automated
 India,India,https://www.icmr.gov.in/,,Selenium,https://www.icmr.gov.in/pdf/covid/update/ICMR_testing_update_DATE_9AM_IST.pdf,%d%B%Y,"([,0-9]+)",,,,automated
 Indonesia,Indonesia,https://covid19.disiplin.id/,,Selenium,,,([.0-9]+),,,,automated
-Iran,Iran,http://irangov.ir/search?key=Health%20Ministry&title=1,,html_list,,,,,,"""Health Ministry's Updates on COVID-19"" published every day. ",automated
+Iran (Islamic Republic of),Iran,http://irangov.ir/search?key=Health%20Ministry&title=1,,html_list,,,,,,"""Health Ministry's Updates on COVID-19"" published every day. ",automated
 Iraq,Iraq,https://www.facebook.com/MOH.GOV.IQ,,image,,,,,,This table published every day: https://www.facebook.com/MOH.GOV.IQ/photos/3413791365341904 (second value on top),image
 Ireland,Ireland,https://covid19ireland-geohive.hub.arcgis.com/pages/hospitals-icu--testing,,Selenium,,,"([,0-9]+)",,,,automated
 Israel,Israel,https://datadashboard.health.gov.il/COVID-19/general,,irrelevant,,,,,,Info in file to download,not_yet_automated_daily
@@ -90,7 +90,7 @@ Kenya,Kenya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Kosovo,Kosovo,https://www.facebook.com/IKSHPK,,text post in facebook,,,,,,"Post ""Instituti Kombëtar i Shëndetësisë Publike të Kosovës"" evry day. Value between ""cases"" and ""suspicious persons"".",facebook
 Kuwait,Kuwait,https://twitter.com/KUWAIT_MOH,,image,,,,,,,twitter
 Kyrgyzstan,Kyrgyzstan,http://www.med.kg/ru/informatsii.html,,irrelevant,,,,,,,image
-Lao People's Demoratic Republic,LaoPeoplesDemocraticRepublic,https://www.covid19.gov.la/index.php,,html,,,"//*[@id=""aa-blog-archive""]/div/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[5]/div/div/p[2]",,,,automated
+Lao People's Democratic Republic,LaoPeoplesDemocraticRepublic,https://www.covid19.gov.la/index.php,,html,,,"//*[@id=""aa-blog-archive""]/div/div/div/div/div/div[1]/div/div[2]/div[2]/div/div[5]/div/div/p[2]",,,,automated
 Latvia,Latvia,https://spkc.maps.arcgis.com/apps/opsdashboard/index.html#/4469c1fb01ed43cea6f20743ee7d5939,,Selenium,,,([ 0-9]+),,,,automated
 Lebanon,Lebanon,https://corona.ministryinfo.gov.lb/,,html,,,"//*[@id=""content""]/div/div[2]/div[1]/div/div[1]/div/div[2]/div/div[10]/div/h1",,,,automated
 Lesotho,Lesotho,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
@@ -99,7 +99,7 @@ Libya,Libya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Lithuania,Lithuania,https://koronastop.lrv.lt/en/,,html,,,"//*[@id=""w-statistics-in-lithuania""]/div[3]/p[1]/strong[2]",,,,automated
 Luxembourg,Luxembourg,https://msan.gouvernement.lu/fr/graphiques-evolution.html,,special dashboard,,,"//*[@id=""main""]/div/div/div[2]/section[2]/div/div/details[2]/summary/span[1]",,,"""Tests COVID-19"" courbe verte à survoler.",not_yet_automated_daily
 Madagascar,Madagascar,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-China,China,,,irrelevant,,,,,,,without_information
+Mainland China,China,,,irrelevant,,,,,,,without_information
 Malawi,Malawi,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Malaysia,Malaysia,https://www.facebook.com/kementeriankesihatanmalaysia/photos/10157490776386237,,image,,,,,,"Every day there is a similar image and the value is ""Jumlah Individu Disampel""",facebook
 Maldives,Maldives,https://twitter.com/HPA_MV/status/1348675860627419136,,image,,,,,,,twitter
