@@ -325,14 +325,12 @@ jobs:
           Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
           Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
 
-      - name: "[Stage] Combine Selenium and R Test Data"
+      - name: "[Stage] Updating data based on manual files"
         run: |
           # collects R-based, Selenium-based, and manual countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
           Rscript -e "FINDCov19Tracker::get_test_data(days = 8)"
           # calculates countries which still need manual test data scraping
           Rscript -e "FINDCov19Tracker::calc_manual_countries()"
-          # write csv containing all tests of all dates
-          Rscript -e "FINDCov19Tracker::combine_all_tests()"
 
       - name: Commit files
         run: |
@@ -344,10 +342,24 @@ jobs:
           mv *automated-tests.csv automated/merged/
           mv *countries-error.csv issues/
           mv need-manual-processing.csv manual/need-processing/$date-need-manual-processing.csv
-          mv coronavirus_tests_new.csv automated/coronavirus_tests_new.csv
           git add automated/merged/*
           git add issues/*
           git add manual/need-processing/$date-need-manual-processing.csv
+          git commit -m "update run analysis files for $date" || echo "Nothing to update"
+
+      - name: "[Stage] Combine Selenium and R Test Data"
+        run: |
+          # write csv containing all tests of all dates
+          Rscript -e "FINDCov19Tracker::combine_all_tests()"
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config pull.rebase false
+          git pull origin master
+          date=$(date +'%Y-%m-%d')
+          mv coronavirus_tests_new.csv automated/coronavirus_tests_new.csv
           git add automated/coronavirus_tests_new.csv
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
 
