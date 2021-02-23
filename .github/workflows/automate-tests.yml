@@ -5,7 +5,7 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron: "0 20 * * *"
-    - cron: "0 2 * * *"
+    # - cron: "0 2 * * *"
 
 name: "Scrape test data and push"
 
@@ -173,7 +173,7 @@ jobs:
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
           # collects R-based and Selenium-based countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
-          Rscript -e "FINDCov19Tracker::get_test_data()"
+          Rscript -e "FINDCov19Tracker::get_test_data(days = 3)"
 
       - name: Commit files
         run: |
