@@ -382,11 +382,11 @@ jobs:
           git config pull.rebase false
           git pull origin master
           date=$(date +'%Y-%m-%d')
-          mv coronavirus_cases.csv processed/coronavirus_cases.csv
-          mv coronavirus_cases.csv processed/coronavirus_tests.csv
-          mv coronavirus_cases.csv processed/jhu_data.csv
-          mv coronavirus_cases.csv processed/data_all.csv
-          mv coronavirus_cases.csv processed/unit_info.csv
+          mv processed/coronavirus_cases.csv processed/coronavirus_cases.csv
+          mv processed/coronavirus_cases.csv processed/coronavirus_tests.csv
+          mv processed/coronavirus_cases.csv processed/jhu_data.csv
+          mv processed/coronavirus_cases.csv processed/data_all.csv
+          mv processed/coronavirus_cases.csv processed/unit_info.csv
           git add processed/coronavirus_cases.csv
           git add processed/coronavirus_tests.csv
           git add processed/jhu_data.csv
