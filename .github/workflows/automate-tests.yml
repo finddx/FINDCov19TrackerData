@@ -370,9 +370,33 @@ jobs:
           directory: automated/merged
           branch: ${{ github.ref }}
 
-      - name: "[Stage] Before Deploy"
+      - name: "[Stage] Create shiny data"
         run: |
-          Rscript -e "tic::before_deploy()"
+          # Takes `coronavirus_tests_new.csv` and create data for shiny without NA and negative values
+          Rscript -e "FINDCov19Tracker::create_shiny_data()"
 
-      - name: "[Stage] Deploy"
-        run: Rscript -e "tic::deploy()"
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config pull.rebase false
+          git pull origin master
+          date=$(date +'%Y-%m-%d')
+          mv coronavirus_cases.csv processed/coronavirus_cases.csv
+          mv coronavirus_cases.csv processed/coronavirus_tests.csv
+          mv coronavirus_cases.csv processed/jhu_data.csv
+          mv coronavirus_cases.csv processed/data_all.csv
+          mv coronavirus_cases.csv processed/unit_info.csv
+          git add processed/coronavirus_cases.csv
+          git add processed/coronavirus_tests.csv
+          git add processed/jhu_data.csv
+          git add processed/data_all.csv
+          git add processed/unit_info.csv
+          git commit -m "update run analysis files for $date" || echo "Nothing to update"
+
+      - name: Push changes to FINDCov19TrackerData
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: automated/merged
+          branch: ${{ github.ref }}
