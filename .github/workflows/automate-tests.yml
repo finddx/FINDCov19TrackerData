@@ -347,6 +347,13 @@ jobs:
           git add manual/need-processing/$date-need-manual-processing.csv
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
 
+      - name: Push changes to FINDCov19TrackerData
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: automated/merged
+          branch: ${{ github.ref }}
+
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
           # write csv containing all tests of all dates
