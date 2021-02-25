@@ -494,10 +494,10 @@ jobs:
           git pull origin master
           date=$(date +'%Y-%m-%d')
           mv processed/coronavirus_cases.csv processed/coronavirus_cases.csv
-          mv processed/coronavirus_cases.csv processed/coronavirus_tests.csv
-          mv processed/coronavirus_cases.csv processed/jhu_data.csv
-          mv processed/coronavirus_cases.csv processed/data_all.csv
-          mv processed/coronavirus_cases.csv processed/unit_info.csv
+          mv processed/coronavirus_tests.csv processed/coronavirus_tests.csv
+          mv processed/jhu_data.csv processed/jhu_data.csv
+          mv processed/data_all.csv processed/data_all.csv
+          mv processed/unit_info.csv processed/unit_info.csv
           git add processed/coronavirus_cases.csv
           git add processed/coronavirus_tests.csv
           git add processed/jhu_data.csv
