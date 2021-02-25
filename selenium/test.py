@@ -45,7 +45,7 @@ class TestDefaultSuite(unittest.TestCase):
     tma_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary").text
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary")))
     antibody_tests = self.driver.find_element(By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary").text
-    self.vars["tests_cumulative"] = int(pcr_tests.replace(',','')) + int(tma_tests.replace(',','')) + int(antibody_tests.replace(',',''))
+    self.vars["tests_cumulative"] = int(pcr_tests.replace(',','').split("\n")[0]) + int(tma_tests.replace(',','').split("\n")[0]) + int(antibody_tests.replace(',','').split("\n")[0])
     self.driver.close()
 
   def test_antiguaandBarbuda(self):
@@ -210,7 +210,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
     time.sleep(60)
     self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"106fdff4-b841-4389-a4bf-7541e6143abd\"]/div[1]/div/div[29]/div/div/div/div/div/div/div/div/div/h2/div/span/span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"106fdff4-b841-4389-a4bf-7541e6143abd\"]/div[1]/div/div[64]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span").text
     self.driver.close()
 
   def test_croatia(self):
@@ -587,15 +587,15 @@ class TestDefaultSuite(unittest.TestCase):
       self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'tamponi totali eseguiti\')]").text
     self.driver.close()
 
-  def test_saudiArabia(self):
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/5f9cf2cc7c1a43ce8e9b90cda29634be")
-    time.sleep(30)
-    self.driver.switch_to.frame(0)
-    time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember110").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
-    self.driver.close()
+  # def test_saudiArabia(self):
+  #   self.driver.set_page_load_timeout(60)
+  #   self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/5f9cf2cc7c1a43ce8e9b90cda29634be")
+  #   time.sleep(30)
+  #   self.driver.switch_to.frame(0)
+  #   time.sleep(30)
+  #   self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember110").text
+  #   self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
+  #   self.driver.close()
 
   def test_serbia(self):
     self.driver.get("https://covid19.rs/")
