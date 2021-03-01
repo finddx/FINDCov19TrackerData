@@ -54,15 +54,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
   
   def test_albania(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
-    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID19/ Ministria e Shëndetësisë\')]").get_attribute('href')
-    self.driver.get(url)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div//div[3]//div[4]//p[contains(text(), \"Testime totale\")][1]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Testime totale')[-1].strip().split(' ')[0].strip().split('\n')[0]
+    self.driver.get("https://coronavirus.al/statistika/")
+    time.sleep(15)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "teste_gjithesej").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[0]
+    print(self.vars)
     self.driver.close()
     
   def test_armenia(self):
@@ -196,8 +192,9 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_canada(self):
     self.driver.get("https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".numTested")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".numTested").text
+    time.sleep(15)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#keybox8 > div > p.h2 > span").text
+    print(self.vars)
     self.driver.close()
 
   def test_czechia(self):
@@ -396,8 +393,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOTUxMTEwMzItYzM5ZS00MTZjLTkxNmYtYjBjYjUyZGIwNThlIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9&pageName=ReportSection8911066d0a4953dfcbe5")
     time.sleep(30)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div").text
+    print(self.vars)
     self.driver.close()
 
   def test_laoPeoplesDemocraticRepublic(self):
@@ -410,11 +407,10 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_latvia(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://infogram.com/covid-19-izplatiba-latvija-1hzj4ozwvnzo2pw")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(11) .igc-textual-figure > div")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(11) .igc-textual-figure > div").text
+    self.driver.get("https://spkc.maps.arcgis.com/apps/opsdashboard/index.html#/4469c1fb01ed43cea6f20743ee7d5939")
+    time.sleep(10)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember17 strong").text
+    print(self.vars)
     self.driver.close()
 
   def test_lebanon(self):
@@ -425,9 +421,10 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_lithuania(self):
-    self.driver.get("https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(13) > td:nth-child(1) span > span")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(13) > td:nth-child(1) span > span").text
+    self.driver.get("https://koronastop.lrv.lt/en/")
+    self.driver.find_element(By.CSS_SELECTOR, ".stats_footnote > p:nth-child(1)").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "strong:nth-child(2)").text
+    print(self.vars)
     self.driver.close()
 
   def test_malta(self):
@@ -568,6 +565,13 @@ class TestDefaultSuite(unittest.TestCase):
   #   self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'Учреждениями Роспотребнадзора и медицинскими организациями по состоянию на\')]").text
   #   self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('проведено')[1].split('лаборатор')[0]
   #   self.driver.close()
+
+  def test_saintKittsandNevis(self):
+    self.driver.get("https://covid19.gov.kn/stats2.php")
+    time.sleep(5)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(4) > td:nth-child(2)").text
+    print(self.vars)
+    self.driver.close()
 
   def test_saintLucia(self):
     self.driver.get("https://www.covid19response.lc/")
