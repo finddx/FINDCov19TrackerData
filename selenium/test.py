@@ -654,12 +654,12 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.execute_script("x = document.getElementById(\'num9\').textContent; return x;")
     self.driver.close()
 
-  def test_thailand(self):
-    self.driver.get("https://ddc.moph.go.th/viralpneumonia/eng/index.php")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".w3-col:nth-child(1) > .mybg3 > .txt2")))
-    time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".w3-col:nth-child(1) > .mybg3 > .txt2").text
-    self.driver.close()
+  #def test_thailand(self):
+    #self.driver.get("https://ddc.moph.go.th/viralpneumonia/eng/index.php")
+   # WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".w3-col:nth-child(1) > .mybg3 > .txt2")))
+    #time.sleep(10)
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".w3-col:nth-child(1) > .mybg3 > .txt2").text
+    #self.driver.close()
 
   def test_turkey(self):
     self.driver.get("https://covid19.saglik.gov.tr/")
