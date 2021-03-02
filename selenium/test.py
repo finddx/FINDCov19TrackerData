@@ -215,7 +215,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
     try :
-      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirano ')[1].split('osoba')[0]
+      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirana ')[1].split('osoba')[0]
     except IndexError:
       self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas su ukupno testirane ')[1].split('osobe')[0]
     self.driver.close()
