@@ -615,8 +615,8 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_slovakia(self):
     self.driver.get("https://korona.gov.sk/")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#block_5e9990e25ffff .govuk-heading-l")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#block_5e9990e25ffff .govuk-heading-l").text
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#block_603780b691b98 > div > p")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#block_603780b691b98 > div > p").text
     self.driver.close()
 
   def test_slovenia(self):
