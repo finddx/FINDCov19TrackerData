@@ -518,7 +518,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_window_size(1536, 825)
     time.sleep(10)
     self.driver.execute_script("window.scrollTo(0,300)")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".active .counter").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div.nk-wrap > section:nth-child(4) > div > div.status > ul > li.active > div:nth-child(1) > span").text
     self.driver.close()
     
   # web page doesn't open
