@@ -34,7 +34,7 @@ Cape Verde,CapeVerde,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,
 Central African Republic,CentralAfricanRepublic,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Chad,Chad,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Chile,Chile,https://www.gob.cl/coronavirus/cifrasoficiales/,,csv,https://raw.githubusercontent.com/MinCiencia/Datos-COVID19/master/output/producto7/PCR_std.csv,,"sum,numero",,60556,,automated
-Colombia,Colombia,https://www.ins.gov.co/Noticias/Paginas/Coronavirus.aspx,,csv,https://www.datos.gov.co/api/views/8835-5baf/rows.csv?accessType=DOWNLOAD,,"last,Acumuladas",,,,json
+Colombia,Colombia,https://twitter.com/MinSaludCol,,Twitter,https://www.datos.gov.co/api/views/8835-5baf/rows.csv?accessType=DOWNLOAD,,"last,Acumuladas",,,,json
 Comoros,Comoros,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Costa Rica,CostaRica,http://geovision.uned.ac.cr/oges/index.html,,xlsx,,,([0-9]+),,,"Excel-General --> RESUMEN --> ""Mustras Realizadas""",csv
 Cote d'Ivoire,CotedIvoire,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
