@@ -966,9 +966,11 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == -374500.07320329087:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
+              
+      print(self.vars)
 
   def test_cameroon(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
