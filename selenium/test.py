@@ -798,9 +798,11 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == -1386216.3500460347:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
+              
+      print(self.vars)
 
   def test_benin(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
@@ -921,9 +923,11 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == 1377995.3392879416:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
+              
+      print(self.vars)
 
   def test_burundi(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
@@ -2456,9 +2460,11 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == 6115561.0920998855 and idx['geometry']['y'] == y_coord:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
+              
+      print(self.vars)
 
   def test_sierraLeone(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
@@ -2632,6 +2638,8 @@ class TestDefaultSuite(unittest.TestCase):
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
               
+      print(self.vars)
+              
   def test_sudan(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
     continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
@@ -2669,9 +2677,11 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == 3363811.8747603903 and idx['geometry']['y'] == y_coord:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
+              
+      print(self.vars)
 
   def test_theGambia(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
@@ -2882,9 +2892,11 @@ class TestDefaultSuite(unittest.TestCase):
       cont_tests = json.loads(r_tests.content)
       
       for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
+          if idx['geometry']['x'] == 3877973.6486555194 and idx['geometry']['y'] == y_coord:
               self.vars["tests_cumulative"] = idx['attributes']['Tests']
               break
+              
+      print(self.vars)
 
   def test_westernSahara(self):
     self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
