@@ -165,11 +165,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"KPI-01\"]")))
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id="KPI-01"]/div/article/div[1]/div/div/div/article/div[1]/div/div/div/div[1]/div[2]/div/div/div[1]/div/span")))
     time.sleep(30)
-    self.driver.find_element(By.XPATH, "//*[@id=\"KPI-01\"]")
+    self.driver.find_element(By.XPATH, "//*[@id="KPI-01"]/div/article/div[1]/div/div/div/article/div[1]/div/div/div/div[1]/div[2]/div/div/div[1]/div/span")
     time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"KPI-01\"]").text.split('\n')[1]
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id="KPI-01"]/div/article/div[1]/div/div/div/article/div[1]/div/div/div/div[1]/div[2]/div/div/div[1]/div/span").text.split('\n')[1]
     
   def test_brunei(self):
     self.driver.maximize_window()
@@ -185,8 +185,8 @@ class TestDefaultSuite(unittest.TestCase):
   def test_cambodia(self):
     self.driver.get("http://cdcmoh.gov.kh")
     self.driver.set_window_size(1542, 830)
-    self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(7) > strong").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(7) > strong").text
+    self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div > div > div.item.column-1 > div:nth-child(9) > strong").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div > div > div.item.column-1 > div:nth-child(9) > strong").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split(' ')[1]
     self.driver.close()
 
@@ -216,8 +216,12 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
     try :
       self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirana ')[1].split('osoba')[0]
-    except IndexError:
-      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas su ukupno testirane ')[1].split('osobe')[0]
+    except IndexError :
+      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirano ')[1].split('osoba')[0]
+      try :
+        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirana ')[1].split('osoba')[0]
+      except IndexError:
+        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas su ukupno testirane ')[1].split('osobe')[0]
     self.driver.close()
     
   # only new tests daily
@@ -313,8 +317,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://gtmvigilanciacovid.shinyapps.io/3869aac0fb95d6baf2c80f19f2da5f98")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".sidebar-menu")))
     self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) span").click()
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#casosSospechososValueBox h3")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#casosSospechososValueBox h3").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#casosSospechososValueBox > div > div.inner > h3")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#casosSospechososValueBox > div > div.inner > h3").text
     self.driver.close()
 
   def test_hungary(self):
@@ -393,7 +397,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOTUxMTEwMzItYzM5ZS00MTZjLTkxNmYtYjBjYjUyZGIwNThlIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9&pageName=ReportSection8911066d0a4953dfcbe5")
     time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div//div//exploration//div//explore-canvas-modern//div//div[2]//div//div[2]//div[2]//visual-container-repeat//visual-container-modern[21]//transform//div//div[3]//div//visual-modern//div").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id="pvExplorationHost"]/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[21]/transform/div/div[3]/div/visual-modern/div/svg/g[1]/text").text
     print(self.vars)
     self.driver.close()
 
@@ -546,8 +550,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("http://ncov.mohw.go.kr/en/")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "li:nth-child(1) > .misil_r > span")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(1) > .misil_r > span").text
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#header > div.main_container > div.m_t > div:nth-child(2) > div.mt_l > div.m_inspect_status > div > div.misi_l > div > ul > li:nth-child(1) > div.misil_r > span")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#header > div.main_container > div.m_t > div:nth-child(2) > div.mt_l > div.m_inspect_status > div > div.misi_l > div > ul > li:nth-child(1) > div.misil_r > span").text
     self.driver.close()
     
   def test_romania(self):
@@ -609,8 +613,8 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_singapore(self):
     self.driver.get("https://www.moh.gov.sg/covid-19")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 td")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 td").text
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#header > div.main_container > div.m_t > div:nth-child(2) > div.mt_l > div.m_inspect_status > div > div.misi_l > div > ul > li:nth-child(1) > div.misil_r > span")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#header > div.main_container > div.m_t > div:nth-child(2) > div.mt_l > div.m_inspect_status > div > div.misi_l > div > ul > li:nth-child(1) > div.misil_r > span").text
     self.driver.close()
 
   def test_slovakia(self):
