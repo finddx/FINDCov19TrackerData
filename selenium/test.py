@@ -397,7 +397,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOTUxMTEwMzItYzM5ZS00MTZjLTkxNmYtYjBjYjUyZGIwNThlIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9&pageName=ReportSection8911066d0a4953dfcbe5")
     time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id="pvExplorationHost"]/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[21]/transform/div/div[3]/div/visual-modern/div/svg/g[1]/text").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[21]/transform/div/div[3]/div/visual-modern/div/svg/g[1]/text').text
     print(self.vars)
     self.driver.close()
 
