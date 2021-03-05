@@ -165,11 +165,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id="KPI-01"]/div/article/div[1]/div/div/div/article/div[1]/div/div/div/div[1]/div[2]/div/div/div[1]/div/span")))
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, '//*[@id="KPI-01"]/div/article/div[1]/div/div/div/article/div[1]/div/div/div/div[1]/div[2]/div/div/div[1]/div/span')))
     time.sleep(30)
-    self.driver.find_element(By.XPATH, "//*[@id="KPI-01"]/div/article/div[1]/div/div/div/article/div[1]/div/div/div/div[1]/div[2]/div/div/div[1]/div/span")
+    self.driver.find_element(By.XPATH, '//*[@id="KPI-01"]/div/article/div[1]/div/div/div/article/div[1]/div/div/div/div[1]/div[2]/div/div/div[1]/div/span')
     time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id="KPI-01"]/div/article/div[1]/div/div/div/article/div[1]/div/div/div/div[1]/div[2]/div/div/div[1]/div/span").text.split('\n')[1]
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="KPI-01"]/div/article/div[1]/div/div/div/article/div[1]/div/div/div/div[1]/div[2]/div/div/div[1]/div/span').text.split('\n')[1]
     
   def test_brunei(self):
     self.driver.maximize_window()
