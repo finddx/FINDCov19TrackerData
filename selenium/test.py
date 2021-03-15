@@ -714,16 +714,16 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
     self.driver.close()
 
-  def test_venezuela(self):
-    self.driver.get("https://covid19.patria.org.ve/noticia/")
-    url=self.driver.find_element(By.XPATH, "//a[contains(text(),\'lucha contra la COVID-19\')]").get_attribute('href')
-    self.driver.get(url)
-    try:
-        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'se han realizado\')]").text
-        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('realizado')[1].split('prueba')[0]
-    except NoSuchElementException:
-        self.vars["tests_cumulative"] = {}
-    self.driver.close()
+  #def test_venezuela(self):
+    #self.driver.get("https://covid19.patria.org.ve/noticia/")
+    #url=self.driver.find_element(By.XPATH, "//a[contains(text(),\'lucha contra la COVID-19\')]").get_attribute('href')
+    #self.driver.get(url)
+    #try:
+        #self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'se han realizado\')]").text
+        #self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('realizado')[1].split('prueba')[0]
+    #except NoSuchElementException:
+        #self.vars["tests_cumulative"] = {}
+    #self.driver.close()
 
   # Africa web site 
   def test_algeria(self):
