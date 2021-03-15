@@ -208,7 +208,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
     time.sleep(60)
     self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"106fdff4-b841-4389-a4bf-7541e6143abd\"]/div[1]/div/div[64]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[65]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span").text
     self.driver.close()
 
   def test_croatia(self):
@@ -246,6 +246,7 @@ class TestDefaultSuite(unittest.TestCase):
     #self.driver.maximize_window()
     #self.driver.set_page_load_timeout(30)
     #self.driver.get("https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/")
+    #time.sleep(90)
     #WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(1) p:nth-child(1)")))
     #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) strong:nth-child(1)").text
     #self.driver.close()
@@ -261,13 +262,13 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[28]").text
     self.driver.close()
     
-  #def test_estonia(self):
-    #self.driver.maximize_window()
-    #self.driver.set_page_load_timeout(30)
-    #self.driver.get("https://koroonakaart.ee/et")
-    #WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1")))
-    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1").text
-    #self.driver.close()
+  def test_estonia(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(30)
+    self.driver.get("https://koroonakaart.ee/et")
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#statsbar-container > div:nth-child(2) > div:nth-child(4) > h1").text
+    self.driver.close()
 
   def test_faroeIslands(self):
     self.driver.get("https://corona.fo/?_l=en")
@@ -283,11 +284,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('total of')[1].split('lab')[0]
     self.driver.close()
 
-  #def test_finland(self):
-    #self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
-    #time.sleep(10)
-    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(3) > strong").text
-    #self.driver.close()
+  def test_finland(self):
+    self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
+    time.sleep(10)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm > div > div.portlet-content-container > div > div.clearfix.journal-content-article > ul:nth-child(7) > li:nth-child(2) > strong").text
+    self.driver.close()
 
   def test_france(self):
     self.driver.maximize_window()
@@ -714,16 +715,16 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
     self.driver.close()
 
-  #def test_venezuela(self):
-    #self.driver.get("https://covid19.patria.org.ve/noticia/")
-    #url=self.driver.find_element(By.XPATH, "//a[contains(text(),\'lucha contra la COVID-19\')]").get_attribute('href')
-    #self.driver.get(url)
-    #try:
-        #self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'se han realizado\')]").text
-        #self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('realizado')[1].split('prueba')[0]
-    #except NoSuchElementException:
-        #self.vars["tests_cumulative"] = {}
-    #self.driver.close()
+  def test_venezuela(self):
+    self.driver.get("https://covid19.patria.org.ve/noticia/")
+    url=self.driver.find_element(By.XPATH, "//a[contains(text(),\'lucha contra la COVID-19\')]").get_attribute('href')
+    self.driver.get(url)
+    try:
+        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'se han realizado\')]").text
+        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('realizado')[1].split('prueba')[0]
+    except NoSuchElementException:
+        self.vars["tests_cumulative"] = {}
+    self.driver.close()
 
   # Africa web site 
   def test_algeria(self):
