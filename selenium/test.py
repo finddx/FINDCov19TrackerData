@@ -52,6 +52,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://covid19.gov.ag")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".icon-test-done > .case-Number").text
     self.driver.close()
+    print(self.vars)
   
   def test_albania(self):
     self.driver.get("https://coronavirus.al/statistika/")
@@ -241,13 +242,13 @@ class TestDefaultSuite(unittest.TestCase):
         self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(7) tr:nth-child(2) > td:nth-child(2) > span").text
     self.driver.close()
 
-  def test_ecuador(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(1) p:nth-child(1)")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) strong:nth-child(1)").text
-    self.driver.close()
+  #def test_ecuador(self):
+    #self.driver.maximize_window()
+    #self.driver.set_page_load_timeout(30)
+    #self.driver.get("https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/")
+    #WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(1) p:nth-child(1)")))
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) strong:nth-child(1)").text
+    #self.driver.close()
 
   def test_elSalvador(self):
     self.driver.maximize_window()
@@ -260,13 +261,13 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[28]").text
     self.driver.close()
     
-  def test_estonia(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://koroonakaart.ee/et")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1").text
-    self.driver.close()
+  #def test_estonia(self):
+    #self.driver.maximize_window()
+    #self.driver.set_page_load_timeout(30)
+    #self.driver.get("https://koroonakaart.ee/et")
+    #WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1")))
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1").text
+    #self.driver.close()
 
   def test_faroeIslands(self):
     self.driver.get("https://corona.fo/?_l=en")
@@ -282,11 +283,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('total of')[1].split('lab')[0]
     self.driver.close()
 
-  def test_finland(self):
-    self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
-    time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(3) > strong").text
-    self.driver.close()
+  #def test_finland(self):
+    #self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
+    #time.sleep(10)
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(3) > strong").text
+    #self.driver.close()
 
   def test_france(self):
     self.driver.maximize_window()
