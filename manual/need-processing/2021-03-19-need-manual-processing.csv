@@ -1,6 +1,7 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2021-03-19,manually,pdf,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table
 Argentina,NA,0,NA,NA,2021-03-19,manually,NA,https://www.argentina.gob.ar/salud/coronavirus-COVID-19/sala-situacion
+Bangladesh,NA,0,NA,NA,2021-03-19,manually,automated,https://corona.gov.bd/
 Bhutan,NA,0,NA,NA,2021-03-19,manually,image,https://www.facebook.com/MoHBhutan/
 Bolivia,NA,0,NA,NA,2021-03-19,manually,image,https://www.minsalud.gob.bo/
 Brazil,NA,0,NA,NA,2021-03-19,manually,automated,https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html
@@ -13,6 +14,7 @@ Cyprus,NA,0,NA,NA,2021-03-19,manually,not_yet_automated_daily,https://covid19.uc
 Dominica,NA,0,NA,NA,2021-03-19,manually,image,https://www.facebook.com/SupportRooseveltSkerrit/photos
 DominicanRepublic,NA,0,NA,NA,2021-03-19,manually,pdf,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4
 Ecuador,1,-1079566,1,-1079566,2021-03-19,manually,automated,https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/
+ElSalvador,NA,0,NA,NA,2021-03-19,manually,automated,https://covid19.gob.sv/
 FrenchPolynesia,NA,0,NA,NA,2021-03-19,manually,without_information,https://www.presidence.pf/?s=Coronavirus+COVID-19+le+point+sur+la+situation
 Georgia,NA,0,NA,NA,2021-03-19,manually,not_yet_automated_daily,https://stopcov.ge/en/
 Germany,NA,0,NA,NA,2021-03-19,manually,xslx,https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Situationsberichte/Okt_2020/Archiv_Oktober.html
@@ -29,11 +31,10 @@ Kazakhstan,NA,0,NA,NA,2021-03-19,manually,special_dashboard,https://hls.kz/
 Kosovo,NA,0,NA,NA,2021-03-19,manually,facebook,https://www.facebook.com/IKSHPK
 Kuwait,NA,0,NA,NA,2021-03-19,manually,twitter,https://twitter.com/KUWAIT_MOH
 Kyrgyzstan,NA,0,NA,NA,2021-03-19,manually,image,https://www.instagram.com/daryger_sunushu/
-Lithuania,NA,0,NA,NA,2021-03-19,manually,automated,https://koronastop.lrv.lt/en/
+Lithuania,NA,0,NA,NA,2021-03-19,manually,automated,https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika
 Luxembourg,NA,0,NA,NA,2021-03-19,manually,not_yet_automated_daily,https://msan.gouvernement.lu/fr/graphiques-evolution.html
 Malaysia,NA,0,NA,NA,2021-03-19,manually,facebook,https://www.facebook.com/kementeriankesihatanmalaysia/photos/10157490776386237
 Maldives,NA,0,NA,NA,2021-03-19,manually,twitter,https://twitter.com/HPA_MV/status/1348675860627419136
-Malta,24,-772182,24,-772182,2021-03-19,manually,automated,https://timesofmalta.com/articles/view/watch-live-daily-coronavirus-briefing.790073
 Moldova,NA,0,NA,NA,2021-03-19,manually,not_yet_automated_daily,https://msmps.gov.md/?s=cazuri+de+COVID-19
 Montenegro,NA,0,NA,NA,2021-03-19,manually,without_information,https://www.ijzcg.me/me/coronainfocg
 Netherlands,NA,0,NA,NA,2021-03-19,manually,not_yet_automated_weekly,https://www.rivm.nl/en/novel-coronavirus-covid-19/current-information
@@ -55,7 +56,7 @@ Tajikistan,NA,0,NA,NA,2021-03-19,manually,without_information,https://eurasianet
 Thailand,NA,0,NA,NA,2021-03-19,manually,automated,https://ddc.moph.go.th/viralpneumonia/eng/index.php
 TheBahamas,NA,0,NA,NA,2021-03-19,manually,facebook,https://www.facebook.com/MOHBahamas/
 TrinidadandTobago,NA,0,NA,NA,2021-03-19,manually,pdf,http://www.health.gov.tt/sitepages/default.aspx?id=293
-US,NA,0,NA,NA,2021-03-19,manually,automated,https://covidtracking.com/data/#ME
+US,NA,0,NA,NA,2021-03-19,manually,automated,https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6
 Uzbekistan,NA,0,NA,NA,2021-03-19,manually,without_information,https://t.me/koronavirusinfouz/3470
 Venezuela,NA,0,NA,NA,2021-03-19,manually,without_information,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A
 Vietnam,NA,0,NA,NA,2021-03-19,manually,without_information,https://ncov.moh.gov.vn/?fbclid=IwAR1JDjulr5Ni19WcUWqQqugrEN7Ta6HcGEMqEhdgzifWiSGlIxwknKr9VuU
