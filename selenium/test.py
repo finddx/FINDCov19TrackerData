@@ -62,6 +62,14 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
     self.driver.close()
     
+  def test_argentina(self):
+    self.driver.get("https://coronavirus.msal.gov.ar/publico/d/20as/sala-de-situacion-coronavirus-acceso-publico/d/20as/sala-de-situacion-coronavirus-acceso-publico?orgId=3&refresh=15m")
+    time.sleep(60)
+    WebDriverWait(self.driver, 20).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"panel-103\"]/div/div/div[1]/div/div[2]/div/plugin-component/panel-plugin-singlestat/grafana-panel/ng-transclude/div/div/span/span")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"panel-103\"]/div/div/div[1]/div/div[2]/div/plugin-component/panel-plugin-singlestat/grafana-panel/ng-transclude/div/div/span/span").text
+    print(self.vars)
+    self.driver.close()
+    
   def test_armenia(self):
     self.driver.get("https://infogram.com/--1h7j4drmogk92nr")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span")))
