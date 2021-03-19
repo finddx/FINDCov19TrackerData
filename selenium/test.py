@@ -708,12 +708,12 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
     self.driver.close()
     
-  def test_uS(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://covidtracking.com/data#ME")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
-    self.driver.close()
+  #def test_uS(self):
+    #self.driver.maximize_window()
+    #self.driver.set_page_load_timeout(60)
+    #self.driver.get("https://covidtracking.com/data#ME")
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\_2862e > .\\_90f4f:nth-child(2) .\\_91774 .c4015").text
+    #self.driver.close()
 
   def test_venezuela(self):
     self.driver.get("https://covid19.patria.org.ve/noticia/")
