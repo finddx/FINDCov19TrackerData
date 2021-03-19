@@ -96,7 +96,7 @@ Lebanon,Lebanon,https://corona.ministryinfo.gov.lb/,,html,,,"//*[@id=""content""
 Lesotho,Lesotho,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Liberia,Liberia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Libya,Libya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-Lithuania,Lithuania,https://koronastop.lrv.lt/en/,,html,,,"//*[@id=""w-statistics-in-lithuania""]/div[3]/p[1]/strong[2]",,,,automated
+Lithuania,Lithuania,https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika,,html,,,"//*[@id=""w-statistics-in-lithuania""]/div[3]/p[1]/strong[2]",,,,automated
 Luxembourg,Luxembourg,https://msan.gouvernement.lu/fr/graphiques-evolution.html,,special dashboard,,,"//*[@id=""main""]/div/div/div[2]/section[2]/div/div/details[2]/summary/span[1]",,,"""Tests COVID-19"" courbe verte à survoler.",not_yet_automated_daily
 Madagascar,Madagascar,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Mainland China,China,,,irrelevant,,,,,,,without_information
@@ -175,7 +175,7 @@ Ukraine,Ukraine,https://covid19.gov.ua/en/,,html,,,"//*[@id=""content""]/div[1]/
 United Arab Emirates,UnitedArabEmirates,https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx,,Selenium,,,"([,0-9]+)",,,,automated
 United Republic of Tanzania,UnitedRepublicofTanzania,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Uruguay,Uruguay,https://www.gub.uy/sistema-nacional-emergencias/pagina-embebida/visualizador-casos-coronavirus-covid-19-uruguay,https://www.gub.uy/ministerio-salud-publica/comunicacion/noticias/informacion-situacion-sobre-coronavirus-covid-19-uruguay-78,special dashboard,informe-situacion-sobre-coronavirus-covid-19-uruguay-,, se han procesado ([.0-9]+) tests,,,Desde el 13 de marzo se han procesado,automated
-USA,US,https://covidtracking.com/data/#ME,,csv,https://covidtracking.com/api/v1/us/current.csv,,"1,totalTestResults",,,,automated
+USA,US,https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6,,csv,https://covidtracking.com/api/v1/us/current.csv,,"1,totalTestResults",,,,automated
 Uzbekistan,Uzbekistan,https://t.me/koronavirusinfouz/3470,,irrelevant,,,,,,,without_information
 Venezuela,Venezuela,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A,,html_list,,,,,,,without_information
 Vietnam,Vietnam,https://ncov.moh.gov.vn/?fbclid=IwAR1JDjulr5Ni19WcUWqQqugrEN7Ta6HcGEMqEhdgzifWiSGlIxwknKr9VuU,,html_list OR Selenium,,,,,,"Publications in the bottom ""Bản tin cập nhật dịch bệnh Covid-19"". Not every dail but almost. Value after ""thực hiện""",without_information
