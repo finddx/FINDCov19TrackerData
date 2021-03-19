@@ -43,7 +43,7 @@ Cuba,Cuba,http://www.cubadebate.cu/?s=Cuba+reporta,,html_list,cuba-reporta-,, ([
 Cyprus,Cyprus,https://covid19.ucy.ac.cy/,https://www.data.gov.cy/node/4617?language=en,special dashboard,,,,,,Daily tests and not cumulative anymore,not_yet_automated_daily
 Czech Republic,Czechia,https://onemocneni-aktualne.mzcr.cz/covid-19,,html,,,"//*[@id=""count-test""]",,,,automated
 Democratic Republic of the Congo,DemocraticRepublicoftheCongo,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-Denmark,Denmark,https://experience.arcgis.com/experience/aa41b29149f24e20a4007a0c4e13db1d,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts,special dashboard,,,"//*[@id=""top""]/div[2]/section[6]/div[1]/table/tbody/tr[2]/td[2]",,,"""Prover"" bottom line",automated
+Denmark,Denmark,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts,special dashboard,,,"//*[@id=""top""]/div[2]/section[6]/div[1]/table/tbody/tr[2]/td[2]",,,"""Prover"" bottom line",automated
 Djibouti,Djibouti,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Dominica,Dominica,https://www.facebook.com/SupportRooseveltSkerrit/photos,,image,,,,,,,image
 Dominican Republic ,DominicanRepublic,https://www.msp.gob.do/web/?page_id=6948#1586785071781-f0e8c057-f5f4,,-,,,,,,"Embedded PDF in iframe (?), eventually scrapabable via Selenium?",pdf
