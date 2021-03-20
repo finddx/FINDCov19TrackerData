@@ -718,7 +718,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
     self.driver.close()
     
-  def test_us(self):
+  def test_uS(self):
     self.driver.get("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6")
     time.sleep(60)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember123").text
