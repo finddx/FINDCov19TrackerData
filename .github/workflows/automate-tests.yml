@@ -274,7 +274,7 @@ jobs:
           directory: automated/merged
           branch: ${{ github.ref }}
 
-combine-segregated-data:
+  combine-segregated-data:
     needs: run-analysis
     if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), 'manually processed countries') )"
     runs-on: ubuntu-18.04
