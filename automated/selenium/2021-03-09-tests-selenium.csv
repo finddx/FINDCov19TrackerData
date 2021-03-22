@@ -1,139 +1,139 @@
-country,date,tests_cumulative
-Albania,2021-03-09,490642
-Algeria,2021-03-09,230553
-Andorra,2021-03-09,319100
-Angola,2021-03-09,402941
-AntiguaandBarbuda,2021-03-09,13613
-Armenia,2021-03-09,Ընդհանուր թեստեր - 755348
-Australia,2021-03-09,"14,691,576"
-Austria,2021-03-09,17.051.119
-Azerbaijan,2021-03-09,"2,663,151"
-Bahrain,2021-03-09,3210185
-Bangladesh,2021-03-09,4180938
-Barbados,2021-03-09," 130,960 tests."
-Belarus,2021-03-09,5 025 044
-Belgium,2021-03-09,"9,793,185"
-Belize,2021-03-09,"85,900"
-Benin,2021-03-09,514906
-Bermuda,2021-03-09,179210
-BosniaandHerzegovina,2021-03-09,473977
-Botswana,2021-03-09,846715
-Brazil,2021-03-09,
-Brunei,2021-03-09,"107,803 tests"
-Bulgaria,2021-03-09,1 761 628
-BurkinaFaso,2021-03-09,159717
-Burundi,2021-03-09,116794
-Cambodia,2021-03-09,115
-Cameroon,2021-03-09,1048594
-Canada,2021-03-09,"25,276,119"
-CapeVerde,2021-03-09,133887
-CentralAfricanRepublic,2021-03-09,37719
-Chad,2021-03-09,101282
-Chile,2021-03-09,9.819.159
-Comoros,2021-03-09,6227
-Congo,2021-03-09,104366
-CotedIvoire,2021-03-09,443563
-Croatia,2021-03-09,
-Czechia,2021-03-09,5 630 977
-DemocraticRepublicoftheCongo,2021-03-09,127113
-Denmark,2021-03-09,"18,364,726"
-Djibouti,2021-03-09,118477
-Ecuador,2021-03-09,1’037.529
-Egypt,2021-03-09,2423820
-ElSalvador,2021-03-09," 789,516"
-EquatorialGuinea,2021-03-09,101517
-Eritrea,2021-03-09,23693
-Estonia,2021-03-09,19.48 %
-Eswatini,2021-03-09,161445
-Ethiopia,2021-03-09,2184745
-FaroeIslands,2021-03-09,234.051
-Fiji,2021-03-09,
-Finland,2021-03-09,776
+country,date,tests_cumulative,pcr_tests_cum,rapid_test_cum
+Albania,2021-03-09,490642,NA,NA
+Algeria,2021-03-09,230553,NA,NA
+Andorra,2021-03-09,319100,NA,NA
+Angola,2021-03-09,402941,NA,NA
+AntiguaandBarbuda,2021-03-09,13613,NA,NA
+Armenia,2021-03-09,Ընդհանուր թեստեր - 755348,NA,NA
+Australia,2021-03-09,"14,691,576",NA,NA
+Austria,2021-03-09,17.051.119,NA,NA
+Azerbaijan,2021-03-09,"2,663,151",NA,NA
+Bahrain,2021-03-09,3210185,NA,NA
+Bangladesh,2021-03-09,4180938,NA,NA
+Barbados,2021-03-09," 130,960 tests.",NA,NA
+Belarus,2021-03-09,5 025 044,NA,NA
+Belgium,2021-03-09,"9,793,185",NA,NA
+Belize,2021-03-09,"85,900",NA,NA
+Benin,2021-03-09,514906,NA,NA
+Bermuda,2021-03-09,179210,NA,NA
+BosniaandHerzegovina,2021-03-09,473977,NA,NA
+Botswana,2021-03-09,846715,NA,NA
+Brazil,2021-03-09,,NA,NA
+Brunei,2021-03-09,"107,803 tests",NA,NA
+Bulgaria,2021-03-09,1 761 628,NA,NA
+BurkinaFaso,2021-03-09,159717,NA,NA
+Burundi,2021-03-09,116794,NA,NA
+Cambodia,2021-03-09,115,NA,NA
+Cameroon,2021-03-09,1048594,NA,NA
+Canada,2021-03-09,"25,276,119",NA,NA
+CapeVerde,2021-03-09,133887,NA,NA
+CentralAfricanRepublic,2021-03-09,37719,NA,NA
+Chad,2021-03-09,101282,NA,NA
+Chile,2021-03-09,9.819.159,NA,NA
+Comoros,2021-03-09,6227,NA,NA
+Congo,2021-03-09,104366,NA,NA
+CotedIvoire,2021-03-09,443563,NA,NA
+Croatia,2021-03-09,,NA,NA
+Czechia,2021-03-09,5 630 977,NA,NA
+DemocraticRepublicoftheCongo,2021-03-09,127113,NA,NA
+Denmark,2021-03-09,"18,364,726",NA,NA
+Djibouti,2021-03-09,118477,NA,NA
+Ecuador,2021-03-09,1’037.529,NA,NA
+Egypt,2021-03-09,2423820,NA,NA
+ElSalvador,2021-03-09," 789,516",NA,NA
+EquatorialGuinea,2021-03-09,101517,NA,NA
+Eritrea,2021-03-09,23693,NA,NA
+Estonia,2021-03-09,19.48 %,NA,NA
+Eswatini,2021-03-09,161445,NA,NA
+Ethiopia,2021-03-09,2184745,NA,NA
+FaroeIslands,2021-03-09,234.051,NA,NA
+Fiji,2021-03-09,,NA,NA
+Finland,2021-03-09,776,NA,NA
 France,2021-03-09,"55 599 261
-Tests réalisés"
-Gabon,2021-03-09,548775
-Ghana,2021-03-09,921378
-Greece,2021-03-09,ΣΥΝΟΛΟ: 5.638.039
-Greenland,2021-03-09,19.792
-Guatemala,2021-03-09,"953,641"
-Guinea,2021-03-09,363790
-GuineaBissau,2021-03-09,53715
-Hungary,2021-03-09,3 891 778
-Iceland,2021-03-09,282.396
-India,2021-03-09,"22,27,16,796"
-Indonesia,2021-03-09,3.907.273
-Iran,2021-03-09,"11,402,162 "
-Ireland,2021-03-09,"3,656,842"
-Italy,2021-03-09,"42872865,"
-Jordan,2021-03-09,
-Kenya,2021-03-09,1336614
-LaoPeoplesDemocraticRepublic,2021-03-09,"119,288"
-Latvia,2021-03-09,1 547 936
-Lebanon,2021-03-09,"3,180,572"
-Lesotho,2021-03-09,62008
-Liberia,2021-03-09,76815
-Libya,2021-03-09,760124
-Lithuania,2021-03-09,
-Madagascar,2021-03-09,122057
-Malawi,2021-03-09,203890
-Mali,2021-03-09,208187
-Malta,2021-03-09,"733,474"
-Mauritania,2021-03-09,224222
-Mauritius,2021-03-09,301345
-Mexico,2021-03-09,
-Morocco,2021-03-09,5247384
-Mozambique,2021-03-09,442472
-Myanmar,2021-03-09,"2,505,402"
-Namibia,2021-03-09,313949
-Nepal,2021-03-09,2199950
-NewCaledonia,2021-03-09,23 793
-NewZealand,2021-03-09,"1,786,705"
-Niger,2021-03-09,80043
-Nigeria,2021-03-09,1544008
-NorthMacedonia,2021-03-09,"547,599"
-Norway,2021-03-09,"4,019,905"
-OccupiedPalestinianterritory,2021-03-09,"1,245,509"
-Pakistan,2021-03-09,"9,278,613"
-PapuaNewGuinea,2021-03-09,
-Portugal,2021-03-09,"8,404,911"
-Qatar,2021-03-09,1591056
-RepublicofKorea,2021-03-09,"6,902,984"
-Romania,2021-03-09, 6.203.750 
-Rwanda,2021-03-09,1040087
-SaintKittsandNevis,2021-03-09,10355
-SaintLucia,2021-03-09,"33,074"
-SanMarino,2021-03-09,tamponi totali eseguiti sono 45.513.
-SaoTomeandPrincipe,2021-03-09,13396
-Senegal,2021-03-09,408365
-Serbia,2021-03-09,"3,072,096"
-Seychelles,2021-03-09,21504
-SierraLeone,2021-03-09,129243
-Singapore,2021-03-09,
+Tests réalisés",NA,NA
+Gabon,2021-03-09,548775,NA,NA
+Ghana,2021-03-09,921378,NA,NA
+Greece,2021-03-09,ΣΥΝΟΛΟ: 5.638.039,NA,NA
+Greenland,2021-03-09,19.792,NA,NA
+Guatemala,2021-03-09,"953,641",NA,NA
+Guinea,2021-03-09,363790,NA,NA
+GuineaBissau,2021-03-09,53715,NA,NA
+Hungary,2021-03-09,3 891 778,NA,NA
+Iceland,2021-03-09,282.396,NA,NA
+India,2021-03-09,"22,27,16,796",NA,NA
+Indonesia,2021-03-09,3.907.273,NA,NA
+Iran,2021-03-09,"11,402,162 ",NA,NA
+Ireland,2021-03-09,"3,656,842",NA,NA
+Italy,2021-03-09,"42872865,",NA,NA
+Jordan,2021-03-09,,NA,NA
+Kenya,2021-03-09,1336614,NA,NA
+LaoPeoplesDemocraticRepublic,2021-03-09,"119,288",NA,NA
+Latvia,2021-03-09,1 547 936,NA,NA
+Lebanon,2021-03-09,"3,180,572",NA,NA
+Lesotho,2021-03-09,62008,NA,NA
+Liberia,2021-03-09,76815,NA,NA
+Libya,2021-03-09,760124,NA,NA
+Lithuania,2021-03-09,,NA,NA
+Madagascar,2021-03-09,122057,NA,NA
+Malawi,2021-03-09,203890,NA,NA
+Mali,2021-03-09,208187,NA,NA
+Malta,2021-03-09,"733,474",NA,NA
+Mauritania,2021-03-09,224222,NA,NA
+Mauritius,2021-03-09,301345,NA,NA
+Mexico,2021-03-09,,NA,NA
+Morocco,2021-03-09,5247384,NA,NA
+Mozambique,2021-03-09,442472,NA,NA
+Myanmar,2021-03-09,"2,505,402",NA,NA
+Namibia,2021-03-09,313949,NA,NA
+Nepal,2021-03-09,2199950,NA,NA
+NewCaledonia,2021-03-09,23 793,NA,NA
+NewZealand,2021-03-09,"1,786,705",NA,NA
+Niger,2021-03-09,80043,NA,NA
+Nigeria,2021-03-09,1544008,NA,NA
+NorthMacedonia,2021-03-09,"547,599",NA,NA
+Norway,2021-03-09,"4,019,905",NA,NA
+OccupiedPalestinianterritory,2021-03-09,"1,245,509",NA,NA
+Pakistan,2021-03-09,"9,278,613",NA,NA
+PapuaNewGuinea,2021-03-09,,NA,NA
+Portugal,2021-03-09,"8,404,911",NA,NA
+Qatar,2021-03-09,1591056,NA,NA
+RepublicofKorea,2021-03-09,"6,902,984",NA,NA
+Romania,2021-03-09,6.203.750,NA,NA
+Rwanda,2021-03-09,1040087,NA,NA
+SaintKittsandNevis,2021-03-09,10355,NA,NA
+SaintLucia,2021-03-09,"33,074",NA,NA
+SanMarino,2021-03-09,tamponi totali eseguiti sono 45.513.,NA,NA
+SaoTomeandPrincipe,2021-03-09,13396,NA,NA
+Senegal,2021-03-09,408365,NA,NA
+Serbia,2021-03-09,"3,072,096",NA,NA
+Seychelles,2021-03-09,21504,NA,NA
+SierraLeone,2021-03-09,129243,NA,NA
+Singapore,2021-03-09,,NA,NA
 Slovakia,2021-03-09,"vykonaných PCR testov
-Celkovo: 2 137 775"
-Slovenia,2021-03-09,950.222
-Somalia,2021-03-09,84278
-SouthAfrica,2021-03-09,9269122
-SouthSudan,2021-03-09,116018
-Spain,2021-03-09,34.013.521
-SriLanka,2021-03-09,
-Sudan,2021-03-09,231694
-Switzerland,2021-03-09,5 286 832
-Taiwan,2021-03-09,"444,634"
-TheGambia,2021-03-09,48285
-Togo,2021-03-09,245779
-Tunisia,2021-03-09,1008003
-Turkey,2021-03-09,34.403.108
-US,2021-03-09,"363,824,818"
-Uganda,2021-03-09,894547
-Ukraine,2021-03-09,7 154 442
-UnitedArabEmirates,2021-03-09,"Total: 32,641,019"
+Celkovo: 2 137 775",NA,NA
+Slovenia,2021-03-09,950.222,NA,NA
+Somalia,2021-03-09,84278,NA,NA
+SouthAfrica,2021-03-09,9269122,NA,NA
+SouthSudan,2021-03-09,116018,NA,NA
+Spain,2021-03-09,34.013.521,NA,NA
+SriLanka,2021-03-09,,NA,NA
+Sudan,2021-03-09,231694,NA,NA
+Switzerland,2021-03-09,5 286 832,NA,NA
+Taiwan,2021-03-09,"444,634",NA,NA
+TheGambia,2021-03-09,48285,NA,NA
+Togo,2021-03-09,245779,NA,NA
+Tunisia,2021-03-09,1008003,NA,NA
+Turkey,2021-03-09,34.403.108,NA,NA
+US,2021-03-09,"363,824,818",NA,NA
+Uganda,2021-03-09,894547,NA,NA
+Ukraine,2021-03-09,7 154 442,NA,NA
+UnitedArabEmirates,2021-03-09,"Total: 32,641,019",NA,NA
 UnitedKingdom,2021-03-09,"94,863,125
 Value: 94863125 — Abstract information: Cumulative total number of virus tests conducted up to Monday, 8 March 2021.
-Click for additional details."
-UnitedRepublicofTanzania,2021-03-09,3880
-Uruguay,2021-03-09,"1,072,137 Test"
-Venezuela,2021-03-09,{}
-WesternSahara,2021-03-09,171
-Zambia,2021-03-09,1138369
-Zimbabwe,2021-03-09,396292
+Click for additional details.",NA,NA
+UnitedRepublicofTanzania,2021-03-09,3880,NA,NA
+Uruguay,2021-03-09,"1,072,137 Test",NA,NA
+Venezuela,2021-03-09,{},NA,NA
+WesternSahara,2021-03-09,171,NA,NA
+Zambia,2021-03-09,1138369,NA,NA
+Zimbabwe,2021-03-09,396292,NA,NA
