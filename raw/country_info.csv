@@ -13,7 +13,7 @@
 "Armenia","AM","Upper middle","Asia","Samples","Not specified",NA
 "Aruba","AW","High","South America",NA,NA,NA
 "Australia","AU","High","Oceania","Samples","Not specified",NA
-"Austria","AT","High","Europe","Samples","PCR", Drastic testing increase in Jan. due to mass testsing (https://orf.at/stories/3194349/)
+"Austria","AT","High","Europe","Samples","PCR+rapid test", Drastic testing increase in Jan. due to mass testsing (https://orf.at/stories/3194349/)
 "Azerbaijan","AZ","Upper middle","Asia","Not specified","Not specified",NA
 "Bahrain","BH","High","Asia","Not specified","PCR",NA
 "Bangladesh","BD","Lower middle","Asia","Samples","Not specified",NA
@@ -21,7 +21,7 @@
 "Belarus","BY","Upper middle","Europe","Samples","Not specified",NA
 "Belgium","BE","High","Europe","Samples","Not specified",NA
 "Belize","BZ","Upper middle","North America","Samples","Not specified",NA
-"Benin","BJ","Lower middle","Africa","Not specified","Not specified",NA
+"Benin","BJ","Lower middle","Africa","Not specified","Not specified","Until 21/03/2021 data only reflects the number of PCRs. After, the data includes both PCR+rapid tests"
 "Bermuda","BM","High","North America","Not specified","Not specified",NA
 "Bhutan","BT","Lower middle","Asia","Samples","PCR+rapid test",NA
 "Bolivia","BO","Lower middle","South America","People","Not specified",NA
@@ -56,7 +56,7 @@
 "Cuba","CU","Upper middle","North America","Samples","Not specified",NA
 "Curaçao","CW",NA,"South America",NA,NA,NA
 "Cyprus","CY","High","Europe","Samples","PCR+Rapid",NA
-"Czech Republic","CZ","High","Europe","Samples","PCR",NA
+"Czech Republic","CZ","High","Europe","Samples","PCR","Until 21/03/2021 data only reflects the number of PCRs. After, the data includes both PCR+rapid tests"
 "Democratic Republic of the Congo","CD",NA,"Africa","Not specified","Not specified",NA
 "Denmark","DK","High","Europe","Samples","Not specified",NA
 "Djibouti","DJ","Lower middle","Africa","Not specified","Not specified",NA
@@ -181,7 +181,7 @@
 "Republic of Korea","KR",NA,"Asia","Samples","Not specified",NA
 "Republic of Moldova","MD",NA,"Europe",NA,NA,NA
 "Republic of the Congo","CG",NA,"Africa","Not specified","Not specified",NA
-"Romania","RO","High","Europe","Samples","PCR",NA
+"Romania","RO","High","Europe","Samples","PCR","Until 21/03/2021 data only reflects the number of PCRs. After, the data includes both PCR+rapid tests"
 "Russia","RU",NA,"Europe","Samples","Not specified",NA
 "Rwanda","RW","Low","Africa","Not specified","Not specified",NA
 "Saint Kitts and Nevis","KN",NA,"North America","People","Not specified",NA
@@ -199,8 +199,8 @@
 "Sierra Leone","SL","Low","Africa","Not specified","Not specified",NA
 "Singapore","SG","High","Asia","Samples","PCR",NA
 "Sint Maarten","SX",NA,"North America",NA,NA,NA
-"Slovakia","SK",NA,"Europe","Samples","PCR",NA
-"Slovenia","SI","High","Europe","Samples","PCR",NA
+"Slovakia","SK",NA,"Europe","Samples","PCR","Until 21/03/2021 data only reflects the number of PCRs. After, the data includes both PCR+rapid tests"
+"Slovenia","SI","High","Europe","Samples","PCR","Until 21/03/2021 data only reflects the number of PCRs. After, the data includes both PCR+rapid tests"
 "Solomon Islands","SB","Lower middle","Oceania",NA,NA,NA
 "Somalia","SO","Low","Africa","Not specified","Not specified",NA
 "South Africa","ZA","Upper middle","Africa","Samples","Not specified",NA
