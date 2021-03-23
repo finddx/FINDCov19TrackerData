@@ -338,7 +338,7 @@ jobs:
           git config pull.rebase false
           git pull origin master
           date=$(date +'%Y-%m-%d')
-          mv segregated-tests.csv automated/
+          mv segregated_tests.csv automated/
           git add automated/segregated-tests.csv
           git commit -m "update segregated files for $date" || echo "Nothing to update"
 
