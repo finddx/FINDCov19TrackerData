@@ -87,7 +87,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(7) > td:nth-child(11)").text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) > td:nth-child(11)").text
     self.driver.close()
 
   def test_azerbaijan(self):
