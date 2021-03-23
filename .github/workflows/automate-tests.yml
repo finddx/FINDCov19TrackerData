@@ -339,7 +339,7 @@ jobs:
           git pull origin master
           date=$(date +'%Y-%m-%d')
           mv segregated_tests.csv automated/
-          git add automated/segregated-tests.csv
+          git add automated/segregated_tests.csv
           git commit -m "update segregated files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
