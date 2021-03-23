@@ -216,6 +216,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div > div > div.item.column-1 > div:nth-child(9) > strong").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div > div > div.item.column-1 > div:nth-child(9) > strong").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split(' ')[1]
+    print(self.vars)
     self.driver.close()
 
   def test_canada(self):
@@ -431,7 +432,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOTUxMTEwMzItYzM5ZS00MTZjLTkxNmYtYjBjYjUyZGIwNThlIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9&pageName=ReportSection8911066d0a4953dfcbe5")
     time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]/div/div/exploration/div/explore-canvas-modern/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container-modern[21]/transform/div/div[3]/div/visual-modern/div/svg/g[1]/text').text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
     print(self.vars)
     self.driver.close()
 
@@ -459,9 +461,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_lithuania(self):
-    self.driver.get("https://koronastop.lrv.lt/en/")
-    self.driver.find_element(By.CSS_SELECTOR, ".stats_footnote > p:nth-child(1)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "strong:nth-child(2)").text
+    self.driver.get("https://e.infogram.com/57e5b447-c2ca-40da-aedb-cbf97df68a8e?parent_url=https%3A%2F%2Fosp.stat.gov.lt%2Fpraejusios-paros-covid-19-statistika&src=embed#async_embed")
+    time.sleep(10)
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.hNrBLi > div > div:nth-child(22) > div > div > div > div > div > table > tbody > tr:nth-child(7) > td:nth-child(1) > span").text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.hNrBLi > div > div:nth-child(22) > div > div > div > div > div > table > tbody > tr:nth-child(8) > td:nth-child(1) > span").text
+    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print(self.vars)
     self.driver.close()
 
@@ -641,15 +645,18 @@ class TestDefaultSuite(unittest.TestCase):
       self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'tamponi totali eseguiti\')]").text
     self.driver.close()
 
-  # def test_saudiArabia(self):
-  #   self.driver.set_page_load_timeout(60)
-  #   self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/5f9cf2cc7c1a43ce8e9b90cda29634be")
-  #   time.sleep(30)
-  #   self.driver.switch_to.frame(0)
-  #   time.sleep(30)
-  #   self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember110").text
-  #   self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
-  #   self.driver.close()
+  #def test_saudiArabia(self):
+  #  self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/1de735e94027408ca073a017295b98b3")
+  #  time.sleep(15)
+  #  self.driver.find_element(By.ID, "ember29").click()
+  #  self.driver.find_element(By.ID, "ember40").click()
+  #  self.driver.switch_to.frame(2)
+  #  self.driver.find_element(By.ID, "ember102").click()
+  #  self.driver.find_element(By.ID, "ember110").click()
+  #  self.driver.find_element(By.ID, "ember175").click()
+  #  self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "ember175").text
+  #  print(self.vars)
+  #  self.driver.close()
 
   def test_serbia(self):
     self.driver.get("https://covid19.rs/")
