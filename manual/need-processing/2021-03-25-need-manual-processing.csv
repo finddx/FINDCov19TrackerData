@@ -1,8 +1,9 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2021-03-25,manually,pdf,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table
+Barbados,NA,0,NA,NA,2021-03-25,manually,automated,https://gisbarbados.gov.bb/blog/covid-19-situation-dashboard-january-05-2021/
+Benin,NA,0,NA,NA,2021-03-25,manually,automated,https://africacdc.org/covid-19/
 Bhutan,NA,0,NA,NA,2021-03-25,manually,image,https://www.facebook.com/MoHBhutan/
 Bolivia,NA,0,NA,NA,2021-03-25,manually,image,https://www.minsalud.gob.bo/
-Brazil,NA,0,NA,NA,2021-03-25,manually,automated,https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html
 Brunei,NA,0,NA,NA,2021-03-25,manually,automated,www.moh.gov.bn/Lists/Latest%20news/NewDispForm.aspx?ID=504&Source=http%3A%2F%2Fwww%2Emoh%2Egov%2Ebn%2FLists%2FLatest%2520news%2FAllItems%2Easpx&ContentTypeId=0x0104009A3003A09F8D6E42981D262E322516A2
 China,NA,0,NA,NA,2021-03-25,manually,without_information,NA
 Colombia,NA,0,NA,NA,2021-03-25,manually,json,https://twitter.com/MinSaludCol
@@ -20,7 +21,6 @@ Grenada,NA,0,NA,NA,2021-03-25,manually,facebook,https://web.facebook.com/HealthG
 Guyana,NA,0,NA,NA,2021-03-25,manually,image,https://www.health.gov.gy/index.php/component/k2/item/354-guyana-covid-19-dashboard
 Honduras,NA,0,NA,NA,2021-03-25,manually,image,http://www.desastres.hn/COVID-19/COVID-19.png
 HongKong,NA,0,NA,NA,2021-03-25,manually,pdf,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf
-India,NA,0,NA,NA,2021-03-25,manually,automated,https://www.icmr.gov.in/
 Iraq,NA,0,NA,NA,2021-03-25,manually,image,https://www.facebook.com/MOH.GOV.IQ
 Israel,NA,0,NA,NA,2021-03-25,manually,not_yet_automated_daily,https://datadashboard.health.gov.il/COVID-19/general
 Jamaica,NA,0,NA,NA,2021-03-25,manually,automated,https://www.moh.gov.jm/?s=COVID-19+Clinical+Management+Summary
@@ -39,7 +39,6 @@ Netherlands,NA,0,NA,NA,2021-03-25,manually,not_yet_automated_weekly,https://www.
 NewCaledonia,NA,0,NA,NA,2021-03-25,manually,automated,https://covid19.nc/point-de-situation-en-nouvelle-caledonie/
 Oman,NA,0,NA,NA,2021-03-25,manually,twitter,https://twitter.com/OmanVSCovid19
 Panama,NA,0,NA,NA,2021-03-25,manually,twitter,https://twitter.com/MINSAPma/status/1325931093804113925/photo/1
-PapuaNewGuinea,NA,0,NA,NA,2021-03-25,manually,problems_webpage,https://covid19.info.gov.pg/
 Paraguay,NA,0,NA,NA,2021-03-25,manually,special_dashboard,https://www.mspbs.gov.py/reporte-covid19.html
 Peru,NA,0,NA,NA,2021-03-25,manually,xslx,https://covid19.minsa.gob.pe/sala_situacional.asp
 Philippines,NA,0,NA,NA,2021-03-25,manually,special_dashboard,https://www.doh.gov.ph/covid19tracker
@@ -55,5 +54,5 @@ Thailand,NA,0,NA,NA,2021-03-25,manually,automated,https://ddc.moph.go.th/viralpn
 TheBahamas,NA,0,NA,NA,2021-03-25,manually,facebook,https://www.facebook.com/MOHBahamas/
 TrinidadandTobago,NA,0,NA,NA,2021-03-25,manually,pdf,http://www.health.gov.tt/sitepages/default.aspx?id=293
 Uzbekistan,NA,0,NA,NA,2021-03-25,manually,without_information,https://t.me/koronavirusinfouz/3470
-Venezuela,NA,0,NA,NA,2021-03-25,manually,without_information,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A
+Venezuela,3,-3075457,3,-3075457,2021-03-25,manually,without_information,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A
 Vietnam,NA,0,NA,NA,2021-03-25,manually,without_information,https://ncov.moh.gov.vn/?fbclid=IwAR1JDjulr5Ni19WcUWqQqugrEN7Ta6HcGEMqEhdgzifWiSGlIxwknKr9VuU
