@@ -1,8 +1,9 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2021-03-25,NA,NA,NA,NA,fetch
+Barbados,2021-03-25,NA,NA,NA,NA,selenium
+Benin,2021-03-25,NA,NA,NA,NA,selenium
 Bhutan,2021-03-25,NA,NA,NA,NA,NA
 Bolivia,2021-03-25,NA,NA,NA,NA,NA
-Brazil,2021-03-25,NA,NA,NA,NA,selenium
 Brunei,2021-03-25,NA,NA,NA,NA,selenium
 China,2021-03-25,NA,NA,NA,NA,NA
 Colombia,2021-03-25,NA,NA,NA,NA,NA
@@ -20,7 +21,6 @@ Grenada,2021-03-25,NA,NA,NA,NA,NA
 Guyana,2021-03-25,NA,NA,NA,NA,NA
 Honduras,2021-03-25,NA,NA,NA,NA,NA
 HongKong,2021-03-25,NA,NA,NA,NA,NA
-India,2021-03-25,NA,NA,NA,NA,selenium
 Iraq,2021-03-25,NA,NA,NA,NA,NA
 Israel,2021-03-25,NA,NA,NA,NA,NA
 Jamaica,2021-03-25,NA,NA,NA,NA,NA
@@ -39,7 +39,6 @@ Netherlands,2021-03-25,NA,NA,NA,NA,NA
 NewCaledonia,2021-03-25,NA,NA,NA,NA,selenium
 Oman,2021-03-25,NA,NA,NA,NA,NA
 Panama,2021-03-25,NA,NA,NA,NA,NA
-PapuaNewGuinea,2021-03-25,NA,NA,NA,NA,selenium
 Paraguay,2021-03-25,NA,NA,NA,NA,NA
 Peru,2021-03-25,NA,NA,NA,NA,selenium
 Philippines,2021-03-25,NA,NA,NA,NA,NA
@@ -55,5 +54,5 @@ Thailand,2021-03-25,NA,NA,NA,NA,NA
 TheBahamas,2021-03-25,NA,NA,NA,NA,NA
 TrinidadandTobago,2021-03-25,NA,NA,NA,NA,NA
 Uzbekistan,2021-03-25,NA,NA,NA,NA,NA
-Venezuela,2021-03-25,NA,NA,NA,NA,selenium
+Venezuela,2021-03-25,3,-3075457,3,-3075457,selenium
 Vietnam,2021-03-25,NA,NA,NA,NA,NA
