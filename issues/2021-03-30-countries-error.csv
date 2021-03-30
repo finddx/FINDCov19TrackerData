@@ -1,6 +1,5 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2021-03-30,NA,NA,NA,NA,fetch
-Argentina,2021-03-30,NA,NA,NA,NA,selenium
 Bangladesh,2021-03-30,NA,NA,NA,NA,selenium
 Barbados,2021-03-30,NA,NA,NA,NA,selenium
 Bhutan,2021-03-30,NA,NA,NA,NA,NA
@@ -27,7 +26,6 @@ Iraq,2021-03-30,NA,NA,NA,NA,NA
 Israel,2021-03-30,NA,NA,NA,NA,NA
 Jamaica,2021-03-30,NA,NA,NA,NA,NA
 Japan,2021-03-30,NA,NA,NA,NA,NA
-Jordan,2021-03-30,NA,NA,NA,NA,selenium
 Kazakhstan,2021-03-30,NA,NA,NA,NA,NA
 Kosovo,2021-03-30,NA,NA,NA,NA,NA
 Kuwait,2021-03-30,NA,NA,NA,NA,NA
@@ -43,7 +41,7 @@ Oman,2021-03-30,NA,NA,NA,NA,NA
 Pakistan,2021-03-30,NA,NA,NA,NA,selenium
 Panama,2021-03-30,NA,NA,NA,NA,NA
 Paraguay,2021-03-30,NA,NA,NA,NA,NA
-Peru,2021-03-30,NA,NA,NA,NA,selenium
+Peru,2021-03-30,1294786,-7655245,1294786,-7655245,selenium
 Philippines,2021-03-30,NA,NA,NA,NA,NA
 Poland,2021-03-30,NA,NA,NA,NA,NA
 Russia,2021-03-30,NA,NA,NA,NA,NA
@@ -57,4 +55,5 @@ Thailand,2021-03-30,NA,NA,NA,NA,NA
 TheBahamas,2021-03-30,NA,NA,NA,NA,NA
 TrinidadandTobago,2021-03-30,NA,NA,NA,NA,NA
 Uzbekistan,2021-03-30,NA,NA,NA,NA,NA
+Venezuela,2021-03-30,3,-3075457,3,-3075457,selenium
 Vietnam,2021-03-30,NA,NA,NA,NA,NA
