@@ -793,2265 +793,598 @@ class TestDefaultSuite(unittest.TestCase):
 
   # Africa web site 
   def test_algeria(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Algeria':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Algeria':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Algeria":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_angola(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Angola':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Angola':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == -1386216.3500460347:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
-              
-      print(self.vars)
-
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Angola":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
+    
   def test_botswana(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Botswana':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Botswana':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Botswana":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_burkinaFaso(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Burkina Faso':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Burkina Faso':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == 1377995.3392879416:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
-              
-      print(self.vars)
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Burkina Faso":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_burundi(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Burundi':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Burundi':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == -374500.07320329087:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
-              
-      print(self.vars)
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Burundi":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_cameroon(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Cameroon':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Cameroon':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == 636719.8409593389:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Cameroon":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_capeVerde(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Cabo Verde':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Cabo Verde':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Cabo Verde":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_centralAfricanRepublic(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Central African Republic':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Central African Republic':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Central African Republic":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_chad(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Chad':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Chad':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Chad":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_comoros(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'Comoros':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Comoros':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Comoros":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_cotedIvoire(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Cote d'Ivoire":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == "Cote d'Ivoire":
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Cote d'Ivoire":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_democraticRepublicoftheCongo(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Democratic Republic of the Congo":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Democratic Republic of the Congo':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Democratic Republic of the Congo":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_djibouti(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Djibouti":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Djibouti':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Djibouti":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_egypt(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Egypt":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Egypt':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Egypt":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_equatorialGuinea(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Equatorial Guinea":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Equitorial Guinea':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == 1150559.2950174978 and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Equatorial Guinea":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_eritrea(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Eritrea":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Eritrea':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Eritrea":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_eswatini(self):
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Eswatini":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Eswatini ':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Eswatini ":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_ethiopia(self):
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Ethiopia":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Ethiopia':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Ethiopia":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_gabon(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Gabon":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Gabon':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Gabon":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_ghana(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Ghana":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Ghana':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Ghana":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_guinea(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Guinea":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Guinea':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Guinea":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_guineaBissau(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Guinea Bissau":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Guinea Bissau':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Guinea-Bissau":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_kenya(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Kenya":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Kenya':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Kenya":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_lesotho(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    action = ActionChains(self.driver)
-    action.click_and_hold(on_element = all_countries[12])
-    action.move_by_offset(0, 300)
-    action.perform()
-    action.release(on_element = all_countries[12]) 
-    action.perform()
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Lesotho":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Lesotho':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == 3142962.0200298727 and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Lesotho":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_liberia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Liberia":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Liberia':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Liberia":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_libya(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Libya":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Libya':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Libya":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_madagascar(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Madagascar":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Madagascar':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Madagascar":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_malawi(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Malawi":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Malawi':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == 3818539.9276181106 and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Malawi":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_mali(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Mali":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Mali':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Mali":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_mauritania(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Mauritania":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Mauritania':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Mauritania":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_mauritius(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Mauritius":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Mauritius':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Mauritius":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
               
   def test_morocco(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    action = ActionChains(self.driver)
-    action.click_and_hold(on_element = all_countries[12])
-    action.move_by_offset(0, -300)
-    action.perform()
-    action.release(on_element = all_countries[1]) 
-    action.perform()
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Morocco":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Morocco':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Morocco":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_mozambique(self):
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Mozambique":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Mozambique':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Mozambique":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_namibia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Namibia":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Namibia':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == -2542072.466186072:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Namibia":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_niger(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Niger":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Niger':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Niger":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_nigeria(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Nigeria":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Nigeria':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Nigeria":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_congo(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Republic of the Congo":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Repulic of the Congo':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Congo Republic":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_rwanda(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Rwanda":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Rwanda':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Rwanda":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_saoTomeandPrincipe(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Sao Tome and Principe":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Sao Tome and Principe':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Sao Tome and Principe":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_senegal(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Senegal":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Senegal':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Senegal":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_seychelles(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Seychelles":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Seychelles':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == 6115561.0920998855 and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
-              
-      print(self.vars)
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Seychelles":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_sierraLeone(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Sierra Leone":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Sierra Leone':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Sierra Leone":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_somalia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Somalia":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Somalia':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Somalia":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_southAfrica(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    action = ActionChains(self.driver)
-    action.click_and_hold(on_element = all_countries[12])
-    action.move_by_offset(0, 300)
-    action.perform()
-    action.release(on_element = all_countries[12]) 
-    action.perform()
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == 'South Africa':
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'South Africa':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "South Africa":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_southSudan(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "South Sudan":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'South Sudan':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
-              
-      print(self.vars)
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "South Sudan":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
               
   def test_sudan(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Sudan":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Sudan':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == 3363811.8747603903 and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
-              
-      print(self.vars)
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Sudan":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_theGambia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Gambia":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Gambia':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Gambia":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_togo(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Togo":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Togo':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Togo":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_tunisia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    action = ActionChains(self.driver)
-    action.click_and_hold(on_element = all_countries[12])
-    action.move_by_offset(0, -300)
-    action.perform()
-    action.release(on_element = all_countries[1]) 
-    action.perform()
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Tunisia":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Tunisia':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Tunisia":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_uganda(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Uganda":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Uganda':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Uganda":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_unitedRepublicofTanzania(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Tanzania":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Tanzania':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == 3877973.6486555194 and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
-              
-      print(self.vars)
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Tanzania":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_westernSahara(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Western Sahara":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Western Sahara':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Sahrawi Republic":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_zambia(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Zambia":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Zambia':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Zambia":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
   def test_zimbabwe(self):
-    self.driver.get("https://africacdc.maps.arcgis.com/apps/opsdashboard/index.html#/9d8d4add4dcb456997fd83607b5d0c7c")
-    continent = WebDriverWait(self.driver, 40).until(expected_conditions.presence_of_element_located((By.ID, "Dashboard_1day_Sht1_5411_layer")))
-    all_countries = self.driver.find_elements_by_tag_name('circle')
-    final_tests = ""
-    for country in all_countries:
-        try:
-            country.click()
-            temp_name = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > td:nth-child(2)").text
-            if temp_name == "Zimbabwe":
-                final_tests = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) .esriNumericValue").text
-                break
-            else:
-                self.driver.find_element_by_id('esri.Map_0_gc').click()
-        except:
-            pass
-
-    self.vars["tests_cumulative"] = final_tests
-    self.driver.close()
-    self.driver.quit()
-    # When dahsboard doesn't have country names, the json from the arcgis API is used
-    if self.vars["tests_cumulative"]=="":
-      url_coord = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/NEW_Dashboard/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_coord = requests.get(url_coord)
-      cont_coord = json.loads(r_coord.content)
-      
-      for idx in cont_coord['features']:
-         if idx['attributes']['Country'] == 'Zimbabwe':
-             x_coord = idx['geometry']['x']
-             y_coord = idx['geometry']['y']
-             break
-      
-      url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/Dashboard_1day_Sht1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
-      r_tests = requests.get(url_tests)
-      cont_tests = json.loads(r_tests.content)
-      
-      for idx in cont_tests['features']:
-          if idx['geometry']['x'] == x_coord and idx['geometry']['y'] == y_coord:
-              self.vars["tests_cumulative"] = idx['attributes']['Tests']
-              break
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Zimbabwe":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests']
+          break
+    print(self.vars)
 
 
 
