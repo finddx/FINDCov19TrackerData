@@ -378,12 +378,12 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-12:nth-child(1) > .single-cool-fact h2").text
     self.driver.close()
 
-  def test_indonesia(self):
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://covid19.disiplin.id")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)").text
-    self.driver.close()
+  #def test_indonesia(self):
+    #self.driver.set_page_load_timeout(60)
+    #self.driver.get("https://covid19.disiplin.id")
+    #WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)")))
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)").text
+    #self.driver.close()
 
   def test_iran(self):
     self.driver.get("http://irangov.ir/search?key=Health%20Ministry&title=1")
