@@ -472,7 +472,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_malta(self):
     self.driver.get("https://geosys-mt.maps.arcgis.com/apps/opsdashboard/index.html#/8f64954974744d6fb137a26e097d97d2")
     time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember307 > svg > g.responsive-text-label > svg > text").text 
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember317 > svg > g.responsive-text-label > svg > text").text 
     self.driver.close()
 
   def test_mexico(self):
