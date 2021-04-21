@@ -184,7 +184,6 @@ jobs:
           date=$(date +'%Y-%m-%d')
           mv *automated-tests.csv automated/merged/
           mv *countries-error.csv issues/
-          mv all-countries-error.csv issues/
           git add automated/merged/*
           git add issues/*
           git commit -m "update files for $date" || echo "Nothing to update"
@@ -493,7 +492,6 @@ jobs:
           date=$(date +'%Y-%m-%d')
           mv *automated-tests.csv automated/merged/
           mv *countries-error.csv issues/
-          mv all-countries-error.csv issues/
           git add automated/merged/*
           git add issues/*
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
