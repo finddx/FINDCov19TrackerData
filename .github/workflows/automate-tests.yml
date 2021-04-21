@@ -173,7 +173,7 @@ jobs:
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
           # collects R-based and Selenium-based countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
-          Rscript -e "FINDCov19Tracker::get_test_data(days = 60)"
+          Rscript -e "FINDCov19Tracker::get_test_data(days = 70)"
 
       - name: Commit files
         run: |
@@ -184,6 +184,7 @@ jobs:
           date=$(date +'%Y-%m-%d')
           mv *automated-tests.csv automated/merged/
           mv *countries-error.csv issues/
+          mv all-countries-error.csv issues/
           git add automated/merged/*
           git add issues/*
           git commit -m "update files for $date" || echo "Nothing to update"
@@ -481,7 +482,7 @@ jobs:
       - name: "[Stage] Updating data based on manual files"
         run: |
           # collects R-based, Selenium-based, and manual countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
-          Rscript -e "FINDCov19Tracker::get_test_data(days = 60)"
+          Rscript -e "FINDCov19Tracker::get_test_data(days = 70)"
 
       - name: Commit files
         run: |
@@ -492,6 +493,7 @@ jobs:
           date=$(date +'%Y-%m-%d')
           mv *automated-tests.csv automated/merged/
           mv *countries-error.csv issues/
+          mv all-countries-error.csv issues/
           git add automated/merged/*
           git add issues/*
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
