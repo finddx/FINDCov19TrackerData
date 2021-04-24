@@ -1,10 +1,12 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2021-04-23,NA,NA,NA,NA,fetch
 Afghanistan,2021-04-24,NA,NA,NA,NA,fetch
+Azerbaijan,2021-04-24,NA,NA,NA,NA,selenium
 Bangladesh,2021-04-23,NA,NA,NA,NA,selenium
 Bangladesh,2021-04-24,NA,NA,NA,NA,selenium
 Barbados,2021-04-23,NA,NA,NA,NA,selenium
 Barbados,2021-04-24,NA,NA,NA,NA,selenium
+Belize,2021-04-24,110963,-1318,110963,-1318,selenium
 Bhutan,2021-04-23,NA,NA,NA,NA,NA
 Bhutan,2021-04-24,NA,NA,NA,NA,NA
 Bolivia,2021-04-23,NA,NA,NA,NA,NA
@@ -69,7 +71,6 @@ Jamaica,2021-04-23,NA,NA,NA,NA,NA
 Jamaica,2021-04-24,NA,NA,NA,NA,NA
 Japan,2021-04-23,NA,NA,NA,NA,NA
 Japan,2021-04-24,NA,NA,NA,NA,NA
-Jordan,2021-04-24,NA,NA,NA,NA,selenium
 Kazakhstan,2021-04-23,NA,NA,NA,NA,NA
 Kazakhstan,2021-04-24,NA,NA,NA,NA,NA
 Kosovo,2021-04-23,NA,NA,NA,NA,NA
@@ -107,14 +108,12 @@ PapuaNewGuinea,2021-04-24,NA,NA,NA,NA,selenium
 Paraguay,2021-04-23,NA,NA,NA,NA,NA
 Paraguay,2021-04-24,NA,NA,NA,NA,NA
 Peru,2021-04-23,1294786,-9229633,1294786,-9229633,selenium
-Peru,2021-04-24,NA,NA,NA,NA,selenium
 Philippines,2021-04-23,NA,NA,NA,NA,NA
 Philippines,2021-04-24,NA,NA,NA,NA,NA
 Poland,2021-04-23,NA,NA,NA,NA,NA
 Poland,2021-04-24,NA,NA,NA,NA,NA
 Portugal,2021-04-23,NA,NA,NA,NA,selenium
 Portugal,2021-04-24,NA,NA,NA,NA,selenium
-RepublicofKorea,2021-04-24,NA,NA,NA,NA,selenium
 Romania,2021-04-23,NA,NA,NA,NA,selenium
 Romania,2021-04-24,NA,NA,NA,NA,selenium
 Russia,2021-04-23,NA,NA,NA,NA,NA
