@@ -427,7 +427,7 @@ jobs:
           directory: processed
           branch: ${{ github.ref }}
 
-  update-dates:
+  last-update-countries:
     needs: shiny-data
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
     runs-on: ubuntu-18.04
