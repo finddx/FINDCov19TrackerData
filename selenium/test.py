@@ -291,8 +291,8 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(30)
     WebDriverWait(self.driver, 30).until(expected_conditions.frame_to_be_available_and_switch_to_it(0))
     self.driver.execute_script("window.scrollTo(0,300)")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[1]//div//div[28]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[28]").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[1]//div//div[39]")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[39]").text
     print(self.vars)
     self.driver.close()
     
