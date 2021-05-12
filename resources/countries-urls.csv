@@ -76,7 +76,7 @@ Hong Kong,HongKong,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testi
 Hungary,Hungary,https://koronavirus.gov.hu/#aktualis,,Selenium,,,([ 0-9]+),,,,automated
 Iceland,Iceland,https://www.covid.is/tolulegar-upplysingar,,html OR Selenium,,,,,,"Problem there are 3 values to additionate. samples,domestic + samples, border screening 1 + samples, border screening 2",automated
 India,India,https://www.icmr.gov.in/,,Selenium,https://www.icmr.gov.in/pdf/covid/update/ICMR_testing_update_DATE_9AM_IST.pdf,%d%B%Y,"([,0-9]+)",,,,automated
-Indonesia,Indonesia,https://twitter.com/bnpb_indonesia?lang=en,https://covid19.disiplin.id/,Selenium,,,([.0-9]+),,,,automated
+Indonesia,Indonesia,https://covid19.go.id/peta-sebaran,https://covid19.disiplin.id/,Selenium,,,([.0-9]+),,,,automated
 Iran (Islamic Republic of),Iran,http://irangov.ir/search?key=Health%20Ministry&title=1,,html_list,,,,,,"""Health Ministry's Updates on COVID-19"" published every day. ",automated
 Iraq,Iraq,https://www.facebook.com/MOH.GOV.IQ,,image,,,,,,This table published every day: https://www.facebook.com/MOH.GOV.IQ/photos/3413791365341904 (second value on top),image
 Ireland,Ireland,https://covid19ireland-geohive.hub.arcgis.com/pages/hospitals-icu--testing,,Selenium,,,"([,0-9]+)",,,,automated
