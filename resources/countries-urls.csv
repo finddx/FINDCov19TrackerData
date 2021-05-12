@@ -1,5 +1,5 @@
 country,jhu_ID,source,alternative link,type,data_url,date_format,xpath_cumul,xpath_new,backlog,comment,status
-Afghanistan,Afghanistan,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table,,pdf_list,operational_sitrep_covid|daily_brief_covid|strategic_situation_report|strategic_sitrep,,(?<=map)(.*)(?= people out of),,,,pdf
+Afghanistan,Afghanistan,http://covid.moph-dw.org/#/,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table,pdf_list,operational_sitrep_covid|daily_brief_covid|strategic_situation_report|strategic_sitrep,,(?<=map)(.*)(?= people out of),,,,pdf
 Albania,Albania,https://new.shendetesia.gov.al/?s=COVID19%2F+Ministria+e+Sh%C3%ABndet%C3%ABsis%C3%AB%3A,,html_list,covid19-ministria-e-shendetesise,%d/%m/%Y,Testime totale ([.0-9]+),,,,automated
 Algeria,Algeria,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Andorra,Andorra,https://www.govern.ad/covid19/en/,,,,,,,,,automated
