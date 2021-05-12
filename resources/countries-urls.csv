@@ -16,7 +16,7 @@ Barbados,Barbados,https://gisbarbados.gov.bb/blog/covid-19-situation-dashboard-j
 Belarus,Belarus,https://t.me/s/minzdravbelarus,,Telegram post,"Every day a post. Value between ""Всего в стране проведено"" and ""тестов"". Problem is that they use ""млн."" for million and  ""тыс."" for thousand.",,Всего проведено ([ 0-9]+) тестов,,,"There is not every day a publication. Publi title starting with ""В Беларуси на"". Info is between ""Всего проведено"" and ""теста."". Use of ""млн."" and ""млн."" for million and thousand.",automated
 Belgium,Belgium,https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-4812-848c-0369173148ab/page/cUWaB,https://epistat.sciensano.be/covid/covid19_historicaldata.html,special dashboard,,,,,,"Need to choose ""7.Tests"" at the bottom of the dashboard near ""Summary"".",automated
 Belize,Belize,https://sib.org.bz/covid-19/by-the-numbers/,,image,,,,,,"""Tests done and not people tested""",automated
-Benin,Benin,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
+Benin,Benin,https://africacdc.org/covid-19/,https://www.gouv.bj/coronavirus/,Selenium,,,"([,0-9]+)",,,,automated
 Bermuda,Bermuda,https://www.gov.bm/coronavirus-covid19-update,,html,https://www.gov.bm/coronavirus-covid19-update,,"//*[@id=""node-901196""]/div/div/table[1]/tbody/tr[2]",,,,automated
 Bhutan,Bhutan,https://www.facebook.com/MoHBhutan/,,image,,,,,,"Every day there is a new infographic and the value is ""Total tested till date""",image
 Bolivia,Bolivia,https://www.minsalud.gob.bo/,,image,"Publications always start with ""Bolivia acumula"". Value is CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",,,,,"Publi starts with ""COVID-19: se reportan"". Every day. CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",image
