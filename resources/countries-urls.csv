@@ -163,7 +163,7 @@ Switzerland,Switzerland,https://www.covid19.admin.ch/en/overview?ovTime=total,,h
 Taiwan,Taiwan,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan,,special dashboard,,,"//*[@id=""num1""]","//*[@id=""num6""]",,,automated
 Tajikistan,Tajikistan,https://eurasianet.org/dashboard-coronavirus-in-eurasia,,irrelevant,,,,,,,without_information
 Thailand,Thailand,https://ddc.moph.go.th/viralpneumonia/eng/index.php,http://nextcloud.dmsc.moph.go.th/index.php/s/AFEy26XRKQxKXcf,html,,,//div[7]/div/div/div/h5,,,,automated
-The Bahamas,TheBahamas,https://www.facebook.com/MOHBahamas/,,image,,,,,,,facebook
+The Bahamas,TheBahamas,https://www.bahamas.gov.bs/wps/portal/public/gov/government/news/All%20News%20Press%20Release,,image,,,,,,,facebook
 The Gambia,TheGambia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Togo,Togo,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Trinidad and Tobago,TrinidadandTobago,http://www.health.gov.tt/sitepages/default.aspx?id=293,,Stable PDF,,,,,,,pdf
