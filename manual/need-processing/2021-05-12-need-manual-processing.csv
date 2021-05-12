@@ -1,5 +1,5 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
-Afghanistan,NA,0,NA,NA,2021-05-12,manually,pdf,https://www.humanitarianresponse.info/en/operations/afghanistan/health/documents/table
+Afghanistan,NA,0,NA,NA,2021-05-12,manually,pdf,http://covid.moph-dw.org/#/
 Austria,NA,0,NA,NA,2021-05-12,manually,automated,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html
 Bangladesh,NA,0,NA,NA,2021-05-12,manually,automated,https://corona.gov.bd/
 Barbados,NA,0,NA,NA,2021-05-12,manually,automated,https://gisbarbados.gov.bb/blog/covid-19-situation-dashboard-january-05-2021/
@@ -25,7 +25,8 @@ Grenada,NA,0,NA,NA,2021-05-12,manually,facebook,https://web.facebook.com/HealthG
 Guyana,NA,0,NA,NA,2021-05-12,manually,image,https://www.health.gov.gy/index.php/component/k2/item/354-guyana-covid-19-dashboard
 Honduras,NA,0,NA,NA,2021-05-12,manually,image,http://www.desastres.hn/COVID-19/COVID-19.png
 HongKong,NA,0,NA,NA,2021-05-12,manually,pdf,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf
-Indonesia,NA,0,NA,NA,2021-05-12,manually,automated,https://twitter.com/bnpb_indonesia?lang=en
+Iceland,NA,0,NA,NA,2021-05-12,manually,automated,https://www.covid.is/tolulegar-upplysingar
+Indonesia,NA,0,NA,NA,2021-05-12,manually,automated,https://covid19.go.id/peta-sebaran
 Iran,NA,0,NA,NA,2021-05-12,manually,automated,http://irangov.ir/search?key=Health%20Ministry&title=1
 Iraq,NA,0,NA,NA,2021-05-12,manually,image,https://www.facebook.com/MOH.GOV.IQ
 Israel,NA,0,NA,NA,2021-05-12,manually,not_yet_automated_daily,https://datadashboard.health.gov.il/COVID-19/general
@@ -36,7 +37,6 @@ Kazakhstan,NA,0,NA,NA,2021-05-12,manually,special_dashboard,https://hls.kz/
 Kosovo,NA,0,NA,NA,2021-05-12,manually,facebook,https://www.facebook.com/IKSHPK
 Kuwait,NA,0,NA,NA,2021-05-12,manually,twitter,https://twitter.com/KUWAIT_MOH
 Kyrgyzstan,NA,0,NA,NA,2021-05-12,manually,image,https://www.instagram.com/daryger_sunushu/
-LaoPeoplesDemocraticRepublic,NA,0,NA,NA,2021-05-12,manually,automated,https://www.covid19.gov.la/index.php
 Latvia,NA,0,NA,NA,2021-05-12,manually,automated,https://spkc.maps.arcgis.com/apps/opsdashboard/index.html#/4469c1fb01ed43cea6f20743ee7d5939
 Lithuania,NA,0,NA,NA,2021-05-12,manually,automated,https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika
 Luxembourg,NA,0,NA,NA,2021-05-12,manually,not_yet_automated_daily,https://msan.gouvernement.lu/fr/graphiques-evolution.html
@@ -66,9 +66,8 @@ SriLanka,NA,0,NA,NA,2021-05-12,manually,automated,https://www.hpb.health.gov.lk/
 Sweden,NA,0,NA,NA,2021-05-12,manually,pdf,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/statistik-och-analyser/antalet-testade-for-covid-19/
 Tajikistan,NA,0,NA,NA,2021-05-12,manually,without_information,https://eurasianet.org/dashboard-coronavirus-in-eurasia
 Thailand,NA,0,NA,NA,2021-05-12,manually,automated,https://ddc.moph.go.th/viralpneumonia/eng/index.php
-TheBahamas,NA,0,NA,NA,2021-05-12,manually,facebook,https://www.facebook.com/MOHBahamas/
+TheBahamas,NA,0,NA,NA,2021-05-12,manually,facebook,https://www.bahamas.gov.bs/wps/portal/public/gov/government/news/All%20News%20Press%20Release
 TrinidadandTobago,NA,0,NA,NA,2021-05-12,manually,pdf,http://www.health.gov.tt/sitepages/default.aspx?id=293
-UnitedArabEmirates,NA,0,NA,NA,2021-05-12,manually,automated,https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx
 Uruguay,NA,0,NA,NA,2021-05-12,manually,automated,https://www.gub.uy/sistema-nacional-emergencias/pagina-embebida/visualizador-casos-coronavirus-covid-19-uruguay
 Uzbekistan,NA,0,NA,NA,2021-05-12,manually,without_information,https://t.me/koronavirusinfouz/3470
 Venezuela,NA,0,NA,NA,2021-05-12,manually,without_information,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A
