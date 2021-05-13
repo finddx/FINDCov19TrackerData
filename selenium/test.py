@@ -38,12 +38,12 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_afghanistan(self):
+    self.driver.maximize_window()
+    self.driver.set_page_load_timeout(60)
     self.driver.get("http://covidapp.moph-dw.org/")
     time.sleep(30)
     self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").text
-    #root > div > div > div.container-fluid.mt-3 > div:nth-child(1) > div:nth-child(1) > div > div.text-primary.text-center.mt-2 > h1 > span
-    #root > div > div > div.container-fluid.mt-3 > div:nth-child(1) > div:nth-child(1) > div > div.text-primary.text-center.mt-2 > h1 > span
     print("Afghanistan")
     print(self.vars)
     self.driver.close()
