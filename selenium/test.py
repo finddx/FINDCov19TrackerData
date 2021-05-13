@@ -11,7 +11,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from datetime import date
 import unittest
 
@@ -38,12 +38,17 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_afghanistan(self):
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("http://covidapp.moph-dw.org/")
-    time.sleep(30)
-    self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").text
+    try:
+      self.driver.get("http://covidapp.moph-dw.org/")
+      time.sleep(30)
+      self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").click()
+      self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").text
+    except TimeoutException as ex:
+      print(ex.Message)
+      self.driver.navigate().refresh()
+      time.sleep(30)
+      self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").click()
+      self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").text
     print("Afghanistan")
     print(self.vars)
     self.driver.close()
