@@ -2,7 +2,7 @@ country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_cor
 Afghanistan,2021-05-14,NA,NA,NA,NA,selenium
 Albania,2021-05-14,669140,2964,669140,2964,selenium
 Algeria,2021-05-14,230553,0,230553,0,selenium
-Andorra,2021-05-14,351083,0,351083,0,selenium
+Andorra,2021-05-14,351083,0,351083,NA,selenium
 Angola,2021-05-14,527590,0,527590,0,selenium
 AntiguaandBarbuda,2021-05-14,13613,0,13613,0,selenium
 Argentina,2021-05-14,12224943,82695,12224943,82695,selenium
@@ -58,7 +58,7 @@ Estonia,2021-05-14,1351340,5083,1351340,5083,selenium
 Eswatini,2021-05-14,207559,0,207559,0,selenium
 Ethiopia,2021-05-14,2640295,5621,2640295,5621,selenium
 FaroeIslands,2021-05-14,259009,333,259009,333,selenium
-Fiji,2021-05-14,NA,NA,NA,NA,selenium
+Fiji,2021-05-14,68882,0,68882,0,selenium
 Finland,2021-05-14,4720400,20600,4720400,20600,selenium
 France,2021-05-14,80698552,483745,80698552,483745,selenium
 FrenchPolynesia,2021-05-14,NA,NA,NA,NA,NA
@@ -69,7 +69,7 @@ Ghana,2021-05-14,1116513,2960,1116513,2960,selenium
 Greece,2021-05-14,8772810,65133,8772810,65133,selenium
 Greenland,2021-05-14,NA,NA,NA,NA,selenium
 Grenada,2021-05-14,NA,NA,NA,NA,NA
-Guatemala,2021-05-14,NA,NA,NA,NA,selenium
+Guatemala,2021-05-14,1336353,14344,1336353,14344,selenium
 Guinea,2021-05-14,449043,808,449043,808,selenium
 GuineaBissau,2021-05-14,65224,248,65224,248,selenium
 Guyana,2021-05-14,NA,NA,NA,NA,NA
@@ -86,7 +86,7 @@ Israel,2021-05-14,NA,NA,NA,NA,NA
 Italy,2021-05-14,62405408,298186,62405408,298186,selenium
 Jamaica,2021-05-14,NA,NA,NA,NA,NA
 Japan,2021-05-14,NA,NA,NA,NA,NA
-Jordan,2021-05-14,6903678,0,6903678,NA,selenium
+Jordan,2021-05-14,6903678,26021,6903678,26021,selenium
 Kazakhstan,2021-05-14,NA,NA,NA,NA,NA
 Kenya,2021-05-14,1737168,3668,1737168,3668,selenium
 Kosovo,2021-05-14,NA,NA,NA,NA,NA
@@ -129,7 +129,7 @@ Pakistan,2021-05-14,NA,NA,NA,NA,selenium
 Panama,2021-05-14,NA,NA,NA,NA,NA
 PapuaNewGuinea,2021-05-14,NA,NA,NA,NA,selenium
 Paraguay,2021-05-14,NA,NA,NA,NA,NA
-Peru,2021-05-14,1294786,0,1294786,NA,selenium
+Peru,2021-05-14,1294786,-10466298,1294786,-10466298,selenium
 Philippines,2021-05-14,NA,NA,NA,NA,NA
 Poland,2021-05-14,NA,NA,NA,NA,NA
 Portugal,2021-05-14,NA,NA,NA,NA,selenium
