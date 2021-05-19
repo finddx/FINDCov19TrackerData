@@ -11,13 +11,15 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from datetime import date
 import unittest
 
 class TestDefaultSuite(unittest.TestCase):
   def setUp(self):
-    chrome_options = Options()
+    #chrome_options = Options()
+    chrome_options = FirefoxOptions()
     chrome_options.add_argument("--headless")
     # Required for test_france() to work
     # https://stackoverflow.com/questions/51220794/selenium-not-working-in-headless-mode
@@ -47,7 +49,7 @@ class TestDefaultSuite(unittest.TestCase):
     #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").text
     all_body = self.driver.find_element(By.CSS_SELECTOR, "body").text
     self.vars["tests_cumulative"] = all_body.split("Samples Tested\n")[1].split("\n")[0]
-    print("Afghanistan new")
+    print("Afghanistan firefox")
     print(self.vars)
     self.driver.close()
 
@@ -572,7 +574,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".roundbox:nth-child(3) > div:nth-child(2)").text
     self.driver.close()
 
- def test_pakistan(self):
+  def test_pakistan(self):
     self.driver.get("https://covid.gov.pk/")
     time.sleep(30)
     self.driver.set_window_size(1536, 825)
