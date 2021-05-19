@@ -12,7 +12,7 @@ name: "Scrape test data and push"
 jobs:
   selenium:
     if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), 'manually processed countries') )"
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2.3.4
