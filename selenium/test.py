@@ -39,18 +39,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_afghanistan(self):
-    try:
-      self.driver.get("http://covidapp.moph-dw.org/")
-      time.sleep(30)
-      self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").click()
-      self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").text
-    except TimeoutException as ex:
-      print(ex.Message)
-      self.driver.navigate().refresh()
-      time.sleep(30)
-      self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").click()
-      self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").text
-    print("Afghanistan")
+    self.driver.get("http://covidapp.moph-dw.org/")
+    time.sleep(30)
+    #self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").click()
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "body")))
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").text
+    all_body = self.driver.find_element(By.CSS_SELECTOR, "body").text
+    self.vars["tests_cumulative"] = all_body.split("Samples Tested\n")[1].split("\n")[0]
+    print("Afghanistan new")
     print(self.vars)
     self.driver.close()
 
