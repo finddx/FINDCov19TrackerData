@@ -466,7 +466,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_latvia(self):
     self.driver.get("https://spkc.maps.arcgis.com/apps/opsdashboard/index.html#/4469c1fb01ed43cea6f20743ee7d5939")
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember17 strong").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div > div > div > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(2) > margin-container > full-container > div > div > p > span > strong").text
     print(self.vars)
     self.driver.close()
 
