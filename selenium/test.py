@@ -126,7 +126,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_barbados(self):
     self.driver.get("https://gisbarbados.gov.bb/covid-19/")
     time.sleep(10)
-    self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Update\')]").click()
+    self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 UPDATE\')]").click()
     time.sleep(10)
     try:
         self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has completed\')]").text
