@@ -480,8 +480,8 @@ class TestDefaultSuite(unittest.TestCase):
   def test_lithuania(self):
     self.driver.get("https://e.infogram.com/57e5b447-c2ca-40da-aedb-cbf97df68a8e?parent_url=https%3A%2F%2Fosp.stat.gov.lt%2Fpraejusios-paros-covid-19-statistika&src=embed#async_embed")
     time.sleep(10)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.hNrBLi > div > div:nth-child(22) > div > div > div > div > div > table > tbody > tr:nth-child(7) > td:nth-child(1) > span").text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.hNrBLi > div > div:nth-child(22) > div > div > div > div > div > table > tbody > tr:nth-child(8) > td:nth-child(1) > span").text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.ipakMe > div > div:nth-child(23) > div > div > div > div > div > table > tbody > tr:nth-child(7) > td:nth-child(1) > span").text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.ipakMe > div > div:nth-child(23) > div > div > div > div > div > table > tbody > tr:nth-child(8) > td:nth-child(1) > span").text
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print(self.vars)
     self.driver.close()
