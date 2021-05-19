@@ -43,14 +43,17 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_afghanistan(self):
+    self.driver.set_page_load_timeout(30)
     self.driver.get("http://covidapp.moph-dw.org/")
     time.sleep(30)
+    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "root")))
+    all_body = self.driver.find_element(By.ID, "root").text
     #self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").click()
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "body")))
+    #WebDriverWait(self.driver, 30).until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "body")))
     #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".text-primary span").text
-    all_body = self.driver.find_element(By.CSS_SELECTOR, "body").text
+    #all_body = self.driver.find_element(By.CSS_SELECTOR, "body").text
     self.vars["tests_cumulative"] = all_body.split("Samples Tested\n")[1].split("\n")[0]
-    print("Afghanistan firefox")
+    print("Afghanistan id")
     print(self.vars)
     self.driver.close()
 
