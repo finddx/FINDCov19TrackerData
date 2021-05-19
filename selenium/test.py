@@ -30,7 +30,8 @@ class TestDefaultSuite(unittest.TestCase):
     chrome_options.add_argument("user-agent=foo")
     chrome_options.add_argument("--enable-javascript")
     chrome_options.add_argument('--dns-prefetch-disable')
-    self.driver = webdriver.Chrome(options=chrome_options)
+    #self.driver = webdriver.Chrome(options=chrome_options)
+    self.driver = webdriver.Firefox(options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
     self.driver.set_page_load_timeout(30)
     #self.driver = webdriver.Chrome()
