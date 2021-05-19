@@ -118,10 +118,9 @@ class TestDefaultSuite(unittest.TestCase):
     
   def test_bangladesh(self):
     self.driver.get("https://corona.gov.bd/")
-    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".lang-btn").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".live-update-box-body-three .text-right b").text
+    self.driver.find_element(By.CSS_SELECTOR, "#exampleModal > div > div > div.modal-header > button > span").click()
+    self.driver.find_element(By.CSS_SELECTOR, "body > section.main_header > div > div > div.col-md-9 > div > ul > li:nth-child(7) > a").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > section:nth-child(9) > div > div > div:nth-child(5) > div > div.content > table > tbody > tr:nth-child(2) > td:nth-child(2) > b").text
     self.driver.close()
     
   def test_barbados(self):
