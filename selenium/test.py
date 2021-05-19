@@ -283,10 +283,14 @@ class TestDefaultSuite(unittest.TestCase):
         #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(8) tr:nth-child(2) > td:nth-child(2) > span").text
     #except NoSuchElementException:
         #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(7) tr:nth-child(2) > td:nth-child(2) > span").text
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(1) > div:nth-child(11) > table > tbody > tr:nth-child(2) > td:nth-child(2) > p:nth-child(1) > span").text
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(1) > div:nth-child(11) > table > tbody > tr:nth-child(2) > td:nth-child(2) > p:nth-child(1) > span").text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(11) > table > tbody > tr:nth-child(2) > td:nth-child(2) > p > span > strong > span").text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(11) > table > tbody > tr:nth-child(8) > td:nth-child(2) > span").text
+    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print(self.vars)
     self.driver.close()
-
+    
+    
   def test_ecuador(self):
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
