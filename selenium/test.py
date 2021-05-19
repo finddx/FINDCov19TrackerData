@@ -537,7 +537,7 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_newCaledonia(self):
     self.driver.get("https://gouv.nc/coronavirus")
-    self.driver.find_element(By.CSS_SELECTOR, ".quatre > .big-chiffre").click()
+    #self.driver.find_element(By.CSS_SELECTOR, ".quatre > .big-chiffre").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#block-system-main > div > div > div > div.field.field-name-body > div.col-md-12.text-center.tableau_de_bord > div:nth-child(1) > div:nth-child(1) > div > div > div > p:nth-child(3)").text 
     self.driver.close()
 
