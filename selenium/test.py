@@ -795,7 +795,8 @@ class TestDefaultSuite(unittest.TestCase):
   def test_uS(self):
     self.driver.get("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6")
     time.sleep(60)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember123").text
+    self.driver.find_element(By.CSS_SELECTOR, "body > div > div > div > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(24) > margin-container > full-container > div > div.sortable-collection.tab-nav.invisible > div.tab-title.flex-horizontal.align-items-center.is-active > div > div").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div > div > div > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(17) > margin-container > full-container > div > div > div > div.responsive-text.flex-vertical.flex-fix.allow-shrink.indicator-center-text > svg > g.responsive-text-label > text").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[1]
     print(self.vars)
     self.driver.close()
