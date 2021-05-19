@@ -26,6 +26,7 @@ class TestDefaultSuite(unittest.TestCase):
     # Required for test_pakistan() to work
     # https://stackoverflow.com/questions/29916054/change-user-agent-for-selenium-web-driver
     chrome_options.add_argument("user-agent=foo")
+    chrome_options.add_argument("--enable-javascript")
     self.driver = webdriver.Chrome(options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
     self.driver.set_page_load_timeout(30)
