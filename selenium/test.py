@@ -572,14 +572,16 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".roundbox:nth-child(3) > div:nth-child(2)").text
     self.driver.close()
 
-  def test_pakistan(self):
+ def test_pakistan(self):
     self.driver.get("https://covid.gov.pk/")
     time.sleep(30)
     self.driver.set_window_size(1536, 825)
     time.sleep(10)
     self.driver.execute_script("window.scrollTo(0,300)")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div.nk-wrap > section:nth-child(4) > div > div.status > ul > li.active > div:nth-child(1) > span").text
+    self.driver.find_element(By.CSS_SELECTOR, "#covidEmergency > div > div > div.modal-footer > button").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div.nk-wrap > section:nth-child(4) > div.container.pb-50 > div.status > ul > li.active > div:nth-child(1) > span").text
     self.driver.close()
+    
     
   # web page doesn't open
   def test_papuaNewGuinea(self):
