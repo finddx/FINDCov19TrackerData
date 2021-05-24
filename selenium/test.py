@@ -802,7 +802,8 @@ class TestDefaultSuite(unittest.TestCase):
   def test_uS(self):
     self.driver.get("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6")
     self.driver.set_window_size(1440, 855)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".dock-element:nth-child(4) .responsive-text:nth-child(2) text:nth-child(1)")))
+    time.sleep(60)
+    #WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".dock-element:nth-child(4) .responsive-text:nth-child(2) text:nth-child(1)")))
     html = self.driver.page_source
     soup = bs(html, "lxml")
     algo = soup.find_all("g", attrs={"style":"--text-fill-color:#73b2ff;"})
