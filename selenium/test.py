@@ -3,6 +3,7 @@ import pytest
 import time
 import json
 import requests
+from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -18,8 +19,8 @@ import unittest
 
 class TestDefaultSuite(unittest.TestCase):
   def setUp(self):
-    #chrome_options = Options()
-    chrome_options = FirefoxOptions()
+    chrome_options = Options()
+    #chrome_options = FirefoxOptions()
     chrome_options.add_argument("--headless")
     # Required for test_france() to work
     # https://stackoverflow.com/questions/51220794/selenium-not-working-in-headless-mode
@@ -30,8 +31,8 @@ class TestDefaultSuite(unittest.TestCase):
     chrome_options.add_argument("user-agent=foo")
     chrome_options.add_argument("--enable-javascript")
     chrome_options.add_argument('--dns-prefetch-disable')
-    #self.driver = webdriver.Chrome(options=chrome_options)
-    self.driver = webdriver.Firefox(options=chrome_options)
+    self.driver = webdriver.Chrome(options=chrome_options)
+    #self.driver = webdriver.Firefox(options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
     self.driver.set_page_load_timeout(30)
     #self.driver = webdriver.Chrome()
@@ -800,10 +801,12 @@ class TestDefaultSuite(unittest.TestCase):
     
   def test_uS(self):
     self.driver.get("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6")
-    time.sleep(60)
-    self.driver.find_element(By.CSS_SELECTOR, "body > div > div > div > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(24) > margin-container > full-container > div > div.sortable-collection.tab-nav.invisible > div.tab-title.flex-horizontal.align-items-center.is-active > div > div").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div > div > div > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(17) > margin-container > full-container > div > div > div > div.responsive-text.flex-vertical.flex-fix.allow-shrink.indicator-center-text > svg > g.responsive-text-label > text").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[1]
+    self.driver.set_window_size(1440, 855)
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".dock-element:nth-child(4) .responsive-text:nth-child(2) text:nth-child(1)")))
+    html = self.driver.page_source
+    soup = bs(html, "lxml")
+    algo = soup.find_all("g", attrs={"style":"--text-fill-color:#73b2ff;"})
+    self.vars["tests_cumulative"] = algo[0].text
     print(self.vars)
     self.driver.close()
 

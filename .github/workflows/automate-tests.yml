@@ -28,7 +28,7 @@ jobs:
           which firefox
           firefox --version
       - name: Install deps
-        run: pip3 install --user selenium pytest pandas requests
+        run: pip3 install --user selenium pytest pandas requests beautifulsoup4
 
       - name: Scrape test data with Selenium
         run: env GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} python selenium/run.py
