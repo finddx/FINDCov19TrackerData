@@ -599,8 +599,9 @@ class TestDefaultSuite(unittest.TestCase):
   def test_peru(self):
     self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOGU4MGE1NzItNmY1OC00ZTc2LThlYTItNWY2MzJhZjU5ZTM2IiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     time.sleep(10)
-    self.driver.switch_to.frame(4)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".dataLabel").text
+    WebDriverWait(self.driver, 10).until(expected_conditions.frame_to_be_available_and_switch_to_it(4))
+    time.sleep(5)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body").text
     #weekly_values
     #self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div").text.split("\n")[40].replace(",","")
     #self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div").text.split("\n")[60].replace(",","")
@@ -610,12 +611,21 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_portugal(self):
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://esriportugal.maps.arcgis.com/apps/opsdashboard/index.html#/acf023da9a0b4f9dbb2332c13f635829")
-    time.sleep(30)
-    self.driver.find_element_by_id("ember8").click
-    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember114").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
+    self.driver.get("https://esriportugal.maps.arcgis.com/apps/dashboards/acf023da9a0b4f9dbb2332c13f635829")
+    self.driver.set_window_size(1440, 855)
+    time.sleep(20)
+    html = self.driver.page_source
+    soup = bs(html, "lxml")
+    full_tags = soup.find_all("margin-container", attrs={"class":"left top"})
+    self.vars["tests_cumulative"] = full_tags[0].text
+    #self.driver.set_page_load_timeout(60)
+    #self.driver.get("https://esriportugal.maps.arcgis.com/apps/opsdashboard/index.html#/acf023da9a0b4f9dbb2332c13f635829")
+    #time.sleep(30)
+    #self.driver.find_element_by_id("ember8").click
+    #self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember114").text
+    #self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
+    print("Portugal")
+    print(self.vars)
     self.driver.close()
 
   def test_qatar(self):
