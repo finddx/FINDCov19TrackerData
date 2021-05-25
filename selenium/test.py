@@ -262,19 +262,19 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[64]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text 
     self.driver.close()
 
-  def test_croatia(self):
-    self.driver.get("https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "page_content")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "page_content").text
-    try :
-      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirana ')[1].split('osoba')[0]
-    except IndexError :
-      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirano ')[1].split('osoba')[0]
-      try :
-        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirana ')[1].split('osoba')[0]
-      except IndexError:
-        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas su ukupno testirane ')[1].split('osobe')[0]
-    self.driver.close()
+  #def test_croatia(self):
+  #  self.driver.get("https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35")
+  #  WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "page_content")))
+  #  self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "page_content").text
+  #  try :
+  #    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirana ')[1].split('osoba')[0]
+  #  except IndexError :
+  #    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirano ')[1].split('osoba')[0]
+  #    try :
+  #      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas je ukupno testirana ')[1].split('osoba')[0]
+  #    except IndexError:
+  #      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('Do danas su ukupno testirane ')[1].split('osobe')[0]
+  #  self.driver.close()
     
   # only new tests daily
   #def test_cyprus(self):
@@ -599,9 +599,13 @@ class TestDefaultSuite(unittest.TestCase):
   def test_peru(self):
     self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOGU4MGE1NzItNmY1OC00ZTc2LThlYTItNWY2MzJhZjU5ZTM2IiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     time.sleep(10)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div").text.split("\n")[40].replace(",","")
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div").text.split("\n")[60].replace(",","")
-    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
+    self.driver.switch_to.frame(4)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".dataLabel").text
+    #weekly_values
+    #self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div").text.split("\n")[40].replace(",","")
+    #self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div").text.split("\n")[60].replace(",","")
+    #self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
+    print("Peru")
     print(self.vars)
     self.driver.close()
     
@@ -806,8 +810,8 @@ class TestDefaultSuite(unittest.TestCase):
     #WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".dock-element:nth-child(4) .responsive-text:nth-child(2) text:nth-child(1)")))
     html = self.driver.page_source
     soup = bs(html, "lxml")
-    algo = soup.find_all("g", attrs={"style":"--text-fill-color:#73b2ff;"})
-    self.vars["tests_cumulative"] = algo[0].text
+    full_tags = soup.find_all("g", attrs={"style":"--text-fill-color:#73b2ff;"})
+    self.vars["tests_cumulative"] = full_tags[0].text
     print(self.vars)
     self.driver.close()
 
