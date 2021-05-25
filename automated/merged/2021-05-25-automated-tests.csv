@@ -10,8 +10,8 @@ Armenia,2021-05-25,1062006,0,1062006,0,selenium
 Australia,2021-05-25,17891090,0,17891090,0,selenium
 Austria,2021-05-25,NA,NA,NA,NA,selenium
 Azerbaijan,2021-05-25,3458790,0,3458790,0,selenium
-Bahrain,2021-05-25,4509481,0,4509481,NA,selenium
-Bangladesh,2021-05-25,5838295,0,5838295,NA,selenium
+Bahrain,2021-05-25,NA,NA,NA,NA,selenium
+Bangladesh,2021-05-25,NA,NA,NA,NA,selenium
 Barbados,2021-05-25,NA,NA,NA,NA,selenium
 Belarus,2021-05-25,6221882,0,6221882,0,selenium
 Belgium,2021-05-25,13657044,21570,13657044,21570,selenium
@@ -33,7 +33,7 @@ Canada,2021-05-25,34218813,239770,34218813,239770,selenium
 CapeVerde,2021-05-25,216114,0,216114,0,selenium
 CentralAfricanRepublic,2021-05-25,54319,0,54319,0,selenium
 Chad,2021-05-25,124388,0,124388,0,selenium
-Chile,2021-05-25,43802,0,43802,NA,selenium
+Chile,2021-05-25,43802,-14239824,43802,NA,selenium
 China,2021-05-25,NA,NA,NA,NA,NA
 Colombia,2021-05-25,NA,NA,NA,NA,NA
 Comoros,2021-05-25,6227,0,6227,0,selenium
@@ -69,7 +69,7 @@ Ghana,2021-05-25,1146633,0,1146633,0,selenium
 Greece,2021-05-25,9208817,0,9208817,0,selenium
 Greenland,2021-05-25,NA,NA,NA,NA,selenium
 Grenada,2021-05-25,NA,NA,NA,NA,NA
-Guatemala,2021-05-25,NA,NA,NA,NA,selenium
+Guatemala,2021-05-25,1383617,1050,1383617,1050,selenium
 Guinea,2021-05-25,454309,0,454309,0,selenium
 GuineaBissau,2021-05-25,66687,0,66687,0,selenium
 Guyana,2021-05-25,NA,NA,NA,NA,NA
@@ -92,7 +92,7 @@ Kenya,2021-05-25,1783374,0,1783374,0,selenium
 Kosovo,2021-05-25,NA,NA,NA,NA,NA
 Kuwait,2021-05-25,NA,NA,NA,NA,NA
 Kyrgyzstan,2021-05-25,NA,NA,NA,NA,NA
-LaoPeoplesDemocraticRepublic,2021-05-25,234744,0,234744,0,selenium
+LaoPeoplesDemocraticRepublic,2021-05-25,234744,2757,234744,2757,selenium
 Latvia,2021-05-25,2536035,0,2536035,0,selenium
 Lebanon,2021-05-25,4312975,0,4312975,0,selenium
 Lesotho,2021-05-25,92169,0,92169,0,selenium
@@ -160,7 +160,7 @@ SriLanka,2021-05-25,NA,NA,NA,NA,selenium
 Sudan,2021-05-25,231694,0,231694,0,selenium
 Sweden,2021-05-25,NA,NA,NA,NA,NA
 Switzerland,2021-05-25,7460843,0,7460843,0,selenium
-Taiwan,2021-05-25,610865,0,610865,NA,selenium
+Taiwan,2021-05-25,NA,NA,NA,NA,selenium
 Tajikistan,2021-05-25,NA,NA,NA,NA,NA
 Thailand,2021-05-25,NA,NA,NA,NA,NA
 TheBahamas,2021-05-25,NA,NA,NA,NA,NA
@@ -175,7 +175,7 @@ UnitedArabEmirates,2021-05-25,48640803,0,48640803,0,selenium
 UnitedKingdom,2021-05-25,173297678,0,173297678,0,selenium
 UnitedRepublicofTanzania,2021-05-25,3880,0,3880,0,selenium
 Uruguay,2021-05-25,NA,NA,NA,NA,selenium
-US,2021-05-25,459239906,0,459239906,0,selenium
+US,2021-05-25,459239906,750076,459239906,750076,selenium
 Uzbekistan,2021-05-25,NA,NA,NA,NA,NA
 Venezuela,2021-05-25,NA,NA,NA,NA,selenium
 Vietnam,2021-05-25,NA,NA,NA,NA,NA
