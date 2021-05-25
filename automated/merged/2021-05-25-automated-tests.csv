@@ -1,8 +1,8 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2021-05-25,NA,NA,NA,NA,selenium
-Albania,2021-05-25,700966,0,700966,0,selenium
+Albania,2021-05-25,704332,3366,704332,3366,selenium
 Algeria,2021-05-25,230553,0,230553,0,selenium
-Andorra,2021-05-25,NA,NA,NA,NA,selenium
+Andorra,2021-05-25,329059,-24249,329059,-24249,selenium
 Angola,2021-05-25,564991,0,564991,0,selenium
 AntiguaandBarbuda,2021-05-25,13613,0,13613,0,selenium
 Argentina,2021-05-25,13256309,0,13256309,0,selenium
@@ -20,7 +20,7 @@ Benin,2021-05-25,640586,0,640586,0,selenium
 Bermuda,2021-05-25,264945,3665,264945,3665,selenium
 Bhutan,2021-05-25,NA,NA,NA,NA,NA
 Bolivia,2021-05-25,NA,NA,NA,NA,NA
-BosniaandHerzegovina,2021-05-25,670162,1754,670162,1754,selenium
+BosniaandHerzegovina,2021-05-25,670222,1814,670222,1814,selenium
 Botswana,2021-05-25,1130899,19036,1130899,19036,selenium
 Brazil,2021-05-25,NA,NA,NA,NA,selenium
 Brunei,2021-05-25,NA,NA,NA,NA,selenium
@@ -33,7 +33,7 @@ Canada,2021-05-25,34218813,239770,34218813,239770,selenium
 CapeVerde,2021-05-25,216778,664,216778,664,selenium
 CentralAfricanRepublic,2021-05-25,54319,0,54319,0,selenium
 Chad,2021-05-25,124507,119,124507,119,selenium
-Chile,2021-05-25,43802,-14239824,43802,NA,selenium
+Chile,2021-05-25,33538,-14250088,33538,NA,selenium
 China,2021-05-25,NA,NA,NA,NA,NA
 Colombia,2021-05-25,NA,NA,NA,NA,NA
 Comoros,2021-05-25,6227,0,6227,0,selenium
@@ -66,10 +66,10 @@ Gabon,2021-05-25,785631,0,785631,0,selenium
 Georgia,2021-05-25,NA,NA,NA,NA,NA
 Germany,2021-05-25,NA,NA,NA,NA,NA
 Ghana,2021-05-25,1146633,0,1146633,0,selenium
-Greece,2021-05-25,9208817,0,9208817,0,selenium
+Greece,2021-05-25,9278919,70102,9278919,70102,selenium
 Greenland,2021-05-25,NA,NA,NA,NA,selenium
 Grenada,2021-05-25,NA,NA,NA,NA,NA
-Guatemala,2021-05-25,NA,NA,NA,NA,selenium
+Guatemala,2021-05-25,1383617,1050,1383617,1050,selenium
 Guinea,2021-05-25,454309,0,454309,0,selenium
 GuineaBissau,2021-05-25,66687,0,66687,0,selenium
 Guyana,2021-05-25,NA,NA,NA,NA,NA
@@ -83,10 +83,10 @@ Iran,2021-05-25,NA,NA,NA,NA,selenium
 Iraq,2021-05-25,NA,NA,NA,NA,NA
 Ireland,2021-05-25,4729538,0,4729538,0,selenium
 Israel,2021-05-25,NA,NA,NA,NA,NA
-Italy,2021-05-25,64665967,0,64665967,0,selenium
+Italy,2021-05-25,64918613,252646,64918613,252646,selenium
 Jamaica,2021-05-25,NA,NA,NA,NA,NA
 Japan,2021-05-25,NA,NA,NA,NA,NA
-Jordan,2021-05-25,7139945,0,7139945,NA,selenium
+Jordan,2021-05-25,NA,NA,NA,NA,selenium
 Kazakhstan,2021-05-25,NA,NA,NA,NA,NA
 Kenya,2021-05-25,1783374,0,1783374,0,selenium
 Kosovo,2021-05-25,NA,NA,NA,NA,NA
@@ -94,7 +94,7 @@ Kuwait,2021-05-25,NA,NA,NA,NA,NA
 Kyrgyzstan,2021-05-25,NA,NA,NA,NA,NA
 LaoPeoplesDemocraticRepublic,2021-05-25,236228,4241,236228,4241,selenium
 Latvia,2021-05-25,2552498,16463,2552498,16463,selenium
-Lebanon,2021-05-25,4312975,0,4312975,0,selenium
+Lebanon,2021-05-25,4329075,16100,4329075,16100,selenium
 Lesotho,2021-05-25,92169,0,92169,0,selenium
 Liberia,2021-05-25,104084,1523,104084,1523,selenium
 Libya,2021-05-25,995627,0,995627,0,selenium
@@ -132,7 +132,7 @@ Paraguay,2021-05-25,NA,NA,NA,NA,NA
 Peru,2021-05-25,NA,NA,NA,NA,selenium
 Philippines,2021-05-25,NA,NA,NA,NA,NA
 Poland,2021-05-25,NA,NA,NA,NA,NA
-Portugal,2021-05-25,NA,NA,NA,NA,selenium
+Portugal,2021-05-25,11460726,29362,11460726,29362,selenium
 Qatar,2021-05-25,2001947,3252,2001947,3252,selenium
 RepublicofKorea,2021-05-25,9592727,56428,9592727,56428,selenium
 Romania,2021-05-25,NA,NA,NA,NA,selenium
@@ -171,8 +171,8 @@ Tunisia,2021-05-25,1436240,6048,1436240,6048,selenium
 Turkey,2021-05-25,52594333,0,52594333,0,selenium
 Uganda,2021-05-25,1082332,0,1082332,0,selenium
 Ukraine,2021-05-25,10045897,23440,10045897,23440,selenium
-UnitedArabEmirates,2021-05-25,48864805,224002,48864805,224002,selenium
-UnitedKingdom,2021-05-25,173297678,0,173297678,0,selenium
+UnitedArabEmirates,2021-05-25,49009805,369002,49009805,369002,selenium
+UnitedKingdom,2021-05-25,174394703,1097025,174394703,1097025,selenium
 UnitedRepublicofTanzania,2021-05-25,3880,0,3880,0,selenium
 Uruguay,2021-05-25,NA,NA,NA,NA,selenium
 US,2021-05-25,460189835,1700005,460189835,1700005,selenium
