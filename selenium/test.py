@@ -601,6 +601,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(10)
     WebDriverWait(self.driver, 10).until(expected_conditions.frame_to_be_available_and_switch_to_it(4))
     time.sleep(5)
+    WebDriverWait(self.driver, 20).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "body")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body").text
     #weekly_values
     #self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div").text.split("\n")[40].replace(",","")
@@ -647,9 +648,10 @@ class TestDefaultSuite(unittest.TestCase):
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'BULETIN DE PRESĂ\')]").get_attribute('href')
     self.driver.get(url)
     all_tests = self.driver.find_element(By.XPATH, "//p[contains(text(), \"Până la această dată, la nivel național, au fost prelucrate\")]").text
-    self.vars["pcr_tests_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de teste')[0].replace(".","").replace(" ","")
-    self.vars["rapid_test_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de teste RT-PCR și')[1].split('de teste')[0].replace(".","").replace(" ","")
+    self.vars["pcr_tests_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de  teste')[0].replace(".","").replace(" ","")
+    self.vars["rapid_test_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de  teste RT-PCR și')[1].split('teste rapid')[0].replace(".","").replace(" ","")
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
+    print("Romania")
     print(self.vars)
     self.driver.close()
 
