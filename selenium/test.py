@@ -688,18 +688,17 @@ class TestDefaultSuite(unittest.TestCase):
       self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'tamponi totali eseguiti\')]").text
     self.driver.close()
 
-  #def test_saudiArabia(self):
-  #  self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/1de735e94027408ca073a017295b98b3")
-  #  time.sleep(15)
-  #  self.driver.find_element(By.ID, "ember29").click()
-  #  self.driver.find_element(By.ID, "ember40").click()
-  #  self.driver.switch_to.frame(2)
-  #  self.driver.find_element(By.ID, "ember102").click()
-  #  self.driver.find_element(By.ID, "ember110").click()
-  #  self.driver.find_element(By.ID, "ember175").click()
-  #  self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "ember175").text
-  #  print(self.vars)
-  #  self.driver.close()
+  def test_saudiArabia(self):
+    self.driver.set_window_size(1200, 600)
+    self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/cbd5335b0eed411b9e1fee32da342cf4")
+    time.sleep(15)
+    html = self.driver.page_source
+    soup = bs(html, "lxml")
+    full_tags = soup.find_all("text")
+    self.vars["tests_cumulative"] = full_tags[7].text
+    print("Saudi Arabia")
+    print(self.vars)
+    self.driver.close()
 
   def test_serbia(self):
     self.driver.get("https://covid19.rs/")
