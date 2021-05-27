@@ -31,6 +31,13 @@ class TestDefaultSuite(unittest.TestCase):
     chrome_options.add_argument("user-agent=foo")
     chrome_options.add_argument("--enable-javascript")
     chrome_options.add_argument('--dns-prefetch-disable')
+    chrome_options.add_argument("start-maximized") #// https://stackoverflow.com/a/26283818/1689770
+    chrome_options.add_argument("enable-automation") # // https://stackoverflow.com/a/43840128/1689770
+    chrome_options.add_argument("--no-sandbox")# //https://stackoverflow.com/a/50725918/1689770
+    chrome_options.add_argument("--disable-infobars")# //https://stackoverflow.com/a/43840128/1689770
+    chrome_options.add_argument("--disable-dev-shm-usage")# //https://stackoverflow.com/a/50725918/1689770
+    chrome_options.add_argument("--disable-browser-side-navigation")# //https://stackoverflow.com/a/49123152/1689770
+    chrome_options.add_argument("--disable-gpu")
     self.driver = webdriver.Chrome(options=chrome_options)
     #self.driver = webdriver.Firefox(options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
@@ -51,7 +58,7 @@ class TestDefaultSuite(unittest.TestCase):
     soup = bs(html, "lxml")
     full_tags = soup.find_all("h1")[0]
     self.vars["tests_cumulative"] = full_tags.text
-    print("Afghanistan wait")
+    print("Afghanistan")
     print(self.vars)
     self.driver.close()
 
@@ -283,15 +290,15 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_denmark(self):
     self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
-    time.sleep(30)
-    #try:
-        #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(8) tr:nth-child(2) > td:nth-child(2) > span").text
-    #except NoSuchElementException:
-        #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(7) tr:nth-child(2) > td:nth-child(2) > span").text
-    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(1) > div:nth-child(11) > table > tbody > tr:nth-child(2) > td:nth-child(2) > p:nth-child(1) > span").text
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(11) > table > tbody > tr:nth-child(2) > td:nth-child(2) > p > span > strong > span").text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(11) > table > tbody > tr:nth-child(8) > td:nth-child(2) > span").text
-    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
+    time.sleep(10)
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(11) > table > tbody > tr:nth-child(2) > td:nth-child(2) > p > span > strong > span").text.replace(',','')
+    #vars["rapid_test_cum"] = driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(11) > table > tbody > tr:nth-child(8) > td:nth-child(2)").text.replace(',','')
+    html = self.driver.page_source
+    soup = bs(html, "lxml")
+    full_tags = soup.find_all("tbody")[1]
+    self.vars["rapid_test_cum"] =  full_tags.find_all("td")[15].text.replace(',','')
+    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"].strip()) + int(self.vars["rapid_test_cum"])
+    print("Denmark")
     print(self.vars)
     self.driver.close()
     
