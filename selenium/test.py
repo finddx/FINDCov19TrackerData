@@ -44,14 +44,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_afghanistan(self):
-    self.driver.set_page_load_timeout(30)
     self.driver.get("http://covidapp.moph-dw.org/")
-    time.sleep(30)
+    time.sleep(10)
+    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "root")))
     html = self.driver.page_source
     soup = bs(html, "lxml")
     full_tags = soup.find_all("h1")[0]
     self.vars["tests_cumulative"] = full_tags.text
-    print("Afghanistan")
+    print("Afghanistan wait")
     print(self.vars)
     self.driver.close()
 
@@ -400,12 +400,16 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-12:nth-child(1) > .single-cool-fact h2").text
     self.driver.close()
 
-  #def test_indonesia(self):
-    #self.driver.set_page_load_timeout(60)
-    #self.driver.get("https://covid19.disiplin.id")
-    #WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)")))
-    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".global-area:nth-child(3) > .text-danger:nth-child(1)").text
-    #self.driver.close()
+  def test_indonesia(self):
+    self.driver.get("https://data.covid19.go.id/public/index.html")
+    time.sleep(10)
+    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".count-total-spesimen")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".count-total-spesimen").text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".count-pcr-tcm-spesimen").text.split('(')[0]
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".count-antigen-spesimen").text.split('(')[0]
+    print("Indonesia")
+    print(self.vars)
+    self.driver.close()
 
   def test_iran(self):
     self.driver.get("http://irangov.ir/search?key=Health%20Ministry&title=1")
