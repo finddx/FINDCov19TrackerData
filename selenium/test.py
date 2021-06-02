@@ -120,9 +120,14 @@ class TestDefaultSuite(unittest.TestCase):
   def test_austria(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#tableBundeslaenderBody > tr:nth-child(6) > td:nth-child(2)").text
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#tableBundeslaenderBody > tr:nth-child(7) > td:nth-child(2)").text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#tableBundeslaenderBody > tr:nth-child(8) > td:nth-child(2)").text
+    time.sleep(2)
+    self.driver.switch_to.frame(0)
+    time.sleep(2)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(7) > td:nth-child(11)").text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) > td:nth-child(11)").text
+    print("Austria")
+    print(self.vars)
     self.driver.close()
 
   def test_azerbaijan(self):
@@ -335,8 +340,8 @@ class TestDefaultSuite(unittest.TestCase):
     url=self.driver.find_element(By.XPATH, "//a[contains(text(),\'casos de COVID-19\')]").get_attribute('href')
     self.driver.get(url)
     time.sleep(5)
-    full_text = self.driver.find_element(By.XPATH, "//p[contains(.,\'de muestras realizadas \')]").text
-    self.vars["tests_cumulative"] = full_text.split('acumula')[1].split('de muestras')[0]
+    full_text = self.driver.find_element(By.XPATH, "//p[contains(.,\'muestras realizadas \')]").text
+    self.vars["tests_cumulative"] = full_text.split('acumula')[1].split('muestras realizadas')[0]
     print("Cuba")
     print(self.vars)
     self.driver.close()
