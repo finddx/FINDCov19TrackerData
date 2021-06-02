@@ -246,7 +246,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_canada(self):
     self.driver.get("https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html")
     time.sleep(15)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#keybox8 > div > p.h2 > span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#Canada > text.CanadaTextValue").text
     print(self.vars)
     self.driver.close()
 
@@ -263,7 +263,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
     time.sleep(60)
     self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[64]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text 
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[63]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text 
     self.driver.close()
 
   #def test_croatia(self):
@@ -505,7 +505,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_malta(self):
     self.driver.get("https://geosys-mt.maps.arcgis.com/apps/opsdashboard/index.html#/8f64954974744d6fb137a26e097d97d2")
     time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember317 > svg > g.responsive-text-label > svg > text").text 
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember317 > svg > g.responsive-text-label").text 
     self.driver.close()
 
   def test_mexico(self):
