@@ -3,6 +3,9 @@ import pytest
 import time
 import json
 import requests
+from datetime import date
+from openpyxl import load_workbook
+from datetime import datetime
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -14,7 +17,6 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
-from datetime import date
 import unittest
 
 class TestDefaultSuite(unittest.TestCase):
@@ -51,6 +53,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_afghanistan(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://covidapp.moph-dw.org/")
     time.sleep(10)
     WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "root")))
@@ -63,6 +66,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_andorra(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.govern.ad/covid19/en/")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary")))
     pcr_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary").text
@@ -74,12 +78,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_antiguaandBarbuda(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.gov.ag")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".icon-test-done > .case-Number").text
     self.driver.close()
     print(self.vars)
   
   def test_albania(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://coronavirus.al/statistika/")
     time.sleep(15)
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "teste_gjithesej").text
@@ -88,6 +94,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_argentina(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://coronavirus.msal.gov.ar/publico/d/20as/sala-de-situacion-coronavirus-acceso-publico/d/20as/sala-de-situacion-coronavirus-acceso-publico?orgId=3&refresh=15m")
     time.sleep(60)
     WebDriverWait(self.driver, 20).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"panel-103\"]/div/div/div[1]/div/div[2]/div/plugin-component/panel-plugin-singlestat/grafana-panel/ng-transclude/div/div/span/span")))
@@ -96,12 +103,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_armenia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://infogram.com/--1h7j4drmogk92nr")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span").text
     self.driver.close()
 
   def test_australia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-current-situation-and-case-numbers#tests-conducted-and-results")
     time.sleep(60)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]")))
@@ -109,6 +118,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_austria(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#tableBundeslaenderBody > tr:nth-child(6) > td:nth-child(2)").text
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#tableBundeslaenderBody > tr:nth-child(7) > td:nth-child(2)").text
@@ -116,11 +126,13 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_azerbaijan(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".gray_little_statistic:nth-child(6) > strong").text
     self.driver.close()
 
   def test_bahrain(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://healthalert.gov.bh/en/")
@@ -129,6 +141,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_bangladesh(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://corona.gov.bd/")
     self.driver.find_element(By.CSS_SELECTOR, "#exampleModal > div > div > div.modal-header > button > span").click()
     self.driver.find_element(By.CSS_SELECTOR, "body > section.main_header > div > div > div.col-md-9 > div > ul > li:nth-child(7) > a").click()
@@ -136,6 +149,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_barbados(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://gisbarbados.gov.bb/covid-19/")
     time.sleep(10)
     self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 UPDATE\')]").click()
@@ -153,18 +167,21 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_belarus(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://stopcovid.belta.by/")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#rec266847794 .t-animate__chain_first-in-row > .t192__title")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#rec266847794 .t-animate__chain_first-in-row > .t192__title").text
     self.driver.close()
     
   def test_belgium(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-4812-848c-0369173148ab/page/cUWaB")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".cd-345jc65scc .valueLabel")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".cd-345jc65scc .valueLabel").text
     self.driver.close()
     
   def test_belize(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://sib.org.bz/covid-19/by-the-numbers/")
@@ -174,6 +191,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()    
 
   def test_benin(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.gouv.bj/coronavirus/")
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".left-5:nth-child(1) .h1").text
     self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".left-5:nth-child(2) .h1").text
@@ -182,12 +200,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_bermuda(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.gov.bm/coronavirus-covid19-update")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)").text
     self.driver.close()
 
   def test_bulgaria(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(60)
     self.driver.get("https://coronavirus.bg/")
@@ -199,12 +219,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_bosniaandHerzegovina(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid-19.ba/")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "total_tested_positive")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "total_tested_positive").text
     self.driver.close()
 
   def test_brazil(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html")
@@ -224,6 +246,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
     
   def test_brunei(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(60)
     self.driver.get("http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx")
@@ -235,22 +258,61 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_cambodia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://cdcmoh.gov.kh")
     self.driver.set_window_size(1542, 830)
     self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div > div > div.item.column-1 > div:nth-child(9) > strong").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div > div > div.item.column-1 > div:nth-child(9) > strong").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split(' ')[1]
+    print("Cambodia")
     print(self.vars)
     self.driver.close()
 
   def test_canada(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html")
     time.sleep(15)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#Canada > text.CanadaTextValue").text
     print(self.vars)
     self.driver.close()
+  
+  def test_colombia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+    self.driver.get("https://infogram.com/panorama-general-1h7z2lgn3l9l4ow?live")
+    time.sleep(5)
+    html = self.driver.page_source
+    soup = bs(html, "lxml")
+    full_tags = soup.find_all("tbody")
+    self.vars["pcr_tests_cum"] = full_tags[13].text.replace(",","")
+    self.vars["rapid_test_cum"] = full_tags[19].text.replace(",","")
+    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"])+int(self.vars["rapid_test_cum"])
+    print("Colombia")
+    print(self.vars)
+    self.driver.close()
+
+  def test_costaRica(self):
+    self.driver.get("https://geovision.uned.ac.cr/oges/index.html")
+    time.sleep(5)
+    url_excel_file = self.driver.find_element(By.XPATH, "//a[contains(@href, \'EXCEL_SERIES.xlsx\')]").get_attribute('href')
+    resp = requests.get(url_excel_file)
+    # saving the xlsx file
+    output = open('test.xlsx', 'wb')
+    output.write(resp.content)
+    output.close()
+    # accessing the xlsx
+    workbook = load_workbook(filename="test.xlsx")
+    sheet = workbook["1_GENERAL"]
+    last_update = workbook["1_GENERAL"].max_row
+    date_last_update = sheet[str("A")+str(last_update)].value
+    d = date_last_update.strftime("%Y-%m-%d")
+    # self.vars["date"] = d
+    self.vars["tests_cumulative"] = sheet[str("AX")+str(last_update)].value
+    print("Costa Rica")
+    print(d)
+    print(self.vars)
 
   def test_czechia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://onemocneni-aktualne.mzcr.cz/covid-19")
     WebDriverWait(self.driver, 40).until(expected_conditions.visibility_of_element_located((By.ID, "count-test")))
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.ID, "count-test").text.replace(" ","")
@@ -260,10 +322,23 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_chile(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
     time.sleep(60)
     self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[63]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text 
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[63]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text
+    self.driver.close()
+  
+  def test_cuba(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+    self.driver.get("http://www.cubadebate.cu/?s=Cuba+reporta")
+    url=self.driver.find_element(By.XPATH, "//a[contains(text(),\'casos de COVID-19\')]").get_attribute('href')
+    self.driver.get(url)
+    time.sleep(5)
+    full_text = self.driver.find_element(By.XPATH, "//p[contains(.,\'de muestras realizadas \')]").text
+    self.vars["tests_cumulative"] = full_text.split('acumula')[1].split('de muestras')[0]
+    print("Cuba")
+    print(self.vars)
     self.driver.close()
 
   #def test_croatia(self):
@@ -289,6 +364,7 @@ class TestDefaultSuite(unittest.TestCase):
     #self.driver.close()
 
   def test_denmark(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
     time.sleep(10)
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(11) > table > tbody > tr:nth-child(2) > td:nth-child(2) > p > span > strong > span").text.replace(',','')
@@ -304,6 +380,7 @@ class TestDefaultSuite(unittest.TestCase):
     
     
   def test_ecuador(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.salud.gob.ec/actualizacion-de-casos-de-coronavirus-en-ecuador/")
@@ -313,6 +390,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_elSalvador(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://covid19.gob.sv/")
@@ -325,6 +403,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_estonia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://koroonakaart.ee/et")
@@ -333,12 +412,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_faroeIslands(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://corona.fo/?_l=en")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]").text
     self.driver.close()
 
-  def test_fiji(self):  
+  def test_fiji(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://www.health.gov.fj/")
     url=self.driver.find_element(By.XPATH, "(//a[contains(text(),\'COVID-19 Update\')])[3]").get_attribute('href')
     self.driver.get(url)
@@ -347,12 +428,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_finland(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
     time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm > div > div.portlet-content-container > div > div.clearfix.journal-content-article > ul:nth-child(7) > li:nth-child(2) > strong").text
     self.driver.close()
 
   def test_france(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://dashboard.covid19.data.gouv.fr/suivi-des-tests?location=FRA")
@@ -368,16 +451,24 @@ class TestDefaultSuite(unittest.TestCase):
     #self.driver.close()
 
   def test_greece(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.innews.gr/iframe")
     time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".tests-badge .total").text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(1) > .today").text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) > .today").text
+    print("Greece")
+    print(self.vars)
+    self.driver.close()
 
   def test_greenland(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://nun.gl/emner/borgere/coronavirus_emne/foelg_smittespredningen?sc_lang=da")
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//table[@id=\'covid_19\']/tbody/tr/td[2]").text
     self.driver.close()
 
   def test_guatemala(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://gtmvigilanciacovid.shinyapps.io/3869aac0fb95d6baf2c80f19f2da5f98")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".sidebar-menu")))
     self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) span").click()
@@ -386,6 +477,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_hungary(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://koronavirus.gov.hu/#aktualis")
     time.sleep(10)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "content-mintavetel")))
@@ -394,6 +486,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_iceland(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.covid.is/tolulegar-upplysingar")
     self.driver.switch_to.frame(0)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span")))
@@ -402,12 +495,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_india(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.icmr.gov.in/")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-12:nth-child(1) > .single-cool-fact h2")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-12:nth-child(1) > .single-cool-fact h2").text
     self.driver.close()
 
   def test_indonesia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://data.covid19.go.id/public/index.html")
     time.sleep(10)
     WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".count-total-spesimen")))
@@ -419,6 +514,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_iran(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://irangov.ir/search?key=Health%20Ministry&title=1")
     self.driver.find_element_by_id("blockid_2")
     url = self.driver.find_element(By.XPATH, "//div[3]//div[2]//div[1]//a").get_attribute('href')
@@ -437,11 +533,17 @@ class TestDefaultSuite(unittest.TestCase):
     #self.driver.close()
 
   def test_italy(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body").text.strip().split('"tamponi":')[1].split('\n')[0]
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "body").text.strip().split('"tamponi_test_molecolare":')[1].split('\n')[0]
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "body").text.strip().split('"tamponi_test_antigenico_rapido"')[1].split('\n')[0]
+    print("Italy")
+    print(self.vars)
     self.driver.close()
 
   def test_ireland(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19ireland-geohive.hub.arcgis.com/pages/hospitals-icu--testing")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ember142 .ss-value")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember142 .ss-value").text
@@ -461,6 +563,7 @@ class TestDefaultSuite(unittest.TestCase):
   #   self.driver.close()
 
   def test_jordan(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOTUxMTEwMzItYzM5ZS00MTZjLTkxNmYtYjBjYjUyZGIwNThlIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9&pageName=ReportSection8911066d0a4953dfcbe5")
@@ -471,6 +574,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_laoPeoplesDemocraticRepublic(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.covid19.gov.la/index.php")
@@ -480,6 +584,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_latvia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://spkc.maps.arcgis.com/apps/opsdashboard/index.html#/4469c1fb01ed43cea6f20743ee7d5939")
     time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div > div > div > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(2) > margin-container > full-container > div > div > p > span > strong").text
@@ -487,6 +592,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_lebanon(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://corona.ministryinfo.gov.lb/")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".s-counter3")))
     time.sleep(60)
@@ -494,6 +600,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_lithuania(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://e.infogram.com/57e5b447-c2ca-40da-aedb-cbf97df68a8e?parent_url=https%3A%2F%2Fosp.stat.gov.lt%2Fpraejusios-paros-covid-19-statistika&src=embed#async_embed")
     time.sleep(10)
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.ipakMe > div > div:nth-child(23) > div > div > div > div > div > table > tbody > tr:nth-child(7) > td:nth-child(1) > span").text
@@ -503,12 +610,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_malta(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://geosys-mt.maps.arcgis.com/apps/opsdashboard/index.html#/8f64954974744d6fb137a26e097d97d2")
     time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember317 > svg > g.responsive-text-label").text 
     self.driver.close()
 
   def test_mexico(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.set_page_load_timeout(60)
     self.driver.get("https://datos.covid-19.conacyt.mx/")
     time.sleep(30)
@@ -537,12 +646,14 @@ class TestDefaultSuite(unittest.TestCase):
     #self.driver.close()
     
   def test_myanmar(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://doph.maps.arcgis.com/apps/opsdashboard/index.html#/f8fb4ccc3d2d42c7ab0590dbb3fc26b8")
     time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember20").text.split('\n')[1]
     self.driver.close()
   
   def test_nepal(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(60)
     self.driver.get("https://covid19.mohp.gov.np/")
@@ -552,18 +663,21 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_newCaledonia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://gouv.nc/coronavirus")
     #self.driver.find_element(By.CSS_SELECTOR, ".quatre > .big-chiffre").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#block-system-main > div > div > div > div.field.field-name-body > div.col-md-12.text-center.tableau_de_bord > div:nth-child(1) > div:nth-child(1) > div > div > div > p:nth-child(3)").text 
     self.driver.close()
 
   def test_newZealand(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td").text
     self.driver.close()
 
   def test_northMacedonia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://datastudio.google.com/embed/u/0/reporting/9f5104d0-12fd-4e16-9a11-993685cfd40f/page/1M")
@@ -572,6 +686,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_norway(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/")
@@ -580,6 +695,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_occupiedPalestinianterritory(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://corona.ps/")
@@ -588,6 +704,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_pakistan(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid.gov.pk/")
     time.sleep(30)
     self.driver.set_window_size(1536, 825)
@@ -597,14 +714,15 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div.nk-wrap > section:nth-child(4) > div.container.pb-50 > div.status > ul > li.active > div:nth-child(1) > span").text
     self.driver.close()
     
-    
   # web page doesn't open
   def test_papuaNewGuinea(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.info.gov.pg/")
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//article[@id=\'post-166\']/div/div/div/section[4]/div[2]/div/div[2]/div/div/section/div/div/div[2]/div/div/div/div/div/table/tbody/tr[11]/td[2]/p/span/span").text
     self.driver.close()
 
   def test_peru(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOGU4MGE1NzItNmY1OC00ZTc2LThlYTItNWY2MzJhZjU5ZTM2IiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     time.sleep(10)
     WebDriverWait(self.driver, 10).until(expected_conditions.frame_to_be_available_and_switch_to_it(4))
@@ -620,6 +738,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_portugal(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://esriportugal.maps.arcgis.com/apps/dashboards/acf023da9a0b4f9dbb2332c13f635829")
     self.driver.set_window_size(1440, 855)
     time.sleep(20)
@@ -638,12 +757,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_qatar(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.moph.gov.qa/EN/Pages/default.aspx#")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "strgPeopleTested")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "strgPeopleTested").text
     self.driver.close()
 
   def test_republicofKorea(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("http://ncov.mohw.go.kr/en/")
@@ -652,6 +773,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_romania(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://stirioficiale.ro/informatii")
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'BULETIN DE PRESĂ\')]").get_attribute('href')
     self.driver.get(url)
@@ -672,6 +794,7 @@ class TestDefaultSuite(unittest.TestCase):
   #   self.driver.close()
 
   def test_saintKittsandNevis(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.gov.kn/stats2.php")
     time.sleep(5)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(4) > td:nth-child(2)").text
@@ -679,6 +802,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_saintLucia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.covid19response.lc/")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div")))
     self.driver.find_element(By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div").click()
@@ -687,6 +811,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_sanMarino(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://www.iss.sm/on-line/home/artCataggiornamenti-coronavirus.49004093.1.20.1.html")
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Epidemia COVID-19\')]").get_attribute('href')
     self.driver.get(url)
@@ -697,6 +822,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_saudiArabia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.set_window_size(1200, 600)
     self.driver.get("https://saudimoh.maps.arcgis.com/apps/opsdashboard/index.html#/cbd5335b0eed411b9e1fee32da342cf4")
     time.sleep(15)
@@ -709,18 +835,21 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_serbia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.rs/")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title").text
     self.driver.close()
 
   def test_singapore(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.moh.gov.sg/covid-19")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 > div > div > table > tbody > tr:nth-child(2) > td > strong > span")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 > div > div > table > tbody > tr:nth-child(2) > td > strong > span").text
     self.driver.close()
 
   def test_slovakia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://korona.gov.sk/")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#block_603780b691b98 > div > p")))
     pcr_test = self.driver.find_element(By.CSS_SELECTOR, "#block_603780b691b98 > div > p").text
@@ -732,6 +861,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_slovenia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19")
     time.sleep(5)
     all_test = self.driver.find_element(By.XPATH, "//tbody").text
@@ -742,6 +872,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_spain(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.mscbs.gob.es/gabinete/notasPrensa.do")
     WebDriverWait(self.driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a")))
     url = self.driver.find_element(By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a").get_attribute('href')
@@ -755,6 +886,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_sriLanka(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://www.hpb.health.gov.lk/en")
@@ -763,6 +895,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_switzerland(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.covid19.admin.ch/en/overview?ovTime=total")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".bag-key-value-list__combine-below:nth-child(2) .bag-key-value-list__entry-value").text
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "bag-card-overview-test .bag-key-value-list__combine-above:nth-child(3) .bag-key-value-list__entry-value").text
@@ -770,6 +903,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_taiwan(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan")
     self.driver.switch_to.frame(1)
     self.driver.switch_to.frame(0)
@@ -778,26 +912,58 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.execute_script("x = document.getElementById(\'num9\').textContent; return x;")
     self.driver.close()
 
-  #def test_thailand(self):
-    #self.driver.get("https://ddc.moph.go.th/viralpneumonia/eng/index.php")
-   # WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".w3-col:nth-child(1) > .mybg3 > .txt2")))
-    #time.sleep(10)
-    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".w3-col:nth-child(1) > .mybg3 > .txt2").text
-    #self.driver.close()
+  def test_thailand(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+    self.driver.get("http://nextcloud.dmsc.moph.go.th/index.php/s/wbioWZAQfManokc")
+    time.sleep(5)
+    n_files = self.driver.find_element(By.XPATH, "//*[@id=\'filestable\']/tfoot/tr/td[2]/span/span[3]").text.split(" ")[0]
+    # Calculating scrolls to access the last file
+    scrolls = round(int(n_files)/20)
+    for i in range(scrolls+1):
+        self.driver.execute_script("window.scrollTo(0,100000000)")
+        time.sleep(2)
+
+    html = self.driver.page_source
+    soup = bs(html, "lxml")
+    full_tags = soup.find_all("tbody", attrs={"id":"fileList"})
+    full_tags = soup.find_all("a", attrs={"class":"name"})
+    name_file =full_tags[67].text.replace("Actions","")
+
+    # download xlsx file
+    url_excel_file = "http://nextcloud.dmsc.moph.go.th/index.php/s/wbioWZAQfManokc/download?path=%2F&files="+name_file
+    resp = requests.get(url_excel_file)
+    # saving the xlsx file
+    output = open('test.xlsx', 'wb')
+    output.write(resp.content)
+    output.close()
+    # accessing the xlsx
+    workbook = load_workbook(filename="test.xlsx", data_only=True)
+    sheet = workbook["Data"]
+    last_update = sheet.max_row
+    date_last_update = sheet[str("A")+str(last_update-3)].value
+    d = date_last_update.strftime("%Y-%m-%d")
+    # self.vars["date"] = d
+    self.vars["tests_cumulative"] = sheet[str("C")+str(last_update)].value
+    print("Thailand")
+    print(d)
+    print(self.vars)
 
   def test_turkey(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.saglik.gov.tr/")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".toplam-test-sayisi")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".toplam-test-sayisi").text
     self.driver.close()
 
   def test_ukraine(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.gov.ua/en/")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value").text
     self.driver.close()
 
   def test_unitedArabEmirates(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(60)
     self.driver.get("https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx")
@@ -807,6 +973,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_unitedKingdom(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://coronavirus.data.gov.uk/testing")
     time.sleep(30)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "value-item-virus_tests_conducted-total-cumvirustests-1_modal")))
@@ -815,6 +982,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_uruguay(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.set_page_load_timeout(60)
     self.driver.get("https://coronavirusuy.maps.arcgis.com/apps/opsdashboard/index.html#/98155a4390b644308c453e5b20b2516e")
     time.sleep(30)
@@ -823,6 +991,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_uS(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6")
     self.driver.set_window_size(1440, 855)
     time.sleep(60)
@@ -835,6 +1004,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_venezuela(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.patria.org.ve/noticia/")
     url=self.driver.find_element(By.XPATH, "//a[contains(text(),\'lucha contra la COVID-19\')]").get_attribute('href')
     self.driver.get(url)
@@ -847,6 +1017,7 @@ class TestDefaultSuite(unittest.TestCase):
 
   # Africa web site 
   def test_algeria(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -858,6 +1029,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_angola(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -869,6 +1041,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
     
   def test_botswana(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -880,6 +1053,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_burkinaFaso(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -891,6 +1065,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_burundi(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -902,6 +1077,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_cameroon(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -913,6 +1089,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_capeVerde(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -924,6 +1101,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_centralAfricanRepublic(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -935,6 +1113,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_chad(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -946,6 +1125,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_comoros(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -957,6 +1137,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_cotedIvoire(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -968,6 +1149,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_democraticRepublicoftheCongo(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -979,6 +1161,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_djibouti(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -990,6 +1173,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_egypt(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1001,6 +1185,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_equatorialGuinea(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1012,6 +1197,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_eritrea(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1023,6 +1209,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_eswatini(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1034,6 +1221,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_ethiopia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1045,6 +1233,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_gabon(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1056,6 +1245,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_ghana(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1067,6 +1257,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_guinea(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1078,6 +1269,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_guineaBissau(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1089,6 +1281,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_kenya(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1100,6 +1293,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_lesotho(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1111,6 +1305,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_liberia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1122,6 +1317,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_libya(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1133,6 +1329,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_madagascar(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1144,6 +1341,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_malawi(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1155,6 +1353,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_mali(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1166,6 +1365,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_mauritania(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1177,6 +1377,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_mauritius(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1188,6 +1389,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
               
   def test_morocco(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1199,6 +1401,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_mozambique(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1210,6 +1413,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_namibia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1221,6 +1425,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_niger(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1232,6 +1437,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_nigeria(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1243,6 +1449,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_congo(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1254,6 +1461,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_rwanda(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1265,6 +1473,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_saoTomeandPrincipe(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1276,6 +1485,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_senegal(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1287,6 +1497,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_seychelles(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1298,6 +1509,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_sierraLeone(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1309,6 +1521,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_somalia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1320,6 +1533,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_southAfrica(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1331,6 +1545,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_southSudan(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1342,6 +1557,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
               
   def test_sudan(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1353,6 +1569,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_theGambia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1364,6 +1581,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_togo(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1375,6 +1593,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_tunisia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1386,6 +1605,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_uganda(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1397,6 +1617,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_unitedRepublicofTanzania(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1408,6 +1629,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_westernSahara(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1419,6 +1641,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_zambia(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
@@ -1430,6 +1653,7 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
 
   def test_zimbabwe(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/arcgis/rest/services/Test_Covid_DB_GR/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
     r_tests = requests.get(url_tests)
     cont_tests = json.loads(r_tests.content)
