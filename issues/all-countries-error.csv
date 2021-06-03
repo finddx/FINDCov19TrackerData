@@ -1,6 +1,6 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2021-06-03,NA,NA,NA,NA,selenium
-Andorra,2021-05-25,329059,-24249,329059,-24249,manually
+Andorra,2021-05-26,329059,0,329059,-24249,selenium
 Barbados,2021-06-03,NA,NA,NA,NA,selenium
 Belize,2021-05-22,126180,-526,126180,-526,manually
 Bhutan,2021-06-03,NA,NA,NA,NA,NA
@@ -9,8 +9,7 @@ Brazil,2021-06-03,NA,NA,NA,NA,selenium
 Brunei,2021-06-03,NA,NA,NA,NA,selenium
 Cambodia,2021-06-03,NA,NA,NA,NA,selenium
 Canada,2021-06-03,1385278,-33542649,1385278,-33542649,selenium
-Chile,2021-05-25,33538,-14250088,33538,-14250088,selenium
-Chile,2021-05-27,70276,-14388418,70276,-14388418,manually
+Chile,2021-05-28,72575,-14386119,72575,-14386119,selenium
 Chile,2021-05-31,71749,-5299,71749,-5299,manually
 China,2021-06-03,NA,NA,NA,NA,NA
 Croatia,2021-06-03,NA,NA,NA,NA,NA
