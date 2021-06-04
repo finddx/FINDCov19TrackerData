@@ -336,7 +336,7 @@ jobs:
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
           # collects R-based and Selenium-based countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
-          Rscript -e "FINDCov19Tracker::segregated_test_data(days=10)"
+          Rscript -e "FINDCov19Tracker::segregated_test_data()"
 
       - name: Commit files
         run: |
