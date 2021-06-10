@@ -156,19 +156,26 @@ class TestDefaultSuite(unittest.TestCase):
   def test_barbados(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://gisbarbados.gov.bb/covid-19/")
-    time.sleep(10)
-    self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 UPDATE\')]").click()
-    time.sleep(10)
+    time.sleep(5)
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Update\')]").get_attribute('href')
+    self.driver.get(url)
+    time.sleep(5)
     try:
-        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has completed\')]").text
-        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has completed")[1].split("tests")[0]
+      self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
+      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has completed")[1].split("tests")[0]
     except NoSuchElementException:
-            try:
-                self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
-                self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("completed")[1]
-            except NoSuchElementException:
-                self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The lab has performed\')]").text
-                self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has performed")[1].split("tests")[0]
+      try:
+        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
+        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("completed")[1]
+      except NoSuchElementException:
+        try:
+          self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The lab has performed\')]").text
+          self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has performed")[1].split("tests")[0]
+        except NoSuchElementException:
+          self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'has carried\')]").text
+          self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried")[1].split("tests")[0]
+    print("Barbados")
+    print(self.vars)
     self.driver.close()
     
   def test_belarus(self):
@@ -275,9 +282,10 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_canada(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html")
+    self.driver.get("https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html?stat=num&measure=tests&map=pt#a2")
     time.sleep(15)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#Canada > text.CanadaTextValue").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#txtTotal").text
+    print("Canada")
     print(self.vars)
     self.driver.close()
   
