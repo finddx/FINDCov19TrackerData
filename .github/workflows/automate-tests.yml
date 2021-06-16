@@ -347,6 +347,8 @@ jobs:
           date=$(date +'%Y-%m-%d')
           mv segregated_tests.csv automated/
           git add automated/segregated_tests.csv
+          mv segregated-data-error.csv issues/
+          git add issues/segregated-data-error.csv
           git commit -m "update segregated files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
