@@ -202,14 +202,15 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('outbreak situation\n')[1].split('\nTests Completed')[0]
     self.driver.close()    
 
-  def test_benin(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://www.gouv.bj/coronavirus/")
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".left-5:nth-child(1) .h1").text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".left-5:nth-child(2) .h1").text
-    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"])+int(self.vars["rapid_test_cum"])
-    print(self.vars)
-    self.driver.close()
+  # def test_benin(self):
+  #   # since 2021-06-09 doesn't show number of tests
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://www.gouv.bj/coronavirus/")
+  #   self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".left-5:nth-child(1) .h1").text
+  #   self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".left-5:nth-child(2) .h1").text
+  #   self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"])+int(self.vars["rapid_test_cum"])
+  #   print(self.vars)
+  #   self.driver.close()
 
   def test_bermuda(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
