@@ -1,5 +1,5 @@
 ## tic GitHub Actions template: custom-deploy
-## revision date: 2020-12-11
+## revision date: 2021-06-27
 # [Custom header]
 on:
   workflow_dispatch:
@@ -43,7 +43,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2
 
       - uses: r-lib/actions/setup-r@master
         with:
@@ -69,11 +69,11 @@ jobs:
 
       - name: "[Cache] Cache R packages"
         if: runner.os != 'Windows'
-        uses: pat-s/always-upload-cache@v2.1.3
+        uses: pat-s/always-upload-cache@v2
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
-          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}
 
       # for some strange Windows reason this step and the next one need to be decoupled
       - name: "[Stage] Prepare"
@@ -82,27 +82,19 @@ jobs:
           Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
 
       - name: "[Custom block] [Linux] Install poppler for pdftools package"
-        run: |
-          sudo R CMD javareconf
-          sudo add-apt-repository -y ppa:cran/poppler
-          sudo apt-get update
-          sudo apt-get install -y libpoppler-cpp-dev
+        run: sudo R CMD javareconf && sudo add-apt-repository -y ppa:cran/poppler && sudo apt-get update && sudo apt-get install -y libpoppler-cpp-dev
 
       - name: "[Custom block] [Linux] Install required libraries"
         if: runner.os == 'Linux'
         run: sudo apt install libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler libgit2-dev
 
-      - name: "[Custom block] [Linux] Install Java"
-        if: runner.os == 'Linux'
-        run: sudo R CMD javareconf
-
-      - name: "[Stage] [Linux] Install curl and libgit2"
-        if: runner.os == 'Linux'
-        run: sudo apt install libcurl4-openssl-dev libgit2-dev
-
       - name: "[Stage] [macOS] Install libgit2"
         if: runner.os == 'macOS'
         run: brew install libgit2
+
+      - name: "[Custom block] [Linux] Install Java"
+        if: runner.os == 'Linux'
+        run: sudo R CMD javareconf
 
       - name: "[Stage] [macOS] Install system libs for pkgdown"
         if: runner.os == 'macOS' && matrix.config.pkgdown != ''
@@ -111,6 +103,16 @@ jobs:
       - name: "[Stage] [Linux] Install system libs for pkgdown"
         if: runner.os == 'Linux' && matrix.config.pkgdown != ''
         run: sudo apt install libharfbuzz-dev libfribidi-dev
+
+      # Try to automatically check for system dependencies and install them
+      # Note: this might not catch all required system libs and manual action might be needed
+      - name: "[Stage] [Linux] Install linux system dependencies"
+        if: runner.os == 'Linux'
+        run: |
+          while read -r cmd
+          do
+            eval sudo $cmd
+          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "20.04"))')
 
       - name: "[Stage] Install"
         if: matrix.config.os != 'macOS-latest' || matrix.config.r != 'devel'
@@ -130,9 +132,16 @@ jobs:
         if: matrix.config.os == 'macOS-latest' && matrix.config.r == 'release'
         run: Rscript -e "tic::after_success()"
 
+      - name: "[Custom block] Trigger workflow run in FindCov19TrackerShiny"
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.WEBHOOK_TOKEN }}
+          repository: dsbbfinddx/FINDCov19TrackerShiny
+          event-type: "Deploy Shiny App after updating data in FindCov19TrackerData"
+
       - name: "[Stage] Upload R CMD check artifacts"
         if: failure()
-        uses: actions/upload-artifact@v2.2.1
+        uses: actions/upload-artifact@v2
         with:
           name: ${{ runner.os }}-r${{ matrix.config.r }}-results
           path: check
@@ -145,10 +154,3 @@ jobs:
 
       - name: "[Stage] After Deploy"
         run: Rscript -e "tic::after_deploy()"
-
-      - name: "[Custom block] Trigger workflow run in FindCov19TrackerShiny"
-        uses: peter-evans/repository-dispatch@master
-        with:
-          token: ${{ secrets.WEBHOOK_TOKEN }}
-          repository: dsbbfinddx/FINDCov19TrackerShiny
-          event-type: "Deploy Shiny App after updating data in FindCov19TrackerData"
