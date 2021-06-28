@@ -4,7 +4,7 @@ on:
   # for now, CRON jobs only run on the default branch of the repo (i.e. usually on master)
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron: "0 23 * * *"
+    - cron: "0 20 * * *"
     - cron: "0 2 * * *"
 
 name: "Scrape test data and push"
@@ -20,8 +20,15 @@ jobs:
         with:
           python-version: "3.8.6" # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: "x64" # optional x64 or x86. Defaults to x64 if not specified
+      - name: geckodriver/firefox
+        run: |
+          echo "geckodriver/firefox"
+          which geckodriver
+          geckodriver --version
+          which firefox
+          firefox --version
       - name: Install deps
-        run: pip3 install --user selenium pytest pandas requests
+        run: pip3 install --user selenium pytest pandas requests beautifulsoup4 lxml openpyxl
 
       - name: Scrape test data with Selenium
         run: env GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} python selenium/run.py
@@ -44,84 +51,84 @@ jobs:
           directory: automated/selenium
           branch: ${{ github.ref }}
 
-  fetch-with-r:
-    needs: selenium
-    if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), 'manually processed countries') )"
-    runs-on: ubuntu-latest
-
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      TIC_DEPLOY_KEY: ${{ secrets.TIC_DEPLOY_KEY }}
-
-    steps:
-      - uses: actions/checkout@v2.3.1
-
-      - uses: r-lib/actions/setup-r@master
-        with:
-          r-version: "release"
-          Ncpus: 4
-
-      # set date/week for use in cache creation
-      # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
-      # - cache R packages daily
-      - name: "[Cache] Prepare daily timestamp for cache"
-        if: runner.os != 'Windows'
-        id: date
-        run: echo "::set-output name=date::$(date '+%d-%m')"
-
-      - name: "[Cache] Cache R packages"
-        if: runner.os != 'Windows'
-        uses: pat-s/always-upload-cache@v2.1.3
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
-          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
-
-      # for some strange Windows reason this step and the next one need to be decoupled
-      - name: "[Stage] Prepare"
-        run: |
-          Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
-          Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
-
-      - name: "[Custom block] [Linux] Install required libraries"
-        run: sudo apt install libcurl4-openssl-dev libgit2-dev libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler
-
-      - name: "[Stage] Install"
-        run: |
-          sudo add-apt-repository -y ppa:cran/poppler
-          sudo apt-get update
-          sudo apt-get install -y libpoppler-cpp-dev
-          sudo R CMD javareconf
-          Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
-          Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
-
-      - name: "[Stage] Fetch test data with R"
-        run: |
-          # scrapes tests from R-based countries which are not supported by Selenium
-          Rscript -e "data = FINDCov19Tracker::fetch_test_data(); readr::write_csv(data, 'tests-R.csv')"
-
-      - name: Commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git config pull.rebase false
-          git pull origin master
-          date=$(date +'%Y-%m-%d')
-          mv tests-R.csv automated/fetch/$date-tests-R.csv
-          git add automated/fetch/$date-tests-R.csv
-          git commit -m "update $date-tests-R.csv" || echo "Nothing to update"
-
-      - name: Push changes to FINDCov19TrackerData
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          directory: automated/fetch
-          branch: ${{ github.ref }}
+  # fetch-with-r:
+  #   needs: selenium
+  #   if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), 'manually processed countries') )"
+  #   runs-on: ubuntu-18.04
+  #
+  #   env:
+  #     GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+  #     TIC_DEPLOY_KEY: ${{ secrets.TIC_DEPLOY_KEY }}
+  #
+  #   steps:
+  #     - uses: actions/checkout@v2.3.1
+  #
+  #     - uses: r-lib/actions/setup-r@master
+  #       with:
+  #         r-version: "release"
+  #         Ncpus: 4
+  #
+  #     # set date/week for use in cache creation
+  #     # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
+  #     # - cache R packages daily
+  #     - name: "[Cache] Prepare daily timestamp for cache"
+  #       if: runner.os != 'Windows'
+  #       id: date
+  #       run: echo "::set-output name=date::$(date '+%d-%m')"
+  #
+  #     - name: "[Cache] Cache R packages"
+  #       if: runner.os != 'Windows'
+  #       uses: pat-s/always-upload-cache@v2.1.3
+  #       with:
+  #         path: ${{ env.R_LIBS_USER }}
+  #         key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+  #         restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+  #
+  #     # for some strange Windows reason this step and the next one need to be decoupled
+  #     - name: "[Stage] Prepare"
+  #       run: |
+  #         Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
+  #         Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
+  #
+  #     - name: "[Custom block] [Linux] Install required libraries"
+  #       run: sudo apt install libcurl4-openssl-dev libgit2-dev libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler
+  #
+  #     - name: "[Stage] Install"
+  #       run: |
+  #         sudo add-apt-repository -y ppa:cran/poppler
+  #         sudo apt-get update
+  #         sudo apt-get install -y libpoppler-cpp-dev
+  #         sudo R CMD javareconf
+  #         Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+  #         Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
+  #
+  #     - name: "[Stage] Fetch test data with R"
+  #       run: |
+  #         # scrapes tests from R-based countries which are not supported by Selenium
+  #         Rscript -e "data = FINDCov19Tracker::fetch_test_data(); readr::write_csv(data, 'tests-R.csv')"
+  #
+  #     - name: Commit files
+  #       run: |
+  #         git config --local user.email "action@github.com"
+  #         git config --local user.name "GitHub Action"
+  #         git config pull.rebase false
+  #         git pull origin master
+  #         date=$(date +'%Y-%m-%d')
+  #         mv tests-R.csv automated/fetch/$date-tests-R.csv
+  #         git add automated/fetch/$date-tests-R.csv
+  #         git commit -m "update $date-tests-R.csv" || echo "Nothing to update"
+  #
+  #     - name: Push changes to FINDCov19TrackerData
+  #       uses: ad-m/github-push-action@master
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         directory: automated/fetch
+  #         branch: ${{ github.ref }}
 
   combine-and-deploy:
-    needs: fetch-with-r
+    needs: selenium
     if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), 'manually processed countries') )"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     env:
       # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
@@ -173,7 +180,7 @@ jobs:
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
           # collects R-based and Selenium-based countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
-          Rscript -e "FINDCov19Tracker::get_daily_test_data()"
+          Rscript -e "FINDCov19Tracker::get_test_data(days = 70)"
 
       - name: Commit files
         run: |
@@ -182,10 +189,10 @@ jobs:
           git config pull.rebase false
           git pull origin master
           date=$(date +'%Y-%m-%d')
-          mv automated-tests.csv automated/merged/$date-automated-tests.csv
-          mv countries-error.csv issues/$date-countries-error.csv
-          git add automated/merged/$date-automated-tests.csv
-          git add issues/$date-countries-error.csv
+          mv *automated-tests.csv automated/merged/
+          mv *countries-error.csv issues/
+          git add automated/merged/*
+          git add issues/*
           git commit -m "update files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
@@ -198,7 +205,7 @@ jobs:
   run-analysis:
     needs: combine-and-deploy
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     env:
       # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
@@ -266,6 +273,236 @@ jobs:
           git add manual/need-processing/$date-need-manual-processing.csv
           git add automated/coronavirus_tests_new.csv
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
+
+      - name: Push changes to FINDCov19TrackerData
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: automated/merged
+          branch: ${{ github.ref }}
+
+  combine-segregated-data:
+    needs: run-analysis
+    if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), 'manually processed countries') )"
+    runs-on: ubuntu-18.04
+
+    env:
+      # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      TIC_DEPLOY_KEY: ${{ secrets.TIC_DEPLOY_KEY }}
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: "release"
+          Ncpus: 4
+
+      # set date/week for use in cache creation
+      # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
+      # - cache R packages daily
+      - name: "[Cache] Prepare daily timestamp for cache"
+        if: runner.os != 'Windows'
+        id: date
+        run: echo "::set-output name=date::$(date '+%d-%m')"
+
+      - name: "[Cache] Cache R packages"
+        if: runner.os != 'Windows'
+        uses: pat-s/always-upload-cache@v2.1.3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+
+      # for some strange Windows reason this step and the next one need to be decoupled
+      - name: "[Stage] Prepare"
+        run: |
+          Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
+          Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
+
+      - name: "[Custom block] [Linux] Install required libraries"
+        run: sudo apt install libcurl4-openssl-dev libgit2-dev libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler
+
+      - name: "[Stage] Install"
+        run: |
+          sudo add-apt-repository -y ppa:cran/poppler
+          sudo apt-get update
+          sudo apt-get install -y libpoppler-cpp-dev
+          sudo R CMD javareconf
+          Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+          Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
+
+      - name: "[Stage] Combine Selenium and R Test Data"
+        run: |
+          # collects R-based and Selenium-based countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
+          Rscript -e "FINDCov19Tracker::segregated_test_data()"
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config pull.rebase false
+          git pull origin master
+          date=$(date +'%Y-%m-%d')
+          mv segregated_tests.csv automated/
+          git add automated/segregated_tests.csv
+          mv segregated-data-error.csv issues/
+          git add issues/segregated-data-error.csv
+          git commit -m "update segregated files for $date" || echo "Nothing to update"
+
+      - name: Push changes to FINDCov19TrackerData
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: automated/merged
+          branch: ${{ github.ref }}
+
+  shiny-data:
+    needs: combine-segregated-data
+    if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
+    runs-on: ubuntu-18.04
+
+    env:
+      # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      TIC_DEPLOY_KEY: ${{ secrets.TIC_DEPLOY_KEY }}
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: "release"
+          Ncpus: 4
+
+      # set date/week for use in cache creation
+      # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
+      # - cache R packages daily
+      - name: "[Cache] Prepare daily timestamp for cache"
+        if: runner.os != 'Windows'
+        id: date
+        run: echo "::set-output name=date::$(date '+%d-%m')"
+
+      - name: "[Cache] Cache R packages"
+        if: runner.os != 'Windows'
+        uses: pat-s/always-upload-cache@v2.1.3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+
+      # for some strange Windows reason this step and the next one need to be decoupled
+      - name: "[Stage] Prepare"
+        run: |
+          Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
+          Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
+
+      - name: "[Custom block] [Linux] Install required libraries"
+        run: sudo apt install libcurl4-openssl-dev libgit2-dev libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler
+
+      - name: "[Stage] Install"
+        run: |
+          sudo add-apt-repository -y ppa:cran/poppler
+          sudo apt-get update
+          sudo apt-get install -y libpoppler-cpp-dev
+          sudo R CMD javareconf
+          Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+          Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
+
+      - name: "[Stage] Create shiny data"
+        run: |
+          # Takes `coronavirus_tests_new.csv` and create data for shiny without NA and negative values
+          Rscript -e "FINDCov19Tracker::create_shiny_data()"
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config pull.rebase false
+          git pull origin master
+          date=$(date +'%Y-%m-%d')
+          git add processed/coronavirus_cases.csv
+          git add processed/coronavirus_tests.csv
+          git add processed/jhu_data.csv
+          git add processed/data_all.csv
+          git add processed/unit_info.csv
+          git commit -m "update run analysis files for $date" || echo "Nothing to update"
+
+      - name: Push changes to FINDCov19TrackerData
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: processed
+          branch: ${{ github.ref }}
+
+  last-update-countries:
+    needs: shiny-data
+    if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
+    runs-on: ubuntu-18.04
+
+    env:
+      # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      TIC_DEPLOY_KEY: ${{ secrets.TIC_DEPLOY_KEY }}
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: "release"
+          Ncpus: 4
+
+      # set date/week for use in cache creation
+      # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
+      # - cache R packages daily
+      - name: "[Cache] Prepare daily timestamp for cache"
+        if: runner.os != 'Windows'
+        id: date
+        run: echo "::set-output name=date::$(date '+%d-%m')"
+
+      - name: "[Cache] Cache R packages"
+        if: runner.os != 'Windows'
+        uses: pat-s/always-upload-cache@v2.1.3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+
+      # for some strange Windows reason this step and the next one need to be decoupled
+      - name: "[Stage] Prepare"
+        run: |
+          Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
+          Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
+
+      - name: "[Custom block] [Linux] Install required libraries"
+        run: sudo apt install libcurl4-openssl-dev libgit2-dev libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler
+
+      - name: "[Stage] Install"
+        run: |
+          sudo add-apt-repository -y ppa:cran/poppler
+          sudo apt-get update
+          sudo apt-get install -y libpoppler-cpp-dev
+          sudo R CMD javareconf
+          Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+          Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
+
+      - name: "[Stage] Combine Selenium and R Test Data"
+        run: |
+          # calculates update dates
+          Rscript -e "FINDCov19Tracker::updates_dates_countries()"
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config pull.rebase false
+          git pull origin master
+          date=$(date +'%Y-%m-%d')
+          mv countries-last-update.csv issues/countries-last-update.csv
+          git add issues/countries-last-update.csv
+          git commit -m "update issues last update files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
@@ -276,7 +513,84 @@ jobs:
 
   run-analysis-manual:
     if: "contains(toJSON(github.event.commits.*.message), 'manually processed countries')"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
+
+    env:
+      # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      TIC_DEPLOY_KEY: ${{ secrets.TIC_DEPLOY_KEY }}
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: "release"
+          Ncpus: 4
+
+      # set date/week for use in cache creation
+      # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
+      # - cache R packages daily
+      - name: "[Cache] Prepare daily timestamp for cache"
+        if: runner.os != 'Windows'
+        id: date
+        run: echo "::set-output name=date::$(date '+%d-%m')"
+
+      - name: "[Cache] Cache R packages"
+        if: runner.os != 'Windows'
+        uses: pat-s/always-upload-cache@v2.1.3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+
+      # for some strange Windows reason this step and the next one need to be decoupled
+      - name: "[Stage] Prepare"
+        run: |
+          Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
+          Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
+
+      - name: "[Custom block] [Linux] Install required libraries"
+        run: sudo apt install libcurl4-openssl-dev libgit2-dev libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler
+
+      - name: "[Stage] Install"
+        run: |
+          sudo add-apt-repository -y ppa:cran/poppler
+          sudo apt-get update
+          sudo apt-get install -y libpoppler-cpp-dev
+          sudo R CMD javareconf
+          Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+          Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
+
+      - name: "[Stage] Updating data based on manual files"
+        run: |
+          # collects R-based, Selenium-based, and manual countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
+          Rscript -e "FINDCov19Tracker::get_test_data(days = 70)"
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config pull.rebase false
+          git pull origin master
+          date=$(date +'%Y-%m-%d')
+          mv *automated-tests.csv automated/merged/
+          mv *countries-error.csv issues/
+          git add automated/merged/*
+          git add issues/*
+          git commit -m "update run analysis files for $date" || echo "Nothing to update"
+
+      - name: Push changes to FINDCov19TrackerData
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: automated/merged
+          branch: ${{ github.ref }}
+
+  combine-files:
+    needs: run-analysis-manual
+    if: "contains(toJSON(github.event.commits.*.message), 'manually processed countries')"
+    runs-on: ubuntu-18.04
 
     env:
       # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
@@ -327,8 +641,6 @@ jobs:
 
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
-          # collects R-based, Selenium-based, and manual countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
-          Rscript -e "FINDCov19Tracker::get_daily_test_data()"
           # calculates countries which still need manual test data scraping
           Rscript -e "FINDCov19Tracker::calc_manual_countries()"
           # write csv containing all tests of all dates
@@ -341,13 +653,166 @@ jobs:
           git config pull.rebase false
           git pull origin master
           date=$(date +'%Y-%m-%d')
-          mv automated-tests.csv automated/merged/$date-automated-tests.csv
           mv need-manual-processing.csv manual/need-processing/$date-need-manual-processing.csv
           mv coronavirus_tests_new.csv automated/coronavirus_tests_new.csv
-          git add automated/merged/$date-automated-tests.csv
+          mv duplicated_tests.csv issues/duplicated_tests.csv
           git add manual/need-processing/$date-need-manual-processing.csv
           git add automated/coronavirus_tests_new.csv
+          git add issues/duplicated_tests.csv
           git commit -m "update run analysis files for $date" || echo "Nothing to update"
+
+      - name: Push changes to FINDCov19TrackerData
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: automated
+          branch: ${{ github.ref }}
+
+  create-shiny-data:
+    needs: combine-files
+    if: "contains(toJSON(github.event.commits.*.message), 'manually processed countries')"
+    runs-on: ubuntu-18.04
+
+    env:
+      # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      TIC_DEPLOY_KEY: ${{ secrets.TIC_DEPLOY_KEY }}
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: "release"
+          Ncpus: 4
+
+      # set date/week for use in cache creation
+      # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
+      # - cache R packages daily
+      - name: "[Cache] Prepare daily timestamp for cache"
+        if: runner.os != 'Windows'
+        id: date
+        run: echo "::set-output name=date::$(date '+%d-%m')"
+
+      - name: "[Cache] Cache R packages"
+        if: runner.os != 'Windows'
+        uses: pat-s/always-upload-cache@v2.1.3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+
+      # for some strange Windows reason this step and the next one need to be decoupled
+      - name: "[Stage] Prepare"
+        run: |
+          Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
+          Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
+
+      - name: "[Custom block] [Linux] Install required libraries"
+        run: sudo apt install libcurl4-openssl-dev libgit2-dev libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler
+
+      - name: "[Stage] Install"
+        run: |
+          sudo add-apt-repository -y ppa:cran/poppler
+          sudo apt-get update
+          sudo apt-get install -y libpoppler-cpp-dev
+          sudo R CMD javareconf
+          Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+          Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
+
+      - name: "[Stage] Create shiny data"
+        run: |
+          # Takes `coronavirus_tests_new.csv` and create data for shiny without NA and negative values
+          Rscript -e "FINDCov19Tracker::create_shiny_data()"
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config pull.rebase false
+          git pull origin master
+          date=$(date +'%Y-%m-%d')
+          git add processed/coronavirus_cases.csv
+          git add processed/coronavirus_tests.csv
+          git add processed/jhu_data.csv
+          git add processed/data_all.csv
+          git add processed/unit_info.csv
+          git commit -m "update run analysis files for $date" || echo "Nothing to update"
+
+      - name: Push changes to FINDCov19TrackerData
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: processed
+          branch: ${{ github.ref }}
+
+  update-dates:
+    needs: create-shiny-data
+    if: "contains(toJSON(github.event.commits.*.message), 'manually processed countries')"
+    runs-on: ubuntu-18.04
+
+    env:
+      # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      TIC_DEPLOY_KEY: ${{ secrets.TIC_DEPLOY_KEY }}
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: "release"
+          Ncpus: 4
+
+      # set date/week for use in cache creation
+      # https://github.community/t5/GitHub-Actions/How-to-set-and-access-a-Workflow-variable/m-p/42970
+      # - cache R packages daily
+      - name: "[Cache] Prepare daily timestamp for cache"
+        if: runner.os != 'Windows'
+        id: date
+        run: echo "::set-output name=date::$(date '+%d-%m')"
+
+      - name: "[Cache] Cache R packages"
+        if: runner.os != 'Windows'
+        uses: pat-s/always-upload-cache@v2.1.3
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+          restore-keys: ${{ runner.os }}-r-${{ matrix.config.r }}-${{steps.date.outputs.date}}1
+
+      # for some strange Windows reason this step and the next one need to be decoupled
+      - name: "[Stage] Prepare"
+        run: |
+          Rscript -e "if (!requireNamespace('remotes')) install.packages('remotes', type = 'source')"
+          Rscript -e "if (getRversion() < '3.2' && !requireNamespace('curl')) install.packages('curl', type = 'source')"
+
+      - name: "[Custom block] [Linux] Install required libraries"
+        run: sudo apt install libcurl4-openssl-dev libgit2-dev libjq-dev libv8-dev libgdal-dev libproj-dev libgeos-dev libudunits2-dev libprotobuf-dev protobuf-compiler
+
+      - name: "[Stage] Install"
+        run: |
+          sudo add-apt-repository -y ppa:cran/poppler
+          sudo apt-get update
+          sudo apt-get install -y libpoppler-cpp-dev
+          sudo R CMD javareconf
+          Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+          Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
+
+      - name: "[Stage] Combine Selenium and R Test Data"
+        run: |
+          # calculates update dates
+          Rscript -e "FINDCov19Tracker::updates_dates_countries()"
+
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config pull.rebase false
+          git pull origin master
+          date=$(date +'%Y-%m-%d')
+          mv countries-last-update.csv issues/countries-last-update.csv
+          git add issues/countries-last-update.csv
+          git commit -m "update issues last update files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
@@ -355,3 +820,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: automated/merged
           branch: ${{ github.ref }}
+
