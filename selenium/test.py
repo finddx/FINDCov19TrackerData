@@ -269,8 +269,10 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//tbody")))
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'new case COVID-19\')]").get_attribute('href')
     self.driver.get(url)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(18) > tbody > tr:nth-child(2) > td:nth-child(2) > strong")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(18) > tbody > tr:nth-child(2) > td:nth-child(2) > strong").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(14) > tbody > tr:nth-child(2) > td:nth-child(2) > strong")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(14) > tbody > tr:nth-child(2) > td:nth-child(2) > strong").text
+    print("Brunei")
+    print(self.vars)
     self.driver.close()
 
   def test_cambodia(self):
