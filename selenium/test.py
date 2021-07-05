@@ -148,9 +148,12 @@ class TestDefaultSuite(unittest.TestCase):
   def test_bangladesh(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://corona.gov.bd/")
-    self.driver.find_element(By.CSS_SELECTOR, "#exampleModal > div > div > div.modal-header > button > span").click()
+    self.driver.set_window_size(1433, 813)
+    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
     self.driver.find_element(By.CSS_SELECTOR, "body > section.main_header > div > div > div.col-md-9 > div > ul > li:nth-child(7) > a").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > section:nth-child(9) > div > div > div:nth-child(5) > div > div.content > table > tbody > tr:nth-child(2) > td:nth-child(2) > b").text
+    print("Bangladesh")
+    print(self.vars)
     self.driver.close()
     
   def test_barbados(self):
