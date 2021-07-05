@@ -345,7 +345,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
     time.sleep(60)
     self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[63]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[86]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[105]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[106]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
+    print("Chile")
+    print(self.vars)
     self.driver.close()
   
   def test_cuba(self):
