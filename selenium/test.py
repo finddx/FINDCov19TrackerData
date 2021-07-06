@@ -148,9 +148,12 @@ class TestDefaultSuite(unittest.TestCase):
   def test_bangladesh(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://corona.gov.bd/")
-    self.driver.find_element(By.CSS_SELECTOR, "#exampleModal > div > div > div.modal-header > button > span").click()
+    self.driver.set_window_size(1433, 813)
+    self.driver.find_element(By.CSS_SELECTOR, ".close > span").click()
     self.driver.find_element(By.CSS_SELECTOR, "body > section.main_header > div > div > div.col-md-9 > div > ul > li:nth-child(7) > a").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > section:nth-child(9) > div > div > div:nth-child(5) > div > div.content > table > tbody > tr:nth-child(2) > td:nth-child(2) > b").text
+    print("Bangladesh")
+    print(self.vars)
     self.driver.close()
     
   def test_barbados(self):
@@ -266,8 +269,10 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//tbody")))
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'new case COVID-19\')]").get_attribute('href')
     self.driver.get(url)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(18) > tbody > tr:nth-child(2) > td:nth-child(2) > strong")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(18) > tbody > tr:nth-child(2) > td:nth-child(2) > strong").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(14) > tbody > tr:nth-child(2) > td:nth-child(2) > strong")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(14) > tbody > tr:nth-child(2) > td:nth-child(2) > strong").text
+    print("Brunei")
+    print(self.vars)
     self.driver.close()
 
   def test_cambodia(self):
@@ -340,7 +345,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
     time.sleep(60)
     self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[63]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[86]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[105]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[106]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
+    print("Chile")
+    print(self.vars)
     self.driver.close()
   
   def test_cuba(self):
@@ -381,8 +390,8 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
     time.sleep(10)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(11) > table > tbody > tr:nth-child(2) > td:nth-child(2) > p > span > strong > span").text.replace(',','')
-    #vars["rapid_test_cum"] = driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(11) > table > tbody > tr:nth-child(8) > td:nth-child(2)").text.replace(',','')
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(13) > table > tbody > tr:nth-child(2) > td:nth-child(2) > span").text.replace(',','')
+    #self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(13) > table > tbody > tr:nth-child(8) > td:nth-child(2) > span").text.replace(',','')
     html = self.driver.page_source
     soup = bs(html, "lxml")
     full_tags = soup.find_all("tbody")[1]
