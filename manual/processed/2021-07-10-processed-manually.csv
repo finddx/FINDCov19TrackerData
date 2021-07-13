@@ -1,7 +1,7 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2021-07-10,manually,pdf,http://covid.moph-dw.org/#/
 Barbados,NA,0,NA,NA,2021-07-10,manually,automated,https://gisbarbados.gov.bb/covid-19/
-Benin,604310,0,NA,NA,2021-07-10,manually,automated,https://www.gouv.bj/coronavirus/
+Benin,NA,0,NA,NA,2021-07-10,manually,automated,https://www.gouv.bj/coronavirus/
 Bhutan,NA,0,NA,NA,2021-07-10,manually,image,https://www.facebook.com/MoHBhutan/
 Bolivia,NA,0,NA,NA,2021-07-10,manually,image,https://www.minsalud.gob.bo/
 Brazil,NA,0,NA,NA,2021-07-10,manually,automated,https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html
@@ -24,6 +24,7 @@ Guatemala,NA,0,NA,NA,2021-07-10,manually,automated,https://tablerocovid.mspas.go
 Guyana,NA,0,NA,NA,2021-07-10,manually,image,https://www.health.gov.gy/
 Honduras,NA,0,NA,NA,2021-07-10,manually,image,http://www.desastres.hn/COVID-19/COVID-19.png
 HongKong,NA,0,NA,NA,2021-07-10,manually,pdf,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf
+Iceland,NA,0,NA,NA,2021-07-10,manually,automated,
 Iran,NA,0,NA,NA,2021-07-10,manually,automated,http://irangov.ir/search?key=Health%20Ministry&title=1
 Iraq,NA,0,NA,NA,2021-07-10,manually,image,https://www.facebook.com/MOH.GOV.IQ
 Israel,NA,0,NA,NA,2021-07-10,manually,not_yet_automated_daily,https://datadashboard.health.gov.il/COVID-19/general
@@ -34,7 +35,7 @@ Kazakhstan,NA,0,NA,NA,2021-07-10,manually,special_dashboard,https://hls.kz/
 Kosovo,NA,0,NA,NA,2021-07-10,manually,facebook,https://www.facebook.com/IKSHPK
 Kuwait,NA,0,NA,NA,2021-07-10,manually,twitter,https://twitter.com/KUWAIT_MOH
 Kyrgyzstan,NA,0,NA,NA,2021-07-10,manually,image,https://www.instagram.com/daryger_sunushu/
-LaoPeoplesDemocraticRepublic,0,-305013,0,-305013,2021-07-10,manually,automated,https://www.covid19.gov.la/index.php
+LaoPeoplesDemocraticRepublic,NA,0,NA,NA,2021-07-10,manually,automated,https://www.covid19.gov.la/index.php
 Luxembourg,NA,0,NA,NA,2021-07-10,manually,not_yet_automated_daily,https://msan.gouvernement.lu/fr/graphiques-evolution.html
 Malaysia,NA,0,NA,NA,2021-07-10,manually,facebook,https://www.facebook.com/kementeriankesihatanmalaysia/photos/10157490776386237
 Maldives,NA,0,NA,NA,2021-07-10,manually,twitter,https://twitter.com/HPA_MV/status/1348675860627419136
