@@ -518,7 +518,9 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.switch_to.frame(0)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span")))
     self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(17) span").text
+    print("iceland")
+    print(self.vars)
     self.driver.close()
 
   def test_india(self):

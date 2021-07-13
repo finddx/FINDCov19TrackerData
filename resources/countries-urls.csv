@@ -71,7 +71,7 @@ Guatemala,Guatemala,https://tablerocovid.mspas.gob.gt/,https://tablerocovid.mspa
 Guinea,Guinea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Guinea Bissau,GuineaBissau,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Guyana,Guyana,https://www.health.gov.gy/,,irrelevant,,,,,,,image
-Honduras,Honduras,http://www.desastres.hn/COVID-19/COVID-19.png,,Stable image,,,,,,,image
+Honduras,Honduras,http://www.bvs.hn/COVID-19/,,Stable image,,,,,,,image
 Hong Kong,HongKong,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf,https://data.gov.hk/en-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent,Stable PDF,,,,,,Always the same link. PDF changes every 2/3 weeks.,pdf
 Hungary,Hungary,https://koronavirus.gov.hu/#aktualis,,Selenium,,,([ 0-9]+),,,,automated
 Iceland,Iceland,https://www.covid.is/tolulegar-upplysingar,,html OR Selenium,,,,,,"Problem there are 3 values to additionate. samples,domestic + samples, border screening 1 + samples, border screening 2",automated
