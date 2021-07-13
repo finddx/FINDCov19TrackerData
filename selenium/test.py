@@ -602,15 +602,17 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
     self.driver.close()
 
-  def test_laoPeoplesDemocraticRepublic(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://www.covid19.gov.la/index.php")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-md-6:nth-child(6) p:nth-child(2)")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-md-6:nth-child(6) p:nth-child(2)").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split(" ")[0]
-    self.driver.close()
+  #def test_laoPeoplesDemocraticRepublic(self):
+  #  # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #  self.driver.maximize_window()
+  #  self.driver.set_page_load_timeout(30)
+  #  self.driver.get("https://www.covid19.gov.la/index.php")
+  #  WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-md-6:nth-child(6) p:nth-child(2)")))
+  #  self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-md-6:nth-child(6) p:nth-child(2)").text
+  #  self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split(" ")[0]
+  #  print("laos")
+  #  print(self.vars)
+  #  self.driver.close()
 
   def test_latvia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
