@@ -71,7 +71,7 @@ Guatemala,Guatemala,https://tablerocovid.mspas.gob.gt/,https://tablerocovid.mspa
 Guinea,Guinea,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Guinea Bissau,GuineaBissau,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Guyana,Guyana,https://www.health.gov.gy/,,irrelevant,,,,,,,image
-Honduras,Honduras,http://www.desastres.hn/COVID-19/COVID-19.png,,Stable image,,,,,,,image
+Honduras,Honduras,http://www.bvs.hn/COVID-19/,,Stable image,,,,,,,image
 Hong Kong,HongKong,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf,https://data.gov.hk/en-data/dataset/hk-dh-chpsebcddr-novel-infectious-agent,Stable PDF,,,,,,Always the same link. PDF changes every 2/3 weeks.,pdf
 Hungary,Hungary,https://koronavirus.gov.hu/#aktualis,,Selenium,,,([ 0-9]+),,,,automated
 Iceland,Iceland,https://www.covid.is/tolulegar-upplysingar,,html OR Selenium,,,,,,"Problem there are 3 values to additionate. samples,domestic + samples, border screening 1 + samples, border screening 2",automated
@@ -102,13 +102,13 @@ Madagascar,Madagascar,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,
 Mainland China,China,,,irrelevant,,,,,,,without_information
 Malawi,Malawi,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Malaysia,Malaysia,https://www.facebook.com/kementeriankesihatanmalaysia/photos/10157490776386237,,image,,,,,,"Every day there is a similar image and the value is ""Jumlah Individu Disampel""",facebook
-Maldives,Maldives,https://twitter.com/HPA_MV/status/1348675860627419136,,image,,,,,,,twitter
+Maldives,Maldives,https://covid19.health.gov.mv/en/?c=0,,image,,,,,,,twitter
 Mali,Mali,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Malta,Malta,https://timesofmalta.com/articles/view/watch-live-daily-coronavirus-briefing.790073,,special dashboard,,,,,,Dashboard further down,automated
 Mauritania,Mauritania,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Mauritius,Mauritius,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Mexico,Mexico,https://coronavirus.gob.mx/datos/,,special dashboard,,,,,,CONFIRMADOS+NEGATIVOS+SOSPECHOSOS,automated
-Moldova,Moldova,https://msmps.gov.md/?s=cazuri+de+COVID-19,,html_list,,,,,,,not_yet_automated_daily
+Moldova,Moldova,https://noi.md/md/societate/coronavirus-in-moldova-statistica-infectarilor-pe-teritoriul-tarii-428097,,,,,,,,,not_yet_automated
 Montenegro,Montenegro,https://www.ijzcg.me/me/coronainfocg,,irrelevant,,,,,,,without_information
 Morocco,Morocco,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Mozambique,Mozambique,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
@@ -150,7 +150,7 @@ Serbia,Serbia,https://covid19.rs/homepage-english/,,Selenium,,,"([,0-9]+)",,,,au
 Seychelles,Seychelles,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Sierra Leone,SierraLeone,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Singapore,Singapore,https://www.moh.gov.sg/covid-19,,Selenium,,,"([,0-9]+)",,,,automated
-Slovakia,Slovakia,https://korona.gov.sk/,,Selenium,,,([ 0-9]+),,,,automated
+Slovakia,Slovakia,https://github.com/Institut-Zdravotnych-Analyz/covid19-data/blob/main/DailyStats/OpenData_Slovakia_Covid_DailyStats.xlsx,,,,automated,,,,,automated
 Slovenia,Slovenia,https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19,,Selenium,,,([.0-9]+),,,,automated
 Somalia,Somalia,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 South Africa,SouthAfrica,https://gis.nicd.ac.za/portal/apps/opsdashboard/index.html#/0ec12f471aaa4055999366669b38482d,https://www.nicd.ac.za/diseases-a-z-index/covid-19/surveillance-reports/national-covid-19-daily-report/,Selenium,,,"([,0-9]+)",,,,automated
