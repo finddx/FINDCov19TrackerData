@@ -1,6 +1,6 @@
 on:
-  workflow_dispatch:
-  push
+  - workflow_dispatch
+  - push
 
 name: "Manual processing"
 
