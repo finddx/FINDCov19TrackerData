@@ -1,6 +1,7 @@
 on:
-  workflow_dispatch:
-    push
+  push:
+    paths:
+      - 'manual/processed/**.csv'
 
 name: "Manual processing"
 
