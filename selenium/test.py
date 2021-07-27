@@ -345,9 +345,9 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
     time.sleep(60)
     self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[86]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[105]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[106]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[85]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[104]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[105]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
     print("Chile")
     print(self.vars)
     self.driver.close()
@@ -931,6 +931,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".bag-key-value-list__combine-below:nth-child(2) .bag-key-value-list__entry-value").text
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "bag-card-overview-test .bag-key-value-list__combine-above:nth-child(3) .bag-key-value-list__entry-value").text
     self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "bag-card-overview-test .bag-key-value-list__combine-above:nth-child(4) .bag-key-value-list__entry-value").text
+    print("Switzerland")
+    print(self.vars)
     self.driver.close()
 
   def test_taiwan(self):
