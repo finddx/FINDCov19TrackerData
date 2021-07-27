@@ -602,6 +602,14 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
     self.driver.close()
 
+  def test_kosovo(self):
+    self.driver.get("https://datastudio.google.com/embed/u/0/reporting/2e546d77-8f7b-4c35-8502-38533aa0e9e8/page/MT0qB?fbclid=IwAR3bGrIV4hcD6Qe0CXv_f3ukuBKuNLkAacl4yPohGOvD5U_JjVERrnpqwes")
+    time.sleep(10)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id='body']/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/lego-report/lego-canvas-container/div/file-drop-zone/span/content-section/div[38]/canvas-component/div/div/div[1]/div/div/kpimetric/div/div[2]").text
+    print("Kosovo")
+    print(self.vars)
+    self.driver.close()
+
   #def test_laoPeoplesDemocraticRepublic(self):
   #  # self.vars["date"] =date.today().strftime("%Y-%m-%d")
   #  self.driver.maximize_window()
