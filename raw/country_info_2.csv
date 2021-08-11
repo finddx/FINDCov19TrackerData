@@ -1,204 +1,204 @@
-name,iso_alpha_2,alpha3,population,continent,income,WHO region,recurrent_reporting,tests_description,tests_type,tests_type_segregated,comment,country,numeric,latitude,longitude,penalty,jhu_ID
-Afghanistan,AF,AFG,38928000,Asia,Low,Eastern Mediterranean,No,People,Not specified,NA,NA,Afghanistan,4,33,65,1.3,Afghanistan
-Albania,AL,ALB,2878000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,Albania,8,41,20,0.9,Albania
-Algeria,DZ,DZA,43851000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,Algeria,12,28,3,1.3,Algeria
-Andorra,AD,AND,77000,Europe,High,Europe,Yes,Not specified,PCR and serology,NA,NA,Andorra,20,42.5,1.6,0.9,Andorra
-Angola,AO,AGO,32866000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,Angola,24,-12.5,18.5,1.3,Angola
-Antigua & Barbuda,AG,ATG,98000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,Antigua and Barbuda,28,17.05,-61.8,1.3,AntiguaandBarbuda
-Argentina,AR,ARG,45196000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,Argentina,32,-34,-64,1.3,Argentina
-Armenia,AM,ARM,2963000,Asia,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,Armenia,51,40,45,0.9,Armenia
-Australia,AU,AUS,25500000,Oceania,High,Western Pacific,Yes,Samples,Not specified,NA,NA,Australia,36,-27,133,1.3,Australia
-Austria,AT,AUT,9006000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Drastic testing increase in Jan. due to mass testsing (https://orf.at/stories/3194349/),Austria,40,47.3333,13.3333,0.9,Austria
-Azerbaijan,AZ,AZE,10139000,Asia,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,Azerbaijan,31,40.5,47.5,0.9,Azerbaijan
-Bahamas,BS,BHS,393000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,The Bahamas,44,24.25,-76,1.3,TheBahamas
-Bahrain,BH,BHR,1702000,Asia,High,Eastern Mediterranean,Yes,Not specified,PCR,NA,NA,Bahrain,48,26,50.55,1.3,Bahrain
-Bangladesh,BD,BGD,164689000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,Bangladesh,50,24,90,1.3,Bangladesh
-Barbados,BB,BRB,287000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,Barbados,52,13.1667,-59.5333,1.3,Barbados
-Belarus,BY,BLR,9449000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,Belarus,112,53,28,0.8,Belarus
-Belgium,BE,BEL,11590000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,Belgium,56,50.8333,4,0.8,Belgium
-Belize,BZ,BLZ,398000,North America,Upper middle,Americas,Yes,Samples and People,Not specified,NA,NA,Belize,84,17.25,-88.75,1.3,Belize
-Benin,BJ,BEN,12123000,Africa,Lower middle,Africa,Yes,Not specified,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After data includes both PCR+rapid tests,Benin,204,9.5,2.25,1.3,Benin
-Bermuda,BM,BMU,62000,North America,High,NA,Yes,Not specified,Not specified,NA,NA,Bermuda,60,32.3333,-64.75,1.3,Bermuda
-Bhutan,BT,BTN,772000,Asia,Lower middle,South-East Asia,Yes,Samples,PCR and rapid test,Together,NA,Bhutan,64,27.5,90.5,1.3,Bhutan
-Bolivia,BO,BOL,11673000,South America,Lower middle,Americas,Yes,People,Not specified,NA,NA,Bolivia,68,-17,-65,1.3,Bolivia
-Bosnia & Herzegovina,BA,BIH,3281000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,Bosnia and Herzegovina,70,44,18,0.9,BosniaandHerzegovina
-Botswana,BW,BWA,2352000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,Botswana,72,-22,24,1.3,Botswana
-Brazil,BR,BRA,212559000,South America,Upper middle,Americas,No,Samples,PCR and rapid test,Separate,NA,Brazil,76,-10,-55,1.3,Brazil
-Brunei,BN,BRN,437000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,Brunei,96,4.5,114.6667,1.3,Brunei
-Bulgaria,BG,BGR,6948000,Europe,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,Bulgaria,100,43,25,0.9,Bulgaria
-Burkina Faso,BF,BFA,20903000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Burkina Faso,854,13,-2,1.3,BurkinaFaso
-Burundi,BI,BDI,11891000,Africa,Low,Africa,No,Not specified,Not specified,NA,NA,Burundi,108,-3.5,30,1.3,Burundi
-Cambodia,KH,KHM,16719000,Asia,Lower middle,Western Pacific,Yes,People,Not specified,NA,NA,Cambodia,116,13,105,1.3,Cambodia
-Cameroon,CM,CMR,26546000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Cameroon,120,6,12,1.3,Cameroon
-Canada,CA,CAN,37742000,North America,High,Americas,Yes,People,Not specified,NA,NA,Canada,124,60,-95,0.6,Canada
-Cape Verde,CV,CPV,556000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Cape Verde,132,16,-24,1.3,CapeVerde
-Central African Republic,CF,CAF,4830000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Central African Republic,140,7,21,1.3,CentralAfricanRepublic
-Chad,TD,TCD,16426000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Chad,148,15,19,1.3,Chad
-Chile,CL,CHL,19116000,South America,High,Americas,Yes,Samples,PCR,NA,NA,Chile,152,-30,-71,1.3,Chile
-China,CN,CHN,1439324000,Asia,Upper middle,Western Pacific,No,Irrelevant,Irrelevant,NA,NA,Mainland China,156,35,105,1.3,China
-Colombia,CO,COL,50883000,South America,Upper middle,Americas,Yes,Not specified,PCR and rapid test,Separate,NA,Colombia,170,4,-72,1.3,Colombia
-Comoros,KM,COM,870000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,Comoros,174,-12.1667,44.25,1.3,Comoros
-Republic of the Congo,CG,COG,5518000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Republic of the Congo,178,-1,15,1.3,Congo
-Democratic Republic of the Congo,CD,COD,89561000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Democratic Republic of the Congo,180,0,25,1.3,DemocraticRepublicoftheCongo
-Costa Rica,CR,CRI,5094000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,Costa Rica,188,10,-84,1.3,CostaRica
-Ivory Coast,CI,CIV,26378000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Cote d'Ivoire,384,8,-5,1.3,CotedIvoire
-Croatia,HR,HRV,4105000,Europe,High,Europe,Yes,People,Not specified,NA,NA,Croatia,191,45.1667,15.5,0.9,Croatia
-Cuba,CU,CUB,11327000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,Cuba,192,21.5,-80,1.3,Cuba
-Cyprus,CY,CYP,1207000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,Cyprus,196,35,33,1.3,Cyprus
-Czechia,CZ,CZE,10709000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,Czech Republic,203,49.75,15.5,0.9,Czechia
-Denmark,DK,DNK,5792000,Europe,High,Europe,Yes,Samples and People,PCR and rapid test,Separate,NA,Denmark,208,56,10,0.8,Denmark
-Djibouti,DJ,DJI,988000,Africa,Lower middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,Djibouti,262,11.5,43,1.3,Djibouti
-Dominica,DM,DMA,72000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,Dominica,212,15.4167,-61.3333,1.3,Dominica
-Dominican Republic,DO,DOM,10848000,North America,Upper middle,Americas,Yes,Samples,PCR and rapid test,Separate,NA,Dominican Republic,214,19,-70.6667,1.3,DominicanRepublic
-Ecuador,EC,ECU,17643000,South America,Upper middle,Americas,Yes,Samples,PCR,NA,NA,Ecuador,218,-2,-77.5,1.3,Ecuador
-Egypt,EG,EGY,102334000,Africa,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,Egypt,818,27,30,1.3,Egypt
-El Salvador,SV,SLV,6486000,North America,Lower middle,Americas,Yes,Samples,Not specified,NA,NA,El Salvador,222,13.8333,-88.9167,1.3,ElSalvador
-Equatorial Guinea,GQ,GNQ,1403000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,Equatorial Guinea,226,2,10,1.3,EquatorialGuinea
-Eritrea,ER,ERI,3546000,Africa,Low,Africa,No,Not specified,Not specified,NA,NA,Eritrea,232,15,39,1.3,Eritrea
-Estonia,EE,EST,1327000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,Estonia,233,59,26,0.8,Estonia
-Eswatini,SZ,SWZ,1160000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Eswatini,748,-26.5,31.5,1.3,Eswatini
-Ethiopia,ET,ETH,114964000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Ethiopia,231,8,38,1.3,Ethiopia
-Faroe Islands,FO,FRO,49000,Europe,High,NA,Yes,Samples,Not specified,NA,NA,Faroe Islands,234,62,-7,0.6,FaroeIslands
-Fiji,FJ,FJI,896000,Oceania,Upper middle,Western Pacific,Yes,Samples,PCR,NA,NA,Fiji,242,-18,175,1.3,Fiji
-Finland,FI,FIN,5541000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,Finland,246,64,26,0.6,Finland
-France,FR,FRA,65274000,Europe,High,Europe,Yes,Samples,PCR,NA,NA,France,250,46,2,0.9,France
-French Polynesia,PF,PYF,281000,Oceania,High,NA,No,Irrelevant,Irrelevant,NA,NA,French Polynesia,258,-15,-140,1.3,FrenchPolynesia
-Gabon,GA,GAB,2226000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,Gabon,266,-1,11.75,1.3,Gabon
-Gambia,GM,GMB,2417000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,The Gambia,270,13.4667,-16.5667,1.3,TheGambia
-Georgia,GE,GEO,3989000,Europe,Upper middle,Europe,Yes,Samples,PCR and rapid test,Separate,NA,Georgia,268,42,43.5,0.9,Georgia
-Germany,DE,DEU,83784000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,Germany,276,51,9,0.8,Germany
-Ghana,GH,GHA,31073000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Ghana,288,8,-2,1.3,Ghana
-Greece,GR,GRC,10423000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,Greece,300,39,22,1,Greece
-Greenland,GL,GRL,57000,North America,High,NA,Yes,Samples,Not specified,NA,NA,Greenland,304,72,-40,0.6,Greenland
-Grenada,GD,GRD,113000,North America,Upper middle,Americas,Yes,Samples,PCR,NA,NA,Grenada,308,12.1167,-61.6667,1.3,Grenada
-Guatemala,GT,GTM,17916000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,Guatemala,320,15.5,-90.25,1.3,Guatemala
-Guinea,GN,GIN,13133000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Guinea,324,11,-10,1.3,Guinea
-Guinea-Bissau,GW,GNB,1968000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Guinea Bissau,624,12,-15,1.3,GuineaBissau
-Guyana,GY,GUY,787000,South America,Upper middle,Americas,No,People,Not specified,NA,NA,Guyana,328,5,-59,1.3,Guyana
-Haiti,HT,HTI,11403000,North America,Low,Americas,NA,NA,NA,NA,NA,Haiti,332,19,-72.4167,1.3,Haiti
-Honduras,HN,HND,9905000,North America,Lower middle,Americas,Yes,Samples,Not specified,NA,NA,Honduras,340,15,-86.5,1.3,Honduras
-Hong Kong SAR China,HK,HKG,7497000,Asia,High,NA,Yes,Samples,Not specified,NA,NA,Hong Kong,344,22.25,114.1667,1.3,HongKong
-Hungary,HU,HUN,9660000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,Hungary,348,47,20,0.9,Hungary
-Iceland,IS,ISL,341000,Europe,High,Europe,Yes,Not specified,Not specified,NA,NA,Iceland,352,65,-18,0.6,Iceland
-India,IN,IND,1380004000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,India,356,20,77,1.3,India
-Indonesia,ID,IDN,273524000,Asia,Upper middle,South-East Asia,Yes,Samples and People,PCR and rapid test,Separate,NA,Indonesia,360,-5,120,1.3,Indonesia
-Iran,IR,IRN,83993000,Asia,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,Iran (Islamic Republic of),364,32,53,1.3,Iran
-Iraq,IQ,IRQ,40223000,Asia,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,Iraq,368,33,44,1.3,Iraq
-Ireland,IE,IRL,4938000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,Ireland,372,53,-8,0.8,Ireland
-Israel,IL,ISR,8656000,Asia,High,Europe,Yes,Samples,Not specified,NA,NA,Israel,376,31.5,34.75,1.3,Israel
-Italy,IT,ITA,60462000,Europe,High,Europe,Yes,Samples and People,PCR and rapid test,Separate,NA,Italy,380,40,15,0.9,Italy
-Jamaica,JM,JAM,2961000,North America,Upper middle,Americas,Yes,Samples,PCR and rapid test,Separate,NA,Jamaica,388,18.25,-77.5,1.3,Jamaica
-Japan,JP,JPN,126476000,Asia,High,Western Pacific,Yes,Samples,PCR,NA,NA,Japan,392,36,138,1.3,Japan
-Jordan,JO,JOR,10203000,Asia,Upper middle,Eastern Mediterranean,Yes,Samples,PCR,NA,NA,Jordan,400,31,36,1.3,Jordan
-Kazakhstan,KZ,KAZ,18777000,Asia,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,Kazakhstan,398,48,68,0.9,Kazakhstan
-Kenya,KE,KEN,53771000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Kenya,404,1,38,1.3,Kenya
-Kiribati,KI,KIR,119000,Oceania,Lower middle,Western Pacific,NA,NA,NA,NA,NA,Kiribati,296,1.4167,173,1.3,Kiribati
-Kosovo,XK,XKX,1800000,Europe,Upper middle,NA,Yes,People,PCR and rapid test,Together,NA,Kosovo,NA,42.6,20.9,0.9,Kosovo
-Kuwait,KW,KWT,4271000,Asia,High,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,Kuwait,414,29.3375,47.6581,1.3,Kuwait
-Kyrgyzstan,KG,KGZ,6524000,Asia,Lower middle,Europe,No,Irrelevant,Irrelevant,NA,NA,Kyrgyzstan,417,41,75,0.9,Kyrgyzstan
-Laos,LA,LAO,7276000,Asia,Lower middle,Western Pacific,Yes,People,Not specified,NA,NA,Lao People's Democratic Republic,418,18,105,1.3,Laos
-Latvia,LV,LVA,1886000,Europe,High,Europe,Yes,Not specified,Not specified,NA,NA,Latvia,428,57,25,0.8,Latvia
-Lebanon,LB,LBN,6825000,Asia,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,Lebanon,422,33.8333,35.8333,1.3,Lebanon
-Lesotho,LS,LSO,2142000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Lesotho,426,-29.5,28.5,1.3,Lesotho
-Liberia,LR,LBR,5058000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Liberia,430,6.5,-9.5,1.3,Liberia
-Libya,LY,LBY,6871000,Africa,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,Libya,434,25,17,1.3,Libya
-Liechtenstein,LI,LIE,38000,Europe,High,NA,Yes,Samples,PCR and rapid test,Separate,Switzerland testing daily updates also include Liechtenstein.,Liechtenstein,438,47.1667,9.5333,0.9,Liechtenstein
-Lithuania,LT,LTU,2722000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,Lithuania,440,56,24,0.8,Lithuania
-Luxembourg,LU,LUX,626000,Europe,High,Europe,Yes,Samples and People,PCR,NA,NA,Luxembourg,442,49.75,6.1667,0.9,Luxembourg
-Madagascar,MG,MDG,27691000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Madagascar,450,-20,47,1.3,Madagascar
-Malawi,MW,MWI,19130000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Malawi,454,-13.5,34,1.3,Malawi
-Malaysia,MY,MYS,32366000,Asia,Upper middle,Western Pacific,No,People,Not specified,NA,NA,Malaysia,458,2.5,112.5,1.3,Malaysia
-Maldives,MV,MDV,541000,Asia,Upper middle,South-East Asia,Yes,People,Not specified,NA,NA,Maldives,462,3.25,73,1.3,Maldives
-Mali,ML,MLI,20251000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Mali,466,17,-4,1.3,Mali
-Malta,MT,MLT,442000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,Malta,470,35.8333,14.5833,1.3,Malta
-Marshall Islands,MH,MHL,59000,Oceania,Upper middle,Western Pacific,NA,NA,NA,NA,NA,Marshall Islands,584,9,168,1.3,MarshallIslands
-Mauritania,MR,MRT,4650000,Africa,Lower middle,Africa,Yes,Samples,Not specified,NA,NA,Mauritania,478,20,-12,1.3,Mauritania
-Mauritius,MU,MUS,1272000,Africa,High,Africa,No,Not specified,Not specified,NA,NA,Mauritius,480,-20.2833,57.55,1.3,Mauritius
-Mexico,MX,MEX,128933000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,Mexico,484,23,-102,1.3,Mexico
-Micronesia (Federated States of),FM,FSM,115000,Oceania,Lower middle,Western Pacific,NA,NA,NA,NA,NA,"Micronesia, Federated States of",583,6.9167,158.25,1.3,"Micronesia,FederatedStatesof"
-Moldova,MD,MDA,4034000,Europe,Lower middle,Europe,Yes,Samples,Not specified,NA,NA,Republic of Moldova,498,47,29,0.9,Moldova
-Monaco,MC,MCO,39000,Europe,High,Europe,NA,NA,NA,NA,NA,Monaco,492,43.7333,7.4,0.9,Monaco
-Mongolia,MN,MNG,3278000,Asia,Lower middle,Western Pacific,NA,NA,NA,NA,NA,Mongolia,496,46,105,0.9,Mongolia
-Montenegro,ME,MNE,628000,Europe,Upper middle,Europe,No,Not specified,Not specified,NA,NA,Montenegro,499,42.708678,19.37439,0.9,Montenegro
-Morocco,MA,MAR,36911000,Africa,Lower middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,Morocco,504,32,-5,1.3,Morocco
-Mozambique,MZ,MOZ,31255000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Mozambique,508,-18.25,35,1.3,Mozambique
-Myanmar (Burma),MM,MMR,54410000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,Myanmar,104,22,98,1.3,Myanmar
-Namibia,NA,NAM,2541000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,Namibia,516,-22,17,1.3,Namibia
-Nauru,NR,NRU,11000,Oceania,High,Western Pacific,NA,NA,NA,NA,NA,Nauru,520,-0.5333,166.9167,1.3,Nauru
-Nepal,NP,NPL,29137000,Asia,Lower middle,South-East Asia,Yes,Not specified,Not specified,NA,NA,Nepal,524,28,84,1.3,Nepal
-Netherlands,NL,NLD,17135000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,Netherlands,528,52.5,5.75,0.8,Netherlands
-New Caledonia,NC,NCL,285000,Oceania,High,NA,Yes,Samples,Not specified,NA,NA,New Caledonia,540,-21.5,165.5,1.3,NewCaledonia
-New Zealand,NZ,NZL,4822000,Oceania,High,Western Pacific,Yes,Samples,PCR,NA,NA,New Zealand,554,-41,174,0.9,NewZealand
-Nicaragua,NI,NIC,6625000,North America,Lower middle,Americas,NA,NA,NA,NA,NA,Nicaragua,558,13,-85,1.3,Nicaragua
-Niger,NE,NER,24207000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Niger,562,16,8,1.3,Niger
-Nigeria,NG,NGA,206140000,Africa,Lower middle,Africa,Yes,Samples,Not specified,NA,NA,Nigeria,566,10,8,1.3,Nigeria
-North Korea,KP,PRK,25779000,Asia,Lower middle,South-East Asia,NA,NA,NA,NA,NA,"Korea, Democratic People's Republic of",408,40,127,0.9,"Korea,DemocraticPeople'sRepublicof"
-North Macedonia,MK,MKD,2083000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,North Macedonia,807,41.8333,22,0.9,NorthMacedonia
-Norway,NO,NOR,5421000,Europe,High,Europe,Yes,People,Not specified,NA,NA,Norway,578,62,10,0.6,Norway
-Oman,OM,OMN,5107000,Asia,High,Eastern Mediterranean,No,People,Not specified,NA,NA,Oman,512,21,57,1.3,Oman
-Pakistan,PK,PAK,220892000,Asia,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,Pakistan,586,30,70,1.3,Pakistan
-Palau,PW,PLW,18000,Oceania,High,Western Pacific,NA,NA,NA,NA,NA,Palau,585,7.5,134.5,1.3,Palau
-Palestinian Territories,PS,PSE,5101000,Asia,NA,NA,Yes,Samples,Not specified,NA,NA,Occupied Palestinian Territory,275,32,35.25,1.3,occupiedPalestinianterritory
-Panama,PA,PAN,4315000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,Panama,591,9,-80,1.3,Panama
-Papua New Guinea,PG,PNG,8947000,Oceania,Lower middle,Western Pacific,No,Irrelevant,Irrelevant,NA,NA,Papua New Guinea,598,-6,147,1.3,PapuaNewGuinea
-Paraguay,PY,PRY,7133000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,Paraguay,600,-23,-58,1.3,Paraguay
-Peru,PE,PER,32972000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,Peru,604,-10,-76,1.3,Peru
-Philippines,PH,PHL,109581000,Asia,Lower middle,Western Pacific,Yes,Samples and People,Not specified,NA,NA,Philippines,608,13,122,1.3,Philippines
-Poland,PL,POL,37847000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,Poland,616,52,20,0.8,Poland
-Portugal,PT,PRT,10197000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,Portugal,620,39.5,-8,1,Portugal
-Qatar,QA,QAT,2881000,Asia,High,Eastern Mediterranean,Yes,People,Not specified,NA,NA,Qatar,634,25.5,51.25,1.3,Qatar
-Romania,RO,ROU,19238000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,Romania,642,46,25,0.9,Romania
-Russia,RU,RUS,145934000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,Russia,643,60,100,0.6,Russia
-Rwanda,RW,RWA,12952000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Rwanda,646,-2,30,1.3,Rwanda
-Samoa,WS,WSM,198000,Oceania,Upper middle,Western Pacific,NA,NA,NA,NA,NA,Samoa,882,-13.5833,-172.3333,1.3,Samoa
-San Marino,SM,SMR,34000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,San Marino,674,43.7667,12.4167,0.9,SanMarino
-Sao Tome and Principe,ST,STP,219000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,Sao Tome and Principe,678,1,7,1.3,SaoTomeandPrincipe
-Saudi Arabia,SA,SAU,34814000,Asia,High,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,Saudi Arabia,682,25,45,1.3,SaudiArabia
-Senegal,SN,SEN,16744000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Senegal,686,14,-14,1.3,Senegal
-Serbia,RS,SRB,8737000,Europe,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,Serbia,688,44,21,0.9,Serbia
-Seychelles,SC,SYC,98000,Africa,High,Africa,No,Not specified,Not specified,NA,NA,Seychelles,690,-4.5833,55.6667,1.3,Seychelles
-Sierra Leone,SL,SLE,7977000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Sierra Leone,694,8.5,-11.5,1.3,SierraLeone
-Singapore,SG,SGP,5850000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,Singapore,702,1.3667,103.8,1.3,Singapore
-Slovakia,SK,SVK,5460000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,Slovakia,703,48.6667,19.5,0.9,Slovakia
-Slovenia,SI,SVN,2079000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,Slovenia,705,46,15,0.9,Slovenia
-Solomon Islands,SB,SLB,687000,Oceania,Lower middle,Western Pacific,NA,NA,NA,NA,NA,Solomon Islands,90,-8,159,1.3,SolomonIslands
-Somalia,SO,SOM,15893000,Africa,Low,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,Somalia,706,10,49,1.3,Somalia
-South Africa,ZA,ZAF,59309000,Africa,Upper middle,Africa,Yes,Samples,Not specified,NA,NA,South Africa,710,-29,24,1.3,SouthAfrica
-South Korea,KR,KOR,51269000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,Republic of Korea,410,37,127.5,1,RepublicofKorea
-South Sudan,SS,SSD,8260490,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,South Sudan,728,6.877,31.307,1.3,SouthSudan
-Spain,ES,ESP,46755000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,Spain,724,40,-4,0.9,Spain
-Sri Lanka,LK,LKA,21413000,Asia,Lower middle,South-East Asia,No,Samples,PCR,NA,NA,Sri Lanka,144,7,81,1.3,SriLanka
-St. Kitts & Nevis,KN,KNA,53000,North America,High,Americas,Yes,People,Not specified,NA,NA,Saint Kitts and Nevis,659,17.3333,-62.75,1.3,SaintKittsandNevis
-St. Lucia,LC,LCA,184000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,Saint Lucia,662,13.8833,-61.1333,1.3,SaintLucia
-St. Vincent & Grenadines,VC,VCT,111000,North America,Upper middle,Americas,No,Samples,Not specified,NA,NA,Saint Vincent and the Grenadines,670,13.25,-61.2,1.3,SaintVincentandtheGrenadines
-Sudan,SD,SDN,43849000,Africa,Low,Eastern Mediterranean,No,Not specified,Not specified,NA,NA,Sudan,736,15,30,1.3,Sudan
-Suriname,SR,SUR,587000,South America,Upper middle,Americas,NA,NA,NA,NA,NA,Suriname,740,4,-56,1.3,Suriname
-Sweden,SE,SWE,10099000,Europe,High,Europe,Yes,Samples and People,PCR and serology,NA,NA,Sweden,752,62,15,0.6,Sweden
-Switzerland,CH,CHE,8655000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Testing data published by FOPH also includes Liechtenstein.,Switzerland,756,47,8,0.9,Switzerland
-Syria,SY,SYR,17501000,Asia,Low,Eastern Mediterranean,NA,NA,NA,NA,NA,Syrian Arab Republic,760,35,38,1.3,SyrianArabRepublic
-Taiwan,TW,TWN,23817000,Asia,High,NA,Yes,Samples and People,Not specified,NA,NA,Taiwan,158,23.5,121,1.3,Taiwan
-Tajikistan,TJ,TJK,9538000,Asia,Low,Europe,No,Irrelevant,Irrelevant,NA,NA,Tajikistan,762,39,71,1,Tajikistan
-Tanzania,TZ,TZA,59734000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,United Republic of Tanzania,834,-6,35,1.3,Tanzania
-Thailand,TH,THA,69800000,Asia,Upper middle,South-East Asia,No,People,Not specified,NA,NA,Thailand,764,15,100,1.3,Thailand
-Timor-Leste,TL,TLS,1318000,Asia,Lower middle,South-East Asia,NA,NA,NA,NA,NA,Timor-Leste,626,-8.55,125.5167,1.3,EastTimor
-Togo,TG,TGO,8279000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Togo,768,8,1.1667,1.3,Togo
-Tonga,TO,TON,106000,Oceania,Upper middle,Western Pacific,NA,NA,NA,NA,NA,Tonga,776,-20,-175,1.3,Tonga
-Trinidad & Tobago,TT,TTO,1399000,North America,High,Americas,Yes,People,Not specified,NA,NA,Trinidad and Tobago,780,11,-61,1.3,TrinidadandTobago
-Tunisia,TN,TUN,11819000,Africa,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,Tunisia,788,34,9,1.3,Tunisia
-Turkey,TR,TUR,84339000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,Turkey,792,39,35,1,Turkey
-Turkmenistan,TM,TKM,6031000,Asia,Upper middle,Europe,NA,NA,NA,NA,NA,Turkmenistan,795,40,60,0.9,Turkmenistan
-Tuvalu,TV,TUV,12000,Oceania,Upper middle,Western Pacific,NA,NA,NA,NA,NA,Tuvalu,798,-8,178,1.3,Tuvalu
-Uganda,UG,UGA,45741000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,Uganda,800,1,32,1.3,Uganda
-Ukraine,UA,UKR,43734000,Europe,Lower middle,Europe,Yes,Samples,Not specified,NA,NA,Ukraine,804,49,32,0.9,Ukraine
-United Arab Emirates,AE,ARE,9890000,Asia,High,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,United Arab Emirates,784,24,54,1.3,UnitedArabEmirates
-United Kingdom,GB,GBR,67886000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,UK,826,54,-2,0.8,UnitedKingdom
-United States,US,USA,331003000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,USA,840,38,-97,1,US
-Uruguay,UY,URY,3474000,South America,High,Americas,Yes,Samples,Not specified,NA,NA,Uruguay,858,-33,-56,1.3,Uruguay
-Uzbekistan,UZ,UZB,33469000,Asia,Lower middle,Europe,No,Irrelevant,Irrelevant,NA,NA,Uzbekistan,860,41,64,0.9,Uzbekistan
-Vanuatu,VU,VUT,307000,Oceania,Lower middle,Western Pacific,NA,NA,NA,NA,NA,Vanuatu,548,-16,167,1.3,Vanuatu
-Venezuela,VE,VEN,28436000,South America,Lower middle,Americas,No,Samples,Not specified,NA,NA,Venezuela,862,8,-66,1.3,Venezuela
-Vietnam,VN,VNM,97339000,Asia,Lower middle,Western Pacific,Yes,Not specified,PCR,NA,NA,Vietnam,704,16,106,1.3,Vietnam
-Western Sahara,EH,ESH,597000,Africa,Low,NA,No,Not specified,Not specified,NA,NA,Western Sahara,732,24.5,-13,1.3,WesternSahara
-Yemen,YE,YEM,29826000,Asia,Low,Eastern Mediterranean,NA,NA,NA,NA,NA,Yemen,887,15,48,1.3,Yemen
-Zambia,ZM,ZMB,18384000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Zambia,894,-15,30,1.3,Zambia
-Zimbabwe,ZW,ZWE,14863000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,Zimbabwe,716,-20,30,1.3,Zimbabwe
+name,iso_alpha_2,alpha3,population,continent,income,WHO region,recurrent_reporting,tests_description,tests_type,tests_type_segregated,comment,numeric,latitude,longitude,penalty,jhu_ID
+Afghanistan,AF,AFG,38928000,Asia,Low,Eastern Mediterranean,No,People,Not specified,NA,NA,4,33,65,1.3,Afghanistan
+Albania,AL,ALB,2878000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,8,41,20,0.9,Albania
+Algeria,DZ,DZA,43851000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,12,28,3,1.3,Algeria
+Andorra,AD,AND,77000,Europe,High,Europe,Yes,Not specified,PCR and serology,NA,NA,20,42.5,1.6,0.9,Andorra
+Angola,AO,AGO,32866000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,24,-12.5,18.5,1.3,Angola
+Antigua & Barbuda,AG,ATG,98000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,28,17.05,-61.8,1.3,AntiguaandBarbuda
+Argentina,AR,ARG,45196000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,32,-34,-64,1.3,Argentina
+Armenia,AM,ARM,2963000,Asia,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,51,40,45,0.9,Armenia
+Australia,AU,AUS,25500000,Oceania,High,Western Pacific,Yes,Samples,Not specified,NA,NA,36,-27,133,1.3,Australia
+Austria,AT,AUT,9006000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Drastic testing increase in Jan. due to mass testsing (https://orf.at/stories/3194349/),40,47.3333,13.3333,0.9,Austria
+Azerbaijan,AZ,AZE,10139000,Asia,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,31,40.5,47.5,0.9,Azerbaijan
+Bahamas,BS,BHS,393000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,44,24.25,-76,1.3,TheBahamas
+Bahrain,BH,BHR,1702000,Asia,High,Eastern Mediterranean,Yes,Not specified,PCR,NA,NA,48,26,50.55,1.3,Bahrain
+Bangladesh,BD,BGD,164689000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,50,24,90,1.3,Bangladesh
+Barbados,BB,BRB,287000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,52,13.1667,-59.5333,1.3,Barbados
+Belarus,BY,BLR,9449000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,112,53,28,0.8,Belarus
+Belgium,BE,BEL,11590000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,56,50.8333,4,0.8,Belgium
+Belize,BZ,BLZ,398000,North America,Upper middle,Americas,Yes,Samples and People,Not specified,NA,NA,84,17.25,-88.75,1.3,Belize
+Benin,BJ,BEN,12123000,Africa,Lower middle,Africa,Yes,Not specified,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After data includes both PCR+rapid tests,204,9.5,2.25,1.3,Benin
+Bermuda,BM,BMU,62000,North America,High,NA,Yes,Not specified,Not specified,NA,NA,60,32.3333,-64.75,1.3,Bermuda
+Bhutan,BT,BTN,772000,Asia,Lower middle,South-East Asia,Yes,Samples,PCR and rapid test,Together,NA,64,27.5,90.5,1.3,Bhutan
+Bolivia,BO,BOL,11673000,South America,Lower middle,Americas,Yes,People,Not specified,NA,NA,68,-17,-65,1.3,Bolivia
+Bosnia & Herzegovina,BA,BIH,3281000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,70,44,18,0.9,BosniaandHerzegovina
+Botswana,BW,BWA,2352000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,72,-22,24,1.3,Botswana
+Brazil,BR,BRA,212559000,South America,Upper middle,Americas,No,Samples,PCR and rapid test,Separate,NA,76,-10,-55,1.3,Brazil
+Brunei,BN,BRN,437000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,96,4.5,114.6667,1.3,Brunei
+Bulgaria,BG,BGR,6948000,Europe,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,100,43,25,0.9,Bulgaria
+Burkina Faso,BF,BFA,20903000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,854,13,-2,1.3,BurkinaFaso
+Burundi,BI,BDI,11891000,Africa,Low,Africa,No,Not specified,Not specified,NA,NA,108,-3.5,30,1.3,Burundi
+Cambodia,KH,KHM,16719000,Asia,Lower middle,Western Pacific,Yes,People,Not specified,NA,NA,116,13,105,1.3,Cambodia
+Cameroon,CM,CMR,26546000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,120,6,12,1.3,Cameroon
+Canada,CA,CAN,37742000,North America,High,Americas,Yes,People,Not specified,NA,NA,124,60,-95,0.6,Canada
+Cape Verde,CV,CPV,556000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,132,16,-24,1.3,CapeVerde
+Central African Republic,CF,CAF,4830000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,140,7,21,1.3,CentralAfricanRepublic
+Chad,TD,TCD,16426000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,148,15,19,1.3,Chad
+Chile,CL,CHL,19116000,South America,High,Americas,Yes,Samples,PCR,NA,NA,152,-30,-71,1.3,Chile
+China,CN,CHN,1439324000,Asia,Upper middle,Western Pacific,No,Irrelevant,Irrelevant,NA,NA,156,35,105,1.3,China
+Colombia,CO,COL,50883000,South America,Upper middle,Americas,Yes,Not specified,PCR and rapid test,Separate,NA,170,4,-72,1.3,Colombia
+Comoros,KM,COM,870000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,174,-12.1667,44.25,1.3,Comoros
+Republic of the Congo,CG,COG,5518000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,178,-1,15,1.3,Congo
+Democratic Republic of the Congo,CD,COD,89561000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,180,0,25,1.3,DemocraticRepublicoftheCongo
+Costa Rica,CR,CRI,5094000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,188,10,-84,1.3,CostaRica
+Ivory Coast,CI,CIV,26378000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,384,8,-5,1.3,CotedIvoire
+Croatia,HR,HRV,4105000,Europe,High,Europe,Yes,People,Not specified,NA,NA,191,45.1667,15.5,0.9,Croatia
+Cuba,CU,CUB,11327000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,192,21.5,-80,1.3,Cuba
+Cyprus,CY,CYP,1207000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,196,35,33,1.3,Cyprus
+Czechia,CZ,CZE,10709000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,203,49.75,15.5,0.9,Czechia
+Denmark,DK,DNK,5792000,Europe,High,Europe,Yes,Samples and People,PCR and rapid test,Separate,NA,208,56,10,0.8,Denmark
+Djibouti,DJ,DJI,988000,Africa,Lower middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,262,11.5,43,1.3,Djibouti
+Dominica,DM,DMA,72000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,212,15.4167,-61.3333,1.3,Dominica
+Dominican Republic,DO,DOM,10848000,North America,Upper middle,Americas,Yes,Samples,PCR and rapid test,Separate,NA,214,19,-70.6667,1.3,DominicanRepublic
+Ecuador,EC,ECU,17643000,South America,Upper middle,Americas,Yes,Samples,PCR,NA,NA,218,-2,-77.5,1.3,Ecuador
+Egypt,EG,EGY,102334000,Africa,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,818,27,30,1.3,Egypt
+El Salvador,SV,SLV,6486000,North America,Lower middle,Americas,Yes,Samples,Not specified,NA,NA,222,13.8333,-88.9167,1.3,ElSalvador
+Equatorial Guinea,GQ,GNQ,1403000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,226,2,10,1.3,EquatorialGuinea
+Eritrea,ER,ERI,3546000,Africa,Low,Africa,No,Not specified,Not specified,NA,NA,232,15,39,1.3,Eritrea
+Estonia,EE,EST,1327000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,233,59,26,0.8,Estonia
+Eswatini,SZ,SWZ,1160000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,748,-26.5,31.5,1.3,Eswatini
+Ethiopia,ET,ETH,114964000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,231,8,38,1.3,Ethiopia
+Faroe Islands,FO,FRO,49000,Europe,High,NA,Yes,Samples,Not specified,NA,NA,234,62,-7,0.6,FaroeIslands
+Fiji,FJ,FJI,896000,Oceania,Upper middle,Western Pacific,Yes,Samples,PCR,NA,NA,242,-18,175,1.3,Fiji
+Finland,FI,FIN,5541000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,246,64,26,0.6,Finland
+France,FR,FRA,65274000,Europe,High,Europe,Yes,Samples,PCR,NA,NA,250,46,2,0.9,France
+French Polynesia,PF,PYF,281000,Oceania,High,NA,No,Irrelevant,Irrelevant,NA,NA,258,-15,-140,1.3,FrenchPolynesia
+Gabon,GA,GAB,2226000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,266,-1,11.75,1.3,Gabon
+Gambia,GM,GMB,2417000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,270,13.4667,-16.5667,1.3,TheGambia
+Georgia,GE,GEO,3989000,Europe,Upper middle,Europe,Yes,Samples,PCR and rapid test,Separate,NA,268,42,43.5,0.9,Georgia
+Germany,DE,DEU,83784000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,276,51,9,0.8,Germany
+Ghana,GH,GHA,31073000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,288,8,-2,1.3,Ghana
+Greece,GR,GRC,10423000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,300,39,22,1,Greece
+Greenland,GL,GRL,57000,North America,High,NA,Yes,Samples,Not specified,NA,NA,304,72,-40,0.6,Greenland
+Grenada,GD,GRD,113000,North America,Upper middle,Americas,Yes,Samples,PCR,NA,NA,308,12.1167,-61.6667,1.3,Grenada
+Guatemala,GT,GTM,17916000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,320,15.5,-90.25,1.3,Guatemala
+Guinea,GN,GIN,13133000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,324,11,-10,1.3,Guinea
+Guinea-Bissau,GW,GNB,1968000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,624,12,-15,1.3,GuineaBissau
+Guyana,GY,GUY,787000,South America,Upper middle,Americas,No,People,Not specified,NA,NA,328,5,-59,1.3,Guyana
+Haiti,HT,HTI,11403000,North America,Low,Americas,NA,NA,NA,NA,NA,332,19,-72.4167,1.3,Haiti
+Honduras,HN,HND,9905000,North America,Lower middle,Americas,Yes,Samples,Not specified,NA,NA,340,15,-86.5,1.3,Honduras
+Hong Kong SAR China,HK,HKG,7497000,Asia,High,NA,Yes,Samples,Not specified,NA,NA,344,22.25,114.1667,1.3,HongKong
+Hungary,HU,HUN,9660000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,348,47,20,0.9,Hungary
+Iceland,IS,ISL,341000,Europe,High,Europe,Yes,Not specified,Not specified,NA,NA,352,65,-18,0.6,Iceland
+India,IN,IND,1380004000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,356,20,77,1.3,India
+Indonesia,ID,IDN,273524000,Asia,Upper middle,South-East Asia,Yes,Samples and People,PCR and rapid test,Separate,NA,360,-5,120,1.3,Indonesia
+Iran,IR,IRN,83993000,Asia,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,364,32,53,1.3,Iran
+Iraq,IQ,IRQ,40223000,Asia,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,368,33,44,1.3,Iraq
+Ireland,IE,IRL,4938000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,372,53,-8,0.8,Ireland
+Israel,IL,ISR,8656000,Asia,High,Europe,Yes,Samples,Not specified,NA,NA,376,31.5,34.75,1.3,Israel
+Italy,IT,ITA,60462000,Europe,High,Europe,Yes,Samples and People,PCR and rapid test,Separate,NA,380,40,15,0.9,Italy
+Jamaica,JM,JAM,2961000,North America,Upper middle,Americas,Yes,Samples,PCR and rapid test,Separate,NA,388,18.25,-77.5,1.3,Jamaica
+Japan,JP,JPN,126476000,Asia,High,Western Pacific,Yes,Samples,PCR,NA,NA,392,36,138,1.3,Japan
+Jordan,JO,JOR,10203000,Asia,Upper middle,Eastern Mediterranean,Yes,Samples,PCR,NA,NA,400,31,36,1.3,Jordan
+Kazakhstan,KZ,KAZ,18777000,Asia,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,398,48,68,0.9,Kazakhstan
+Kenya,KE,KEN,53771000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,404,1,38,1.3,Kenya
+Kiribati,KI,KIR,119000,Oceania,Lower middle,Western Pacific,NA,NA,NA,NA,NA,296,1.4167,173,1.3,Kiribati
+Kosovo,XK,XKX,1800000,Europe,Upper middle,NA,Yes,People,PCR and rapid test,Together,NA,NA,42.6,20.9,0.9,Kosovo
+Kuwait,KW,KWT,4271000,Asia,High,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,414,29.3375,47.6581,1.3,Kuwait
+Kyrgyzstan,KG,KGZ,6524000,Asia,Lower middle,Europe,No,Irrelevant,Irrelevant,NA,NA,417,41,75,0.9,Kyrgyzstan
+Laos,LA,LAO,7276000,Asia,Lower middle,Western Pacific,Yes,People,Not specified,NA,NA,418,18,105,1.3,Laos
+Latvia,LV,LVA,1886000,Europe,High,Europe,Yes,Not specified,Not specified,NA,NA,428,57,25,0.8,Latvia
+Lebanon,LB,LBN,6825000,Asia,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,422,33.8333,35.8333,1.3,Lebanon
+Lesotho,LS,LSO,2142000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,426,-29.5,28.5,1.3,Lesotho
+Liberia,LR,LBR,5058000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,430,6.5,-9.5,1.3,Liberia
+Libya,LY,LBY,6871000,Africa,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,434,25,17,1.3,Libya
+Liechtenstein,LI,LIE,38000,Europe,High,NA,Yes,Samples,PCR and rapid test,Separate,Switzerland testing daily updates also include Liechtenstein.,438,47.1667,9.5333,0.9,Liechtenstein
+Lithuania,LT,LTU,2722000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,440,56,24,0.8,Lithuania
+Luxembourg,LU,LUX,626000,Europe,High,Europe,Yes,Samples and People,PCR,NA,NA,442,49.75,6.1667,0.9,Luxembourg
+Madagascar,MG,MDG,27691000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,450,-20,47,1.3,Madagascar
+Malawi,MW,MWI,19130000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,454,-13.5,34,1.3,Malawi
+Malaysia,MY,MYS,32366000,Asia,Upper middle,Western Pacific,No,People,Not specified,NA,NA,458,2.5,112.5,1.3,Malaysia
+Maldives,MV,MDV,541000,Asia,Upper middle,South-East Asia,Yes,People,Not specified,NA,NA,462,3.25,73,1.3,Maldives
+Mali,ML,MLI,20251000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,466,17,-4,1.3,Mali
+Malta,MT,MLT,442000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,470,35.8333,14.5833,1.3,Malta
+Marshall Islands,MH,MHL,59000,Oceania,Upper middle,Western Pacific,NA,NA,NA,NA,NA,584,9,168,1.3,MarshallIslands
+Mauritania,MR,MRT,4650000,Africa,Lower middle,Africa,Yes,Samples,Not specified,NA,NA,478,20,-12,1.3,Mauritania
+Mauritius,MU,MUS,1272000,Africa,High,Africa,No,Not specified,Not specified,NA,NA,480,-20.2833,57.55,1.3,Mauritius
+Mexico,MX,MEX,128933000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,484,23,-102,1.3,Mexico
+Micronesia (Federated States of),FM,FSM,115000,Oceania,Lower middle,Western Pacific,NA,NA,NA,NA,NA,583,6.9167,158.25,1.3,"Micronesia,FederatedStatesof"
+Moldova,MD,MDA,4034000,Europe,Lower middle,Europe,Yes,Samples,Not specified,NA,NA,498,47,29,0.9,Moldova
+Monaco,MC,MCO,39000,Europe,High,Europe,NA,NA,NA,NA,NA,492,43.7333,7.4,0.9,Monaco
+Mongolia,MN,MNG,3278000,Asia,Lower middle,Western Pacific,NA,NA,NA,NA,NA,496,46,105,0.9,Mongolia
+Montenegro,ME,MNE,628000,Europe,Upper middle,Europe,No,Not specified,Not specified,NA,NA,499,42.708678,19.37439,0.9,Montenegro
+Morocco,MA,MAR,36911000,Africa,Lower middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,504,32,-5,1.3,Morocco
+Mozambique,MZ,MOZ,31255000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,508,-18.25,35,1.3,Mozambique
+Myanmar (Burma),MM,MMR,54410000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,104,22,98,1.3,Myanmar
+Namibia,NA,NAM,2541000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,516,-22,17,1.3,Namibia
+Nauru,NR,NRU,11000,Oceania,High,Western Pacific,NA,NA,NA,NA,NA,520,-0.5333,166.9167,1.3,Nauru
+Nepal,NP,NPL,29137000,Asia,Lower middle,South-East Asia,Yes,Not specified,Not specified,NA,NA,524,28,84,1.3,Nepal
+Netherlands,NL,NLD,17135000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,528,52.5,5.75,0.8,Netherlands
+New Caledonia,NC,NCL,285000,Oceania,High,NA,Yes,Samples,Not specified,NA,NA,540,-21.5,165.5,1.3,NewCaledonia
+New Zealand,NZ,NZL,4822000,Oceania,High,Western Pacific,Yes,Samples,PCR,NA,NA,554,-41,174,0.9,NewZealand
+Nicaragua,NI,NIC,6625000,North America,Lower middle,Americas,NA,NA,NA,NA,NA,558,13,-85,1.3,Nicaragua
+Niger,NE,NER,24207000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,562,16,8,1.3,Niger
+Nigeria,NG,NGA,206140000,Africa,Lower middle,Africa,Yes,Samples,Not specified,NA,NA,566,10,8,1.3,Nigeria
+North Korea,KP,PRK,25779000,Asia,Lower middle,South-East Asia,NA,NA,NA,NA,NA,408,40,127,0.9,"Korea,DemocraticPeople'sRepublicof"
+North Macedonia,MK,MKD,2083000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,807,41.8333,22,0.9,NorthMacedonia
+Norway,NO,NOR,5421000,Europe,High,Europe,Yes,People,Not specified,NA,NA,578,62,10,0.6,Norway
+Oman,OM,OMN,5107000,Asia,High,Eastern Mediterranean,No,People,Not specified,NA,NA,512,21,57,1.3,Oman
+Pakistan,PK,PAK,220892000,Asia,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,586,30,70,1.3,Pakistan
+Palau,PW,PLW,18000,Oceania,High,Western Pacific,NA,NA,NA,NA,NA,585,7.5,134.5,1.3,Palau
+Palestinian Territories,PS,PSE,5101000,Asia,NA,NA,Yes,Samples,Not specified,NA,NA,275,32,35.25,1.3,occupiedPalestinianterritory
+Panama,PA,PAN,4315000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,591,9,-80,1.3,Panama
+Papua New Guinea,PG,PNG,8947000,Oceania,Lower middle,Western Pacific,No,Irrelevant,Irrelevant,NA,NA,598,-6,147,1.3,PapuaNewGuinea
+Paraguay,PY,PRY,7133000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,600,-23,-58,1.3,Paraguay
+Peru,PE,PER,32972000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,604,-10,-76,1.3,Peru
+Philippines,PH,PHL,109581000,Asia,Lower middle,Western Pacific,Yes,Samples and People,Not specified,NA,NA,608,13,122,1.3,Philippines
+Poland,PL,POL,37847000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,616,52,20,0.8,Poland
+Portugal,PT,PRT,10197000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,620,39.5,-8,1,Portugal
+Qatar,QA,QAT,2881000,Asia,High,Eastern Mediterranean,Yes,People,Not specified,NA,NA,634,25.5,51.25,1.3,Qatar
+Romania,RO,ROU,19238000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,642,46,25,0.9,Romania
+Russia,RU,RUS,145934000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,643,60,100,0.6,Russia
+Rwanda,RW,RWA,12952000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,646,-2,30,1.3,Rwanda
+Samoa,WS,WSM,198000,Oceania,Upper middle,Western Pacific,NA,NA,NA,NA,NA,882,-13.5833,-172.3333,1.3,Samoa
+San Marino,SM,SMR,34000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,674,43.7667,12.4167,0.9,SanMarino
+Sao Tome and Principe,ST,STP,219000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,678,1,7,1.3,SaoTomeandPrincipe
+Saudi Arabia,SA,SAU,34814000,Asia,High,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,682,25,45,1.3,SaudiArabia
+Senegal,SN,SEN,16744000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,686,14,-14,1.3,Senegal
+Serbia,RS,SRB,8737000,Europe,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,688,44,21,0.9,Serbia
+Seychelles,SC,SYC,98000,Africa,High,Africa,No,Not specified,Not specified,NA,NA,690,-4.5833,55.6667,1.3,Seychelles
+Sierra Leone,SL,SLE,7977000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,694,8.5,-11.5,1.3,SierraLeone
+Singapore,SG,SGP,5850000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,702,1.3667,103.8,1.3,Singapore
+Slovakia,SK,SVK,5460000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,703,48.6667,19.5,0.9,Slovakia
+Slovenia,SI,SVN,2079000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,705,46,15,0.9,Slovenia
+Solomon Islands,SB,SLB,687000,Oceania,Lower middle,Western Pacific,NA,NA,NA,NA,NA,90,-8,159,1.3,SolomonIslands
+Somalia,SO,SOM,15893000,Africa,Low,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,706,10,49,1.3,Somalia
+South Africa,ZA,ZAF,59309000,Africa,Upper middle,Africa,Yes,Samples,Not specified,NA,NA,710,-29,24,1.3,SouthAfrica
+South Korea,KR,KOR,51269000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,410,37,127.5,1,RepublicofKorea
+South Sudan,SS,SSD,8260490,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,728,6.877,31.307,1.3,SouthSudan
+Spain,ES,ESP,46755000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,724,40,-4,0.9,Spain
+Sri Lanka,LK,LKA,21413000,Asia,Lower middle,South-East Asia,No,Samples,PCR,NA,NA,144,7,81,1.3,SriLanka
+St. Kitts & Nevis,KN,KNA,53000,North America,High,Americas,Yes,People,Not specified,NA,NA,659,17.3333,-62.75,1.3,SaintKittsandNevis
+St. Lucia,LC,LCA,184000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,662,13.8833,-61.1333,1.3,SaintLucia
+St. Vincent & Grenadines,VC,VCT,111000,North America,Upper middle,Americas,No,Samples,Not specified,NA,NA,670,13.25,-61.2,1.3,SaintVincentandtheGrenadines
+Sudan,SD,SDN,43849000,Africa,Low,Eastern Mediterranean,No,Not specified,Not specified,NA,NA,736,15,30,1.3,Sudan
+Suriname,SR,SUR,587000,South America,Upper middle,Americas,NA,NA,NA,NA,NA,740,4,-56,1.3,Suriname
+Sweden,SE,SWE,10099000,Europe,High,Europe,Yes,Samples and People,PCR and serology,NA,NA,752,62,15,0.6,Sweden
+Switzerland,CH,CHE,8655000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Testing data published by FOPH also includes Liechtenstein.,756,47,8,0.9,Switzerland
+Syria,SY,SYR,17501000,Asia,Low,Eastern Mediterranean,NA,NA,NA,NA,NA,760,35,38,1.3,SyrianArabRepublic
+Taiwan,TW,TWN,23817000,Asia,High,NA,Yes,Samples and People,Not specified,NA,NA,158,23.5,121,1.3,Taiwan
+Tajikistan,TJ,TJK,9538000,Asia,Low,Europe,No,Irrelevant,Irrelevant,NA,NA,762,39,71,1,Tajikistan
+Tanzania,TZ,TZA,59734000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,834,-6,35,1.3,Tanzania
+Thailand,TH,THA,69800000,Asia,Upper middle,South-East Asia,No,People,Not specified,NA,NA,764,15,100,1.3,Thailand
+Timor-Leste,TL,TLS,1318000,Asia,Lower middle,South-East Asia,NA,NA,NA,NA,NA,626,-8.55,125.5167,1.3,EastTimor
+Togo,TG,TGO,8279000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,768,8,1.1667,1.3,Togo
+Tonga,TO,TON,106000,Oceania,Upper middle,Western Pacific,NA,NA,NA,NA,NA,776,-20,-175,1.3,Tonga
+Trinidad & Tobago,TT,TTO,1399000,North America,High,Americas,Yes,People,Not specified,NA,NA,780,11,-61,1.3,TrinidadandTobago
+Tunisia,TN,TUN,11819000,Africa,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,788,34,9,1.3,Tunisia
+Turkey,TR,TUR,84339000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,792,39,35,1,Turkey
+Turkmenistan,TM,TKM,6031000,Asia,Upper middle,Europe,NA,NA,NA,NA,NA,795,40,60,0.9,Turkmenistan
+Tuvalu,TV,TUV,12000,Oceania,Upper middle,Western Pacific,NA,NA,NA,NA,NA,798,-8,178,1.3,Tuvalu
+Uganda,UG,UGA,45741000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,800,1,32,1.3,Uganda
+Ukraine,UA,UKR,43734000,Europe,Lower middle,Europe,Yes,Samples,Not specified,NA,NA,804,49,32,0.9,Ukraine
+United Arab Emirates,AE,ARE,9890000,Asia,High,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,784,24,54,1.3,UnitedArabEmirates
+United Kingdom,GB,GBR,67886000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,826,54,-2,0.8,UnitedKingdom
+United States,US,USA,331003000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,840,38,-97,1,US
+Uruguay,UY,URY,3474000,South America,High,Americas,Yes,Samples,Not specified,NA,NA,858,-33,-56,1.3,Uruguay
+Uzbekistan,UZ,UZB,33469000,Asia,Lower middle,Europe,No,Irrelevant,Irrelevant,NA,NA,860,41,64,0.9,Uzbekistan
+Vanuatu,VU,VUT,307000,Oceania,Lower middle,Western Pacific,NA,NA,NA,NA,NA,548,-16,167,1.3,Vanuatu
+Venezuela,VE,VEN,28436000,South America,Lower middle,Americas,No,Samples,Not specified,NA,NA,862,8,-66,1.3,Venezuela
+Vietnam,VN,VNM,97339000,Asia,Lower middle,Western Pacific,Yes,Not specified,PCR,NA,NA,704,16,106,1.3,Vietnam
+Western Sahara,EH,ESH,597000,Africa,Low,NA,No,Not specified,Not specified,NA,NA,732,24.5,-13,1.3,WesternSahara
+Yemen,YE,YEM,29826000,Asia,Low,Eastern Mediterranean,NA,NA,NA,NA,NA,887,15,48,1.3,Yemen
+Zambia,ZM,ZMB,18384000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,894,-15,30,1.3,Zambia
+Zimbabwe,ZW,ZWE,14863000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,716,-20,30,1.3,Zimbabwe
