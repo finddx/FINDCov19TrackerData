@@ -490,8 +490,11 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_greenland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://nun.gl/emner/borgere/coronavirus_emne/foelg_smittespredningen?sc_lang=da")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//table[@id=\'covid_19\']/tbody/tr/td[2]").text
+    self.driver.get("https://e.infogram.com/a7e83088-1850-42bb-993a-2bc35f63d26b?src=embed")
+    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id='c05d8f5b-758f-4012-ab16-20495d78e87d']/div[1]/div/div[28]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id='c05d8f5b-758f-4012-ab16-20495d78e87d']/div[1]/div/div[28]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span").text
+    print("Greenland")
+    print(self.vars)
     self.driver.close()
 
   def test_guatemala(self):
