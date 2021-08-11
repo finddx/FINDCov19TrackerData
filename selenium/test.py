@@ -435,11 +435,13 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
 
   def test_faroeIslands(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://corona.fo/?_l=en")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"ease_flexibleitem_9\"]/grid[2]/column/grid[1]/column[5]/div[1]").text
-    self.driver.close()
+    url_tests = "https://corona.fo/json/stats"
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    self.vars["tests_cumulative"] = cont_tests['stats'][0]['tested']
+    print("Faroe Islands")
+    print(self.vars)
+
 
   def test_fiji(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
