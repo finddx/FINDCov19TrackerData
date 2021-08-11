@@ -1256,7 +1256,7 @@ class TestDefaultSuite(unittest.TestCase):
     cont_tests = json.loads(r_tests.content)
     
     for idx in cont_tests['features']:
-        if idx['attributes']['Country'] == "Eswatini ":
+        if idx['attributes']['Country'] == "Eswatini":
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
