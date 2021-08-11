@@ -1,6 +1,5 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2021-08-11,manually,pdf,http://covid.moph-dw.org/#/
-Azerbaijan,NA,0,NA,NA,2021-08-11,manually,automated,https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet
 Barbados,NA,0,NA,NA,2021-08-11,manually,automated,https://gisbarbados.gov.bb/covid-19/
 Benin,NA,0,NA,NA,2021-08-11,manually,automated,https://www.gouv.bj/coronavirus/
 Bhutan,NA,0,NA,NA,2021-08-11,manually,image,https://www.facebook.com/MoHBhutan/
@@ -19,6 +18,7 @@ FrenchPolynesia,NA,0,NA,NA,2021-08-11,manually,without_information,https://www.p
 Georgia,NA,0,NA,NA,2021-08-11,manually,not_yet_automated_daily,https://stopcov.ge/en/
 Germany,NA,0,NA,NA,2021-08-11,manually,xslx,https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Situationsberichte/Okt_2020/Archiv_Oktober.html
 Grenada,NA,0,NA,NA,2021-08-11,manually,facebook,https://web.facebook.com/HealthGrenada/photos/a.570448523487244/952200915312001
+Guinea,475176,-34561,475176,-34561,2021-08-11,manually,automated,https://africacdc.org/covid-19/
 Guyana,NA,0,NA,NA,2021-08-11,manually,image,https://www.health.gov.gy/
 Honduras,NA,0,NA,NA,2021-08-11,manually,image,http://www.bvs.hn/COVID-19/
 HongKong,NA,0,NA,NA,2021-08-11,manually,pdf,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf
@@ -37,7 +37,6 @@ LaoPeoplesDemocraticRepublic,NA,0,NA,NA,2021-08-11,manually,automated,https://ww
 Luxembourg,NA,0,NA,NA,2021-08-11,manually,not_yet_automated_daily,https://msan.gouvernement.lu/fr/graphiques-evolution.html
 Malaysia,NA,0,NA,NA,2021-08-11,manually,facebook,https://www.facebook.com/kementeriankesihatanmalaysia/photos/10157490776386237
 Maldives,NA,0,NA,NA,2021-08-11,manually,twitter,https://covid19.health.gov.mv/en/?c=0
-Malta,24,-1119787,24,-1119787,2021-08-11,manually,automated,https://timesofmalta.com/articles/view/watch-live-daily-coronavirus-briefing.790073
 Moldova,NA,0,NA,NA,2021-08-11,manually,not_yet_automated,https://noi.md/md/societate/coronavirus-in-moldova-statistica-infectarilor-pe-teritoriul-tarii-428097
 Montenegro,NA,0,NA,NA,2021-08-11,manually,without_information,https://www.ijzcg.me/me/coronainfocg
 Myanmar,NA,0,NA,NA,2021-08-11,manually,automated,https://mohs.gov.mm/Main/content/publication/2019-ncov
@@ -61,6 +60,7 @@ Singapore,NA,0,NA,NA,2021-08-11,manually,automated,https://www.moh.gov.sg/covid-
 Slovenia,NA,0,NA,NA,2021-08-11,manually,automated,https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19
 SriLanka,NA,0,NA,NA,2021-08-11,manually,automated,https://www.hpb.health.gov.lk/en
 Sweden,NA,0,NA,NA,2021-08-11,manually,pdf,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/statistik-och-analyser/antalet-testade-for-covid-19/
+Switzerland,NA,0,NA,NA,2021-08-11,manually,automated,https://www.covid19.admin.ch/en/overview?ovTime=total
 Tajikistan,NA,0,NA,NA,2021-08-11,manually,without_information,https://eurasianet.org/dashboard-coronavirus-in-eurasia
 Thailand,NA,0,NA,NA,2021-08-11,manually,automated,https://ddc.moph.go.th/viralpneumonia/eng/index.php
 TheBahamas,NA,0,NA,NA,2021-08-11,manually,facebook,https://www.bahamas.gov.bs/wps/portal/public/gov/government/news/All%20News%20Press%20Release
