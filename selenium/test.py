@@ -603,7 +603,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOTUxMTEwMzItYzM5ZS00MTZjLTkxNmYtYjBjYjUyZGIwNThlIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9&pageName=ReportSection8911066d0a4953dfcbe5")
     time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[18]
     print(self.vars)
     self.driver.close()
 
