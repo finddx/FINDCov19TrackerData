@@ -448,7 +448,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("http://www.health.gov.fj/")
     url=self.driver.find_element(By.XPATH, "(//a[contains(text(),\'COVID-19 Update\')])[3]").get_attribute('href')
     self.driver.get(url)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'tested since testing began in early\')]").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'samples have been tested since this outbreak started\')]").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('with')[1].split('tested')[0]
     print("Fiji")
     print(self.vars)
