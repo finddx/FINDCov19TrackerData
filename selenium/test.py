@@ -168,15 +168,19 @@ class TestDefaultSuite(unittest.TestCase):
       self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has completed")[1].split("tests")[0]
     except NoSuchElementException:
       try:
-        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
-        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("completed")[1]
+        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
+        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has conducted")[1].split("tests")[0]
       except NoSuchElementException:
         try:
           self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The lab has performed\')]").text
           self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has performed")[1].split("tests")[0]
         except NoSuchElementException:
-          self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'has carried\')]").text
-          self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried")[1].split("tests")[0]
+          try:
+            self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'has carried\')]").text
+            self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried")[1].split("tests")[0]
+          except NoSuchElementException:
+            self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
+            self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("completed")[1]
     print("Barbados")
     print(self.vars)
     self.driver.close()
@@ -198,11 +202,14 @@ class TestDefaultSuite(unittest.TestCase):
   def test_belize(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
+    self.driver.set_page_load_timeout(10)
+    time.sleep(10)
     self.driver.get("https://sib.org.bz/covid-19/by-the-numbers/")
-    WebDriverWait(self.driver, 60).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
+    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "content")))
+    time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('outbreak situation\n')[1].split('\nTests Completed')[0]
+    print(self.vars)
     self.driver.close()    
 
   # def test_benin(self):
@@ -415,13 +422,13 @@ class TestDefaultSuite(unittest.TestCase):
   def test_elSalvador(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
+    self.driver.set_page_load_timeout(10)
     self.driver.get("https://covid19.gob.sv/")
-    time.sleep(30)
-    WebDriverWait(self.driver, 30).until(expected_conditions.frame_to_be_available_and_switch_to_it(0))
+    time.sleep(10)
+    WebDriverWait(self.driver, 10).until(expected_conditions.frame_to_be_available_and_switch_to_it(0))
     self.driver.execute_script("window.scrollTo(0,300)")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[1]//div//div[38]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[38]").text
+    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[1]//div//div[37]")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[37]").text
     print(self.vars)
     self.driver.close()
     
