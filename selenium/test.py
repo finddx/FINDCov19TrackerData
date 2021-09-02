@@ -1044,15 +1044,30 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     
   def test_uS(self):
+    # information x
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6")
-    self.driver.set_window_size(1440, 855)
-    time.sleep(60)
-    #WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".dock-element:nth-child(4) .responsive-text:nth-child(2) text:nth-child(1)")))
-    html = self.driver.page_source
-    soup = bs(html, "lxml")
-    full_tags = soup.find_all("g", attrs={"style":"--text-fill-color:#73b2ff;"})
-    self.vars["tests_cumulative"] = full_tags[0].text
+    # self.driver.get("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6")
+    # self.driver.set_window_size(1440, 855)
+    # time.sleep(60)
+    # #WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".dock-element:nth-child(4) .responsive-text:nth-child(2) text:nth-child(1)")))
+    # html = self.driver.page_source
+    # soup = bs(html, "lxml")
+    # full_tags = soup.find_all("g", attrs={"style":"--text-fill-color:#73b2ff;"})
+    # self.vars["tests_cumulative"] = full_tags[0].text
+
+    total_tests = 0
+    url_tests = "https://jhucoronavirus.azureedge.net/api/v1/testing/daily.json"
+    r_tests = requests.get(url_tests, stream=True)
+    cont_tests = json.loads(r_tests.content)
+
+    max_date = max([ e['date'] for e in cont_tests ])
+    tests_last_date = [x for x in cont_tests if x['date'] == max_date]
+
+    for state in tests_last_date:
+        tests_number = state['tests_combined_total']
+        total_tests += tests_number
+
+    self.vars["tests_cumulative"] = total_tests
     print(self.vars)
     self.driver.close()
 
