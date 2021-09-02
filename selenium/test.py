@@ -829,8 +829,8 @@ class TestDefaultSuite(unittest.TestCase):
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'BULETIN DE PRESĂ\')]").get_attribute('href')
     self.driver.get(url)
     all_tests = self.driver.find_element(By.XPATH, "//p[contains(text(), \"Până la această dată, la nivel național, au fost prelucrate\")]").text
-    self.vars["pcr_tests_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de  teste')[0].replace(".","").replace(" ","")
-    self.vars["rapid_test_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('de  teste RT-PCR și')[1].split('teste rapid')[0].replace(".","").replace(" ","")
+    self.vars["pcr_tests_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR')[0].replace(".","").replace(" ","").replace("de","")
+    self.vars["rapid_test_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR și')[1].split('teste rapid')[0].replace(".","").replace(" ","").replace("de","")
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print("Romania")
     print(self.vars)
