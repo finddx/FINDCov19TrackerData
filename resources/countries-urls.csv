@@ -7,7 +7,7 @@ Angola,Angola,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automat
 Antigua and Barbuda,AntiguaandBarbuda,https://covid19.gov.ag/,,html,,,/html/body/div/div/div[1]/div[1]/div[4]/p[2],,,,automated
 Argentina,Argentina,https://www.argentina.gob.ar/salud/coronavirus-COVID-19/sala-situacion,,dashboard,https://www.argentina.gob.ar/sites/default/files/2021/05/sala-situacion-covid-19_11-05-2021.pdf,,(?<=se realizaron )(.*)(?= pruebas diagnósticas),,,,
 Armenia,Armenia,https://ncdc.am/coronavirus/confirmed-cases-by-days/,,html2,https://infogram.com/--1h7j4drmogk92nr,,"Ընդհանուր թեստեր - ([0-9 .,]+)",,,,automated
-Australia,Australia,https://www.health.gov.au/resources/total-covid-19-tests-conducted-and-results,,Selenium,,,"([,0-9]+)",,,,automated
+Australia,Australia,https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-current-situation-and-case-numbers#tests-conducted-and-results,,Selenium,,,"([,0-9]+)",,,,automated
 Austria,Austria,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html,,csv,https://info.gesundheitsministerium.at/data/AllgemeinDaten.csv,,1,GesTestungen,,,automated
 Azerbaijan,Azerbaijan,https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet,,html,,,/html/body/main/section/div/div/div[3]/div[6]/strong,,,,automated
 Bahrain,Bahrain,https://healthalert.gov.bh/en/,,html,https://www.moh.gov.bh/COVID19,,/html/body/div[1]/div/div[2]/div/div[2]/div/div[3]/div[2]/div/div/table/thead/tr[1]/th/span,,,,automated
@@ -158,7 +158,7 @@ South Sudan,SouthSudan,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,
 Spain,Spain,https://www.mscbs.gob.es/gabinete/notasPrensa.do,,html_list,,,,,,"Testing info only in Monday's press releases. Value between ""se han efectuado hasta el momento"" and ""pruebas diagnósticas""",automated
 Sri Lanka,SriLanka,https://www.hpb.health.gov.lk/en,,Selenium,,,([0-9]+),,,,automated
 Sudan,Sudan,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-Sweden,Sweden,https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/statistik-och-analyser/antalet-testade-for-covid-19/,,html,,,,,,"Publication ""Veckorapport om covid-19 vecka"" every Friday. Value in table at the beginning ""Testade individer (PCR-test): """,pdf
+Sweden,Sweden,https://experience.arcgis.com/experience/09f821667ce64bf7be6f9f87457ed9aa,,html,,,,,,"Publication ""Veckorapport om covid-19 vecka"" every Friday. Value in table at the beginning ""Testade individer (PCR-test): """,without_information
 Switzerland,Switzerland,https://www.covid19.admin.ch/en/overview?ovTime=total,,html,,,/html/body/app-root/bag-dashboard/main/bag-overview/div/div[1]/div[3]/bag-overview-card-test/bag-overview-card/div/bag-key-value-list/table/tbody/tr[2]/td/span,,,,automated
 Taiwan,Taiwan,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan,,special dashboard,,,"//*[@id=""num1""]","//*[@id=""num6""]",,,automated
 Tajikistan,Tajikistan,https://eurasianet.org/dashboard-coronavirus-in-eurasia,,irrelevant,,,,,,,without_information
