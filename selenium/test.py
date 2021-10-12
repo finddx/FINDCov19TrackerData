@@ -250,23 +250,12 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_brazil(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id=\"KPI-01\"]")))
-    time.sleep(30)
-    self.driver.find_element(By.XPATH, "//*[@id=\"KPI-01\"]")
-    time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"KPI-01\"]").text.split('\n')[1]
-    time.sleep(30)
-    self.driver.find_element(By.XPATH, "//*[@id=\"KPI-02\"]")
-    time.sleep(30)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"KPI-02\"]").text.split('\n')[1]
-    time.sleep(30)
-    self.driver.find_element(By.XPATH, "//*[@id=\"KPI-03\"]")
-    time.sleep(30)
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"KPI-03\"]").text.split('\n')[1]
+    self.driver.get("https://coronavirusbra1.github.io")
+    self.driver.find_element(By.ID, "card_filter_tests").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#card_tests .fs-5 > .fs-5").text
+    print("Brazil")
     print(self.vars)
+    self.driver.close()
     
   def test_brunei(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
