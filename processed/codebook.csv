@@ -20,3 +20,6 @@ other,all_new_deaths,Daily number of cases (7 day rolling average),
 other,all_cum_tests,Cumulative number of tests (smoothed),
 other,all_new_tests,Daily number of tests (7 day rolling average smoothed),
 default,pos,Positivity rate (7 day rolling average),Positivity rate (%)
+other,continent,Continent,Continent
+other,who_region,WHO Region,WHO Region
+other,income,Income Group,Income Group
