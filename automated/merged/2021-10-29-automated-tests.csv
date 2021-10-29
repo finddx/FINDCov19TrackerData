@@ -1,11 +1,11 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2021-10-29,NA,NA,NA,NA,selenium
-Albania,2021-10-29,1297234,0,1297234,0,selenium
+Albania,2021-10-29,1301207,3973,1301207,3973,selenium
 Algeria,2021-10-29,230553,0,230553,0,selenium
-Andorra,2021-10-29,387312,0,387312,0,selenium
+Andorra,2021-10-29,NA,NA,NA,NA,selenium
 Angola,2021-10-29,1104913,0,1104913,0,selenium
 AntiguaandBarbuda,2021-10-29,16700,0,16700,0,selenium
-Argentina,2021-10-29,25004055,0,25004055,0,selenium
+Argentina,2021-10-29,25052705,48650,25052705,48650,selenium
 Armenia,2021-10-29,NA,NA,NA,NA,selenium
 Australia,2021-10-29,43078812,173166,43078812,173166,selenium
 Austria,2021-10-29,96575321,312927,96575321,312927,selenium
@@ -20,7 +20,7 @@ Benin,2021-10-29,NA,NA,NA,NA,NA
 Bermuda,2021-10-29,590048,0,590048,0,selenium
 Bhutan,2021-10-29,NA,NA,NA,NA,NA
 Bolivia,2021-10-29,NA,NA,NA,NA,NA
-BosniaandHerzegovina,2021-10-29,914288,2178,914288,2178,selenium
+BosniaandHerzegovina,2021-10-29,914301,2191,914301,2191,selenium
 Botswana,2021-10-29,1817142,5199,1817142,5199,selenium
 Brazil,2021-10-29,NA,NA,NA,NA,selenium
 Brunei,2021-10-29,NA,NA,NA,NA,selenium
@@ -57,7 +57,7 @@ Eritrea,2021-10-29,23693,0,23693,0,selenium
 Estonia,2021-10-29,2124306,7626,2124306,7626,selenium
 Eswatini,2021-10-29,383604,621,383604,621,selenium
 Ethiopia,2021-10-29,3677210,6578,3677210,6578,selenium
-FaroeIslands,2021-10-29,474233,0,474233,0,selenium
+FaroeIslands,2021-10-29,477717,3484,477717,3484,selenium
 Fiji,2021-10-29,NA,NA,NA,NA,selenium
 Finland,2021-10-29,NA,NA,NA,NA,selenium
 France,2021-10-29,154136116,350826,154136116,350826,selenium
@@ -69,7 +69,7 @@ Ghana,2021-10-29,1861475,3512,1861475,3512,selenium
 Greece,2021-10-29,25572397,61485,25572397,61485,selenium
 Greenland,2021-10-29,56347,0,56347,0,selenium
 Grenada,2021-10-29,NA,NA,NA,NA,NA
-Guatemala,2021-10-29,2877835,12225,2877835,12225,selenium
+Guatemala,2021-10-29,2891597,25987,2891597,25987,selenium
 Guinea,2021-10-29,582870,348,582870,348,selenium
 GuineaBissau,2021-10-29,102067,0,102067,0,selenium
 Guyana,2021-10-29,NA,NA,NA,NA,NA
@@ -83,7 +83,7 @@ Iran,2021-10-29,NA,NA,NA,NA,selenium
 Iraq,2021-10-29,NA,NA,NA,NA,NA
 Ireland,2021-10-29,10,0,10,0,selenium
 Israel,2021-10-29,NA,NA,NA,NA,NA
-Italy,2021-10-29,102949658,0,102949658,0,selenium
+Italy,2021-10-29,103424436,474778,103424436,474778,selenium
 Jamaica,2021-10-29,NA,NA,NA,NA,NA
 Japan,2021-10-29,NA,NA,NA,NA,NA
 Jordan,2021-10-29,NA,NA,NA,NA,selenium
@@ -93,7 +93,7 @@ Kosovo,2021-10-29,1265948,1958,1265948,NA,selenium
 Kuwait,2021-10-29,NA,NA,NA,NA,NA
 Kyrgyzstan,2021-10-29,NA,NA,NA,NA,NA
 LaoPeoplesDemocraticRepublic,2021-10-29,NA,NA,NA,NA,NA
-Latvia,2021-10-29,211702,0,211702,0,selenium
+Latvia,2021-10-29,214460,2758,214460,2758,selenium
 Lebanon,2021-10-29,4731376,0,4731376,0,selenium
 Lesotho,2021-10-29,235925,0,235925,0,selenium
 Liberia,2021-10-29,139824,0,139824,0,selenium
@@ -139,7 +139,7 @@ Romania,2021-10-29,14656253,66679,14656253,66679,selenium
 Russia,2021-10-29,NA,NA,NA,NA,NA
 Rwanda,2021-10-29,3094825,8690,3094825,8690,selenium
 SaintKittsandNevis,2021-10-29,NA,NA,NA,NA,selenium
-SaintLucia,2021-10-29,86055,257,86055,257,selenium
+SaintLucia,2021-10-29,86293,495,86293,495,selenium
 SaintVincentandtheGrenadines,2021-10-29,NA,NA,NA,NA,NA
 SanMarino,2021-10-29,NA,NA,NA,NA,selenium
 SaoTomeandPrincipe,2021-10-29,27649,0,27649,0,selenium
@@ -160,7 +160,7 @@ SriLanka,2021-10-29,NA,NA,NA,NA,selenium
 Sudan,2021-10-29,562941,0,562941,0,selenium
 Sweden,2021-10-29,NA,NA,NA,NA,NA
 Switzerland,2021-10-29,11594561,0,11594561,0,selenium
-Taiwan,2021-10-29,7420734,0,7420734,0,selenium
+Taiwan,2021-10-29,7453060,32326,7453060,32326,selenium
 Tajikistan,2021-10-29,NA,NA,NA,NA,NA
 Thailand,2021-10-29,NA,NA,NA,NA,selenium
 TheBahamas,2021-10-29,NA,NA,NA,NA,NA
@@ -172,10 +172,10 @@ Turkey,2021-10-29,NA,NA,NA,NA,selenium
 Uganda,2021-10-29,1792314,0,1792314,0,selenium
 Ukraine,2021-10-29,14306108,74027,14306108,74027,selenium
 UnitedArabEmirates,2021-10-29,92733861,297148,92733861,297148,selenium
-UnitedKingdom,2021-10-29,NA,NA,NA,NA,selenium
+UnitedKingdom,2021-10-29,326700390,961769,326700390,961769,selenium
 UnitedRepublicofTanzania,2021-10-29,297169,0,297169,0,selenium
 Uruguay,2021-10-29,NA,NA,NA,NA,selenium
-US,2021-10-29,654721464,1558834,654721464,NA,selenium
+US,2021-10-29,NA,NA,NA,NA,selenium
 Uzbekistan,2021-10-29,NA,NA,NA,NA,NA
 Venezuela,2021-10-29,NA,NA,NA,NA,selenium
 Vietnam,2021-10-29,NA,NA,NA,NA,NA
