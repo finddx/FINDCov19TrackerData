@@ -939,7 +939,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.covid19.admin.ch//en/overview?time=total")
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//bag-card-overview-test/bag-overview-card/div/bag-key-value-list/table/tbody/tr[2]/td/span").text
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "//bag-card-overview-test/bag-overview-card/div/bag-key-value-list/table/tbody/tr[3]/td/span").text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "//tr[4]/td/span").text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "//bag-card-overview-test/bag-overview-card/div/bag-key-value-list/table/tbody/tr[4]/td/span").text
     print("Switzerland")
     print(self.vars)
     self.driver.close()
