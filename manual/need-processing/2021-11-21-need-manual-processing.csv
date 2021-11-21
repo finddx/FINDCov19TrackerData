@@ -1,9 +1,7 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2021-11-21,manually,pdf,http://covid.moph-dw.org/#/
 Armenia,NA,0,NA,NA,2021-11-21,manually,automated,https://ncdc.am/coronavirus/confirmed-cases-by-days/
-Bangladesh,NA,0,NA,NA,2021-11-21,manually,automated,https://corona.gov.bd/
 Barbados,NA,0,NA,NA,2021-11-21,manually,automated,https://gisbarbados.gov.bb/covid-19/
-Belize,NA,0,NA,NA,2021-11-21,manually,automated,https://sib.org.bz/covid-19/by-the-numbers/
 Benin,NA,0,NA,NA,2021-11-21,manually,automated,https://www.gouv.bj/coronavirus/
 Bhutan,NA,0,NA,NA,2021-11-21,manually,image,https://www.facebook.com/MoHBhutan/
 Bolivia,NA,0,NA,NA,2021-11-21,manually,image,https://www.minsalud.gob.bo/
@@ -41,6 +39,7 @@ Kosovo,NA,0,NA,NA,2021-11-21,manually,facebook,https://datastudio.google.com/emb
 Kuwait,NA,0,NA,NA,2021-11-21,manually,twitter,https://twitter.com/KUWAIT_MOH
 Kyrgyzstan,NA,0,NA,NA,2021-11-21,manually,image,https://www.instagram.com/daryger_sunushu/
 LaoPeoplesDemocraticRepublic,NA,0,NA,NA,2021-11-21,manually,automated,https://www.covid19.gov.la/index.php
+Lithuania,191,-6,191,-6,2021-11-21,manually,automated,https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika
 Luxembourg,NA,0,NA,NA,2021-11-21,manually,not_yet_automated_daily,https://msan.gouvernement.lu/fr/graphiques-evolution.html
 Malaysia,NA,0,NA,NA,2021-11-21,manually,facebook,https://www.facebook.com/kementeriankesihatanmalaysia/photos/10157490776386237
 Maldives,NA,0,NA,NA,2021-11-21,manually,twitter,https://covid19.health.gov.mv/en/?c=0
@@ -70,13 +69,14 @@ Slovakia,NA,0,NA,NA,2021-11-21,manually,automated,https://korona.gov.sk/
 Slovenia,NA,0,NA,NA,2021-11-21,manually,automated,https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19
 SriLanka,NA,0,NA,NA,2021-11-21,manually,automated,https://www.hpb.health.gov.lk/en
 Sweden,NA,0,NA,NA,2021-11-21,manually,without_information,https://experience.arcgis.com/experience/09f821667ce64bf7be6f9f87457ed9aa
-Switzerland,12290429,-49498,12290429,-49498,2021-11-21,manually,automated,https://www.covid19.admin.ch/en/overview?ovTime=total
 Tajikistan,NA,0,NA,NA,2021-11-21,manually,without_information,https://eurasianet.org/dashboard-coronavirus-in-eurasia
 Thailand,NA,0,NA,NA,2021-11-21,manually,automated,https://ddc.moph.go.th/viralpneumonia/eng/index.php
 TheBahamas,NA,0,NA,NA,2021-11-21,manually,facebook,https://www.bahamas.gov.bs/wps/portal/public/gov/government/news/All%20News%20Press%20Release
 TrinidadandTobago,NA,0,NA,NA,2021-11-21,manually,pdf,http://www.health.gov.tt/sitepages/default.aspx?id=293
 Turkey,NA,0,NA,NA,2021-11-21,manually,automated,https://covid19.saglik.gov.tr/
+Ukraine,10635,-7615,10635,-7615,2021-11-21,manually,automated,https://covid19.gov.ua/en/
 Uruguay,NA,0,NA,NA,2021-11-21,manually,automated,https://www.gub.uy/sistema-nacional-emergencias/pagina-embebida/visualizador-casos-coronavirus-covid-19-uruguay
+US,NA,0,NA,NA,2021-11-21,manually,automated,https://github.com/govex/COVID-19/tree/master/data_tables/testing_data
 Uzbekistan,NA,0,NA,NA,2021-11-21,manually,without_information,https://t.me/koronavirusinfouz/3470
 Venezuela,NA,0,NA,NA,2021-11-21,manually,without_information,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A
 Vietnam,NA,0,NA,NA,2021-11-21,manually,without_information,https://ncov.moh.gov.vn/?fbclid=IwAR1JDjulr5Ni19WcUWqQqugrEN7Ta6HcGEMqEhdgzifWiSGlIxwknKr9VuU
