@@ -1,6 +1,7 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2021-11-23,manually,pdf,http://covid.moph-dw.org/#/
 Armenia,NA,0,NA,NA,2021-11-23,manually,automated,https://ncdc.am/coronavirus/confirmed-cases-by-days/
+Bangladesh,NA,0,NA,NA,2021-11-23,manually,automated,https://corona.gov.bd/
 Barbados,NA,0,NA,NA,2021-11-23,manually,automated,https://gisbarbados.gov.bb/covid-19/
 Benin,NA,0,NA,NA,2021-11-23,manually,automated,https://www.gouv.bj/coronavirus/
 Bhutan,NA,0,NA,NA,2021-11-23,manually,image,https://www.facebook.com/MoHBhutan/
@@ -10,7 +11,6 @@ Bulgaria,NA,0,NA,NA,2021-11-23,manually,automated,https://coronavirus.bg/
 Cambodia,NA,0,NA,NA,2021-11-23,manually,automated,http://cdcmoh.gov.kh/
 China,NA,0,NA,NA,2021-11-23,manually,without_information,NA
 Croatia,NA,0,NA,NA,2021-11-23,manually,automated,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35
-Cuba,NA,0,NA,NA,2021-11-23,manually,not_yet_automated,http://www.cubadebate.cu/?s=Cuba+reporta
 Cyprus,NA,0,NA,NA,2021-11-23,manually,not_yet_automated_daily,https://covid19.ucy.ac.cy/
 Denmark,NA,0,NA,NA,2021-11-23,manually,automated,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts
 Dominica,NA,0,NA,NA,2021-11-23,manually,image,https://www.facebook.com/SupportRooseveltSkerrit/photos
@@ -37,7 +37,7 @@ Kosovo,NA,0,NA,NA,2021-11-23,manually,facebook,https://datastudio.google.com/emb
 Kuwait,NA,0,NA,NA,2021-11-23,manually,twitter,https://twitter.com/KUWAIT_MOH
 Kyrgyzstan,NA,0,NA,NA,2021-11-23,manually,image,https://www.instagram.com/daryger_sunushu/
 LaoPeoplesDemocraticRepublic,NA,0,NA,NA,2021-11-23,manually,automated,https://www.covid19.gov.la/index.php
-Lithuania,180,-6277508,180,-6277508,2021-11-23,manually,automated,https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika
+Lithuania,194,-6277494,194,-6277494,2021-11-23,manually,automated,https://osp.stat.gov.lt/praejusios-paros-covid-19-statistika
 Luxembourg,NA,0,NA,NA,2021-11-23,manually,not_yet_automated_daily,https://msan.gouvernement.lu/fr/graphiques-evolution.html
 Malaysia,NA,0,NA,NA,2021-11-23,manually,facebook,https://www.facebook.com/kementeriankesihatanmalaysia/photos/10157490776386237
 Maldives,NA,0,NA,NA,2021-11-23,manually,twitter,https://covid19.health.gov.mv/en/?c=0
@@ -72,8 +72,7 @@ Thailand,NA,0,NA,NA,2021-11-23,manually,automated,https://ddc.moph.go.th/viralpn
 TheBahamas,NA,0,NA,NA,2021-11-23,manually,facebook,https://www.bahamas.gov.bs/wps/portal/public/gov/government/news/All%20News%20Press%20Release
 TrinidadandTobago,NA,0,NA,NA,2021-11-23,manually,pdf,http://www.health.gov.tt/sitepages/default.aspx?id=293
 Turkey,NA,0,NA,NA,2021-11-23,manually,automated,https://covid19.saglik.gov.tr/
-Ukraine,7464,-15341316,7464,-15341316,2021-11-23,manually,automated,https://covid19.gov.ua/en/
-UnitedArabEmirates,NA,0,NA,NA,2021-11-23,manually,automated,https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx
+Ukraine,12729,-15336051,12729,-15336051,2021-11-23,manually,automated,https://covid19.gov.ua/en/
 Uruguay,NA,0,NA,NA,2021-11-23,manually,automated,https://www.gub.uy/sistema-nacional-emergencias/pagina-embebida/visualizador-casos-coronavirus-covid-19-uruguay
 Uzbekistan,NA,0,NA,NA,2021-11-23,manually,without_information,https://t.me/koronavirusinfouz/3470
 Venezuela,NA,0,NA,NA,2021-11-23,manually,without_information,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A
