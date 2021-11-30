@@ -250,9 +250,13 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_brazil(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://coronavirusbra1.github.io")
-    self.driver.find_element(By.ID, "card_filter_tests").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#card_tests .fs-5 > .fs-5").text
+    #self.driver.get("https://coronavirusbra1.github.io")
+    #self.driver.find_element(By.ID, "card_filter_tests").click()
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#card_tests .fs-5 > .fs-5").text
+    self.driver.get("http://www.giscard.com.br/coronavirus/indice-testes-realizados-covid19-brasil.php")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "estado-descartados")))
+    time.sleep(15)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "estado-descartados").text
     print("Brazil")
     print(self.vars)
     self.driver.close()
@@ -596,10 +600,10 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(30)
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOTUxMTEwMzItYzM5ZS00MTZjLTkxNmYtYjBjYjUyZGIwNThlIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9&pageName=ReportSection8911066d0a4953dfcbe5")
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZWZlOTAxOGItMmY3ZS00MzMxLWE3MmItZWU4ZGViMTlkNTUwIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9")
     time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[18]
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
     print(self.vars)
     self.driver.close()
 
