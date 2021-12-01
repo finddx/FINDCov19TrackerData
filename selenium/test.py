@@ -1143,24 +1143,49 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["tests_cumulative"] = full_tags[0].text
 
     total_tests = 0
+    
     url_tests = "https://jhucoronavirus.azureedge.net/api/v1/testing/daily.json"
 
-    r_tests = requests.get(url_tests)
-    
-    cont_tests = json.loads(r_tests.content)
+    trycnt = 3  # max try cnt
+    while trycnt > 0:
+        try:
+              r_tests = requests.get(url_tests)
 
-    max_date = max([ e['date'] for e in cont_tests ])
-    tests_last_date = [x for x in cont_tests if x['date'] == max_date]
+              cont_tests = json.loads(r_tests.content)
+              
+              max_date = max([ e['date'] for e in cont_tests ])
+              tests_last_date = [x for x in cont_tests if x['date'] == max_date]
 
-    for state in tests_last_date:
-        tests_number = state['tests_combined_total']
-        if isinstance(tests_number, int) == True:
-          tests_number = tests_number
-        else:
-          tests_number = 0
-        total_tests += tests_number
+              for state in tests_last_date:
+                  tests_number = state['tests_combined_total']
+                  if isinstance(tests_number, int) == True:
+                      tests_number = tests_number
+                  else:
+                      tests_number = 0
+                  total_tests += tests_number
+              trycnt = 0 # success
+        except requests.exceptions.ChunkedEncodingError as ex:
+           if trycnt <= 0: print("Failed to retrieve: " + url + "\n" + str(ex))  # done retrying
+           else: trycnt -= 1  # retry
+           time.sleep(0.5)  # wait 1/2 second then retry
+
+        # r_tests = requests.get(url_tests)
+        # 
+        # cont_tests = json.loads(r_tests.content)
+
+        # max_date = max([ e['date'] for e in cont_tests ])
+        # tests_last_date = [x for x in cont_tests if x['date'] == max_date]
+
+        # for state in tests_last_date:
+        #     tests_number = state['tests_combined_total']
+        #     if isinstance(tests_number, int) == True:
+        #       tests_number = tests_number
+        #     else:
+        #       tests_number = 0
+        #     total_tests += tests_number
 
     self.vars["tests_cumulative"] = total_tests
+    print("USA")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
