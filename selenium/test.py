@@ -702,9 +702,10 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://e.infogram.com/57e5b447-c2ca-40da-aedb-cbf97df68a8e?parent_url=https%3A%2F%2Fosp.stat.gov.lt%2Fpraejusios-paros-covid-19-statistika&src=embed#async_embed")
     time.sleep(10)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.ipakMe > div > div:nth-child(23) > div > div > div > div > div > table > tbody > tr:nth-child(7) > td:nth-child(1) > span").text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.ipakMe > div > div:nth-child(23) > div > div > div > div > div > table > tbody > tr:nth-child(8) > td:nth-child(1) > span").text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.ipakMe > div > div:nth-child(26) > div > div > div > div > div > table > tbody > tr:nth-child(7) > td:nth-child(1) > span").text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.ipakMe > div > div:nth-child(26) > div > div > div > div > div > table > tbody > tr:nth-child(8) > td:nth-child(1) > span").text
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
+    print("lithuania")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
@@ -1091,8 +1092,10 @@ class TestDefaultSuite(unittest.TestCase):
   def test_ukraine(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.gov.ua/en/")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div").text
+    print("Ukraine")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
@@ -1149,6 +1152,10 @@ class TestDefaultSuite(unittest.TestCase):
 
     for state in tests_last_date:
         tests_number = state['tests_combined_total']
+        if isinstance(tests_number, int) == True:
+          tests_number = tests_number
+        else:
+          tests_number = 0
         total_tests += tests_number
 
     self.vars["tests_cumulative"] = total_tests
