@@ -22,7 +22,7 @@ Bhutan,Bhutan,https://www.facebook.com/MoHBhutan/,,image,,,,,,"Every day there i
 Bolivia,Bolivia,https://www.minsalud.gob.bo/,,image,"Publications always start with ""Bolivia acumula"". Value is CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",,,,,"Publi starts with ""COVID-19: se reportan"". Every day. CONFIRMADOS+SOSPECHOSOS+DESCARTADOS",image
 Bosnia and Herzegovina,BosniaandHerzegovina,https://covid-19.ba/,,Selenium,,,([0-9]+),,,,automated
 Botswana,Botswana,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
-Brazil,Brazil,https://viz.saude.gov.br/extensions/DEMAS_C19Insumos_TESTES/DEMAS_C19Insumos_TESTES.html,,special dashboard,,,,,,,automated
+Brazil,Brazil,http://www.giscard.com.br/coronavirus/indice-testes-realizados-covid19-brasil.php,,special dashboard,,,,,,,automated
 Brunei,Brunei,http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx,,Selenium,,,"([,0-9]+)",,,,automated
 Bulgaria,Bulgaria,https://coronavirus.bg/,,html,,,/html/body/main/div[1]/div/div[6]/div[1]/p[1],,,,automated
 Burkina Faso,BurkinaFaso,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
@@ -84,7 +84,7 @@ Israel,Israel,https://datadashboard.health.gov.il/COVID-19/general,,irrelevant,,
 Italy,Italy,https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json,,json,https://datastudio.google.com/u/0/reporting/91350339-2c97-49b5-92b8-965996530f00/page/RdlHB ; https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale-latest.json,,getData_json[['tamponi']],,,json,automated
 Jamaica,Jamaica,https://www.moh.gov.jm/?s=COVID-19+Clinical+Management+Summary,,html_list,covid-19-clinical-management-summary-for-,"Month D, Yr","//*[@id=""post-9795""]/div[3]/table/tbody/tr[24]/td[3]",,,Value if for the day before the day when the press release is published.,automated
 Japan,Japan,https://www.mhlw.go.jp/stf/houdou/houdou_list_202007.html,,html_list,,,,,,"Publications every day. ""新型コロナウイルス感染症の現在の状況と厚生労働省の対応について"" value below ""【PCR検査の実施件数】"". Difficulty: cumulative value corresponds to the date mentioned in the paragraph and not the date of the publication. Date format in Japonese.",automated
-Jordan,Jordan,https://corona.moh.gov.jo/en,,html,,,/html/body/section[2]/div/div/div[1]/ul/li[5]/h4,,,,automated
+Jordan,Jordan,https://corona.moh.gov.jo/ar,,html,,,/html/body/section[2]/div/div/div[1]/ul/li[5]/h4,,,,automated
 Kazakhstan,Kazakhstan,https://hls.kz/,,special dashboard,,,,,,ast value in grey in the dashboard.,special_dashboard
 Kenya,Kenya,https://africacdc.org/covid-19/,,Selenium,,,"([,0-9]+)",,,,automated
 Kosovo,Kosovo,https://datastudio.google.com/embed/u/0/reporting/2e546d77-8f7b-4c35-8502-38533aa0e9e8/page/MT0qB?fbclid=IwAR3bGrIV4hcD6Qe0CXv_f3ukuBKuNLkAacl4yPohGOvD5U_JjVERrnpqwes,,text post in facebook,,,,,,"Post ""Instituti Kombëtar i Shëndetësisë Publike të Kosovës"" evry day. Value between ""cases"" and ""suspicious persons"".",facebook

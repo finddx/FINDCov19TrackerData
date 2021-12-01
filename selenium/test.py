@@ -1144,7 +1144,9 @@ class TestDefaultSuite(unittest.TestCase):
 
     total_tests = 0
     url_tests = "https://jhucoronavirus.azureedge.net/api/v1/testing/daily.json"
-    r_tests = requests.get(url_tests, stream=True)
+
+    r_tests = requests.get(url_tests)
+    
     cont_tests = json.loads(r_tests.content)
 
     max_date = max([ e['date'] for e in cont_tests ])
