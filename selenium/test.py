@@ -17,6 +17,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import TimeoutException #https://stackoverflow.com/questions/40514022/chrome-webdriver-produces-timeout-in-selenium
 import unittest
 
 class TestDefaultSuite(unittest.TestCase):
@@ -54,7 +55,18 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_afghanistan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("http://covidapp.moph-dw.org/")
+    trycnt = 3  # max try cnt
+    while trycnt > 0:
+      try:
+        self.driver.get("http://covidapp.moph-dw.org/")
+        trycnt = 0 # success
+      except TimeoutException as ex:
+        if trycnt <= 0: print("Failed to retrieve url\n" + str(ex))  # done retrying
+        else: trycnt -= 1  # retry
+        time.sleep(0.5)  # wait 1/2 second then retry
+        print(ex.Message)
+        self.driver.navigate().refresh()
+    #self.driver.get("http://covidapp.moph-dw.org/")
     time.sleep(10)
     WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "root")))
     html = self.driver.page_source
@@ -664,6 +676,7 @@ class TestDefaultSuite(unittest.TestCase):
            else: trycnt -= 1  # retry
            time.sleep(0.5)  # wait 1/2 second then retry
     
+    print("Jordan")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
