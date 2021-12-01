@@ -63,9 +63,9 @@ class TestDefaultSuite(unittest.TestCase):
       except TimeoutException as ex:
         if trycnt <= 0: print("Failed to retrieve url\n" + str(ex))  # done retrying
         else: trycnt -= 1  # retry
-        time.sleep(0.5)  # wait 1/2 second then retry
-        print(ex.Message)
-        self.driver.navigate().refresh()
+        time.sleep(2)  # wait 1/2 second then retry
+        self.driver.refresh()
+        #self.driver.navigate().refresh()
     #self.driver.get("http://covidapp.moph-dw.org/")
     time.sleep(10)
     WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "root")))
