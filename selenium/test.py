@@ -579,8 +579,15 @@ class TestDefaultSuite(unittest.TestCase):
   def test_ireland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19ireland-geohive.hub.arcgis.com/pages/hospitals-icu--testing")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ember142 .ss-value")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember142 .ss-value").text
+    # WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ember142 .ss-value")))
+    # self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember142 .ss-value").text
+    time.sleep(10)
+    html = self.driver.page_source
+    soup = bs(html, "lxml")
+    full_tags = soup.find_all(attrs={"id":"ember156"})
+    self.vars["tests_cumulative"] = full_tags[0].text.split("\n")[5]
+    print("Ireland")
+    print(self.vars)
     self.driver.close()
 
   # def test_jamaica(self):
