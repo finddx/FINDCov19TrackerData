@@ -649,12 +649,21 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_jordan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZWZlOTAxOGItMmY3ZS00MzMxLWE3MmItZWU4ZGViMTlkNTUwIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9")
-    time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
+    trycnt = 3  # max try cnt
+    while trycnt > 0:
+        try:
+            self.driver.maximize_window()
+            self.driver.set_page_load_timeout(30)
+            self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZWZlOTAxOGItMmY3ZS00MzMxLWE3MmItZWU4ZGViMTlkNTUwIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9")
+            time.sleep(30)
+            self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
+            self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
+            trycnt = 0 # success
+        except self.WebDriverException as ex:
+           if trycnt <= 0: print("Failed to retrieve \n" + str(ex))  # done retrying
+           else: trycnt -= 1  # retry
+           time.sleep(0.5)  # wait 1/2 second then retry
+    
     print(self.vars)
     self.driver.close()
     self.driver.quit()
@@ -1165,7 +1174,7 @@ class TestDefaultSuite(unittest.TestCase):
                   total_tests += tests_number
               trycnt = 0 # success
         except requests.exceptions.ChunkedEncodingError as ex:
-           if trycnt <= 0: print("Failed to retrieve: " + url + "\n" + str(ex))  # done retrying
+           if trycnt <= 0: print("Failed to retrieve: " + url_tests + "\n" + str(ex))  # done retrying
            else: trycnt -= 1  # retry
            time.sleep(0.5)  # wait 1/2 second then retry
 
