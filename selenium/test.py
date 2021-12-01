@@ -64,6 +64,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Afghanistan")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_andorra(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -76,6 +77,7 @@ class TestDefaultSuite(unittest.TestCase):
     antibody_tests = self.driver.find_element(By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary").text
     self.vars["tests_cumulative"] = int(pcr_tests.replace(',','').split("\n")[0]) + int(tma_tests.replace(',','').split("\n")[0]) + int(antibody_tests.replace(',','').split("\n")[0])
     self.driver.close()
+    self.driver.quit()
 
   def test_antiguaandBarbuda(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -83,6 +85,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".icon-test-done > .case-Number").text
     self.driver.close()
     print(self.vars)
+    self.driver.quit()
   
   def test_albania(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -92,6 +95,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[0]
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
     
   def test_argentina(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -101,6 +105,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id=\"panel-103\"]/div/div/div[1]/div/div[2]/div/plugin-component/panel-plugin-singlestat/grafana-panel/ng-transclude/div/div/span/span").text
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
     
   def test_armenia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -108,6 +113,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span").text
     self.driver.close()
+    self.driver.quit()
 
   def test_australia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -116,6 +122,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]").text
     self.driver.close()
+    self.driver.quit()
     
   def test_austria(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -129,12 +136,14 @@ class TestDefaultSuite(unittest.TestCase):
     print("Austria")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_azerbaijan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet")
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".gray_little_statistic:nth-child(6) > strong").text
     self.driver.close()
+    self.driver.quit()
 
   def test_bahrain(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -144,6 +153,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(60)
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]/div/div[1]/div/ul/li/div[2]/div/span").text
     self.driver.close()
+    self.driver.quit()
     
   def test_bangladesh(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -155,6 +165,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Bangladesh")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
     
   def test_barbados(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -184,6 +195,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Barbados")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
     
   def test_belarus(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -191,6 +203,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#rec266847794 .t-animate__chain_first-in-row > .t192__title")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#rec266847794 .t-animate__chain_first-in-row > .t192__title").text
     self.driver.close()
+    self.driver.quit()
     
   def test_belgium(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -198,6 +211,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".cd-345jc65scc .valueLabel")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".cd-345jc65scc .valueLabel").text
     self.driver.close()
+    self.driver.quit()
     
   def test_belize(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -210,7 +224,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('outbreak situation\n')[1].split('\nTests Completed')[0]
     print(self.vars)
-    self.driver.close()    
+    self.driver.close()  
+    self.driver.quit()  
 
   # def test_benin(self):
   #   # since 2021-06-09 doesn't show number of tests
@@ -228,6 +243,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(2) > td:nth-child(2)").text
     self.driver.close()
+    self.driver.quit()
 
   def test_bulgaria(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -240,6 +256,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-lg-4:nth-child(1) > .statistics-value")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-lg-4:nth-child(1) > .statistics-value").text
     self.driver.close()
+    self.driver.quit()
 
   def test_bosniaandHerzegovina(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -247,6 +264,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "total_tested_positive")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "total_tested_positive").text
     self.driver.close()
+    self.driver.quit()
 
   def test_brazil(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -260,6 +278,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Brazil")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
     
   def test_brunei(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -274,6 +293,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Brunei")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_cambodia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -285,6 +305,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Cambodia")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_canada(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -294,6 +315,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Canada")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
   
   def test_colombia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -308,6 +330,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Colombia")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_costaRica(self):
     self.driver.get("https://geovision.uned.ac.cr/oges/index.html")
@@ -329,6 +352,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Costa Rica")
     print(d)
     print(self.vars)
+    self.driver.quit()
 
   def test_czechia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -339,6 +363,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_chile(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -351,6 +376,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Chile")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
   
   def test_cuba(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -363,6 +389,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Cuba")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   #def test_croatia(self):
   #  self.driver.get("https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35")
@@ -400,7 +427,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Denmark")
     print(self.vars)
     self.driver.close()
-    
+    self.driver.quit()
     
   def test_ecuador(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -411,6 +438,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#postcontent > table > tbody > tr:nth-child(1) > td:nth-child(2) > p:nth-child(1) > strong:nth-child(1)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#postcontent > table > tbody > tr:nth-child(1) > td:nth-child(2) > p:nth-child(1) > strong:nth-child(1)").text
     self.driver.close()
+    self.driver.quit()
 
   def test_elSalvador(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -424,6 +452,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[37]").text
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
     
   def test_estonia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -433,6 +462,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#statsbar-container > div:nth-child(2) > div:nth-child(4) > h1").text
     self.driver.close()
+    self.driver.quit()
 
   def test_faroeIslands(self):
     url_tests = "https://corona.fo/json/stats"
@@ -441,7 +471,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = cont_tests['stats'][0]['tested']
     print("Faroe Islands")
     print(self.vars)
-
+    self.driver.close()
+    self.driver.quit()
 
   def test_fiji(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -453,6 +484,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Fiji")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_finland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -460,6 +492,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm > div > div.portlet-content-container > div > div.clearfix.journal-content-article > ul:nth-child(7) > li:nth-child(2) > strong").text
     self.driver.close()
+    self.driver.quit()
 
   def test_france(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -469,6 +502,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".counter-container > .jsx-792689997")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".counter-container > .jsx-792689997").text
     self.driver.close()
+    self.driver.quit()
 
   # only daily tests  
   #def test_georgia(self):
@@ -487,6 +521,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Greece")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_greenland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -496,6 +531,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Greenland")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_guatemala(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -507,6 +543,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Guatemala")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_hungary(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -516,6 +553,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "content-mintavetel").text
     self.driver.close()
+    self.driver.quit()
 
   def test_iceland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -527,6 +565,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("iceland")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_india(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -534,6 +573,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-12:nth-child(1) > .single-cool-fact h2")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-12:nth-child(1) > .single-cool-fact h2").text
     self.driver.close()
+    self.driver.quit()
 
   def test_indonesia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -546,6 +586,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Indonesia")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_iran(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -557,6 +598,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The spokeswoman noted that\')]").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('The spokeswoman noted that ')[1].split('COVID')[0]
     self.driver.close()
+    self.driver.quit()
     
   # only daily tests 
   #def test_israel(self):
@@ -575,6 +617,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Italy")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_ireland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -589,6 +632,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Ireland")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   # def test_jamaica(self):
   #   self.driver.get("https://www.moh.gov.jm/updates/coronavirus/covid-19-clinical-management-summary/")
@@ -613,6 +657,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_kosovo(self):
     self.driver.get("https://datastudio.google.com/embed/u/0/reporting/2e546d77-8f7b-4c35-8502-38533aa0e9e8/page/MT0qB?fbclid=IwAR3bGrIV4hcD6Qe0CXv_f3ukuBKuNLkAacl4yPohGOvD5U_JjVERrnpqwes")
@@ -621,6 +666,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Kosovo")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   #def test_laoPeoplesDemocraticRepublic(self):
   #  # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -641,6 +687,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div > div > div > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(2) > margin-container > full-container > div > div > p > span > strong").text
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_lebanon(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -649,6 +696,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(60)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".s-counter3").text
     self.driver.close()
+    self.driver.quit()
 
   def test_lithuania(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -659,6 +707,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_malta(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -666,6 +715,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember317 > svg > g.responsive-text-label").text 
     self.driver.close()
+    self.driver.quit()
 
   def test_mexico(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -677,6 +727,7 @@ class TestDefaultSuite(unittest.TestCase):
     sospechosos = self.driver.find_element(By.XPATH, "//*[@id=\"gsSosDIV\"]").text.replace(',','')
     self.vars["tests_cumulative"] = int(positivos)+int(negativos)+int(sospechosos)
     self.driver.close()
+    self.driver.quit()
     
   # only new tests daily
   #def test_luxembourg(self):
@@ -702,6 +753,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember20").text.split('\n')[1]
     self.driver.close()
+    self.driver.quit()
   
   def test_nepal(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -712,6 +764,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".ant-col-md-24 .ant-typography:nth-child(2)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".ant-col-md-24 .ant-typography:nth-child(2)").text
     self.driver.close()
+    self.driver.quit()
 
   def test_newCaledonia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -719,6 +772,7 @@ class TestDefaultSuite(unittest.TestCase):
     #self.driver.find_element(By.CSS_SELECTOR, ".quatre > .big-chiffre").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#block-system-main > div > div > div > div.field.field-name-body > div.col-md-12.text-center.tableau_de_bord > div:nth-child(1) > div:nth-child(1) > div > div > div > p:nth-child(3)").text 
     self.driver.close()
+    self.driver.quit()
 
   def test_newZealand(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -726,6 +780,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td").text
     self.driver.close()
+    self.driver.quit()
 
   def test_northMacedonia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -735,6 +790,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".cd-vmd90p9a8b .valueLabel")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".cd-vmd90p9a8b .valueLabel").text
     self.driver.close()
+    self.driver.quit()
 
   def test_norway(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -744,6 +800,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span").text
     self.driver.close()
+    self.driver.quit()
 
   def test_occupiedPalestinianterritory(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -753,6 +810,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".roundbox:nth-child(3) > div:nth-child(2)")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".roundbox:nth-child(3) > div:nth-child(2)").text
     self.driver.close()
+    self.driver.quit()
 
   def test_pakistan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -764,6 +822,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.find_element(By.CSS_SELECTOR, "#covidEmergency > div > div > div.modal-footer > button").click()
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div.nk-wrap > section:nth-child(4) > div.container.pb-50 > div.status > ul > li.active > div:nth-child(1) > span").text
     self.driver.close()
+    self.driver.quit()
     
   # web page doesn't open
   def test_papuaNewGuinea(self):
@@ -771,6 +830,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://covid19.info.gov.pg/")
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//article[@id=\'post-166\']/div/div/div/section[4]/div[2]/div/div[2]/div/div/section/div/div/div[2]/div/div/div/div/div/table/tbody/tr[11]/td[2]/p/span/span").text
     self.driver.close()
+    self.driver.quit()
 
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -787,6 +847,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Peru")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
     
   def test_portugal(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -806,6 +867,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Portugal")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_qatar(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -813,6 +875,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "strgPeopleTested")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "strgPeopleTested").text
     self.driver.close()
+    self.driver.quit()
 
   def test_republicofKorea(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -822,6 +885,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#header > div.main_container > div.m_t > div:nth-child(2) > div.mt_l > div.m_inspect_status > div > div.misi_l > div > ul > li:nth-child(1) > div.misil_r > span")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#header > div.main_container > div.m_t > div:nth-child(2) > div.mt_l > div.m_inspect_status > div > div.misi_l > div > ul > li:nth-child(1) > div.misil_r > span").text
     self.driver.close()
+    self.driver.quit()
     
   def test_romania(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -835,6 +899,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Romania")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   # def test_russia(self):
   #   self.driver.get("https://www.rospotrebnadzor.ru/about/info/news/")
@@ -851,6 +916,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(4) > td:nth-child(2)").text
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_saintLucia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -860,6 +926,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".test-stlucia")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".test-stlucia").text
     self.driver.close()
+    self.driver.quit()
 
   def test_sanMarino(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -871,6 +938,7 @@ class TestDefaultSuite(unittest.TestCase):
     except NoSuchElementException:
       self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'tamponi totali eseguiti\')]").text
     self.driver.close()
+    self.driver.quit()
 
   def test_saudiArabia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -884,6 +952,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Saudi Arabia")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_serbia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -891,6 +960,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title").text
     self.driver.close()
+    self.driver.quit()
 
   def test_singapore(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -898,6 +968,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 > div > div > table > tbody > tr:nth-child(2) > td > strong > span")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 > div > div > table > tbody > tr:nth-child(2) > td > strong > span").text
     self.driver.close()
+    self.driver.quit()
 
   def test_slovakia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -910,6 +981,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_slovenia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -921,6 +993,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_spain(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -935,6 +1008,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["rapid_test_cum"] = all_tests.split('son PCR y ')[1].split("son test de")[0].replace(".","")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_sriLanka(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -944,6 +1018,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".total-count")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".total-count").text
     self.driver.close()
+    self.driver.quit()
     
   def test_switzerland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -954,6 +1029,7 @@ class TestDefaultSuite(unittest.TestCase):
     print("Switzerland")
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_taiwan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -964,6 +1040,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(15)
     self.vars["tests_cumulative"] = self.driver.execute_script("x = document.getElementById(\'num9\').textContent; return x;")
     self.driver.close()
+    self.driver.quit()
 
   def test_thailand(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1000,6 +1077,8 @@ class TestDefaultSuite(unittest.TestCase):
     print("Thailand")
     print(d)
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_turkey(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1007,6 +1086,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".toplam-test-sayisi")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".toplam-test-sayisi").text
     self.driver.close()
+    self.driver.quit()
 
   def test_ukraine(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1014,6 +1094,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".one-field:nth-child(6) > .field-value").text
     self.driver.close()
+    self.driver.quit()
 
   def test_unitedArabEmirates(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1024,6 +1105,7 @@ class TestDefaultSuite(unittest.TestCase):
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".total_tests > .numbers")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".total_tests > .numbers").text
     self.driver.close()
+    self.driver.quit()
 
   def test_unitedKingdom(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1033,6 +1115,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "value-item-virus_tests_conducted-total-cumvirustests-1_modal").text
     self.driver.close()
+    self.driver.quit()
     
   def test_uruguay(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1042,6 +1125,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember10").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
     self.driver.close()
+    self.driver.quit()
     
   def test_uS(self):
     # information x
@@ -1070,6 +1154,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.vars["tests_cumulative"] = total_tests
     print(self.vars)
     self.driver.close()
+    self.driver.quit()
 
   def test_venezuela(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1082,6 +1167,7 @@ class TestDefaultSuite(unittest.TestCase):
     except NoSuchElementException:
         self.vars["tests_cumulative"] = {}
     self.driver.close()
+    self.driver.quit()
 
   # Africa web site 
   def test_algeria(self):
@@ -1095,6 +1181,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_angola(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1107,6 +1195,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
     
   def test_botswana(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1119,6 +1209,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_burkinaFaso(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1131,6 +1223,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_burundi(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1143,6 +1237,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_cameroon(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1155,6 +1251,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_capeVerde(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1167,6 +1265,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_centralAfricanRepublic(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1179,6 +1279,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_chad(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1191,6 +1293,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_comoros(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1203,6 +1307,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_cotedIvoire(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1215,6 +1321,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_democraticRepublicoftheCongo(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1227,6 +1335,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_djibouti(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1239,6 +1349,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_egypt(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1251,6 +1363,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_equatorialGuinea(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1263,6 +1377,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_eritrea(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1275,6 +1391,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_eswatini(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1287,6 +1405,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_ethiopia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1299,6 +1419,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_gabon(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1311,6 +1433,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_ghana(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1323,6 +1447,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_guinea(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1335,6 +1461,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_guineaBissau(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1347,6 +1475,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_kenya(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1360,6 +1490,8 @@ class TestDefaultSuite(unittest.TestCase):
           break
     print("Kenya")
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_lesotho(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1372,6 +1504,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_liberia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1384,6 +1518,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_libya(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1396,6 +1532,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_madagascar(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1408,6 +1546,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_malawi(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1420,6 +1560,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_mali(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1432,6 +1574,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_mauritania(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1444,6 +1588,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_mauritius(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1456,6 +1602,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
               
   def test_morocco(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1468,6 +1616,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_mozambique(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1480,6 +1630,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_namibia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1492,6 +1644,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_niger(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1504,6 +1658,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_nigeria(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1516,6 +1672,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_congo(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1528,6 +1686,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_rwanda(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1540,6 +1700,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_saoTomeandPrincipe(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1552,6 +1714,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_senegal(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1564,6 +1728,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_seychelles(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1576,6 +1742,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_sierraLeone(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1588,6 +1756,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_somalia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1600,6 +1770,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_southAfrica(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1612,6 +1784,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_southSudan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1624,6 +1798,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
               
   def test_sudan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1636,6 +1812,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_theGambia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1648,6 +1826,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_togo(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1660,6 +1840,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_tunisia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1672,6 +1854,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_uganda(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1684,6 +1868,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_unitedRepublicofTanzania(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1696,6 +1882,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_westernSahara(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1708,6 +1896,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_zambia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1720,6 +1910,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_zimbabwe(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1732,6 +1924,8 @@ class TestDefaultSuite(unittest.TestCase):
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
 
 
