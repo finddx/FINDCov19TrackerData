@@ -659,7 +659,7 @@ class TestDefaultSuite(unittest.TestCase):
             self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
             self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
             trycnt = 0 # success
-        except self.WebDriverException as ex:
+        except Exception as ex:
            if trycnt <= 0: print("Failed to retrieve \n" + str(ex))  # done retrying
            else: trycnt -= 1  # retry
            time.sleep(0.5)  # wait 1/2 second then retry
