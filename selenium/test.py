@@ -17,6 +17,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import TimeoutException #https://stackoverflow.com/questions/40514022/chrome-webdriver-produces-timeout-in-selenium
 import unittest
 
 class TestDefaultSuite(unittest.TestCase):
@@ -54,7 +55,18 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_afghanistan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("http://covidapp.moph-dw.org/")
+    trycnt = 3  # max try cnt
+    while trycnt > 0:
+      try:
+        self.driver.get("http://covidapp.moph-dw.org/")
+        trycnt = 0 # success
+      except TimeoutException as ex:
+        if trycnt <= 0: print("Failed to retrieve url\n" + str(ex))  # done retrying
+        else: trycnt -= 1  # retry
+        time.sleep(2)  # wait 1/2 second then retry
+        self.driver.refresh()
+        #self.driver.navigate().refresh()
+    #self.driver.get("http://covidapp.moph-dw.org/")
     time.sleep(10)
     WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "root")))
     html = self.driver.page_source
@@ -649,12 +661,22 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_jordan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZWZlOTAxOGItMmY3ZS00MzMxLWE3MmItZWU4ZGViMTlkNTUwIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9")
-    time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
+    trycnt = 3  # max try cnt
+    while trycnt > 0:
+        try:
+            self.driver.maximize_window()
+            self.driver.set_page_load_timeout(30)
+            self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZWZlOTAxOGItMmY3ZS00MzMxLWE3MmItZWU4ZGViMTlkNTUwIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9")
+            time.sleep(30)
+            self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
+            self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
+            trycnt = 0 # success
+        except Exception as ex:
+           if trycnt <= 0: print("Failed to retrieve \n" + str(ex))  # done retrying
+           else: trycnt -= 1  # retry
+           time.sleep(0.5)  # wait 1/2 second then retry
+    
+    print("Jordan")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
@@ -1165,7 +1187,7 @@ class TestDefaultSuite(unittest.TestCase):
                   total_tests += tests_number
               trycnt = 0 # success
         except requests.exceptions.ChunkedEncodingError as ex:
-           if trycnt <= 0: print("Failed to retrieve: " + url + "\n" + str(ex))  # done retrying
+           if trycnt <= 0: print("Failed to retrieve: " + url_tests + "\n" + str(ex))  # done retrying
            else: trycnt -= 1  # retry
            time.sleep(0.5)  # wait 1/2 second then retry
 
