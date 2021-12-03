@@ -41,6 +41,7 @@ class TestDefaultSuite(unittest.TestCase):
     chrome_options.add_argument("--disable-dev-shm-usage")# //https://stackoverflow.com/a/50725918/1689770
     chrome_options.add_argument("--disable-browser-side-navigation")# //https://stackoverflow.com/a/49123152/1689770
     chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--disable-features=VizDisplayCompositor")#https://stackoverflow.com/questions/55364056/timed-out-receiving-message-from-renderer-10-000-while-capturing-screenshot-usi
     self.driver = webdriver.Chrome(options=chrome_options)
     #self.driver = webdriver.Firefox(options=chrome_options)
     # set load timeout: https://stackoverflow.com/questions/36026676/python-selenium-timeout-exception-catch
