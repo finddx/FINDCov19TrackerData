@@ -33,3 +33,5 @@ jobs:
           dst_path: /data/data_all.csv
           dst_owner: angelicambg
           dst_repo_name: scraping_rselenium
+          dst_branch: main
+          
