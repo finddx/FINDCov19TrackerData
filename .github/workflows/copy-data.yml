@@ -28,7 +28,7 @@ jobs:
       - name: Copy
         uses: andstor/copycat-action@v3.2.4
         with:
-          personal_token: ${{ secrets.GITHUB_PAT }}
+          personal_token: ${{ secrets.API_TOKEN_GITHUB }}
           src_path: /processed/data_all.csv
           dst_path: /data/data_all.csv
           dst_owner: angelicambg
