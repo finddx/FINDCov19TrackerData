@@ -1,4 +1,4 @@
-name: Push File
+name: Copy data
 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
@@ -20,12 +20,12 @@ jobs:
     - name: Push a file to another repository
       uses: dmnemec/copy_file_to_another_repo_action@v1.1.1
       env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
       with:
         source_file: 'processed/data_all.csv'
-        destination_repo: 'angelicambg/scraping_rselenium'
+        destination_repo: 'dsbbfinddx/shinyfindapps'
         destination_folder: 'data'
-        user_email: 'angelicambg@gmail.com'
-        user_name: 'angelicambg'
+        user_email: 'action@github.com'
+        user_name: 'GitHub Action'
         commit_message: 'copy data'
 
