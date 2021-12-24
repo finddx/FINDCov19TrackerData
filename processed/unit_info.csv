@@ -1,199 +1,199 @@
 set,unit,cases,deaths,pos,tests,iso_alpha_2,population,continent,income,who_region,recurrent_reporting,tests_description,tests_type,tests_type_segregated,comment,numeric,latitude,longitude,penalty,jhu_ID,pop,latest_test_date
-country,AFG,4.880805589806823e-4,5.1376900945334976e-5,0.019668737060041408,0.024815043156596793,AF,38928000,Asia,Low,Eastern Mediterranean,No,People,Not specified,NA,NA,4,33,65,1.3,Afghanistan,38928,2021-12-20
-country,AGO,0.007850057810503255,3.042658066086533e-5,NA,NA,AO,32866000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,24,-12.5,18.5,1.3,Angola,32866,2021-12-21
-country,ALB,0.09763724808895066,0.001389854065323141,0.09784122562674094,0.9979152189020153,AL,2878000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,8,41,20,0.9,Albania,2878,2021-12-22
-country,AND,1.7792207792207793,0.012987012987012988,NA,NA,AD,77000,Europe,High,Europe,Yes,Not specified,PCR and serology,NA,NA,20,42.5,1.6,0.9,Andorra,77,2021-12-16
-country,ARE,0.03710819009100101,0,NA,NA,AE,9890000,Asia,High,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,784,24,54,1.3,UnitedArabEmirates,9890,2021-12-14
-country,ARG,0.14328701655013718,3.3188777767944065e-4,0.13988551679447025,1.0243163111779803,AR,45196000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,32,-34,-64,1.3,Argentina,45196,2021-12-23
-country,ARM,0.04724940938238272,0.0026999662504218697,NA,NA,AM,2963000,Asia,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,51,40,45,0.9,Armenia,2963,2021-10-11
-country,ATG,0.04081632653061224,0,NA,NA,AG,98000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,28,17.05,-61.8,1.3,AntiguaandBarbuda,98,2021-06-07
-country,AUS,0.1979607843137255,2.3529411764705883e-4,0.01844085628698765,10.734901960784313,AU,25500000,Oceania,High,Western Pacific,Yes,Samples,Not specified,NA,NA,36,-27,133,1.3,Australia,25500,2021-12-22
-country,AUT,0.25716189207195206,0.0033311125916055963,0.006517499598988043,39.45713968465468,AT,9006000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Drastic testing increase in Jan. due to mass testsing (https://orf.at/stories/3194349/),40,47.3333,13.3333,0.9,Austria,9006,2021-12-22
-country,AZE,0.06815267777887365,0.001479435841798994,0.07051020408163265,0.9665647499753427,AZ,10139000,Asia,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,31,40.5,47.5,0.9,Azerbaijan,10139,2021-12-22
-country,BDI,0.022201665124884366,0,0.036075430445476904,0.615423429484484,BI,11891000,Africa,Low,Africa,No,Not specified,Not specified,NA,NA,108,-3.5,30,1.3,Burundi,11891,2021-12-21
-country,BEL,0.6207075064710957,0.004831751509922347,0.10050995459308418,6.1755823986194995,BE,11590000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,56,50.8333,4,0.8,Belgium,11590,2021-12-23
+country,AFG,6.165228113440197e-4,5.1376900945334976e-5,NA,NA,AF,38928000,Asia,Low,Eastern Mediterranean,No,People,Not specified,NA,NA,4,33,65,1.3,Afghanistan,38928,2021-12-20
+country,AGO,0.013205136006815554,3.042658066086533e-5,NA,NA,AO,32866000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,24,-12.5,18.5,1.3,Angola,32866,2021-12-21
+country,ALB,0.09902710215427381,0.001389854065323141,0.10853008377760853,0.9124391938846421,AL,2878000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,8,41,20,0.9,Albania,2878,2021-12-24
+country,AND,2.207792207792208,0.012987012987012988,NA,NA,AD,77000,Europe,High,Europe,Yes,Not specified,PCR and serology,NA,NA,20,42.5,1.6,0.9,Andorra,77,2021-12-23
+country,ARE,0.050050556117290194,0,0.0014906540508147403,33.57623862487361,AE,9890000,Asia,High,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,784,24,54,1.3,UnitedArabEmirates,9890,2021-12-23
+country,ARG,0.17209487565271264,3.097619258341446e-4,NA,NA,AR,45196000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,32,-34,-64,1.3,Argentina,45196,2021-12-20
+country,ARM,0.043536955788052646,0.0026999662504218697,NA,NA,AM,2963000,Asia,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,51,40,45,0.9,Armenia,2963,2021-10-11
+country,ATG,0.05102040816326531,0,NA,NA,AG,98000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,28,17.05,-61.8,1.3,AntiguaandBarbuda,98,2021-06-07
+country,AUS,0.22541176470588234,2.745098039215686e-4,0.0201811670528755,11.169411764705883,AU,25500000,Oceania,High,Western Pacific,Yes,Samples,Not specified,NA,NA,36,-27,133,1.3,Australia,25500,2021-12-23
+country,AUT,0.24328225627359537,0.0028869642460581835,0.006439420657873081,37.78014656895403,AT,9006000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Drastic testing increase in Jan. due to mass testsing (https://orf.at/stories/3194349/),40,47.3333,13.3333,0.9,Austria,9006,2021-12-23
+country,AZE,0.06973074267679258,0.001479435841798994,0.07134207870837538,0.9774139461485354,AZ,10139000,Asia,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,31,40.5,47.5,0.9,Azerbaijan,10139,2021-12-23
+country,BDI,0.03128416449415524,0,0.05225453013063633,0.5986880834244387,BI,11891000,Africa,Low,Africa,No,Not specified,Not specified,NA,NA,108,-3.5,30,1.3,Burundi,11891,2021-12-21
+country,BEL,0.585504745470233,0.005004314063848145,0.09496221662468514,6.165660051768766,BE,11590000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,56,50.8333,4,0.8,Belgium,11590,2021-12-24
 country,BEN,4.1243916522312957e-4,0,NA,NA,BJ,12123000,Africa,Lower middle,Africa,Yes,Not specified,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After data includes both PCR+rapid tests,204,9.5,2.25,1.3,Benin,12123,2021-05-18
-country,BFA,0.0029182414007558723,1.9136009185284408e-4,0.067853170189099,0.04300818064392671,BF,20903000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,854,13,-2,1.3,BurkinaFaso,20903,2021-12-22
-country,BGD,0.0014451481276830875,1.2144101913303257e-5,NA,NA,BD,164689000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,50,24,90,1.3,Bangladesh,164689,2021-12-20
-country,BGR,0.1996257915947035,0.010218767990788717,NA,NA,BG,6948000,Europe,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,100,43,25,0.9,Bulgaria,6948,2021-09-23
-country,BHR,0.060517038777908344,0,0.0051466546744616,11.758519388954172,BH,1702000,Asia,High,Eastern Mediterranean,Yes,Not specified,PCR,NA,NA,48,26,50.55,1.3,Bahrain,1702,2021-12-23
-country,BHS,0.11450381679389313,0,NA,NA,BS,393000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,44,24.25,-76,1.3,TheBahamas,393,2021-12-18
-country,BIH,0.1264858274916184,0.006705272782688205,0.2653452685421995,0.47668393782383417,BA,3281000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,70,44,18,0.9,BosniaandHerzegovina,3281,2021-12-23
-country,BLR,0.14244893639538575,0.0016933008783998308,0.06215941627412949,2.291671076304371,BY,9449000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,112,53,28,0.8,Belarus,9449,2021-12-22
-country,BLZ,0.07035175879396985,0,NA,NA,BZ,398000,North America,Lower middle,Americas,Yes,Samples and People,Not specified,NA,NA,84,17.25,-88.75,1.3,Belize,398,2021-12-14
-country,BMU,NA,NA,NA,31.338709677419356,BM,62000,North America,High,NA,Yes,Not specified,Not specified,NA,NA,60,32.3333,-64.75,1.3,Bermuda,62,2021-12-21
-country,BOL,0.1485479311231046,0.0015420200462606013,NA,NA,BO,11673000,South America,Lower middle,Americas,Yes,People,Not specified,NA,NA,68,-17,-65,1.3,Bolivia,11673,2021-08-31
-country,BRA,0.013958477410977659,5.410262562394441e-4,0.454364471669219,0.030720882202118,BR,212559000,South America,Upper middle,Americas,No,Samples,PCR and rapid test,Separate,NA,76,-10,-55,1.3,Brazil,212559,2021-12-20
-country,BRB,0.13937282229965156,0,NA,NA,BB,287000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,52,13.1667,-59.5333,1.3,Barbados,287,2021-12-13
-country,BRN,0.018306636155606407,0,NA,NA,BN,437000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,96,4.5,114.6667,1.3,Brunei,437,2021-12-14
-country,BTN,0.0012953367875647669,0,NA,NA,BT,772000,Asia,Lower middle,South-East Asia,Yes,Samples,PCR and rapid test,Together,NA,64,27.5,90.5,1.3,Bhutan,772,2021-12-14
-country,BWA,0.342687074829932,0,0.12114835412595822,2.828656462585034,BW,2352000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,72,-22,24,1.3,Botswana,2352,2021-12-21
+country,BFA,0.0029182414007558723,1.9136009185284408e-4,0.06161616161616162,0.04736162273357891,BF,20903000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,854,13,-2,1.3,BurkinaFaso,20903,2021-12-22
+country,BGD,0.0016394537582959396,1.2144101913303257e-5,NA,NA,BD,164689000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,50,24,90,1.3,Bangladesh,164689,2021-12-20
+country,BGR,0.2081174438687392,0.010074841681059297,NA,NA,BG,6948000,Europe,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,100,43,25,0.9,Bulgaria,6948,2021-09-23
+country,BHR,0.07285546415981199,0,0.006260412985308225,11.637485311398354,BH,1702000,Asia,High,Eastern Mediterranean,Yes,Not specified,PCR,NA,NA,48,26,50.55,1.3,Bahrain,1702,2021-12-24
+country,BHS,0.1628498727735369,0,NA,NA,BS,393000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,44,24.25,-76,1.3,TheBahamas,393,2021-12-18
+country,BIH,0.12800975312404755,0.00609570252971655,0.27631578947368424,0.46327339225845776,BA,3281000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,70,44,18,0.9,BosniaandHerzegovina,3281,2021-12-24
+country,BLR,0.13461741983278655,0.0016933008783998308,0.060310084870323834,2.2320880516456767,BY,9449000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,112,53,28,0.8,Belarus,9449,2021-12-23
+country,BLZ,0.0829145728643216,0,NA,NA,BZ,398000,North America,Lower middle,Americas,Yes,Samples and People,Not specified,NA,NA,84,17.25,-88.75,1.3,Belize,398,2021-12-14
+country,BMU,NA,NA,NA,32.79032258064516,BM,62000,North America,High,NA,Yes,Not specified,Not specified,NA,NA,60,32.3333,-64.75,1.3,Bermuda,62,2021-12-24
+country,BOL,0.1455495588109312,0.0015420200462606013,NA,NA,BO,11673000,South America,Lower middle,Americas,Yes,People,Not specified,NA,NA,68,-17,-65,1.3,Bolivia,11673,2021-08-31
+country,BRA,0.013497428949138827,4.8457134254489343e-4,NA,NA,BR,212559000,South America,Upper middle,Americas,No,Samples,PCR and rapid test,Separate,NA,76,-10,-55,1.3,Brazil,212559,2021-12-20
+country,BRB,0.20905923344947736,0,NA,NA,BB,287000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,52,13.1667,-59.5333,1.3,Barbados,287,2021-12-13
+country,BRN,0.016018306636155607,0,NA,NA,BN,437000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,96,4.5,114.6667,1.3,Brunei,437,2021-12-14
+country,BTN,0,0,NA,NA,BT,772000,Asia,Lower middle,South-East Asia,Yes,Samples,PCR and rapid test,Together,NA,64,27.5,90.5,1.3,Bhutan,772,2021-12-14
+country,BWA,0.6471088435374149,0,0.20763983628922236,3.116496598639456,BW,2352000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,72,-22,24,1.3,Botswana,2352,2021-12-21
 country,CAF,0,0,NA,NA,CF,4830000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,140,7,21,1.3,CentralAfricanRepublic,4830,2021-12-18
-country,CAN,0.28898839489163264,4.504265804673838e-4,0.08344554273648132,3.4631974988076943,CA,37742000,North America,High,Americas,Yes,People,Not specified,NA,NA,124,60,-95,0.6,Canada,37742,2021-12-23
-country,CHE,0.9660311958405546,0.0028885037550548816,NA,NA,CH,8655000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Testing data published by FOPH also includes Liechtenstein.,756,47,8,0.9,Switzerland,8655,2021-12-21
-country,CHL,0.06167608286252354,0.001098556183301946,0.021265466613758523,2.9002929483155473,CL,19116000,South America,High,Americas,Yes,Samples,PCR,NA,NA,152,-30,-71,1.3,Chile,19116,2021-12-22
-country,CHN,7.086660126559413e-5,0,NA,NA,CN,1439324000,Asia,Upper middle,Western Pacific,No,Irrelevant,Irrelevant,NA,NA,156,35,105,1.3,China,1439324,2020-06-24
-country,CIV,0.0037152172264766094,0,0.04091858037578288,0.0907953597695049,CI,26378000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,384,8,-5,1.3,CotedIvoire,26378,2021-12-22
-country,CMR,0.004708807353273563,7.534091765237701e-5,NA,NA,CM,26546000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,120,6,12,1.3,Cameroon,26546,2021-12-18
-country,COD,0.007279954444456851,0,0.012287281156361306,0.5924788691506347,CD,89561000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,180,0,25,1.3,DemocraticRepublicoftheCongo,89561,2021-12-21
+country,CAN,0.345768639711727,4.2393089926342006e-4,0.09747316686958016,3.5473212866302792,CA,37742000,North America,High,Americas,Yes,People,Not specified,NA,NA,124,60,-95,0.6,Canada,37742,2021-12-24
+country,CHE,0.9950317735413056,0.0034662045060658577,NA,NA,CH,8655000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Testing data published by FOPH also includes Liechtenstein.,756,47,8,0.9,Switzerland,8655,2021-12-23
+country,CHL,0.062094580456162375,0.0012554927809165098,0.021532879818594104,2.883709981167608,CL,19116000,South America,High,Americas,Yes,Samples,PCR,NA,NA,152,-30,-71,1.3,Chile,19116,2021-12-23
+country,CHN,6.53084364604495e-5,0,NA,NA,CN,1439324000,Asia,Upper middle,Western Pacific,No,Irrelevant,Irrelevant,NA,NA,156,35,105,1.3,China,1439324,2020-06-24
+country,CIV,0.005876108878610964,0,0.06452955870108243,0.09106073242853893,CI,26378000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,384,8,-5,1.3,CotedIvoire,26378,2021-12-22
+country,CMR,0.004972500565056883,7.534091765237701e-5,NA,NA,CM,26546000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,120,6,12,1.3,Cameroon,26546,2021-12-18
+country,COD,0.010439811971728765,0,0.017620564234965982,0.5924788691506347,CD,89561000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,180,0,25,1.3,DemocraticRepublicoftheCongo,89561,2021-12-21
 country,COG,0.009423704240666908,0,0.06806282722513089,0.13845596230518303,CG,5518000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,178,-1,15,1.3,Congo,5518,2021-12-21
-country,COL,0.03686889530884578,9.433406049171629e-4,NA,NA,CO,50883000,South America,Upper middle,Americas,Yes,Not specified,PCR and rapid test,Separate,NA,170,4,-72,1.3,Colombia,50883,2021-12-18
-country,COM,0.06896551724137931,0,NA,NA,KM,870000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,174,-12.1667,44.25,1.3,Comoros,870,2020-11-27
-country,CPV,0.0341726618705036,0,0.03368794326241135,1.014388489208633,CV,556000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,132,16,-24,1.3,CapeVerde,556,2021-12-22
-country,CRI,0.014134275618374558,1.9630938358853554e-4,NA,NA,CR,5094000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,188,10,-84,1.3,CostaRica,5094,2021-09-05
-country,CUB,0.006356493334510461,8.828462964597864e-5,NA,NA,CU,11327000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,192,21.5,-80,1.3,Cuba,11327,2021-12-19
-country,CYP,0.5766362883181442,8.285004142502071e-4,NA,NA,CY,1207000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,196,35,33,1.3,Cyprus,1207,2021-07-11
-country,CZE,0.43981697637501166,0.005696143430759175,0.05344923457518639,8.228686151834905,CZ,10709000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,203,49.75,15.5,0.9,Czechia,10709,2021-12-23
-country,DEU,0.4829681084693975,0.004177408574429485,NA,NA,DE,83784000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,276,51,9,0.8,Germany,83784,2021-12-14
-country,DJI,0.003036437246963563,0,0.005813953488372093,0.5222672064777328,DJ,988000,Africa,Lower middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,262,11.5,43,1.3,Djibouti,988,2021-12-22
+country,COL,0.03907002338698583,9.629935341862705e-4,0.04777123633305298,0.8178566515339112,CO,50883000,South America,Upper middle,Americas,Yes,Not specified,PCR and rapid test,Separate,NA,170,4,-72,1.3,Colombia,50883,2021-12-24
+country,COM,0.09885057471264368,0,NA,NA,KM,870000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,174,-12.1667,44.25,1.3,Comoros,870,2020-11-27
+country,CPV,0.05755395683453238,0,0.05663716814159292,1.0161870503597121,CV,556000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,132,16,-24,1.3,CapeVerde,556,2021-12-22
+country,CRI,0.01060070671378092,0,NA,NA,CR,5094000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,188,10,-84,1.3,CostaRica,5094,2021-09-05
+country,CUB,0.0066213472234483975,8.828462964597864e-5,NA,NA,CU,11327000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,192,21.5,-80,1.3,Cuba,11327,2021-12-24
+country,CYP,0.6155758077879039,8.285004142502071e-4,NA,NA,CY,1207000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,196,35,33,1.3,Cyprus,1207,2021-07-11
+country,CZE,0.2916238677747689,0.0037351760201699506,0.0353536497011411,8.248762722943319,CZ,10709000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,203,49.75,15.5,0.9,Czechia,10709,2021-12-24
+country,DEU,0.527606702950444,0.004595149431872434,NA,NA,DE,83784000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,276,51,9,0.8,Germany,83784,2021-12-14
+country,DJI,0.005060728744939271,0,0.008726003490401396,0.5799595141700404,DJ,988000,Africa,Lower middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,262,11.5,43,1.3,Djibouti,988,2021-12-22
 country,DMA,0.5416666666666666,0,NA,NA,DM,72000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,212,15.4167,-61.3333,1.3,Dominica,72,2021-12-10
-country,DNK,1.4905041436464088,0.0013812154696132596,NA,NA,DK,5792000,Europe,High,Europe,Yes,Samples and People,PCR and rapid test,Separate,NA,208,56,10,0.8,Denmark,5792,2021-10-13
-country,DOM,0.019174041297935103,0,NA,NA,DO,10848000,North America,Upper middle,Americas,Yes,Samples,PCR and rapid test,Separate,NA,214,19,-70.6667,1.3,DominicanRepublic,10848,2021-09-23
-country,DZA,0.006408063670155755,1.368269822809058e-4,NA,NA,DZ,43851000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,12,28,3,1.3,Algeria,43851,2020-11-01
-country,ECU,0.026469421300232387,3.400782179901377e-4,0.11816801619433198,0.22399818624950404,EC,17643000,South America,Upper middle,Americas,Yes,Samples,PCR,NA,NA,218,-2,-77.5,1.3,Ecuador,17643,2021-12-20
-country,EGY,0.008736099439091602,4.29964625637618e-4,NA,NA,EG,102334000,Africa,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,818,27,30,1.3,Egypt,102334,2021-12-22
-country,ERI,0.004794134235758601,2.820078962210942e-4,NA,NA,ER,3546000,Africa,Low,Africa,No,Not specified,Not specified,NA,NA,232,15,39,1.3,Eritrea,3546,2020-12-21
+country,DNK,1.1690262430939227,0.0013812154696132596,NA,NA,DK,5792000,Europe,High,Europe,Yes,Samples and People,PCR and rapid test,Separate,NA,208,56,10,0.8,Denmark,5792,2021-10-13
+country,DOM,0.021755162241887907,9.218289085545723e-5,NA,NA,DO,10848000,North America,Upper middle,Americas,Yes,Samples,PCR and rapid test,Separate,NA,214,19,-70.6667,1.3,DominicanRepublic,10848,2021-09-23
+country,DZA,0.006385259173108937,1.368269822809058e-4,NA,NA,DZ,43851000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,12,28,3,1.3,Algeria,43851,2020-11-01
+country,ECU,0.01972453664342799,2.8339851499178145e-4,NA,NA,EC,17643000,South America,Upper middle,Americas,Yes,Samples,PCR,NA,NA,218,-2,-77.5,1.3,Ecuador,17643,2021-12-20
+country,EGY,0.008687239822541873,3.8110500908788866e-4,NA,NA,EG,102334000,Africa,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,818,27,30,1.3,Egypt,102334,2021-12-22
+country,ERI,0.0045121263395375075,2.820078962210942e-4,NA,NA,ER,3546000,Africa,Low,Africa,No,Not specified,Not specified,NA,NA,232,15,39,1.3,Eritrea,3546,2020-12-21
 country,ESH,NA,NA,NA,NA,EH,597000,Africa,Low,NA,No,Not specified,Not specified,NA,NA,732,24.5,-13,1.3,WesternSahara,597,2021-10-13
-country,ESP,0.7946529782910918,9.624639076034649e-4,NA,NA,ES,46755000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,724,40,-4,0.9,Spain,46755,2021-11-15
-country,EST,0.44913338357196686,0.003014318010550113,NA,NA,EE,1327000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,233,59,26,0.8,Estonia,1327,2021-12-22
-country,ETH,0.011551442190598796,3.479350057409276e-5,0.1772084334133974,0.06518562332556278,ET,114964000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,231,8,38,1.3,Ethiopia,114964,2021-12-22
-country,FIN,0.38891896769536183,0.0014437827107020393,NA,NA,FI,5541000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,246,64,26,0.6,Finland,5541,2021-09-15
-country,FJI,0.018973214285714284,0,NA,NA,FJ,896000,Oceania,Upper middle,Western Pacific,Yes,Samples,PCR,NA,NA,242,-18,175,1.3,Fiji,896,2021-10-10
-country,FRA,0.8617213591935533,0.0024205656157122286,0.06637699698608217,12.98222875877072,FR,65274000,Europe,High,Europe,Yes,Samples,PCR,NA,NA,250,46,2,0.9,France,65274,2021-12-23
-country,FRO,NA,NA,NA,NA,FO,49000,Europe,High,NA,Yes,Samples,Not specified,NA,NA,234,62,-7,0.6,FaroeIslands,49,2021-12-22
-country,GAB,0.026954177897574125,0,0.01774622892635315,1.5188679245283019,GA,2226000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,266,-1,11.75,1.3,Gabon,2226,2021-12-21
-country,GBR,1.355596146480865,0.0015761718174586807,NA,NA,GB,67886000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,826,54,-2,0.8,UnitedKingdom,67886,2021-12-19
-country,GEO,0.6382552018049636,0.012534469791927802,NA,NA,GE,3989000,Europe,Upper middle,Europe,Yes,Samples,PCR and rapid test,Separate,NA,268,42,43.5,0.9,Georgia,3989,2021-06-16
-country,GHA,0.008817944839571332,6.436456087278345e-5,0.0574543929544978,0.15347729540115213,GH,31073000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,288,8,-2,1.3,Ghana,31073,2021-12-22
-country,GIN,9.13728774842001e-4,0,NA,NA,GN,13133000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,324,11,-10,1.3,Guinea,13133,2021-12-22
+country,ESP,0.9356646347984173,0.0011121805154528928,NA,NA,ES,46755000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,724,40,-4,0.9,Spain,46755,2021-11-15
+country,EST,0.4822908816880181,0.003014318010550113,NA,NA,EE,1327000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,233,59,26,0.8,Estonia,1327,2021-12-23
+country,ETH,0.016161581016666086,3.479350057409276e-5,0.22995049504950496,0.07028287115966737,ET,114964000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,231,8,38,1.3,Ethiopia,114964,2021-12-22
+country,FIN,0.41653131203753835,0.0014437827107020393,NA,NA,FI,5541000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,246,64,26,0.6,Finland,5541,2021-09-15
+country,FJI,0.015625,0,NA,NA,FJ,896000,Oceania,Upper middle,Western Pacific,Yes,Samples,PCR,NA,NA,242,-18,175,1.3,Fiji,896,2021-10-10
+country,FRA,0.947222477556148,0.0024512056867971935,0.07381324457613703,12.832689891840548,FR,65274000,Europe,High,Europe,Yes,Samples,PCR,NA,NA,250,46,2,0.9,France,65274,2021-12-24
+country,FRO,NA,NA,NA,NA,FO,49000,Europe,High,NA,Yes,Samples,Not specified,NA,NA,234,62,-7,0.6,FaroeIslands,49,2021-12-23
+country,GAB,0.0220125786163522,0,0.018121301775147928,1.2147349505840073,GA,2226000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,266,-1,11.75,1.3,Gabon,2226,2021-12-21
+country,GBR,1.4301034086556874,0.001664555283858233,NA,NA,GB,67886000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,826,54,-2,0.8,UnitedKingdom,67886,2021-12-19
+country,GEO,0.60416144397092,0.01328653797944347,NA,NA,GE,3989000,Europe,Upper middle,Europe,Yes,Samples,PCR and rapid test,Separate,NA,268,42,43.5,0.9,Georgia,3989,2021-06-16
+country,GHA,0.01419238567244875,6.436456087278345e-5,0.08706811451135242,0.16300325041032407,GH,31073000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,288,8,-2,1.3,Ghana,31073,2021-12-22
+country,GIN,0.0015990253559735018,0,NA,NA,GN,13133000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,324,11,-10,1.3,Guinea,13133,2021-12-22
 country,GMB,0.0024824162184526274,0,NA,NA,GM,2417000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,270,13.4667,-16.5667,1.3,TheGambia,2417,2021-12-22
-country,GNB,0,0,0,0.09451219512195122,GW,1968000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,624,12,-15,1.3,GuineaBissau,1968,2021-12-22
-country,GNQ,0,0,NA,NA,GQ,1403000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,226,2,10,1.3,EquatorialGuinea,1403,2021-12-18
-country,GRC,0.44440180370334836,0.007579391729828264,0.013635440369970239,32.59167226326394,GR,10423000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,300,39,22,1,Greece,10423,2021-12-22
-country,GRD,0.02654867256637168,0,NA,NA,GD,113000,North America,Upper middle,Americas,Yes,Samples,PCR,NA,NA,308,12.1167,-61.6667,1.3,Grenada,113,2021-04-24
+country,GNB,0,0,0,0.10823170731707317,GW,1968000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,624,12,-15,1.3,GuineaBissau,1968,2021-12-22
+country,GNQ,7.127583749109052e-4,0,NA,NA,GQ,1403000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,226,2,10,1.3,EquatorialGuinea,1403,2021-12-18
+country,GRC,0.4746234289551952,0.007387508394895903,0.015484343503900039,30.65182768876523,GR,10423000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,300,39,22,1,Greece,10423,2021-12-23
+country,GRD,0.04424778761061947,0,NA,NA,GD,113000,North America,Upper middle,Americas,Yes,Samples,PCR,NA,NA,308,12.1167,-61.6667,1.3,Grenada,113,2021-04-24
 country,GRL,NA,NA,NA,NA,GL,57000,North America,High,NA,Yes,Samples,Not specified,NA,NA,304,72,-40,0.6,Greenland,57,2021-08-25
-country,GTM,0.012558606831882117,2.2326412145568208e-4,NA,NA,GT,17916000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,320,15.5,-90.25,1.3,Guatemala,17916,2021-12-23
-country,GUY,0.05082592121982211,0.0025412960609911056,NA,NA,GY,787000,South America,Upper middle,Americas,No,People,Not specified,NA,NA,328,5,-59,1.3,Guyana,787,2021-07-01
+country,GTM,0.013172583165885243,2.2326412145568208e-4,NA,NA,GT,17916000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,320,15.5,-90.25,1.3,Guatemala,17916,2021-12-24
+country,GUY,0.052096569250317665,0.0025412960609911056,NA,NA,GY,787000,South America,Upper middle,Americas,No,People,Not specified,NA,NA,328,5,-59,1.3,Guyana,787,2021-07-01
 country,HKG,NA,NA,NA,NA,HK,7497000,Asia,High,NA,Yes,Samples,Not specified,NA,NA,344,22.25,114.1667,1.3,HongKong,7497,2021-12-14
 country,HND,0,0,NA,NA,HN,9905000,North America,Lower middle,Americas,Yes,Samples,Not specified,NA,NA,340,15,-86.5,1.3,Honduras,9905,2021-09-23
-country,HRV,0.6738124238733252,0.012180267965895249,0.3714247347925339,1.8141291108404385,HR,4105000,Europe,High,Europe,Yes,People,Not specified,NA,NA,191,45.1667,15.5,0.9,Croatia,4105,2021-12-20
-country,HUN,0.3523809523809524,0.013664596273291925,0.17419784043805334,2.02287784679089,HU,9660000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,348,47,20,0.9,Hungary,9660,2021-12-22
-country,IDN,7.385092350214241e-4,3.290387680788523e-5,6.968040152468997e-4,1.0598521519135433,ID,273524000,Asia,Lower middle,South-East Asia,Yes,Samples and People,PCR and rapid test,Separate,NA,360,-5,120,1.3,Indonesia,273524,2021-12-22
-country,IND,0.004821725154419842,2.2826020794142624e-4,0.005547533373573932,0.8691655966214591,IN,1380004000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,356,20,77,1.3,India,1380004,2021-12-23
-country,IRL,1.0941676792223571,0.0018226002430133657,NA,NA,IE,4938000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,372,53,-8,0.8,Ireland,4938,2021-12-16
-country,IRN,0.024668722393532794,5.238531782410439e-4,0.01988617277552235,1.2404962318288428,IR,83993000,Asia,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,364,32,53,1.3,Iran,83993,2021-12-20
-country,IRQ,0.007682171891703751,2.7347537478557044e-4,NA,NA,IQ,40223000,Asia,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,368,33,44,1.3,Iraq,40223,2021-12-20
-country,ISL,0.7536656891495601,0,NA,NA,IS,341000,Europe,High,Europe,Yes,Not specified,Not specified,NA,NA,352,65,-18,0.6,Iceland,341,2021-10-15
-country,ISR,0.11333179297597043,2.310536044362292e-4,NA,NA,IL,8656000,Asia,High,Europe,Yes,Samples,Not specified,NA,NA,376,31.5,34.75,1.3,Israel,8656,2021-06-26
-country,ITA,0.4528794945585657,0.0021335714994542027,0.0421089863363398,10.754936985213853,IT,60462000,Europe,High,Europe,Yes,Samples and People,PCR and rapid test,Separate,NA,380,40,15,0.9,Italy,60462,2021-12-22
-country,JAM,0.016886187098953058,0.0010131712259371835,NA,NA,JM,2961000,North America,Upper middle,Americas,Yes,Samples,PCR and rapid test,Separate,NA,388,18.25,-77.5,1.3,Jamaica,2961,2021-09-23
-country,JOR,0.2918749387435068,0.003430363618543566,0.0766853787917804,3.806135450357738,JO,10203000,Asia,Upper middle,Eastern Mediterranean,Yes,Samples,PCR,NA,NA,400,31,36,1.3,Jordan,10203,2021-12-23
-country,JPN,0.001367848445554888,7.906638413612069e-6,0.004674033447707562,0.2926484076030235,JP,126476000,Asia,High,Western Pacific,Yes,Samples,PCR,NA,NA,392,36,138,1.3,Japan,126476,2021-12-20
-country,KAZ,0.025083879213931938,5.325664376630985e-4,NA,NA,KZ,18777000,Asia,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,398,48,68,0.9,Kazakhstan,18777,2021-05-28
-country,KEN,0.03825482137211508,1.8597385207639805e-5,0.2805510092744135,0.13635602834241506,KE,53771000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,404,1,38,1.3,Kenya,53771,2021-12-22
-country,KGZ,0.00674432863274065,3.0656039239730225e-4,NA,NA,KG,6524000,Asia,Lower middle,Europe,No,Irrelevant,Irrelevant,NA,NA,417,41,75,0.9,Kyrgyzstan,6524,2021-06-23
-country,KHM,3.5887313834559486e-4,5.981218972426581e-5,NA,NA,KH,16719000,Asia,Lower middle,Western Pacific,Yes,People,Not specified,NA,NA,116,13,105,1.3,Cambodia,16719,2021-12-17
-country,KNA,0.05660377358490566,0,NA,NA,KN,53000,North America,High,Americas,Yes,People,Not specified,NA,NA,659,17.3333,-62.75,1.3,SaintKittsandNevis,53,2021-09-20
-country,KOR,0.12490978954143829,0.001384852444947239,NA,NA,KR,51269000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,410,37,127.5,1,RepublicofKorea,51269,2021-10-31
-country,KWT,0.02036993678295481,0,0.004073605843517348,5.000468274408804,KW,4271000,Asia,High,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,414,29.3375,47.6581,1.3,Kuwait,4271,2021-12-20
-country,LAO,0.1673996701484332,5.497526113249038e-4,NA,NA,LA,7276000,Asia,Lower middle,Western Pacific,Yes,People,Not specified,NA,NA,418,18,105,1.3,Laos,7276,2021-07-06
-country,LBN,0.2273992673992674,0.0019047619047619048,NA,NA,LB,6825000,Asia,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,422,33.8333,35.8333,1.3,Lebanon,6825,2021-06-23
+country,HRV,0.6760048721071864,0.012180267965895249,NA,NA,HR,4105000,Europe,High,Europe,Yes,People,Not specified,NA,NA,191,45.1667,15.5,0.9,Croatia,4105,2021-12-20
+country,HUN,0.32836438923395445,0.013457556935817806,0.17173795343800757,1.912008281573499,HU,9660000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,348,47,20,0.9,Hungary,9660,2021-12-23
+country,IDN,6.471095772217428e-4,3.290387680788523e-5,6.176070344394431e-4,1.0477691171524255,ID,273524000,Asia,Lower middle,South-East Asia,Yes,Samples and People,PCR and rapid test,Separate,NA,360,-5,120,1.3,Indonesia,273524,2021-12-23
+country,IND,0.004821725154419842,2.2826020794142624e-4,0.0056103748934458785,0.859430117593862,IN,1380004000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,356,20,77,1.3,India,1380004,2021-12-24
+country,IRL,1.2229647630619684,0.0018226002430133657,NA,NA,IE,4938000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,372,53,-8,0.8,Ireland,4938,2021-12-16
+country,IRN,0.02414486921529175,5.357589322919767e-4,NA,NA,IR,83993000,Asia,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,364,32,53,1.3,Iran,83993,2021-12-20
+country,IRQ,0.007483280710041519,2.7347537478557044e-4,NA,NA,IQ,40223000,Asia,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,368,33,44,1.3,Iraq,40223,2021-12-20
+country,ISL,0.906158357771261,0,NA,NA,IS,341000,Europe,High,Europe,Yes,Not specified,Not specified,NA,NA,352,65,-18,0.6,Iceland,341,2021-10-15
+country,ISR,0.133086876155268,2.310536044362292e-4,NA,NA,IL,8656000,Asia,High,Europe,Yes,Samples,Not specified,NA,NA,376,31.5,34.75,1.3,Israel,8656,2021-06-26
+country,ITA,0.4968906089775396,0.0022658860110482616,0.043605039333507505,11.395256524759352,IT,60462000,Europe,High,Europe,Yes,Samples and People,PCR and rapid test,Separate,NA,380,40,15,0.9,Italy,60462,2021-12-23
+country,JAM,0.017223910840932118,0.0010131712259371835,NA,NA,JM,2961000,North America,Upper middle,Americas,Yes,Samples,PCR and rapid test,Separate,NA,388,18.25,-77.5,1.3,Jamaica,2961,2021-09-23
+country,JOR,0.2679604038028031,0.003626384396746055,0.06174484518620565,4.339802019014016,JO,10203000,Asia,Upper middle,Eastern Mediterranean,Yes,Samples,PCR,NA,NA,400,31,36,1.3,Jordan,10203,2021-12-23
+country,JPN,0.0014785413833454568,7.906638413612069e-6,NA,NA,JP,126476000,Asia,High,Western Pacific,Yes,Samples,PCR,NA,NA,392,36,138,1.3,Japan,126476,2021-12-20
+country,KAZ,0.029291154071470416,5.325664376630985e-4,NA,NA,KZ,18777000,Asia,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,398,48,68,0.9,Kazakhstan,18777,2021-05-28
+country,KEN,0.04487549050603485,0,0.3020403054199524,0.1485745104238344,KE,53771000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,404,1,38,1.3,Kenya,53771,2021-12-22
+country,KGZ,0.005977927651747394,3.0656039239730225e-4,NA,NA,KG,6524000,Asia,Lower middle,Europe,No,Irrelevant,Irrelevant,NA,NA,417,41,75,0.9,Kyrgyzstan,6524,2021-06-23
+country,KHM,2.9906094862132903e-4,5.981218972426581e-5,NA,NA,KH,16719000,Asia,Lower middle,Western Pacific,Yes,People,Not specified,NA,NA,116,13,105,1.3,Cambodia,16719,2021-12-17
+country,KNA,0.03773584905660377,0,NA,NA,KN,53000,North America,High,Americas,Yes,People,Not specified,NA,NA,659,17.3333,-62.75,1.3,SaintKittsandNevis,53,2021-09-20
+country,KOR,0.12139889601903685,0.001384852444947239,NA,NA,KR,51269000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,410,37,127.5,1,RepublicofKorea,51269,2021-10-31
+country,KWT,0.024116132053383282,0,NA,NA,KW,4271000,Asia,High,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,414,29.3375,47.6581,1.3,Kuwait,4271,2021-12-20
+country,LAO,0.12850467289719625,5.497526113249038e-4,NA,NA,LA,7276000,Asia,Lower middle,Western Pacific,Yes,People,Not specified,NA,NA,418,18,105,1.3,Laos,7276,2021-07-06
+country,LBN,0.22827838827838828,0.0020512820512820513,NA,NA,LB,6825000,Asia,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,422,33.8333,35.8333,1.3,Lebanon,6825,2021-06-23
 country,LBR,0.00276789244760775,0,NA,NA,LR,5058000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,430,6.5,-9.5,1.3,Liberia,5058,2021-09-26
-country,LBY,0.07233299374181341,0.001018774559743851,0.12259496793290577,0.5900160093145103,LY,6871000,Africa,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,434,25,17,1.3,Libya,6871,2021-12-22
-country,LCA,0.07608695652173914,0.010869565217391304,NA,NA,LC,184000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,662,13.8833,-61.1333,1.3,SaintLucia,184,2021-12-22
-country,LKA,0.030121888572362584,8.873114463176575e-4,NA,NA,LK,21413000,Asia,Lower middle,South-East Asia,No,Samples,PCR,NA,NA,144,7,81,1.3,SriLanka,21413,2021-05-30
-country,LSO,0.16339869281045752,0,NA,NA,LS,2142000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,426,-29.5,28.5,1.3,Lesotho,2142,2021-12-21
-country,LTU,0.5205731080088171,0.00881704628949302,NA,NA,LT,2722000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,440,56,24,0.8,Lithuania,2722,2021-12-22
-country,LUX,0.5591054313099042,0.003194888178913738,NA,NA,LU,626000,Europe,High,Europe,Yes,Samples and People,PCR,NA,NA,442,49.75,6.1667,0.9,Luxembourg,626,2021-12-19
-country,LVA,0.3743372216330859,0.005302226935312832,NA,NA,LV,1886000,Europe,High,Europe,Yes,Not specified,Not specified,NA,NA,428,57,25,0.8,Latvia,1886,2021-12-08
-country,MAR,0.00693560185310612,5.418438947739156e-5,0.022592886770805756,0.3069816585841619,MA,36911000,Africa,Lower middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,504,32,-5,1.3,Morocco,36911,2021-12-22
-country,MDA,0.08106098165592464,0.004462072384729797,NA,NA,MD,4034000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,498,47,29,0.9,Moldova,4034,2021-06-13
+country,LBY,0.07233299374181341,0.001164313782564401,0.11743856332703213,0.6159219909765682,LY,6871000,Africa,Upper middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,434,25,17,1.3,Libya,6871,2021-12-22
+country,LCA,0.08152173913043478,0.005434782608695652,NA,NA,LC,184000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,662,13.8833,-61.1333,1.3,SaintLucia,184,2021-12-24
+country,LKA,0.028860972306542755,8.873114463176575e-4,NA,NA,LK,21413000,Asia,Lower middle,South-East Asia,No,Samples,PCR,NA,NA,144,7,81,1.3,SriLanka,21413,2021-05-30
+country,LSO,0.13258636788048553,0,NA,NA,LS,2142000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,426,-29.5,28.5,1.3,Lesotho,2142,2021-12-21
+country,LTU,0.529757531227039,0.009551800146950772,NA,NA,LT,2722000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,NA,440,56,24,0.8,Lithuania,2722,2021-12-23
+country,LUX,0.6214057507987221,0.003194888178913738,NA,NA,LU,626000,Europe,High,Europe,Yes,Samples and People,PCR,NA,NA,442,49.75,6.1667,0.9,Luxembourg,626,2021-12-19
+country,LVA,0.3844114528101803,0.005302226935312832,NA,NA,LV,1886000,Europe,High,Europe,Yes,Not specified,Not specified,NA,NA,428,57,25,0.8,Latvia,1886,2021-12-08
+country,MAR,0.008127658421608735,8.127658421608734e-5,0.02943485086342229,0.2761236487767874,MA,36911000,Africa,Lower middle,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,504,32,-5,1.3,Morocco,36911,2021-12-22
+country,MDA,0.07858205255329698,0.004462072384729797,NA,NA,MD,4034000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,498,47,29,0.9,Moldova,4034,2021-06-13
 country,MDG,0.009028204109638512,1.0833844931566213e-4,NA,NA,MG,27691000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,450,-20,47,1.3,Madagascar,27691,2021-12-22
-country,MDV,0.20702402957486138,0,NA,NA,MV,541000,Asia,Upper middle,South-East Asia,Yes,People,Not specified,NA,NA,462,3.25,73,1.3,Maldives,541,2021-11-09
-country,MEX,0.012688760829267915,0.001039299481125856,0.11961687504569715,0.10607835077133085,MX,128933000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,484,23,-102,1.3,Mexico,128933,2021-12-22
-country,MKD,0.12770043206913106,0.005760921747479597,NA,NA,MK,2083000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,807,41.8333,22,0.9,NorthMacedonia,2083,2021-12-17
-country,MLI,0.0050367883067502835,9.87605550343193e-5,0.06636304489264802,0.07589748654387438,ML,20251000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,466,17,-4,1.3,Mali,20251,2021-12-22
-country,MLT,0.7601809954751131,0,NA,NA,MT,442000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,470,35.8333,14.5833,1.3,Malta,442,2021-09-06
-country,MMR,0.0034368682227531706,1.1027384671935306e-4,0.014554794520547944,0.23613306377504134,MM,54410000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,104,22,98,1.3,Myanmar,54410,2021-12-20
-country,MNE,0.321656050955414,0.004777070063694267,NA,NA,ME,628000,Europe,Upper middle,Europe,No,Not specified,Not specified,NA,NA,499,42.708678,19.374389999999998,0.9,Montenegro,628,2021-06-21
-country,MOZ,0.0433850583906575,6.39897616381379e-5,0.3924746743849494,0.11054231322988321,MZ,31255000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,508,-18.25,35,1.3,Mozambique,31255,2021-12-22
-country,MRT,0.00989247311827957,2.1505376344086021e-4,0.026635784597568036,0.3713978494623656,MR,4650000,Africa,Lower middle,Africa,Yes,Samples,Not specified,NA,NA,478,20,-12,1.3,Mauritania,4650,2021-12-21
-country,MUS,0.026729559748427674,0,NA,NA,MU,1272000,Africa,Upper middle,Africa,No,Not specified,Not specified,NA,NA,480,-20.2833,57.55,1.3,Mauritius,1272,2021-09-01
-country,MWI,0.033716675378985886,5.227391531625719e-5,0.4369918699186992,0.0771562990067956,MW,19130000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,454,-13.5,34,1.3,Malawi,19130,2021-12-22
-country,MYS,0.10711858122721374,9.886918371130198e-4,NA,NA,MY,32366000,Asia,Upper middle,Western Pacific,No,People,Not specified,NA,NA,458,2.5,112.5,1.3,Malaysia,32366,2021-06-16
-country,"NAM",0.45179063360881544,7.870916961826052e-4,0.24550898203592814,1.840220385674931,NA,2541000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,516,-22,17,1.3,Namibia,2541,2021-12-22
+country,MDV,0.21811460258780038,0,NA,NA,MV,541000,Asia,Upper middle,South-East Asia,Yes,People,Not specified,NA,NA,462,3.25,73,1.3,Maldives,541,2021-11-09
+country,MEX,0.016977810180481334,0.0012952463682687908,0.1581418870105476,0.10735808520704553,MX,128933000,North America,Upper middle,Americas,Yes,People,Not specified,NA,NA,484,23,-102,1.3,Mexico,128933,2021-12-23
+country,MKD,0.12289966394623139,0.005760921747479597,NA,NA,MK,2083000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,807,41.8333,22,0.9,NorthMacedonia,2083,2021-12-17
+country,MLI,0.005728112191990519,9.87605550343193e-5,0.07702523240371846,0.07436669794084243,ML,20251000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,466,17,-4,1.3,Mali,20251,2021-12-22
+country,MLT,0.9524886877828054,0,NA,NA,MT,442000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,470,35.8333,14.5833,1.3,Malta,442,2021-09-06
+country,MMR,0.0036206579672854256,1.1027384671935306e-4,NA,NA,MM,54410000,Asia,Lower middle,South-East Asia,Yes,Samples,Not specified,NA,NA,104,22,98,1.3,Myanmar,54410,2021-12-20
+country,MNE,0.34235668789808915,0.004777070063694267,NA,NA,ME,628000,Europe,Upper middle,Europe,No,Not specified,Not specified,NA,NA,499,42.708678,19.374389999999998,0.9,Montenegro,628,2021-06-21
+country,MOZ,0.049048152295632697,6.39897616381379e-5,0.4401378122308355,0.11143816989281714,MZ,31255000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,508,-18.25,35,1.3,Mozambique,31255,2021-12-22
+country,MRT,0.011397849462365592,2.1505376344086021e-4,0.030424799081515498,0.3746236559139785,MR,4650000,Africa,Lower middle,Africa,Yes,Samples,Not specified,NA,NA,478,20,-12,1.3,Mauritania,4650,2021-12-21
+country,MUS,0.019654088050314465,0,NA,NA,MU,1272000,Africa,Upper middle,Africa,No,Not specified,Not specified,NA,NA,480,-20.2833,57.55,1.3,Mauritius,1272,2021-09-01
+country,MWI,0.03941453214845792,5.227391531625719e-5,0.5309859154929577,0.07422895974908521,MW,19130000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,454,-13.5,34,1.3,Malawi,19130,2021-12-22
+country,MYS,0.10273126120002472,0.0011431749366619293,NA,NA,MY,32366000,Asia,Upper middle,Western Pacific,No,People,Not specified,NA,NA,458,2.5,112.5,1.3,Malaysia,32366,2021-06-16
+country,"NAM",0.4163715072805982,7.870916961826052e-4,0.20777690494893952,2.003935458480913,NA,2541000,Africa,Upper middle,Africa,Yes,Not specified,Not specified,NA,NA,516,-22,17,1.3,Namibia,2541,2021-12-22
 country,NCL,NA,NA,NA,NA,NC,285000,Oceania,High,NA,Yes,Samples,Not specified,NA,NA,540,-21.5,165.5,1.3,NewCaledonia,285,2021-09-07
-country,NER,3.717932829346883e-4,0,0.017964071856287425,0.020696492750030982,NE,24207000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,562,16,8,1.3,Niger,24207,2021-12-21
-country,NGA,0.00836324827786941,4.851072086931212e-6,NA,NA,NG,206140000,Africa,Lower middle,Africa,Yes,Samples,Not specified,NA,NA,566,10,8,1.3,Nigeria,206140,2021-12-18
-country,NLD,0.7673183542456959,0.0026845637583892616,NA,NA,NL,17135000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,528,52.5,5.75,0.8,Netherlands,17135,2021-06-27
-country,NOR,0.7546578122117691,0.0016602102933038186,0.14273751788144168,5.287031912931194,NO,5421000,Europe,High,Europe,Yes,People,Not specified,NA,NA,578,62,10,0.6,Norway,5421,2021-12-22
-country,NPL,0.007138689638603837,6.86412465250369e-5,0.03083765752409192,0.23149260390568693,NP,29137000,Asia,Lower middle,South-East Asia,Yes,Not specified,Not specified,NA,NA,524,28,84,1.3,Nepal,29137,2021-12-22
-country,NZL,0.011406055578598091,0,0.002922733552981188,3.9025300705101618,NZ,4822000,Oceania,High,Western Pacific,Yes,Samples,PCR,NA,NA,554,-41,174,0.9,NewZealand,4822,2021-12-23
-country,OMN,0.005091051497943999,0,NA,NA,OM,5107000,Asia,High,Eastern Mediterranean,No,People,Not specified,NA,NA,512,21,57,1.3,Oman,5107,2021-05-28
-country,PAK,0.0014441446498741465,2.263549607953208e-5,0.007237991514078915,0.19952284374264345,PK,220892000,Asia,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,586,30,70,1.3,Pakistan,220892,2021-12-20
-country,PAN,0.11471610660486674,4.634994206257242e-4,NA,NA,PA,4315000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,591,9,-80,1.3,Panama,4315,2021-12-20
-country,PER,0.05580492539124105,0.0019410408831736017,NA,NA,PE,32972000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,604,-10,-76,1.3,Peru,32972,2021-12-17
-country,PHL,0.0014236044569770306,6.387968717204625e-4,0.0052474015271283935,0.2712970314196804,PH,109581000,Asia,Lower middle,Western Pacific,Yes,Samples and People,Not specified,NA,NA,608,13,122,1.3,Philippines,109581,2021-12-20
-country,PNG,0.0013412316977757907,0,NA,NA,PG,8947000,Oceania,Lower middle,Western Pacific,No,Irrelevant,Irrelevant,NA,NA,598,-6,147,1.3,PapuaNewGuinea,8947,2021-11-28
-country,POL,0.42640103574920074,0.011097312864956271,NA,NA,PL,37847000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,616,52,20,0.8,Poland,37847,2021-12-20
-country,PRT,0.5134843581445523,0.00176522506619594,NA,NA,PT,10197000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,620,39.5,-8,1,Portugal,10197,2021-12-23
-country,PRY,0.018505537641945884,0.0016823216038132623,NA,NA,PY,7133000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,600,-23,-58,1.3,Paraguay,7133,2021-12-18
-country,PSE,0.07508331699666732,7.841599686336013e-4,0.15144325820482404,0.4957851401685944,PS,5101000,Asia,NA,NA,Yes,Samples,Not specified,NA,NA,275,32,35.25,1.3,occupiedPalestinianterritory,5101,2021-12-20
+country,NER,4.1310364770520924e-4,0,0.019342359767891684,0.021357458586359318,NE,24207000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,562,16,8,1.3,Niger,24207,2021-12-21
+country,NGA,0.00864946153099835,4.851072086931212e-6,NA,NA,NG,206140000,Africa,Lower middle,Africa,Yes,Samples,Not specified,NA,NA,566,10,8,1.3,Nigeria,206140,2021-12-18
+country,NLD,0.7504522906332068,0.0024511234315728043,NA,NA,NL,17135000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,528,52.5,5.75,0.8,Netherlands,17135,2021-06-27
+country,NOR,0.7430363401586423,0.0016602102933038186,0.14253866024983192,5.212875853163623,NO,5421000,Europe,High,Europe,Yes,People,Not specified,NA,NA,578,62,10,0.6,Norway,5421,2021-12-23
+country,NPL,0.006967086522291245,6.86412465250369e-5,0.02880249716231555,0.24189175275423003,NP,29137000,Asia,Lower middle,South-East Asia,Yes,Not specified,Not specified,NA,NA,524,28,84,1.3,Nepal,29137,2021-12-23
+country,NZL,0.012235586893405226,0,0.0032302217355598137,3.7878473662380756,NZ,4822000,Oceania,High,Western Pacific,Yes,Samples,PCR,NA,NA,554,-41,174,0.9,NewZealand,4822,2021-12-24
+country,OMN,0.006657528881926767,0,NA,NA,OM,5107000,Asia,High,Eastern Mediterranean,No,People,Not specified,NA,NA,512,21,57,1.3,Oman,5107,2021-05-28
+country,PAK,0.0016886080075330932,2.7162595295438495e-5,NA,NA,PK,220892000,Asia,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,586,30,70,1.3,Pakistan,220892,2021-12-20
+country,PAN,0.10938586326767091,2.317497103128621e-4,NA,NA,PA,4315000,North America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,591,9,-80,1.3,Panama,4315,2021-12-20
+country,PER,0.057473007400218365,0.0017590683003760766,NA,NA,PE,32972000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,604,-10,-76,1.3,Peru,32972,2021-12-17
+country,PHL,8.213102636405946e-4,6.205455325284493e-4,NA,NA,PH,109581000,Asia,Lower middle,Western Pacific,Yes,Samples and People,Not specified,NA,NA,608,13,122,1.3,Philippines,109581,2021-12-20
+country,PNG,0.0010059237733318432,0,NA,NA,PG,8947000,Oceania,Lower middle,Western Pacific,No,Irrelevant,Irrelevant,NA,NA,598,-6,147,1.3,PapuaNewGuinea,8947,2021-11-28
+country,POL,0.413718392474965,0.01133511242634819,NA,NA,PL,37847000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,616,52,20,0.8,Poland,37847,2021-12-20
+country,PRT,0.6099833284299304,0.0015690889477297245,NA,NA,PT,10197000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Together,NA,620,39.5,-8,1,Portugal,10197,2021-12-23
+country,PRY,0.02172998738258797,0.0016823216038132623,NA,NA,PY,7133000,South America,Upper middle,Americas,Yes,Samples,Not specified,NA,NA,600,-23,-58,1.3,Paraguay,7133,2021-12-18
+country,PSE,0.08449323662027053,9.801999607920015e-4,NA,NA,PS,5101000,Asia,NA,NA,Yes,Samples,Not specified,NA,NA,275,32,35.25,1.3,occupiedPalestinianterritory,5101,2021-12-20
 country,PYF,NA,NA,NA,NA,PF,281000,Oceania,High,NA,No,Irrelevant,Irrelevant,NA,NA,258,-15,-140,1.3,FrenchPolynesia,281,2020-09-07
-country,QAT,0.06108989934050677,0,0.02895213028458628,2.110031239153072,QA,2881000,Asia,High,Eastern Mediterranean,Yes,People,Not specified,NA,NA,634,25.5,51.25,1.3,Qatar,2881,2021-12-22
-country,ROU,0.027965484977648405,0.0025990227674394426,0.014154542345234023,1.9757251273521157,RO,19238000,Europe,Upper middle,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,642,46,25,0.9,Romania,19238,2021-12-22
-country,RUS,0.18235640769114805,0.00694834651280716,0.05705440450054885,3.1961845765894172,RU,145934000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,643,60,100,0.6,Russia,145934,2021-12-20
-country,RWA,0.021463866584311302,0,0.012564403868751696,1.708307597282273,RW,12952000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,646,-2,30,1.3,Rwanda,12952,2021-12-22
-country,SAU,0.004394783707703798,5.74481530418797e-5,0.002598946832002718,1.6909863847877291,SA,34814000,Asia,High,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,682,25,45,1.3,SaudiArabia,34814,2021-12-22
-country,SDN,0.0035120527264019706,1.8244429747542703e-4,NA,NA,SD,43849000,Africa,Low,Eastern Mediterranean,No,Not specified,Not specified,NA,NA,736,15,30,1.3,Sudan,43849,2021-10-27
-country,SEN,0.001075011944577162,5.972288580984233e-5,0.01060070671378092,0.10140946010511227,SN,16744000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,686,14,-14,1.3,Senegal,16744,2021-12-22
-country,SGP,0.04974358974358974,3.418803418803419e-4,NA,NA,SG,5850000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,702,1.3667,103.8,1.3,Singapore,5850,2021-09-20
-country,SLE,0.0028832894571894194,0,NA,NA,SL,7977000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,694,8.5,-11.5,1.3,SierraLeone,7977,2021-11-29
-country,SLV,0.006167129201356768,3.083564600678384e-4,NA,NA,SV,6486000,North America,Lower middle,Americas,Yes,Samples,Not specified,NA,NA,222,13.8333,-88.9167,1.3,ElSalvador,6486,2021-09-13
+country,QAT,0.062478306143700105,0,0.030359251138471918,2.0579659840333218,QA,2881000,Asia,High,Eastern Mediterranean,Yes,People,Not specified,NA,NA,634,25.5,51.25,1.3,Qatar,2881,2021-12-23
+country,ROU,0.035606611913920366,0.0033267491423224866,0.018413483508507834,1.9337249194302941,RO,19238000,Europe,Upper middle,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,642,46,25,0.9,Romania,19238,2021-12-23
+country,RUS,0.18009511148875518,0.006859265147258349,NA,NA,RU,145934000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,643,60,100,0.6,Russia,145934,2021-12-20
+country,RWA,0.025555898702903028,0,0.013400809716599191,1.907041383570105,RW,12952000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,646,-2,30,1.3,Rwanda,12952,2021-12-22
+country,SAU,0.005400126385936692,2.872407652093985e-5,0.0032186269474405067,1.6777733095880967,SA,34814000,Asia,High,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,682,25,45,1.3,SaudiArabia,34814,2021-12-23
+country,SDN,0.0037629136354306826,1.8244429747542703e-4,NA,NA,SD,43849000,Africa,Low,Eastern Mediterranean,No,Not specified,Not specified,NA,NA,736,15,30,1.3,Sudan,43849,2021-10-27
+country,SEN,0.001254180602006689,5.972288580984233e-5,0.012352941176470587,0.10152890587673197,SN,16744000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,686,14,-14,1.3,Senegal,16744,2021-12-22
+country,SGP,0.04717948717948718,3.418803418803419e-4,NA,NA,SG,5850000,Asia,High,Western Pacific,Yes,Samples,Not specified,NA,NA,702,1.3667,103.8,1.3,Singapore,5850,2021-09-20
+country,SLE,0.003259370690735866,0,NA,NA,SL,7977000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,694,8.5,-11.5,1.3,SierraLeone,7977,2021-11-29
+country,SLV,0.005704594511255011,3.083564600678384e-4,NA,NA,SV,6486000,North America,Lower middle,Americas,Yes,Samples,Not specified,NA,NA,222,13.8333,-88.9167,1.3,ElSalvador,6486,2021-09-13
 country,SMR,2.1470588235294117,0,NA,NA,SM,34000,Europe,High,Europe,Yes,Samples,Not specified,NA,NA,674,43.7667,12.4167,0.9,SanMarino,34,2021-05-30
-country,SOM,0.0010067325237525955,0,0.022130013831258646,0.04549172591707041,SO,15893000,Africa,Low,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,706,10,49,1.3,Somalia,15893,2021-12-22
-country,SRB,0.12555797184388234,0.0034336728854297816,NA,NA,RS,8737000,Europe,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,688,44,21,0.9,Serbia,8737,2021-12-22
-country,SSD,0.01420403787743434,0,0.09013605442176871,0.1575844202251206,SS,8260490,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,728,6.877,31.307,1.3,SouthSudan,8260.49,2021-12-22
-country,STP,0,0,NA,NA,ST,219000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,678,1,7,1.3,SaoTomeandPrincipe,219,2021-12-14
-country,SVK,0.7423076923076923,0.014285714285714285,NA,NA,SK,5460000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,703,48.6667,19.5,0.9,Slovakia,5460,2021-09-20
-country,SVN,0.5401635401635402,0.005291005291005291,NA,NA,SI,2079000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,705,46,15,0.9,Slovenia,2079,2021-12-20
-country,SWE,0.35478760273294385,5.94118229527676e-4,NA,NA,SE,10099000,Europe,High,Europe,Yes,Samples and People,PCR and serology,NA,NA,752,62,15,0.6,Sweden,10099,2021-05-10
-country,SWZ,0.725,0.0017241379310344827,0.5353278166772756,1.3543103448275862,SZ,1160000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,748,-26.5,31.5,1.3,Eswatini,1160,2021-12-22
-country,SYC,0.25510204081632654,0,NA,NA,SC,98000,Africa,High,Africa,No,Not specified,Not specified,NA,NA,690,-4.5833,55.6667,1.3,Seychelles,98,2020-12-21
+country,SOM,0.003775246964072233,0,0.08298755186721991,0.04549172591707041,SO,15893000,Africa,Low,Eastern Mediterranean,Yes,Not specified,Not specified,NA,NA,706,10,49,1.3,Somalia,15893,2021-12-22
+country,SRB,0.1251001487924917,0.0034336728854297816,NA,NA,RS,8737000,Europe,Upper middle,Europe,Yes,Not specified,Not specified,NA,NA,688,44,21,0.9,Serbia,8737,2021-12-23
+country,SSD,0.014382705020546721,0,0.0822267620020429,0.17491513310702161,SS,8260490,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,728,6.877,31.307,1.3,SouthSudan,8260.49,2021-12-22
+country,STP,0.0045662100456621,0,NA,NA,ST,219000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,678,1,7,1.3,SaoTomeandPrincipe,219,2021-12-14
+country,SVK,0.7983516483516484,0.012087912087912088,NA,NA,SK,5460000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,703,48.6667,19.5,0.9,Slovakia,5460,2021-09-20
+country,SVN,0.5281385281385281,0.005291005291005291,NA,NA,SI,2079000,Europe,High,Europe,Yes,Samples,PCR and rapid test,Separate,Until 21/03/2021 data only reflects the number of PCRs. After the data includes both PCR+rapid tests,705,46,15,0.9,Slovenia,2079,2021-12-20
+country,SWE,0.37013565699574213,5.94118229527676e-4,NA,NA,SE,10099000,Europe,High,Europe,Yes,Samples and People,PCR and serology,NA,NA,752,62,15,0.6,Sweden,10099,2021-05-10
+country,SWZ,0.6560344827586206,0.0017241379310344827,0.5110812625923439,1.2836206896551725,SZ,1160000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,748,-26.5,31.5,1.3,Eswatini,1160,2021-12-22
+country,SYC,0.3469387755102041,0,NA,NA,SC,98000,Africa,High,Africa,No,Not specified,Not specified,NA,NA,690,-4.5833,55.6667,1.3,Seychelles,98,2020-12-21
 country,TCD,0,0,NA,NA,TD,16426000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,148,15,19,1.3,Chad,16426,2021-12-05
-country,TGO,0.012924266215726538,0,0.09361329833770779,0.13806015219229376,TG,8279000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,768,8,1.1667,1.3,Togo,8279,2021-12-22
-country,THA,0.032392550143266474,3.438395415472779e-4,NA,NA,TH,69800000,Asia,Upper middle,South-East Asia,No,People,Not specified,NA,NA,764,15,100,1.3,Thailand,69800,2021-05-22
+country,TGO,0.017151829931151105,0,0.12478031634446397,0.13745621451866166,TG,8279000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,768,8,1.1667,1.3,Togo,8279,2021-12-22
+country,THA,0.03941260744985673,4.154727793696275e-4,NA,NA,TH,69800000,Asia,Upper middle,South-East Asia,No,People,Not specified,NA,NA,764,15,100,1.3,Thailand,69800,2021-05-22
 country,TJK,0,0,NA,NA,TJ,9538000,Asia,Lower middle,Europe,No,Irrelevant,Irrelevant,NA,NA,762,39,71,1,Tajikistan,9538,2020-03-30
-country,TTO,0.46747676912080055,0.01858470335954253,NA,NA,TT,1399000,North America,High,Americas,Yes,People,Not specified,NA,NA,780,11,-61,1.3,TrinidadandTobago,1399,2021-07-02
-country,TUN,0.018021829257974447,5.922666892292072e-4,0.0370241613071441,0.48675860901937557,TN,11819000,Africa,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,788,34,9,1.3,Tunisia,11819,2021-12-22
-country,TUR,0.2181908725500658,0.002157957765683729,NA,NA,TR,84339000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,792,39,35,1,Turkey,84339,2021-09-24
-country,TWN,5.038417936767855e-4,0,4.087750374710451e-4,1.2325649745979763,TW,23817000,Asia,High,NA,Yes,Samples and People,Not specified,NA,NA,158,23.5,121,1.3,Taiwan,23817,2021-12-22
+country,TTO,0.49320943531093636,0.01858470335954253,NA,NA,TT,1399000,North America,High,Americas,Yes,People,Not specified,NA,NA,780,11,-61,1.3,TrinidadandTobago,1399,2021-07-02
+country,TUN,0.022675353244775362,8.460952703274389e-4,0.04720803241148494,0.48032828496488705,TN,11819000,Africa,Lower middle,Eastern Mediterranean,Yes,Samples,Not specified,NA,NA,788,34,9,1.3,Tunisia,11819,2021-12-22
+country,TUR,0.2194358481841141,0.0021223870332823486,NA,NA,TR,84339000,Europe,Upper middle,Europe,Yes,Samples,Not specified,NA,NA,792,39,35,1,Turkey,84339,2021-09-24
+country,TWN,4.6185497753705335e-4,0,3.802412803760932e-4,1.2146366041063106,TW,23817000,Asia,High,NA,Yes,Samples and People,Not specified,NA,NA,158,23.5,121,1.3,Taiwan,23817,2021-12-23
 country,TZA,0,0,NA,NA,TZ,59734000,Africa,Lower middle,Africa,No,Not specified,Not specified,NA,NA,834,-6,35,1.3,Tanzania,59734,2021-09-23
-country,UGA,0.006602391727334339,0,0.03971071663379356,0.1662622155178068,UG,45741000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,800,1,32,1.3,Uganda,45741,2021-12-22
-country,UKR,0.1394567155988476,0.006699592994009238,0.22794887128120794,0.6117894544290483,UA,43734000,Europe,Lower middle,Europe,Yes,Samples,Not specified,NA,NA,804,49,32,0.9,Ukraine,43734,2021-12-22
-country,URY,0.10074841681059298,5.757052389176742e-4,0.038192928852029684,2.637881404720783,UY,3474000,South America,High,Americas,Yes,Samples,Not specified,NA,NA,858,-33,-56,1.3,Uruguay,3474,2021-12-20
-country,USA,0.5091283160575584,0.004018090470479119,NA,NA,US,331003000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,840,38,-97,1,US,331003,2021-12-16
-country,UZB,0.005198840718276614,8.963518479787266e-5,NA,NA,UZ,33469000,Asia,Lower middle,Europe,No,Irrelevant,Irrelevant,NA,NA,860,41,64,0.9,Uzbekistan,33469,2020-07-14
-country,VCT,0.12612612612612611,0,NA,NA,VC,111000,North America,Upper middle,Americas,No,Samples,Not specified,NA,NA,670,13.25,-61.2,1.3,SaintVincentandtheGrenadines,111,2021-07-06
-country,VEN,0.0131523421015614,2.4616683077788716e-4,NA,NA,VE,28436000,South America,Lower middle,Americas,No,Samples,Not specified,NA,NA,862,8,-66,1.3,Venezuela,28436,2021-05-30
-country,VNM,0.16283298575082958,0.002383422882914351,NA,NA,VN,97339000,Asia,Lower middle,Western Pacific,Yes,Not specified,PCR,NA,NA,704,16,106,1.3,Vietnam,97339,2021-05-08
+country,UGA,0.008416956341138147,0,0.043161434977578475,0.19501104042325265,UG,45741000,Africa,Low,Africa,Yes,Not specified,Not specified,NA,NA,800,1,32,1.3,Uganda,45741,2021-12-22
+country,UKR,0.13305437417112545,0.006493803448118169,0.21918788609311435,0.6070334293684547,UA,43734000,Europe,Lower middle,Europe,Yes,Samples,Not specified,NA,NA,804,49,32,0.9,Ukraine,43734,2021-12-23
+country,URY,0.10679332181922856,5.757052389176742e-4,NA,NA,UY,3474000,South America,High,Americas,Yes,Samples,Not specified,NA,NA,858,-33,-56,1.3,Uruguay,3474,2021-12-20
+country,USA,0.5467624160506098,0.004706905979704111,NA,NA,US,331003000,North America,High,Americas,Yes,Samples,Not specified,NA,NA,840,38,-97,1,US,331003,2021-12-16
+country,UZB,0.0050494487436134935,8.963518479787266e-5,NA,NA,UZ,33469000,Asia,Lower middle,Europe,No,Irrelevant,Irrelevant,NA,NA,860,41,64,0.9,Uzbekistan,33469,2020-07-14
+country,VCT,0.08108108108108109,0,NA,NA,VC,111000,North America,Upper middle,Americas,No,Samples,Not specified,NA,NA,670,13.25,-61.2,1.3,SaintVincentandtheGrenadines,111,2021-07-06
+country,VEN,0.011921507947671965,2.4616683077788716e-4,NA,NA,VE,28436000,South America,Lower middle,Americas,No,Samples,Not specified,NA,NA,862,8,-66,1.3,Venezuela,28436,2021-05-30
+country,VNM,0.16478492690494045,0.0024450631298862735,NA,NA,VN,97339000,Asia,Lower middle,Western Pacific,Yes,Not specified,PCR,NA,NA,704,16,106,1.3,Vietnam,97339,2021-05-08
 country,XK,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2021-12-21
-country,ZAF,0.27339864101569744,9.104857610143486e-4,0.3489347966429955,0.7835235798951256,ZA,59309000,Africa,Upper middle,Africa,Yes,Samples,Not specified,NA,NA,710,-29,24,1.3,SouthAfrica,59309,2021-12-22
-country,ZMB,0.07925369886858137,1.0879025239338555e-4,0.18436036947994433,0.429884682332463,ZM,18384000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,894,-15,30,1.3,Zambia,18384,2021-12-22
-country,ZWE,0.19450985669111215,8.07374016012918e-4,0.3381286549707602,0.5752539864092041,ZW,14863000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,716,-20,30,1.3,Zimbabwe,14863,2021-12-22
-income,High,0.4584265826000408,0.002796020439184265,0.17925114205217338,6.51473181039915,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-income,Low,0.00975265351899521,4.5604718568214526e-5,0.05236903207081701,0.2360350832874847,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-income,Lower middle,0.014475894389633285,3.3588713711495783e-4,0.027244137051302637,0.7313888234102122,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-income,Upper middle,0.03959207664081211,8.208376624803422e-4,0.14115489478256368,1.0531873202583566,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-region,Africa,0.027234267583289264,1.284705727696164e-4,0.1589471527526515,0.31671413759158806,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-region,Asia,0.011041249966364998,2.1212474549515208e-4,0.025756478873828825,0.7932998958866297,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-region,Europe,0.4951371493584718,0.0043525441229898465,0.13971591240570685,7.212092984794388,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-region,North America,0.3213830537990794,0.0026718723118893052,1.2511071018533706,0.8775976537901006,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-region,Oceania,0.12777293663637496,1.4938379185858335e-4,0.017541820767164117,9.648374117802256,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-region,South America,0.04055858488108088,7.211448989466632e-4,0.14363625878417902,0.40734190638549206,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-who_region,Africa,0.030735705428584947,9.284363079301852e-5,0.16630760313013235,0.317602531983474,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-who_region,Americas,0.20060529659533172,0.0018328981200788387,0.7544437253544445,0.5719586022558284,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-who_region,Eastern Mediterranean,0.015026665919804715,2.6533253537030106e-4,0.03218189050454284,0.6737237486334614,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-who_region,Europe,0.44971936237751103,0.003972732510589997,0.14009632445793543,7.061789258562127,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-who_region,South-East Asia,0.005269043118102182,1.890397083673889e-4,0.006963828913011783,0.8686671559949916,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-who_region,Western Pacific,0.017026658681068424,2.174587736570753e-4,0.09130809908154745,1.3488300504168873,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+country,ZAF,0.2746463437252356,0.00102851169299769,0.39384414516791993,0.69734778869986,ZA,59309000,Africa,Upper middle,Africa,Yes,Samples,Not specified,NA,NA,710,-29,24,1.3,SouthAfrica,59309,2021-12-22
+country,ZMB,0.09812880765883376,1.0879025239338555e-4,0.22769153098573772,0.4309725848563969,ZM,18384000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,894,-15,30,1.3,Zambia,18384,2021-12-22
+country,ZWE,0.13207293278611318,8.746551840139945e-4,0.25520020800832033,0.5175267442642805,ZW,14863000,Africa,Lower middle,Africa,Yes,Not specified,Not specified,NA,NA,716,-20,30,1.3,Zimbabwe,14863,2021-12-22
+income,High,0.4895201289317736,0.003011739621117159,0.1763832218736983,9.717805366720036,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+income,Low,0.012228820830884191,4.5604718568214526e-5,0.06360361943248705,0.2658405517189839,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+income,Lower middle,0.014389669337440089,3.346853942272478e-4,0.030703036456971134,0.8003102789124231,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+income,Upper middle,0.040557306396883645,8.330011268861217e-4,0.44400582471724775,0.7551045562320186,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+region,Africa,0.029020157929173875,1.336990263125659e-4,0.17016906096706377,0.3152271908303569,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+region,Asia,0.011099774869720426,2.1638517907275026e-4,0.02501328962075566,1.1142254059571728,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+region,Europe,0.520477991089355,0.004374055873185842,0.17547738312816497,9.504505505026328,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+region,North America,0.348119331926592,0.0031247915342726435,1.324149628066614,0.8981689726935234,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+region,Oceania,0.1451512510892568,1.7428109050168057e-4,0.01923552798719831,9.995547787085284,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+region,South America,0.04343153310752968,6.839245170655451e-4,0.19299152367169733,1.3820197431391876,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+who_region,Africa,0.0327354143995115,9.9092721327164e-5,0.1772108465467831,0.31745371812199974,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+who_region,Americas,0.21707836840051625,0.002075016758211524,0.8875380933876015,1.0329186982938556,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+who_region,Eastern Mediterranean,0.015221243112409603,2.712288139340855e-4,0.021428082284167996,3.651463946897827,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+who_region,Europe,0.47286198584835426,0.00399215379934356,0.17588152055523495,9.185789489206087,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+who_region,South-East Asia,0.005509730279949255,1.915468663032959e-4,0.00742605539804887,0.8793520991997813,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+who_region,Western Pacific,0.017133571586494097,2.226487205223993e-4,0.10892323935529637,9.995547787085284,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
