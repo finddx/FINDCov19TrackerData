@@ -164,7 +164,9 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://healthalert.gov.bh/en/")
     time.sleep(60)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]/div/div[1]/div/ul/li/div[2]/div/span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]/div/div[2]/div/ul/li/div[2]/div/span").text
+    print("bahrain")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
     
@@ -189,7 +191,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(5)
     try:
       self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
-      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has completed")[1].split("tests")[0]
+      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried out")[1].split("tests")[0]
     except NoSuchElementException:
       try:
         self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
@@ -201,6 +203,7 @@ class TestDefaultSuite(unittest.TestCase):
         except NoSuchElementException:
           try:
             self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'has carried\')]").text
+            print(self.vars)
             self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried")[1].split("tests")[0]
           except NoSuchElementException:
             self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
