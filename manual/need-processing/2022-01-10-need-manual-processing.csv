@@ -1,5 +1,6 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2022-01-10,manually,pdf,http://covid.moph-dw.org/#/
+Argentina,NA,0,NA,NA,2022-01-10,manually,NA,https://www.argentina.gob.ar/salud/coronavirus-COVID-19/sala-situacion
 Armenia,NA,0,NA,NA,2022-01-10,manually,automated,https://ncdc.am/coronavirus/confirmed-cases-by-days/
 Bangladesh,NA,0,NA,NA,2022-01-10,manually,automated,https://corona.gov.bd/
 Benin,NA,0,NA,NA,2022-01-10,manually,automated,https://www.gouv.bj/coronavirus/
@@ -9,8 +10,9 @@ Brunei,NA,0,NA,NA,2022-01-10,manually,automated,http://www.moh.gov.bn/Lists/Late
 Bulgaria,NA,0,NA,NA,2022-01-10,manually,automated,https://coronavirus.bg/
 Cambodia,NA,0,NA,NA,2022-01-10,manually,automated,http://cdcmoh.gov.kh/
 China,NA,0,NA,NA,2022-01-10,manually,without_information,NA
+Colombia,NA,0,NA,NA,2022-01-10,manually,automated,https://infogram.com/panorama-general-1h7z2lgn3l9l4ow?live
 Croatia,NA,0,NA,NA,2022-01-10,manually,automated,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35
-Cuba,NA,0,NA,NA,2022-01-10,manually,not_yet_automated,http://www.cubadebate.cu/?s=Cuba+reporta
+Cuba,11,-11647844,11,-11647844,2022-01-10,manually,not_yet_automated,http://www.cubadebate.cu/?s=Cuba+reporta
 Cyprus,NA,0,NA,NA,2022-01-10,manually,not_yet_automated_daily,https://covid19.ucy.ac.cy/
 Denmark,NA,0,NA,NA,2022-01-10,manually,automated,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts
 Dominica,NA,0,NA,NA,2022-01-10,manually,image,https://www.facebook.com/SupportRooseveltSkerrit/photos
@@ -32,8 +34,8 @@ Ireland,NA,0,NA,NA,2022-01-10,manually,automated,https://covid19ireland-geohive.
 Israel,NA,0,NA,NA,2022-01-10,manually,not_yet_automated_daily,https://datadashboard.health.gov.il/COVID-19/general
 Jamaica,NA,0,NA,NA,2022-01-10,manually,automated,https://www.moh.gov.jm/?s=COVID-19+Clinical+Management+Summary
 Japan,NA,0,NA,NA,2022-01-10,manually,automated,https://www.mhlw.go.jp/stf/houdou/houdou_list_202007.html
-Jordan,NA,0,NA,NA,2022-01-10,manually,automated,https://corona.moh.gov.jo/ar
 Kazakhstan,NA,0,NA,NA,2022-01-10,manually,special_dashboard,https://hls.kz/
+Kosovo,NA,0,NA,NA,2022-01-10,manually,facebook,https://datastudio.google.com/embed/u/0/reporting/2e546d77-8f7b-4c35-8502-38533aa0e9e8/page/MT0qB?fbclid=IwAR3bGrIV4hcD6Qe0CXv_f3ukuBKuNLkAacl4yPohGOvD5U_JjVERrnpqwes
 Kuwait,NA,0,NA,NA,2022-01-10,manually,twitter,https://twitter.com/KUWAIT_MOH
 Kyrgyzstan,NA,0,NA,NA,2022-01-10,manually,image,https://www.instagram.com/daryger_sunushu/
 LaoPeoplesDemocraticRepublic,NA,0,NA,NA,2022-01-10,manually,automated,https://www.covid19.gov.la/index.php
@@ -47,6 +49,7 @@ Montenegro,NA,0,NA,NA,2022-01-10,manually,without_information,https://www.ijzcg.
 Myanmar,NA,0,NA,NA,2022-01-10,manually,automated,https://mohs.gov.mm/Main/content/publication/2019-ncov
 Netherlands,NA,0,NA,NA,2022-01-10,manually,not_yet_automated_weekly,https://www.rivm.nl/en/novel-coronavirus-covid-19/current-information
 NewCaledonia,NA,0,NA,NA,2022-01-10,manually,automated,https://covid19.nc/point-de-situation-en-nouvelle-caledonie/
+Norway,NA,0,NA,NA,2022-01-10,manually,automated,https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/
 OccupiedPalestinianterritory,NA,0,NA,NA,2022-01-10,manually,automated,https://corona.ps/
 Oman,NA,0,NA,NA,2022-01-10,manually,twitter,https://twitter.com/OmanVSCovid19
 Pakistan,NA,0,NA,NA,2022-01-10,manually,automated,http://covid.gov.pk/
@@ -68,7 +71,6 @@ Slovenia,NA,0,NA,NA,2022-01-10,manually,automated,https://www.nijz.si/sl/dnevno-
 Spain,NA,0,NA,NA,2022-01-10,manually,automated,https://www.mscbs.gob.es/gabinete/notasPrensa.do
 SriLanka,NA,0,NA,NA,2022-01-10,manually,automated,https://www.hpb.health.gov.lk/en
 Sweden,NA,0,NA,NA,2022-01-10,manually,without_information,https://experience.arcgis.com/experience/09f821667ce64bf7be6f9f87457ed9aa
-Taiwan,NA,0,NA,NA,2022-01-10,manually,automated,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan
 Tajikistan,NA,0,NA,NA,2022-01-10,manually,without_information,https://eurasianet.org/dashboard-coronavirus-in-eurasia
 Thailand,NA,0,NA,NA,2022-01-10,manually,automated,https://ddc.moph.go.th/viralpneumonia/eng/index.php
 TheBahamas,NA,0,NA,NA,2022-01-10,manually,facebook,https://www.bahamas.gov.bs/wps/portal/public/gov/government/news/All%20News%20Press%20Release
