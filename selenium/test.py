@@ -401,7 +401,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get(url)
     time.sleep(5)
     full_text = self.driver.find_element(By.XPATH, "//p[contains(.,\'muestras realizadas \')]").text
-    self.vars["tests_cumulative"] = full_text.split('acumula')[1].split('muestras realizadas')[0]
+    self.vars["tests_cumulative"] = full_text.split('acumula')[1].split('muestras realizadas')[0].replace("millones","")
     print("Cuba")
     print(self.vars)
     self.driver.close()
