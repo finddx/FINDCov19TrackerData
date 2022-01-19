@@ -86,9 +86,11 @@ class TestDefaultSuite(unittest.TestCase):
     pcr_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary").text
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary")))
     tma_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary").text
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary")))
-    antibody_tests = self.driver.find_element(By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary").text
-    self.vars["tests_cumulative"] = int(pcr_tests.replace(',','').split("\n")[0]) + int(tma_tests.replace(',','').split("\n")[0]) + int(antibody_tests.replace(',','').split("\n")[0])
+    # WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary")))
+    # antibody_tests = self.driver.find_element(By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary").text
+    self.vars["tests_cumulative"] = int(pcr_tests.replace(',','').split("\n")[0]) + int(tma_tests.replace(',','').split("\n")[0]) #+ int(antibody_tests.replace(',','').split("\n")[0])
+    print("Andorra")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
@@ -122,9 +124,14 @@ class TestDefaultSuite(unittest.TestCase):
     
   def test_armenia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://infogram.com/--1h7j4drmogk92nr")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".\\__ig-alignLeft:nth-child(4) span > span").text
+    self.driver.get("https://ncdc.am/coronavirus/confirmed-cases-by-days/")
+    time.sleep(5)
+    self.driver.execute_script("window.scrollTo(0,1600)")
+    self.driver.switch_to.frame(6)
+    time.sleep(5)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(4) span > span").text
+    print("Armenia")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
@@ -574,11 +581,18 @@ class TestDefaultSuite(unittest.TestCase):
   def test_iceland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.covid.is/tolulegar-upplysingar")
+    time.sleep(10)
+    self.driver.execute_script("window.scrollTo(0,1600)")
     self.driver.switch_to.frame(0)
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span")))
-    self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(16) span").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(17) span").text
+    time.sleep(10)
+    value1 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(59) span").text
+    value2 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(64) span").text
+    value3 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(65) span").text
+    self.vars["tests_cumulative"] = int(value1.replace('.','')) + int(value2.replace('.','')) + int(value3.replace('.',''))
     print("iceland")
+    print(value1)
+    print(value2)
+    print(value3)
     print(self.vars)
     self.driver.close()
     self.driver.quit()
