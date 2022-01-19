@@ -86,10 +86,13 @@ class TestDefaultSuite(unittest.TestCase):
     pcr_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary").text
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary")))
     tma_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary").text
-    # WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary")))
-    # antibody_tests = self.driver.find_element(By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary")))
+    antibody_tests = self.driver.find_element(By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary").text
     self.vars["tests_cumulative"] = int(pcr_tests.replace(',','').split("\n")[0]) + int(tma_tests.replace(',','').split("\n")[0]) #+ int(antibody_tests.replace(',','').split("\n")[0])
     print("Andorra")
+    print(pcr_tests)
+    print(tma_tests)
+    print(antibody_tests)
     print(self.vars)
     self.driver.close()
     self.driver.quit()
