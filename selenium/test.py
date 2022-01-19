@@ -469,10 +469,10 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_page_load_timeout(10)
     self.driver.get("https://covid19.gob.sv/")
     time.sleep(10)
-    WebDriverWait(self.driver, 10).until(expected_conditions.frame_to_be_available_and_switch_to_it(0))
     self.driver.execute_script("window.scrollTo(0,300)")
-    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[1]//div//div[37]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[37]").text
+    WebDriverWait(self.driver, 10).until(expected_conditions.frame_to_be_available_and_switch_to_it(0))
+    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[1]//div//div[19]")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[19]").text
     print(self.vars)
     self.driver.close()
     self.driver.quit()
