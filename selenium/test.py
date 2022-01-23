@@ -374,7 +374,12 @@ class TestDefaultSuite(unittest.TestCase):
     date_last_update = sheet[str("A")+str(last_update)].value
     d = date_last_update.strftime("%Y-%m-%d")
     # self.vars["date"] = d
-    self.vars["tests_cumulative"] = sheet[str("AX")+str(last_update)].value
+    last_value = sheet[str("AZ")+str(last_update)].value
+    i = 0
+    while last_value == 'nd' and i <= 5:
+      last_value = sheet[str("AZ")+str(last_update - i)].value
+      i += 1
+    self.vars["tests_cumulative"] = last_value
     print("Costa Rica")
     print(d)
     print(self.vars)
@@ -969,6 +974,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.find_element(By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div").click()
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".test-stlucia")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".test-stlucia").text
+    print("Saint Lucia")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
