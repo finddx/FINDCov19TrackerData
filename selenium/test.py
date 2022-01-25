@@ -1162,11 +1162,11 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_unitedKingdom(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://coronavirus.data.gov.uk/testing")
-    time.sleep(30)
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.ID, "value-item-virus_tests_conducted-total-cumvirustests-1_modal")))
-    time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "value-item-virus_tests_conducted-total-cumvirustests-1_modal").text
+    self.driver.get("https://coronavirus.data.gov.uk/details/testing")
+    time.sleep(10)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "value-item-virus_tests_conducted-total-cumvirustestsbypublishdate-1_modal").text.split('\n')[0]
+    print("United Kingdom")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
     
