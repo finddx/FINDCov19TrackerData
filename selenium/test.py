@@ -253,16 +253,6 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()  
     self.driver.quit()  
 
-  # def test_benin(self):
-  #   # since 2021-06-09 doesn't show number of tests
-  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-  #   self.driver.get("https://www.gouv.bj/coronavirus/")
-  #   self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".left-5:nth-child(1) .h1").text
-  #   self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, ".left-5:nth-child(2) .h1").text
-  #   self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"])+int(self.vars["rapid_test_cum"])
-  #   print(self.vars)
-  #   self.driver.close()
-
   def test_bermuda(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.gov.bm/coronavirus-covid19-update")
@@ -1278,6 +1268,20 @@ class TestDefaultSuite(unittest.TestCase):
     
     for idx in cont_tests['features']:
         if idx['attributes']['Country'] == "Angola":
+          self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
+          break
+    print(self.vars)
+    self.driver.close()
+    self.driver.quit()
+
+  def test_benin(self):
+      # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+    url_tests = "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/DailyCOVIDDashboard_5July21_1/FeatureServer/0/query?where=0%3D0&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=Country%2C+Tests_Conducted&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token="
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    
+    for idx in cont_tests['features']:
+        if idx['attributes']['Country'] == "Benin":
           self.vars["tests_cumulative"] = idx['attributes']['Tests_Conducted']
           break
     print(self.vars)
