@@ -594,13 +594,13 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.switch_to.frame(0)
     time.sleep(10)
     value1 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(59) span").text
-    value2 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(64) span").text
-    value3 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(65) span").text
-    self.vars["tests_cumulative"] = int(value1.replace('.','')) + int(value2.replace('.','')) + int(value3.replace('.',''))
-    print("iceland")
+    value2 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(63) span").text
+    value3 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(64) span").text
     print(value1)
     print(value2)
     print(value3)
+    self.vars["tests_cumulative"] = int(value1.replace('.','')) + int(value2.replace('.','')) + int(value3.replace('.',''))
+    print("iceland")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
@@ -740,9 +740,11 @@ class TestDefaultSuite(unittest.TestCase):
   def test_lebanon(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://corona.ministryinfo.gov.lb/")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".s-counter3")))
-    time.sleep(60)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".s-counter3").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#content > div > div.row.layout-top-spacing > div.col-xl-8.col-lg-8.col-md-8.col-sm-12.col-12 > div > div:nth-child(1) > div > div.widget-content.widget-content-area > div > div:nth-child(10) > div > h1")))
+    time.sleep(10)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div > div.row.layout-top-spacing > div.col-xl-8.col-lg-8.col-md-8.col-sm-12.col-12 > div > div:nth-child(1) > div > div.widget-content.widget-content-area > div > div:nth-child(10) > div > h1").text
+    print("Lebanon")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
@@ -841,15 +843,15 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_norway(self):
+  #def test_norway(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span").text
-    self.driver.close()
-    self.driver.quit()
+    #self.driver.maximize_window()
+    #self.driver.set_page_load_timeout(30)
+    #self.driver.get("https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/")
+    #WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span")))
+    #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".c-key-figure:nth-child(1) .c-key-figure__number > span").text
+    #self.driver.close()
+    #self.driver.quit()
 
   def test_occupiedPalestinianterritory(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
