@@ -2,7 +2,9 @@
 import pytest
 import time
 import json
+import csv
 import requests
+import pandas as pd
 from datetime import date
 from openpyxl import load_workbook
 from datetime import datetime
@@ -1173,60 +1175,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
     
   def test_uS(self):
-    # information x
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    # self.driver.get("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6")
-    # self.driver.set_window_size(1440, 855)
-    # time.sleep(60)
-    # #WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".dock-element:nth-child(4) .responsive-text:nth-child(2) text:nth-child(1)")))
-    # html = self.driver.page_source
-    # soup = bs(html, "lxml")
-    # full_tags = soup.find_all("g", attrs={"style":"--text-fill-color:#73b2ff;"})
-    # self.vars["tests_cumulative"] = full_tags[0].text
-
-    total_tests = 0
-    
-    url_tests = "https://jhucoronavirus.azureedge.net/api/v1/testing/daily.json"
-
-    trycnt = 3  # max try cnt
-    while trycnt > 0:
-        try:
-              r_tests = requests.get(url_tests)
-
-              cont_tests = json.loads(r_tests.content)
-              
-              max_date = max([ e['date'] for e in cont_tests ])
-              tests_last_date = [x for x in cont_tests if x['date'] == max_date]
-
-              for state in tests_last_date:
-                  tests_number = state['tests_combined_total']
-                  if isinstance(tests_number, int) == True:
-                      tests_number = tests_number
-                  else:
-                      tests_number = 0
-                  total_tests += tests_number
-              trycnt = 0 # success
-        except requests.exceptions.ChunkedEncodingError as ex:
-           if trycnt <= 0: print("Failed to retrieve: " + url_tests + "\n" + str(ex))  # done retrying
-           else: trycnt -= 1  # retry
-           time.sleep(0.5)  # wait 1/2 second then retry
-
-        # r_tests = requests.get(url_tests)
-        # 
-        # cont_tests = json.loads(r_tests.content)
-
-        # max_date = max([ e['date'] for e in cont_tests ])
-        # tests_last_date = [x for x in cont_tests if x['date'] == max_date]
-
-        # for state in tests_last_date:
-        #     tests_number = state['tests_combined_total']
-        #     if isinstance(tests_number, int) == True:
-        #       tests_number = tests_number
-        #     else:
-        #       tests_number = 0
-        #     total_tests += tests_number
-
-    self.vars["tests_cumulative"] = total_tests
+    url='https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/testing_data/time_series_covid19_US.csv'
+    df = pd.read_csv(url,sep=",") # use sep="," for coma separation. 
+    df_tests = df[['date', 'tests_combined_total']]
+    df_tests['date'] = pd.to_datetime(df_tests['date'])
+    cum_tests = df_tests.groupby(by = ['date'], as_index= False).sum()
+    last_date = max(cum_tests['date'])
+    last_value = cum_tests.loc[cum_tests['date'] == last_date]
+    self.vars["tests_cumulative"] = int(last_value['tests_combined_total'])
     print("USA")
     print(self.vars)
     self.driver.close()
