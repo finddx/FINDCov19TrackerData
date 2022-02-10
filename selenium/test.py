@@ -877,12 +877,15 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiOGU4MGE1NzItNmY1OC00ZTc2LThlYTItNWY2MzJhZjU5ZTM2IiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
-    time.sleep(10)
-    WebDriverWait(self.driver, 10).until(expected_conditions.frame_to_be_available_and_switch_to_it(4))
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiMTAwMTNhYmMtNDAzYi00MWUwLTlhOGEtZGZkZmVmYTE1ZDRiIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
+    self.driver.set_window_size(1333, 813)
+    self.driver.execute_script("window.scrollTo(0,0)")
     time.sleep(5)
-    WebDriverWait(self.driver, 20).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "body")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body").text
+    self.driver.switch_to.frame(1)
+    html = self.driver.page_source
+    soup = bs(html, "lxml")
+    full_tags = soup.find_all(attrs={"class":"dataLabel"})
+    self.vars["tests_cumulative"] = full_tags[0].text
     #weekly_values
     #self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div").text.split("\n")[40].replace(",","")
     #self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "//*[@id=\"pvExplorationHost\"]//div").text.split("\n")[60].replace(",","")
