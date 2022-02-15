@@ -657,7 +657,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(10)
     html = self.driver.page_source
     soup = bs(html, "lxml")
-    full_tags = soup.find_all(attrs={"id":"ember156"})
+    full_tags = soup.find_all(attrs={"id":"ember161"})
     self.vars["tests_cumulative"] = full_tags[0].text.split("\n")[5]
     print("Ireland")
     print(self.vars)
