@@ -2,7 +2,6 @@ country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_cor
 Afghanistan,2022-02-28,NA,NA,NA,NA,selenium
 Austria,2022-02-28,NA,NA,NA,NA,selenium
 Bangladesh,2022-02-28,NA,NA,NA,NA,selenium
-Belgium,2022-02-28,NA,NA,NA,NA,selenium
 Benin,2022-01-25,604310,-36276,604310,-36276,manually
 Bhutan,2022-02-28,NA,NA,NA,NA,NA
 Bolivia,2022-02-28,NA,NA,NA,NA,NA
@@ -12,6 +11,7 @@ Cambodia,2022-02-28,NA,NA,NA,NA,selenium
 Chile,2022-02-28,NA,NA,NA,NA,selenium
 China,2022-02-28,NA,NA,NA,NA,NA
 Croatia,2022-02-28,NA,NA,NA,NA,NA
+Cuba,2022-02-28,NA,NA,NA,NA,selenium
 Cyprus,2022-02-28,NA,NA,NA,NA,NA
 Denmark,2022-02-28,NA,NA,NA,NA,selenium
 Dominica,2022-02-28,NA,NA,NA,NA,NA
@@ -33,6 +33,7 @@ Iraq,2022-02-28,NA,NA,NA,NA,NA
 Israel,2022-02-28,NA,NA,NA,NA,NA
 Jamaica,2022-02-28,NA,NA,NA,NA,NA
 Japan,2022-02-28,NA,NA,NA,NA,NA
+Jordan,2022-02-28,NA,NA,NA,NA,selenium
 Kazakhstan,2022-02-28,NA,NA,NA,NA,NA
 Kosovo,2022-02-28,NA,NA,NA,NA,selenium
 Kuwait,2022-02-28,NA,NA,NA,NA,NA
@@ -85,12 +86,14 @@ Sweden,2022-02-28,NA,NA,NA,NA,NA
 Taiwan,2021-12-21,NA,NA,NA,NA,NA
 Taiwan,2021-12-22,NA,NA,NA,NA,NA
 Taiwan,2021-12-23,NA,NA,NA,NA,selenium
+Taiwan,2022-02-28,NA,NA,NA,NA,selenium
 Tajikistan,2022-02-28,NA,NA,NA,NA,NA
 Thailand,2022-02-28,NA,NA,NA,NA,selenium
 TheBahamas,2022-02-28,NA,NA,NA,NA,NA
 TrinidadandTobago,2022-02-28,NA,NA,NA,NA,NA
 Turkey,2022-02-28,NA,NA,NA,NA,selenium
 Ukraine,2022-02-28,NA,NA,NA,NA,selenium
+UnitedArabEmirates,2022-02-28,108927504,-28371499,108927504,-28371499,selenium
 UnitedKingdom,2022-02-28,NA,NA,NA,NA,selenium
 Uruguay,2022-02-28,NA,NA,NA,NA,selenium
 US,2022-02-25,856276109,1042141,856276109,-13968760,manually
