@@ -2,7 +2,6 @@ country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_correcte
 Afghanistan,NA,0,NA,NA,2022-02-28,manually,pdf,http://covid.moph-dw.org/#/
 Austria,NA,0,NA,NA,2022-02-28,manually,automated,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html
 Bangladesh,NA,0,NA,NA,2022-02-28,manually,automated,https://corona.gov.bd/
-Belgium,NA,0,NA,NA,2022-02-28,manually,automated,https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-4812-848c-0369173148ab/page/cUWaB
 Bhutan,NA,0,NA,NA,2022-02-28,manually,image,https://www.facebook.com/MoHBhutan/
 Bolivia,NA,0,NA,NA,2022-02-28,manually,image,https://www.minsalud.gob.bo/
 Brunei,NA,0,NA,NA,2022-02-28,manually,automated,http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx
@@ -11,6 +10,7 @@ Cambodia,NA,0,NA,NA,2022-02-28,manually,automated,http://cdcmoh.gov.kh/
 Chile,NA,0,NA,NA,2022-02-28,manually,automated,https://www.gob.cl/coronavirus/cifrasoficiales/
 China,NA,0,NA,NA,2022-02-28,manually,without_information,NA
 Croatia,NA,0,NA,NA,2022-02-28,manually,automated,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35
+Cuba,NA,0,NA,NA,2022-02-28,manually,not_yet_automated,http://www.cubadebate.cu/?s=Cuba+reporta
 Cyprus,NA,0,NA,NA,2022-02-28,manually,not_yet_automated_daily,https://covid19.ucy.ac.cy/
 Denmark,NA,0,NA,NA,2022-02-28,manually,automated,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts
 Dominica,NA,0,NA,NA,2022-02-28,manually,image,https://www.facebook.com/SupportRooseveltSkerrit/photos
@@ -32,6 +32,7 @@ Iraq,NA,0,NA,NA,2022-02-28,manually,image,https://www.facebook.com/MOH.GOV.IQ
 Israel,NA,0,NA,NA,2022-02-28,manually,not_yet_automated_daily,https://datadashboard.health.gov.il/COVID-19/general
 Jamaica,NA,0,NA,NA,2022-02-28,manually,automated,https://www.moh.gov.jm/?s=COVID-19+Clinical+Management+Summary
 Japan,NA,0,NA,NA,2022-02-28,manually,automated,https://www.mhlw.go.jp/stf/houdou/houdou_list_202007.html
+Jordan,NA,0,NA,NA,2022-02-28,manually,automated,https://corona.moh.gov.jo/ar
 Kazakhstan,NA,0,NA,NA,2022-02-28,manually,special_dashboard,https://hls.kz/
 Kosovo,NA,0,NA,NA,2022-02-28,manually,facebook,https://datastudio.google.com/embed/u/0/reporting/2e546d77-8f7b-4c35-8502-38533aa0e9e8/page/MT0qB?fbclid=IwAR3bGrIV4hcD6Qe0CXv_f3ukuBKuNLkAacl4yPohGOvD5U_JjVERrnpqwes
 Kuwait,NA,0,NA,NA,2022-02-28,manually,twitter,https://twitter.com/KUWAIT_MOH
@@ -70,12 +71,14 @@ Slovenia,NA,0,NA,NA,2022-02-28,manually,automated,https://www.nijz.si/sl/dnevno-
 Spain,NA,0,NA,NA,2022-02-28,manually,automated,https://www.mscbs.gob.es/gabinete/notasPrensa.do
 SriLanka,NA,0,NA,NA,2022-02-28,manually,automated,https://www.hpb.health.gov.lk/en
 Sweden,NA,0,NA,NA,2022-02-28,manually,without_information,https://experience.arcgis.com/experience/09f821667ce64bf7be6f9f87457ed9aa
+Taiwan,NA,0,NA,NA,2022-02-28,manually,automated,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan
 Tajikistan,NA,0,NA,NA,2022-02-28,manually,without_information,https://eurasianet.org/dashboard-coronavirus-in-eurasia
 Thailand,NA,0,NA,NA,2022-02-28,manually,automated,https://ddc.moph.go.th/viralpneumonia/eng/index.php
 TheBahamas,NA,0,NA,NA,2022-02-28,manually,facebook,https://www.bahamas.gov.bs/wps/portal/public/gov/government/news/All%20News%20Press%20Release
 TrinidadandTobago,NA,0,NA,NA,2022-02-28,manually,pdf,http://www.health.gov.tt/sitepages/default.aspx?id=293
 Turkey,NA,0,NA,NA,2022-02-28,manually,automated,https://covid19.saglik.gov.tr/
 Ukraine,NA,0,NA,NA,2022-02-28,manually,automated,https://covid19.gov.ua/en/
+UnitedArabEmirates,108927504,-28371499,108927504,-28371499,2022-02-28,manually,automated,https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx
 UnitedKingdom,NA,0,NA,NA,2022-02-28,manually,automated,https://coronavirus.data.gov.uk/testing
 Uruguay,NA,0,NA,NA,2022-02-28,manually,automated,https://www.gub.uy/sistema-nacional-emergencias/pagina-embebida/visualizador-casos-coronavirus-covid-19-uruguay
 Uzbekistan,NA,0,NA,NA,2022-02-28,manually,without_information,https://t.me/koronavirusinfouz/3470
