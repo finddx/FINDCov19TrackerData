@@ -65,7 +65,7 @@ When a negative value appears, the tracker ignores and continues showing the las
 
 Example: Negative value for US on 2021-06-14
 
-![US negative value example](manual_updates_images/neg_us.jpg)
+![US negative value example](manual_updates_images/neg_us.png)
 
 The correction must be made on the 2021-05-17 as, the 2021-05-16 has the last value which is smaller than 450577537 (value of the 2021-06-14, giving the negative value).
 Each YYYY-MM-DD-processed-manually.csv file from 2021-05-17 to 2021-06-13 must be corrected as follows: i. leave original columns as they are since it is the way US reported its data, and ii. correct corrected columns by putting 450444193 for every day.
