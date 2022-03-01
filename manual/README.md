@@ -31,17 +31,31 @@ There are different ways to update the manual files. Below are the steps to upda
 1. Open the [manual/need_processing](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/manual/need-processing) folder.
 2. Open on GitHub website the daily file to be updated `YYYY-MM-DD-need-manual-processing.csv`.
 3. Click on “Edit this file” on the top right. 
+
+![Edit the file](manual_updates_images/edit.png)
+
 4. Select all data in the file and copy.
 5. Go to [manual/processed/](https://github.com/dsbbfinddx/FINDCov19TrackerData/tree/master/manual/processed) folder.
 6. Create a new file by clicking on “Add file” on the top right and “Create new file”. 
+
+![create the file](manual_updates_images/create_new.png)
+
 7. In the empty new file, paste the copied data taken from  `YYYY-MM-DD-need-manual-processing.csv` file. 
 8. Name the file with the respective date as `YYYY-MM-DD-processed-manually.csv`. 
+
+![name the file](manual_updates_images/name.png)
+
 9. In the comment box at the bottom of the page write “manually processed countries” instead of “Create new file”. You can also add a specific description to help you track your modifications in the future (ex: "manually processed countries for 2022-01-01", “manually processed countries corrected the negative value for South Africa” or “ manually processed countries updated the cumulative values of Poland and Uruguay”). 
+
+![message for file](manual_updates_images/commit.png)
+
 10. Update the column(s) to be updated. 
 	- Most of the updates will be to change the `NA` value in `tests_cumulative` and put the new cumulative value found in the corresponding country website and `NA` instead of `0` for `new_tests`. Once the file will be pushed, `new_tests`, `tests_cumulative_corrected` and `new_tests_corrected` will be updated accordingly after pushing the file. Automatic calculations are not visible in this file.
 	- It is also possible to update only `new_tests` values instead of `tests_cumulative` values if this is how the country reports the testing data. `tests_cumulative` will also be populated accordingly. 
 	- You can also correct negative values. See next section for explanation.
 12. Commit the file by clicking on “Commit new file” at the bottom of the page. **Important:** If you want to change many files the process implies several commits. If you commit with less than 20 minutes between each commit you need to cancel the Actions created with each of them, and only leave the last one running. To do so, go to the “Actions” tab at the top of the webpage and cancel all the runs (except the last one), by clicking on the three dots on the right of the run. If you do not that the process might fail. If the last action fails, you can wait until all actions are finished, and then re-run the last action clicking on re-run all jobs. 
+
+![manage actions](manual_updates_images/cancel_commit.png)
 
 ### How to handle negative values
 
