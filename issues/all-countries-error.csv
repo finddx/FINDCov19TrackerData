@@ -1,6 +1,7 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2022-03-03,NA,NA,NA,NA,selenium
 Austria,2022-03-03,NA,NA,NA,NA,selenium
+Azerbaijan,2022-03-03,NA,NA,NA,NA,selenium
 Bangladesh,2022-03-03,NA,NA,NA,NA,selenium
 Benin,2022-01-25,604310,-36276,604310,-36276,manually
 Bhutan,2022-03-03,NA,NA,NA,NA,NA
@@ -10,9 +11,9 @@ Bulgaria,2022-03-03,NA,NA,NA,NA,selenium
 Cambodia,2022-03-03,NA,NA,NA,NA,selenium
 Chile,2022-03-03,NA,NA,NA,NA,selenium
 China,2022-03-03,NA,NA,NA,NA,NA
+Colombia,2022-03-03,NA,NA,NA,NA,selenium
 CostaRica,2022-03-03,NA,NA,NA,NA,selenium
 Croatia,2022-03-03,NA,NA,NA,NA,NA
-Cuba,2022-03-03,NA,NA,NA,NA,selenium
 Cyprus,2022-03-03,NA,NA,NA,NA,NA
 Denmark,2022-03-03,NA,NA,NA,NA,selenium
 Dominica,2022-03-03,NA,NA,NA,NA,NA
@@ -68,7 +69,7 @@ Peru,2022-02-16,NA,NA,NA,NA,manually
 Peru,2022-02-17,NA,NA,NA,NA,manually
 Peru,2022-02-18,NA,NA,NA,NA,manually
 Peru,2022-02-19,NA,NA,NA,NA,manually
-Peru,2022-03-03,NA,NA,NA,NA,selenium
+Peru,2022-03-03,25933414,-1407422,25933414,-1407422,selenium
 Philippines,2022-03-03,NA,NA,NA,NA,NA
 Poland,2022-03-03,NA,NA,NA,NA,NA
 RepublicofKorea,2022-03-03,NA,NA,NA,NA,selenium
@@ -95,6 +96,7 @@ Ukraine,2022-03-03,NA,NA,NA,NA,selenium
 UnitedKingdom,2022-03-03,NA,NA,NA,NA,selenium
 Uruguay,2022-03-03,NA,NA,NA,NA,selenium
 US,2022-03-02,861664606,684059,861664606,-14326842,manually
+US,2022-03-03,859148128,-2516478,859148128,-2516478,selenium
 Uzbekistan,2022-03-03,NA,NA,NA,NA,NA
 Venezuela,2022-03-03,NA,NA,NA,NA,selenium
 Vietnam,2022-03-03,NA,NA,NA,NA,NA
