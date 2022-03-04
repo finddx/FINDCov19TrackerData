@@ -1,10 +1,10 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2022-03-03,manually,pdf,http://covid.moph-dw.org/#/
 Austria,NA,0,NA,NA,2022-03-03,manually,automated,https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html
+Azerbaijan,NA,0,NA,NA,2022-03-03,manually,automated,https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet
 Bangladesh,NA,0,NA,NA,2022-03-03,manually,automated,https://corona.gov.bd/
 Bhutan,NA,0,NA,NA,2022-03-03,manually,image,https://www.facebook.com/MoHBhutan/
 Bolivia,NA,0,NA,NA,2022-03-03,manually,image,https://www.minsalud.gob.bo/
-Brazil,NA,0,NA,NA,2022-03-03,manually,automated,http://www.giscard.com.br/coronavirus/indice-testes-realizados-covid19-brasil.php
 Brunei,NA,0,NA,NA,2022-03-03,manually,automated,http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx
 Bulgaria,NA,0,NA,NA,2022-03-03,manually,automated,https://coronavirus.bg/
 Cambodia,NA,0,NA,NA,2022-03-03,manually,automated,http://cdcmoh.gov.kh/
@@ -13,7 +13,6 @@ China,NA,0,NA,NA,2022-03-03,manually,without_information,NA
 Colombia,NA,0,NA,NA,2022-03-03,manually,automated,https://infogram.com/panorama-general-1h7z2lgn3l9l4ow?live
 CostaRica,NA,0,NA,NA,2022-03-03,manually,csv,http://geovision.uned.ac.cr/oges/index.html
 Croatia,NA,0,NA,NA,2022-03-03,manually,automated,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35
-Cuba,NA,0,NA,NA,2022-03-03,manually,not_yet_automated,http://www.cubadebate.cu/?s=Cuba+reporta
 Cyprus,NA,0,NA,NA,2022-03-03,manually,not_yet_automated_daily,https://covid19.ucy.ac.cy/
 Denmark,NA,0,NA,NA,2022-03-03,manually,automated,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts
 Dominica,NA,0,NA,NA,2022-03-03,manually,image,https://www.facebook.com/SupportRooseveltSkerrit/photos
@@ -51,7 +50,6 @@ Montenegro,NA,0,NA,NA,2022-03-03,manually,without_information,https://www.ijzcg.
 Myanmar,NA,0,NA,NA,2022-03-03,manually,automated,https://mohs.gov.mm/Main/content/publication/2019-ncov
 Netherlands,NA,0,NA,NA,2022-03-03,manually,not_yet_automated_weekly,https://www.rivm.nl/en/novel-coronavirus-covid-19/current-information
 NewCaledonia,NA,0,NA,NA,2022-03-03,manually,automated,https://covid19.nc/point-de-situation-en-nouvelle-caledonie/
-NewZealand,6768479,-46582133,6768479,-46582133,2022-03-03,manually,automated,https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data
 Norway,NA,0,NA,NA,2022-03-03,manually,automated,https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/
 OccupiedPalestinianterritory,NA,0,NA,NA,2022-03-03,manually,automated,https://corona.ps/
 Oman,NA,0,NA,NA,2022-03-03,manually,twitter,https://twitter.com/OmanVSCovid19
@@ -59,7 +57,7 @@ Pakistan,NA,0,NA,NA,2022-03-03,manually,automated,http://covid.gov.pk/
 Panama,NA,0,NA,NA,2022-03-03,manually,twitter,https://twitter.com/MINSAPma/status/1325931093804113925/photo/1
 PapuaNewGuinea,NA,0,NA,NA,2022-03-03,manually,problems_webpage,https://covid19.info.gov.pg/
 Paraguay,NA,0,NA,NA,2022-03-03,manually,special_dashboard,https://www.mspbs.gov.py/reporte-covid19.html
-Peru,NA,0,NA,NA,2022-03-03,manually,xslx,https://covid19.minsa.gob.pe/sala_situacional.asp
+Peru,25933414,-1407422,25933414,-1407422,2022-03-03,manually,xslx,https://covid19.minsa.gob.pe/sala_situacional.asp
 Philippines,NA,0,NA,NA,2022-03-03,manually,special_dashboard,https://www.doh.gov.ph/covid19tracker
 Poland,NA,0,NA,NA,2022-03-03,manually,image,https://twitter.com/MZ_GOV_PL
 RepublicofKorea,NA,0,NA,NA,2022-03-03,manually,automated,http://ncov.mohw.go.kr/en/
@@ -82,6 +80,7 @@ Turkey,NA,0,NA,NA,2022-03-03,manually,automated,https://covid19.saglik.gov.tr/
 Ukraine,NA,0,NA,NA,2022-03-03,manually,automated,https://covid19.gov.ua/en/
 UnitedKingdom,NA,0,NA,NA,2022-03-03,manually,automated,https://coronavirus.data.gov.uk/testing
 Uruguay,NA,0,NA,NA,2022-03-03,manually,automated,https://www.gub.uy/sistema-nacional-emergencias/pagina-embebida/visualizador-casos-coronavirus-covid-19-uruguay
+US,859148128,-2516478,859148128,-2516478,2022-03-03,manually,automated,https://github.com/govex/COVID-19/tree/master/data_tables/testing_data
 Uzbekistan,NA,0,NA,NA,2022-03-03,manually,without_information,https://t.me/koronavirusinfouz/3470
 Venezuela,NA,0,NA,NA,2022-03-03,manually,without_information,https://covid19.patria.org.ve/?s=de+la+lucha+contra+la+COVID-19%3A
 Vietnam,NA,0,NA,NA,2022-03-03,manually,without_information,https://ncov.moh.gov.vn/?fbclid=IwAR1JDjulr5Ni19WcUWqQqugrEN7Ta6HcGEMqEhdgzifWiSGlIxwknKr9VuU
