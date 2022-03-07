@@ -193,7 +193,7 @@ jobs:
           mv *countries-error.csv issues/
           git add automated/merged/*
           git add issues/*
-          git commit -m "update automated tests files for $date" || echo "Nothing to update"
+          git commit -m "update automated-tests and countries-error files for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
@@ -270,9 +270,11 @@ jobs:
           date=$(date +'%Y-%m-%d')
           mv need-manual-processing.csv manual/need-processing/$date-need-manual-processing.csv
           mv coronavirus_tests_new.csv automated/coronavirus_tests_new.csv
+          mv duplicated_tests.csv issues/duplicated_tests.csv
           git add manual/need-processing/$date-need-manual-processing.csv
           git add automated/coronavirus_tests_new.csv
-          git commit -m "update run analysis files for $date" || echo "Nothing to update"
+          git add issues/duplicated_tests.csv
+          git commit -m "update manual files and duplicated issues for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
@@ -504,7 +506,7 @@ jobs:
           date=$(date +'%Y-%m-%d')
           mv countries-last-update.csv issues/countries-last-update.csv
           git add issues/countries-last-update.csv
-          git commit -m "update issues last update files for $date" || echo "Nothing to update"
+          git commit -m "update last update issues file for $date" || echo "Nothing to update"
 
       - name: Push changes to FINDCov19TrackerData
         uses: ad-m/github-push-action@master
