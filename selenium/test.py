@@ -71,7 +71,7 @@ class TestDefaultSuite(unittest.TestCase):
         #self.driver.navigate().refresh()
     #self.driver.get("http://covidapp.moph-dw.org/")
     time.sleep(10)
-    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "root")))
+    # WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "root")))
     html = self.driver.page_source
     soup = bs(html, "lxml")
     full_tags = soup.find_all("h1")[0]
@@ -151,9 +151,7 @@ class TestDefaultSuite(unittest.TestCase):
     
   def test_austria(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://www.sozialministerium.at/Informationen-zum-Coronavirus/Neuartiges-Coronavirus-(2019-nCov).html")
-    time.sleep(2)
-    self.driver.switch_to.frame(0)
+    self.driver.get("https://info.gesundheitsministerium.gv.at/?re=infektionslage")
     time.sleep(2)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(7) > td:nth-child(11)").text
@@ -822,6 +820,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td").text
+    print("New Zealand")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
