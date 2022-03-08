@@ -1161,7 +1161,7 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://coronavirus.data.gov.uk/details/testing")
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "value-item-virus_tests_conducted-total-cumvirustestsbypublishdate-1_modal").text.split('\n')[0]
+    self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "value-item-virus_tests_reported-total-cumvirustestsbypublishdate-1_modal").text.split('\n')[0]
     print("United Kingdom")
     print(self.vars)
     self.driver.close()
