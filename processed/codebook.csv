@@ -2,24 +2,24 @@ col_type,variable,description,description_short
 other,unit,Unit,Unit
 other,name,Name,Name
 other,group,Group,Group
-other,pop_100k,Population in 100'000,Population
-other,new_cases_orig,Daily number of cases reported,Daily Cases
-other,new_deaths_orig,Daily number of deaths reported,Daily Deaths
-other,new_tests_orig,Daily number of tests reported,Daily Tests
-other,cum_tests_orig,Cumulative number of tests reported,Cumulative Tests
-other,cap_cum_cases,Cumulative number of cases per capita,Cumulative Cases/100k
-default,cap_new_cases,Daily number of cases per capita (7 day rolling average),Cases/100k
-other,cap_cum_deaths,Cumulative number of deaths per capita,Cumulative Deaths/100k
-default,cap_new_deaths,Daily number of cases per capita (7 day rolling average),Deaths/100k
-other,cap_cum_tests,Cumulative number of tests per capita (smoothed),Cumulative Tests/100k
-default,cap_new_tests,Daily number of tests per capita (7 day rolling average smoothed),Tests/100k
+other,pop_100k,Population in 100'000,Population in 100k people
+other,new_cases_orig,Daily number of cases reported from source,Daily reported cases
+other,new_deaths_orig,Daily number of deaths reported from source,Daily reported deaths
+other,new_tests_orig,Daily number of tests reported from source,Daily reported tests
+other,cum_tests_orig,Cumulative number of tests reported from source,Cumulative reported tests
+other,cap_cum_cases,Cumulative number of cases per 1000 people,Cumulative Cases/1000 people
+default,cap_new_cases,Daily number of cases per 1000 people (7 day rolling average),Cases/1000 people
+other,cap_cum_deaths,Cumulative number of deaths per 1000 people,Cumulative Deaths/1000 people
+default,cap_new_deaths,Daily number of deaths per 1000 people (7 day rolling average),Deaths/1000 people
+other,cap_cum_tests,Cumulative number of tests per 1000 people (smoothed),Cumulative Tests/1000 people
+default,cap_new_tests,Daily number of tests per 1000 people (7 day rolling average smoothed),Tests/1000 people
 other,all_cum_cases,Cumulative number of cases,Cumulative Cases
 other,all_new_cases,Daily number of cases (7 day rolling average),Daily Cases
 other,all_cum_deaths,Cumulative number of deaths,Cumulative Deaths
-other,all_new_deaths,Daily number of cases (7 day rolling average),Daily Deaths
+other,all_new_deaths,Daily number of deaths (7 day rolling average),Daily Deaths
 other,all_cum_tests,Cumulative number of tests (smoothed),Cumulative Tests
 other,all_new_tests,Daily number of tests (7 day rolling average smoothed),Daily Tests
-default,pos,Positivity rate (7 day rolling average),Positivity rate (%)
+default,pos,Positivity rate,Positivity rate (%)
 other,continent,Continent,Continent
 other,who_region,WHO Region,WHO Region
 other,income,Income Group,Income Group
