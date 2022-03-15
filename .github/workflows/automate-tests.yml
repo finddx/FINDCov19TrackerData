@@ -333,6 +333,7 @@ jobs:
           sudo apt-get install -y libpoppler-cpp-dev
           sudo R CMD javareconf
           Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
+          Rscript -e "remotes::install_github('dsbbfinddx/shinyfind')"
           Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
 
       - name: "[Stage] Create shiny data"
@@ -412,7 +413,6 @@ jobs:
           sudo R CMD javareconf
           Rscript -e "remotes::install_github('ropensci/tic')" -e "tic::prepare_all_stages()" -e "tic::before_install()" -e "tic::install()"
           Rscript -e "remotes::install_github('dsbbfinddx/FINDCov19Tracker')"
-
       - name: "[Stage] Combine Selenium and R Test Data"
         run: |
           # collects R-based and Selenium-based countries and writes `automated-tests.csv` and countries which errored (= which returned NA)
