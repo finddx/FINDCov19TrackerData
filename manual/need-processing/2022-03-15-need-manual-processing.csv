@@ -1,12 +1,10 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2022-03-15,manually,pdf,http://covid.moph-dw.org/#/
 Andorra,NA,0,NA,NA,2022-03-15,manually,automated,https://www.govern.ad/covid19/en/
-Bangladesh,NA,0,NA,NA,2022-03-15,manually,automated,https://corona.gov.bd/
+Bangladesh,14049,-13651404,14049,-13651404,2022-03-15,manually,automated,https://corona.gov.bd/
 Bhutan,NA,0,NA,NA,2022-03-15,manually,image,https://www.facebook.com/MoHBhutan/
 Bolivia,NA,0,NA,NA,2022-03-15,manually,image,https://www.minsalud.gob.bo/
-Brazil,NA,0,NA,NA,2022-03-15,manually,automated,http://www.giscard.com.br/coronavirus/indice-testes-realizados-covid19-brasil.php
 Brunei,NA,0,NA,NA,2022-03-15,manually,automated,http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx
-Bulgaria,NA,0,NA,NA,2022-03-15,manually,automated,https://coronavirus.bg/
 Cambodia,NA,0,NA,NA,2022-03-15,manually,automated,http://cdcmoh.gov.kh/
 Chile,NA,0,NA,NA,2022-03-15,manually,automated,https://www.gob.cl/coronavirus/cifrasoficiales/
 China,NA,0,NA,NA,2022-03-15,manually,without_information,NA
@@ -54,6 +52,7 @@ NewCaledonia,NA,0,NA,NA,2022-03-15,manually,automated,https://covid19.nc/point-d
 Norway,NA,0,NA,NA,2022-03-15,manually,automated,https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/
 OccupiedPalestinianterritory,NA,0,NA,NA,2022-03-15,manually,automated,https://corona.ps/
 Oman,NA,0,NA,NA,2022-03-15,manually,twitter,https://twitter.com/OmanVSCovid19
+Pakistan,NA,0,NA,NA,2022-03-15,manually,automated,http://covid.gov.pk/
 Panama,NA,0,NA,NA,2022-03-15,manually,twitter,https://twitter.com/MINSAPma/status/1325931093804113925/photo/1
 PapuaNewGuinea,NA,0,NA,NA,2022-03-15,manually,problems_webpage,https://covid19.info.gov.pg/
 Paraguay,NA,0,NA,NA,2022-03-15,manually,special_dashboard,https://www.mspbs.gov.py/reporte-covid19.html
@@ -73,6 +72,7 @@ Slovenia,NA,0,NA,NA,2022-03-15,manually,automated,https://www.nijz.si/sl/dnevno-
 Spain,NA,0,NA,NA,2022-03-15,manually,automated,https://www.mscbs.gob.es/gabinete/notasPrensa.do
 SriLanka,NA,0,NA,NA,2022-03-15,manually,automated,https://www.hpb.health.gov.lk/en
 Sweden,NA,0,NA,NA,2022-03-15,manually,without_information,https://experience.arcgis.com/experience/09f821667ce64bf7be6f9f87457ed9aa
+Taiwan,NA,0,NA,NA,2022-03-15,manually,automated,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan
 Tajikistan,NA,0,NA,NA,2022-03-15,manually,without_information,https://eurasianet.org/dashboard-coronavirus-in-eurasia
 Thailand,NA,0,NA,NA,2022-03-15,manually,automated,https://ddc.moph.go.th/viralpneumonia/eng/index.php
 TheBahamas,NA,0,NA,NA,2022-03-15,manually,facebook,https://www.bahamas.gov.bs/wps/portal/public/gov/government/news/All%20News%20Press%20Release
