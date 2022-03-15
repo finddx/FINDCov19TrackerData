@@ -392,11 +392,11 @@ class TestDefaultSuite(unittest.TestCase):
   def test_chile(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.gob.cl/coronavirus/cifrasoficiales/")
-    time.sleep(60)
+    time.sleep(90)
     self.driver.switch_to.frame(0)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[85]/div/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[104]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, '//*[@id="106fdff4-b841-4389-a4bf-7541e6143abd"]/div[1]/div/div[105]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="ContentItemDiv-09147504-bdc8-4ee7-a60a-2c2fdfb1ca03"]/div/div/div/div/div/div/div/div/div/div/h2/div/span/span').text
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, '//*[@id="ContentItemDiv-0128ff3f-b9b5-44cd-95da-87105652478f"]/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, '//*[@id="ContentItemDiv-788ad992-9109-4254-b92a-9650893783ba"]/div/div/div/div/div/div/div/div/div/div/div/div/span/span').text
     print("Chile")
     print(self.vars)
     self.driver.close()
