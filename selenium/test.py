@@ -270,8 +270,10 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(30)
     self.driver.execute_script("window.scrollTo(0,450)")
     time.sleep(30)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".col-lg-4:nth-child(1) > .statistics-value")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-lg-4:nth-child(1) > .statistics-value").text
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "div:nth-child(1) > p.statistics-value")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "div:nth-child(1) > p.statistics-value").text
+    print("Bulgaria")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
