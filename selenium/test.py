@@ -374,7 +374,7 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] = d
     last_value = sheet[str("AZ")+str(last_update)].value
     i = 0
-    while last_value == 'nd' and i <= 5:
+    while last_value == 'nd' and i <= 10:
       last_value = sheet[str("AZ")+str(last_update - i)].value
       i += 1
     self.vars["tests_cumulative"] = last_value
