@@ -81,23 +81,24 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_andorra(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://www.govern.ad/covid19/en/")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary")))
-    pcr_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary").text
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary")))
-    tma_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary").text
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary")))
-    antibody_tests = self.driver.find_element(By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary").text
-    self.vars["tests_cumulative"] = int(pcr_tests.replace(',','').split("\n")[0]) + int(tma_tests.replace(',','').split("\n")[0]) #+ int(antibody_tests.replace(',','').split("\n")[0])
-    print("Andorra")
-    print(pcr_tests)
-    print(tma_tests)
-    print(antibody_tests)
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  # To-do: It needs a new source
+  # def test_andorra(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://www.govern.ad/covid19/en/")
+  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary")))
+  #   pcr_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .grid > .shadow:nth-child(1) .text-primary").text
+  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary")))
+  #   tma_tests = self.driver.find_element(By.CSS_SELECTOR, "#capacidtat .shadow:nth-child(2) .text-primary").text
+  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary")))
+  #   antibody_tests = self.driver.find_element(By.CSS_SELECTOR, ".mt-8:nth-child(3) > .grid > .shadow:nth-child(3) .text-primary").text
+  #   self.vars["tests_cumulative"] = int(pcr_tests.replace(',','').split("\n")[0]) + int(tma_tests.replace(',','').split("\n")[0]) #+ int(antibody_tests.replace(',','').split("\n")[0])
+  #   print("Andorra")
+  #   print(pcr_tests)
+  #   print(tma_tests)
+  #   print(antibody_tests)
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_antiguaandBarbuda(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -182,11 +183,14 @@ class TestDefaultSuite(unittest.TestCase):
     
   def test_bangladesh(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+    self.driver.set_window_size(1200, 600)
     self.driver.get("https://corona.gov.bd/")
-    self.driver.set_window_size(1433, 813)
-    self.driver.execute_script("window.scrollTo(0,2192)")
     time.sleep(10)
-    ActionChains(self.driver).move_by_offset(xoffset=187, yoffset=473).click().perform()
+    self.driver.execute_script("window.scrollTo(0,2392)")
+    time.sleep(10)
+    self.driver.find_element_by_xpath("/html/body/div[1]/div/section[2]/div/div[2]/div/div/div[2]/div[4]/div/div/button").click()
+    #ActionChains(self.driver).move_by_offset(xoffset=187, yoffset=473).click().perform()
+    time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-6:nth-child(1) h4:nth-child(2)").text
     print("Bangladesh")
     print(self.vars)
@@ -299,20 +303,21 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
     
-  def test_brunei(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//tbody")))
-    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'new case COVID-19\')]").get_attribute('href')
-    self.driver.get(url)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(14) > tbody > tr:nth-child(2) > td:nth-child(2) > strong")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(14) > tbody > tr:nth-child(2) > td:nth-child(2) > strong").text
-    print("Brunei")
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  # To-do: It needs a new source
+  # def test_brunei(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.maximize_window()
+  #   self.driver.set_page_load_timeout(60)
+  #   self.driver.get("http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx")
+  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//tbody")))
+  #   url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'new case COVID-19\')]").get_attribute('href')
+  #   self.driver.get(url)
+  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(14) > tbody > tr:nth-child(2) > td:nth-child(2) > strong")))
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#WebPartWPQ13 > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(2) > td > div > table:nth-child(14) > tbody > tr:nth-child(2) > td:nth-child(2) > strong").text
+  #   print("Brunei")
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_cambodia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
