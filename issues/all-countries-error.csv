@@ -2,9 +2,8 @@ country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_cor
 Afghanistan,2022-03-15,NA,NA,NA,NA,selenium
 Afghanistan,2022-03-16,NA,NA,NA,NA,selenium
 Andorra,2022-03-15,NA,NA,NA,NA,selenium
-Andorra,2022-03-16,NA,NA,NA,NA,selenium
-Bangladesh,2022-03-15,14049,-13651404,14049,-13651404,selenium
-Bangladesh,2022-03-16,NA,NA,NA,NA,selenium
+Andorra,2022-03-16,NA,NA,NA,NA,NA
+Bangladesh,2022-03-15,13651404,-14049,13651404,-14049,selenium
 Bhutan,2022-03-15,NA,NA,NA,NA,NA
 Bhutan,2022-03-16,NA,NA,NA,NA,NA
 Bolivia,2022-03-15,NA,NA,NA,NA,NA
@@ -12,7 +11,7 @@ Bolivia,2022-03-16,NA,NA,NA,NA,NA
 Brazil,2022-03-15,NA,NA,NA,NA,selenium
 Brazil,2022-03-16,NA,NA,NA,NA,selenium
 Brunei,2022-03-15,NA,NA,NA,NA,selenium
-Brunei,2022-03-16,NA,NA,NA,NA,selenium
+Brunei,2022-03-16,NA,NA,NA,NA,NA
 China,2022-03-15,NA,NA,NA,NA,NA
 China,2022-03-16,NA,NA,NA,NA,NA
 CostaRica,2022-03-15,NA,NA,NA,NA,selenium
@@ -155,7 +154,6 @@ Turkey,2022-03-16,NA,NA,NA,NA,selenium
 Ukraine,2022-03-15,NA,NA,NA,NA,selenium
 Ukraine,2022-03-16,NA,NA,NA,NA,selenium
 UnitedArabEmirates,2022-03-12,108927504,-32901498,108927504,-32901498,manually
-UnitedArabEmirates,2022-03-16,NA,NA,NA,NA,selenium
 Uruguay,2022-03-15,NA,NA,NA,NA,selenium
 Uruguay,2022-03-16,NA,NA,NA,NA,selenium
 US,2022-03-08,863729088,1240623,863729088,-17352750,manually
