@@ -69,13 +69,9 @@ class TestDefaultSuite(unittest.TestCase):
         time.sleep(2)  # wait 1/2 second then retry
         self.driver.refresh()
         #self.driver.navigate().refresh()
-    #self.driver.get("http://covidapp.moph-dw.org/")
-    time.sleep(10)
-    # WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.ID, "root")))
-    html = self.driver.page_source
-    soup = bs(html, "lxml")
-    full_tags = soup.find_all("h1")[0]
-    self.vars["tests_cumulative"] = full_tags.text
+    self.driver.implicitly_wait(40)
+    #driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    self.vars["tests_cumulative"] = self.driver.find_element_by_xpath('//*[@id="root"]/div/div/div[3]/div[1]/div[1]/div/div[2]/h1/span').text
     print("Afghanistan")
     print(self.vars)
     self.driver.close()
