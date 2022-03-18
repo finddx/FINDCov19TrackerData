@@ -69,8 +69,11 @@ class TestDefaultSuite(unittest.TestCase):
         time.sleep(2)  # wait 1/2 second then retry
         self.driver.refresh()
         #self.driver.navigate().refresh()
+    
+    time.sleep(10)
+    self.driver.set_page_load_timeout(40)
     self.driver.implicitly_wait(40)
-    #driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, '//*[@id="root"]/div/div/div[3]/div[1]/div[1]/div/div[2]/h1/span')))
     self.vars["tests_cumulative"] = self.driver.find_element_by_xpath('//*[@id="root"]/div/div/div[3]/div[1]/div[1]/div/div[2]/h1/span').text
     print("Afghanistan")
     print(self.vars)
@@ -319,8 +322,8 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://cdcmoh.gov.kh")
     self.driver.set_window_size(1542, 830)
-    self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div.items-row.cols-1.row-1.row-fluid.clearfix > div > div > div:nth-child(6) > span:nth-child(1) > strong:nth-child(1)").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div.items-row.cols-1.row-1.row-fluid.clearfix > div > div > div:nth-child(6) > span:nth-child(1) > strong:nth-child(1)").text
+    self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div.items-row.cols-1.row-2.row-fluid.clearfix > div > div > div:nth-child(6) > span:nth-child(1) > strong:nth-child(1)").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div.items-row.cols-1.row-2.row-fluid.clearfix > div > div > div:nth-child(6) > span:nth-child(1) > strong:nth-child(1)").text
     #self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split(' ')[1]
     print("Cambodia")
     print(self.vars)
@@ -442,12 +445,11 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
     time.sleep(10)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(12) > table > tbody > tr:nth-child(2) > td:nth-child(2) > span").text.replace(',','')
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(12) > table > tbody > tr:nth-child(8) > td:nth-child(2) > span").text.replace(',','')
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(15) > table > tbody > tr:nth-child(2) > td:nth-child(2) > span").text.replace(',','')
     html = self.driver.page_source
     soup = bs(html, "lxml")
     full_tags = soup.find_all("tbody")[1]
-    self.vars["rapid_test_cum"] =  full_tags.find_all("td")[15].text.replace(',','')
+    self.vars["rapid_test_cum"] =  full_tags.find_all("td")[13].text.replace(',','')
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"].strip()) + int(self.vars["rapid_test_cum"])
     print("Denmark")
     print(self.vars)
@@ -502,10 +504,12 @@ class TestDefaultSuite(unittest.TestCase):
   def test_fiji(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://www.health.gov.fj/")
+    time.sleep(10)
     url=self.driver.find_element(By.XPATH, "(//a[contains(text(),\'COVID-19 Update\')])[3]").get_attribute('href')
     self.driver.get(url)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'samples have been tested since this outbreak started\')]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('with')[1].split('tested')[0]
+    time.sleep(10)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'cumulative tests since 2020 are\')]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('cumulative tests since 2020 are')[1].split('tests')[0]
     print("Fiji")
     print(self.vars)
     self.driver.close()
