@@ -553,15 +553,16 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_greenland(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://e.infogram.com/a7e83088-1850-42bb-993a-2bc35f63d26b?src=embed")
-    WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id='c05d8f5b-758f-4012-ab16-20495d78e87d']/div[1]/div/div[28]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id='c05d8f5b-758f-4012-ab16-20495d78e87d']/div[1]/div/div[28]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span").text
-    print("Greenland")
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  # To-do: needs a new source
+  # def test_greenland(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://e.infogram.com/a7e83088-1850-42bb-993a-2bc35f63d26b?src=embed")
+  #   WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//*[@id='c05d8f5b-758f-4012-ab16-20495d78e87d']/div[1]/div/div[28]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span")))
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id='c05d8f5b-758f-4012-ab16-20495d78e87d']/div[1]/div/div[28]/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span").text
+  #   print("Greenland")
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_guatemala(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -592,9 +593,9 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.execute_script("window.scrollTo(0,1600)")
     self.driver.switch_to.frame(0)
     time.sleep(10)
-    value1 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(59) span").text
-    value2 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(63) span").text
-    value3 = self.driver.find_element(By.CSS_SELECTOR, ".InfographicEditor-Contents-Item:nth-child(64) span").text
+    value1 = self.driver.find_element(By.XPATH, "//div[@id=\'ContentItemDiv-e755bae2-024c-47c1-b566-b6fbd2dfde89\']/div/div/div/div/div[2]/div/span").text
+    value2 = self.driver.find_element(By.XPATH, "//div[@id=\'ContentItemDiv-54a7eb40-cdff-4781-8a97-12a87eccef27\']/div/div/div/div/div[2]/div/span").text
+    value3 = self.driver.find_element(By.XPATH, "//div[@id=\'ContentItemDiv-1ace1b78-dc0a-4475-a2bf-f33548375dbb\']/div/div/div/div/div[2]/div/span").text
     print(value1)
     print(value2)
     print(value3)
@@ -632,8 +633,10 @@ class TestDefaultSuite(unittest.TestCase):
     url = self.driver.find_element(By.XPATH, "//div[3]//div[2]//div[1]//a").get_attribute('href')
     self.driver.get(url)
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h1")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The spokeswoman noted that\')]").text
-    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('The spokeswoman noted that ')[1].split('COVID')[0]
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'noted that\')]").text
+    self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('noted that ')[1].split('COVID')[0]
+    print("Iran")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
     
@@ -729,9 +732,10 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_latvia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://spkc.maps.arcgis.com/apps/opsdashboard/index.html#/4469c1fb01ed43cea6f20743ee7d5939")
-    time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div > div > div > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(2) > margin-container > full-container > div > div > p > span > strong").text
+    url='https://data.gov.lv/dati/dataset/f01ada0a-2e77-4a82-8ba2-09cf0cf90db3/resource/d499d2f0-b1ea-4ba2-9600-2c701b03bd4a/download/covid_19_izmeklejumi_rezultati.csv'
+    df = pd.read_csv(url,sep=";", encoding='ISO8859_4') # use sep="," for coma separation. 
+    self.vars["tests_cumulative"] = int(df['TestuSkaits'].sum())
+    print("latvia")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
