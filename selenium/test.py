@@ -517,11 +517,12 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_finland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://thl.fi/fi/web/infektiotaudit-ja-rokotukset/ajankohtaista/ajankohtaista-koronaviruksesta-covid-19/tilannekatsaus-koronaviruksesta")
+    self.driver.get("https://sampo.thl.fi/pivot/prod/en/epirapo/covid19case/summary_tshcdweekly")
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#portlet_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_btcH1nKJDcrm > div > div.portlet-content-container > div > div.clearfix.journal-content-article > ul:nth-child(7) > li:nth-child(2) > strong").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "/html/body/div[2]/div[1]/div[2]/div[1]/div/div/div/div/div[2]/table/tbody/tr[158]/td[2]/span").text
+    print("Finland")
+    print(self.vars)
     self.driver.close()
-    self.driver.quit()
 
   def test_france(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
