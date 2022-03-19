@@ -343,7 +343,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_colombia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://infogram.com/panorama-general-1h7z2lgn3l9l4ow?live")
-    time.sleep(5)
+    time.sleep(10)
     html = self.driver.page_source
     soup = bs(html, "lxml")
     full_tags = soup.find_all("tbody")
@@ -710,9 +710,9 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_kosovo(self):
-    self.driver.get("https://datastudio.google.com/embed/u/0/reporting/2e546d77-8f7b-4c35-8502-38533aa0e9e8/page/MT0qB?fbclid=IwAR3bGrIV4hcD6Qe0CXv_f3ukuBKuNLkAacl4yPohGOvD5U_JjVERrnpqwes")
+    self.driver.get("https://datastudio.google.com/embed/u/0/reporting/2e546d77-8f7b-4c35-8502-38533aa0e9e8/page/tI3oB?fbclid=IwAR3bGrIV4hcD6Qe0CXv_f3ukuBKuNLkAacl4yPohGOvD5U_JjVERrnpqwes")
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//*[@id='body']/div/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/lego-report/lego-canvas-container/div/file-drop-zone/span/content-section/div[35]/canvas-component/div/div/div[1]/div/div/kpimetric/div/div[2]").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id='body']/div/div/div/div/div/report-wrapper/div/div/ng2-canvas-container/div/div[33]/ng2-canvas-component/div/div/div/div/kpimetric-wrapper/div/ng2-kpimetric/div").text
     print("Kosovo")
     print(self.vars)
     self.driver.close()
@@ -755,8 +755,9 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://e.infogram.com/57e5b447-c2ca-40da-aedb-cbf97df68a8e?parent_url=https%3A%2F%2Fosp.stat.gov.lt%2Fpraejusios-paros-covid-19-statistika&src=embed#async_embed")
     time.sleep(10)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.ipakMe > div > div:nth-child(26) > div > div > div > div > div > table > tbody > tr:nth-child(7) > td:nth-child(1) > span").text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ecb6c8f2-75e1-4a0f-aae4-87ebb7d0958b > div.ContentBlock__ContentWrapper-sizwox-2.ipakMe > div > div:nth-child(26) > div > div > div > div > div > table > tbody > tr:nth-child(8) > td:nth-child(1) > span").text
+                                                                            
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentItemDiv-235179db-0db6-4344-a972-e842d3921035 > div > div > div > div > div > table > tbody > tr:nth-child(7) > td:nth-child(1) > span").text
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentItemDiv-235179db-0db6-4344-a972-e842d3921035 > div > div > div > div > div > table > tbody > tr:nth-child(8) > td:nth-child(1) > span").text
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print("lithuania")
     print(self.vars)
@@ -820,13 +821,14 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_newCaledonia(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://gouv.nc/coronavirus")
-    #self.driver.find_element(By.CSS_SELECTOR, ".quatre > .big-chiffre").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#block-system-main > div > div > div > div.field.field-name-body > div.col-md-12.text-center.tableau_de_bord > div:nth-child(1) > div:nth-child(1) > div > div > div > p:nth-child(3)").text 
-    self.driver.close()
-    self.driver.quit()
+  # To-do: needs new source
+  # def test_newCaledonia(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://gouv.nc/coronavirus")
+  #   #self.driver.find_element(By.CSS_SELECTOR, ".quatre > .big-chiffre").click()
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#block-system-main > div > div > div > div.field.field-name-body > div.col-md-12.text-center.tableau_de_bord > div:nth-child(1) > div:nth-child(1) > div > div > div > p:nth-child(3)").text 
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_newZealand(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
