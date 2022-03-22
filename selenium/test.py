@@ -685,12 +685,16 @@ class TestDefaultSuite(unittest.TestCase):
   #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(25) > td:nth-child(3)").text
   #   self.driver.close()
 
-  # def test_japan(self):
-  #   self.driver.get("https://www.mhlw.go.jp/stf/covid-19/kokunainohasseijoukyou.html")
-  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]")))
-  #   self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'current_situation\']/table/tbody//th[contains(text(), \'国内事例\')]/following-sibling::td[1]").text
-  #   self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[0]
-  #   self.driver.close()
+  def test_japan(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+    url='https://www.mhlw.go.jp/content/pcr_tested_daily.csv'
+    df = pd.read_csv(url,sep=",") # use sep="," for coma separation. 
+    self.vars["tests_cumulative"] = int(df['PCR 検査実施人数(単日)'].sum())
+    print("Japan")
+    print(self.vars)
+    self.driver.close()
+    self.driver.quit()
+      
 
   def test_jordan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -886,13 +890,20 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_pakistan(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+    self.driver.set_window_size(1536, 825)
     self.driver.get("https://covid.gov.pk/")
     time.sleep(30)
-    self.driver.set_window_size(1536, 825)
-    time.sleep(10)
+    self.driver.set_page_load_timeout(40)
+    self.driver.implicitly_wait(40)
     self.driver.execute_script("window.scrollTo(0,300)")
+    time.sleep(40)
     self.driver.find_element(By.CSS_SELECTOR, "#covidEmergency > div > div > div.modal-footer > button").click()
+    self.driver.set_page_load_timeout(40)
+    self.driver.implicitly_wait(40)
+    time.sleep(40)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > div.nk-wrap > section:nth-child(4) > div.container.pb-50 > div.status > ul > li.active > div:nth-child(1) > span").text
+    print("Pakistan")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
     
@@ -1110,11 +1121,14 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_sriLanka(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
-    self.driver.get("https://www.hpb.health.gov.lk/en")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".total-count")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".total-count").text
+    url_tests = "https://hpb.health.gov.lk/api/get-current-statistical"
+    r_tests = requests.get(url_tests)
+    cont_tests = json.loads(r_tests.content)
+    self.vars["pcr_tests_cum"] = cont_tests['data']['total_pcr_testing_count']
+    self.vars["rapid_test_cum"] = cont_tests['data']['total_antigen_testing_count']
+    self.vars["tests_cumulative"] = self.vars["pcr_tests_cum"] + self.vars["rapid_test_cum"]
+    print("sriLanka")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
     
@@ -1140,43 +1154,44 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_thailand(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("http://nextcloud.dmsc.moph.go.th/index.php/s/wbioWZAQfManokc")
-    time.sleep(5)
-    n_files = self.driver.find_element(By.XPATH, "//*[@id=\'filestable\']/tfoot/tr/td[2]/span/span[3]").text.split(" ")[0]
-    # Calculating scrolls to access the last file
-    scrolls = round(int(n_files)/20)
-    for i in range(scrolls+1):
-        self.driver.execute_script("window.scrollTo(0,100000000)")
-        time.sleep(2)
-
-    html = self.driver.page_source
-    soup = bs(html, "lxml")
-    full_tags = soup.find_all("tbody", attrs={"id":"fileList"})
-    full_tags = soup.find_all("a", attrs={"class":"name"})
-    name_file =full_tags[67].text.replace("Actions","")
-
-    # download xlsx file
-    url_excel_file = "http://nextcloud.dmsc.moph.go.th/index.php/s/wbioWZAQfManokc/download?path=%2F&files="+name_file
-    resp = requests.get(url_excel_file)
-    # saving the xlsx file
-    output = open('test.xlsx', 'wb')
-    output.write(resp.content)
-    output.close()
-    # accessing the xlsx
-    workbook = load_workbook(filename="test.xlsx", data_only=True)
-    sheet = workbook["Data"]
-    last_update = sheet.max_row
-    date_last_update = sheet[str("A")+str(last_update-3)].value
-    d = date_last_update.strftime("%Y-%m-%d")
-    # self.vars["date"] = d
-    self.vars["tests_cumulative"] = sheet[str("C")+str(last_update)].value
-    print("Thailand")
-    print(d)
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  # Todo: needs new source
+  # def test_thailand(self):
+    # # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+    # self.driver.get("http://nextcloud.dmsc.moph.go.th/index.php/s/wbioWZAQfManokc")
+    # time.sleep(5)
+    # n_files = self.driver.find_element(By.XPATH, "//*[@id=\'filestable\']/tfoot/tr/td[2]/span/span[3]").text.split(" ")[0]
+    # # Calculating scrolls to access the last file
+    # scrolls = round(int(n_files)/20)
+    # for i in range(scrolls+1):
+    #     self.driver.execute_script("window.scrollTo(0,100000000)")
+    #     time.sleep(2)
+    #
+    # html = self.driver.page_source
+    # soup = bs(html, "lxml")
+    # full_tags = soup.find_all("tbody", attrs={"id":"fileList"})
+    # full_tags = soup.find_all("a", attrs={"class":"name"})
+    # name_file =full_tags[67].text.replace("Actions","")
+    # 
+    # # download xlsx file
+    # url_excel_file = "http://nextcloud.dmsc.moph.go.th/index.php/s/wbioWZAQfManokc/download?path=%2F&files="+name_file
+    # resp = requests.get(url_excel_file)
+    # # saving the xlsx file
+    # output = open('test.xlsx', 'wb')
+    # output.write(resp.content)
+    # output.close()
+    # # accessing the xlsx
+    # workbook = load_workbook(filename="test.xlsx", data_only=True)
+    # sheet = workbook["Data"]
+    # last_update = sheet.max_row
+    # date_last_update = sheet[str("A")+str(last_update-3)].value
+    # d = date_last_update.strftime("%Y-%m-%d")
+    # # self.vars["date"] = d
+    # self.vars["tests_cumulative"] = sheet[str("C")+str(last_update)].value
+    # print("Thailand")
+    # print(d)
+    # print(self.vars)
+    # self.driver.close()
+    # self.driver.quit()
 
   def test_turkey(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
