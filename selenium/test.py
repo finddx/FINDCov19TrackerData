@@ -294,8 +294,10 @@ class TestDefaultSuite(unittest.TestCase):
     #self.driver.find_element(By.ID, "card_filter_tests").click()
     #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#card_tests .fs-5 > .fs-5").text
     self.driver.get("http://www.giscard.com.br/coronavirus/indice-testes-realizados-covid19-brasil.php")
+    self.driver.set_page_load_timeout(40)
+    self.driver.implicitly_wait(40)
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.ID, "estado-descartados")))
-    time.sleep(15)
+    time.sleep(40)
     self.vars["tests_cumulative"] = self.driver.find_element(By.ID, "estado-descartados").text
     print("Brazil")
     print(self.vars)
@@ -343,7 +345,9 @@ class TestDefaultSuite(unittest.TestCase):
   def test_colombia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://infogram.com/panorama-general-1h7z2lgn3l9l4ow?live")
-    time.sleep(10)
+    self.driver.set_page_load_timeout(40)
+    self.driver.implicitly_wait(40)
+    time.sleep(40)
     html = self.driver.page_source
     soup = bs(html, "lxml")
     full_tags = soup.find_all("tbody")
@@ -445,12 +449,13 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
     time.sleep(10)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(15) > table > tbody > tr:nth-child(2) > td:nth-child(2) > span").text.replace(',','')
-    html = self.driver.page_source
-    soup = bs(html, "lxml")
-    full_tags = soup.find_all("tbody")[1]
-    self.vars["rapid_test_cum"] =  full_tags.find_all("td")[13].text.replace(',','')
-    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"].strip()) + int(self.vars["rapid_test_cum"])
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(8) > table > tbody > tr:nth-child(2) > td:nth-child(2) > span").text.replace(',','')
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(8) > table > tbody > tr:nth-child(7) > td:nth-child(2) > span").text.replace(',','')
+    #html = self.driver.page_source
+    #soup = bs(html, "lxml")
+    #full_tags = soup.find_all("tbody")[1]
+    #self.vars["rapid_test_cum"] =  full_tags.find_all("td")[1].text.replace(',','')
+    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"].strip()) + int(self.vars["rapid_test_cum"].strip())
     print("Denmark")
     print(self.vars)
     self.driver.close()
@@ -764,13 +769,16 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_malta(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://geosys-mt.maps.arcgis.com/apps/opsdashboard/index.html#/8f64954974744d6fb137a26e097d97d2")
-    time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember317 > svg > g.responsive-text-label").text 
-    self.driver.close()
-    self.driver.quit()
+  # To-do: needs new source
+  # def test_malta(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://geosys-mt.maps.arcgis.com/apps/opsdashboard/index.html#/8f64954974744d6fb137a26e097d97d2")
+  #   time.sleep(30)
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember317 > svg > g.responsive-text-label").text 
+  #   print("Malta")
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_mexico(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -806,7 +814,10 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://doph.maps.arcgis.com/apps/opsdashboard/index.html#/f8fb4ccc3d2d42c7ab0590dbb3fc26b8")
     time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember20").text.split('\n')[1]
+    self.vars["tests_cumulative"] = self.driver.find_element_by_css_selector("body > div.full-page-container > calcite-shell > div.dashboard-container.calcite-theme-light.flex.flex-fluid.flex-vertical.overflow-hidden > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(1) > margin-container > full-container > div > div.widget-body.flex-fluid.full-width.flex-vertical.justify-content-center.overflow-hidden > div > div > svg > g.responsive-text-label > text").text
+    #self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember20").text.split('\n')[1]
+    print("Myanmar")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
   
@@ -863,10 +874,13 @@ class TestDefaultSuite(unittest.TestCase):
   def test_occupiedPalestinianterritory(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
-    self.driver.set_page_load_timeout(30)
     self.driver.get("https://corona.ps/")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".roundbox:nth-child(3) > div:nth-child(2)")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".roundbox:nth-child(3) > div:nth-child(2)").text
+    self.driver.set_page_load_timeout(40)
+    self.driver.implicitly_wait(40)
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/div[5]/div/div[2]/div[2]/div[1]/div[2]")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "/html/body/div[5]/div/div[2]/div[2]/div[1]/div[2]").text
+    print("occupiedPalestinianterritory")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
@@ -886,17 +900,23 @@ class TestDefaultSuite(unittest.TestCase):
   def test_papuaNewGuinea(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.info.gov.pg/")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//article[@id=\'post-166\']/div/div/div/section[4]/div[2]/div/div[2]/div/div/section/div/div/div[2]/div/div/div/div/div/table/tbody/tr[11]/td[2]/p/span/span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div/div/div/div/section[2]/div/div/div[1]/div/div/section[7]/div/div/div[2]/div/div/div/div/div/h2/span/strong").text
+    print("Papua New Guinea")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiMTAwMTNhYmMtNDAzYi00MWUwLTlhOGEtZGZkZmVmYTE1ZDRiIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     self.driver.set_window_size(1333, 813)
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiMTAwMTNhYmMtNDAzYi00MWUwLTlhOGEtZGZkZmVmYTE1ZDRiIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
+    self.driver.set_page_load_timeout(40)
+    self.driver.implicitly_wait(40)
     self.driver.execute_script("window.scrollTo(0,0)")
-    time.sleep(5)
+    time.sleep(10)
     self.driver.switch_to.frame(1)
+    self.driver.set_page_load_timeout(40)
+    self.driver.implicitly_wait(40)
     html = self.driver.page_source
     soup = bs(html, "lxml")
     full_tags = soup.find_all(attrs={"class":"dataLabel"})
@@ -953,9 +973,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://stirioficiale.ro/informatii")
     url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'BULETIN DE PRESĂ\')]").get_attribute('href')
     self.driver.get(url)
-    all_tests = self.driver.find_element(By.XPATH, "//p[contains(text(), \"Până la această dată, la nivel național, au fost prelucrate\")]").text
-    self.vars["pcr_tests_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR')[0].replace(".","").replace(" ","").replace("de","")
-    self.vars["rapid_test_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR și')[1].split('teste rapid')[0].replace(".","").replace(" ","").replace("de","")
+    self.driver.set_page_load_timeout(10)
+    self.driver.implicitly_wait(10)
+    all_tests = self.driver.find_element(By.XPATH, "//p[contains(text(), \"Până la această dată, la nivel național, au fost prelucrate\")]").text
+    self.vars["pcr_tests_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR')[0].replace(".","").replace(" ","")
+    self.vars["rapid_test_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR și')[1].split('teste rapid')[0].replace(".","").replace(" ","")
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print("Romania")
     print(self.vars)
@@ -972,9 +994,12 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_saintKittsandNevis(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://covid19.gov.kn/stats2.php")
+    self.driver.get("https://covid19.gov.kn")
+    time.sleep(5)
+    self.driver.switch_to.frame(0)
     time.sleep(5)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(4) > td:nth-child(2)").text
+    print("saintKittsandNevis")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
@@ -994,12 +1019,14 @@ class TestDefaultSuite(unittest.TestCase):
   def test_sanMarino(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://www.iss.sm/on-line/home/artCataggiornamenti-coronavirus.49004093.1.20.1.html")
-    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'Epidemia COVID-19\')]").get_attribute('href')
+    #<a href="/on-line/home/aggiornamenti-coronavirus/articolo49015867.html" class="titolini" title="leggi il dettaglio dell'articolo">Aggiornamento settimanale epidemia Covid-19 e andamento Campagna Vaccinale - 21 marzo 2022</a>
+    time.sleep(5)
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),'epidemia Covid-19 e andamento')]").get_attribute('href')
     self.driver.get(url)
-    try:
-      self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'Tamponi eseguiti\')]").text
-    except NoSuchElementException:
-      self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//strong[contains(.,\'tamponi totali eseguiti\')]").text
+    time.sleep(5)
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(text(),'tamponi totali eseguiti')]").text.split(", di cui")[0].split("sono")[1]
+    print("sanMarino")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
@@ -1035,24 +1062,32 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_slovakia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://korona.gov.sk/")
+    self.driver.get("https://korona.gov.sk/koronavirus-na-slovensku-v-cislach/")
+    self.driver.set_page_load_timeout(40)
+    self.driver.implicitly_wait(40)
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#block_603780b691b98 > div > p")))
     pcr_test = self.driver.find_element(By.CSS_SELECTOR, "#block_603780b691b98 > div > p").text
-    self.vars["pcr_tests_cum"] = pcr_test.split(":")[1].replace(" ","")
+    self.vars["pcr_tests_cum"] = pcr_test.split("Celkovo:")[1].replace(" ","")
     rapid_test = self.driver.find_element(By.CSS_SELECTOR, "#block_60378ba2c4f83 > div > p").text
-    self.vars["rapid_test_cum"] = rapid_test.split(":")[1].replace(" ","")
+    self.vars["rapid_test_cum"] = rapid_test.split("Celkovo:")[1].replace(" ","")
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
+    print("slovakia")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
 
   def test_slovenia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://www.nijz.si/sl/dnevno-spremljanje-okuzb-s-sars-cov-2-covid-19")
-    time.sleep(5)
-    all_test = self.driver.find_element(By.XPATH, "//tbody").text
-    self.vars["pcr_tests_cum"] = all_test.split('testiranih oseb s PCR')[0].split('\n')[-2].replace(".","")
-    self.vars["rapid_test_cum"] = all_test.split('testiranih oseb s HAGT')[0].split('\n')[-2].replace(".","")
+    self.driver.set_window_size(1333, 813)
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiMDc3MDk4MmQtOGE4NS00YTRkLTgyYjktNWQzMjk5ODNlNjVhIiwidCI6ImFkMjQ1ZGFlLTQ0YTAtNGQ5NC04OTY3LTVjNjk5MGFmYTQ2MyIsImMiOjl9&pageName=ReportSection24198f7e6d06db643832")
+    time.sleep(10)
+    html = self.driver.page_source
+    soup = bs(html, "lxml")
+    full_tags = soup.find_all(attrs={"id":"pbiAppPlaceHolder"})
+    pcr_tests = full_tags[0].text.split("Število testiranj s PCR [1]")[1].split("Press Enter")[0].strip()[0:9]
+    rapid_tests = full_tags[0].text.split("testiranj s HAGT [2]")[1].split("Press Enter")[0].strip()[0:10]
+    self.vars["pcr_tests_cum"] = pcr_tests.replace(",","")
+    self.vars["rapid_test_cum"] = rapid_tests.replace(",","")
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print(self.vars)
     self.driver.close()
