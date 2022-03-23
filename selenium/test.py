@@ -818,7 +818,7 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://doph.maps.arcgis.com/apps/opsdashboard/index.html#/f8fb4ccc3d2d42c7ab0590dbb3fc26b8")
     time.sleep(30)
-    self.vars["tests_cumulative"] = self.driver.find_element_by_css_selector("body > div.full-page-container > calcite-shell > div.dashboard-container.calcite-theme-light.flex.flex-fluid.flex-vertical.overflow-hidden > div.flex-fluid.flex-horizontal.position-relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(1) > margin-container > full-container > div > div.widget-body.flex-fluid.full-width.flex-vertical.justify-content-center.overflow-hidden > div > div > svg > g.responsive-text-label > text").text
+    self.vars["tests_cumulative"] = self.driver.find_element_by_css_selector("body > div.full-page-container.bg-background > calcite-shell > div.dashboard-container.shadow-2.calcite-theme-light.flex.flex-auto.flex-col.overflow-hidden > div.flex-auto.flex.relative.overflow-hidden > div > div > div > margin-container > full-container > div:nth-child(1) > margin-container > full-container > div > div.widget-body.flex-auto.w-full.flex.flex-col.justify-center.overflow-hidden > div > div > svg > g.responsive-text-label > text").text
     #self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember20").text.split('\n')[1]
     print("Myanmar")
     print(self.vars)
@@ -1196,20 +1196,24 @@ class TestDefaultSuite(unittest.TestCase):
   def test_turkey(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19.saglik.gov.tr/")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".toplam-test-sayisi")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".toplam-test-sayisi").text
-    self.driver.close()
-    self.driver.quit()
-
-  def test_ukraine(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://covid19.gov.ua/en/")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div").text
-    print("Ukraine")
+    time.sleep(10)
+    WebDriverWait(self.driver, 40).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#post-data-harita > div > div.row > div.col-xl-3.col-lg-12.col-md-12 > div > div:nth-child(4) > div.turkiye_ortalamasi_content > h5")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#post-data-harita > div > div.row > div.col-xl-3.col-lg-12.col-md-12 > div > div:nth-child(4) > div.turkiye_ortalamasi_content > h5").text
+    print("turkey")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
+
+  # to-do: needs new source
+  # def test_ukraine(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://covid19.gov.ua/en/")
+  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div")))
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div").text
+  #   print("Ukraine")
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_unitedArabEmirates(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -1239,6 +1243,8 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(30)
     self.vars["tests_cumulative"] = self.driver.find_element_by_id("ember10").text
     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split('\n')[1]
+    print("Uruguay")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
     
