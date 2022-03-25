@@ -1154,44 +1154,18 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  # Todo: needs new source
-  # def test_thailand(self):
-    # # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    # self.driver.get("http://nextcloud.dmsc.moph.go.th/index.php/s/wbioWZAQfManokc")
-    # time.sleep(5)
-    # n_files = self.driver.find_element(By.XPATH, "//*[@id=\'filestable\']/tfoot/tr/td[2]/span/span[3]").text.split(" ")[0]
-    # # Calculating scrolls to access the last file
-    # scrolls = round(int(n_files)/20)
-    # for i in range(scrolls+1):
-    #     self.driver.execute_script("window.scrollTo(0,100000000)")
-    #     time.sleep(2)
-    #
-    # html = self.driver.page_source
-    # soup = bs(html, "lxml")
-    # full_tags = soup.find_all("tbody", attrs={"id":"fileList"})
-    # full_tags = soup.find_all("a", attrs={"class":"name"})
-    # name_file =full_tags[67].text.replace("Actions","")
-    # 
-    # # download xlsx file
-    # url_excel_file = "http://nextcloud.dmsc.moph.go.th/index.php/s/wbioWZAQfManokc/download?path=%2F&files="+name_file
-    # resp = requests.get(url_excel_file)
-    # # saving the xlsx file
-    # output = open('test.xlsx', 'wb')
-    # output.write(resp.content)
-    # output.close()
-    # # accessing the xlsx
-    # workbook = load_workbook(filename="test.xlsx", data_only=True)
-    # sheet = workbook["Data"]
-    # last_update = sheet.max_row
-    # date_last_update = sheet[str("A")+str(last_update-3)].value
-    # d = date_last_update.strftime("%Y-%m-%d")
-    # # self.vars["date"] = d
-    # self.vars["tests_cumulative"] = sheet[str("C")+str(last_update)].value
-    # print("Thailand")
-    # print(d)
-    # print(self.vars)
-    # self.driver.close()
-    # self.driver.quit()
+  def test_thailand(self):
+    self.driver.get("https://data.go.th/en/dataset/covid-19-testing-data")
+    time.sleep(5)
+    url_csv_file = self.driver.find_element(By.XPATH, "//a[contains(@href, \'thailand_covid-19_testing_data')]").get_attribute('href')    # saving the xlsx file
+    # read the csv
+    df = pd.read_csv(url_csv_file, sep=",")
+    values_list = ['Cannot specify date']
+    last_value = int(df[~df['Date'].isin(values_list)]['Total Testing'].sum())
+    self.vars["tests_cumulative"] = last_value
+    print("Thailand")
+    print(self.vars)
+    self.driver.quit()
 
   def test_turkey(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
