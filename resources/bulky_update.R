@@ -16,7 +16,7 @@ update_selenium_with_number <- function(f_date,#"2021-09-09"
   window_update <- seq(first_date, as.Date(e_date), by = "days")
 
   selenium_sele<- sprintf(
-    "https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/automated/selenium/%s-tests-selenium.csv", # nolint
+    "https://raw.githubusercontent.com/finddx/FINDCov19TrackerData/master/automated/selenium/%s-tests-selenium.csv", # nolint
     window_update
   )
   merged_selenium_tests <- rio::import_list(selenium_sele, rbind = TRUE) %>%
@@ -52,7 +52,7 @@ delete_country_manual_f <- function(f_date,#"2021-09-09"
 
 
   manual_sele<- sprintf(
-    "https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/manual/processed/%s-processed-manually.csv", # nolint
+    "https://raw.githubusercontent.com/finddx/FINDCov19TrackerData/master/manual/processed/%s-processed-manually.csv", # nolint
     window_update
   )
   manual_tests <- rio::import_list(manual_sele, rbind = TRUE) %>%
@@ -86,7 +86,7 @@ update_selenium_with_file <-function(f_date,#"2021-09-09"
   window_update <- seq(first_date, as.Date(e_date), by = "days")
 
   selenium_sele<- sprintf(
-    "https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/automated/selenium/%s-tests-selenium.csv", # nolint
+    "https://raw.githubusercontent.com/finddx/FINDCov19TrackerData/master/automated/selenium/%s-tests-selenium.csv", # nolint
     window_update
   )
   selenium_tests <- rio::import_list(selenium_sele, rbind = TRUE) %>%
@@ -137,7 +137,7 @@ update_manual_with_file <-function(f_date,#"2021-09-09"
   window_update <- seq(first_date, as.Date(e_date), by = "days")
 
   manual_sele<- sprintf(
-    "https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/manual/processed/%s-processed-manually.csv", # nolint
+    "https://raw.githubusercontent.com/finddx/FINDCov19TrackerData/master/manual/processed/%s-processed-manually.csv", # nolint
     window_update
   )
   manual_tests <- rio::import_list(manual_sele, rbind = TRUE) %>%
@@ -201,7 +201,7 @@ update_merge_with_file <- function(f_date,#"2021-09-09"
   window_update <- seq(first_date, as.Date(e_date), by = "days")
 
   merged_sele<- sprintf(
-    "https://raw.githubusercontent.com/dsbbfinddx/FINDCov19TrackerData/master/automated/merged/%s-automated-tests.csv", # nolint
+    "https://raw.githubusercontent.com/finddx/FINDCov19TrackerData/master/automated/merged/%s-automated-tests.csv", # nolint
     window_update
   )
   merged_tests <- rio::import_list(merged_sele, rbind = TRUE) %>%

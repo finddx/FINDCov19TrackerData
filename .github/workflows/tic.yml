@@ -136,7 +136,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.WEBHOOK_TOKEN }}
-          repository: dsbbfinddx/FINDCov19TrackerShiny
+          repository: finddx/FINDCov19TrackerShiny
           event-type: "Deploy Shiny App after updating data in FindCov19TrackerData"
 
       - name: "[Stage] Upload R CMD check artifacts"
