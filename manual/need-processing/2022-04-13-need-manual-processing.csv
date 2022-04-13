@@ -1,10 +1,10 @@
 country,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,date,source,status,url
 Afghanistan,NA,0,NA,NA,2022-04-13,manually,automated,http://covid.moph-dw.orghttp://covidapp.moph-dw.org/
+Algeria,NA,0,NA,NA,2022-04-13,manually,automated,https://africacdc.org/covid-19/
 Andorra,NA,0,NA,NA,2022-04-13,manually,need_new_source,https://www.govern.ad/covid19/en/
 Barbados,NA,0,NA,NA,2022-04-13,manually,automated,https://gisbarbados.gov.bb/covid-19/
 Bhutan,NA,0,NA,NA,2022-04-13,manually,image,https://www.facebook.com/MoHBhutan/
 Bolivia,NA,0,NA,NA,2022-04-13,manually,image,https://www.minsalud.gob.bo/
-Brazil,NA,0,NA,NA,2022-04-13,manually,automated,http://www.giscard.com.br/coronavirus/indice-testes-realizados-covid19-brasil.php
 Brunei,NA,0,NA,NA,2022-04-13,manually,need_new_source,http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx
 Cambodia,NA,0,NA,NA,2022-04-13,manually,automated,http://cdcmoh.gov.kh
 China,NA,0,NA,NA,2022-04-13,manually,without_information,NA
@@ -22,6 +22,7 @@ Grenada,NA,0,NA,NA,2022-04-13,manually,facebook,https://web.facebook.com/HealthG
 Guyana,NA,0,NA,NA,2022-04-13,manually,image,https://www.health.gov.gy/
 Honduras,NA,0,NA,NA,2022-04-13,manually,image,http://www.bvs.hn/COVID-19/
 HongKong,NA,0,NA,NA,2022-04-13,manually,pdf,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf
+Iran,NA,0,NA,NA,2022-04-13,manually,automated,http://irangov.ir/search?key=Health%20Ministry&title=1
 Iraq,NA,0,NA,NA,2022-04-13,manually,image,https://www.facebook.com/MOH.GOV.IQ
 Israel,NA,0,NA,NA,2022-04-13,manually,not_yet_automated_daily,https://datadashboard.health.gov.il/COVID-19/general
 Jamaica,NA,0,NA,NA,2022-04-13,manually,image,https://www.moh.gov.jm/updates/coronavirus/covid-19-clinical-management-summary/
@@ -39,7 +40,6 @@ Netherlands,NA,0,NA,NA,2022-04-13,manually,not_yet_automated_weekly,https://www.
 NewCaledonia,NA,0,NA,NA,2022-04-13,manually,need_new_source,https://covid19.nc/point-de-situation-en-nouvelle-caledonie/
 Norway,NA,0,NA,NA,2022-04-13,manually,automated,https://www.fhi.no/en/id/infectious-diseases/coronavirus/daily-reports/daily-reports-COVID19/
 Oman,NA,0,NA,NA,2022-04-13,manually,twitter,https://twitter.com/OmanVSCovid19
-Pakistan,NA,0,NA,NA,2022-04-13,manually,automated,http://covid.gov.pk/
 Panama,NA,0,NA,NA,2022-04-13,manually,twitter,https://twitter.com/MINSAPma/status/1325931093804113925/photo/1
 Paraguay,NA,0,NA,NA,2022-04-13,manually,special_dashboard,https://www.mspbs.gov.py/reporte-covid19.html
 Philippines,NA,0,NA,NA,2022-04-13,manually,special_dashboard,https://www.doh.gov.ph/covid19tracker
@@ -53,7 +53,6 @@ Scotland,NA,0,NA,NA,2022-04-13,manually,special_dashboard,https://public.tableau
 Singapore,NA,0,NA,NA,2022-04-13,manually,automated,https://www.moh.gov.sg/covid-19
 Spain,NA,0,NA,NA,2022-04-13,manually,automated,https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/pruebasRealizadas.htm
 Sweden,NA,0,NA,NA,2022-04-13,manually,without_information,https://experience.arcgis.com/experience/09f821667ce64bf7be6f9f87457ed9aa
-Taiwan,NA,0,NA,NA,2022-04-13,manually,automated,https://sites.google.com/cdc.gov.tw/2019-ncov/taiwan
 Tajikistan,NA,0,NA,NA,2022-04-13,manually,without_information,https://eurasianet.org/dashboard-coronavirus-in-eurasia
 TheBahamas,NA,0,NA,NA,2022-04-13,manually,not_yet_automated,https://www.bahamas.gov.bs/wps/portal/public/gov/government/news/All%20News%20Press%20Release
 TrinidadandTobago,NA,0,NA,NA,2022-04-13,manually,pdf,http://www.health.gov.tt/sitepages/default.aspx?id=293
