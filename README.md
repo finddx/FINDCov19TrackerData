@@ -17,7 +17,7 @@ This repository contains the intermediate and final data of the data collection 
 
 ## Available Data
 
-- [`processed/coronavirus_test.csv`](https://github.com/finddx/FINDCov19TrackerData/tree/selenium/processed): Test data collected by the FIND team/
+- [`processed/coronavirus_test.csv`](https://github.com/finddx/FINDCov19TrackerData/tree/selenium/processed): Test data collected by the FIND team.
 
 - [`processed/data_all.csv`](https://github.com/finddx/FINDCov19TrackerData/blob/master/processed/data_all.csv): Test data combined with case and deaths data from John Hopkins University, including group aggregations. An [interactive tracker dashboard](https://www.finddx.org/covid-19/test-tracker) displays the data.
 
