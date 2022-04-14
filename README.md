@@ -1,4 +1,4 @@
-# FINDCov19TrackerData
+# FIND COVID-19 Test Data Collection
 
 <!-- badges: start -->
 
