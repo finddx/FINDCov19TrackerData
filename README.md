@@ -24,12 +24,12 @@ This repository contains the intermediate and final data of the data collection 
 
 ## Sources
 
-**Test data** : Collated every day by the FIND team from information found online.
+**Test data**: Collated every day by the FIND team from information found online.
 A large fraction is automated via Python and R (see below).
 A minor fraction is gathered by manual visits to the respective country websites.
 _Generally, the official government websites of each country are consulted._
 
-**Case data** : Downloaded daily from the COVID19 [John Hopkins University (JHU) repository](https://github.com/CSSEGISandData/COVID-19).
+**Case data**: Downloaded daily from the COVID19 [John Hopkins University (JHU) repository](https://github.com/CSSEGISandData/COVID-19).
 
 
 
@@ -37,20 +37,15 @@ _Generally, the official government websites of each country are consulted._
 
 When aggregating over periods or groups, we apply the following principles:
 
-### Aggregation over period
-
-If data is missing during more than 25% of the most
+**Aggregation over period**: If data is missing during more than 25% of the most
 recent observations, the period is considered incomplete, no aggregated
 value is computed.
 
-### Aggregation over group
-
-Groups aggregations use all the countries for which
+**Aggregation over group**: Groups aggregations use all the countries for which
 data is available. If a ratio is computed (e.g., per capita measures,
 positivity rate), we only consider observations that have values both for
 the nominator and the denominator. E.g., to calculate tests
 per capita for a continent, a country is only used if it reports both test and population data.
-
 
 
 ## Workflow Description
