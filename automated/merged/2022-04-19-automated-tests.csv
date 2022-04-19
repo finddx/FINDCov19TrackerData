@@ -1,14 +1,14 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2022-04-19,NA,NA,NA,NA,selenium
 Albania,2022-04-19,1793981,0,1793981,0,selenium
-Algeria,2022-04-19,230553,0,230553,NA,selenium
+Algeria,2022-04-19,230553,0,230553,0,selenium
 Andorra,2022-04-19,NA,NA,NA,NA,NA
 Angola,2022-04-19,1499795,0,1499795,0,selenium
 AntiguaandBarbuda,2022-04-19,16700,0,16700,0,selenium
 Argentina,2022-04-19,NA,NA,NA,NA,selenium
 Armenia,2022-04-19,3017543,0,3017543,0,selenium
 Australia,2022-04-19,68318362,0,68318362,0,selenium
-Austria,2022-04-19,180657934,0,180657934,NA,selenium
+Austria,2022-04-19,180657934,185989,180657934,185989,selenium
 Azerbaijan,2022-04-19,6771851,0,6771851,0,selenium
 Bahrain,2022-04-19,9679913,3356,9679913,3356,selenium
 Bangladesh,2022-04-19,13916558,0,13916558,0,selenium
@@ -35,7 +35,7 @@ CentralAfricanRepublic,2022-04-19,89503,0,89503,0,selenium
 Chad,2022-04-19,212076,0,212076,0,selenium
 Chile,2022-04-19,36365786,0,36365786,0,selenium
 China,2022-04-19,NA,NA,NA,NA,NA
-Colombia,2022-04-19,34265772,16322,34265772,NA,selenium
+Colombia,2022-04-19,34265772,29520,34265772,29520,selenium
 Comoros,2022-04-19,6227,0,6227,0,selenium
 Congo,2022-04-19,388006,0,388006,0,selenium
 CostaRica,2022-04-19,4163300,0,4163300,0,selenium
@@ -79,7 +79,7 @@ Hungary,2022-04-19,11244573,0,11244573,0,selenium
 Iceland,2022-04-19,1897961,0,1897961,0,selenium
 India,2022-04-19,832506755,401909,832506755,401909,selenium
 Indonesia,2022-04-19,94216598,0,94216598,0,selenium
-Iran,2022-04-19,NA,NA,NA,NA,selenium
+Iran,2022-04-19,50484026,288394,50484026,288394,selenium
 Iraq,2022-04-19,NA,NA,NA,NA,NA
 Ireland,2022-04-19,11971043,0,11971043,0,selenium
 Israel,2022-04-19,NA,NA,NA,NA,NA
@@ -129,7 +129,7 @@ Pakistan,2022-04-19,NA,NA,NA,NA,selenium
 Panama,2022-04-19,NA,NA,NA,NA,NA
 PapuaNewGuinea,2022-04-19,249149,0,249149,0,selenium
 Paraguay,2022-04-19,NA,NA,NA,NA,NA
-Peru,2022-04-19,29204946,0,29204946,NA,selenium
+Peru,2022-04-19,29204946,0,29204946,0,selenium
 Philippines,2022-04-19,NA,NA,NA,NA,NA
 Poland,2022-04-19,NA,NA,NA,NA,NA
 Portugal,2022-04-19,40748372,0,40748372,0,selenium
