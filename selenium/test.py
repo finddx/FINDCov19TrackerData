@@ -703,10 +703,10 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             self.driver.maximize_window()
             self.driver.set_page_load_timeout(30)
-            self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZWZlOTAxOGItMmY3ZS00MzMxLWE3MmItZWU4ZGViMTlkNTUwIiwidCI6IjM3MjI3YTljLWI1OGUtNGNiNi05NDNhLWI2ZjE5ZmJjZWFjMCIsImMiOjl9")
+            self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZDgxODA3MzEtZThmNS00ZWZhLTk3ZTMtMTljYTc5N2FkNGQzIiwidCI6ImU1NmYyODVjLWU3OWQtNDhjYi04NDFjLWRhMzMxNTFmZmI0ZiIsImMiOjl9")
             time.sleep(30)
             self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
-            self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[17]
+            self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[14]
             trycnt = 0 # success
         except Exception as ex:
            if trycnt <= 0: print("Failed to retrieve \n" + str(ex))  # done retrying
