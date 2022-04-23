@@ -47,6 +47,8 @@ positivity rate), we only consider observations that have values both for
 the nominator and the denominator. E.g., to calculate tests
 per capita for a continent, a country is only used if it reports both test and population data.
 
+The [codebook](https://github.com/finddx/shinyfind/blob/main/inst/codebook/codebook_extended.csv) provides a detailed description of how each variable is calculated.
+
 
 ## Workflow Description
 
