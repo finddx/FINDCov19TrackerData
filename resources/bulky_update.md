@@ -9,7 +9,7 @@ The file should contain the following three columns in the same order as listed 
 - `date`: use the format YYYY-MM-DD
 - `tests_cumulative`: value without commas or points.
   
-![Image: Example Costa Rica](CR_example.png){width=35%}
+![Image: Example Costa Rica](CR_example.png)
 
 **Note:** You cannot update data prior to 2021-02-19.
 
@@ -42,4 +42,4 @@ With the [repo](https://github.com/finddx/FINDCov19TrackerData) project open in 
   
 **Tip:** Before you commit your changes, check that only the files corresponding to the dates and the lines corresponding to the country changed.
 
-![Image: Example with Finland with RStudio Version Control view](Finland_example.png){width=40%}
+![Image: Example with Finland with RStudio Version Control view](Finland_example.png)
