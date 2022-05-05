@@ -352,7 +352,7 @@ class TestDefaultSuite(unittest.TestCase):
     soup = bs(html, "lxml")
     full_tags = soup.find_all("tbody")
     self.vars["pcr_tests_cum"] = full_tags[13].text.replace(",","")
-    self.vars["rapid_test_cum"] = full_tags[19].text.replace(",","")
+    self.vars["rapid_test_cum"] = full_tags[18].text.replace(",","")
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"])+int(self.vars["rapid_test_cum"])
     print("Colombia")
     print(self.vars)
