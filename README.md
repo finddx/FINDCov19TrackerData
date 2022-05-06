@@ -41,7 +41,7 @@ When aggregating over periods and/or groups, we apply the following principles i
 recent observations, the period is considered incomplete, no aggregated
 value is computed.
 
-**2, Aggregation over group**: Groups aggregations use all the countries for which
+**2. Aggregation over group**: Groups aggregations use all the countries for which
 data is available. If a ratio is computed (e.g., per capita measures,
 positivity rate), we only consider observations that have values both for
 the nominator and the denominator. E.g., to calculate tests
