@@ -35,19 +35,21 @@ _Generally, the official government websites of each country are consulted._
 
 ## Aggregation
 
-When aggregating over periods or groups, we apply the following principles:
+When aggregating over periods and/or groups, we apply the following principles in turn:
 
-**Aggregation over period**: If data is missing during more than 25% of the most
+**1. Aggregation over period**: If data is missing during more than 25% of the most
 recent observations, the period is considered incomplete, no aggregated
 value is computed.
 
-**Aggregation over group**: Groups aggregations use all the countries for which
+**2, Aggregation over group**: Groups aggregations use all the countries for which
 data is available. If a ratio is computed (e.g., per capita measures,
 positivity rate), we only consider observations that have values both for
 the nominator and the denominator. E.g., to calculate tests
 per capita for a continent, a country is only used if it reports both test and population data.
 
-The [codebook](https://github.com/finddx/shinyfind/blob/main/inst/codebook/codebook_extended.csv) provides a detailed description of how each variable is calculated.
+When we aggregate both over period and group, we do period aggregation first and group aggregation second.
+
+The [codebook](https://github.com/finddx/shinyfind/blob/main/inst/codebook/codebook_extended.csv) provides a detailed description of how these two steps look for each variable.
 
 
 ## Workflow Description
