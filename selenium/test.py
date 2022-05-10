@@ -987,9 +987,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get(url)
     self.driver.set_page_load_timeout(10)
     self.driver.implicitly_wait(10)
-    all_tests = self.driver.find_element(By.XPATH, "//p[contains(text(), \"Până la această dată, la nivel național, au fost prelucrate\")]").text
-    self.vars["pcr_tests_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR')[0].replace(".","").replace(" ","")
-    self.vars["rapid_test_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR și')[1].split('teste rapid')[0].replace(".","").replace(" ","")
+    #all_tests = self.driver.find_element(By.XPATH, "//p[contains(text(), \"Până la această dată, la nivel național, au fost prelucrate\")]").text
+    #self.vars["pcr_tests_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR')[0].replace(".","").replace(" ","")
+    #self.vars["rapid_test_cum"] = all_tests.split('Până la această dată, la nivel național, au fost prelucrate')[1].split('teste RT-PCR și')[1].split('teste rapid')[0].replace(".","").replace(" ","")
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "/html/body/main/div/div[2]/section/div[2]/p[19]/strong[8]").text.replace(".","").replace(" ","")
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "/html/body/main/div/div[2]/section/div[2]/p[19]/strong[10]").text.replace(".","").replace(" ","")
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
     print("Romania")
     print(self.vars)
