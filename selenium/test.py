@@ -481,7 +481,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.execute_script("window.scrollTo(0,300)")
     WebDriverWait(self.driver, 10).until(expected_conditions.frame_to_be_available_and_switch_to_it(0))
     WebDriverWait(self.driver, 10).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[1]//div//div[19]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[1]//div//div[18]").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "/html/body/div[3]/div/div[1]/div[1]/div[1]/div/div/div/div[1]/div/div[15]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/span/span").text
+    print("El Salvador")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
