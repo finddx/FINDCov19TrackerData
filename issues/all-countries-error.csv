@@ -2,17 +2,13 @@ country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_cor
 Afghanistan,2022-05-13,NA,NA,NA,NA,selenium
 Andorra,2022-05-13,NA,NA,NA,NA,NA
 Argentina,2022-05-13,NA,NA,NA,NA,selenium
-Azerbaijan,2022-05-13,NA,NA,NA,NA,selenium
-Bangladesh,2022-05-13,NA,NA,NA,NA,selenium
 Barbados,2022-04-12,NA,NA,NA,NA,selenium
 Barbados,2022-04-13,NA,NA,NA,NA,manually
 Barbados,2022-04-14,NA,NA,NA,NA,manually
 Barbados,2022-05-13,NA,NA,NA,NA,selenium
-Belize,2022-05-13,NA,NA,NA,NA,selenium
 Bhutan,2022-05-13,NA,NA,NA,NA,NA
 Bolivia,2022-05-13,NA,NA,NA,NA,NA
 Brunei,2022-05-13,NA,NA,NA,NA,NA
-Cambodia,2022-05-13,NA,NA,NA,NA,selenium
 China,2022-05-13,NA,NA,NA,NA,NA
 Colombia,2022-05-12,NA,NA,NA,NA,selenium
 Colombia,2022-05-13,NA,NA,NA,NA,selenium
@@ -22,6 +18,7 @@ Cuba,2022-04-13,NA,NA,NA,NA,manually
 Cyprus,2022-05-13,NA,NA,NA,NA,NA
 Dominica,2022-05-13,NA,NA,NA,NA,NA
 DominicanRepublic,2022-05-13,NA,NA,NA,NA,NA
+Ethiopia,2022-05-13,4827546,-43376249,4827546,-43376249,selenium
 FrenchPolynesia,2022-05-13,NA,NA,NA,NA,NA
 Georgia,2022-05-13,NA,NA,NA,NA,NA
 Germany,2022-05-13,NA,NA,NA,NA,NA
@@ -36,7 +33,7 @@ Iraq,2022-05-13,NA,NA,NA,NA,NA
 Israel,2022-05-13,NA,NA,NA,NA,NA
 Jamaica,2022-05-13,NA,NA,NA,NA,NA
 Kazakhstan,2022-05-13,NA,NA,NA,NA,NA
-Kosovo,2022-05-13,1831282,-635,1831282,-635,selenium
+Kosovo,2022-05-13,NA,NA,NA,NA,selenium
 Kuwait,2022-05-13,NA,NA,NA,NA,NA
 Kyrgyzstan,2022-05-13,NA,NA,NA,NA,NA
 LaoPeoplesDemocraticRepublic,2022-05-13,NA,NA,NA,NA,NA
@@ -53,8 +50,8 @@ Oman,2022-05-13,NA,NA,NA,NA,NA
 Pakistan,2022-05-12,NA,NA,NA,NA,selenium
 Pakistan,2022-05-13,NA,NA,NA,NA,selenium
 Panama,2022-05-13,NA,NA,NA,NA,NA
-PapuaNewGuinea,2022-05-13,NA,NA,NA,NA,selenium
 Paraguay,2022-05-13,NA,NA,NA,NA,NA
+Peru,2022-05-13,NA,NA,NA,NA,selenium
 Philippines,2022-05-13,NA,NA,NA,NA,NA
 Poland,2022-05-13,NA,NA,NA,NA,NA
 RepublicofKorea,2022-05-13,NA,NA,NA,NA,selenium
@@ -65,7 +62,7 @@ SaintLucia,2022-04-12,NA,NA,NA,NA,selenium
 SaintLucia,2022-04-13,NA,NA,NA,NA,manually
 SaintLucia,2022-04-14,NA,NA,NA,NA,manually
 SaintLucia,2022-04-15,NA,NA,NA,NA,selenium
-SaintLucia,2022-05-13,16581,-126700,16581,-126700,selenium
+SaintLucia,2022-05-13,17216,-126065,17216,-126065,selenium
 SaintVincentandtheGrenadines,2022-05-13,NA,NA,NA,NA,NA
 Scotland,2022-05-13,NA,NA,NA,NA,NA
 Singapore,2022-05-13,NA,NA,NA,NA,selenium
