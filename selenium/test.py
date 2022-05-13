@@ -185,7 +185,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_window_size(1200, 600)
     self.driver.get("https://corona.gov.bd/")
     time.sleep(10)
-    self.driver.execute_script("window.scrollTo(0,2392)")
+    self.driver.execute_script("window.scrollTo(0,1500)")
     time.sleep(10)
     self.driver.find_element_by_xpath("/html/body/div[1]/div/section[2]/div/div[2]/div/div/div[2]/div[4]/div/div/button").click()
     #ActionChains(self.driver).move_by_offset(xoffset=187, yoffset=473).click().perform()
