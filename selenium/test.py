@@ -1070,10 +1070,15 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.quit()
 
   def test_singapore(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://www.moh.gov.sg/covid-19")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 > div > div > table > tbody > tr:nth-child(2) > td > strong > span")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ContentPlaceHolder_contentPlaceholder_C124_Col00 > div > div > table > tbody > tr:nth-child(2) > td > strong > span").text
+    self.driver.set_window_size(1600, 873)
+    self.driver.get("https://www.moh.gov.sg/covid-19/statistics")
+    time.sleep(10)
+    self.vars["tests_art"] = self.driver.find_element(By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[13]/div[2]/div[1]/div[2]/div[1]/div/div[1]/div/table/tbody/tr[2]/td/font/span/b").text.replace(',','')
+    self.driver.find_element_by_xpath("/html/body/form/main/section/section/div/div/div[2]/div/div[13]/div[1]/ul/li[2]/span").click()
+    self.vars["tests_pcr"] = self.driver.find_element(By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[13]/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/table/tbody/tr[2]/td/font/span/b").text.replace(',','')
+    self.vars["tests_cumulative"] = int(self.vars["tests_pcr"])+int(self.vars["tests_art"])
+    print("Singapore")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
