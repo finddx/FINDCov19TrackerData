@@ -1021,17 +1021,17 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_saintLucia(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://www.covid19response.lc/")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div")))
-    self.driver.find_element(By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div").click()
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".test-stlucia")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".test-stlucia").text
-    print("Saint Lucia")
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  # def test_saintLucia(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://www.covid19response.lc/")
+  #   WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div")))
+  #   self.driver.find_element(By.CSS_SELECTOR, "#w-tabs-0-data-w-tab-0 > div").click()
+  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".test-stlucia")))
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".test-stlucia").text
+  #   print("Saint Lucia")
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_sanMarino(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
