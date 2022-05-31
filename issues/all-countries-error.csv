@@ -2,7 +2,6 @@ country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_cor
 Afghanistan,2022-05-31,NA,NA,NA,NA,selenium
 Andorra,2022-05-31,NA,NA,NA,NA,NA
 Argentina,2022-05-31,NA,NA,NA,NA,selenium
-Austria,2022-05-31,NA,NA,NA,NA,selenium
 Azerbaijan,2022-05-31,NA,NA,NA,NA,selenium
 Barbados,2022-04-12,NA,NA,NA,NA,selenium
 Barbados,2022-04-13,NA,NA,NA,NA,manually
@@ -11,6 +10,7 @@ Barbados,2022-05-31,NA,NA,NA,NA,selenium
 Belarus,2022-05-31,NA,NA,NA,NA,selenium
 Belize,2022-05-14,NA,NA,NA,NA,selenium
 Belize,2022-05-15,NA,NA,NA,NA,manually
+Belize,2022-05-31,NA,NA,NA,NA,selenium
 Bhutan,2022-05-31,NA,NA,NA,NA,NA
 Bolivia,2022-05-31,NA,NA,NA,NA,NA
 Brunei,2022-05-31,NA,NA,NA,NA,NA
@@ -31,7 +31,6 @@ CostaRica,2022-05-21,NA,NA,NA,NA,selenium
 Croatia,2022-05-31,NA,NA,NA,NA,NA
 Cuba,2022-04-12,NA,NA,NA,NA,selenium
 Cuba,2022-04-13,NA,NA,NA,NA,manually
-Cuba,2022-05-31,13861,-13847672,13861,-13847672,selenium
 Cyprus,2022-05-31,NA,NA,NA,NA,NA
 Denmark,2022-05-31,NA,NA,NA,NA,selenium
 Dominica,2022-05-31,NA,NA,NA,NA,NA
@@ -72,10 +71,10 @@ Israel,2022-05-31,NA,NA,NA,NA,NA
 Jamaica,2022-05-31,NA,NA,NA,NA,NA
 Jordan,2022-05-31,NA,NA,NA,NA,selenium
 Kazakhstan,2022-05-31,NA,NA,NA,NA,NA
-Kosovo,2022-05-31,NA,NA,NA,NA,selenium
 Kuwait,2022-05-31,NA,NA,NA,NA,NA
 Kyrgyzstan,2022-05-31,NA,NA,NA,NA,NA
 LaoPeoplesDemocraticRepublic,2022-05-31,NA,NA,NA,NA,NA
+Libya,2022-05-31,2560932,-20192,2560932,-20192,selenium
 Luxembourg,2022-05-31,NA,NA,NA,NA,NA
 Malaysia,2022-05-31,NA,NA,NA,NA,NA
 Maldives,2022-05-31,NA,NA,NA,NA,NA
@@ -98,16 +97,13 @@ RepublicofKorea,2022-05-31,NA,NA,NA,NA,selenium
 Romania,2022-05-12,NA,NA,NA,NA,selenium
 Romania,2022-05-13,NA,NA,NA,NA,manually
 Romania,2022-05-14,NA,NA,NA,NA,selenium
-Romania,2022-05-31,NA,NA,NA,NA,selenium
 Russia,2022-05-31,NA,NA,NA,NA,NA
 SaintLucia,2022-04-12,NA,NA,NA,NA,selenium
 SaintLucia,2022-04-13,NA,NA,NA,NA,manually
 SaintLucia,2022-04-14,NA,NA,NA,NA,manually
 SaintLucia,2022-04-15,NA,NA,NA,NA,selenium
-SaintLucia,2022-05-31,NA,NA,NA,NA,NA
 SaintVincentandtheGrenadines,2022-05-31,NA,NA,NA,NA,NA
 Scotland,2022-05-31,NA,NA,NA,NA,NA
-Senegal,2022-05-31,NA,NA,NA,NA,selenium
 Spain,2022-05-31,NA,NA,NA,NA,selenium
 SriLanka,2021-11-02,NA,NA,NA,NA,NA
 SriLanka,2021-11-03,NA,NA,NA,NA,selenium
