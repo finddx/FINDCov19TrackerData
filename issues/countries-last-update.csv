@@ -35,7 +35,6 @@ Maldives,2021-11-09,204,https://covid19.health.gov.mv/en/?c=0
 Spain,2021-11-15,198,https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/pruebasRealizadas.htm
 PapuaNewGuinea,2021-11-28,185,https://covid19.info.gov.pg/
 Brunei,2021-12-14,169,http://www.moh.gov.bn/Lists/Latest%20news/AllItems.aspx
-Honduras,2021-12-22,161,http://www.bvs.hn/COVID-19/
 Jamaica,2021-12-26,157,https://www.moh.gov.jm/updates/coronavirus/covid-19-clinical-management-summary/
 Dominica,2021-12-28,155,https://www.facebook.com/SupportRooseveltSkerrit/photos
 Guyana,2021-12-28,155,https://www.health.gov.gy/
@@ -79,6 +78,7 @@ Germany,2022-05-19,13,https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavir
 Niger,2022-05-19,13,https://africacdc.org/covid-19/
 Peru,2022-05-19,13,https://covid19.minsa.gob.pe/sala_situacional.asp
 Azerbaijan,2022-05-20,12,https://koronavirusinfo.az/az/page/statistika/azerbaycanda-cari-veziyyet
+Honduras,2022-05-20,12,http://www.bvs.hn/COVID-19/
 UnitedKingdom,2022-05-23,9,https://coronavirus.data.gov.uk/testing
 HongKong,2022-05-24,8,https://www.chp.gov.hk/files/pdf/statistics_on_covid_19_testing.pdf
 UnitedArabEmirates,2022-05-24,8,https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx
@@ -99,18 +99,14 @@ Rwanda,2022-05-27,5,https://africacdc.org/covid-19/
 SouthSudan,2022-05-27,5,https://africacdc.org/covid-19/
 Tunisia,2022-05-27,5,https://africacdc.org/covid-19/
 Albania,2022-05-29,3,https://coronavirus.al/statistika/
-Cambodia,2022-05-29,3,http://cdcmoh.gov.kh
 Lesotho,2022-05-29,3,https://africacdc.org/covid-19/
 Armenia,2022-05-30,2,https://ncdc.am/coronavirus/confirmed-cases-by-days/
 Barbados,2022-05-30,2,https://gisbarbados.gov.bb/covid-19/
-Croatia,2022-05-30,2,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35
 Denmark,2022-05-30,2,https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts
 Fiji,2022-05-30,2,http://www.health.gov.fj/
 Iraq,2022-05-30,2,https://www.facebook.com/MOH.GOV.IQ
 Luxembourg,2022-05-30,2,https://covid19.public.lu/fr/graph.html
-Pakistan,2022-05-30,2,http://covid.gov.pk/
 Panama,2022-05-30,2,https://twitter.com/MINSAPma/status/1325931093804113925/photo/1
-Philippines,2022-05-30,2,https://www.doh.gov.ph/covid19tracker
 Russia,2022-05-30,2,https://www.rospotrebnadzor.ru/search/index.php?tags=&q=%C8%ED%F4%EE%F0%EC%E0%F6%E8%EE%ED%ED%FB%E9+%E1%FE%EB%EB%E5%F2%E5%ED%FC+%EE+%F1%E8%F2%F3%E0%F6%E8%E8+%E8+%EF%F0%E8%ED%E8%EC%E0%E5%EC%FB%F5+%EC%E5%F0%E0%F5+%EF%EE+%ED%E5%E4%EE%EF%F3%F9%E5%ED%E8%FE+%F0%E0%F1%EF%F0%EE%F1%F2%F0%E0%ED%E5%ED%E8%FF+%E7%E0%E1%EE%EB%E5%E2%E0%ED%E8%E9%2C+%E2%FB%E7%E2%E0%ED%ED%FB%F5+%ED%EE%E2%FB%EC+%EA%EE%F0%EE%ED%E0%E2%E8%F0%F3%F1%EE%EC&where=&how=d&from=&to=
 SaintKittsandNevis,2022-05-30,2,https://covid19.gov.kn/
 SanMarino,2022-05-30,2,http://www.iss.sm/on-line/home/articolo49014558.html
@@ -120,11 +116,13 @@ Austria,2022-05-31,1,https://www.sozialministerium.at/Informationen-zum-Coronavi
 Bangladesh,2022-05-31,1,https://corona.gov.bd/
 Belgium,2022-05-31,1,https://datastudio.google.com/embed/u/0/reporting/c14a5cfc-cab7-4812-848c-0369173148ab/page/cUWaB
 Burundi,2022-05-31,1,https://africacdc.org/covid-19/
+Cambodia,2022-05-31,1,http://cdcmoh.gov.kh
 Canada,2022-05-31,1,https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html?stat=num&measure=tests&map=pt#a2
 CapeVerde,2022-05-31,1,https://africacdc.org/covid-19/
 Chad,2022-05-31,1,https://africacdc.org/covid-19/
 Chile,2022-05-31,1,https://www.gob.cl/coronavirus/cifrasoficiales/
 CotedIvoire,2022-05-31,1,https://africacdc.org/covid-19/
+Croatia,2022-05-31,1,https://www.koronavirus.hr/najnovije/ukupno-dosad-382-zarazene-osobe-u-hrvatskoj/35
 Cuba,2022-05-31,1,http://www.cubadebate.cu/?s=Cuba+reporta
 DemocraticRepublicoftheCongo,2022-05-31,1,https://africacdc.org/covid-19/
 EquatorialGuinea,2022-05-31,1,https://africacdc.org/covid-19/
@@ -152,6 +150,8 @@ Mozambique,2022-05-31,1,https://africacdc.org/covid-19/
 Myanmar,2022-05-31,1,https://mohs.gov.mm/Main/content/publication/2019-ncov
 Namibia,2022-05-31,1,https://africacdc.org/covid-19/
 Nepal,2022-05-31,1,https://covid19.ndrrma.gov.np/
+Pakistan,2022-05-31,1,http://covid.gov.pk/
+Philippines,2022-05-31,1,https://www.doh.gov.ph/covid19tracker
 Portugal,2022-05-31,1,https://covid19.min-saude.pt/ponto-de-situacao-atual-em-portugal/
 Qatar,2022-05-31,1,https://www.moph.gov.qa/english/Pages/Coronavirus2019.aspx#
 Romania,2022-05-31,1,https://stirioficiale.ro/informatii
