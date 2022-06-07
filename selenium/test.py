@@ -144,8 +144,9 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-current-situation-and-case-numbers#tests-conducted-and-results")
     time.sleep(60)
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id=\'widgetzfDpnUy\']/div/table/tbody/tr/td[4]").text
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#widgetzLpmgR > div:nth-child(1) > h1:nth-child(2)")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#widgetzLpmgR > div:nth-child(1) > h1:nth-child(2)").text
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
     
