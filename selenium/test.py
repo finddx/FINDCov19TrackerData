@@ -1205,10 +1205,11 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.maximize_window()
     self.driver.set_page_load_timeout(60)
-    self.driver.get("https://fcsa.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx")
+    self.driver.get("https://fcsc.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx")
     time.sleep(60)
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".total_tests > .numbers")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".total_tests > .numbers").text
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#covid19-summary-id > div > div.row.update_boxes > div > div.col-md-4.col-sm-6.col-xs-6.total_tests > div.numbers.ng-binding")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#covid19-summary-id > div > div.row.update_boxes > div > div.col-md-4.col-sm-6.col-xs-6.total_tests > div.numbers.ng-binding").text
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
