@@ -207,7 +207,7 @@ class TestDefaultSuite(unittest.TestCase):
     try:
       self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
       self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried out")[1].split("tests")[0]
-    except NoSuchElementException:
+    except:
       try:
         self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
         self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has conducted")[1].split("tests")[0]
