@@ -1189,17 +1189,16 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
     self.driver.close()
     self.driver.quit()
-
-  # to-do: needs new source
-  # def test_ukraine(self):
-  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-  #   self.driver.get("https://covid19.gov.ua/en/")
-  #   WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div")))
-  #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div").text
-  #   print("Ukraine")
-  #   print(self.vars)
-  #   self.driver.close()
-  #   self.driver.quit()
+  
+  def test_ukraine(self):
+    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+    self.driver.get("https://covid19.gov.ua/en/")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.item-page > div.main-section > div.after-title > div > div:nth-child(5) > div").text
+    print("Ukraine")
+    print(self.vars)
+    self.driver.close()
+    self.driver.quit()
 
   def test_unitedArabEmirates(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
