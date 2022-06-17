@@ -726,7 +726,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_kosovo(self):
     self.driver.get("https://datastudio.google.com/embed/u/0/reporting/2e546d77-8f7b-4c35-8502-38533aa0e9e8/page/tI3oB?fbclid=IwAR3bGrIV4hcD6Qe0CXv_f3ukuBKuNLkAacl4yPohGOvD5U_JjVERrnpqwes")
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//div[@id='body']/div/div/div/div/div/report-wrapper/div/div/ng2-canvas-container/div/div[33]/ng2-canvas-component/div/div/div/div/kpimetric-wrapper/div/ng2-kpimetric/div").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "/html/body/app-bootstrap/ng2-bootstrap/lego-router-outlet/ng2-reporting-view/div/div/div/div/div[1]/div[1]/report-wrapper/div/div/ng2-canvas-container/div/div[33]/ng2-canvas-component/div/div/div/div/kpimetric-wrapper/div/ng2-kpimetric/div/div[2]").text
     print("Kosovo")
     print(self.vars)
     self.driver.close()
