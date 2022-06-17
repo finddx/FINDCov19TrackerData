@@ -453,8 +453,8 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
     time.sleep(10)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(8) > table > tbody > tr:nth-child(2) > td:nth-child(2) > span").text.replace(',','')
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(2) > div:nth-child(8) > table > tbody > tr:nth-child(7) > td:nth-child(2) > span").text.replace(',','')
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(1) > div:nth-child(7) > table > tbody > tr:nth-child(2) > td:nth-child(2) > span").text.replace(',','')
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(1) > div:nth-child(7) > table > tbody > tr:nth-child(7) > td:nth-child(2) > span").text.replace(',','')
     #html = self.driver.page_source
     #soup = bs(html, "lxml")
     #full_tags = soup.find_all("tbody")[1]
