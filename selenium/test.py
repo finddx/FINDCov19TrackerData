@@ -708,10 +708,10 @@ class TestDefaultSuite(unittest.TestCase):
         try:
             self.driver.maximize_window()
             self.driver.set_page_load_timeout(30)
-            self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZDgxODA3MzEtZThmNS00ZWZhLTk3ZTMtMTljYTc5N2FkNGQzIiwidCI6ImU1NmYyODVjLWU3OWQtNDhjYi04NDFjLWRhMzMxNTFmZmI0ZiIsImMiOjl9")
+            self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiMjRhOWZlMDYtY2I1YS00YTMwLTgzNmUtZGViMWJkMDdmMzQ3IiwidCI6ImU1NmYyODVjLWU3OWQtNDhjYi04NDFjLWRhMzMxNTFmZmI0ZiIsImMiOjl9")
             time.sleep(30)
-            self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, '//*[@id="pvExplorationHost"]').text
-            self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[14]
+            self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, '#pvExplorationHost > div > div > exploration > div > explore-canvas > div > div.canvasFlexBox > div > div.displayArea.disableAnimations.fitToPage > div.visualContainerHost > visual-container-repeat > visual-container:nth-child(17) > transform > div > div.visualContent > div > visual-modern > div > svg > g:nth-child(1) > text > tspan').text
+            #self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("\n")[14]
             trycnt = 0 # success
         except Exception as ex:
            if trycnt <= 0: print("Failed to retrieve \n" + str(ex))  # done retrying
