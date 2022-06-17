@@ -325,11 +325,11 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("http://cdcmoh.gov.kh")
     self.driver.set_window_size(1542, 830)
-    self.driver.execute_script("window.scrollTo(0,850)")
+    self.driver.execute_script("window.scrollTo(0,1850)")
     #self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div.items-row.cols-1.row-2.row-fluid.clearfix > div > div > div:nth-child(6) > span:nth-child(1) > strong:nth-child(1)").click()
     #self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div.items-row.cols-1.row-2.row-fluid.clearfix > div > div > div:nth-child(6) > span:nth-child(1) > strong:nth-child(1)").text
-    self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div.items-row.cols-1.row-0.row-fluid.clearfix > div > div > div.page-header > h2 > a").click()
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.item-page > div:nth-child(5) > span:nth-child(1) > strong:nth-child(1)").text
+    #self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div.items-row.cols-1.row-0.row-fluid.clearfix > div > div > div.page-header > h2 > a").click()
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div.blog > div.items-row.cols-1.row-3.row-fluid.clearfix > div > div > div:nth-child(6) > span > strong:nth-child(1)").text
     #self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split(' ')[1]
     print("Cambodia")
     print(self.vars)
