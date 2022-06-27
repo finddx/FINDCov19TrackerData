@@ -338,9 +338,9 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_canada(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://health-infobase.canada.ca/covid-19/epidemiological-summary-covid-19-cases.html?stat=num&measure=tests&map=pt#a2")
+    self.driver.get("https://health-infobase.canada.ca/covid-19/#a2")
     time.sleep(15)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#txtTotal").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#keybox7 > div > p.h2 > span").text
     print("Canada")
     print(self.vars)
     self.driver.close()
