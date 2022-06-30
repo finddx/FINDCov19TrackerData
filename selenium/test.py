@@ -576,11 +576,11 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_guatemala(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://gtmvigilanciacovid.shinyapps.io/3869aac0fb95d6baf2c80f19f2da5f98")
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".sidebar-menu")))
-    self.driver.find_element(By.CSS_SELECTOR, "li:nth-child(2) span").click()
+    self.driver.get("https://tablerocovid.mspas.gob.gt/tablerocovid/")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#sidebarItemExpanded > ul:nth-child(6) > li:nth-child(2) > a")))
+    self.driver.find_element(By.CSS_SELECTOR, "#sidebarItemExpanded > ul:nth-child(6) > li:nth-child(2) > a").click()
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#casosSospechososValueBox > div > div.inner > h3")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#casosSospechososValueBox > div > div.inner > h3").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#casosSospechososValueBox > div > div.inner > h3").text.replace(',','')
     print("Guatemala")
     print(self.vars)
     self.driver.close()
