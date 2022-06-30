@@ -912,15 +912,15 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
     
-  # web page doesn't open
-  def test_papuaNewGuinea(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://covid19.info.gov.pg/")
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div/div/div/div/section[2]/div/div/div[1]/div/div/section[7]/div/div/div[2]/div/div/div/div/div/h2/span/strong").text
-    print("Papua New Guinea")
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  # # web page doesn't open
+  # def test_papuaNewGuinea(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://covid19.info.gov.pg/")
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div/div/div/div/section[2]/div/div/div[1]/div/div/section[7]/div/div/div[2]/div/div/div/div/div/h2/span/strong").text
+  #   print("Papua New Guinea")
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
