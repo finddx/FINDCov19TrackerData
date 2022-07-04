@@ -1122,15 +1122,14 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_spain(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://www.mscbs.gob.es/gabinete/notasPrensa.do")
-    WebDriverWait(self.driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a")))
-    url = self.driver.find_element(By.XPATH, "//*[contains(text(), \"España ha realizado más de\")]/parent::p/a").get_attribute('href')
-    self.driver.get(url)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//h2")))
-    all_tests = self.driver.find_element(By.XPATH, "//section//div[3]//p[1]").text
-    self.vars["tests_cumulative"] = all_tests.split('cabo un total de')[-1].strip().split(' ')[0].strip().replace(".","")
-    self.vars["pcr_tests_cum"] = all_tests.split('De éstas,')[1].split("son PCR")[0].replace(".","")
-    self.vars["rapid_test_cum"] = all_tests.split('son PCR y ')[1].split("son test de")[0].replace(".","")
+    self.driver.get("https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/pruebasRealizadas.htm")
+    time.sleep(10)
+    url_csv_file = self.driver.find_element(By.XPATH, "//a[contains(@href, \'Datos_Pruebas_Realizadas\')]").get_attribute('href')
+    df = pd.read_csv(url_csv_file, sep=";", encoding='latin-1')
+    self.vars["pcr_tests_cum"] = int(df['N_PCR'].sum())
+    self.vars["rapid_test_cum"] = int(df['N_ANT'].sum())
+    self.vars["tests_cumulative"] = self.vars["pcr_tests_cum"]+self.vars["rapid_test_cum"]
+    print("Spain")
     print(self.vars)
     self.driver.close()
     self.driver.quit()
