@@ -419,9 +419,13 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("http://www.cubadebate.cu/?s=Cuba+reporta")
     url=self.driver.find_element(By.XPATH, "//a[contains(text(),\'casos de COVID-19\')]").get_attribute('href')
     self.driver.get(url)
-    time.sleep(5)
-    full_text = self.driver.find_element(By.XPATH, "//p[contains(.,\'muestras realizadas \')]").text
-    self.vars["tests_cumulative"] = full_text.split('acumula')[1].split('muestras realizadas')[0].replace("millones","")
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "//p[contains(.,\'muestras\')]")))
+    try:
+      full_text = self.driver.find_element(By.XPATH, "//p[contains(.,\'muestras realizadas\')]").text
+      self.vars["tests_cumulative"] = full_text.split('acumula')[1].split('muestras realizadas')[0].replace("millones","").replace(" ","").replace("mil","")
+    except NoSuchElementException:
+      full_text = self.driver.find_element(By.XPATH, "//p[contains(.,\'muestras procesadas\')]").text
+      self.vars["tests_cumulative"] = full_text.split('acumula')[1].split('muestras procesadas')[0].replace("millones","").replace(" ","").replace("mil","")
     print("Cuba")
     print(self.vars)
     self.driver.close()
