@@ -153,7 +153,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_austria(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://info.gesundheitsministerium.gv.at/?re=infektionslage")
-    time.sleep(2)
+    time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(7) > td:nth-child(11)").text
     self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) > td:nth-child(11)").text
@@ -188,10 +188,10 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(10)
     self.driver.execute_script("window.scrollTo(0,1500)")
     time.sleep(10)
-    self.driver.find_element_by_xpath("/html/body/div[1]/div/section[2]/div/div[2]/div/div/div[2]/div[4]/div/div/button").click()
-    #ActionChains(self.driver).move_by_offset(xoffset=187, yoffset=473).click().perform()
+    self.driver.find_element_by_xpath("/html/body/div[1]/div/section[2]/div/div[2]/div/div/div[1]/div[4]/div/div/button").click()
+    #ActionChains(self.driver).move_by_offset(xoffset=240, yoffset=190).click().perform()
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".col-6:nth-child(1) h4:nth-child(2)").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#current_situation > div > div.row.align-items-center > div > div > div.col-12.col-lg-8.col-xl-9.justify-content-center > div > div:nth-child(1) > div > h4:nth-child(2)").text
     print("Bangladesh")
     print(self.vars)
     self.driver.close()
@@ -1078,6 +1078,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_window_size(1600, 873)
     self.driver.get("https://www.moh.gov.sg/covid-19/statistics")
     time.sleep(10)
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[12]/div[2]/div[1]/div[2]/div[1]/div/div[1]/div/table/tbody/tr[2]/td/font/span")))
     self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[12]/div[2]/div[1]/div[2]/div[1]/div/div[1]/div/table/tbody/tr[2]/td/font/span").text.replace(',','')
     self.driver.find_element_by_xpath("/html/body/form/main/section/section/div/div/div[2]/div/div[12]/div[1]/ul/li[2]/span").click()
     self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[12]/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/table/tbody/tr[2]/td/font/span").text.replace(',','')
