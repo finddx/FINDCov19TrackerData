@@ -457,8 +457,8 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.sst.dk/en/english/corona-eng/status-of-the-epidemic/covid-19-updates-statistics-and-charts")
     time.sleep(10)
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(1) > div:nth-child(7) > table > tbody > tr:nth-child(2) > td:nth-child(2) > span").text.replace(',','')
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(1) > div:nth-child(7) > table > tbody > tr:nth-child(7) > td:nth-child(2) > span").text.replace(',','')
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(1) > div:nth-child(7) > table > tbody > tr:nth-child(2) > td:nth-child(2) > span").text.replace(',','').replace('.','')
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "#main__content > main > article > div.o-content-block.u-grid.u-grid--space-between.u-grid--no-gutter.u-ie > div > div:nth-child(1) > div:nth-child(7) > table > tbody > tr:nth-child(7) > td:nth-child(2) > span").text.replace(',','').replace('.','')
     #html = self.driver.page_source
     #soup = bs(html, "lxml")
     #full_tags = soup.find_all("tbody")[1]
@@ -1043,8 +1043,11 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("http://www.iss.sm/on-line/home/artCataggiornamenti-coronavirus.49004093.1.20.1.html")
     #<a href="/on-line/home/aggiornamenti-coronavirus/articolo49015867.html" class="titolini" title="leggi il dettaglio dell'articolo">Aggiornamento settimanale epidemia Covid-19 e andamento Campagna Vaccinale - 21 marzo 2022</a>
     time.sleep(5)
-    url = self.driver.find_element(By.XPATH, "//a[contains(text(),'epidemia Covid-19 e andamento')]").get_attribute('href')
+    url = self.driver.find_element(By.XPATH, "//a[contains(text(),'ARCHIVIO COMUNICATI STAMPA ANDAMENTO EPIDEMIA COVID-19')]").get_attribute('href')
     self.driver.get(url)
+    time.sleep(5)
+    link = self.driver.find_element(By.XPATH, "//a[contains(text(),'2022')]").get_attribute('href')
+    self.driver.get(link)
     time.sleep(5)
     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(text(),'tamponi totali eseguiti')]").text.split(", di cui")[0].split("sono")[1]
     print("sanMarino")
