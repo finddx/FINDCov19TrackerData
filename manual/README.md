@@ -12,7 +12,7 @@ Data is incorporated in the tracker through both, automatic and manual intervent
   - [selenium/](https://github.com/finddx/FINDCov19TrackerData/tree/master/automated/selenium) folder contains data get from python runs. 
 - [issues/](https://github.com/finddx/FINDCov19TrackerData/tree/master/issues) includes files describing when there are errors in the data.
 - [manual/](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual) folder with the files to update data manually.
-  - [need-processing](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual/need-processing) folder includes the files created every day during the automatic process. Each file in this folder contains the countries that should be gathered manually or when the scrape for some countries failed. 
+  - [need-processing](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual/need-processing) folder includes the files created every day during the automatic process. Each file in this folder contains the countries that should be gathered manually and those for which the scrape failed. 
   - [processed/](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual/processed) folder contains for each day a file including the manual changes to the data. Generally, files in [need-processing](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual/need-processing) are taken to create the files located in this [processed/](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual/processed) folder changing the respective values, but it is possible to include or delete countries depending on the manual updates required. 
 - [raw/](https://github.com/finddx/FINDCov19TrackerData/tree/master/raw) folder with information related to the countries used mainly in the shinyapp.
 - [resurces/](https://github.com/finddx/FINDCov19TrackerData/tree/master/resources) contains one file with the URLs with the sources and files for massive updates of data.
@@ -22,7 +22,7 @@ Data is incorporated in the tracker through both, automatic and manual intervent
 
 Manual intervention can be done using both the [need-manual-processing](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual/need-processing) and [processed-manually](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual/processed) files. This data will then be merged with the automated data in the [merged/](https://github.com/finddx/FINDCov19TrackerData/tree/master/automated/merged) folder.
 
-Every day, after the first workflow run in the morning, a `YYYY-MM-DD-need-manual-processing.csv` file is created. This file contains all the countries for which manual intervention is needed and is located in the [manual/need_processing](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual/need-processing) folder. 
+Every day, after the first workflow run in the morning, a `YYYY-MM-DD-need-manual-processing.csv` file is created. This file contains all the countries for which manual intervention is needed and is located in the [manual/need_processing](https://github.com/finddx/FINDCov19TrackerData/tree/master/manual/need-processing) folder. However, this file is modified after the second run in the evening. Therefore the manual processing is usually done with the file of the previous day.
 
 ### Steps to follow to update manual countries
 
@@ -50,10 +50,10 @@ There are different ways to update the manual files. Below are the steps to upda
 ![message for file](manual_updates_images/commit.png)
 
 10. Update the column(s) to be updated. 
-	- Most of the updates will be to change the `NA` value in `tests_cumulative` and put the new cumulative value found in the corresponding country website and `NA` instead of `0` for `new_tests`. Once the file will be pushed, `new_tests`, `tests_cumulative_corrected` and `new_tests_corrected` will be updated accordingly after pushing the file. Automatic calculations are not visible in this file.
+	- Most of the updates consist of changing the `NA` value in `tests_cumulative` and put the new cumulative value found in the corresponding country website and `NA` instead of `0` for `new_tests`. Once the file is pushed, `new_tests`, `tests_cumulative_corrected` and `new_tests_corrected` will be updated accordingly. Automatic calculations are not visible in this file.
 	- It is also possible to update only `new_tests` values instead of `tests_cumulative` values if this is how the country reports the testing data. `tests_cumulative` will also be populated accordingly. 
 	- You can also correct negative values. See next section for explanation.
-12. Commit the file by clicking on “Commit new file” at the bottom of the page. **Important:** If you want to change many files the process implies several commits. If you commit with less than 20 minutes between each commit you need to cancel the Actions created with each of them, and only leave the last one running. To do so, go to the “Actions” tab at the top of the webpage and cancel all the runs (except the last one), by clicking on the three dots on the right of the run. If you do not that the process might fail. If the last action fails, you can wait until all actions are finished, and then re-run the last action clicking on re-run all jobs. 
+12. Commit the file by clicking on “Commit new file” at the bottom of the page. **Important:** If you want to change many files the process implies several commits. If you commit with less than 20 minutes between each commit you need to cancel the Actions created with each of them, and only leave the last one running. To do so, go to the “Actions” tab at the top of the webpage and cancel all the runs (except the last one) by clicking on the three dots on the right of the run. If you do not cancel the additional actions, the process might fail. If the last action fails, you can wait until all actions are finished and then re-run the last action clicking on re-run all jobs. 
 
 ![manage actions](manual_updates_images/cancel_commit.png)
 
@@ -67,7 +67,7 @@ Example: Negative value for US on 2021-06-14
 
 ![US negative value example](manual_updates_images/neg_us.png)
 
-The correction must be made on the 2021-05-17 as, the 2021-05-16 has the last value which is smaller than 450577537 (value of the 2021-06-14, giving the negative value).
+In this case, the correction must be made on the 2021-05-17 as the 2021-05-16 has the last value which is smaller than 450577537 (value of the 2021-06-14, giving the negative value).
 Each YYYY-MM-DD-processed-manually.csv file from 2021-05-17 to 2021-06-13 must be corrected as follows: i. leave original columns as they are since it is the way US reported its data, and ii. correct corrected columns by putting 450444193 for every day.
 
 Steps:
