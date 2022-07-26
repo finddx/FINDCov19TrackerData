@@ -1,7 +1,6 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2022-07-26,NA,NA,NA,NA,selenium
 Albania,2022-07-26,NA,NA,NA,NA,selenium
-Algeria,2022-07-26,NA,NA,NA,NA,selenium
 Andorra,2022-07-26,NA,NA,NA,NA,NA
 Argentina,2022-07-26,NA,NA,NA,NA,selenium
 Bangladesh,2022-07-26,NA,NA,NA,NA,selenium
@@ -11,6 +10,7 @@ Barbados,2022-04-14,NA,NA,NA,NA,manually
 Belarus,2022-07-26,NA,NA,NA,NA,selenium
 Belize,2022-05-14,NA,NA,NA,NA,selenium
 Belize,2022-05-15,NA,NA,NA,NA,manually
+Belize,2022-07-26,NA,NA,NA,NA,selenium
 Bhutan,2022-07-26,NA,NA,NA,NA,NA
 Bolivia,2022-07-26,NA,NA,NA,NA,NA
 Brazil,2022-07-26,NA,NA,NA,NA,selenium
@@ -41,7 +41,8 @@ Denmark,2022-06-28,NA,NA,NA,NA,selenium
 Denmark,2022-06-29,NA,NA,NA,NA,manually
 Dominica,2022-07-26,NA,NA,NA,NA,NA
 DominicanRepublic,2022-07-26,NA,NA,NA,NA,NA
-Egypt,2022-07-26,NA,NA,NA,NA,selenium
+Ecuador,2022-07-26,NA,NA,NA,NA,selenium
+Estonia,2022-07-26,3296064,-135361,3296064,-135361,selenium
 FrenchPolynesia,2022-07-26,NA,NA,NA,NA,NA
 Georgia,2022-07-26,NA,NA,NA,NA,NA
 Germany,2022-07-26,NA,NA,NA,NA,NA
@@ -122,19 +123,17 @@ Kazakhstan,2022-07-26,NA,NA,NA,NA,NA
 Kosovo,2022-06-17,NA,NA,NA,NA,selenium
 Kosovo,2022-06-18,NA,NA,NA,NA,manually
 Kosovo,2022-06-19,NA,NA,NA,NA,selenium
+Kosovo,2022-07-26,NA,NA,NA,NA,selenium
 Kuwait,2022-07-26,NA,NA,NA,NA,NA
 Kyrgyzstan,2022-07-26,NA,NA,NA,NA,NA
 LaoPeoplesDemocraticRepublic,2022-07-26,NA,NA,NA,NA,NA
 Libya,2022-05-31,2560932,-20192,2560932,-20192,manually
-Libya,2022-07-26,NA,NA,NA,NA,selenium
 Luxembourg,2022-07-26,NA,NA,NA,NA,NA
 Malaysia,2022-07-26,NA,NA,NA,NA,NA
 Maldives,2022-07-26,NA,NA,NA,NA,NA
 Malta,2022-07-26,NA,NA,NA,NA,NA
-Mauritania,2022-07-26,NA,NA,NA,NA,selenium
 Moldova,2022-07-26,NA,NA,NA,NA,NA
 Montenegro,2022-07-26,NA,NA,NA,NA,NA
-Morocco,2022-07-26,NA,NA,NA,NA,selenium
 Myanmar,2022-07-26,NA,NA,NA,NA,selenium
 Netherlands,2022-07-26,NA,NA,NA,NA,NA
 NewCaledonia,2022-07-26,NA,NA,NA,NA,NA
@@ -172,7 +171,6 @@ Sweden,2022-07-26,NA,NA,NA,NA,NA
 Tajikistan,2022-07-26,NA,NA,NA,NA,NA
 TheBahamas,2022-07-26,NA,NA,NA,NA,NA
 TrinidadandTobago,2022-07-26,NA,NA,NA,NA,NA
-Tunisia,2022-07-26,NA,NA,NA,NA,selenium
 UnitedArabEmirates,2022-06-17,NA,NA,NA,NA,selenium
 UnitedArabEmirates,2022-06-18,NA,NA,NA,NA,manually
 UnitedArabEmirates,2022-06-19,NA,NA,NA,NA,manually
@@ -193,4 +191,3 @@ Uruguay,2022-07-26,NA,NA,NA,NA,selenium
 Uzbekistan,2022-07-26,NA,NA,NA,NA,NA
 Venezuela,2022-07-26,NA,NA,NA,NA,selenium
 Vietnam,2022-07-26,NA,NA,NA,NA,NA
-WesternSahara,2022-07-26,NA,NA,NA,NA,selenium
