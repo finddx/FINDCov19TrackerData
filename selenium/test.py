@@ -188,7 +188,7 @@ class TestDefaultSuite(unittest.TestCase):
     time.sleep(10)
     self.driver.execute_script("window.scrollTo(0,1500)")
     time.sleep(10)
-    self.driver.find_element_by_xpath("/html/body/div[1]/div/section[2]/div/div[2]/div/div/div[1]/div[4]/div/div/button").click()
+    self.driver.find_element_by_xpath("/html/body/div[1]/div/section[2]/div/div[2]/div/div/div[2]/div[4]/div/div/button").click()
     #ActionChains(self.driver).move_by_offset(xoffset=240, yoffset=190).click().perform()
     time.sleep(10)
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#current_situation > div > div.row.align-items-center > div > div > div.col-12.col-lg-8.col-xl-9.justify-content-center > div > div:nth-child(1) > div > h4:nth-child(2)").text
@@ -233,6 +233,8 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("http://stopcovid.belta.by/")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#rec266847794 .t-animate__chain_first-in-row > .t192__title")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#rec266847794 .t-animate__chain_first-in-row > .t192__title").text
+    print("Belarus")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
     
