@@ -931,7 +931,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.set_window_size(1333, 813)
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiNjdlMmZjNDUtNTc4NS00ZmUzLTgxYjYtZjQyMmJiZmM3NzBlIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9&pageName=ReportSection7b5f4dd6259a91b05022")
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZWU4NWY1YjItZjI3NC00ZWIwLTk5YjEtZWQ2ODk4ZDk3NDNlIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     self.driver.set_page_load_timeout(40)
     self.driver.implicitly_wait(40)
     self.driver.execute_script("window.scrollTo(0,0)")
