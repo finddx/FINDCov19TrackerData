@@ -503,7 +503,9 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_page_load_timeout(30)
     self.driver.get("https://koroonakaart.ee/et")
     WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".row:nth-child(4) > .statsbar-item:nth-child(4) > h1")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#statsbar-container > div:nth-child(2) > div:nth-child(4) > h1").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#statsbar-container > div:nth-child(2) > div:nth-child(4) > h1").text.replace('\u202f','')
+    print("Estonia")
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
@@ -931,7 +933,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.set_window_size(1333, 813)
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZWU4NWY1YjItZjI3NC00ZWIwLTk5YjEtZWQ2ODk4ZDk3NDNlIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZGYzZDNkZGEtMmEyYy00YzU0LWJkMjAtNDdiNTJiNGU5OWMyIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     self.driver.set_page_load_timeout(40)
     self.driver.implicitly_wait(40)
     self.driver.execute_script("window.scrollTo(0,0)")
@@ -1209,17 +1211,17 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_unitedArabEmirates(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.maximize_window()
-    self.driver.set_page_load_timeout(60)
-    self.driver.get("https://fcsc.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx")
-    time.sleep(60)
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#covid19-summary-id > div > div.row.update_boxes > div > div.col-md-4.col-sm-6.col-xs-6.total_tests > div.numbers.ng-binding")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#covid19-summary-id > div > div.row.update_boxes > div > div.col-md-4.col-sm-6.col-xs-6.total_tests > div.numbers.ng-binding").text
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  # def test_unitedArabEmirates(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.maximize_window()
+  #   self.driver.set_page_load_timeout(60)
+  #   self.driver.get("https://fcsc.gov.ae/en-us/Pages/Covid19/UAE-Covid-19-Updates.aspx")
+  #   time.sleep(60)
+  #   WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#covid19-summary-id > div > div.row.update_boxes > div > div.col-md-4.col-sm-6.col-xs-6.total_tests > div.numbers.ng-binding")))
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#covid19-summary-id > div > div.row.update_boxes > div > div.col-md-4.col-sm-6.col-xs-6.total_tests > div.numbers.ng-binding").text
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_unitedKingdom(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
