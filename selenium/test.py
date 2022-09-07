@@ -144,8 +144,8 @@ class TestDefaultSuite(unittest.TestCase):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert/coronavirus-covid-19-current-situation-and-case-numbers#tests-conducted-and-results")
     time.sleep(60)
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#widgetzLpmgR > div:nth-child(1) > h1:nth-child(2)")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#widgetzLpmgR > div:nth-child(1) > h1:nth-child(2)").text
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#content > div > div > div > div.row.entity.entity-paragraphs-item.paragraphs-item-data-visualisation-tile-listing.listing__count--9.view-mode-full > div > div > div > div > div:nth-child(8) > div > div.health-tile__figure")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#content > div > div > div > div.row.entity.entity-paragraphs-item.paragraphs-item-data-visualisation-tile-listing.listing__count--9.view-mode-full > div > div > div > div > div:nth-child(8) > div > div.health-tile__figure").text
     print(self.vars)
     self.driver.close()
     self.driver.quit()
@@ -221,8 +221,12 @@ class TestDefaultSuite(unittest.TestCase):
             print(self.vars)
             self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried")[1].split("tests")[0]
           except NoSuchElementException:
-            self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
-            self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("completed")[1]
+              try:
+                self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The laboratories\')]").text
+                self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("conducted")[1].split("tests")[0]
+              except NoSuchElementException:
+                self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
+                self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("completed")[1]
     print("Barbados")
     print(self.vars)
     self.driver.close()
@@ -933,7 +937,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.set_window_size(1333, 813)
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiYmEwNDhlYTUtZDRlMC00ZGE0LWE4YmEtMDlhZjhlYzcwMjJlIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiZTg2MzdhNTMtYjZkMi00ZmRiLTgxNmQtNjMyNjYwZDYxNTdhIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     self.driver.set_page_load_timeout(40)
     self.driver.implicitly_wait(40)
     self.driver.execute_script("window.scrollTo(0,0)")
@@ -1085,10 +1089,10 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.set_window_size(1600, 873)
     self.driver.get("https://www.moh.gov.sg/covid-19/statistics")
     time.sleep(10)
-    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[12]/div[2]/div[1]/div[2]/div[1]/div/div[1]/div/table/tbody/tr[2]/td/font/span")))
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[12]/div[2]/div[1]/div[2]/div[1]/div/div[1]/div/table/tbody/tr[2]/td/font/span").text.replace(',','')
-    self.driver.find_element_by_xpath("/html/body/form/main/section/section/div/div/div[2]/div/div[12]/div[1]/ul/li[2]/span").click()
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[12]/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/table/tbody/tr[2]/td/font/span").text.replace(',','')
+    WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[11]/div[2]/div[1]/div[2]/div[1]/div/div[1]/div/table/tbody/tr[2]/td/font/span/b")))
+    self.vars["rapid_test_cum"] = self.driver.find_element(By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[11]/div[2]/div[1]/div[2]/div[1]/div/div[1]/div/table/tbody/tr[2]/td/font/span/b").text.replace(',','')
+    self.driver.find_element_by_xpath("/html/body/form/main/section/section/div/div/div[2]/div/div[11]/div[1]/ul/li[2]/span").click()
+    self.vars["pcr_tests_cum"] = self.driver.find_element(By.XPATH, "/html/body/form/main/section/section/div/div/div[2]/div/div[11]/div[2]/div[2]/div[2]/div[1]/div/div/div[1]/table/tbody/tr[2]/td/font/span/b").text.replace(',','')
     self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"])+int(self.vars["rapid_test_cum"])
     print("Singapore")
     print(self.vars)
