@@ -865,8 +865,8 @@ class TestDefaultSuite(unittest.TestCase):
   def test_newZealand(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus/covid-19-data-and-statistics/covid-19-testing-data")
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td")))
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".table-responsive:nth-child(9) tr:nth-child(1) > td").text
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#node-10928 > div.field.field-name-body.field-type-text-with-summary.field-label-hidden > div > div > div:nth-child(8) > table > tbody > tr:nth-child(2) > td > strong")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#node-10928 > div.field.field-name-body.field-type-text-with-summary.field-label-hidden > div > div > div:nth-child(8) > table > tbody > tr:nth-child(2) > td > strong").text
     print("New Zealand")
     print(self.vars)
     self.driver.close()
