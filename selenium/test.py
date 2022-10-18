@@ -1248,21 +1248,21 @@ class TestDefaultSuite(unittest.TestCase):
     print(self.vars)
     self.driver.close()
     self.driver.quit()
-    
-  def test_uS(self):
-    url='https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/testing_data/time_series_covid19_US.csv'
-    df = pd.read_csv(url,sep=",") # use sep="," for coma separation. 
-    df_tests = df[['date', 'state', 'tests_combined_total']]
-    df_tests['date'] = pd.to_datetime(df_tests['date'])
-    tests_state = df_tests.groupby(['state']).fillna(method='ffill')
-    cum_tests = tests_state.groupby(by = ['date'], as_index= False).sum()
-    last_date = max(cum_tests['date'])
-    last_value = cum_tests.loc[cum_tests['date'] == last_date]
-    self.vars["tests_cumulative"] = int(last_value['tests_combined_total'])
-    print("USA")
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  
+  # def test_uS(self):
+  #   url='https://raw.githubusercontent.com/govex/COVID-19/master/data_tables/testing_data/time_series_covid19_US.csv'
+  #   df = pd.read_csv(url,sep=",") # use sep="," for coma separation. 
+  #   df_tests = df[['date', 'state', 'tests_combined_total']]
+  #   df_tests['date'] = pd.to_datetime(df_tests['date'])
+  #   tests_state = df_tests.groupby(['state']).fillna(method='ffill')
+  #   cum_tests = tests_state.groupby(by = ['date'], as_index= False).sum()
+  #   last_date = max(cum_tests['date'])
+  #   last_value = cum_tests.loc[cum_tests['date'] == last_date]
+  #   self.vars["tests_cumulative"] = int(last_value['tests_combined_total'])
+  #   print("USA")
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
 
   def test_venezuela(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
