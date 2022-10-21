@@ -128,7 +128,7 @@ jobs:
   combine-and-deploy:
     needs: selenium
     if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), 'manually processed countries') )"
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     env:
       # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
@@ -205,7 +205,7 @@ jobs:
   run-analysis:
     needs: combine-and-deploy
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     env:
       # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
@@ -286,7 +286,7 @@ jobs:
   shiny-data:
     needs: run-analysis
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     env:
       # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
@@ -443,7 +443,7 @@ jobs:
   last-update-countries:
     needs: combine-segregated-data
     if: "! contains(toJSON(github.event.commits.*.message), '[ci skip]')"
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     env:
       # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
