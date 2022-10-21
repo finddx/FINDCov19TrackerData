@@ -365,7 +365,7 @@ jobs:
   combine-segregated-data:
     needs: shiny-data
     if: "! (contains(toJSON(github.event.commits.*.message), '[ci skip]') || contains(toJSON(github.event.commits.*.message), 'manually processed countries') )"
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     env:
       # use GITHUB_TOKEN from GitHub to workaround rate limits in {remotes}
