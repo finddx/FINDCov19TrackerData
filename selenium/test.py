@@ -197,40 +197,40 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
     
-  def test_barbados(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://gisbarbados.gov.bb/covid-19/")
-    time.sleep(5)
-    url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Update\')]").get_attribute('href')
-    self.driver.get(url)
-    time.sleep(5)
-    try:
-      self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
-      self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried out")[1].split("tests")[0]
-    except:
-      try:
-        self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
-        self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has conducted")[1].split("tests")[0]
-      except NoSuchElementException:
-        try:
-          self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The lab has performed\')]").text
-          self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has performed")[1].split("tests")[0]
-        except NoSuchElementException:
-          try:
-            self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'has carried\')]").text
-            print(self.vars)
-            self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried")[1].split("tests")[0]
-          except NoSuchElementException:
-              try:
-                self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The laboratories\')]").text
-                self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("conducted")[1].split("tests")[0]
-              except NoSuchElementException:
-                self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
-                self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("completed")[1]
-    print("Barbados")
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  # def test_barbados(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://gisbarbados.gov.bb/covid-19/")
+  #   time.sleep(5)
+  #   url = self.driver.find_element(By.XPATH, "//a[contains(text(),\'COVID-19 Update\')]").get_attribute('href')
+  #   self.driver.get(url)
+  #   time.sleep(5)
+  #   try:
+  #     self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
+  #     self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried out")[1].split("tests")[0]
+  #   except:
+  #     try:
+  #       self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The public health laboratory has\')]").text
+  #       self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has conducted")[1].split("tests")[0]
+  #     except NoSuchElementException:
+  #       try:
+  #         self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The lab has performed\')]").text
+  #         self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has performed")[1].split("tests")[0]
+  #       except NoSuchElementException:
+  #         try:
+  #           self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'has carried\')]").text
+  #           print(self.vars)
+  #           self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("has carried")[1].split("tests")[0]
+  #         except NoSuchElementException:
+  #             try:
+  #               self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'The laboratories\')]").text
+  #               self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("conducted")[1].split("tests")[0]
+  #             except NoSuchElementException:
+  #               self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "//p[contains(.,\'completed\')]").text
+  #               self.vars["tests_cumulative"] = self.vars["tests_cumulative"].split("completed")[1]
+  #   print("Barbados")
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
     
   def test_belarus(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -684,13 +684,13 @@ class TestDefaultSuite(unittest.TestCase):
   def test_ireland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.get("https://covid19ireland-geohive.hub.arcgis.com/pages/hospitals-icu--testing")
-    # WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ember142 .ss-value")))
-    # self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember142 .ss-value").text
-    time.sleep(10)
-    html = self.driver.page_source
-    soup = bs(html, "lxml")
-    full_tags = soup.find_all(attrs={"id":"ember161"})
-    self.vars["tests_cumulative"] = full_tags[0].text.split("\n")[5]
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#ember166 > div:nth-child(3) > span.ss-value")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#ember166 > div:nth-child(3) > span.ss-value").text
+    # time.sleep(10)
+    # html = self.driver.page_source
+    # soup = bs(html, "lxml")
+    # full_tags = soup.find_all(attrs={"id":"ember161"})
+    # self.vars["tests_cumulative"] = full_tags[0].text.split("\n")[5]
     print("Ireland")
     print(self.vars)
     self.driver.close()
@@ -937,7 +937,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.set_window_size(1333, 813)
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiMTVmYTEyZGEtMWUzNi00NjNkLWFmZjctY2FhNmY5MjRjMWI4IiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiNGZmNjVhYmQtZGNmMC00M2YyLTg5MTEtZTAwMjc3ZTIyN2M2IiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     self.driver.set_page_load_timeout(40)
     self.driver.implicitly_wait(40)
     self.driver.execute_script("window.scrollTo(0,0)")
