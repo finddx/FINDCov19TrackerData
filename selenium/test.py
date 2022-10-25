@@ -152,11 +152,11 @@ class TestDefaultSuite(unittest.TestCase):
     
   def test_austria(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://info.gesundheitsministerium.gv.at/?re=infektionslage")
+    self.driver.get("https://covid19-dashboard.ages.at/dashboard.html")
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(6) > td:nth-child(11)").text
-    self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(7) > td:nth-child(11)").text
-    self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) > td:nth-child(11)").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "body > main > article > div:nth-child(1) > div:nth-child(1) > div > div > div > div > div.fit").text.replace(".","")
+    #self.vars["pcr_tests_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(7) > td:nth-child(11)").text
+    #self.vars["rapid_test_cum"] = self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(8) > td:nth-child(11)").text
     print("Austria")
     print(self.vars)
     self.driver.close()
@@ -344,9 +344,9 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_canada(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://health-infobase.canada.ca/covid-19/#a2")
+    self.driver.get("https://health-infobase.canada.ca/covid-19/testing-variants.html")
     time.sleep(15)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#keybox7 > div > p.h2 > span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#keybox7 > div > p.h2 > span").text.replace(",","")
     print("Canada")
     print(self.vars)
     self.driver.close()
@@ -1101,15 +1101,11 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_slovakia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://korona.gov.sk/koronavirus-na-slovensku-v-cislach/")
+    self.driver.get("https://covid-19.nczisk.sk/sk")
     self.driver.set_page_load_timeout(40)
     self.driver.implicitly_wait(40)
-    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#block_603780b691b98 > div > p")))
-    pcr_test = self.driver.find_element(By.CSS_SELECTOR, "#block_603780b691b98 > div > p").text
-    self.vars["pcr_tests_cum"] = pcr_test.split("Celkovo:")[1].replace(" ","")
-    rapid_test = self.driver.find_element(By.CSS_SELECTOR, "#block_60378ba2c4f83 > div > p").text
-    self.vars["rapid_test_cum"] = rapid_test.split("Celkovo:")[1].replace(" ","")
-    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
+    WebDriverWait(self.driver, 90).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, "#app > section > div.charts > div:nth-child(1) > div.chart.flex-column.js-chart.chart--bad > div.chart__data > div > span")))
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#app > section > div.charts > div:nth-child(1) > div.chart.flex-column.js-chart.chart--bad > div.chart__data > div > span").text
     print("slovakia")
     print(self.vars)
     self.driver.close()
