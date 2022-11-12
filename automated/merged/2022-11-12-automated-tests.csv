@@ -1,6 +1,6 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2022-11-12,NA,NA,NA,NA,selenium
-Albania,2022-11-12,2001623,0,2001623,0,selenium
+Albania,2022-11-12,2002136,513,2002136,513,selenium
 Algeria,2022-11-12,230553,0,230553,0,selenium
 Andorra,2022-11-12,NA,NA,NA,NA,NA
 Angola,2022-11-12,2963203,0,2963203,0,selenium
@@ -8,8 +8,8 @@ AntiguaandBarbuda,2022-11-12,NA,NA,NA,NA,selenium
 Argentina,2022-11-12,NA,NA,NA,NA,selenium
 Armenia,2022-11-12,3109931,0,3109931,0,selenium
 Australia,2022-11-12,NA,NA,NA,NA,selenium
-Austria,2022-11-12,201543033,0,201543033,0,selenium
-Azerbaijan,2022-11-12,7341262,0,7341262,0,selenium
+Austria,2022-11-12,201608119,65086,201608119,65086,selenium
+Azerbaijan,2022-11-12,7343007,1745,7343007,1745,selenium
 Bahrain,2022-11-12,10524539,1621,10524539,1621,selenium
 Bangladesh,2022-11-12,NA,NA,NA,NA,selenium
 Barbados,2022-11-12,NA,NA,NA,NA,NA
@@ -20,7 +20,7 @@ Benin,2022-11-12,604310,0,604310,0,selenium
 Bermuda,2022-11-12,1017514,0,1017514,0,selenium
 Bhutan,2022-11-12,NA,NA,NA,NA,NA
 Bolivia,2022-11-12,NA,NA,NA,NA,NA
-BosniaandHerzegovina,2022-11-12,1343284,0,1343284,0,selenium
+BosniaandHerzegovina,2022-11-12,1343293,9,1343293,9,selenium
 Botswana,2022-11-12,2285160,0,2285160,0,selenium
 Brazil,2022-11-12,78641767,0,78641767,0,selenium
 Brunei,2022-11-12,NA,NA,NA,NA,NA
@@ -33,7 +33,7 @@ Canada,2022-11-12,65873060,0,65873060,0,selenium
 CapeVerde,2022-11-12,546283,0,546283,0,selenium
 CentralAfricanRepublic,2022-11-12,109548,0,109548,0,selenium
 Chad,2022-11-12,222583,0,222583,0,selenium
-Chile,2022-11-12,46507461,0,46507461,0,selenium
+Chile,2022-11-12,46545203,37742,46545203,37742,selenium
 China,2022-11-12,NA,NA,NA,NA,NA
 Colombia,2022-11-12,36791759,0,36791759,0,selenium
 Comoros,2022-11-12,108290,0,108290,0,selenium
@@ -85,7 +85,7 @@ Ireland,2022-11-12,12807763,0,12807763,0,selenium
 Israel,2022-11-12,NA,NA,NA,NA,NA
 Italy,2022-11-12,254586854,0,254586854,0,selenium
 Jamaica,2022-11-12,NA,NA,NA,NA,NA
-Japan,2022-11-12,79118302,0,79118302,0,selenium
+Japan,2022-11-12,79279379,161077,79279379,161077,selenium
 Jordan,2022-11-12,NA,NA,NA,NA,selenium
 Kazakhstan,2022-11-12,NA,NA,NA,NA,NA
 Kenya,2022-11-12,3923620,0,3923620,0,selenium
@@ -115,7 +115,7 @@ Morocco,2022-11-12,12674539,0,12674539,0,selenium
 Mozambique,2022-11-12,1400829,0,1400829,0,selenium
 Myanmar,2022-11-12,NA,NA,NA,NA,selenium
 Namibia,2022-11-12,1076248,0,1076248,0,selenium
-Nepal,2022-11-12,5966358,0,5966358,0,selenium
+Nepal,2022-11-12,5967038,680,5967038,680,selenium
 Netherlands,2022-11-12,NA,NA,NA,NA,NA
 NewCaledonia,2022-11-12,NA,NA,NA,NA,NA
 NewZealand,2022-11-12,7615731,0,7615731,0,selenium
@@ -133,7 +133,7 @@ Peru,2022-11-12,35597908,0,35597908,0,selenium
 Philippines,2022-11-12,NA,NA,NA,NA,NA
 Poland,2022-11-12,NA,NA,NA,NA,NA
 Portugal,2022-11-12,NA,NA,NA,NA,selenium
-Qatar,2022-11-12,4060502,0,4060502,0,selenium
+Qatar,2022-11-12,4061988,1486,4061988,1486,selenium
 RepublicofKorea,2022-11-12,NA,NA,NA,NA,selenium
 Romania,2022-11-12,23400420,0,23400420,0,selenium
 Russia,2022-11-12,NA,NA,NA,NA,NA
@@ -143,15 +143,15 @@ SaintLucia,2022-11-12,212132,0,212132,0,selenium
 SaintVincentandtheGrenadines,2022-11-12,NA,NA,NA,NA,NA
 SanMarino,2022-11-12,180498,0,180498,0,selenium
 SaoTomeandPrincipe,2022-11-12,50165,0,50165,0,selenium
-SaudiArabia,2022-11-12,44711731,0,44711731,0,selenium
+SaudiArabia,2022-11-12,44716361,4630,44716361,4630,selenium
 Scotland,2022-11-12,NA,NA,NA,NA,NA
 Senegal,2022-11-12,1280810,0,1280810,0,selenium
-Serbia,2022-11-12,11469746,0,11469746,0,selenium
+Serbia,2022-11-12,11475323,5577,11475323,5577,selenium
 Seychelles,2022-11-12,21504,0,21504,0,selenium
 SierraLeone,2022-11-12,445804,0,445804,0,selenium
 Singapore,2022-11-12,NA,NA,NA,NA,selenium
 Slovakia,2022-11-12,NA,NA,NA,NA,selenium
-Slovenia,2022-11-12,19528885,0,19528885,0,selenium
+Slovenia,2022-11-12,19534334,5449,19534334,5449,selenium
 Somalia,2022-11-12,514985,0,514985,0,selenium
 SouthAfrica,2022-11-12,26174429,0,26174429,0,selenium
 SouthSudan,2022-11-12,423817,0,423817,0,selenium
