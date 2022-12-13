@@ -342,15 +342,15 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.close()
     self.driver.quit()
 
-  def test_canada(self):
-    # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://health-infobase.canada.ca/covid-19/testing-variants.html")
-    time.sleep(15)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#keybox7 > div > p.h2 > span").text.replace(",","")
-    print("Canada")
-    print(self.vars)
-    self.driver.close()
-    self.driver.quit()
+  # def test_canada(self):
+  #   # self.vars["date"] =date.today().strftime("%Y-%m-%d")
+  #   self.driver.get("https://health-infobase.canada.ca/covid-19/testing-variants.html")
+  #   time.sleep(15)
+  #   self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#keybox7 > div > p.h2 > span").text.replace(",","")
+  #   print("Canada")
+  #   print(self.vars)
+  #   self.driver.close()
+  #   self.driver.quit()
   
   def test_colombia(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
@@ -937,7 +937,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.set_window_size(1333, 813)
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiNGZmNjVhYmQtZGNmMC00M2YyLTg5MTEtZTAwMjc3ZTIyN2M2IiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiNWE4MThjZjEtYjEzMS00N2VmLWEwNmUtNjFkNTgyYzAyODc0IiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     self.driver.set_page_load_timeout(40)
     self.driver.implicitly_wait(40)
     self.driver.execute_script("window.scrollTo(0,0)")
