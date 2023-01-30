@@ -539,9 +539,9 @@ class TestDefaultSuite(unittest.TestCase):
 
   def test_finland(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
-    self.driver.get("https://sampo.thl.fi/pivot/prod/en/epirapo/covid19case/summary_tshcdweekly")
+    self.driver.get("https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/summary_tshcdweekly")
     time.sleep(10)
-    self.vars["tests_cumulative"] = self.driver.find_element(By.XPATH, "/html/body/div[2]/div[1]/div[2]/div[1]/div/div/div/div/div[2]/table/tbody/tr[158]/td[2]/span").text
+    self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, "#\$p3 > div.table-responsive > table > tbody > tr:nth-child(210) > td:nth-child(3) > span").text.replace(' ','')
     print("Finland")
     print(self.vars)
     self.driver.close()
@@ -937,7 +937,7 @@ class TestDefaultSuite(unittest.TestCase):
   def test_peru(self):
     # self.vars["date"] =date.today().strftime("%Y-%m-%d")
     self.driver.set_window_size(1333, 813)
-    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiNWE4MThjZjEtYjEzMS00N2VmLWEwNmUtNjFkNTgyYzAyODc0IiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
+    self.driver.get("https://app.powerbi.com/view?r=eyJrIjoiYzYwMmU5NTQtYTdiZi00MzJjLTkzMzctN2I5ODgxZTg1ZDRlIiwidCI6IjM0MGJjMDE2LWM2YTYtNDI2Ni05NGVjLWE3NDY0YmY5ZWM3MCIsImMiOjR9")
     self.driver.set_page_load_timeout(40)
     self.driver.implicitly_wait(40)
     self.driver.execute_script("window.scrollTo(0,0)")
@@ -1082,6 +1082,7 @@ class TestDefaultSuite(unittest.TestCase):
     self.driver.get("https://covid19.rs/")
     WebDriverWait(self.driver, 30).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title")))
     self.vars["tests_cumulative"] = self.driver.find_element(By.CSS_SELECTOR, ".elementor-element-6bfc932d .elementor-heading-title").text
+    print(self.vars)
     self.driver.close()
     self.driver.quit()
 
