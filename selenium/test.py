@@ -1120,11 +1120,11 @@ class TestDefaultSuite(unittest.TestCase):
     html = self.driver.page_source
     soup = bs(html, "lxml")
     full_tags = soup.find_all(attrs={"id":"pbiAppPlaceHolder"})
-    pcr_tests = full_tags[0].text.split("Število testiranj s PCR [1]")[1].split("Press Enter")[0].strip()[0:9]
-    rapid_tests = full_tags[0].text.split("testiranj s HAGT [2]")[1].split("Press Enter")[0].strip()[0:10]
-    self.vars["pcr_tests_cum"] = pcr_tests.replace(",","")
-    self.vars["rapid_test_cum"] = rapid_tests.replace(",","")
-    self.vars["tests_cumulative"] = int(self.vars["pcr_tests_cum"]) + int(self.vars["rapid_test_cum"])
+    pcr_tests = full_tags[0].text.split("Število testiranj s PCR [1]")[2].split("Press Enter")[0].strip()[0:9]
+    rapid_tests = full_tags[0].text.split("testiranj s HAGT [2]")[2].split("Press Enter")[0].strip()[0:10]
+    self.vars["pcr_tests_cum"] = int(pcr_tests.replace(",",""))
+    self.vars["rapid_test_cum"] = int(rapid_tests.replace(",",""))
+    self.vars["tests_cumulative"] = self.vars["pcr_tests_cum"] + self.vars["rapid_test_cum"]
     print(self.vars)
     self.driver.close()
     self.driver.quit()
