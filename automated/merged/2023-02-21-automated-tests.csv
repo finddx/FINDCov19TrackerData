@@ -1,6 +1,6 @@
 country,date,tests_cumulative,new_tests,tests_cumulative_corrected,new_tests_corrected,source
 Afghanistan,2023-02-21,NA,NA,NA,NA,selenium
-Albania,2023-02-21,2037265,0,2037265,0,selenium
+Albania,2023-02-21,2037782,517,2037782,517,selenium
 Algeria,2023-02-21,230553,0,230553,0,selenium
 Andorra,2023-02-21,NA,NA,NA,NA,NA
 Angola,2023-02-21,3040989,0,3040989,0,selenium
@@ -8,8 +8,8 @@ AntiguaandBarbuda,2023-02-21,16700,0,16700,0,selenium
 Argentina,2023-02-21,NA,NA,NA,NA,selenium
 Armenia,2023-02-21,3109931,0,3109931,0,selenium
 Australia,2023-02-21,NA,NA,NA,NA,selenium
-Austria,2023-02-21,206513133,0,206513133,0,selenium
-Azerbaijan,2023-02-21,7514447,0,7514447,0,selenium
+Austria,2023-02-21,206591227,78094,206591227,78094,selenium
+Azerbaijan,2023-02-21,7516142,1695,7516142,1695,selenium
 Bahrain,2023-02-21,NA,NA,NA,NA,selenium
 Bangladesh,2023-02-21,NA,NA,NA,NA,selenium
 Barbados,2023-02-21,NA,NA,NA,NA,NA
@@ -20,7 +20,7 @@ Benin,2023-02-21,604310,0,604310,0,selenium
 Bermuda,2023-02-21,1026742,0,1026742,0,selenium
 Bhutan,2023-02-21,NA,NA,NA,NA,NA
 Bolivia,2023-02-21,NA,NA,NA,NA,NA
-BosniaandHerzegovina,2023-02-21,1344043,0,1344043,0,selenium
+BosniaandHerzegovina,2023-02-21,1344189,146,1344189,146,selenium
 Botswana,2023-02-21,2285160,0,2285160,0,selenium
 Brazil,2023-02-21,NA,NA,NA,NA,selenium
 Brunei,2023-02-21,NA,NA,NA,NA,NA
@@ -33,7 +33,7 @@ Canada,2023-02-21,NA,NA,NA,NA,NA
 CapeVerde,2023-02-21,551242,0,551242,0,selenium
 CentralAfricanRepublic,2023-02-21,113764,0,113764,0,selenium
 Chad,2023-02-21,225934,0,225934,0,selenium
-Chile,2023-02-21,48346965,0,48346965,0,selenium
+Chile,2023-02-21,48353881,6916,48353881,6916,selenium
 China,2023-02-21,NA,NA,NA,NA,NA
 Colombia,2023-02-21,37345659,0,37345659,0,selenium
 Comoros,2023-02-21,118902,0,118902,0,selenium
@@ -54,7 +54,7 @@ Egypt,2023-02-21,12447200,0,12447200,0,selenium
 ElSalvador,2023-02-21,2610114,0,2610114,0,selenium
 EquatorialGuinea,2023-02-21,397874,0,397874,0,selenium
 Eritrea,2023-02-21,23693,0,23693,0,selenium
-Estonia,2023-02-21,3645997,0,3645997,0,selenium
+Estonia,2023-02-21,3649832,3835,3649832,3835,selenium
 Eswatini,2023-02-21,570432,0,570432,0,selenium
 Ethiopia,2023-02-21,5420453,0,5420453,0,selenium
 FaroeIslands,2023-02-21,777845,0,777845,0,selenium
@@ -77,7 +77,7 @@ Honduras,2023-02-21,NA,NA,NA,NA,NA
 HongKong,2023-02-21,NA,NA,NA,NA,NA
 Hungary,2023-02-21,NA,NA,NA,NA,selenium
 Iceland,2023-02-21,NA,NA,NA,NA,selenium
-India,2023-02-21,917828117,-42613,917828117,-42613,selenium
+India,2023-02-21,917986992,116262,917986992,116262,selenium
 Indonesia,2023-02-21,NA,NA,NA,NA,selenium
 Iran,2023-02-21,NA,NA,NA,NA,selenium
 Iraq,2023-02-21,NA,NA,NA,NA,NA
@@ -93,12 +93,12 @@ Kosovo,2023-02-21,NA,NA,NA,NA,selenium
 Kuwait,2023-02-21,NA,NA,NA,NA,NA
 Kyrgyzstan,2023-02-21,NA,NA,NA,NA,NA
 LaoPeoplesDemocraticRepublic,2023-02-21,NA,NA,NA,NA,NA
-Latvia,2023-02-21,7862978,0,7862978,0,selenium
+Latvia,2023-02-21,7863247,269,7863247,269,selenium
 Lebanon,2023-02-21,NA,NA,NA,NA,selenium
 Lesotho,2023-02-21,495531,0,495531,0,selenium
 Liberia,2023-02-21,139824,0,139824,0,selenium
 Libya,2023-02-21,2597067,0,2597067,0,selenium
-Lithuania,2023-02-21,9061904,0,9061904,0,selenium
+Lithuania,2023-02-21,9063694,1790,9063694,1790,selenium
 Luxembourg,2023-02-21,NA,NA,NA,NA,NA
 Madagascar,2023-02-21,570677,0,570677,0,selenium
 Malawi,2023-02-21,627802,0,627802,0,selenium
@@ -115,7 +115,7 @@ Morocco,2023-02-21,12858793,0,12858793,0,selenium
 Mozambique,2023-02-21,1411419,0,1411419,0,selenium
 Myanmar,2023-02-21,NA,NA,NA,NA,selenium
 Namibia,2023-02-21,1076248,0,1076248,0,selenium
-Nepal,2023-02-21,6009942,0,6009942,0,selenium
+Nepal,2023-02-21,6010186,244,6010186,244,selenium
 Netherlands,2023-02-21,NA,NA,NA,NA,NA
 NewCaledonia,2023-02-21,NA,NA,NA,NA,NA
 NewZealand,2023-02-21,7785469,0,7785469,0,selenium
@@ -141,9 +141,9 @@ Rwanda,2023-02-21,5948382,0,5948382,0,selenium
 SaintKittsandNevis,2023-02-21,126927,0,126927,0,selenium
 SaintLucia,2023-02-21,212132,0,212132,0,selenium
 SaintVincentandtheGrenadines,2023-02-21,NA,NA,NA,NA,NA
-SanMarino,2023-02-21,NA,NA,NA,NA,selenium
+SanMarino,2023-02-21,188552,0,188552,0,selenium
 SaoTomeandPrincipe,2023-02-21,52461,0,52461,0,selenium
-SaudiArabia,2023-02-21,45117583,0,45117583,0,selenium
+SaudiArabia,2023-02-21,45121063,3480,45121063,3480,selenium
 Scotland,2023-02-21,NA,NA,NA,NA,NA
 Senegal,2023-02-21,1294129,0,1294129,0,selenium
 Serbia,2023-02-21,12326496,0,12326496,0,selenium
@@ -151,11 +151,11 @@ Seychelles,2023-02-21,21504,0,21504,0,selenium
 SierraLeone,2023-02-21,448343,0,448343,0,selenium
 Singapore,2023-02-21,NA,NA,NA,NA,selenium
 Slovakia,2023-02-21,NA,NA,NA,NA,selenium
-Slovenia,2023-02-21,20041353,0,20041353,0,selenium
+Slovenia,2023-02-21,20046603,5250,20046603,5250,selenium
 Somalia,2023-02-21,514985,0,514985,0,selenium
 SouthAfrica,2023-02-21,26650151,0,26650151,0,selenium
 SouthSudan,2023-02-21,423817,0,423817,0,selenium
-Spain,2023-02-21,100102812,0,100102812,0,selenium
+Spain,2023-02-21,100122062,19250,100122062,19250,selenium
 SriLanka,2023-02-21,7715905,0,7715905,0,selenium
 Sudan,2023-02-21,562941,0,562941,0,selenium
 Sweden,2023-02-21,NA,NA,NA,NA,NA
