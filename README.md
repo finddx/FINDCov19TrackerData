@@ -6,6 +6,7 @@
 
 <!-- badges: end -->
 
+As of **15th of April 2023, we have stopped updating the COVID-19 testing data**. The number of countries tracking and reporting data for COVID-19 tests has significantly reduced after the emergence of Omicron variant. This dataset has provided valuable insight during the pandemic to partners and global health stakeholders, and was the main source of testing data for the Diagnostics pillar of ACT-Accelerator. The accompanying [shiny application](https://www.finddx.org/tools-and-resources/dxconnect/test-directories/covid-19-test-tracker/) will be maintained online as resource for historical data.
 
 Several countries and entities, including the World Bank, publish aggregate estimates on the total number of tests performed.
 These reports are published across individual websites and press releases – often in multiple languages and updated with different periodicity.
